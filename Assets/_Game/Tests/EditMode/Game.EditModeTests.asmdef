@@ -1,0 +1,28 @@
+{
+  "name": "Game.EditModeTests",
+  "rootNamespace": "Avoidance.Tests.EditMode",
+  "references": [
+    "Game.Core",
+    "Game.Bootstrap",
+    "Game.Save",
+    "Game.Diagnostics",
+    "Game.UI",
+    "Game.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
