@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Worlds.AuthoredSurface
   _sourceMesh: {fileID: 4300000, guid: 4a9a7b0b71130c3419cfdb69c3d419ac, type: 2}
+  _restoreOnLanding: 1
 --- !u!1 &4401878656790661591
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Worlds.AuthoredSurface
   _sourceMesh: {fileID: 4300000, guid: 8b427f6de0cc78748881528a70feb34b, type: 2}
+  _restoreOnLanding: 1
 --- !u!1 &6515759866537232654
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,3 +417,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Worlds.AuthoredSurface
   _sourceMesh: {fileID: 4300000, guid: 14d55ac0e5c39bb4db95bd0f2caff77c, type: 2}
+  _restoreOnLanding: 1

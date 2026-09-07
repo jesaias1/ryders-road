@@ -7,6 +7,9 @@ namespace Avoidance.Gameplay.Worlds
     public sealed class AuthoredSurface : MonoBehaviour
     {
         [SerializeField] private Mesh _sourceMesh;
+        [SerializeField] private bool _restoreOnLanding;
+        public bool RestoreOnLanding => _restoreOnLanding;
+        public void SetRestoreOnLanding(bool value) { _restoreOnLanding = value; }
         public void SetSourceMesh(Mesh mesh) { _sourceMesh = mesh; }
         public string CollisionDetails => $"{name}: source={_sourceMesh?.name} collider={GetComponent<MeshCollider>().sharedMesh?.name}";
         public bool HasMatchingCollision => _sourceMesh != null && GetComponent<MeshCollider>().sharedMesh == _sourceMesh

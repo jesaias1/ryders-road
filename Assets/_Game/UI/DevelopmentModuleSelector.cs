@@ -23,6 +23,7 @@ namespace Avoidance.UI
 
         private void Awake()
         {
+            CampaignFlowTrial.Clear();
             var configuration = Resources.Load<GameConfiguration>("FoundationGameConfiguration")
                 ?? GameConfiguration.CreateRuntimeDefault();
             CreateEnvironment();
@@ -109,10 +110,16 @@ namespace Avoidance.UI
                 StartCoroutine(LoadScene(ModuleSelectionState.ModuleRunnerSceneName));
             });
             ProductionButton(homeGlass.transform, "SETTINGS", new Vector2(0.79f, 0.16f), new Vector2(0.965f, 0.68f), () => { home.SetActive(false); settingsPanel.SetActive(true); });
-            ProductionButton(home.transform, "FLOW LAB  /  MOVEMENT PRACTICE", new Vector2(.30f,.045f), new Vector2(.70f,.105f), () =>
+            ProductionButton(home.transform, "FLOW LAB  /  MOVEMENT PRACTICE", new Vector2(.12f,.045f), new Vector2(.49f,.105f), () =>
             {
                 FlowLabSceneController.RequestLaunch();
                 StartCoroutine(LoadScene("MovementLab"));
+            });
+            var trials = CampaignTrialMenu.Create(safe, () => home.SetActive(true), () =>
+                StartCoroutine(LoadScene(ModuleSelectionState.ModuleRunnerSceneName)));
+            ProductionButton(home.transform, "CAMPAIGN FLOW TRIAL", new Vector2(.51f,.045f), new Vector2(.88f,.105f), () =>
+            {
+                home.SetActive(false); trials.SetActive(true);
             });
             var byId = Resources.LoadAll<ModuleDefinition>("Modules").ToDictionary(module => module.StableModuleId);
             var ids = ModuleSelectionState.GetCampaignModuleIds().Where(byId.ContainsKey).ToArray();

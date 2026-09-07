@@ -33,10 +33,12 @@ namespace Avoidance.Gameplay.Camera
         private LandingView _landingView;
         private bool _flowTouchInput;
         private float _evaluationPitch;
+        private float? _evaluationDefaultPitch;
 
         public void ConfigureLandingView(LandingViewSettings settings)
         {
             _landingView = settings == null ? null : new LandingView(settings);
+            _evaluationDefaultPitch = settings?.initialPitch;
             _evaluationPitch = 0f;
             ApplyPitchRotation();
         }
@@ -310,7 +312,7 @@ namespace Avoidance.Gameplay.Camera
             _pitch = _profile == null
                 ? 0f
                 : Mathf.Clamp(
-                    preservedPitch ?? _profile.DefaultGameplayPitch,
+                    preservedPitch ?? _evaluationDefaultPitch ?? _profile.DefaultGameplayPitch,
                     _profile.MinimumPitch,
                     _profile.MaximumPitch);
             _touchInputMode = false;

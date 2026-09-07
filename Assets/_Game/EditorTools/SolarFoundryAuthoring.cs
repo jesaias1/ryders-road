@@ -77,13 +77,14 @@ namespace Avoidance.EditorTools
             crown.Pipe(new Vector3(-5,-5,103),new Vector3(-5,7,103),1.25f);
             // Transfer machine: pylons sit beside the entire moving/capsule sweep.
             var crane = new Bake();
-            foreach(var p in new[]{new Vector3(6,-5,34),new Vector3(28,-5,37)})
+            foreach(var p in new[]{new Vector3(34,-5,39),new Vector3(28,-5,37)})
             {
                 crane.Box("Steel",p,new Vector3(1.2f,25,1.2f));
                 crane.Box("Ceramic",p+Vector3.up*5,new Vector3(2,7,2));
                 for(int j=0;j<4;j++) crane.Box("Gold",p+new Vector3(0,j*2,0),new Vector3(2.12f,.18f,2.12f));
             }
-            crane.Beam("Steel",new Vector3(6,7.5f,34),new Vector3(28,7.5f,37),new Vector2(.65f,.8f));
+            // Side-mounted davit: the transfer lane has open sky throughout the jump.
+            crane.Beam("Steel",new Vector3(28,7.5f,37),new Vector3(34,7.5f,39),new Vector2(.65f,.8f));
             // A protective service house sits behind the final approach, never across it.
             crown.Box("Steel",new Vector3(-5,10.5f,108),new Vector3(8,3,2));
             crown.Box("Ivory",new Vector3(-5,12.2f,108),new Vector3(9,.35f,3));
@@ -143,7 +144,7 @@ namespace Avoidance.EditorTools
                 new[]{new Vector3(11,3.1f,34),new Vector3(19,3.6f,37)},3,.65f)};
             var crumble = new[]{new ModuleCrumblingBlockDefinition("crumble.m04.cooling-a",new Vector3(19,6.3f,66),new Vector3(3.6f,.6f,3.6f),.03f,1,4,.025f),
                 new ModuleCrumblingBlockDefinition("crumble.m04.cooling-b",new Vector3(15,6.6f,69.5f),new Vector3(3.6f,.6f,3.6f),.03f,1,4,.025f)};
-            m.Configure(ModuleId,"Campaign 04 - Solar Foundry","module_004_solar_foundry","project.ryders-block","world.solar-foundry",1,
+            m.Configure(ModuleId,"Campaign 04 - Solar Foundry","module_004_solar_foundry","project.ryders-block","world.solar-foundry",2,
                 ModuleSelectionState.ModuleRunnerSceneName,ModuleDifficulty.Medium,new ModulePose(new Vector3(0,.35f,-1),Vector3.zero),
                 new ModulePatchBlockDefinition("patch.module-004.solar-foundry",new Vector3(-5,10.3f,103),new Vector3(2.2f,2.2f,2.2f),supportBlockStableId:"m04.patch.base"),
                 restores,48,110,new[]{ModuleMechanic.StandardBlock,ModuleMechanic.MovingBlock,ModuleMechanic.CrumblingBlock,ModuleMechanic.RestorePoint,ModuleMechanic.PatchBlock,ModuleMechanic.Shortcut},
@@ -288,7 +289,12 @@ namespace Avoidance.EditorTools
                     else {EditorUtility.CopySerialized(mesh,existing);Object.DestroyImmediate(mesh);mesh=existing;EditorUtility.SetDirty(existing);}
                     var go=new GameObject(part.Key,typeof(MeshFilter),typeof(MeshRenderer));go.transform.SetParent(root.transform,false);
                     go.GetComponent<MeshFilter>().sharedMesh=mesh;var r=go.GetComponent<MeshRenderer>();r.sharedMaterial=Materials[part.Key];r.shadowCastingMode=ShadowCastingMode.Off;r.receiveShadows=false;
-                    if(collide) {go.AddComponent<MeshCollider>().sharedMesh=mesh;go.AddComponent<AuthoredSurface>().SetSourceMesh(mesh);}
+                    if(collide)
+                    {
+                        go.AddComponent<MeshCollider>().sharedMesh=mesh;
+                        var surface=go.AddComponent<AuthoredSurface>();surface.SetSourceMesh(mesh);
+                        surface.SetRestoreOnLanding(true);
+                    }
                 }
                 foreach(var mesh in temporary)Object.DestroyImmediate(mesh);
                 var prefab=PrefabUtility.SaveAsPrefabAsset(root,Root+"/"+name+".prefab");Object.DestroyImmediate(root);return prefab;

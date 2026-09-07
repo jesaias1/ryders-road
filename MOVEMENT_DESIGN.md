@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+S23 feedback makes Flow the promising foundation to evaluate, not an automatic global replacement. 0.9.9 exposes unchanged mastery/production assets on real Campaign roads with separate session results and no save writes. No motor numbers were tuned. Ordinary completion stays accessible; compare linked jumps/arcs/shortcuts against stop-and-line-up runs, using time and misses as well as speed. Old fully manual controls remain recoverable, not mandated as the final scheme.
+
 ## 0.9.6 physical evaluation candidate
 
 Campaign tuning remains unchanged. Flow Lab opts into projected-only air movement,

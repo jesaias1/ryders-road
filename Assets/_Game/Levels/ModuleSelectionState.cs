@@ -42,6 +42,7 @@ namespace Avoidance.Gameplay.Levels
 
         public static void Select(string stableModuleId, bool developmentOverride = false)
         {
+            CampaignFlowTrial.Clear();
             SelectedModuleId = string.IsNullOrWhiteSpace(stableModuleId)
                 ? DefaultModuleId
                 : stableModuleId;

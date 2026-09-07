@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+Levels owns removable CampaignFlowTrial selection/session times; UI owns its menu, runner composition and no-save boundary. Worlds AuthoredSurface carries explicit non-route landing intent; Respawn SceneryLandingRecovery forwards qualifying contacts to the existing RestoreController. Player motor/Input/save implementations are unchanged. Normal Campaign is still 001–004; Spiral stays separate.
+
 ## 0.9.8 Solar Foundry
 
 Campaign now orders 001 first-steps, 002 moving-parts, 003 flow-error and 004 solar-foundry. Legacy Spiral is separate. Solar Foundry v1 uses the existing ModuleRunner, motor, Restore, moving/crumbling blocks, FlowChallenge, Patch and progression services. The new biome enum value is appended, preserving existing numeric meanings. See Docs/PRODUCTION_098.md.

@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+Moved Foundry crane outside jump sightlines; added counted-fall Restore on explicitly marked scenery landings, preserving legitimate supports/shortcuts. Added Campaign Flow Trial across all four roads with accepted/Flow manual/Flow landing choices, transient speed/time feedback, safe Retry and no progression/preference writes. Preserved both motor assets and existing route difficulty. Foundry content v2; V4 unchanged. 240 EditMode / 57 PlayMode pass.
+
 ## 0.9.8 Solar Foundry
 
 Added fourth Campaign road Solar Foundry: original industrial landmarks, three Restores, meaningful ferry/crumble traversal, optional shard shortcut and complete Continue/unlock/replay integration. Preserved V4, first-three-world content and accepted movement/input. Added route/collision/recovery/progression regressions and a bounded geometry budget. Full evidence: Docs/PRODUCTION_098.md.

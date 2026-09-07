@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+The reported 0.9.8 overhead beam and stranded lower scenery are addressed in 0.9.9 with composition and explicit scenery-landing recovery. Automated/render checks pass; these fixes still need physical confirmation. Flow candidate is now testable on all four Campaign roads, but not promoted. The user reports preferring Flow; landing-framing choice, physical performance and event-audio mix remain open. Art-cohesion findings are in ART_DIRECTION.md; worlds 005–008 are unbuilt.
+
 ## 0.9.8 Solar Foundry
 
 Solar Foundry is a visually reviewed playable candidate, not physically approved or production-frozen. Human route pacing, mastery thresholds, mobile frame pacing/thermal behavior and landscape safe areas need S23 checks. The 0.9.7 contact mix has not been auditioned; Restore/Boost/completion/PB/ambience audio remains incomplete. Worlds 005–008 remain unbuilt. These do not block independent production under the current user instruction.

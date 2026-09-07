@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+0.9.9 passes 240 EditMode and 57 PlayMode tests. Production099Tests exercises real scenery falls, side-contact rejection, jump sightlines, all roads/modes, save/preference isolation, completion/Retry/exit and touch pitch/tap. SolarFoundryTests now traverses standard jumps with candidate Flow input as well as accepted input. Physical 0.9.8 feedback is user-reported; 0.9.9 still needs S23 evaluation. Evidence: Docs/PRODUCTION_099.md.
+
 ## 0.9.8 Solar Foundry
 
 SolarFoundryContentTests and SolarFoundryTests cover individual production-motor jumps, support rays, ferry/rider sweep and carry, optional brackets, crumble/reset, Restore/shards, real campaign pagination/unlocks/Continue/Bronze/replay and startup preservation. Memory-backed progression fixtures preserve the user save. Exact final results and artifact are in Docs/AI_HANDOFF.md; no physical-device testing is claimed.

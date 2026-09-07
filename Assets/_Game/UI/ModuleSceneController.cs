@@ -183,6 +183,9 @@ namespace Avoidance.UI
 
         private static MovementProfileSet LoadMovementProfiles()
         {
+            if (CampaignFlowTrial.Active)
+                return new MovementProfileSet(new[] { Resources.Load<MovementProfile>(CampaignFlowTrial.UsesCandidate
+                    ? "Training/Movement_Mastery" : "MovementProfiles/Movement_Default") });
             var profiles = Resources.LoadAll<MovementProfile>("MovementProfiles")
                 .OrderBy(ProfileOrder)
                 .ToArray();
@@ -341,6 +344,7 @@ namespace Avoidance.UI
                 typeof(AudioSource),
                 typeof(MovementFeedback),
                 typeof(RestoreController),
+                typeof(SceneryLandingRecovery),
                 typeof(MovementSessionReporter),
                 typeof(PlayerRuntimeCoordinator));
             player.layer = LayerMask.NameToLayer("Player");
@@ -376,6 +380,16 @@ namespace Avoidance.UI
                 cameraProfile,
                 ParkourCameraProfile.CreateRuntimeDefault(),
                 routeCameraGraph);
+            if (CampaignFlowTrial.UsesCandidate)
+            {
+                touchInput.SetSessionControlProfile(TouchControlProfileKind.FlowSteerAutoDirect);
+                if (CampaignFlowTrial.Mode == CampaignTrialMode.FlowLanding)
+                {
+                    var training = JsonUtility.FromJson<FlowLabDefinition>(Resources.Load<TextAsset>("Training/FlowLab").text);
+                    cameraRig.ConfigureLandingView(training.landingView);
+                    cameraRig.ResetView(startRotation);
+                }
+            }
             var hands = cameraObject.GetComponent<FirstPersonHands>();
             hands.Initialize(motor);
 
@@ -488,12 +502,12 @@ namespace Avoidance.UI
 
         private void InitializeRunSession(MovementProfile movementProfile)
         {
-            var progression = EnsureProgression();
+            var progression = CampaignFlowTrial.Active ? new ProgressionData() : EnsureProgression();
             _progressRecord = ModuleProgressionData.GetOrCreateRecord(
                 progression,
                 _module.StableModuleId);
             ModuleProgressionData.RecordAttempt(progression, _module.StableModuleId);
-            _save?.Save();
+            if (!CampaignFlowTrial.Active) _save?.Save();
 
             var validity = ModuleSelectionState.DevelopmentOverride
                 ? RunValidity.InvalidDevelopment
@@ -507,7 +521,7 @@ namespace Avoidance.UI
 
         private ProgressionData EnsureProgression()
         {
-            if (_save == null)
+            if (_save == null || CampaignFlowTrial.Active)
             {
                 return new ProgressionData();
             }
@@ -538,7 +552,7 @@ namespace Avoidance.UI
             Enum.TryParse<ModuleRank>(_progressRecord?.highestRank, out var previousRank);
             result.IsNewPersonalBest = false;
             result.PersonalBestDeltaSeconds = 0d;
-            if (_save != null)
+            if (_save != null && !CampaignFlowTrial.Active)
             {
                 var splits = ToSaveSplits(result.Splits);
                 var utcNow = DateTime.UtcNow.ToString("O");
@@ -580,6 +594,7 @@ namespace Avoidance.UI
             if (ModuleRankUtility.IsValidForPersonalBest(result.Validity))
                 StartCoroutine(PlayAchievementFeedback(feedback, result, result.Rank > previousRank));
 
+            if (CampaignFlowTrial.Active) CampaignFlowTrial.Complete(_module, result.CompletionSeconds);
             _hud?.ShowResults(result);
         }
 
@@ -2465,6 +2480,16 @@ namespace Avoidance.UI
                     coordinator.ResetState();
                     StartCoroutine(LoadScene(ModuleSelectionState.ModuleSelectorSceneName));
                 });
+            if (CampaignFlowTrial.Active)
+            {
+                CreateHudButton(panelObject.transform, "RESTORE", new Vector2(.5f,.24f), Vector2.zero,
+                    new Vector2(280f,52f), () =>
+                    {
+                        panelObject.SetActive(false); coordinator.ResetState();
+                        FindAnyObjectByType<RestoreController>()?.RequestRestore(false);
+                    });
+                return;
+            }
             modeText = CreateHudButton(
                 panelObject.transform,
                 "MODE",
@@ -2505,6 +2530,7 @@ namespace Avoidance.UI
 
         private void CreateDevelopmentToolbar(RectTransform safeArea, TouchInputCoordinator coordinator)
         {
+            if (CampaignFlowTrial.Active) return;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
             var toolbarObject = CreateUiObject(
                 "Development Toolbar",
@@ -2581,7 +2607,8 @@ namespace Avoidance.UI
         {
             Time.timeScale = 1f;
             FindAnyObjectByType<MovementFeedback>()?.PlayRetry();
-            ModuleSelectionState.Select(_module.StableModuleId, ModuleSelectionState.DevelopmentOverride);
+            if (CampaignFlowTrial.Active) CampaignFlowTrial.Launch(_module.StableModuleId, CampaignFlowTrial.Mode);
+            else ModuleSelectionState.Select(_module.StableModuleId, ModuleSelectionState.DevelopmentOverride);
             StartCoroutine(LoadScene(ModuleSelectionState.ModuleRunnerSceneName));
         }
 

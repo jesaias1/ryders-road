@@ -1,37 +1,48 @@
-# Current authority — 0.9.8 Solar Foundry
+# Current authority — 0.9.9 Campaign Flow trial
 
-Updated 2026-09-08. The Autonomous Game Production Mission and the user's explicit
-request to continue without the phone supersede historical stop-all-work gates.
-Continue independent production. Movement/camera promotion still needs physical
-feedback; confidence in implementation is not recorded as physical approval.
+Updated 2026-09-08. Current user feedback supersedes old manual-camera assumptions:
+the user physically tested 0.9.8 on S23, accepts Foundry's easier normal route,
+reports the overhead sightline obstruction and stranded lower-scenery landings,
+and prefers the Flow Lab candidate over fully manual controls. This is not yet
+approval to replace Campaign movement globally. Continue authorized independent
+production; do not repeatedly ask permission for ordinary changes.
 
-Current playable slice: Solar Foundry, a complete fourth Campaign road using the
-accepted motor/input, original industrial architecture, ferry/crumble mechanics,
-three Restores, optional shard bypass and Patch completion/replay. Normal order:
-001 Sky City → 002 Mountain → 003 Ancient Abyss → 004 Solar Foundry. Spiral is
-separate. V4 records and existing world/movement/input content remain unchanged.
+0.9.9 addresses the crane through composition and non-route scenery landings
+through explicit counted-fall Restore. Route spacing, shortcuts and both motor
+assets remain unchanged. Foundry content v2, stable IDs and V4 preserved.
 
-0.9.7 also delivered isolated Flow Lab landing-view comparison and contact foley,
-and fixed startup regeneration of authored Ancient Abyss. Recoverable checkpoints:
-159565a inherited source, db7f01a verified 0.9.7. 0.9.8 checkpoint is the commit
-containing this handoff. No source/content changes are intentionally left pending.
+Home → CAMPAIGN FLOW TRIAL provides real roads 001–004 in three modes:
+A accepted motor/saved controls; B unchanged Flow candidate/manual pitch;
+C the same Flow candidate with 16-degree default and bounded landing framing.
+Right vertical drag remains available. No new permanent run buttons. Trial
+attempts/completions/rewards never write to saves or persist the control override.
+Times are session-only and separate road/content/mode. Retry retains the mode;
+home/normal selection clears it. Campaign itself still uses accepted behavior.
 
-Verification: 239/239 EditMode, 54/54 PlayMode, source validation and ARM64 build
-pass. APK: Builds/Android/RYDERS-ROAD-0.9.8-solar-foundry-dev.apk (0 errors / one
-existing legacy-icon warning). See PRODUCTION_098.md for hash, evidence and checks.
-Five actual-FOV views and the fourth-road menu were visually reviewed. No phone
-was connected; no installation, hands-on movement, sound audition or physical
-FPS/thermal checks occurred. Neither this world nor the camera/mix is Gold,
-physically approved or production-frozen. Rank thresholds remain provisional.
+Verification: 240/240 EditMode, 57/57 PlayMode and source validation pass. Actual
+renders reviewed. Both normal/candidate Flow standard Foundry jumps, scenery
+falls, side-contact rejection, view cone, ferry/carry, recovery, all 12 trial
+road/mode loads, real touch and save/preference isolation are covered. No new
+physical test was performed by the agent; adb checked once, no device attached.
+The current fixes, landing view and replacement decision need physical feedback.
+Full evidence, APK metadata and short S23 checklist: PRODUCTION_099.md.
 
-Next coherent work: fill remaining Restore/Boost/completion/PB/ambience audio and
-review the mix, then complete world 005. Worlds 005–008 remain unbuilt. Existing
-002/003 candidates and new 004 require physical route/rank/visual feedback; 001
-Sky City direction has prior physical acceptance. Do not promote the Flow Lab
-motor/camera candidate without the specific decision. Do not create more lab
-blockouts to avoid production work.
+Verified ARM64 APK: Builds/Android/RYDERS-ROAD-0.9.9-campaign-flow-trial-dev.apk.
+Build succeeded with 0 errors and one existing legacy-icon warning; package/hash
+record: Logs/production099-package.json. It has not been installed on a phone.
 
-Authoritative details: [PRODUCTION_098.md](PRODUCTION_098.md),
-[ADR 0020](Decisions/0020-solar-foundry-fourth-road.md).
-Previous handoffs: [097](History/AI_HANDOFF-097.md), [096](History/AI_HANDOFF-096.md).
-Existing ignored build/log/cache directories and unrelated root captures remain.
+Recoverable accepted baseline: 38d222a (0.9.8), earlier db7f01a (0.9.7). The
+commit containing this handoff is the 0.9.9 checkpoint. No intentional uncommitted
+source/content changes remain at delivery. Ignored logs/builds/caches and older
+unrelated untracked captures are retained.
+
+Next: get B versus C comparison on real roads and use that to choose the game's
+control foundation. Do not assume fully manual must win and do not endlessly
+tune numbers without this test. Independent work remains: event audio/listening,
+then a complete fifth world with normal flowing routes and optional skill lines,
+using ART_DIRECTION.md's shared roughness/palette/detail/motif rules. Do not raise
+normal difficulty solely to make later worlds harder. Worlds 005–008 are unbuilt.
+No PC/multiplayer/economy diversion. Nothing is labeled Gold or production-frozen.
+
+Authority: PRODUCTION_099.md, ADR 0021, current ART_DIRECTION.md.
+Historical handoffs: History/AI_HANDOFF-098.md, -097.md, -096.md.

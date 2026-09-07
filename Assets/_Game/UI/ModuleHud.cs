@@ -81,6 +81,8 @@ namespace Avoidance.UI
             _flowText = CreateText("Flow Discovery", _status.transform.parent, "", 22, TextAnchor.UpperCenter, new Vector2(0.36f, 0.71f), new Vector2(0.64f, 0.78f), Vector2.zero, Vector2.zero);
             _flowText.raycastTarget = false; _flowText.enabled = false;
             CreateRankStrip();
+            if (CampaignFlowTrial.Active)
+                foreach (var badge in _rankBadges) if (badge != null) badge.transform.parent.gameObject.SetActive(false);
             CreateResultsPanel();
         }
 
@@ -106,6 +108,12 @@ namespace Avoidance.UI
                 $"<size=34><color=#F0FBFF>{RunTimerFormatting.Format(elapsed)}</color></size>\n" +
                 $"<size=18>{targetLine}   <color=#BCDDE8>{best}</color></size>";
             _status.color = _visuals.RankColor(target);
+            if (CampaignFlowTrial.Active)
+            {
+                _status.text = $"<size=27>{RunTimerFormatting.Format(elapsed)}  ·  {CampaignFlowTrial.Label}</size>\n"
+                    + $"<size=18>{_player.Motor.HorizontalSpeed:0.0} m/s  ·  PEAK {_player.Motor.PeakHorizontalSpeed:0.0}  ·  JUMPS {_player.Motor.JumpCount}  ·  SESSION BEST {CampaignFlowTrial.Best(_module):0.00}s</size>";
+                _status.color = Color.white;
+            }
             RefreshRankStrip(target);
 
             if (_splitText != null && _splitText.enabled)
@@ -157,6 +165,10 @@ namespace Avoidance.UI
             var challenge = FindAnyObjectByType<FlowChallenge>();
             var flow = challenge != null && challenge.Total > 0 ? $"\n<size=18><color=#71DBEF>FLOW SHARDS  {challenge.Count} / {challenge.Total}  /  {100 * challenge.Count / challenge.Total}%</color></size>" : "";
             _resultsText.text = FormatResults(result) + flow;
+            if (CampaignFlowTrial.Active)
+                _resultsText.text = $"<size=24>{CampaignFlowTrial.Label}</size>\n<size=36>TRIAL COMPLETE</size>\n"
+                    + $"{RunTimerFormatting.Format(result.CompletionSeconds)}\nSESSION BEST {CampaignFlowTrial.Best(_module):0.00}s"
+                    + "\n<size=20>CAMPAIGN RECORDS UNCHANGED\nCompare another mode from the home trial menu</size>" + flow;
             _resultsText.color = _visuals.RankColor(result.Rank);
             if (_resultsAccent != null)
             {

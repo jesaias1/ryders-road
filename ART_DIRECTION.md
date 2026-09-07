@@ -1,3 +1,40 @@
+## 0.9.9 physical readability and shared visual direction
+
+User-reported S23 feedback rejects the Foundry cross-course overhead beam and
+stranded decorative ledges. The crane now sits beside the course. Solid non-route
+scenery recovers on landing; legitimate route supports and shortcuts remain.
+Camera tricks must not hide composition failures. Easier ordinary completion is
+acceptable; visible flow and optional mastery matter more than escalating gaps.
+
+Reviewed target_gameplay.png, Sky City 093 opening, Mountain 095 opening and
+Foundry 099 gameplay views. The shared ivory landing surfaces already provide a
+recognizable route layer, but their dense bevel/vent detail and bright polished
+response contrast strongly with flat Foundry masses and coarse faceted geology.
+Mountain's fine stone texture over large facets introduces a third detail scale.
+A common color filter would leave those differences intact.
+
+Carry the following direction into the next complete world and deliberate local
+asset revisions, without silently rewriting physically accepted Sky City:
+
+- Keep clean ivory tops/dark teal undersides as route anchors; cyan remains an
+  active/mechanical signal. Use brass sparingly at joints and the Patch destination.
+  Each world gets one dominant local accent, rather than unrelated asset palettes.
+- Prefer matte ceramic/stone and satin structural metal. Reserve brighter/glossier
+  response for glass and small functional accents. Match neighboring asset
+  roughness and highlight size before adjusting lighting or grading.
+- Use a small number of broad panels, readable edge bevels and structural bands.
+  Keep micro-detail subordinate to landing edges at phone resolution. Avoid
+  mixing fine noisy texture grain with untextured hero masses at the same scale.
+- Repeat restrained paired brackets, inset panels and broken/complete rings as
+  construction motifs across distinct world silhouettes. Route blocks should look
+  attached to these places, not borrowed from a different game. Do not recreate
+  branding; retain approved logo/icon sources.
+- Preserve broad sky openings, soft depth separation and clear jump view cones.
+  No full-screen tint, heavy bloom, universal floor or effects blanket in this pass.
+
+Only the Foundry composition/recovery changes ship in 0.9.9. This investigation
+sets a shared direction; it does not claim that cross-world cohesion is finished.
+
 ## 0.9.8 Solar Foundry
 
 0.9.8 Solar Foundry adds original vermilion vessels, dark steel braces, ivory radiator fins and blue solar collectors. Intake, crane, reactor and crown form distinct route landmarks. Shared gameplay surfaces retain their established colors. Near architecture has matching collision; far scenery stays outside traversal. Five actual-FOV views were reviewed, but physical art approval and Gold status remain open. See Docs/PRODUCTION_098.md.

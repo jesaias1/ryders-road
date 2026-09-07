@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+Schema remains V4. Solar Foundry content version 2 records revised scenery recovery/composition without changing IDs or rewriting historical PBs. Campaign Flow trials have no save-service writes: attempts, completions and rewards are transient; their session bests separate road/content-version/mode. Normal Campaign persistence retains its existing behavior. See ADR 0021.
+
 ## 0.9.8 Solar Foundry
 
 V4 is unchanged. New module.004.solar-foundry records use existing fields and content version 1. Existing IDs, PB metadata and record meanings remain intact; module.004.the-spiral is distinct and stays outside Campaign. Earned Bronze on 003 unlocks 004, without rewriting historical saves. No migration is needed for this additive content. Legacy-save and fresh-save regression coverage is in SolarFoundryTests.

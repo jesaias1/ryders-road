@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+A solid non-route ledge must not strand the player. Foundry uses AuthoredSurface.RestoreOnLanding on scenery only; the contact relay requests normal fall recovery for walkable normals, ignoring wall/underside contacts. Default is false; do not tag legitimate architecture or shortcuts indiscriminately. Verify jump sightlines at takeoff and airborne eye heights in addition to capsule clearance. Foundry route geometry/difficulty is unchanged; content version is 2.
+
 ## 0.9.8 Solar Foundry
 
 Solar Foundry is authored explicitly through SolarFoundryAuthoring.Build, never startup. Its serialized module, biome, environment, mesh and material assets are the runtime authority. Rerunning the explicit builder replaces its own authored content, so edit the authoring source alongside deliberate asset revisions. Ordinary jumps, a ferry and crumble pads form the standard route; three narrow brackets are optional. Rank thresholds are provisional. See ADR 0020.

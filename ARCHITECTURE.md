@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+ADR 0021 records the S23 findings. Solar Foundry v2 uses explicit solid-scenery landing recovery and a crane beside the route. CampaignFlowTrial is session-only and owns comparison selection/bests; UI composes existing motors/input/camera and skips all trial save writes. Normal selection clears the trial, Retry retains it. Accepted motor/input assets remain unchanged. Details: Docs/PRODUCTION_099.md.
+
 ## 0.9.8 Solar Foundry
 
 0.9.8 appends Solar Foundry to Campaign after 003; Spiral remains separate. Its explicit Editor authoring tool produces serialized route, world and environment assets and never runs during startup. Runtime motor, input and persistence contracts remain unchanged. See ADR 0020 and Docs/PRODUCTION_098.md.

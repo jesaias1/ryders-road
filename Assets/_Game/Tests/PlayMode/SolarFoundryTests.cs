@@ -37,8 +37,10 @@ namespace Avoidance.Tests.PlayMode
             public void WriteAtomic(string value,bool preserveBackup=false){json=value;}
             public void DeleteAll(){json=null;}
         }
-        private sealed class RunInput : Avoidance.Input.IPlayerInputSource
+        private sealed class RunInput : Avoidance.Input.IPlayerInputSource, Avoidance.Input.IFlowSteeringInputSource
         {
+            public bool FlowSteeringEnabled {get;set;}
+            public Avoidance.Input.AutoCameraProfileKind AutoCameraProfile=>Avoidance.Input.AutoCameraProfileKind.Balanced;
             public Vector2 Move {get;set;}=new Vector2(0,.9f);
             public Vector2 LookDelta=>Vector2.zero;public bool JumpPressed {get;set;}
             public void ResetState(){JumpPressed=false;}
@@ -52,10 +54,25 @@ namespace Avoidance.Tests.PlayMode
         }
         [UnityTest] public IEnumerator BronzeSupportsJumpsAndFerryHaveTruthfulClearance()
         {
-            yield return Open();
+            yield return VerifyBronzeRoute(false);
+        }
+        [UnityTest] public IEnumerator CandidateFlowSupportsJumpsAndFerryHaveTruthfulClearance()
+        {
+            yield return VerifyBronzeRoute(true);
+        }
+        private static IEnumerator VerifyBronzeRoute(bool candidate)
+        {
+            if(candidate)
+            {
+                CampaignFlowTrial.Launch(Id,CampaignTrialMode.FlowLanding);
+                yield return new UnitySceneLevelLoader().LoadAsync("ModuleRunner");
+                yield return new WaitForSecondsRealtime(.3f);
+                Object.FindAnyObjectByType<PlayerRuntimeCoordinator>().enabled=false;
+            }
+            else yield return Open();
             var motor=Object.FindAnyObjectByType<ParkourMotor>();
             var module=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule;
-            Assert.That(module.StableModuleId,Is.EqualTo(Id));Assert.That(motor.Profile.MovementMastery,Is.False);
+            Assert.That(module.StableModuleId,Is.EqualTo(Id));Assert.That(motor.Profile.MovementMastery,Is.EqualTo(candidate));
             var moving=Object.FindAnyObjectByType<MovingBlock>();moving.enabled=false;
             foreach(var b in module.Blocks)
             foreach(float x in new[]{-.35f,0,.35f})foreach(float z in new[]{-.35f,0,.35f})
@@ -104,7 +121,7 @@ namespace Avoidance.Tests.PlayMode
         {
             var direction=to-from;direction.y=0;direction.Normalize();
             motor.ResetMotion(from+Vector3.up*(fromSize.y*.5f+.04f)-direction*.5f,Quaternion.LookRotation(direction),0);Physics.SyncTransforms();
-            var input=new RunInput();for(int i=0;i<8;i++)motor.Simulate(input,1f/60);
+            var input=new RunInput{FlowSteeringEnabled=motor.Profile.MovementMastery};for(int i=0;i<8;i++)motor.Simulate(input,1f/60);
             input.JumpPressed=true;motor.Simulate(input,1f/60);input.JumpPressed=false;bool air=false,landed=false;
             for(int i=0;i<110;i++){motor.Simulate(input,1f/60);air|=!motor.IsGrounded;if(air&&motor.IsGrounded){landed=true;break;}}
             Assert.That(landed,Is.True,name+" / "+motor.transform.position);

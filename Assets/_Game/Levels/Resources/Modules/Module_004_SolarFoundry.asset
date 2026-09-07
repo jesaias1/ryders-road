@@ -17,7 +17,7 @@ MonoBehaviour:
   _internalName: module_004_solar_foundry
   _projectId: project.ryders-block
   _worldId: world.solar-foundry
-  _contentVersion: 1
+  _contentVersion: 2
   _sceneName: ModuleRunner
   _difficulty: 2
   _startPoint:

@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+Current physical priority: verify 0.9.9 fixes and select the Flow foundation on real roads through Campaign Flow Trial. The user prefers Flow over fully manual and accepts easier ordinary Foundry completion; no forced difficulty escalation. Old motor stays recoverable pending replacement approval. Continue audio/mix and a complete fifth world under the shared art rules after this coherent test milestone; see AI_HANDOFF.md and PRODUCTION_099.md.
+
 ## 0.9.8 Solar Foundry
 
 Current continuation is 0.9.8 Solar Foundry, a complete fourth-road development candidate; see PRODUCTION_098.md and AI_HANDOFF.md for the verified handoff. 0.9.7 camera evaluation remains isolated. Physical approval is not inferred from the instruction to continue without the phone. Next coherent work is remaining event audio/mix and world 005; do not count unbuilt worlds as delivered.

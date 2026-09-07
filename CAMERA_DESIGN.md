@@ -1,3 +1,7 @@
+## 0.9.9 physical feedback and Campaign Flow trial
+
+The user now physically prefers the promising Flow Lab candidate to fully manual controls; the old scheme is not assumed to be final. Campaign Flow Trial compares accepted controls, Flow/manual pitch and Flow/landing framing on all four roads. Landing framing remains bounded and manual vertical drag stays available. Its 16-degree default survives manual Restore; no platform targeting or motor assistance is added. Promotion needs the next S23 decision. See ADR 0021.
+
 ## 0.9.7 autonomous production continuation
 
 The user's 2026-09-08 mission authorizes independent production beyond historical
