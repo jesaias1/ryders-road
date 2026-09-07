@@ -1,14 +1,16 @@
 # Current authority — 0.9.9 Campaign Flow trial
 
-GitHub sync setup checkpoint: this handoff update is in the latest local commit.
-The repository is still local-only at this point. `.gitignore` now covers local
-Codex caches, temporary QA result XML/log files and loose S23 capture PNGs;
-`.gitattributes` marks Unity binary asset formats for Git LFS going forward.
-First private GitHub push is blocked by one existing 108 MB historical blob:
-`Assets/_Game/Art/MeshySource/Meshy_AI_mech_gauntlet_right_arm_0818123200_image-to-3d-texture_fbx.zip`.
-GitHub will reject that blob unless the history is migrated to LFS or otherwise
-rewritten, which needs explicit direction because the standing instruction says
-not to rewrite history.
+Private GitHub sync is active at `origin`
+(`https://github.com/jesaias1/ryders-road.git`). The remote repository is
+private and tracks `main`. The initial push required an approved Git LFS history
+migration because the inherited history contained a 108 MB source archive that
+GitHub rejects as a normal blob. The pre-migration history is preserved locally
+as `GitBackups/ryders-road-pre-lfs-migration.bundle`; do not commit or upload
+that backup. `.gitignore` covers local Codex caches, temporary QA result
+XML/log files, loose S23 capture PNGs and `GitBackups/`. `.gitattributes` tracks
+large source asset formats (`.zip`, `.fbx`, `.glb`, `.mp4`) through Git LFS.
+The ChatGPT/Codex GitHub connector may still require GitHub App access to this
+new private repository before connector-based review can read it.
 
 Updated 2026-09-08. Current user feedback supersedes old manual-camera assumptions:
 the user physically tested 0.9.8 on S23, accepts Foundry's easier normal route,
