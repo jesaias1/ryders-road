@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Avoidance.Gameplay.Camera;
 
 namespace Avoidance.Gameplay.Levels
 {
@@ -9,6 +10,8 @@ namespace Avoidance.Gameplay.Levels
         public float minimumAirGain;
         public float minimumSurfSeconds;
         public int requiredChain;
+        public string initialRoomId;
+        public LandingViewSettings landingView;
         public FlowLabRoom[] rooms;
     }
     [Serializable] public sealed class FlowLabRoom

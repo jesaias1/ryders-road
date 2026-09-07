@@ -13,4 +13,22 @@ MonoBehaviour:
   m_Name: GameplayAudioProfile
   m_EditorClassIdentifier:
   _hardLandingSpeed: 14
-  _entries: []
+  _entries:
+  - Cue: 0
+    Clip: {fileID: 8300000, guid: 73eb56c7be377e749ad417eca0e62d14, type: 3}
+    Volume: 0.12
+  - Cue: 1
+    Clip: {fileID: 8300000, guid: 116f6ad894388af44aa931df85bc0370, type: 3}
+    Volume: 0.35
+  - Cue: 2
+    Clip: {fileID: 8300000, guid: 40eec4bc1f1dd6e46953a49a3c1db46a, type: 3}
+    Volume: 0.45
+  - Cue: 9
+    Clip: {fileID: 8300000, guid: b6a89a28ed59703469adacdfa214bd28, type: 3}
+    Volume: 0.22
+  - Cue: 16
+    Clip: {fileID: 8300000, guid: 901ab2448a3318843aad684d8b8ee2d4, type: 3}
+    Volume: 0.36
+  - Cue: 19
+    Clip: {fileID: 8300000, guid: ef0d8dfb3b8b16f43a722196fb120662, type: 3}
+    Volume: 0.25

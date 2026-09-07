@@ -1,3 +1,10 @@
+## 0.9.7 — landing-view evaluation and authored-content preservation
+
+- Isolated optional descent framing with immediate manual takeover; fifth Flow
+  Lab precision room and separate per-view/control/motor session bests.
+- Six licensed contact sounds, safe loop switching/missing-clip behavior.
+- Startup preserves Ancient Abyss authored route, biome and prefabs.
+- See Docs/PRODUCTION_097.md; S23 camera and sound approval remain open.
 ## 0.9.5 — startup and course clearance (candidate)
 
 - Approved poster covers native startup and the first managed frame; retain video/recovery.

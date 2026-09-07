@@ -88,8 +88,14 @@ namespace Avoidance.EditorTools
             Phase074WorldSystemRecovery.EnsureAncientAbyssSkybox();
             var worldMats = Phase074WorldSystemRecovery.EnsureWorldMaterials();
             var landmarks = Phase074WorldSystemRecovery.EnsureLandmarkPrefabs(worldMats);
-            var ancientAbyss = Phase074WorldSystemRecovery.ConfigureAncientAbyssBiome(landmarks);
-            Phase074WorldSystemRecovery.ConfigureModule003Content(ancientAbyss, landmarks);
+            var authoredAbyss = AssetDatabase.LoadAssetAtPath<ModuleDefinition>(ModuleRoot + "/Module_003_FlowError.asset");
+            var ancientAbyss = authoredAbyss != null && authoredAbyss.ContentVersion >= 7
+                ? AssetDatabase.LoadAssetAtPath<EnvironmentBiomeProfile>(BiomeRoot + "/Biome_AncientAbyss.asset") : null;
+            if (ancientAbyss == null)
+            {
+                ancientAbyss = Phase074WorldSystemRecovery.ConfigureAncientAbyssBiome(landmarks);
+                Phase074WorldSystemRecovery.ConfigureModule003Content(ancientAbyss, landmarks);
+            }
             EnsureBiome(
                 "Biome_EnergyVoid",
                 "biome.energy-void",

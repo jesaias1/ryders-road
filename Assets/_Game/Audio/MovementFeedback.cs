@@ -11,6 +11,7 @@ namespace Avoidance.Gameplay.Audio
         private AudioSource _source;
         private AudioSource _loopSource;
         private bool _loopActive;
+        private GameplayAudioCue _loopCue;
 
         // Presentation subscribers (including a future haptic adapter) observe intent;
         // feedback never changes movement or requires an audio asset to function.
@@ -25,7 +26,7 @@ namespace Avoidance.Gameplay.Audio
                 _profile = Resources.Load<GameplayAudioProfile>("GameplayAudioProfile");
         }
 
-        public void Configure(GameplayAudioProfile profile) => _profile = profile;
+        public void Configure(GameplayAudioProfile profile) { StopLoops(); _profile = profile; }
         public void PlayJump() => PlayCue(GameplayAudioCue.Jump);
         public void PlayLanding(float speed) => PlayCue(speed > (_profile != null ? _profile.HardLandingSpeed : 14f)
             ? GameplayAudioCue.HardLanding : GameplayAudioCue.Landing);
@@ -47,17 +48,29 @@ namespace Avoidance.Gameplay.Audio
         public void SetLoop(GameplayAudioCue cue, float gain, bool spatial = false)
         {
             var active = gain > 0.001f;
-            if (active && !_loopActive) CueRequested?.Invoke(cue);
+            if (active && (!_loopActive || _loopCue != cue)) CueRequested?.Invoke(cue);
             _loopActive = active;
-            if (_profile == null || !_profile.TryGet(cue, out var clip, out var volume)) return;
+            _loopCue = cue;
+            if (_profile == null || !_profile.TryGet(cue, out var clip, out var volume))
+            {
+                StopLoops();
+                _loopActive = active; // A missing asset must not republish intent every frame.
+                return;
+            }
             if (_loopSource == null)
             {
                 _loopSource = gameObject.AddComponent<AudioSource>();
                 _loopSource.playOnAwake = false; _loopSource.loop = true; _loopSource.volume = 0;
                 _loopSource.spatialBlend = spatial ? 1f : 0f;
                 _loopSource.minDistance = 2f; _loopSource.maxDistance = 18f;
-                _loopSource.clip = clip;
             }
+            if (_loopSource.clip != clip)
+            {
+                _loopSource.Stop();
+                _loopSource.clip = clip;
+                _loopSource.volume = 0f;
+            }
+            _loopSource.spatialBlend = spatial ? 1f : 0f;
             _loopSource.volume = Mathf.MoveTowards(_loopSource.volume, volume * Mathf.Clamp01(gain), Time.unscaledDeltaTime * 2f);
             if (active && !_loopSource.isPlaying) _loopSource.Play();
             if (!active && _loopSource.volume <= 0.001f) _loopSource.Stop();

@@ -43,3 +43,25 @@ Source license URL: https://creativecommons.org/publicdomain/zero/1.0/
 | Castle_Wall | Kenney Castle Kit | https://kenney.nl/assets/castle-kit | CC0 1.0 | wall.fbx | Assets/_Game/Art/ThirdParty/Kenney/CastleKit/Source/RR_Castle_Wall.fbx; Assets/_Game/Art/Environment/WorldAssets/AncientAbyss/PF_RR_World_Castle_Wall.prefab | Material replaced with MAT_RR_World_Ancient_Ivory. |
 | Castle_Wall_Corner | Kenney Castle Kit | https://kenney.nl/assets/castle-kit | CC0 1.0 | wall-corner.fbx | Assets/_Game/Art/ThirdParty/Kenney/CastleKit/Source/RR_Castle_Wall_Corner.fbx; Assets/_Game/Art/Environment/WorldAssets/AncientAbyss/PF_RR_World_Castle_Wall_Corner.prefab | Material replaced with MAT_RR_World_Ancient_Ivory. |
 | Castle_Gate | Kenney Castle Kit | https://kenney.nl/assets/castle-kit | CC0 1.0 | gate.fbx | Assets/_Game/Art/ThirdParty/Kenney/CastleKit/Source/RR_Castle_Gate.fbx; Assets/_Game/Art/Environment/WorldAssets/AncientAbyss/PF_RR_World_Castle_Gate.prefab | Material replaced with MAT_RR_World_Deep_Slate. |
+
+## 0.9.7 contact-audio candidate (2026-09-08)
+
+Creator: Kenney. Impact Sounds 1.0: https://kenney.nl/assets/impact-sounds .
+Interface Sounds 1.0: https://kenney.nl/assets/interface-sounds . Both CC0 1.0;
+verified from the official download and included License.txt. Original OGG bytes
+are retained in Assets/_Game/Audio/Clips/Contact097; licenses are alongside them.
+No complete pack is imported. No generated beeps or music are introduced.
+
+| Original filename | Runtime cue | Gain |
+| --- | --- | --- |
+| footstep_concrete_001.ogg | Jump | .12 |
+| footstep_concrete_000.ogg | Landing | .35 |
+| impactSoft_heavy_000.ogg | HardLanding | .45 |
+| impactMining_002.ogg | CrumbleWarning | .22 |
+| impactMining_000.ogg | CrumbleCollapse | .36 |
+| click_003.ogg | Ui | .25 |
+
+This is a licensed contact-feedback candidate, not an approved final mix.
+Duration, decode, amplitude and Unity hook checks do not constitute listening
+approval. S23 speaker/headphone audition remains required. Restore, completion,
+boost and ambience still need a coherent authored sound set.

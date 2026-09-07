@@ -30,6 +30,16 @@ namespace Avoidance.Gameplay.Camera
         private bool _touchInputMode;
         private float _baseFieldOfView;
         private float _maximumFieldOfView;
+        private LandingView _landingView;
+        private bool _flowTouchInput;
+        private float _evaluationPitch;
+
+        public void ConfigureLandingView(LandingViewSettings settings)
+        {
+            _landingView = settings == null ? null : new LandingView(settings);
+            _evaluationPitch = 0f;
+            ApplyPitchRotation();
+        }
 
         public Vector2 CurrentLookDelta { get; private set; }
         public bool EffectsEnabled => _effectsEnabled;
@@ -44,7 +54,7 @@ namespace Avoidance.Gameplay.Camera
         public SmartParkourCameraOutput SmartCameraState { get; private set; }
         public AutoCameraProfileKind CurrentAutoCameraProfile { get; private set; } =
             AutoCameraProfileKind.Balanced;
-        public float CameraPitchTarget => _pitch + _autoPitchOffset + _landingAssistPitch;
+        public float CameraPitchTarget => _pitch + _autoPitchOffset + _landingAssistPitch + _evaluationPitch;
 
         public void Initialize(
             Transform playerYaw,
@@ -92,6 +102,21 @@ namespace Avoidance.Gameplay.Camera
             if (_playerYaw == null || _profile == null)
             {
                 return;
+            }
+
+            _flowTouchInput = inputMode == PlayerInputMode.Touch
+                && input is IFlowSteeringInputSource flowInput && flowInput.FlowSteeringEnabled;
+            if (!_flowTouchInput)
+            {
+                _landingView?.Reset();
+                _evaluationPitch = 0f;
+            }
+            else if (_landingView != null && Mathf.Abs(input.LookDelta.y) > 0f)
+            {
+                // Start dragging from the rendered angle; never snap back on takeover.
+                _pitch = Mathf.Clamp(_pitch + _evaluationPitch, _profile.MinimumPitch, _profile.MaximumPitch);
+                _evaluationPitch = 0f;
+                _landingView.YieldToManual();
             }
 
             if (inputMode == PlayerInputMode.Touch
@@ -243,6 +268,8 @@ namespace Avoidance.Gameplay.Camera
                 _landingAssistPitch,
                 landingAssistTarget,
                 1f - Mathf.Exp(-_profile.LandingAwarenessBlendSpeed * deltaTime));
+            _evaluationPitch = _landingView?.Tick(_flowTouchInput && _effectsEnabled,
+                grounded, surfing, verticalSpeed, _pitch, deltaTime) ?? 0f;
             ApplyPitchRotation();
         }
 
@@ -266,6 +293,8 @@ namespace Avoidance.Gameplay.Camera
                 _camera.fieldOfView = _baseFieldOfView;
                 transform.localPosition = _baseLocalPosition;
                 _landingAssistPitch = 0f;
+                _evaluationPitch = 0f;
+                _landingView?.Reset();
                 _smartYawOffset = 0f;
                 ApplyPitchRotation();
             }
@@ -285,6 +314,9 @@ namespace Avoidance.Gameplay.Camera
                     _profile.MinimumPitch,
                     _profile.MaximumPitch);
             _touchInputMode = false;
+            _flowTouchInput = false;
+            _evaluationPitch = 0f;
+            _landingView?.Reset();
             _landingAssistPitch = 0f;
             _autoPitchOffset = 0f;
             _smartYawOffset = 0f;
@@ -449,7 +481,7 @@ namespace Avoidance.Gameplay.Camera
         private void ApplyPitchRotation()
         {
             var presentationPitch = Mathf.Clamp(
-                _pitch + _autoPitchOffset + _landingAssistPitch,
+                _pitch + _autoPitchOffset + _landingAssistPitch + _evaluationPitch,
                 _profile.MinimumPitch,
                 _profile.MaximumPitch);
             transform.localRotation = Quaternion.Euler(presentationPitch, _smartYawOffset, 0f);

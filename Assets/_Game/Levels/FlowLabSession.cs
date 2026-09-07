@@ -23,9 +23,9 @@ namespace Avoidance.Gameplay.Levels
         public bool Complete { get; private set; }
         public bool Started { get; private set; }
         public float BestSeconds => best.TryGetValue(resultKey, out var value) ? value : 0;
-        public void Reset(FlowLabDefinition config, FlowLabRoom selected, ParkourMotor motor)
+        public void Reset(FlowLabDefinition config, FlowLabRoom selected, ParkourMotor motor, string comparisonId = "")
         {
-            definition=config;room=selected;resultKey=room.id+":"+motor.Profile.ProfileId;
+            definition=config;room=selected;resultKey=room.id+":"+motor.Profile.ProfileId+":"+comparisonId;
             Seconds=SurfSeconds=AirGain=takeoffSpeed=0;Chain=BestChain=Jumps=0;
             Complete=Started=false;lastJumpCount=motor.JumpCount;wasGrounded=motor.IsGrounded;
         }
@@ -46,7 +46,8 @@ namespace Avoidance.Gameplay.Levels
                 AirGain=Mathf.Max(AirGain,motor.HorizontalSpeed-motor.Profile.AirWishSpeed);
             if(motor.IsGrounded && wasGrounded && motor.HorizontalSpeed < motor.Profile.BaseRunSpeed*.9f)Chain=0;
             wasGrounded=motor.IsGrounded;
-            bool evidence=room.exercise=="air" ? Jumps>0 && AirGain>=definition.minimumAirGain
+            bool evidence=room.exercise=="landing" ? Jumps>=2
+                : room.exercise=="air" ? Jumps>0 && AirGain>=definition.minimumAirGain
                 : room.exercise=="bhop" ? BestChain>=definition.requiredChain
                 : room.exercise=="surf" ? SurfSeconds>=definition.minimumSurfSeconds && !motor.IsSurfing
                 : Jumps>=2 && SurfSeconds>=definition.minimumSurfSeconds && !motor.IsSurfing;

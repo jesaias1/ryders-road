@@ -1,3 +1,12 @@
+## 0.9.7 autonomous production continuation
+
+The user's 2026-09-08 mission authorizes independent production beyond historical
+STOP gates; candidate movement promotion still requires physical approval.
+ADR 0019 and Docs/PRODUCTION_097.md record the isolated Flow Lab landing-view
+comparison, ordinary precision room, session-best isolation, contact foley and
+Ancient Abyss startup preservation. Campaign motor/input/profile/save/content
+bytes are preserved. Current verification and artifact: Docs/AI_HANDOFF.md.
+No physical approval, final audio mix or production freeze is claimed.
 ## 0.9.5 physical follow-up
 
 Current fixes need S23 cold-start, centered UI, 002/003 crossing and visual QA.

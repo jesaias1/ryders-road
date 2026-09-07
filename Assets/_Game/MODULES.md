@@ -1,3 +1,12 @@
+## 0.9.7 autonomous production continuation
+
+The user's 2026-09-08 mission authorizes independent production beyond historical
+STOP gates; candidate movement promotion still requires physical approval.
+ADR 0019 and Docs/PRODUCTION_097.md record the isolated Flow Lab landing-view
+comparison, ordinary precision room, session-best isolation, contact foley and
+Ancient Abyss startup preservation. Campaign motor/input/profile/save/content
+bytes are preserved. Current verification and artifact: Docs/AI_HANDOFF.md.
+No physical approval, final audio mix or production freeze is claimed.
 ## 0.9.6 Movement Mastery ownership
 
 Player owns the opt-in strategy and contact math; Levels owns FlowLabSession and
@@ -62,4 +71,3 @@ to add placeholders. Do not add future systems merely to make a folder nonempty.
 Production 0.9.0 adds a focused Audio profile and feedback event boundary; see
 `Docs/ASTRA_PRODUCTION.md`. Campaign successor lookup is explicit. Module 003
 keeps gameplay content version 5; final art and physical acceptance are open.
-

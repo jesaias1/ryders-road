@@ -30,7 +30,7 @@ namespace Avoidance.EditorTools
             EnsureDirectories();
             EnsureAncientAbyssSkybox();
             var materials = EnsureWorldMaterials();
-            var landmarks = EnsureLandmarkPrefabs(materials);
+            var landmarks = EnsureLandmarkPrefabs(materials, rebuild: true);
             var ancientAbyssBiome = ConfigureAncientAbyssBiome(landmarks);
             ConfigureModule003Content(ancientAbyssBiome, landmarks);
             AssetDatabase.SaveAssets();
@@ -161,27 +161,34 @@ namespace Avoidance.EditorTools
             return material;
         }
 
-        public static Dictionary<string, GameObject> EnsureLandmarkPrefabs(Dictionary<string, Material> materials)
+        public static Dictionary<string, GameObject> EnsureLandmarkPrefabs(Dictionary<string, Material> materials, bool rebuild = false)
         {
             var prefabs = new Dictionary<string, GameObject>(StringComparer.Ordinal);
 
-            prefabs["AncientTempleComplex"] = BuildAncientTempleComplex(materials);
-            prefabs["M03ArrivalSanctuary"] = BuildM03ArrivalSanctuary(materials);
-            prefabs["M03BrokenCrossing"] = BuildM03BrokenCrossing(materials);
-            prefabs["M03CollapsedTemple"] = BuildM03CollapsedTemple(materials);
-            prefabs["M03EnergySpine"] = BuildM03EnergySpine(materials);
-            prefabs["M03PatchSanctum"] = BuildM03PatchSanctum(materials);
-            prefabs["BrokenProcession"] = BuildBrokenProcession(materials);
-            prefabs["SunkenRuinCity"] = BuildSunkenRuinCity(materials);
-            prefabs["ReclaimedSanctuary"] = BuildReclaimedSanctuary(materials);
-            prefabs["ColossalAbyssTower"] = BuildColossalAbyssTower(materials);
-            prefabs["CelestialBrokenArch"] = BuildCelestialBrokenArch(materials);
-            prefabs["FloatingRuinIsland"] = BuildFloatingRuinIsland(materials);
-            prefabs["DistantSunkenMonolith"] = BuildDistantSunkenMonolith(materials);
-            prefabs["AncientCentralSpire"] = BuildAncientCentralSpire(materials);
-            prefabs["AqueductButtress"] = BuildAqueductButtress(materials);
+            prefabs["AncientTempleComplex"] = ExistingOrBuild("PF_RR_Landmark_AncientTempleComplex", () => BuildAncientTempleComplex(materials));
+            prefabs["M03ArrivalSanctuary"] = ExistingOrBuild("PF_RR_M03_ArrivalSanctuary", () => BuildM03ArrivalSanctuary(materials));
+            prefabs["M03BrokenCrossing"] = ExistingOrBuild("PF_RR_M03_BrokenCrossing", () => BuildM03BrokenCrossing(materials));
+            prefabs["M03CollapsedTemple"] = ExistingOrBuild("PF_RR_M03_CollapsedTemple", () => BuildM03CollapsedTemple(materials));
+            prefabs["M03EnergySpine"] = ExistingOrBuild("PF_RR_M03_EnergySpine", () => BuildM03EnergySpine(materials));
+            prefabs["M03PatchSanctum"] = ExistingOrBuild("PF_RR_M03_PatchSanctum", () => BuildM03PatchSanctum(materials));
+            prefabs["BrokenProcession"] = ExistingOrBuild("PF_RR_Landmark_BrokenProcession", () => BuildBrokenProcession(materials));
+            prefabs["SunkenRuinCity"] = ExistingOrBuild("PF_RR_Landmark_SunkenRuinCity", () => BuildSunkenRuinCity(materials));
+            prefabs["ReclaimedSanctuary"] = ExistingOrBuild("PF_RR_Landmark_ReclaimedSanctuary", () => BuildReclaimedSanctuary(materials));
+            prefabs["ColossalAbyssTower"] = ExistingOrBuild("PF_RR_Landmark_ColossalAbyssTower", () => BuildColossalAbyssTower(materials));
+            prefabs["CelestialBrokenArch"] = ExistingOrBuild("PF_RR_Landmark_CelestialBrokenArch", () => BuildCelestialBrokenArch(materials));
+            prefabs["FloatingRuinIsland"] = ExistingOrBuild("PF_RR_Landmark_FloatingRuinIsland", () => BuildFloatingRuinIsland(materials));
+            prefabs["DistantSunkenMonolith"] = ExistingOrBuild("PF_RR_Landmark_DistantSunkenMonolith", () => BuildDistantSunkenMonolith(materials));
+            prefabs["AncientCentralSpire"] = ExistingOrBuild("PF_RR_Landmark_AncientCentralSpire", () => BuildAncientCentralSpire(materials));
+            prefabs["AqueductButtress"] = ExistingOrBuild("PF_RR_Landmark_AqueductButtress", () => BuildAqueductButtress(materials));
 
             return prefabs;
+
+            GameObject ExistingOrBuild(string fileName, Func<GameObject> build)
+            {
+                var existing = rebuild ? null : AssetDatabase.LoadAssetAtPath<GameObject>(
+                    LandmarkPrefabRoot + "/" + fileName + ".prefab");
+                return existing != null ? existing : build();
+            }
         }
 
         private static GameObject BuildAncientTempleComplex(Dictionary<string, Material> materials)

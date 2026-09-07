@@ -37,7 +37,7 @@ namespace Avoidance.EditorTools
         private const string AdaptiveIconBackgroundPath =
             "Assets/Branding/Android/RydersRoad_Icon_AdaptiveBackground.png";
         private const string GameVersion = "0.5.0";
-        private const string BuildVersion = "0.9.6-movement-mastery-slice";
+        private const string BuildVersion = FoundationProjectValidator.BuildVersion;
 
         [InitializeOnLoadMethod]
         private static void ScheduleSetup()

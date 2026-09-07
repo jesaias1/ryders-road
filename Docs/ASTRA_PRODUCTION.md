@@ -1,3 +1,9 @@
+# 2026-09-08 autonomous mission authority
+
+Current production and continuation are recorded in Docs/AI_HANDOFF.md and ADR 0019.
+The user explicitly authorizes independent work without an attached phone.
+Older STOP gates below are historical; movement promotion still needs physical acceptance.
+
 # Current authority — 0.9.5 startup and course clearance
 
 Updated 2026-09-07. User supplied S23 feedback and three screenshots. Level 003
@@ -152,3 +158,4 @@ The final visual correction retains the existing textured foundation models,
 reduces their horizontal extent and lowers them 9 m; the plain rock experiment
 was rejected and is absent from the build. The current route/world composition
 still falls short of the requested Gold-standard location design.
+

@@ -28,6 +28,9 @@ namespace Avoidance.UI
         private MovementLabVisualProfile visuals;
         private int roomIndex, restoreCount;
         private float feedbackCountdown;
+        private bool landingViewEnabled;
+        private Text viewButton;
+        public bool LandingViewEnabled => landingViewEnabled;
         public FlowLabSession Session => session;
         public FlowLabRoom Room => definition.rooms[roomIndex];
         public PlayerRuntimeCoordinator Player => player;
@@ -35,6 +38,7 @@ namespace Avoidance.UI
         public void Initialize(MovementLabSceneController factory)
         {
             definition=JsonUtility.FromJson<FlowLabDefinition>(Resources.Load<TextAsset>("Training/FlowLab").text);
+            roomIndex=Mathf.Max(0,System.Array.FindIndex(definition.rooms,r=>r.id==definition.initialRoomId));
             visuals=Resources.Load<MovementLabVisualProfile>(MovementLabVisualProfile.ResourceName);
             baseline=Resources.Load<MovementProfile>("MovementProfiles/Movement_Default");
             candidate=Resources.Load<MovementProfile>("Training/Movement_Mastery");
@@ -56,9 +60,10 @@ namespace Avoidance.UI
             instruction=Label(safe,"Flow instruction",new Vector2(.15f,.82f),new Vector2(.85f,.94f),26);
             feedback=Label(safe,"Flow feedback",new Vector2(.25f,.71f),new Vector2(.75f,.81f),24);
             Button(safe,"ROOM",.02f,()=>SelectRoom((roomIndex+1)%definition.rooms.Length));
-            Button(safe,"RETRY",.22f,Retry);
-            Button(safe,"A / B",.42f,Compare);
-            Button(safe,"CONTROLS",.62f,()=> {touch.SetSessionControlProfile(touch.RuntimeProfile.FlowSteeringEnabled
+            Button(safe,"RETRY",.18f,Retry);
+            Button(safe,"MOTOR A/B",.34f,Compare);
+            viewButton=Button(safe,"VIEW: MANUAL",.50f,CompareView);
+            Button(safe,"CONTROLS",.66f,()=> {touch.SetSessionControlProfile(touch.RuntimeProfile.FlowSteeringEnabled
                 ? TouchControlProfileKind.LeftMoveRightLookTapJump : TouchControlProfileKind.FlowSteerAutoDirect);Retry();});
             Button(safe,"EXIT",.82f,()=>StartCoroutine(new UnitySceneLevelLoader().LoadAsync("ModuleSelector")));
             Retry();
@@ -77,9 +82,20 @@ namespace Avoidance.UI
         public void Retry()
         {
             player.GetComponent<RestoreController>().RestoreNow();
-            player.CameraRig.ResetView(Quaternion.identity,Room.initialPitch);
+            bool useLandingView=landingViewEnabled && touch.RuntimeProfile.FlowSteeringEnabled;
+            player.CameraRig.ConfigureLandingView(useLandingView ? definition.landingView : null);
+            player.CameraRig.ResetView(Quaternion.identity,useLandingView
+                ? Mathf.Max(Room.initialPitch,definition.landingView.initialPitch) : Room.initialPitch);
             restoreCount=player.GetComponent<RestoreController>().RestoreCount;
-            session.Reset(definition,Room,player.Motor);feedbackCountdown=0;
+            session.Reset(definition,Room,player.Motor,touch.RuntimeProfile.FlowSteeringEnabled
+                ? useLandingView ? "flow.landing-view" : "flow.manual-view" : "classic.manual-view");feedbackCountdown=0;
+            RefreshFeedback();
+        }
+        public void CompareView()
+        {
+            landingViewEnabled=!landingViewEnabled;
+            viewButton.text=landingViewEnabled?"VIEW: LANDING":"VIEW: MANUAL";
+            Retry();
         }
         private void LateUpdate()
         {
@@ -89,10 +105,17 @@ namespace Avoidance.UI
                 Retry();
             session.Tick(player.Motor,Time.deltaTime);
             feedbackCountdown-=Time.unscaledDeltaTime;if(feedbackCountdown>0)return;feedbackCountdown=.1f;
+            RefreshFeedback();
+        }
+        public void RefreshFeedback()
+        {
             string mode=player.Motor.Profile.MovementMastery?"CANDIDATE":"PRODUCTION BASELINE";
-            instruction.text=$"{Room.title}  /  {mode}\n{Room.hint}";
+            string view=!touch.RuntimeProfile.FlowSteeringEnabled ? "CLASSIC MANUAL"
+                : landingViewEnabled ? "LANDING VIEW" : "MANUAL VIEW";
+            instruction.text=$"{Room.title}  /  {mode}  /  {view}\n{Room.hint}";
             string metric=Room.exercise=="air"?$"Air gain +{session.AirGain:0.0} m/s"
                 :Room.exercise=="bhop"?$"Chain {session.BestChain}/{definition.requiredChain}  |  Takeoff retained {player.Motor.LastCompleteTakeoffRetention:P0}"
+                :Room.exercise=="landing"?$"Clean jumps {session.Jumps}  |  Gold finish ahead"
                 :$"Surf contact {session.SurfSeconds:0.0}s  |  Jumps {session.Jumps}";
             feedback.text=session.Complete?$"COMPLETE  {session.Seconds:0.00}s  |  Session best {session.BestSeconds:0.00}s\nRetry for a cleaner line · ROOM for next exercise"
                 :$"{player.Motor.HorizontalSpeed:0.0} m/s  |  {metric}\n{session.Seconds:0.0}s  ·  {(player.Motor.IsSurfing?"SURF":touch.RuntimeProfile.FlowSteeringEnabled?"Left steer · Right tap / pitch":"Classic controls")}";
@@ -138,11 +161,12 @@ namespace Avoidance.UI
             var text=go.GetComponent<Text>();text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             text.fontSize=size;text.alignment=TextAnchor.MiddleCenter;text.color=Color.white;text.raycastTarget=false;return text;
         }
-        private static void Button(Transform parent,string name,float x,UnityEngine.Events.UnityAction action)
+        private static Text Button(Transform parent,string name,float x,UnityEngine.Events.UnityAction action)
         {
-            var text=Label(parent,name+" Button",new Vector2(x,.94f),new Vector2(x+.16f,.995f),22);
+            var text=Label(parent,name+" Button",new Vector2(x,.945f),new Vector2(x+.15f,.995f),20);
             text.text=name;
             text.raycastTarget=true;var button=text.gameObject.AddComponent<Button>();button.targetGraphic=text;button.onClick.AddListener(action);
+            return text;
         }
     }
 }

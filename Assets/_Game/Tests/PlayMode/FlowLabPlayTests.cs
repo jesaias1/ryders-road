@@ -18,7 +18,7 @@ namespace Avoidance.Tests.PlayMode
         private sealed class FlowInput : IPlayerInputSource,IFlowSteeringInputSource
         {
             public Vector2 Move {get;set;}=Vector2.up;
-            public Vector2 LookDelta=>Vector2.zero;
+            public Vector2 LookDelta {get;set;}
             public bool JumpPressed {get;set;}
             public bool FlowSteeringEnabled=>true;
             public AutoCameraProfileKind AutoCameraProfile=>AutoCameraProfileKind.Direct;
@@ -50,7 +50,7 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(Mathf.DeltaAngle(yaw,player.transform.eulerAngles.y),Is.EqualTo(0).Within(.01f));
             Assert.That(player.CameraRig.Pitch,Is.Not.EqualTo(pitch));
             lab.Retry();Assert.That(motor.Velocity,Is.EqualTo(Vector3.zero));Assert.That(touch.Movement,Is.EqualTo(Vector2.zero));
-            for(int room=0;room<4;room++)
+            for(int room=0;room<5;room++)
             {
                 lab.SelectRoom(room);yield return null;
                 Assert.That(lab.Room.id,Does.StartWith("training.flow."));
@@ -103,6 +103,70 @@ namespace Avoidance.Tests.PlayMode
                 }
                 Debug.Log($"FLOW LAB {lab.Room.id} complete={lab.Session.Complete} time={lab.Session.Seconds:F3} airGain={lab.Session.AirGain:F3} chain={lab.Session.BestChain} position={motor.transform.position}");
                 Assert.That(lab.Session.Complete,Is.True,lab.Room.id);
+            }
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+        [UnityTest] public IEnumerator LandingViewComparisonPreservesManualControlsAndMotor()
+        {
+            FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
+            Assert.That(lab.Room.id,Is.EqualTo("training.flow.landing"));
+            var player=lab.Player;var rig=player.CameraRig;var input=new FlowInput();
+            lab.CompareView();Assert.That(lab.LandingViewEnabled,Is.True);
+            var velocity=player.Motor.Velocity;var position=player.transform.position;
+            for(int i=0;i<30;i++)
+            {
+                rig.ApplyLook(input,PlayerInputMode.Touch,1f/60,player.Motor);
+                rig.UpdatePresentation(8,8,false,false,-8,1f/60);
+            }
+            Assert.That(rig.CameraPitchTarget,Is.EqualTo(24).Within(.01f));
+            Assert.That(player.Motor.Velocity,Is.EqualTo(velocity));Assert.That(player.transform.position,Is.EqualTo(position));
+            float before=rig.CameraPitchTarget;input.LookDelta=new Vector2(0,1);
+            rig.ApplyLook(input,PlayerInputMode.Touch,1f/60,player.Motor);
+            Assert.That(rig.CameraPitchTarget,Is.InRange(before-1,before));
+            input.LookDelta=Vector2.zero;
+            rig.UpdatePresentation(8,8,false,false,-8,.5f);
+            Assert.That(rig.CameraPitchTarget,Is.EqualTo(rig.Pitch).Within(.001f));
+            lab.Retry();Assert.That(rig.CameraPitchTarget,Is.EqualTo(16));
+            input.LookDelta=new Vector2(15,5);
+            rig.ApplyLook(input,PlayerInputMode.Editor,1f/60,player.Motor);
+            Assert.That(Mathf.Abs(Mathf.DeltaAngle(0,rig.Yaw)),Is.GreaterThan(0));
+            rig.UpdatePresentation(8,8,false,false,-8,1f/60);
+            // Editor uses its existing presentation; evaluation framing must be absent.
+            Assert.That(rig.CameraPitchTarget-rig.Pitch,Is.LessThan(2f));
+            lab.CompareView();Assert.That(rig.Pitch,Is.EqualTo(9));
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+
+        [UnityTest] public IEnumerator LandingCourseIsCompletableWithBothMotorsAndViews()
+        {
+            FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
+            foreach(bool candidate in new[]{true,false})
+            foreach(bool landing in new[]{false,true})
+            {
+                if(lab.Player.Motor.Profile.MovementMastery!=candidate)lab.Compare();
+                if(lab.LandingViewEnabled!=landing)lab.CompareView();
+                lab.Retry();var motor=lab.Player.Motor;var input=new FlowInput();int jumps=0;
+                Assert.That(lab.Session.BestSeconds,Is.Zero,"Each motor/view combination needs independent evidence.");
+                for(int i=0;i<600 && !lab.Session.Complete;i++)
+                {
+                    float z=motor.transform.position.z;
+                    input.JumpPressed=motor.IsGrounded && (jumps==0 ? z>5.8f : jumps==1 && z>11.8f);
+                    int before=motor.JumpCount;motor.Simulate(input,1f/60);
+                    if(motor.JumpCount>before)jumps++;
+                    lab.Player.CameraRig.ApplyLook(input,PlayerInputMode.Touch,1f/60,motor);
+                    lab.Player.CameraRig.UpdatePresentation(motor.HorizontalSpeed,8,motor.IsGrounded,motor.IsSurfing,motor.VerticalSpeed,1f/60);
+                    lab.Session.Tick(motor,1f/60);
+                    if(i==51 || i==95 || i==114)
+                    {
+                        lab.RefreshFeedback();
+                        Capture($"Logs/Production097QA/landing-{candidate}-{landing}-{i}.png");
+                    }
+                }
+                Assert.That(lab.Session.Complete,Is.True,$"candidate={candidate} landing={landing} position={motor.transform.position}");
+                Assert.That(jumps,Is.EqualTo(2));
+                Assert.That(lab.Session.BestSeconds,Is.GreaterThan(0));
             }
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }

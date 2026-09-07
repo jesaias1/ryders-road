@@ -408,6 +408,7 @@ namespace Avoidance.EditorTools
             ModuleVisualProfile visual,
             ModuleEnvironmentProfile environment)
         {
+            if (module.ContentVersion >= 7 && module.StableModuleId == "module.003.flow-error") return;
             module.name = "Module_003_FlowError";
             module.Configure(
                 "module.003.flow-error",
