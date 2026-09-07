@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe47d231ec0d694f9e43ed981424b60, type: 3}
+  m_Name: GameFeelProfile
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Audio.GameFeelProfile
+  SpeedThreshold: 9.5
+  StreakInterval: 0.2
+  BoostStreakSeconds: 1.2
+  HapticCooldown: 0.18
+  HapticAmplitude: 70
+  LightPulseMilliseconds: 12
+  MediumPulseMilliseconds: 22
+  CelebrationMilliseconds: 38
+  WindGain: 0.35
+  ShardRadius: 0.7
+  ShardVisualSize: 0.3
+  ShardRotationSpeed: 70

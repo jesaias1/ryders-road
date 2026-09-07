@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Avoidance.Input
@@ -8,6 +9,21 @@ namespace Avoidance.Input
         Vector2 LookDelta { get; }
         bool JumpPressed { get; }
         void ResetState();
+    }
+
+    public interface IFlowSteeringInputSource
+    {
+        bool FlowSteeringEnabled { get; }
+        AutoCameraProfileKind AutoCameraProfile { get; }
+    }
+
+    public interface IDevelopmentPlayerInputSource : IPlayerInputSource
+    {
+        bool RestartPressed { get; }
+        bool SwitchProfilePressed { get; }
+        bool ToggleTouchZonesPressed { get; }
+        bool ToggleCameraEffectsPressed { get; }
+        IReadOnlyList<int> ActiveTouchIds { get; }
     }
 
     public sealed class NullPlayerInputSource : IPlayerInputSource

@@ -1,0 +1,1062 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e4f289b8713814bbfc1b113461f7cf, type: 3}
+  m_Name: Module_004_TheSpiral
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Levels.ModuleDefinition
+  _stableModuleId: module.004.the-spiral
+  _displayName: THE SPIRAL
+  _internalName: module_004_the_spiral
+  _projectId: project.ryders-block
+  _worldId: world.prototype-sky
+  _contentVersion: 2
+  _sceneName: ModuleRunner
+  _difficulty: 1
+  _startPoint:
+    _position: {x: -0.0000020981465, y: 0.45, z: -24}
+    _eulerAngles: {x: 0, y: -90, z: 0}
+  _startAnchorStableId: SpiralStartAnchor
+  _startSupportBlockStableId: m04.start
+  _useCustomFallThreshold: 1
+  _fallThresholdY: -7.5
+  _disableAutomaticDistantFragments: 1
+  _patchBlock:
+    _stableId: patch.module-004
+    _pose:
+      _position: {x: 0, y: 28.000002, z: 0}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _size: {x: 2.2, y: 2.2, z: 2.2}
+  _restorePoints:
+  - _stableId: restore.module-004.r1-base-turn
+    _order: 0
+    _pose:
+      _position: {x: -22.768787, y: 3.8500001, z: 0.23468272}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  - _stableId: restore.module-004.r2-moving-exit
+    _order: 1
+    _pose:
+      _position: {x: 1.7331582, y: 7.65, z: 21.470152}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  - _stableId: restore.module-004.r3-water-exit
+    _order: 2
+    _pose:
+      _position: {x: 19.243296, y: 11.9, z: -6.2731767}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  - _stableId: restore.module-004.r4-boost-landing
+    _order: 3
+    _pose:
+      _position: {x: -10.637471, y: 15.7, z: -15.75512}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  - _stableId: restore.module-004.r5-final-gate
+    _order: 4
+    _pose:
+      _position: {x: -8.442505, y: 19.95, z: 15.568161}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  _expectedCleanTime: 150
+  _estimatedCasualTime: 300
+  _rankThresholds:
+    _silverSeconds: 255
+    _goldSeconds: 190
+    _diamondSeconds: 150
+    _calibrationState: 0
+    _thresholdVersion: 1
+    _designerNotes: UNCALIBRATED - THE SPIRAL 0.6.3 hand/collision/abyss polish pass.
+      Bronze remains any valid completion; higher ranks require route mastery and
+      physical-device calibration.
+  _mechanicsUsed: 000000000100000002000000030000000500000007000000080000000400000009000000
+  _optionalShortcuts:
+  - _stableId: shortcut.module-004.inner-gap
+    _displayName: Lower inner gap
+    _entryPosition: {x: -22.12878, y: 3.4, z: -6.9682846}
+    _exitPosition: {x: -17.784403, y: 5.65, z: 13.503468}
+    _estimatedTimeSaved: 8
+    _mechanics: 01000000
+  - _stableId: shortcut.module-004.water-speed
+    _displayName: Moving crossing pace line
+    _entryPosition: {x: -9.27654, y: 6.75, z: 20.036764}
+    _exitPosition: {x: 1.7331582, y: 7.65, z: 21.470152}
+    _estimatedTimeSaved: 4
+    _mechanics: 0200000001000000
+  - _stableId: shortcut.module-004.boost-overshoot
+    _displayName: Boost gap closer
+    _entryPosition: {x: 20.344538, y: 11.75, z: -2.9686546}
+    _exitPosition: {x: 15.668617, y: 12.45, z: -12.461718}
+    _estimatedTimeSaved: 6
+    _mechanics: 05000000
+  - _stableId: shortcut.module-004.crumble-bridge
+    _displayName: Lower crumble pace line
+    _entryPosition: {x: -22.371916, y: 4.1000004, z: 3.6017835}
+    _exitPosition: {x: -9.27654, y: 6.75, z: 20.036764}
+    _estimatedTimeSaved: 4
+    _mechanics: 0700000001000000
+  - _stableId: shortcut.module-004.high-risk-drop
+    _displayName: Upper crumble pace line
+    _entryPosition: {x: -8.442505, y: 19.95, z: 15.568161}
+    _exitPosition: {x: 6.9060316, y: 22.35, z: 15.752653}
+    _estimatedTimeSaved: 4
+    _mechanics: 0700000001000000
+  _environmentProfile: {fileID: 11400000, guid: 7eb7a0625794d0d408e4b41b47de1a9a, type: 2}
+  _environmentBiomeProfile: {fileID: 0}
+  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _loreBugDescription: A deliberate ascending route wraps a broken sky spire and
+    converges on its Patch summit.
+  _developerNotes: '0.6.5 recovery: measured Bronze spacing, five Restore decks,
+    mandatory one-second crumble pressure chains, a required moving crossing, targeted
+    boost gap closer, separated central core masses, truthful non-landable water
+    visuals, and simplified abyss depth without slab or filler geometry. GoldSrc
+    movement is unchanged.'
+  _blocks:
+  - _stableId: m04.start
+    _pose:
+      _position: {x: -0.0000020981465, y: 0, z: -24}
+      _eulerAngles: {x: 0, y: -90, z: 0}
+    _size: {x: 4.5, y: 0.8, z: 4.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.start
+  - _stableId: m04.route.01.setup
+    _pose:
+      _position: {x: -3.274537, y: 0.2, z: -23.664518}
+      _eulerAngles: {x: 0, y: -82.121826, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.01.setup
+  - _stableId: m04.route.02.easy
+    _pose:
+      _position: {x: -6.9493365, y: 0.5, z: -22.741922}
+      _eulerAngles: {x: 0, y: -73.008224, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.02.easy
+  - _stableId: m04.route.03.flow
+    _pose:
+      _position: {x: -10.072129, y: 0.75, z: -21.420107}
+      _eulerAngles: {x: 0, y: -64.81623, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.7}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.03.flow
+  - _stableId: m04.route.04.normal
+    _pose:
+      _position: {x: -13.909286, y: 1.25, z: -19.01592}
+      _eulerAngles: {x: 0, y: -53.81622, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.04.normal
+  - _stableId: m04.route.05.run
+    _pose:
+      _position: {x: -15.68577, y: 1.35, z: -17.632826}
+      _eulerAngles: {x: 0, y: -48.34442, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.05.run
+  - _stableId: m04.route.06.vertical
+    _pose:
+      _position: {x: -17.938566, y: 2.2, z: -15.165352}
+      _eulerAngles: {x: 0, y: -40.21134, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.06.vertical
+  - _stableId: m04.route.07.normal
+    _pose:
+      _position: {x: -20.353125, y: 2.7, z: -11.505417}
+      _eulerAngles: {x: 0, y: -29.479042, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.07.normal
+  - _stableId: m04.route.08.commit
+    _pose:
+      _position: {x: -22.12878, y: 3.4, z: -6.9682846}
+      _eulerAngles: {x: 0, y: -17.479053, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m04.route.08.commit
+  - _stableId: m04.route.09.easy
+    _pose:
+      _position: {x: -22.85996, y: 3.7, z: -3.2511754}
+      _eulerAngles: {x: 0, y: -8.094401, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.09.easy
+  - _stableId: m04.route.14.setup
+    _pose:
+      _position: {x: -17.784403, y: 5.65, z: 13.503468}
+      _eulerAngles: {x: 0, y: 37.20893, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.14.setup
+  - _stableId: m04.route.17.easy
+    _pose:
+      _position: {x: -9.27654, y: 6.75, z: 20.036764}
+      _eulerAngles: {x: 0, y: 65.157, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.17.easy
+  - _stableId: m04.route.25.easy
+    _pose:
+      _position: {x: 17.642538, y: 10.2, z: 11.242192}
+      _eulerAngles: {x: 0, y: 147.49387, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.25.easy
+  - _stableId: m04.route.26.run
+    _pose:
+      _position: {x: 18.783243, y: 10.3, z: 9.30113}
+      _eulerAngles: {x: 0, y: 153.6562, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.26.run
+  - _stableId: m04.route.27.flow
+    _pose:
+      _position: {x: 19.933655, y: 10.55, z: 6.1132274}
+      _eulerAngles: {x: 0, y: 162.95033, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.7}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.27.flow
+  - _stableId: m04.route.28.normal
+    _pose:
+      _position: {x: 20.662374, y: 11.05, z: 1.7926264}
+      _eulerAngles: {x: 0, y: 175.04155, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.28.normal
+  - _stableId: m04.route.29.commit
+    _pose:
+      _position: {x: 20.344538, y: 11.75, z: -2.9686546}
+      _eulerAngles: {x: 0, y: -171.69804, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m04.route.29.commit
+  - _stableId: m04.route.34.normal
+    _pose:
+      _position: {x: 9.675958, y: 13.8, z: -17.274702}
+      _eulerAngles: {x: 0, y: -119.25419, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.34.normal
+  - _stableId: m04.route.35.run
+    _pose:
+      _position: {x: 7.67021, y: 13.900001, z: -18.29735}
+      _eulerAngles: {x: 0, y: -112.743324, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.35.run
+  - _stableId: m04.route.36.commit
+    _pose:
+      _position: {x: 3.0353277, y: 14.6, z: -19.424261}
+      _eulerAngles: {x: 0, y: -98.881485, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m04.route.36.commit
+  - _stableId: m04.route.37.setup
+    _pose:
+      _position: {x: -0.25107664, y: 14.8, z: -19.548374}
+      _eulerAngles: {x: 0, y: -89.26414, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.37.setup
+  - _stableId: m04.route.38.normal
+    _pose:
+      _position: {x: -4.581394, y: 15.3, z: -18.89243}
+      _eulerAngles: {x: 0, y: -76.36896, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.38.normal
+  - _stableId: m04.route.39.flow
+    _pose:
+      _position: {x: -7.754786, y: 15.55, z: -17.70626}
+      _eulerAngles: {x: 0, y: -66.34809, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.7}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.39.flow
+  - _stableId: m04.route.45.run
+    _pose:
+      _position: {x: -18.538311, y: 18.050001, z: -0.24919541}
+      _eulerAngles: {x: 0, y: -0.77013415, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.45.run
+  - _stableId: m04.route.46.easy
+    _pose:
+      _position: {x: -18.09301, y: 18.35, z: 3.5081792}
+      _eulerAngles: {x: 0, y: 10.97331, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.46.easy
+  - _stableId: m04.route.47.flow
+    _pose:
+      _position: {x: -17.040146, y: 18.6, z: 6.7272015}
+      _eulerAngles: {x: 0, y: 21.543383, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.7}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.47.flow
+  - _stableId: m04.route.48.normal
+    _pose:
+      _position: {x: -14.861052, y: 19.1, z: 10.523908}
+      _eulerAngles: {x: 0, y: 35.304356, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.48.normal
+  - _stableId: m04.route.49.commit
+    _pose:
+      _position: {x: -11.4910345, y: 19.800001, z: 13.893755}
+      _eulerAngles: {x: 0, y: 50.40705, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m04.route.49.commit
+  - _stableId: m04.route.54.commit
+    _pose:
+      _position: {x: 6.9060316, y: 22.35, z: 15.752653}
+      _eulerAngles: {x: 0, y: 113.67286, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m04.route.54.commit
+  - _stableId: m04.route.55.run
+    _pose:
+      _position: {x: 8.922533, y: 22.45, z: 14.751454}
+      _eulerAngles: {x: 0, y: 121.167984, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.55.run
+  - _stableId: m04.route.56.easy
+    _pose:
+      _position: {x: 11.855752, y: 22.800001, z: 12.364361}
+      _eulerAngles: {x: 0, y: 133.797, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.56.easy
+  - _stableId: m04.route.57.vertical
+    _pose:
+      _position: {x: 13.942285, y: 23.650002, z: 9.7617855}
+      _eulerAngles: {x: 0, y: 145.00195, z: 0}
+    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.57.vertical
+  - _stableId: m04.route.58.normal
+    _pose:
+      _position: {x: 15.871326, y: 24.2, z: 5.8351064}
+      _eulerAngles: {x: 0, y: 159.81401, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.route.58.normal
+  - _stableId: m04.summit.approach.01
+    _pose:
+      _position: {x: 12.670795, y: 24.650002, z: 4.6584287}
+      _eulerAngles: {x: 0, y: -110.18599, z: 0}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.summit.approach.01
+  - _stableId: m04.summit.approach.02
+    _pose:
+      _position: {x: 9.8550625, y: 25.400002, z: 3.623222}
+      _eulerAngles: {x: 0, y: -110.18599, z: 0}
+    _size: {x: 2.8, y: 0.6, z: 2.8}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.summit.approach.02
+  - _stableId: m04.summit.approach.03
+    _pose:
+      _position: {x: 7.0393305, y: 26.150002, z: 2.5880158}
+      _eulerAngles: {x: 0, y: -110.18599, z: 0}
+    _size: {x: 2.8, y: 0.6, z: 2.8}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.summit.approach.03
+  - _stableId: m04.summit.approach.04
+    _pose:
+      _position: {x: 4.035883, y: 26.900002, z: 1.4837959}
+      _eulerAngles: {x: 0, y: -110.18599, z: 0}
+    _size: {x: 2.8, y: 0.6, z: 2.8}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m04.summit.approach.04
+  _movingBlocks:
+  - _stableId: moving.m04.required-crossing
+    _pose:
+      _position: {x: -5.100957, y: 7.25, z: 21.369625}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 2.4}
+    _pathPoints:
+    - {x: -5.100957, y: 7.25, z: 21.369625}
+    - {x: -1.7373596, y: 7.5, z: 21.790844}
+    _pathSpace: 0
+    _loopMode: 0
+    _easing: 1
+    _speed: 2.1
+    _pauseAtEndpoints: 0.85
+    _startingPhase: 0
+  _boostBlocks:
+  - _stableId: boost.m04.first-ascent
+    _pose:
+      _position: {x: 17.375975, y: 11.75, z: -2.535485}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _launchDirection: {x: -0.16910733, y: 0.06933235, z: -0.98315597}
+    _verticalStrength: 12.4
+    _horizontalStrength: 7.2
+    _cooldown: 0.35
+  _waterVolumes: []
+  _surfSurfaces: []
+  _crumblingBlocks:
+  - _stableId: crumble.m04.route.11
+    _pose:
+      _position: {x: -22.371916, y: 4.1000004, z: 3.6017835}
+      _eulerAngles: {x: 0, y: 9.145888, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.12
+    _pose:
+      _position: {x: -21.153309, y: 4.6000004, z: 7.8127995}
+      _eulerAngles: {x: 0, y: 20.271288, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.13
+    _pose:
+      _position: {x: -19.667511, y: 5.4500003, z: 10.804741}
+      _eulerAngles: {x: 0, y: 28.783077, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.15
+    _pose:
+      _position: {x: -14.377898, y: 6.35, z: 16.849281}
+      _eulerAngles: {x: 0, y: 49.525074, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.16
+    _pose:
+      _position: {x: -12.617909, y: 6.45, z: 18.253336}
+      _eulerAngles: {x: 0, y: 55.345215, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.21
+    _pose:
+      _position: {x: 4.963819, y: 7.85, z: 20.847183}
+      _eulerAngles: {x: 0, y: 103.39303, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.22
+    _pose:
+      _position: {x: 8.1071005, y: 8.7, z: 19.718443}
+      _eulerAngles: {x: 0, y: 112.34967, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.23
+    _pose:
+      _position: {x: 11.9139185, y: 9.2, z: 17.547714}
+      _eulerAngles: {x: 0, y: 124.17432, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.24
+    _pose:
+      _position: {x: 15.415567, y: 9.9, z: 14.304572}
+      _eulerAngles: {x: 0, y: 137.14082, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.31
+    _pose:
+      _position: {x: 17.82617, y: 12.15, z: -9.351159}
+      _eulerAngles: {x: 0, y: -152.31963, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.32
+    _pose:
+      _position: {x: 15.668617, y: 12.45, z: -12.461718}
+      _eulerAngles: {x: 0, y: -141.50372, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.33
+    _pose:
+      _position: {x: 13.300745, y: 13.3, z: -14.815458}
+      _eulerAngles: {x: 0, y: -131.91626, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.41
+    _pose:
+      _position: {x: -13.12249, y: 15.9, z: -13.601828}
+      _eulerAngles: {x: 0, y: -46.027576, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.42
+    _pose:
+      _position: {x: -15.813939, y: 16.4, z: -10.148049}
+      _eulerAngles: {x: 0, y: -32.68891, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.43
+    _pose:
+      _position: {x: -17.693884, y: 17.1, z: -5.766977}
+      _eulerAngles: {x: 0, y: -18.052372, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.44
+    _pose:
+      _position: {x: -18.331503, y: 17.95, z: -2.4910648}
+      _eulerAngles: {x: 0, y: -7.7385116, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.51
+    _pose:
+      _position: {x: -5.2838893, y: 20.25, z: 16.788088}
+      _eulerAngles: {x: 0, y: 72.529106, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.52
+    _pose:
+      _position: {x: -1.9996665, y: 21.1, z: 17.375294}
+      _eulerAngles: {x: 0, y: 83.4349, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  - _stableId: crumble.m04.route.53
+    _pose:
+      _position: {x: 2.3734431, y: 21.65, z: 17.217157}
+      _eulerAngles: {x: 0, y: 97.84895, z: 0}
+    _size: {x: 2.4, y: 0.6, z: 2.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.025
+  _decorations:
+  - _stableId: m04.world.core.base
+    _pose:
+      _position: {x: 0, y: -10, z: 0}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 15, y: 7, z: 15}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.core.base
+  - _stableId: m04.world.core.lower
+    _pose:
+      _position: {x: -3.8, y: -0.6, z: -2.6}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6.6, y: 7, z: 6.2}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.core.lower
+  - _stableId: m04.world.core.mid
+    _pose:
+      _position: {x: 4.6, y: 7.8, z: 3.2}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5.6, y: 6.2, z: 5.4}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.core.mid
+  - _stableId: m04.world.core.upper
+    _pose:
+      _position: {x: -4.2, y: 15.8, z: 4.8}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.8, y: 5.2, z: 4.6}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.core.upper
+  - _stableId: m04.world.core.energy-low
+    _pose:
+      _position: {x: -7, y: 3.6, z: -1.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.8, y: 1.8, z: 1.8}
+    _visualRole: 27
+    _editorLabel: 1
+    _label: m04.world.core.energy-low
+  - _stableId: m04.world.core.energy-high
+    _pose:
+      _position: {x: 6.7, y: 12.5, z: 3.4}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.6, y: 1.6, z: 1.6}
+    _visualRole: 27
+    _editorLabel: 1
+    _label: m04.world.core.energy-high
+  - _stableId: m04.world.lower.start-island
+    _pose:
+      _position: {x: -4, y: -4.2, z: -28}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 10, y: 7, z: 10}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.lower.start-island
+  - _stableId: m04.world.lower.gateway-island
+    _pose:
+      _position: {x: -30, y: -2.2, z: -10}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 10, y: 6, z: 10}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.lower.gateway-island
+  - _stableId: m04.world.lower.gateway
+    _pose:
+      _position: {x: -31, y: 1.5, z: -12}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5.5, y: 5.5, z: 5.5}
+    _visualRole: 8
+    _editorLabel: 1
+    _label: m04.world.lower.gateway
+  - _stableId: m04.world.lower.tree
+    _pose:
+      _position: {x: -28, y: 2.5, z: -9}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.2, y: 4.2, z: 4.2}
+    _visualRole: 14
+    _editorLabel: 1
+    _label: m04.world.lower.tree
+  - _stableId: m04.world.lower.ruin-west-island
+    _pose:
+      _position: {x: -34, y: 0.4, z: 13}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 9, y: 6, z: 9}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.lower.ruin-west-island
+  - _stableId: m04.world.lower.ruin-west
+    _pose:
+      _position: {x: -34, y: 5, z: 13}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6.5, y: 6.5, z: 6.5}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.lower.ruin-west
+  - _stableId: m04.world.lower.ruin-east-island
+    _pose:
+      _position: {x: 31, y: -0.2, z: 15}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 8, y: 6, z: 8}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.lower.ruin-east-island
+  - _stableId: m04.world.lower.ruin-east
+    _pose:
+      _position: {x: 31, y: 4, z: 15}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5.5, y: 5.5, z: 5.5}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.lower.ruin-east
+  - _stableId: m04.world.lower.cloud-bank
+    _pose:
+      _position: {x: 2, y: -9, z: -50}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 28, y: 5, z: 14}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.lower.cloud-bank
+  - _stableId: m04.world.depth.cloud-west
+    _pose:
+      _position: {x: -48, y: -25, z: -15}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 34, y: 5, z: 18}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.depth.cloud-west
+  - _stableId: m04.world.depth.cloud-east
+    _pose:
+      _position: {x: 50, y: -28, z: 6}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 36, y: 5, z: 18}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.depth.cloud-east
+  - _stableId: m04.world.depth.ruin-west
+    _pose:
+      _position: {x: -58, y: -31, z: 35}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 7, y: 14, z: 7}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.depth.ruin-west
+  - _stableId: m04.world.depth.ruin-east
+    _pose:
+      _position: {x: 61, y: -34, z: 42}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6, y: 12, z: 6}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.depth.ruin-east
+  - _stableId: m04.world.depth.cloud-low-center
+    _pose:
+      _position: {x: 3, y: -46, z: 18}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 44, y: 5, z: 24}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.depth.cloud-low-center
+  - _stableId: m04.world.depth.cloud-south
+    _pose:
+      _position: {x: -12, y: -58, z: -58}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 40, y: 4, z: 18}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.depth.cloud-south
+  - _stableId: m04.world.depth.ruin-faint-north
+    _pose:
+      _position: {x: 24, y: -54, z: 76}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5, y: 16, z: 5}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.depth.ruin-faint-north
+  - _stableId: m04.world.depth.ominous-fog-west
+    _pose:
+      _position: {x: -18, y: -38, z: -8}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 70, y: 13, z: 46}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.depth.ominous-fog-west
+  - _stableId: m04.world.depth.ominous-fog-east
+    _pose:
+      _position: {x: 24, y: -54, z: 42}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 76, y: 14, z: 48}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.depth.ominous-fog-east
+  - _stableId: m04.world.depth.abyss-fog-deep
+    _pose:
+      _position: {x: 4, y: -72, z: -16}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 104, y: 16, z: 68}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.depth.abyss-fog-deep
+  - _stableId: m04.world.depth.abyss-fog-back
+    _pose:
+      _position: {x: -6, y: -86, z: 64}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 86, y: 12, z: 54}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.depth.abyss-fog-back
+  - _stableId: m04.world.depth.red-glow-core
+    _pose:
+      _position: {x: 0, y: -74, z: 8}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 7, y: 12, z: 7}
+    _visualRole: 21
+    _editorLabel: 1
+    _label: m04.world.depth.red-glow-core
+  - _stableId: m04.world.depth.red-glow-south
+    _pose:
+      _position: {x: -18, y: -82, z: -44}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6, y: 10, z: 6}
+    _visualRole: 21
+    _editorLabel: 1
+    _label: m04.world.depth.red-glow-south
+  - _stableId: m04.world.depth.red-glow-east
+    _pose:
+      _position: {x: 34, y: -78, z: 32}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5, y: 9, z: 5}
+    _visualRole: 21
+    _editorLabel: 1
+    _label: m04.world.depth.red-glow-east
+  - _stableId: m04.world.garden.island
+    _pose:
+      _position: {x: -38, y: 6, z: 23}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 9, y: 7, z: 9}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.garden.island
+  - _stableId: m04.world.garden.tree
+    _pose:
+      _position: {x: -38, y: 10, z: 23}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5, y: 5, z: 5}
+    _visualRole: 14
+    _editorLabel: 1
+    _label: m04.world.garden.tree
+  - _stableId: m04.world.garden.flower
+    _pose:
+      _position: {x: -33, y: 9.4, z: 20}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.8, y: 2.8, z: 2.8}
+    _visualRole: 29
+    _editorLabel: 1
+    _label: m04.world.garden.flower
+  - _stableId: m04.world.garden.arch
+    _pose:
+      _position: {x: 24, y: 11.5, z: 25}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6, y: 6, z: 6}
+    _visualRole: 8
+    _editorLabel: 1
+    _label: m04.world.garden.arch
+  - _stableId: m04.world.garden.cloud-bank
+    _pose:
+      _position: {x: -50, y: 0, z: 5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 22, y: 4, z: 12}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.garden.cloud-bank
+  - _stableId: m04.world.energy.island
+    _pose:
+      _position: {x: 36, y: 9, z: -22}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 8, y: 7, z: 8}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.energy.island
+  - _stableId: m04.world.energy.pillar-low
+    _pose:
+      _position: {x: 34, y: 13, z: -19}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6, y: 6, z: 6}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.energy.pillar-low
+  - _stableId: m04.world.energy.pillar-cyan
+    _pose:
+      _position: {x: 30, y: 15, z: -23}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.5, y: 4.5, z: 4.5}
+    _visualRole: 27
+    _editorLabel: 1
+    _label: m04.world.energy.pillar-cyan
+  - _stableId: m04.world.energy.arch
+    _pose:
+      _position: {x: -22, y: 17, z: -30}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5.5, y: 5.5, z: 5.5}
+    _visualRole: 8
+    _editorLabel: 1
+    _label: m04.world.energy.arch
+  - _stableId: m04.world.summit.pillar-west
+    _pose:
+      _position: {x: -6.5, y: 30.800001, z: 4.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6.5, y: 6.5, z: 6.5}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.summit.pillar-west
+  - _stableId: m04.world.summit.pillar-east
+    _pose:
+      _position: {x: 6.5, y: 30.800001, z: -4.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6.5, y: 6.5, z: 6.5}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.summit.pillar-east
+  - _stableId: m04.world.summit.energy
+    _pose:
+      _position: {x: 0, y: 32.5, z: 8}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.5, y: 4.5, z: 4.5}
+    _visualRole: 27
+    _editorLabel: 1
+    _label: m04.world.summit.energy
+  - _stableId: m04.world.far.island-west
+    _pose:
+      _position: {x: -82, y: 8, z: 36}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 7, y: 7, z: 7}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.far.island-west
+  - _stableId: m04.world.far.tower-west
+    _pose:
+      _position: {x: -80, y: 18, z: 38}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 8, y: 8, z: 8}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.far.tower-west
+  - _stableId: m04.world.far.island-east
+    _pose:
+      _position: {x: 88, y: 15, z: 22}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 7, y: 7, z: 7}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.far.island-east
+  - _stableId: m04.world.far.tower-east
+    _pose:
+      _position: {x: 86, y: 26, z: 23}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 8, y: 8, z: 8}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: m04.world.far.tower-east
+  - _stableId: m04.world.far.island-north
+    _pose:
+      _position: {x: 16, y: 24, z: 105}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6, y: 6, z: 6}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: m04.world.far.island-north
+  - _stableId: m04.world.far.cloud-west
+    _pose:
+      _position: {x: -72, y: -2, z: -22}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 32, y: 5, z: 16}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.far.cloud-west
+  - _stableId: m04.world.far.cloud-east
+    _pose:
+      _position: {x: 74, y: 4, z: -35}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 30, y: 5, z: 14}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.far.cloud-east
+  - _stableId: m04.world.far.cloud-north
+    _pose:
+      _position: {x: 5, y: 10, z: 92}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 36, y: 6, z: 18}
+    _visualRole: 15
+    _editorLabel: 1
+    _label: m04.world.far.cloud-north
+  _cameraHints:
+  - _stableId: camera.m04.establish-tower
+    _position: {x: -13.909286, y: 2.45, z: -19.01592}
+    _size: {x: 10, y: 6, z: 10}
+    _preferredYaw: 70
+    _preferredPitch: -12
+    _maxAssistDegrees: 12
+  - _stableId: camera.m04.water-entry
+    _position: {x: -1.7373596, y: 8.7, z: 21.790844}
+    _size: {x: 10, y: 6, z: 10}
+    _preferredYaw: -20
+    _preferredPitch: -10
+    _maxAssistDegrees: 12
+  - _stableId: camera.m04.big-boost
+    _position: {x: 9.675958, y: 15, z: -17.274702}
+    _size: {x: 10, y: 6, z: 10}
+    _preferredYaw: 160
+    _preferredPitch: -14
+    _maxAssistDegrees: 12
+  - _stableId: camera.m04.summit
+    _position: {x: -1.9996665, y: 22.300001, z: 17.375294}
+    _size: {x: 10, y: 6, z: 10}
+    _preferredYaw: -110
+    _preferredPitch: -18
+    _maxAssistDegrees: 12
+  _completionRewards:
+  - _stableId: reward.module-004.bronze.shards
+    _kind: 0
+    _contentId: currency.patch-shards
+    _quantity: 250
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.module-004.bronze.package
+    _kind: 1
+    _contentId: loot.package.module-004
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.module-004.bronze.skin
+    _kind: 2
+    _contentId: skin.ryder.patch-glow
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: Skin

@@ -1,0 +1,42 @@
+{
+  "fallDepth": 20,
+  "minimumAirGain": 0.4,
+  "minimumSurfSeconds": 0.3,
+  "requiredChain": 3,
+  "rooms": [
+    {
+      "id":"training.flow.air", "title":"AIR-STRAFE ROOM", "exercise":"air",
+      "hint":"Run, jump, then gently arc the left thumb. Land beyond the gold stripe.",
+      "start":{"x":0,"y":0.05,"z":0}, "finish":{"x":3,"y":0.5,"z":23}, "finishSize":{"x":16,"y":2,"z":8},
+      "solids":[{"id":"training.air.floor","position":{"x":0,"y":-0.5,"z":12},"size":{"x":24,"y":1,"z":38}}]
+    },
+    {
+      "id":"training.flow.bhop", "title":"BHOP LANE", "exercise":"bhop",
+      "hint":"Tap just before landing. Chain three hops; gentle steering carries speed.",
+      "start":{"x":0,"y":0.05,"z":0}, "finish":{"x":0,"y":0.5,"z":39}, "finishSize":{"x":18,"y":2,"z":8},
+      "solids":[{"id":"training.bhop.floor","position":{"x":0,"y":-0.5,"z":20},"size":{"x":20,"y":1,"z":52}}]
+    },
+    {
+      "id":"training.flow.surf", "title":"SURF PROTOTYPE", "exercise":"surf", "initialPitch":40,
+      "hint":"Enter the cyan slope. Steer along it, then jump or ride onto the gold exit.",
+      "start":{"x":0,"y":7.05,"z":3.5}, "finish":{"x":0,"y":-5.5,"z":34}, "finishSize":{"x":22,"y":2,"z":8},
+      "solids":[
+        {"id":"training.surf.entry","position":{"x":0,"y":6.5,"z":0},"size":{"x":16,"y":1,"z":10}},
+        {"id":"training.surf.ramp","position":{"x":0,"y":0.43,"z":15.18},"size":{"x":18,"y":0.5,"z":24},"slope":32,"surf":true},
+        {"id":"training.surf.catch","position":{"x":0,"y":-6.5,"z":34},"size":{"x":24,"y":1,"z":18}}
+      ]
+    },
+    {
+      "id":"training.flow.challenge", "title":"SHORT FLOW CHALLENGE", "exercise":"flow",
+      "hint":"Two jumps, one surf, gold finish. Keep your line and beat your session time.",
+      "start":{"x":0,"y":7.05,"z":0}, "finish":{"x":0,"y":-5.5,"z":59}, "finishSize":{"x":22,"y":2,"z":8},
+      "solids":[
+        {"id":"training.flow.runup","position":{"x":0,"y":6.5,"z":4},"size":{"x":16,"y":1,"z":16}},
+        {"id":"training.flow.hops","position":{"x":2,"y":6.5,"z":21},"size":{"x":16,"y":1,"z":14}},
+        {"id":"training.flow.ramp","position":{"x":0,"y":0.43,"z":38.18},"size":{"x":18,"y":0.5,"z":24},"slope":32,"surf":true},
+        {"id":"training.flow.catch","position":{"x":0,"y":-6.5,"z":57},"size":{"x":24,"y":1,"z":18}}
+      ]
+    }
+  ]
+}
+

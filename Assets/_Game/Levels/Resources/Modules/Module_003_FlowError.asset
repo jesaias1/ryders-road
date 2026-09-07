@@ -1,0 +1,397 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e4f289b8713814bbfc1b113461f7cf, type: 3}
+  m_Name: Module_003_FlowError
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Levels.ModuleDefinition
+  _stableModuleId: module.003.flow-error
+  _displayName: Campaign 03 - Flow Error
+  _internalName: module_003_flow_error
+  _projectId: project.ryders-block
+  _worldId: world.prototype-sky
+  _contentVersion: 7
+  _sceneName: ModuleRunner
+  _difficulty: 2
+  _startPoint:
+    _position: {x: 0, y: 0.35, z: -7}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+  _startAnchorStableId: Module03StartAnchor
+  _startSupportBlockStableId: m03.start
+  _useCustomFallThreshold: 1
+  _fallThresholdY: -12
+  _disableAutomaticDistantFragments: 1
+  _patchBlock:
+    _stableId: patch.module-003
+    _pose:
+      _position: {x: 8, y: 15, z: 129}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _size: {x: 2.2, y: 2.2, z: 2.2}
+  _restorePoints:
+  - _stableId: restore.module-003.arrival-sanctuary
+    _order: 0
+    _pose:
+      _position: {x: 5, y: 1.15, z: 20}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  - _stableId: restore.module-003.broken-crossing
+    _order: 1
+    _pose:
+      _position: {x: -5, y: 2.85, z: 47}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  - _stableId: restore.module-003.collapsed-temple
+    _order: 2
+    _pose:
+      _position: {x: 1, y: 4.95, z: 71}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  _expectedCleanTime: 72
+  _estimatedCasualTime: 160
+  _rankThresholds:
+    _silverSeconds: 135
+    _goldSeconds: 100
+    _diamondSeconds: 76
+    _calibrationState: 0
+    _thresholdVersion: 5
+    _designerNotes: UNCALIBRATED - 0.8.1 hand-authored Ancient Abyss route requires
+      human Samsung S23 timing. Any valid completion remains Bronze.
+  _mechanicsUsed: 000000000100000002000000030000000500000007000000080000000400000009000000
+  _optionalShortcuts:
+  - _stableId: shortcut.module-003.arrival-court-cut
+    _displayName: Arrival court momentum cut
+    _entryPosition: {x: -2.5, y: 0.1, z: -2.5}
+    _exitPosition: {x: 1, y: 0.8, z: 11}
+    _estimatedTimeSaved: 2.8
+    _mechanics: 0800000001000000
+  - _stableId: shortcut.module-003.moving-bypass
+    _displayName: Broken crossing upper ledge
+    _entryPosition: {x: 7, y: 1.8, z: 30}
+    _exitPosition: {x: -6, y: 2.5, z: 43}
+    _estimatedTimeSaved: 4.5
+    _mechanics: 0800000001000000
+  - _stableId: shortcut.module-003.temple-upper-ledge
+    _displayName: Collapsed temple upper ledge
+    _entryPosition: {x: -3, y: 3, z: 51}
+    _exitPosition: {x: 3, y: 4.6, z: 67}
+    _estimatedTimeSaved: 3.6
+    _mechanics: 0800000001000000
+  _environmentProfile: {fileID: 11400000, guid: 7eb7a0625794d0d408e4b41b47de1a9a, type: 2}
+  _environmentBiomeProfile: {fileID: 11400000, guid: 805a1458c0ac84f4fa75428e5b7749c2, type: 2}
+  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _loreBugDescription: A broken route compiler has made the road unstable around
+    an ancient abyss sanctuary.
+  _developerNotes: '0.9.1 collision-truth and flow continuation: a connected journey
+    through Arrival Sanctuary, Broken Crossing, Collapsed Temple, Energy Spine, and
+    Patch Sanctum. Rank times require physical S23 calibration.'
+  _blocks:
+  - _stableId: m03.start
+    _pose:
+      _position: {x: 0, y: 0, z: -7}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5, y: 0.6, z: 4}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.start
+  - _stableId: m03.opening.01
+    _pose:
+      _position: {x: -2.5, y: 0.1, z: -2.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.opening.01
+  - _stableId: m03.opening.02
+    _pose:
+      _position: {x: -4, y: 0.3, z: 2}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.opening.02
+  - _stableId: m03.opening.03
+    _pose:
+      _position: {x: -2, y: 0.5, z: 6.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.opening.03
+  - _stableId: m03.arrival.approach
+    _pose:
+      _position: {x: 1, y: 0.8, z: 11}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.arrival.approach
+  - _stableId: m03.arrival.court
+    _pose:
+      _position: {x: 4, y: 1, z: 15.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.arrival.court
+  - _stableId: m03.crossing.approach
+    _pose:
+      _position: {x: 7, y: 1.5, z: 25}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.crossing.approach
+  - _stableId: m03.moving-setup
+    _pose:
+      _position: {x: 7, y: 1.8, z: 30}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4, y: 0.6, z: 3.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.moving-setup
+  - _stableId: m03.motion-exit
+    _pose:
+      _position: {x: -6, y: 2.5, z: 43}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4, y: 0.6, z: 4}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.motion-exit
+  - _stableId: m03.temple.entry
+    _pose:
+      _position: {x: -3, y: 3, z: 51}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.temple.entry
+  - _stableId: m03.temple.exit
+    _pose:
+      _position: {x: 3, y: 4.6, z: 67}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.temple.exit
+  - _stableId: m03.spine.approach
+    _pose:
+      _position: {x: 3, y: 5.2, z: 75}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.spine.approach
+  - _stableId: m03.boost-runup
+    _pose:
+      _position: {x: 6, y: 5.6, z: 80}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.boost-runup
+  - _stableId: m03.boost-landing
+    _pose:
+      _position: {x: -1, y: 8.8, z: 96}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 8, y: 0.6, z: 8}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.boost-landing
+  - _stableId: m03.final.01
+    _pose:
+      _position: {x: -3, y: 9.4, z: 102}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.final.01
+  - _stableId: m03.final.02
+    _pose:
+      _position: {x: -6, y: 10, z: 107}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.final.02
+  - _stableId: m03.final.03
+    _pose:
+      _position: {x: -4, y: 10.7, z: 112}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.final.03
+  - _stableId: m03.final.04
+    _pose:
+      _position: {x: 0, y: 11.5, z: 116}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.final.04
+  - _stableId: m03.final.05
+    _pose:
+      _position: {x: 4, y: 12.4, z: 120}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.final.05
+  - _stableId: m03.final.06
+    _pose:
+      _position: {x: 7, y: 13.4, z: 124}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.final.06
+  - _stableId: m03.mastery.arrival-cut
+    _pose:
+      _position: {x: 0, y: 0.55, z: 5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m03.mastery.arrival-cut
+  - _stableId: m03.mastery.moving-bypass.01
+    _pose:
+      _position: {x: 2.2, y: 2.2, z: 30.7}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m03.mastery.moving-bypass.01
+  - _stableId: m03.mastery.moving-bypass.02
+    _pose:
+      _position: {x: -3.6, y: 2.35, z: 33.4}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m03.mastery.moving-bypass.02
+  - _stableId: m03.mastery.moving-bypass.03
+    _pose:
+      _position: {x: -8.9, y: 2.5, z: 36.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m03.mastery.moving-bypass.03
+  - _stableId: m03.mastery.temple-ledge.01
+    _pose:
+      _position: {x: -2, y: 4.3, z: 57}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m03.mastery.temple-ledge.01
+  - _stableId: m03.mastery.temple-ledge.02
+    _pose:
+      _position: {x: 1, y: 4.6, z: 63}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 1
+    _editorLabel: 1
+    _label: m03.mastery.temple-ledge.02
+  _movingBlocks:
+  - _stableId: moving.m03.motion-gallery
+    _pose:
+      _position: {x: 7, y: 2.1, z: 34}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4, y: 0.6, z: 4}
+    _pathPoints:
+    - {x: 7, y: 2.1, z: 34}
+    - {x: -6, y: 2.4, z: 39}
+    _pathSpace: 0
+    _loopMode: 0
+    _easing: 1
+    _speed: 5
+    _pauseAtEndpoints: 0.24
+    _startingPhase: 0
+  _boostBlocks:
+  - _stableId: boost.m03.first
+    _pose:
+      _position: {x: 6, y: 5.9, z: 84}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _launchDirection: {x: -0.504, y: 0, z: 0.864}
+    _verticalStrength: 16
+    _horizontalStrength: 12.2
+    _cooldown: 0.35
+  _waterVolumes: []
+  _surfSurfaces: []
+  _crumblingBlocks:
+  - _stableId: crumble.m03.01
+    _pose:
+      _position: {x: 0, y: 3.4, z: 55}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2, y: 0.6, z: 2}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.03
+  - _stableId: crumble.m03.02
+    _pose:
+      _position: {x: 3.5, y: 3.8, z: 59}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2, y: 0.6, z: 2}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.03
+  - _stableId: crumble.m03.03
+    _pose:
+      _position: {x: 5, y: 4.2, z: 63}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2, y: 0.6, z: 2}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.03
+  _decorations: []
+  _cameraHints:
+  - _stableId: camera.m03.motion-gallery
+    _position: {x: 0, y: 3, z: 36}
+    _size: {x: 24, y: 9, z: 28}
+    _preferredYaw: 2
+    _preferredPitch: -8
+    _maxAssistDegrees: 12
+  - _stableId: camera.m03.final-ascent
+    _position: {x: 1, y: 11, z: 112}
+    _size: {x: 22, y: 14, z: 40}
+    _preferredYaw: 8
+    _preferredPitch: -10
+    _maxAssistDegrees: 14
+  _completionRewards:
+  - _stableId: reward.module-003.bronze.shards
+    _kind: 0
+    _contentId: currency.patch-shards
+    _quantity: 200
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.module-003.bronze.package
+    _kind: 1
+    _contentId: loot.package.module-003
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.module-003.bronze.skin
+    _kind: 2
+    _contentId: skin.ryder.circuit-mint
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: Skin

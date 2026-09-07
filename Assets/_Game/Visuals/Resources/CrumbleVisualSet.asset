@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c7d438c193f28469592daee73bda2b, type: 3}
+  m_Name: CrumbleVisualSet
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Visuals.CrumbleVisualSet
+  _stage1Prefab: {fileID: 9146217835843570792, guid: 194f79d3abfda7c40a700ad7c45e83dd, type: 3}
+  _stage2Prefab: {fileID: 3485587684574383495, guid: 355fdb4986c201045a2a3d0a3fbc86b5, type: 3}
+  _stage3Prefab: {fileID: 258238643076114396, guid: 408284663bde9394688bb3c690a8fb70, type: 3}

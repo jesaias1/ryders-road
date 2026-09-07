@@ -1,0 +1,251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e4f289b8713814bbfc1b113461f7cf, type: 3}
+  m_Name: Module_GameplayRoleGallery
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Levels.ModuleDefinition
+  _stableModuleId: module.gameplay-role-gallery
+  _displayName: Gameplay Role Gallery (Visual Identity & Collision Truth)
+  _internalName: module_gameplay_role_gallery
+  _projectId: project.ryders-block
+  _worldId: world.prototype-sky
+  _contentVersion: 100
+  _sceneName: Assets/_Game/Levels/Scenes/ModuleRunner.unity
+  _difficulty: 0
+  _startPoint:
+    _position: {x: 0, y: 0.35, z: 0}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+  _startAnchorStableId: 
+  _startSupportBlockStableId: 
+  _useCustomFallThreshold: 0
+  _fallThresholdY: -12
+  _disableAutomaticDistantFragments: 0
+  _patchBlock:
+    _stableId: patch.gallery
+    _pose:
+      _position: {x: 0, y: 1.8, z: 62}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _size: {x: 2.2, y: 2.2, z: 2.2}
+  _restorePoints:
+  - _stableId: restore.gallery.midpoint
+    _order: 0
+    _pose:
+      _position: {x: 0, y: 0.8, z: 32}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  _expectedCleanTime: 60
+  _estimatedCasualTime: 120
+  _rankThresholds:
+    _silverSeconds: 60
+    _goldSeconds: 45
+    _diamondSeconds: 35
+    _calibrationState: 0
+    _thresholdVersion: 1
+    _designerNotes: UNCALIBRATED - Gameplay Role Gallery thresholds.
+  _mechanicsUsed: 00000000010000000200000007000000050000000a0000000300000004000000
+  _optionalShortcuts: []
+  _environmentProfile: {fileID: 11400000, guid: 7eb7a0625794d0d408e4b41b47de1a9a, type: 2}
+  _environmentBiomeProfile: {fileID: 0}
+  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _loreBugDescription: Gameplay visual role gallery displaying 1 canonical instance
+    of every gameplay & environment role.
+  _developerNotes: Verify standard, long, large safe, moving, crumble, restore, boost,
+    surf, patch, and world props.
+  _blocks:
+  - _stableId: gallery.role.standard
+    _pose:
+      _position: {x: 0, y: 0, z: 0}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: gallery.role.standard
+  - _stableId: gallery.role.long
+    _pose:
+      _position: {x: 0, y: 0, z: 5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: gallery.role.long
+  - _stableId: gallery.role.safe
+    _pose:
+      _position: {x: 0, y: 0, z: 11}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: gallery.role.safe
+  - _stableId: gallery.role.moving.runup
+    _pose:
+      _position: {x: 0, y: 0, z: 16}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: gallery.role.moving.runup
+  - _stableId: gallery.role.moving.exit
+    _pose:
+      _position: {x: 0, y: 0, z: 22}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: gallery.role.moving.exit
+  - _stableId: gallery.role.boost.landing
+    _pose:
+      _position: {x: 0, y: 2.5, z: 44}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: gallery.role.boost.landing
+  - _stableId: gallery.role.surf.landing
+    _pose:
+      _position: {x: 0, y: 1.5, z: 56}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: gallery.role.surf.landing
+  - _stableId: gallery.role.patch.base
+    _pose:
+      _position: {x: 0, y: 1, z: 62}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: gallery.role.patch.base
+  - _stableId: gallery.env.tree
+    _pose:
+      _position: {x: 10, y: 0, z: 5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4, y: 4, z: 4}
+    _visualRole: 14
+    _editorLabel: 1
+    _label: gallery.env.tree
+  - _stableId: gallery.env.arch
+    _pose:
+      _position: {x: 10, y: 0, z: 15}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5, y: 5, z: 5}
+    _visualRole: 8
+    _editorLabel: 1
+    _label: gallery.env.arch
+  - _stableId: gallery.env.ruin
+    _pose:
+      _position: {x: 10, y: 0, z: 25}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6.5, y: 6.5, z: 6.5}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: gallery.env.ruin
+  - _stableId: gallery.env.pillar
+    _pose:
+      _position: {x: 10, y: 0, z: 35}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 8, y: 8, z: 8}
+    _visualRole: 12
+    _editorLabel: 1
+    _label: gallery.env.pillar
+  - _stableId: gallery.env.energy
+    _pose:
+      _position: {x: 10, y: 0, z: 45}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.5, y: 4.5, z: 4.5}
+    _visualRole: 27
+    _editorLabel: 1
+    _label: gallery.env.energy
+  - _stableId: gallery.env.rock
+    _pose:
+      _position: {x: -10, y: 0, z: 15}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.5, y: 4.5, z: 4.5}
+    _visualRole: 13
+    _editorLabel: 1
+    _label: gallery.env.rock
+  - _stableId: gallery.env.flower
+    _pose:
+      _position: {x: -10, y: 0, z: 25}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 2.5, z: 2.5}
+    _visualRole: 29
+    _editorLabel: 1
+    _label: gallery.env.flower
+  _movingBlocks:
+  - _stableId: gallery.role.moving.platform
+    _pose:
+      _position: {x: 0, y: 0, z: 19}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 1.5}
+    _pathPoints:
+    - {x: -2.5, y: 0, z: 19}
+    - {x: 2.5, y: 0, z: 19}
+    _pathSpace: 0
+    _loopMode: 0
+    _easing: 1
+    _speed: 2
+    _pauseAtEndpoints: 0.4
+    _startingPhase: 0
+  _boostBlocks:
+  - _stableId: gallery.role.boost.pad
+    _pose:
+      _position: {x: 0, y: 0.5, z: 37}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.8, y: 0.6, z: 1.8}
+    _launchDirection: {x: 0, y: 0.75, z: 1}
+    _verticalStrength: 9.5
+    _horizontalStrength: 7.5
+    _cooldown: 0.35
+  _waterVolumes: []
+  _surfSurfaces:
+  - _stableId: gallery.role.surf.ramp
+    _pose:
+      _position: {x: -3.5, y: 3.8, z: 50}
+      _eulerAngles: {x: 0, y: -22, z: 38}
+    _size: {x: 4, y: 0.45, z: 12}
+    _flowDirection: {x: 0, y: 0, z: 1}
+  _crumblingBlocks:
+  - _stableId: gallery.role.crumble.block
+    _pose:
+      _position: {x: 0, y: 0.2, z: 26.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.4, y: 0.6, z: 1.4}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.03
+  _decorations: []
+  _cameraHints: []
+  _completionRewards:
+  - _stableId: reward.role-gallery.bronze.shards
+    _kind: 0
+    _contentId: currency.patch-shards
+    _quantity: 50
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.role-gallery.bronze.package
+    _kind: 1
+    _contentId: loot.package.gallery
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.role-gallery.bronze.skin
+    _kind: 2
+    _contentId: skin.ryder.gallery
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: Skin

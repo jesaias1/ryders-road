@@ -1,4 +1,5 @@
 using Avoidance.Core.Services;
+using Avoidance.Gameplay.Visuals;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -56,13 +57,19 @@ namespace Avoidance.UI
             platform.name = "Floating Foundation Platform";
             platform.transform.position = Vector3.zero;
             platform.transform.localScale = new Vector3(8f, 0.75f, 8f);
-            platform.GetComponent<Renderer>().material.color = PlatformColor;
+            platform.GetComponent<Renderer>().sharedMaterial =
+                VisualMaterialUtility.CreateRuntimeMaterial(
+                    "RB Foundation Platform",
+                    PlatformColor);
 
             var voidMarker = GameObject.CreatePrimitive(PrimitiveType.Quad);
             voidMarker.name = "Visible Void Marker";
             voidMarker.transform.SetPositionAndRotation(new Vector3(0f, -8f, 5f), Quaternion.Euler(90f, 0f, 0f));
             voidMarker.transform.localScale = Vector3.one * 30f;
-            voidMarker.GetComponent<Renderer>().material.color = new Color(0.025f, 0.04f, 0.1f);
+            voidMarker.GetComponent<Renderer>().sharedMaterial =
+                VisualMaterialUtility.CreateRuntimeMaterial(
+                    "RB Foundation Void",
+                    new Color(0.025f, 0.04f, 0.1f));
         }
 
         private void CreateSafeAreaDemonstration()

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01029447a73fae14e873b45205b0fc1b, type: 3}
+  m_Name: FirstPersonArmProfile
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Visuals.FirstPersonArmProfile
+  _presentationMode: 2
+  _showFirstPersonArms: 0
+  _leftArmPrefab: {fileID: 4247625068430760340, guid: d1286f0498d8cb94fbe80f275210756b, type: 3}
+  _rightArmPrefab: {fileID: 1042681852533911374, guid: 3a2abae85d4dad94ab0c8a5d3d264b67, type: 3}
+  _riggedLeftArmPrefab: {fileID: 3103103405730849204, guid: 0decc179da6ff8e40895e8f8d597be19, type: 3}
+  _riggedRightArmPrefab: {fileID: 3879418371801420748, guid: d96fa855abda20647ba4c106e10f3ba9, type: 3}
+  _ryderArmV2LeftArmPrefab: {fileID: 8758271802206837931, guid: d456d503c7408e547ae99c98ffbe4880, type: 3}
+  _ryderArmV2RightArmPrefab: {fileID: 1759954401121160319, guid: 6c7e91d3851b326479235613d6d25790, type: 3}
+  _leftBaseLocalPosition: {x: -0.52, y: -0.025, z: 0.41}
+  _rightBaseLocalPosition: {x: 0.52, y: -0.02, z: 0.41}
+  _leftBaseLocalEulerAngles: {x: 0, y: -52, z: 202}
+  _rightBaseLocalEulerAngles: {x: 1, y: 52, z: 158}
+  _leftPrefabEulerOffset: {x: 0, y: 0, z: 0}
+  _rightPrefabEulerOffset: {x: 0, y: 0, z: 0}
+  _prefabLocalScale: {x: 0.36, y: 0.36, z: 0.36}
+  _neutralPoseLocked: 0
+  _armFieldOfView: 72
+  _armNearClipPlane: 0.025
+  _idleFloatAmount: 0.0028
+  _idleFrequency: 1.05
+  _runLateralAmount: 0.002
+  _runVerticalAmount: 0.0075
+  _runForwardAmount: 0.028
+  _runFrequencyMin: 4.8
+  _runFrequencyMax: 8
+  _runSpeedRollDegrees: 0.9
+  _runYawDegrees: 0.9
+  _runPitchDegrees: 2
+  _runLateralRollDegrees: 0.8
+  _jumpOffset: 0.015
+  _airborneOffset: {x: 0, y: 0.002, z: 0.006}
+  _fallOffset: {x: 0.006, y: -0.004, z: -0.003}
+  _landImpulse: 0.02
+  _boostOffset: 0
+  _waterOffset: 0
+  _speedInfluence: 7.8
+  _maximumAnimationMultiplier: 1.22
+  _maximumPresentationDisplacement: 0.052
+  _smoothing: 18
+  _fingerRestCurlDegrees: 0
+  _fingerRunCurlDegrees: 0.8
+  _fingerLandingCurlDegrees: 1.1
+  _thumbRestCurlDegrees: 0
+  _wristRunPitchDegrees: 1.1
+  _wristAirPitchDegrees: 0.9
+  _wristLandingPitchDegrees: 1.4
+  _boneSmoothing: 20
+  _jumpBlendTime: 0.12
+  _fallBlendTime: 0.18
+  _landingRecoveryDuration: 0.24
+  _maxLandingImpactMultiplier: 1.25

@@ -1,0 +1,129 @@
+using System.Collections;
+using System.IO;
+using System.Linq;
+using Avoidance.Gameplay.Levels;
+using Avoidance.Gameplay.Player;
+using Avoidance.UI;
+using Avoidance.UI.Touch;
+using Avoidance.Input;
+using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.TestTools;
+using UnityEngine.UI;
+
+namespace Avoidance.Tests.PlayMode
+{
+    public sealed class FlowLabPlayTests
+    {
+        private sealed class FlowInput : IPlayerInputSource,IFlowSteeringInputSource
+        {
+            public Vector2 Move {get;set;}=Vector2.up;
+            public Vector2 LookDelta=>Vector2.zero;
+            public bool JumpPressed {get;set;}
+            public bool FlowSteeringEnabled=>true;
+            public AutoCameraProfileKind AutoCameraProfile=>AutoCameraProfileKind.Direct;
+            public void ResetState(){Move=Vector2.zero;JumpPressed=false;}
+        }
+        [UnityTest] public IEnumerator FrontendTrainingRoomsComparisonRetryAndTouchContract()
+        {
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+            var preference=PlayerPrefs.GetInt(TouchInputCoordinator.ControlProfilePreferenceKey,-1);
+            Object.FindObjectsByType<Button>(FindObjectsSortMode.None).Single(x=>x.name=="FLOW LAB  /  MOVEMENT PRACTICE Button").onClick.Invoke();
+            var deadline=Time.realtimeSinceStartup+15;
+            while(Object.FindAnyObjectByType<FlowLabSceneController>()==null && Time.realtimeSinceStartup<deadline)yield return null;
+            yield return new WaitForSecondsRealtime(.3f);
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();Assert.That(lab,Is.Not.Null);
+            var player=lab.Player;player.enabled=false;var motor=player.Motor;
+            Assert.That(motor.Profile.MovementMastery,Is.True);
+            var touch=Object.FindAnyObjectByType<TouchInputCoordinator>();
+            Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.True);
+            Assert.That(touch.RuntimeProfile.EnableFixedButton,Is.False);
+            Assert.That(touch.RuntimeProfile.MovementOnRight,Is.False);
+            touch.SetMovement(Vector2.up);Assert.That(touch.TryClaim(TouchControlRole.Look,72),Is.True);
+            touch.BeginLookGesture(72,new Vector2(1000,400),1);
+            touch.EndLookGesture(72,new Vector2(1000,400),1.06f,800);
+            touch.Release(TouchControlRole.Look,72);
+            Assert.That(touch.ConsumeJumpPressed(),Is.True);Assert.That(touch.Movement.y,Is.GreaterThan(0));
+            player.Input.SetMode(PlayerInputMode.Touch);touch.AddLookDelta(new Vector2(20,10));player.Input.Sample();
+            float yaw=player.transform.eulerAngles.y,pitch=player.CameraRig.Pitch;
+            player.CameraRig.ApplyLook(player.Input,PlayerInputMode.Touch,1f/60,motor);
+            Assert.That(Mathf.DeltaAngle(yaw,player.transform.eulerAngles.y),Is.EqualTo(0).Within(.01f));
+            Assert.That(player.CameraRig.Pitch,Is.Not.EqualTo(pitch));
+            lab.Retry();Assert.That(motor.Velocity,Is.EqualTo(Vector3.zero));Assert.That(touch.Movement,Is.EqualTo(Vector2.zero));
+            for(int room=0;room<4;room++)
+            {
+                lab.SelectRoom(room);yield return null;
+                Assert.That(lab.Room.id,Does.StartWith("training.flow."));
+                Assert.That(Physics.Raycast(lab.Room.start+Vector3.up,Vector3.down,3,LayerMask.GetMask("Ground")),Is.True);
+                Capture("Logs/MovementMasteryQA/room-"+room+".png");
+            }
+            lab.Compare();Assert.That(motor.Profile.MovementMastery,Is.False);
+            lab.Compare();Assert.That(motor.Profile.MovementMastery,Is.True);
+            Assert.That(PlayerPrefs.GetInt(TouchInputCoordinator.ControlProfilePreferenceKey,-1),Is.EqualTo(preference));
+            Assert.That(ModuleSelectionState.GetCampaignModuleIds().Length,Is.EqualTo(3));
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+        [UnityTest] public IEnumerator SurfRoomRealEntryContactExitAndRetry()
+        {
+            FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
+            lab.SelectRoom(2);yield return null;
+            var motor=lab.Player.Motor;var input=new FlowInput();float contact=0;
+            for(int i=0;i<600 && !lab.Session.Complete;i++)
+            {
+                motor.Simulate(input,1f/60);lab.Session.Tick(motor,1f/60);
+                if(motor.IsSurfing)contact+=1f/60;
+            }
+            Debug.Log($"FLOW LAB surf route contact={contact:F3}s position={motor.transform.position} time={lab.Session.Seconds:F3}");
+            Assert.That(contact,Is.GreaterThan(.3f));Assert.That(lab.Session.Complete,Is.True);
+            float best=lab.Session.BestSeconds;lab.Retry();
+            Assert.That(lab.Session.Complete,Is.False);Assert.That(lab.Session.Seconds,Is.Zero);Assert.That(lab.Session.BestSeconds,Is.EqualTo(best));
+            Assert.That(motor.transform.position,Is.EqualTo(lab.Room.start));Assert.That(motor.IsSurfing,Is.False);
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+        [UnityTest] public IEnumerator AirBhopAndShortFlowHaveReachableMeasuredFinishes()
+        {
+            FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
+            foreach(int room in new[]{0,1,3})
+            {
+                lab.SelectRoom(room);yield return null;
+                var motor=lab.Player.Motor;var input=new FlowInput();bool armed=true;int jumps=0;
+                for(int i=0;i<1200 && !lab.Session.Complete;i++)
+                {
+                    float z=motor.transform.position.z;
+                    input.Move=room==0 && !motor.IsGrounded && motor.VerticalSpeed!=0 ? new Vector2(.65f,1).normalized : Vector2.up;
+                    input.JumpPressed=armed && (jumps==0 ? z>5 : room==1
+                        ? motor.VerticalSpeed < -3 && motor.transform.position.y<.8f
+                        : room==3 && jumps==1 && z>10 && motor.IsGrounded);
+                    if(input.JumpPressed)armed=false;
+                    int before=motor.JumpCount;motor.Simulate(input,1f/60);
+                    if(motor.JumpCount>before){jumps++;armed=true;}
+                    lab.Session.Tick(motor,1f/60);
+                }
+                Debug.Log($"FLOW LAB {lab.Room.id} complete={lab.Session.Complete} time={lab.Session.Seconds:F3} airGain={lab.Session.AirGain:F3} chain={lab.Session.BestChain} position={motor.transform.position}");
+                Assert.That(lab.Session.Complete,Is.True,lab.Room.id);
+            }
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+        private static void Capture(string path)
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(path));var camera=Camera.main;
+            var render=new RenderTexture(1560,720,24);var image=new Texture2D(1560,720,TextureFormat.RGB24,false);
+            var previous=RenderTexture.active;var aspect=camera.aspect;
+            var canvases=Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None).Where(c=>c.renderMode==RenderMode.ScreenSpaceOverlay).ToArray();
+            try
+            {
+                camera.targetTexture=render;camera.aspect=1560f/720;
+                foreach(var canvas in canvases){canvas.renderMode=RenderMode.ScreenSpaceCamera;canvas.worldCamera=camera;canvas.planeDistance=1;}
+                Canvas.ForceUpdateCanvases();camera.Render();RenderTexture.active=render;
+                image.ReadPixels(new Rect(0,0,1560,720),0,0);image.Apply();File.WriteAllBytes(path,image.EncodeToPNG());
+            }
+            finally
+            {
+                foreach(var canvas in canvases){canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.worldCamera=null;}
+                camera.targetTexture=null;camera.aspect=aspect;RenderTexture.active=previous;Object.Destroy(render);Object.Destroy(image);
+            }
+        }
+    }
+}

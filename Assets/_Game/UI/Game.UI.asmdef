@@ -4,8 +4,12 @@
   "references": [
     "Game.Core",
     "Game.Gameplay",
+    "Game.Input",
+    "Game.Save",
     "Unity.InputSystem",
-    "UnityEngine.UI"
+    "UnityEngine.UI",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Universal.Runtime"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

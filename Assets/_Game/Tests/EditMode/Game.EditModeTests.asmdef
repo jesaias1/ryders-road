@@ -7,7 +7,9 @@
     "Game.Save",
     "Game.Diagnostics",
     "Game.UI",
-    "Game.Editor"
+    "Game.Editor",
+    "Game.Input",
+    "Game.Gameplay"
   ],
   "includePlatforms": [
     "Editor"

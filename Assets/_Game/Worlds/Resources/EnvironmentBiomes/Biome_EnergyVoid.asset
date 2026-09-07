@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c697171b4cfac4eb14deb1444c8044, type: 3}
+  m_Name: Biome_EnergyVoid
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Worlds.EnvironmentBiomeProfile
+  _combineStaticGeometry: 0
+  _biomeId: biome.energy-void
+  _displayName: Energy Void
+  _kind: 3
+  _atmosphereTint: {r: 0.35, g: 0.62, b: 0.9, a: 1}
+  _mistColor: {r: 0.45, g: 0.82, b: 1, a: 0.2}
+  _hazeColor: {r: 0.08, g: 0.16, b: 0.28, a: 0.28}
+  _mistOceanY: -48
+  _mistLayers:
+  - _stableId: biome.energy-void.mist.ocean-a
+    _position: {x: 0, y: -48, z: 26}
+    _scale: {x: 98, y: 7, z: 72}
+    _alpha: 0.2
+    _motionRadius: 0
+    _motionSpeed: 0
+  - _stableId: biome.energy-void.mist.ocean-b
+    _position: {x: 38, y: -54, z: 78}
+    _scale: {x: 94, y: 9, z: 82}
+    _alpha: 0.18
+    _motionRadius: 0
+    _motionSpeed: 0
+  - _stableId: biome.energy-void.mist.deep
+    _position: {x: -28, y: -66, z: 96}
+    _scale: {x: 130, y: 14, z: 110}
+    _alpha: 0.15
+    _motionRadius: 0
+    _motionSpeed: 0
+  _worldObjects:
+  - _stableId: biome.energy-void.cyan-stack-a
+    _prefab: {fileID: 4787574877356061290, guid: 8ee65cc3c3bcb8c4983cd0724994ae92, type: 3}
+    _position: {x: -38, y: -50, z: 44}
+    _eulerAngles: {x: 0, y: 12, z: 0}
+    _scale: {x: 20, y: 44, z: 20}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 0
+    _depthBand: 2
+    _depthFadeStrength: 1
+  - _stableId: biome.energy-void.cyan-stack-b
+    _prefab: {fileID: 1434382964590584726, guid: 2d775dd71a5195a49b0de886a81a575f, type: 3}
+    _position: {x: 42, y: -54, z: 82}
+    _eulerAngles: {x: 0, y: -22, z: 0}
+    _scale: {x: 18, y: 38, z: 18}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 0
+    _depthBand: 2
+    _depthFadeStrength: 1
+  - _stableId: biome.energy-void.energy-chimney
+    _prefab: {fileID: 5345530326629208038, guid: d4c66be19664f5241a1b3516e12d06fd, type: 3}
+    _position: {x: 8, y: -48, z: 112}
+    _eulerAngles: {x: 0, y: 8, z: 0}
+    _scale: {x: 12, y: 52, z: 12}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 0
+    _depthBand: 2
+    _depthFadeStrength: 1

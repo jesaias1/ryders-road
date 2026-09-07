@@ -8,34 +8,34 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  -
+  - ''
   - Water
   - UI
-  -
-  -
+  - ''
+  - ''
   - Player
   - Ground
   - Hazard
   - Checkpoint
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - FirstPersonArms
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   m_SortingLayers:
   - name: Default
     uniqueID: 0

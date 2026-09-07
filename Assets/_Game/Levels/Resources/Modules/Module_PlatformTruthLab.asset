@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e4f289b8713814bbfc1b113461f7cf, type: 3}
+  m_Name: Module_PlatformTruthLab
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Levels.ModuleDefinition
+  _stableModuleId: module.platform-truth-lab
+  _displayName: Platform Truth Lab (Collision & Mechanic Calibration)
+  _internalName: module_platform_truth_lab
+  _projectId: project.ryders-block
+  _worldId: world.prototype-sky
+  _contentVersion: 99
+  _sceneName: Assets/_Game/Levels/Scenes/ModuleRunner.unity
+  _difficulty: 0
+  _startPoint:
+    _position: {x: 0, y: 0.35, z: 0}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+  _startAnchorStableId: 
+  _startSupportBlockStableId: 
+  _useCustomFallThreshold: 0
+  _fallThresholdY: -12
+  _disableAutomaticDistantFragments: 0
+  _patchBlock:
+    _stableId: patch.truth
+    _pose:
+      _position: {x: 0, y: 2.8, z: 78}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _size: {x: 2.2, y: 2.2, z: 2.2}
+  _restorePoints:
+  - _stableId: restore.truth.midpoint
+    _order: 0
+    _pose:
+      _position: {x: 0, y: 0.8, z: 38}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  _expectedCleanTime: 60
+  _estimatedCasualTime: 120
+  _rankThresholds:
+    _silverSeconds: 60
+    _goldSeconds: 45
+    _diamondSeconds: 35
+    _calibrationState: 0
+    _thresholdVersion: 1
+    _designerNotes: UNCALIBRATED - Platform Truth Lab regression thresholds.
+  _mechanicsUsed: 00000000010000000200000007000000050000000a0000000300000004000000
+  _optionalShortcuts: []
+  _environmentProfile: {fileID: 11400000, guid: 7eb7a0625794d0d408e4b41b47de1a9a, type: 2}
+  _environmentBiomeProfile: {fileID: 0}
+  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _loreBugDescription: Platform truth and collision calibration regression lab.
+  _developerNotes: Verify 1x1 golden reference, long/large platforms, restore spawn,
+    patch goal, boost pad, surf ramp.
+  _blocks:
+  - _stableId: truth.platform.start
+    _pose:
+      _position: {x: 0, y: 0, z: 0}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.platform.start
+  - _stableId: truth.block.std.01
+    _pose:
+      _position: {x: 0, y: 0, z: 4.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.block.std.01
+  - _stableId: truth.block.std.02
+    _pose:
+      _position: {x: 0, y: 0, z: 8.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.block.std.02
+  - _stableId: truth.platform.long.x
+    _pose:
+      _position: {x: 0, y: 0, z: 13}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.platform.long.x
+  - _stableId: truth.platform.long.z
+    _pose:
+      _position: {x: 0, y: 0, z: 17.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.platform.long.z
+  - _stableId: truth.platform.large
+    _pose:
+      _position: {x: 0, y: 0.2, z: 22.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.platform.large
+  - _stableId: truth.moving.runup
+    _pose:
+      _position: {x: 0, y: 0.4, z: 26.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.moving.runup
+  - _stableId: truth.moving.exit
+    _pose:
+      _position: {x: 0, y: 0.5, z: 33}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.moving.exit
+  - _stableId: truth.boost.landing
+    _pose:
+      _position: {x: 0, y: 3.2, z: 54}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.boost.landing
+  - _stableId: truth.surf.landing
+    _pose:
+      _position: {x: 0, y: 2, z: 72}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.surf.landing
+  - _stableId: truth.patch.base
+    _pose:
+      _position: {x: 0, y: 2, z: 78}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: truth.patch.base
+  _movingBlocks:
+  - _stableId: truth.moving.platform
+    _pose:
+      _position: {x: 0, y: 0.5, z: 29.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 1.5}
+    _pathPoints:
+    - {x: -3, y: 0.5, z: 29.5}
+    - {x: 3, y: 0.5, z: 29.5}
+    _pathSpace: 0
+    _loopMode: 0
+    _easing: 1
+    _speed: 2.5
+    _pauseAtEndpoints: 0.4
+    _startingPhase: 0
+  _boostBlocks:
+  - _stableId: truth.boost.01
+    _pose:
+      _position: {x: 0, y: 0.8, z: 44}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _launchDirection: {x: 0, y: 0.75, z: 1}
+    _verticalStrength: 10
+    _horizontalStrength: 8.5
+    _cooldown: 0.35
+  _waterVolumes: []
+  _surfSurfaces:
+  - _stableId: surf.truth.ramp
+    _pose:
+      _position: {x: -4, y: 4.5, z: 63}
+      _eulerAngles: {x: 0, y: -25, z: 42}
+    _size: {x: 4, y: 0.45, z: 16}
+    _flowDirection: {x: 0, y: 0, z: 1}
+  _crumblingBlocks:
+  - _stableId: truth.crumble.01
+    _pose:
+      _position: {x: 0, y: 0.6, z: 35.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _activationDelay: 0.03
+    _fallDelay: 1
+    _resetTime: 4
+    _shakeAmount: 0.03
+  _decorations: []
+  _cameraHints: []
+  _completionRewards:
+  - _stableId: reward.truth-lab.bronze.shards
+    _kind: 0
+    _contentId: currency.patch-shards
+    _quantity: 50
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.truth-lab.bronze.package
+    _kind: 1
+    _contentId: loot.package.truth
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.truth-lab.bronze.skin
+    _kind: 2
+    _contentId: skin.ryder.truth
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: Skin

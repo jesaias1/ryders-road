@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/_Game/Levels/Scenes/Bootstrap.unity
     guid: e5ee1dbab19249a0a8ad8aa325159431
   - enabled: 1
+    path: Assets/_Game/Levels/Scenes/ModuleSelector.unity
+    guid: ef98ed9fedeb3dc4dbe7644b2a0d541d
+  - enabled: 1
+    path: Assets/_Game/Levels/Scenes/MovementLab.unity
+    guid: 1c8847c8e49b4a1aa0013601d1183e9a
+  - enabled: 1
+    path: Assets/_Game/Levels/Scenes/ModuleRunner.unity
+    guid: cb57798f23aa67c4a88a078619962d64
+  - enabled: 1
     path: Assets/_Game/Levels/Scenes/FoundationTest.unity
     guid: 4f66380fac53451aa6e8b60725e84c45
   m_configObjects: {}

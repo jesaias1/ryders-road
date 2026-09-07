@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e4f289b8713814bbfc1b113461f7cf, type: 3}
+  m_Name: Module_001_FirstSteps
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Levels.ModuleDefinition
+  _stableModuleId: module.001.first-steps
+  _displayName: Campaign 01 - First Steps
+  _internalName: module_001_first_steps
+  _projectId: project.ryders-block
+  _worldId: world.prototype-sky
+  _contentVersion: 2
+  _sceneName: ModuleRunner
+  _difficulty: 0
+  _startPoint:
+    _position: {x: 0, y: 0.35, z: -0.8}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+  _startAnchorStableId: start.module-001.arrival
+  _startSupportBlockStableId: m01.start
+  _useCustomFallThreshold: 0
+  _fallThresholdY: -12
+  _disableAutomaticDistantFragments: 1
+  _patchBlock:
+    _stableId: patch.module-001
+    _pose:
+      _position: {x: 7, y: 1.45, z: 46.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _size: {x: 2.2, y: 2.2, z: 2.2}
+  _restorePoints:
+  - _stableId: restore.module-001.midpoint
+    _order: 0
+    _pose:
+      _position: {x: 5.8, y: 0.45, z: 25}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: 
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  _expectedCleanTime: 26
+  _estimatedCasualTime: 55
+  _rankThresholds:
+    _silverSeconds: 42
+    _goldSeconds: 32
+    _diamondSeconds: 26
+    _calibrationState: 0
+    _thresholdVersion: 1
+    _designerNotes: UNCALIBRATED - Campaign 01 provisional thresholds. Bronze is
+      any valid completion.
+  _mechanicsUsed: 00000000010000000300000004000000
+  _optionalShortcuts: []
+  _environmentProfile: {fileID: 11400000, guid: 9e9e22542754f244985a385a99c8a7f8, type: 2}
+  _environmentBiomeProfile: {fileID: 11400000, guid: b0d09c96c56730746a6f1cac1f944fde, type: 2}
+  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _loreBugDescription: Restore the first broken connection through the sunlit rooftops
+    of Sky City.
+  _developerNotes: 'Sky City: Arrival Terrace, Broken Sky Bridge, Suspended Garden,
+    Sun Gateway, Patch Overlook. Welcoming roof widths with original centers and
+    jump cadence. V2 rank times require physical calibration.'
+  _blocks:
+  - _stableId: m01.start
+    _pose:
+      _position: {x: 0, y: 0, z: 0}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6, y: 0.6, z: 4}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.start
+  - _stableId: m01.step.01
+    _pose:
+      _position: {x: 0, y: 0, z: 4.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.step.01
+  - _stableId: m01.step.02
+    _pose:
+      _position: {x: 0, y: 0, z: 8.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.step.02
+  - _stableId: m01.step.03
+    _pose:
+      _position: {x: 0, y: 0, z: 12.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.step.03
+  - _stableId: m01.turn.01
+    _pose:
+      _position: {x: 1.8, y: 0.25, z: 16.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.turn.01
+  - _stableId: m01.turn.02
+    _pose:
+      _position: {x: 4, y: 0.45, z: 20.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.turn.02
+  - _stableId: m01.restore.approach
+    _pose:
+      _position: {x: 5.8, y: 0.45, z: 25}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5, y: 0.6, z: 3.4}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.restore.approach
+  - _stableId: m01.flow.01
+    _pose:
+      _position: {x: 5.8, y: 0.65, z: 29.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 1
+    _editorLabel: 0
+    _label: m01.flow.01
+  - _stableId: m01.flow.02
+    _pose:
+      _position: {x: 7.4, y: 0.85, z: 33.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 1
+    _editorLabel: 0
+    _label: m01.flow.02
+  - _stableId: m01.flow.03
+    _pose:
+      _position: {x: 5.6, y: 1.05, z: 37.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.flow.03
+  - _stableId: m01.final-runup
+    _pose:
+      _position: {x: 7, y: 1.15, z: 41.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3.4, y: 0.6, z: 2.2}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.final-runup
+  - _stableId: m01.patch.base
+    _pose:
+      _position: {x: 7, y: 1.15, z: 46.5}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 6, y: 0.6, z: 4}
+    _visualRole: 0
+    _editorLabel: 0
+    _label: m01.patch.base
+  _movingBlocks: []
+  _boostBlocks: []
+  _waterVolumes: []
+  _surfSurfaces: []
+  _crumblingBlocks: []
+  _decorations: []
+  _cameraHints:
+  - _stableId: camera.m01.final
+    _position: {x: 6, y: 2.6, z: 41}
+    _size: {x: 5, y: 4, z: 8}
+    _preferredYaw: 0
+    _preferredPitch: -6
+    _maxAssistDegrees: 8
+  _completionRewards:
+  - _stableId: reward.module-001.bronze.shards
+    _kind: 0
+    _contentId: currency.patch-shards
+    _quantity: 100
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.module-001.bronze.package
+    _kind: 1
+    _contentId: loot.package.module-001
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: 
+  - _stableId: reward.module-001.bronze.skin
+    _kind: 2
+    _contentId: skin.ryder.default
+    _quantity: 1
+    _minimumRank: 1
+    _firstCompletionOnly: 1
+    _unlockType: Skin

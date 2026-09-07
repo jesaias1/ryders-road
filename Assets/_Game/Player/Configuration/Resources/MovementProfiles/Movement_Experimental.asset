@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816f4832d83144d48426712a70384e4b, type: 3}
+  m_Name: Movement_Experimental
+  m_EditorClassIdentifier:
+  _profileId: movement.experimental
+  _displayName: PARKOUR_MOMENTUM
+  _compatibilityVersion: 1
+  _walkSpeed: 6
+  _runSpeed: 8.2
+  _acceleration: 46
+  _deceleration: 54
+  _groundFriction: 12
+  _groundDirectionResponse: 1.05
+  _steeringYawRate: 250
+  _lowSpeedYawRate: 300
+  _highSpeedYawRate: 170
+  _groundSteeringStrength: 1.12
+  _airSteeringStrength: 0.95
+  _surfSteeringStrength: 1
+  _maximumHeadingDeltaPerSecond: 300
+  _steeringAcceleration: 10
+  _steeringDeceleration: 14
+  _steeringResponseCurve: 1.05
+  _softMomentumLimit: 12.4
+  _hardVelocitySafetyLimit: 20
+  _airAcceleration: 14
+  _airWishSpeed: 8.6
+  _airControl: 0.78
+  _airTurnStrength: 5.2
+  _airMomentumGain: 0.42
+  _maxAirSpeedContribution: 3.8
+  _jumpHeight: 1.7
+  _gravity: 27
+  _timeToApex: 0.36
+  _gravityScale: 1
+  _fallGravityMultiplier: 1.25
+  _baseTakeoffMomentumRetention: 0.93
+  _highMomentumTakeoffRetention: 1.03
+  _takeoffMomentumRetentionPower: 1.2
+  _landingMomentumRetention: 1
+  _maximumFallSpeed: 36
+  _perfectHopWindow: 0.055
+  _goodHopWindow: 0.12
+  _bufferedHopWindow: 0.18
+  _perfectHopRetention: 1
+  _goodHopRetention: 0.97
+  _bufferedHopRetention: 0.91
+  _lateHopPenalty: 0.7
+  _coyoteTime: 0.14
+  _jumpBufferDuration: 0.16
+  _groundSnap: 0.2
+  _edgeTolerance: 0.09
+  _landingAssistance: 1
+  _movingPlatformInheritance: 1
+  _respawnMovementLockDuration: 0.05

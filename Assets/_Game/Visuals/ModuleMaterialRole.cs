@@ -1,0 +1,37 @@
+namespace Avoidance.Gameplay.Visuals
+{
+    public enum ModuleMaterialRole
+    {
+        Normal,
+        Precision,
+        Moving,
+        Restore,
+        Patch,
+        Boost,
+        Water,
+        Crumbling,
+        ShortcutCue,
+        NullSpace,
+        Underside,
+        Edge,
+        TowerCore,
+        DecorationStone,
+        Vegetation,
+        Cloud,
+        StoneSide,
+        WaterFoam,
+        PatchCore,
+        BoostArrow,
+        MovingAccent,
+        CrumbleFault,
+        Corruption,
+        GloveDark,
+        GloveAccent,
+        SurfaceHighlight,
+        SurfaceInset,
+        CircuitLine,
+        WarmAccent,
+        Flower,
+        Surf
+    }
+}

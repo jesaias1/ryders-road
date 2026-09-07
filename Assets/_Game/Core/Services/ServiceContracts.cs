@@ -35,11 +35,32 @@ namespace Avoidance.Core.Services
         void Save();
     }
 
+    public enum DiagnosticsDisplayMode
+    {
+        Hidden,
+        Normal,
+        Full
+    }
+
     public interface IDiagnosticsService
     {
         void SetValue(string key, string value);
         bool RemoveValue(string key);
         System.Collections.Generic.IReadOnlyDictionary<string, string> Values { get; }
+        DiagnosticsDisplayMode DisplayMode { get; }
+        void SetDisplayMode(DiagnosticsDisplayMode mode);
+        void CycleDisplayMode();
+    }
+
+    public interface IPlatformDisplayService
+    {
+        bool ImmersiveRequested { get; }
+        bool HasFocus { get; }
+        int AndroidApiLevel { get; }
+        Rect SafeArea { get; }
+        string DisplaySummary { get; }
+        void RequestImmersiveMode();
+        void SetFocusState(bool focused);
     }
 
     [Serializable]

@@ -1,5 +1,22 @@
 # Save Schema
 
+## 0.9.4 Mountain World authority
+
+Schema stays V4. Existing completed/completionCount retain historical all-finish meaning; Campaign eligibility now checks earned best/highest ranks and validity. Practice-only records do not unlock roads. Later practice never erases an earned rank, and later genuine Campaign completions preserve earlier access. Module 002 content version becomes 2. No save wipe or migration. See ADR 0016.
+
+## 0.9.3 content compatibility
+
+Schema remains V4. Module 001 advances to content version 2 after widening introductory landings; route/Restore/Patch/module IDs and persisted meaning stay stable. Prior PBs retain recorded content-version metadata. No migration or new economy/pickup data was introduced.
+
+## 0.9.1 compatibility note
+
+Schema remains V4. Flow Shards are attempt-local and never write to economy,
+inventory or module progression. Module 003 now declares content version 6;
+historical PBs and their recorded content-version metadata remain intact.
+No persisted field meaning or stable module ID was changed, so no migration is
+required for this continuation.
+
+
 ## Storage
 
 The local file is `Application.persistentDataPath/Saves/save.json`. Writes go
@@ -11,23 +28,115 @@ A recovered backup is immediately written back as primary.
 This provides practical corruption resistance, not transactional durability
 against every possible storage or power failure.
 
-## Current schema: V2
+`0.4.7-brand-alpha-presentation` changes the player-facing product name to
+`Ryder's Road` but keeps the Android package ID stable. On editor/desktop paths
+where Unity may include the product name, `SavePathMigrationUtility` copies
+legacy `RYDERS BLOCK/Saves/save.json` and `.bak` into a missing current
+`Ryder's Road/Saves` directory. It never overwrites an existing current save.
+
+## Current schema: V4
 
 ```json
 {
-  "schemaVersion": 2,
-  "gameVersion": "0.0.1",
+  "schemaVersion": 4,
+  "gameVersion": "0.4.7",
   "settings": {
     "masterVolume": 1.0,
     "lookSensitivity": 0.5,
     "diagnosticsVisible": true
   },
-  "progression": {}
+  "progression": {
+    "modules": [
+      {
+        "moduleId": "module.001.first-steps",
+        "completed": true,
+        "bestTimeSeconds": 38.421,
+        "bestRank": "Silver",
+        "bestScore": 99961579,
+        "completionCount": 1,
+        "attemptCount": 3,
+        "bestSplits": [
+          { "checkpointId": "restore.module-001.midpoint", "seconds": 18.25 }
+        ],
+        "latestCompletionTimeSeconds": 38.421,
+        "latestRank": "Silver",
+        "highestRank": "Silver",
+        "moduleContentVersion": 1,
+        "movementCompatibilityVersion": 1,
+        "rankThresholdVersion": 1,
+        "rankCalibrationState": "Uncalibrated",
+        "runValidity": "ValidUnassisted"
+      }
+    ],
+    "exceptionalUnlocks": [],
+    "claimedRewardIds": [
+      "reward.module-001.bronze.shards",
+      "reward.module-001.bronze.package",
+      "reward.module-001.bronze.skin"
+    ]
+  },
+  "economy": {
+    "balances": [
+      { "currencyId": "currency.patch-shards", "amount": 0 }
+    ],
+    "lootPackagesOpened": 0
+  },
+  "inventory": {
+    "items": [
+      {
+        "contentId": "loot.package.starter",
+        "quantity": 1,
+        "firstAcquiredUtc": "2026-08-16T12:00:00Z",
+        "lastAcquiredUtc": "2026-08-16T12:00:00Z",
+        "sourceId": "reward.module.001.bronze"
+      }
+    ],
+    "unlocks": [
+      {
+        "contentId": "skin.ryder.default",
+        "unlockType": "Skin",
+        "unlocked": true,
+        "unlockedUtc": "2026-08-16T12:00:00Z",
+        "sourceId": "default"
+      }
+    ],
+    "equippedCosmetics": [
+      { "slotId": "hands", "contentId": "skin.ryder.default" }
+    ]
+  }
 }
 ```
 
-`progression` is intentionally empty.
-Currency, level progress, inventory, best times, and ranks do not exist yet.
+Progression is keyed by stable module ID. Normal unlocks are derived from
+completed previous modules; `exceptionalUnlocks` exists for future special
+cases without duplicating ordinary campaign state.
+
+Economy and inventory containers are present as a progression foundation only.
+They use stable content IDs and currently start empty. Runtime helper methods
+can add/spend currency, grant stackable items, set unlocks, and equip cosmetics
+only after the target content has an unlocked record. Module completion rewards
+now use stable reward IDs recorded in `claimedRewardIds` so first-completion
+rewards do not duplicate. No loot package opening flow, shop, purchase,
+skin-equipment UI, ghosts, or online records exist yet.
+
+Phase 1 and Phase 2 did not change the save schema. Phase 3 migrates V2 to V3
+by preserving settings and adding empty progression arrays. Phase 3B, the
+0.3.8 movement-lock pass, the 0.3.9 Movement V1 pass, 0.4.x visual/camera
+passes, and the 0.4.7 brand pass initially kept V3 unchanged and added only
+visual, control, movement, camera, fullscreen, product-name, or build-version
+data outside saves. The 2026-08-16 progression-foundation pass migrates V3 to
+V4 by preserving settings/progression and adding empty economy and inventory
+containers. Existing V4 documents without `claimedRewardIds` normalize that
+array to empty on load/save. Movement beta reports are separate development
+JSON files under
+`Application.persistentDataPath/SessionReports`. Module attempt reports are
+separate development JSON files under
+`Application.persistentDataPath/ModuleReports`. They are not progression
+records and are safe to delete between test sessions.
+
+Raw best times are the source of truth. If rank thresholds change, current
+displayed rank can be recalculated from the stored raw time and the current
+threshold data without forcing a replay.
 
 ## Migrations
 

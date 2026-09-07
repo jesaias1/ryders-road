@@ -61,6 +61,7 @@ namespace Avoidance.SaveSystem
 
             Current.schemaVersion = SaveSchema.CurrentVersion;
             Current.gameVersion = _gameVersion;
+            SanitizeDocument(Current);
             try
             {
                 _store.WriteAtomic(JsonUtility.ToJson(Current, true), preserveBackup);
@@ -152,8 +153,7 @@ namespace Avoidance.SaveSystem
                     return false;
                 }
 
-                document.settings ??= new Avoidance.Core.Services.GameSettings();
-                document.progression ??= new ProgressionData();
+                SanitizeDocument(document);
                 return true;
             }
             catch (Exception exception)
@@ -168,8 +168,28 @@ namespace Avoidance.SaveSystem
             return new SaveDocument
             {
                 schemaVersion = SaveSchema.CurrentVersion,
-                gameVersion = _gameVersion
+                gameVersion = _gameVersion,
+                settings = new Avoidance.Core.Services.GameSettings(),
+                progression = new ProgressionData(),
+                economy = new EconomyData(),
+                inventory = new InventoryData()
             };
+        }
+
+        private static void SanitizeDocument(SaveDocument document)
+        {
+            if (document == null)
+            {
+                return;
+            }
+
+            document.settings ??= new Avoidance.Core.Services.GameSettings();
+            document.progression ??= new ProgressionData();
+            document.economy ??= new EconomyData();
+            document.inventory ??= new InventoryData();
+            ModuleProgressionData.EnsureArrays(document.progression);
+            EconomyProgressionData.EnsureArrays(document.economy);
+            InventoryProgressionData.EnsureArrays(document.inventory);
         }
 
         [Serializable]

@@ -1,10 +1,13 @@
-# Avoidance
+# RYDER'S ROAD
 
-Unity 6 mobile first-person parkour project. This repository currently contains
-the Phase 0 foundation (`0.0.1-foundation`) only.
+Unity 6 landscape mobile first-person block parkour project. The current
+player-facing title is `RYDER'S ROAD`; `RYDERS BLOCK` remains only as a legacy
+internal codename in stable technical identifiers. The current build is
+`0.4.7-brand-alpha-presentation`.
 
-Open with Unity `6000.0.77f1`, let packages import, then run
-`Avoidance > Apply Foundation Project Settings` and
-`Avoidance > Validate Foundation`. Start play mode from `Bootstrap`.
+Open with Unity `6000.5.6f1`, let packages import, then run
+`RYDERS BLOCK > Apply Project Settings` and
+`RYDERS BLOCK > Validate Project`. Start play mode from `Bootstrap`; it loads
+the development module selector.
 
 See `AGENTS.md`, `ARCHITECTURE.md`, and `TESTING.md` before editing.

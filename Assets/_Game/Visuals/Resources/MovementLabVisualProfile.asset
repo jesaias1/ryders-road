@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807e86cdb3f7f714c965d8cf5c508b17, type: 3}
+  m_Name: MovementLabVisualProfile
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Visuals.MovementLabVisualProfile
+  _skyHorizon: {r: 0.42, g: 0.68, b: 1, a: 1}
+  _skyFog: {r: 0.48, g: 0.34, b: 0.82, a: 1}
+  _ambientLight: {r: 0.58, g: 0.64, b: 0.82, a: 1}
+  _sunLight: {r: 1, g: 0.93, b: 0.78, a: 1}
+  _void: {r: 0.035, g: 0.025, b: 0.09, a: 1}
+  _normalPlatform: {r: 0.78, g: 0.86, b: 0.96, a: 1}
+  _precisionPlatform: {r: 0.42, g: 0.92, b: 0.74, a: 1}
+  _movingPlatform: {r: 0.24, g: 0.66, b: 1, a: 1}
+  _restorePoint: {r: 0.1, g: 0.92, b: 1, a: 1}
+  _patchBlock: {r: 1, g: 0.64, b: 0.12, a: 1}
+  _straightTestPlatform: {r: 0.88, g: 0.88, b: 0.72, a: 1}
+  _centerLine: {r: 1, g: 1, b: 1, a: 1}
+  _boundaryLine: {r: 0.08, g: 0.08, b: 0.16, a: 1}
+  _markerLine: {r: 0.16, g: 0.95, b: 1, a: 1}
+  _underside: {r: 0.18, g: 0.2, b: 0.32, a: 1}

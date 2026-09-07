@@ -3,7 +3,11 @@
   "rootNamespace": "Avoidance.Tests.PlayMode",
   "references": [
     "Game.Core",
-    "Game.Bootstrap"
+    "Game.Save",
+    "Game.Bootstrap",
+    "Game.Gameplay",
+    "Game.Input",
+    "Game.UI"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],
