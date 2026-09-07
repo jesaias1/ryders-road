@@ -1,5 +1,15 @@
 # Current authority — 0.9.9 Campaign Flow trial
 
+GitHub sync setup checkpoint: this handoff update is in the latest local commit.
+The repository is still local-only at this point. `.gitignore` now covers local
+Codex caches, temporary QA result XML/log files and loose S23 capture PNGs;
+`.gitattributes` marks Unity binary asset formats for Git LFS going forward.
+First private GitHub push is blocked by one existing 108 MB historical blob:
+`Assets/_Game/Art/MeshySource/Meshy_AI_mech_gauntlet_right_arm_0818123200_image-to-3d-texture_fbx.zip`.
+GitHub will reject that blob unless the history is migrated to LFS or otherwise
+rewritten, which needs explicit direction because the standing instruction says
+not to rewrite history.
+
 Updated 2026-09-08. Current user feedback supersedes old manual-camera assumptions:
 the user physically tested 0.9.8 on S23, accepts Foundry's easier normal route,
 reports the overhead sightline obstruction and stranded lower-scenery landings,
@@ -46,3 +56,4 @@ No PC/multiplayer/economy diversion. Nothing is labeled Gold or production-froze
 
 Authority: PRODUCTION_099.md, ADR 0021, current ART_DIRECTION.md.
 Historical handoffs: History/AI_HANDOFF-098.md, -097.md, -096.md.
+
