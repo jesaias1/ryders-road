@@ -7,6 +7,9 @@
 [Uu]ser[Ss]ettings/
 [Mm]emoryCaptures/
 [Rr]ecordings/
+.codex-asset-cache/
+.codex-remote-attachments/
+.utmp/
 .vs/
 .idea/
 .vscode/
@@ -25,4 +28,8 @@
 *.apk
 *.aab
 *.unitypackage
+TestResults-*.xml
+*-results.xml
+unity-*.log
+s23_*.png
 sysinfo.txt
