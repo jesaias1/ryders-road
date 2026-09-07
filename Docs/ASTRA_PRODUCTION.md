@@ -1,3 +1,7 @@
+## 0.9.8 Solar Foundry
+
+Current continuation is 0.9.8 Solar Foundry, a complete fourth-road development candidate; see PRODUCTION_098.md and AI_HANDOFF.md for the verified handoff. 0.9.7 camera evaluation remains isolated. Physical approval is not inferred from the instruction to continue without the phone. Next coherent work is remaining event audio/mix and world 005; do not count unbuilt worlds as delivered.
+
 # 2026-09-08 autonomous mission authority
 
 Current production and continuation are recorded in Docs/AI_HANDOFF.md and ADR 0019.

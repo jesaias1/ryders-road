@@ -1,3 +1,7 @@
+## 0.9.8 Solar Foundry
+
+Campaign now orders 001 first-steps, 002 moving-parts, 003 flow-error and 004 solar-foundry. Legacy Spiral is separate. Solar Foundry v1 uses the existing ModuleRunner, motor, Restore, moving/crumbling blocks, FlowChallenge, Patch and progression services. The new biome enum value is appended, preserving existing numeric meanings. See Docs/PRODUCTION_098.md.
+
 ## 0.9.7 autonomous production continuation
 
 The user's 2026-09-08 mission authorizes independent production beyond historical

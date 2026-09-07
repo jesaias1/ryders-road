@@ -1,3 +1,7 @@
+## 0.9.8 Solar Foundry
+
+0.9.8 appends Solar Foundry to Campaign after 003; Spiral remains separate. Its explicit Editor authoring tool produces serialized route, world and environment assets and never runs during startup. Runtime motor, input and persistence contracts remain unchanged. See ADR 0020 and Docs/PRODUCTION_098.md.
+
 ## 0.9.7 autonomous production continuation
 
 The user's 2026-09-08 mission authorizes independent production beyond historical

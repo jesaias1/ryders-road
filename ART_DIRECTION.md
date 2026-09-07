@@ -1,3 +1,7 @@
+## 0.9.8 Solar Foundry
+
+0.9.8 Solar Foundry adds original vermilion vessels, dark steel braces, ivory radiator fins and blue solar collectors. Intake, crane, reactor and crown form distinct route landmarks. Shared gameplay surfaces retain their established colors. Near architecture has matching collision; far scenery stays outside traversal. Five actual-FOV views were reviewed, but physical art approval and Gold status remain open. See Docs/PRODUCTION_098.md.
+
 ## 0.9.7 autonomous production continuation
 
 The user's 2026-09-08 mission authorizes independent production beyond historical

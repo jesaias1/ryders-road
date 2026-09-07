@@ -12,7 +12,8 @@ namespace Avoidance.Tests.EditMode
     {
         [TestCase("module.001.first-steps", "module.002.moving-parts")]
         [TestCase("module.002.moving-parts", "module.003.flow-error")]
-        [TestCase("module.003.flow-error", null)]
+        [TestCase("module.003.flow-error", "module.004.solar-foundry")]
+        [TestCase("module.004.solar-foundry", null)]
         [TestCase("module.004.the-spiral", null)]
         [TestCase("module.lab.art-scale-collision", null)]
         public void NextCampaignNeverIncludesSpiralOrLabs(string current, string expected)

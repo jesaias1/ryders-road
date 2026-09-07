@@ -26,6 +26,7 @@ namespace Avoidance.Tests.PlayMode
         }
         [UnityTest] public IEnumerator FrontendTrainingRoomsComparisonRetryAndTouchContract()
         {
+            var campaignBefore=ModuleSelectionState.GetCampaignModuleIds();
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
             var preference=PlayerPrefs.GetInt(TouchInputCoordinator.ControlProfilePreferenceKey,-1);
             Object.FindObjectsByType<Button>(FindObjectsSortMode.None).Single(x=>x.name=="FLOW LAB  /  MOVEMENT PRACTICE Button").onClick.Invoke();
@@ -60,7 +61,7 @@ namespace Avoidance.Tests.PlayMode
             lab.Compare();Assert.That(motor.Profile.MovementMastery,Is.False);
             lab.Compare();Assert.That(motor.Profile.MovementMastery,Is.True);
             Assert.That(PlayerPrefs.GetInt(TouchInputCoordinator.ControlProfilePreferenceKey,-1),Is.EqualTo(preference));
-            Assert.That(ModuleSelectionState.GetCampaignModuleIds().Length,Is.EqualTo(3));
+            Assert.That(ModuleSelectionState.GetCampaignModuleIds(),Is.EqualTo(campaignBefore));
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
         [UnityTest] public IEnumerator SurfRoomRealEntryContactExitAndRetry()

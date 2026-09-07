@@ -1,3 +1,7 @@
+## 0.9.8 Solar Foundry
+
+Solar Foundry is a visually reviewed playable candidate, not physically approved or production-frozen. Human route pacing, mastery thresholds, mobile frame pacing/thermal behavior and landscape safe areas need S23 checks. The 0.9.7 contact mix has not been auditioned; Restore/Boost/completion/PB/ambience audio remains incomplete. Worlds 005–008 remain unbuilt. These do not block independent production under the current user instruction.
+
 ## 0.9.7 autonomous production continuation
 
 The user's 2026-09-08 mission authorizes independent production beyond historical

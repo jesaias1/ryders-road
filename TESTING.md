@@ -1,3 +1,7 @@
+## 0.9.8 Solar Foundry
+
+SolarFoundryContentTests and SolarFoundryTests cover individual production-motor jumps, support rays, ferry/rider sweep and carry, optional brackets, crumble/reset, Restore/shards, real campaign pagination/unlocks/Continue/Bronze/replay and startup preservation. Memory-backed progression fixtures preserve the user save. Exact final results and artifact are in Docs/AI_HANDOFF.md; no physical-device testing is claimed.
+
 ## 0.9.7 autonomous production continuation
 
 The user's 2026-09-08 mission authorizes independent production beyond historical

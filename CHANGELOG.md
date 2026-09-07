@@ -1,3 +1,7 @@
+## 0.9.8 Solar Foundry
+
+Added fourth Campaign road Solar Foundry: original industrial landmarks, three Restores, meaningful ferry/crumble traversal, optional shard shortcut and complete Continue/unlock/replay integration. Preserved V4, first-three-world content and accepted movement/input. Added route/collision/recovery/progression regressions and a bounded geometry budget. Full evidence: Docs/PRODUCTION_098.md.
+
 ## 0.9.7 — landing-view evaluation and authored-content preservation
 
 - Isolated optional descent framing with immediate manual takeover; fifth Flow

@@ -543,7 +543,8 @@ namespace Avoidance.Tests.EditMode
             {
                 "module.001.first-steps",
                 "module.002.moving-parts",
-                "module.003.flow-error"
+                "module.003.flow-error",
+                "module.004.solar-foundry"
             }));
             Assert.That(orderedIds, Does.Not.Contain(ModuleSelectionState.SpiralModuleId));
             Assert.That(ModuleSelectionState.IsCampaignModule("module.001.first-steps"), Is.True);

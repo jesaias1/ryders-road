@@ -60,8 +60,8 @@ namespace Avoidance.Tests.EditMode
         [Test] public void FreshBronzeSequentialProgressionAndExplicitCampaignEnd()
         {
             var p=new ProgressionData();var ids=ModuleSelectionState.GetCampaignModuleIds();
-            Assert.That(ids,Is.EqualTo(new[]{"module.001.first-steps","module.002.moving-parts","module.003.flow-error"}));
-            Assert.That(ids.Select(id=>ModuleProgressionData.IsUnlocked(p,ids,id)),Is.EqualTo(new[]{true,false,false}));
+            Assert.That(ids,Is.EqualTo(new[]{"module.001.first-steps","module.002.moving-parts","module.003.flow-error","module.004.solar-foundry"}));
+            Assert.That(ids.Select(id=>ModuleProgressionData.IsUnlocked(p,ids,id)),Is.EqualTo(new[]{true,false,false,false}));
             Assert.That(ModuleProgressionData.GetContinueModuleId(p,ids),Is.EqualTo(ids[0]));
             for(int i=0;i<ids.Length;i++)
             {
@@ -69,7 +69,7 @@ namespace Avoidance.Tests.EditMode
                 Assert.That(ModuleProgressionData.GetContinueModuleId(p,ids),Is.EqualTo(i+1<ids.Length?ids[i+1]:null));
                 for(int j=0;j<=i;j++)Assert.That(ModuleProgressionData.IsUnlocked(p,ids,ids[j]),Is.True);
             }
-            Assert.That(ModuleSelectionState.GetNextCampaignModuleId(ids[2]),Is.Null);
+            Assert.That(ModuleSelectionState.GetNextCampaignModuleId(ids[ids.Length-1]),Is.Null);
             Assert.That(ModuleProgressionData.IsUnlocked(p,ids,ModuleSelectionState.SpiralModuleId),Is.False);
             Assert.That(ModuleProgressionData.IsUnlocked(p,ids,"module.999.unknown"),Is.False);
         }
@@ -80,11 +80,13 @@ namespace Avoidance.Tests.EditMode
             Assert.That(ModuleProgressionData.IsUnlocked(p,ids,ids[1]),Is.False,"Practice-only records do not grant entry");
             r.bestRank="Bronze";r.bestTimeSeconds=88;r.moduleContentVersion=1;r.highestRank="Silver";
             var json=JsonUtility.ToJson(p);
-            Assert.That(ids.All(id=>ModuleProgressionData.IsUnlocked(p,ids,id)),Is.True);
+            Assert.That(ids.Take(3).All(id=>ModuleProgressionData.IsUnlocked(p,ids,id)),Is.True);
+            Assert.That(ModuleProgressionData.IsUnlocked(p,ids,ids[3]),Is.False);
             Assert.That(ModuleProgressionData.GetContinueModuleId(p,ids),Is.EqualTo(ids[2]));
             Assert.That(JsonUtility.ToJson(p),Is.EqualTo(json),"Derivation must not rewrite PBs, ranks or content metadata");
             var fresh=new ProgressionData{exceptionalUnlocks=new[]{ids[2]}};
-            Assert.That(ids.All(id=>ModuleProgressionData.IsUnlocked(fresh,ids,id)),Is.True);
+            Assert.That(ids.Take(3).All(id=>ModuleProgressionData.IsUnlocked(fresh,ids,id)),Is.True);
+            Assert.That(ModuleProgressionData.IsUnlocked(fresh,ids,ids[3]),Is.False);
         }
         [Test] public void PracticeNeverOpensNextRoadAndAnAttemptIsNotCompletion()
         {

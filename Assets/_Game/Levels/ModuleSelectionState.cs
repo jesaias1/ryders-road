@@ -11,7 +11,8 @@ namespace Avoidance.Gameplay.Levels
         {
             "module.001.first-steps",
             "module.002.moving-parts",
-            "module.003.flow-error"
+            "module.003.flow-error",
+            "module.004.solar-foundry"
         };
 
         public static string SelectedModuleId { get; private set; } = DefaultModuleId;

@@ -1,3 +1,7 @@
+## 0.9.8 Solar Foundry
+
+Solar Foundry is authored explicitly through SolarFoundryAuthoring.Build, never startup. Its serialized module, biome, environment, mesh and material assets are the runtime authority. Rerunning the explicit builder replaces its own authored content, so edit the authoring source alongside deliberate asset revisions. Ordinary jumps, a ferry and crumble pads form the standard route; three narrow brackets are optional. Rank thresholds are provisional. See ADR 0020.
+
 # RYDERS BLOCK Level Authoring
 
 ## Phase 0.7.9 Gameplay Truth Contract
