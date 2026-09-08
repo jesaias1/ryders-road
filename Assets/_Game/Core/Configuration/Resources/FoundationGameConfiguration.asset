@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameTitle: RYDER'S ROAD
   _gameVersion: 0.5.0
-  _buildVersion: 0.9.9-campaign-flow-trial
+  _buildVersion: 0.10.0-real-route-air-control
   _initialScene: ModuleSelector
   _developerTelemetryEnabled: 0
   _featureFlags:

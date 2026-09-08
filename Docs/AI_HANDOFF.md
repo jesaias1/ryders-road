@@ -1,61 +1,77 @@
-# Current authority — 0.9.9 Campaign Flow trial
+# Current authority — 0.10.0 real-route air control
 
-Private GitHub sync is active at `origin`
-(`https://github.com/jesaias1/ryders-road.git`). The remote repository is
-private and tracks `main`. The initial push required an approved Git LFS history
-migration because the inherited history contained a 108 MB source archive that
-GitHub rejects as a normal blob. The pre-migration history is preserved locally
-as `GitBackups/ryders-road-pre-lfs-migration.bundle`; do not commit or upload
-that backup. `.gitignore` covers local Codex caches, temporary QA result
-XML/log files, loose S23 capture PNGs and `GitBackups/`. `.gitattributes` tracks
-large source asset formats (`.zip`, `.fbx`, `.glb`, `.mp4`) through Git LFS.
-The ChatGPT/Codex GitHub connector may still require GitHub App access to this
-new private repository before connector-based review can read it.
+Updated 2026-09-08. STOP for the user's physical S23 movement feedback after this
+milestone. No further worlds/art/arms or global movement promotion in this pass.
+The user tested 0.9.9 and supplied two videos: open lab chains are promising, but
+deliberate midair correction on Campaign feels weak in both camera modes.
+The clips show lab chains and a Foundry finish; neither is movement approval.
 
-Updated 2026-09-08. Current user feedback supersedes old manual-camera assumptions:
-the user physically tested 0.9.8 on S23, accepts Foundry's easier normal route,
-reports the overhead sightline obstruction and stranded lower-scenery landings,
-and prefers the Flow Lab candidate over fully manual controls. This is not yet
-approval to replace Campaign movement globally. Continue authorized independent
-production; do not repeatedly ask permission for ordinary changes.
+ADR 0022 and PRODUCTION_0100.md are the implementation/report authority.
+Training/Movement_RealRoute is an isolated compatibility-3 candidate:
+- Flow thumb x adds an explicit fixed wish-direction offset as well as familiar
+  yaw; forward/back throttle stays deliberate, pure yaw produces no acceleration.
+- Projected acceleration 26 and opposing-input braking 30 m/s² are separate.
+  Run 7.8, wish cap 8.2, soft energy 10.8, hard safety 18 m/s remain unchanged.
+- Energy limiting occurs after wish acceleration, permitting correction at the
+  ceiling. Overspeed is preserved within safety; no optimal strafe computation.
+- Ordinary landing requires controller contact, avoiding early probe/friction.
+  Buffered taps and a brief aligned clean-hop grace preserve momentum.
+- Manual/landing camera choices have the same physics and existing pitch controls.
 
-0.9.9 addresses the crane through composition and non-route scenery landings
-through explicit counted-fall Restore. Route spacing, shortcuts and both motor
-assets remain unchanged. Foundry content v2, stable IDs and V4 preserved.
+Home → Campaign Flow Trial: A accepted/saved controls; B new/manual view;
+C identical new motor/landing view; D previous 0.9.9 Flow/manual view.
+Real roads 001–004 are available; Foundry starts selected. No trial attempts,
+PBs, progression or rewards write to V4. Retry retains trial, normal selection
+clears it. Accepted and previous mastery asset bytes remain unchanged.
 
-Home → CAMPAIGN FLOW TRIAL provides real roads 001–004 in three modes:
-A accepted motor/saved controls; B unchanged Flow candidate/manual pitch;
-C the same Flow candidate with 16-degree default and bounded landing framing.
-Right vertical drag remains available. No new permanent run buttons. Trial
-attempts/completions/rewards never write to saves or persist the control override.
-Times are session-only and separate road/content/mode. Retry retains the mode;
-home/normal selection clears it. Campaign itself still uses accepted behavior.
+Home → Flow Lab starts AIR CONTROL CIRCUIT, with five offset/precision/turn
+jumps. MOTOR cycles new → accepted → previous → new. Existing straight/bhop,
+landing and authored surf entry/exit exercises remain under ROOM. Controls/view
+are session-only. CSV traces buffer the last 9000 simulation steps per context
+and profile, flushing to persistentDataPath/MovementTrials on retry/profile
+change/exit/pause. Trace data has no save-service or movement authority.
 
-Verification: 240/240 EditMode, 57/57 PlayMode and source validation pass. Actual
-renders reviewed. Both normal/candidate Flow standard Foundry jumps, scenery
-falls, side-contact rejection, view cone, ferry/carry, recovery, all 12 trial
-road/mode loads, real touch and save/preference isolation are covered. No new
-physical test was performed by the agent; adb checked once, no device attached.
-The current fixes, landing view and replacement decision need physical feedback.
-Full evidence, APK metadata and short S23 checklist: PRODUCTION_099.md.
+Measured at 60 Hz over 1/3 second using normalized (0.65,1):
+at 8.2 m/s lateral displacement improves 0.010 → 0.467 m;
+at 10.8 m/s, 0.000 → 0.208 m without increasing the ceiling.
+At 14 m/s a stronger deliberate diagonal gives 0.277 m correction. Mild
+overspeed steering can still be projection-limited; this is not auto-steering.
+Actual small-platform tests distinguish missed straight input from successful
+deliberate correction. Full per-rate measurements are in Logs/Movement100.
 
-Verified ARM64 APK: Builds/Android/RYDERS-ROAD-0.9.9-campaign-flow-trial-dev.apk.
-Build succeeded with 0 errors and one existing legacy-icon warning; package/hash
-record: Logs/production099-package.json. It has not been installed on a phone.
+Verification: 240/240 EditMode, 83/83 PlayMode, source validation, LFS hydration
+and diff checks pass. Includes real Sky City and Foundry candidate jumps/ferry,
+all 16 trial road/mode loads and save isolation, five diagnostic jumps with
+three motors, 30/60/120 Hz correction/braking/hops/walls/surf and both camera
+presentations. Circuit and trial-menu renders were inspected. Automated tests
+do not certify phone feel, performance, Gold or global replacement.
 
-Recoverable accepted baseline: 38d222a (0.9.8), earlier db7f01a (0.9.7). The
-commit containing this handoff is the 0.9.9 checkpoint. No intentional uncommitted
-source/content changes remain at delivery. Ignored logs/builds/caches and older
-unrelated untracked captures are retained.
+APK: Builds/Android/RYDERS-ROAD-0.10.0-real-route-air-control-dev.apk.
+ARM64 development build succeeded, 0 errors, 1 existing legacy-icon warning;
+184,896,303 bytes. SHA256:
+731DC13315F426E8C396947D7AF2EFCF1D0EFA7B634CE67A36BD59D356FCBE38.
+Package remains com.rydersblockstudio.rydersblock. Build log:
+Logs/Movement100/android-build.log. Build completed in 3m25s.
+S23 is attached but reported unauthorized during this pass; this candidate has
+not been installed or physically played by the agent.
 
-Next: get B versus C comparison on real roads and use that to choose the game's
-control foundation. Do not assume fully manual must win and do not endlessly
-tune numbers without this test. Independent work remains: event audio/listening,
-then a complete fifth world with normal flowing routes and optional skill lines,
-using ART_DIRECTION.md's shared roughness/palette/detail/motif rules. Do not raise
-normal difficulty solely to make later worlds harder. Worlds 005–008 are unbuilt.
-No PC/multiplayer/economy diversion. Nothing is labeled Gold or production-frozen.
+Private GitHub synchronization: https://github.com/jesaias1/ryders-road.git,
+origin/main. Commit/push coherent milestones; never make public. This handoff
+ships with the movement milestone commit; final delivery reports its SHA.
+Recoverable parent before this work: a3dcbdc81756ee6d240b316ba42b1b8af339f40c.
+Prior history remains in GitBackups/ryders-road-pre-lfs-migration.bundle (local,
+ignored). No further history rewrite. ChatGPT GitHub App access may still need
+the user's account-side repository grant.
 
-Authority: PRODUCTION_099.md, ADR 0021, current ART_DIRECTION.md.
-Historical handoffs: History/AI_HANDOFF-098.md, -097.md, -096.md.
+The earlier LFS migration left some working-tree pointers unhydrated. Restored
+actual binaries with git lfs checkout; missing mesh/video regressions then
+passed. Before opening a fresh checkout in Unity run git lfs pull, git lfs
+checkout, and Tools/Validate-LfsAssets.ps1. Startup now preserves existing
+versioned Kenney models instead of overwriting them from workstation caches.
+Campaign content/art, stable IDs and V4 are preserved.
+
+S23: compare D then B on Foundry, repeat C; deliberately correct left/right,
+recover a poor strafe, brake, chain the circuit and try surf entry/steer/exit.
+Check landing visibility, ordinary overshoot and both landscape orientations.
+Await feedback before another movement iteration or global promotion.
 

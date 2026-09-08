@@ -15,6 +15,7 @@ namespace Avoidance.Tests.EditMode
             const string modulePath = "Assets/_Game/Levels/Resources/Modules/Module_003_FlowError.asset";
             const string biomePath = "Assets/_Game/Worlds/Resources/EnvironmentBiomes/Biome_AncientAbyss.asset";
             var paths = Directory.GetFiles(Phase074WorldSystemRecovery.LandmarkPrefabRoot, "*.prefab")
+                .Concat(Directory.GetFiles("Assets/_Game/Art/ThirdParty/Kenney", "*.fbx", SearchOption.AllDirectories))
                 .Concat(new[] { modulePath, biomePath }).ToArray();
             var before = paths.ToDictionary(path => path, File.ReadAllBytes);
             var module = AssetDatabase.LoadMainAssetAtPath(modulePath);

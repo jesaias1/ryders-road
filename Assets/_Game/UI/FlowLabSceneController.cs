@@ -24,7 +24,7 @@ namespace Avoidance.UI
         private TouchInputCoordinator touch;
         private Transform course;
         private Text feedback, instruction;
-        private MovementProfile baseline, candidate;
+        private MovementProfile baseline, candidate, previous;
         private MovementLabVisualProfile visuals;
         private int roomIndex, restoreCount;
         private float feedbackCountdown;
@@ -41,7 +41,8 @@ namespace Avoidance.UI
             roomIndex=Mathf.Max(0,System.Array.FindIndex(definition.rooms,r=>r.id==definition.initialRoomId));
             visuals=Resources.Load<MovementLabVisualProfile>(MovementLabVisualProfile.ResourceName);
             baseline=Resources.Load<MovementProfile>("MovementProfiles/Movement_Default");
-            candidate=Resources.Load<MovementProfile>("Training/Movement_Mastery");
+            candidate=Resources.Load<MovementProfile>("Training/Movement_RealRoute");
+            previous=Resources.Load<MovementProfile>("Training/Movement_Mastery");
             RenderSettings.fog=true;RenderSettings.fogColor=visuals.SkyFog;RenderSettings.fogDensity=.004f;
             RenderSettings.ambientLight=visuals.AmbientLight;
             var sun=new GameObject("Flow Lab Sun",typeof(Light));sun.transform.rotation=Quaternion.Euler(45,-25,0);
@@ -52,8 +53,9 @@ namespace Avoidance.UI
             touch.SetSessionControlProfile(TouchControlProfileKind.FlowSteerAutoDirect);
             checkpoints=new CheckpointService();checkpoints.SetStart(Room.start,Quaternion.identity);
             BuildRoom();
-            player=factory.CreatePlayer(Room.start,new MovementProfileSet(new[]{candidate,baseline}),
+            player=factory.CreatePlayer(Room.start,new MovementProfileSet(new[]{candidate,baseline,previous}),
                 Resources.Load<CameraProfile>("Camera_Default"),touch,checkpoints,Application.version,oldStatus,oldCompletion,true);
+            player.gameObject.AddComponent<MovementTrialTrace>().Configure(player.Motor, Room.id);
             RenderSettings.skybox=Resources.Load<Material>("Materials/MAT_RR_Skybox_Seamless");
             Camera.main.clearFlags=CameraClearFlags.Skybox;
             var safe=oldStatus.transform.parent;
@@ -61,7 +63,7 @@ namespace Avoidance.UI
             feedback=Label(safe,"Flow feedback",new Vector2(.25f,.71f),new Vector2(.75f,.81f),24);
             Button(safe,"ROOM",.02f,()=>SelectRoom((roomIndex+1)%definition.rooms.Length));
             Button(safe,"RETRY",.18f,Retry);
-            Button(safe,"MOTOR A/B",.34f,Compare);
+            Button(safe,"MOTOR A/B/D",.34f,Compare);
             viewButton=Button(safe,"VIEW: MANUAL",.50f,CompareView);
             Button(safe,"CONTROLS",.66f,()=> {touch.SetSessionControlProfile(touch.RuntimeProfile.FlowSteeringEnabled
                 ? TouchControlProfileKind.LeftMoveRightLookTapJump : TouchControlProfileKind.FlowSteerAutoDirect);Retry();});
@@ -74,10 +76,22 @@ namespace Avoidance.UI
             roomIndex=Mathf.Clamp(index,0,definition.rooms.Length-1);BuildRoom();
             checkpoints.Reset();checkpoints.SetStart(Room.start,Quaternion.identity);Retry();
         }
+        public void SelectRoom(string id)
+        {
+            int index = System.Array.FindIndex(definition.rooms, r => r.id == id);
+            if (index < 0) throw new System.ArgumentException("Unknown training room: " + id);
+            SelectRoom(index);
+        }
         public void Compare()
         {
-            player.Profiles.Select(player.Motor.Profile.MovementMastery ? baseline.ProfileId : candidate.ProfileId);
+            player.Profiles.Select(player.Motor.Profile.RealRouteAirControl ? baseline.ProfileId
+                : player.Motor.Profile.MovementMastery ? candidate.ProfileId : previous.ProfileId);
             player.Motor.SetProfile(player.Profiles.Current);Retry();
+        }
+        public void SelectPrevious()
+        {
+            player.Profiles.Select(previous.ProfileId);
+            player.Motor.SetProfile(previous);Retry();
         }
         public void Retry()
         {
@@ -89,6 +103,7 @@ namespace Avoidance.UI
             restoreCount=player.GetComponent<RestoreController>().RestoreCount;
             session.Reset(definition,Room,player.Motor,touch.RuntimeProfile.FlowSteeringEnabled
                 ? useLandingView ? "flow.landing-view" : "flow.manual-view" : "classic.manual-view");feedbackCountdown=0;
+            player.GetComponent<MovementTrialTrace>()?.Configure(player.Motor, Room.id + (useLandingView ? ".landing" : ".manual"));
             RefreshFeedback();
         }
         public void CompareView()
@@ -109,13 +124,13 @@ namespace Avoidance.UI
         }
         public void RefreshFeedback()
         {
-            string mode=player.Motor.Profile.MovementMastery?"CANDIDATE":"PRODUCTION BASELINE";
+            string mode=player.Motor.Profile.RealRouteAirControl?"NEW ROUTE FLOW":player.Motor.Profile.MovementMastery?"PREVIOUS FLOW":"PRODUCTION BASELINE";
             string view=!touch.RuntimeProfile.FlowSteeringEnabled ? "CLASSIC MANUAL"
                 : landingViewEnabled ? "LANDING VIEW" : "MANUAL VIEW";
             instruction.text=$"{Room.title}  /  {mode}  /  {view}\n{Room.hint}";
             string metric=Room.exercise=="air"?$"Air gain +{session.AirGain:0.0} m/s"
                 :Room.exercise=="bhop"?$"Chain {session.BestChain}/{definition.requiredChain}  |  Takeoff retained {player.Motor.LastCompleteTakeoffRetention:P0}"
-                :Room.exercise=="landing"?$"Clean jumps {session.Jumps}  |  Gold finish ahead"
+                :Room.exercise=="landing" || Room.exercise=="diagnostic"?$"Clean jumps {session.Jumps}  |  Gold finish ahead"
                 :$"Surf contact {session.SurfSeconds:0.0}s  |  Jumps {session.Jumps}";
             feedback.text=session.Complete?$"COMPLETE  {session.Seconds:0.00}s  |  Session best {session.BestSeconds:0.00}s\nRetry for a cleaner line · ROOM for next exercise"
                 :$"{player.Motor.HorizontalSpeed:0.0} m/s  |  {metric}\n{session.Seconds:0.0}s  ·  {(player.Motor.IsSurfing?"SURF":touch.RuntimeProfile.FlowSteeringEnabled?"Left steer · Right tap / pitch":"Classic controls")}";

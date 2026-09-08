@@ -163,6 +163,11 @@ namespace Avoidance.Gameplay.Player
 
             _diagnostics.SetValue("Player position", FormatVector(transform.position));
             _diagnostics.SetValue("Horizontal speed", _motor.HorizontalSpeed.ToString("0.00"));
+            _diagnostics.SetValue("Air projected speed", _motor.AirProjectedSpeed.ToString("0.000"));
+            _diagnostics.SetValue("Air requested/applied dv", $"{_motor.AirRequestedDelta:F3} / {_motor.AirAppliedWishDelta:F3}");
+            _diagnostics.SetValue("Air net dv", FormatVector(_motor.AirNetDelta));
+            _diagnostics.SetValue("Air energy/safety limit", $"{_motor.AirEnergyLimited} / {_motor.SafetyLimited}");
+            _diagnostics.SetValue("Contact dv", FormatVector(_motor.ContactVelocityDelta));
             _diagnostics.SetValue("Vertical speed", _motor.VerticalSpeed.ToString("0.00"));
             _diagnostics.SetValue("Grounded", _motor.IsGrounded.ToString());
             _diagnostics.SetValue("Movement state", _motor.MovementState.ToString());

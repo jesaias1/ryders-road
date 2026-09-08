@@ -184,8 +184,7 @@ namespace Avoidance.UI
         private static MovementProfileSet LoadMovementProfiles()
         {
             if (CampaignFlowTrial.Active)
-                return new MovementProfileSet(new[] { Resources.Load<MovementProfile>(CampaignFlowTrial.UsesCandidate
-                    ? "Training/Movement_Mastery" : "MovementProfiles/Movement_Default") });
+                return new MovementProfileSet(new[] { Resources.Load<MovementProfile>(CampaignFlowTrial.MovementResource) });
             var profiles = Resources.LoadAll<MovementProfile>("MovementProfiles")
                 .OrderBy(ProfileOrder)
                 .ToArray();
@@ -391,6 +390,8 @@ namespace Avoidance.UI
                 }
             }
             var hands = cameraObject.GetComponent<FirstPersonHands>();
+            if (CampaignFlowTrial.Active)
+                player.AddComponent<MovementTrialTrace>().Configure(motor, _module.StableModuleId + "." + CampaignFlowTrial.Mode);
             hands.Initialize(motor);
 
             var input = new PlayerInputRouter(touchInput);

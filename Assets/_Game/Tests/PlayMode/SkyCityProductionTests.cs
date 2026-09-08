@@ -17,7 +17,16 @@ namespace Avoidance.Tests.PlayMode
         [UnityTest]
         public IEnumerator AllIntroJumpsLandWithUnmodifiedMotorAndArchitectureHasTrueSupport()
         {
-            ModuleSelectionState.Select("module.001.first-steps");
+            yield return IntroJumps(false);
+        }
+        [UnityTest] public IEnumerator CandidateIntroJumpsUseActualSkyCityGeometry()
+        {
+            yield return IntroJumps(true);
+        }
+        private IEnumerator IntroJumps(bool candidate)
+        {
+            if(candidate) CampaignFlowTrial.Launch("module.001.first-steps",CampaignTrialMode.FlowManual);
+            else ModuleSelectionState.Select("module.001.first-steps");
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleRunner");
             yield return new WaitForSecondsRealtime(.4f);
             var motor=Object.FindAnyObjectByType<ParkourMotor>();
@@ -42,7 +51,7 @@ namespace Avoidance.Tests.PlayMode
                 var direction=to.Pose.Position-from.Pose.Position;direction.y=0;direction.Normalize();
                 motor.ResetMotion(from.Pose.Position+Vector3.up*(from.Size.y*.5f+.04f)-direction*.5f,Quaternion.LookRotation(direction),0);
                 Physics.SyncTransforms();
-                var input=new RouteInput();
+                var input=new RouteInput { FlowSteeringEnabled=candidate };
                 for(int frame=0;frame<8;frame++)motor.Simulate(input,1f/60);
                 input.JumpPressed=true;motor.Simulate(input,1f/60);input.JumpPressed=false;
                 bool airborne=false,landed=false;
@@ -60,8 +69,10 @@ namespace Avoidance.Tests.PlayMode
                 Assert.That(Mathf.Abs(delta.z),Is.LessThan(to.Size.z*.5f+.25f),to.StableId+" z");
             }
         }
-        private sealed class RouteInput : Avoidance.Input.IPlayerInputSource
+        private sealed class RouteInput : Avoidance.Input.IPlayerInputSource, Avoidance.Input.IFlowSteeringInputSource
         {
+            public bool FlowSteeringEnabled {get;set;}
+            public Avoidance.Input.AutoCameraProfileKind AutoCameraProfile=>Avoidance.Input.AutoCameraProfileKind.Direct;
             public Vector2 Move=>new Vector2(0,.85f);
             public Vector2 LookDelta=>Vector2.zero;
             public bool JumpPressed {get;set;}

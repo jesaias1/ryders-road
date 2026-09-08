@@ -51,7 +51,7 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(Mathf.DeltaAngle(yaw,player.transform.eulerAngles.y),Is.EqualTo(0).Within(.01f));
             Assert.That(player.CameraRig.Pitch,Is.Not.EqualTo(pitch));
             lab.Retry();Assert.That(motor.Velocity,Is.EqualTo(Vector3.zero));Assert.That(touch.Movement,Is.EqualTo(Vector2.zero));
-            for(int room=0;room<5;room++)
+            for(int room=0;room<6;room++)
             {
                 lab.SelectRoom(room);yield return null;
                 Assert.That(lab.Room.id,Does.StartWith("training.flow."));
@@ -111,7 +111,8 @@ namespace Avoidance.Tests.PlayMode
         {
             FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
             var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
-            Assert.That(lab.Room.id,Is.EqualTo("training.flow.landing"));
+            Assert.That(lab.Room.id,Is.EqualTo("training.flow.real-route"));
+            lab.SelectRoom("training.flow.landing");yield return null;
             var player=lab.Player;var rig=player.CameraRig;var input=new FlowInput();
             lab.CompareView();Assert.That(lab.LandingViewEnabled,Is.True);
             var velocity=player.Motor.Velocity;var position=player.transform.position;
@@ -148,6 +149,7 @@ namespace Avoidance.Tests.PlayMode
             {
                 if(lab.Player.Motor.Profile.MovementMastery!=candidate)lab.Compare();
                 if(lab.LandingViewEnabled!=landing)lab.CompareView();
+                lab.SelectRoom("training.flow.landing");yield return null;
                 lab.Retry();var motor=lab.Player.Motor;var input=new FlowInput();int jumps=0;
                 Assert.That(lab.Session.BestSeconds,Is.Zero,"Each motor/view combination needs independent evidence.");
                 for(int i=0;i<600 && !lab.Session.Complete;i++)
@@ -168,6 +170,42 @@ namespace Avoidance.Tests.PlayMode
                 Assert.That(lab.Session.Complete,Is.True,$"candidate={candidate} landing={landing} position={motor.transform.position}");
                 Assert.That(jumps,Is.EqualTo(2));
                 Assert.That(lab.Session.BestSeconds,Is.GreaterThan(0));
+            }
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+        [UnityTest] public IEnumerator DiagnosticCircuitHasReachableRealLandingsForAllThreeMotors()
+        {
+            FlowLabSceneController.RequestLaunch(); yield return new UnitySceneLevelLoader().LoadAsync("MovementLab"); yield return null;
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>(); lab.Player.enabled=false; lab.enabled=false;
+            lab.SelectRoom("training.flow.real-route"); yield return null;
+            var motor=lab.Player.Motor;
+            foreach(var resource in new[]{"MovementProfiles/Movement_Default","Training/Movement_Mastery","Training/Movement_RealRoute"})
+            {
+                motor.SetProfile(Resources.Load<MovementProfile>(resource));
+                for(int index=0;index<lab.Room.solids.Length-1;index++)
+                {
+                    var from=lab.Room.solids[index]; var to=lab.Room.solids[index+1];
+                    var direction=to.position-from.position; direction.y=0; direction.Normalize();
+                    float edge=Mathf.Min(from.size.x*.5f/Mathf.Max(.001f,Mathf.Abs(direction.x)),
+                        from.size.z*.5f/Mathf.Max(.001f,Mathf.Abs(direction.z)));
+                    var start=from.position+Vector3.up*(from.size.y*.5f+.05f)+direction*(edge-.7f);
+                    motor.ResetMotion(start,Quaternion.LookRotation(direction),0); Physics.SyncTransforms();
+                    var input=new FlowInput {Move=Vector2.zero};
+                    for(int i=0;i<12;i++) motor.Simulate(input,1f/60);
+                    Assert.That(motor.IsGrounded,Is.True,from.id);
+                    motor.ApplyLaunch(direction*7.8f,true);
+                    // Establish run velocity, then issue one ordinary jump edge.
+                    motor.Simulate(input,1f/60);
+                    input.Move=Vector2.up; input.JumpPressed=true; motor.Simulate(input,1f/60); input.JumpPressed=false;
+                    bool air=false,landed=false;
+                    for(int i=0;i<100;i++)
+                    {
+                        motor.Simulate(input,1f/60); air |= !motor.IsGrounded;
+                        if(air && motor.IsGrounded){landed=true;break;}
+                    }
+                    Assert.That(landed,Is.True,resource+" to "+to.id+" at "+motor.transform.position);
+                    Assert.That(motor.GroundTransform.name,Is.EqualTo(to.id),resource+" at "+motor.transform.position);
+                }
             }
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }

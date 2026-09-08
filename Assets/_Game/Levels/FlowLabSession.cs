@@ -46,7 +46,8 @@ namespace Avoidance.Gameplay.Levels
                 AirGain=Mathf.Max(AirGain,motor.HorizontalSpeed-motor.Profile.AirWishSpeed);
             if(motor.IsGrounded && wasGrounded && motor.HorizontalSpeed < motor.Profile.BaseRunSpeed*.9f)Chain=0;
             wasGrounded=motor.IsGrounded;
-            bool evidence=room.exercise=="landing" ? Jumps>=2
+            bool evidence=room.exercise=="diagnostic" ? Jumps>=5
+                : room.exercise=="landing" ? Jumps>=2
                 : room.exercise=="air" ? Jumps>0 && AirGain>=definition.minimumAirGain
                 : room.exercise=="bhop" ? BestChain>=definition.requiredChain
                 : room.exercise=="surf" ? SurfSeconds>=definition.minimumSurfSeconds && !motor.IsSurfing

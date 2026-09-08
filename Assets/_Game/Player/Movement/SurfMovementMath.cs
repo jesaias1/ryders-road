@@ -38,7 +38,7 @@ namespace Avoidance.Gameplay.Player
             float inputAmount,
             SurfProfile profile,
             float deltaTime,
-            bool mastery = false)
+            bool mastery = false, bool routeAirControl = false)
         {
             if (profile == null || deltaTime <= 0f)
             {
@@ -57,7 +57,14 @@ namespace Avoidance.Gameplay.Player
                 var surfWish = Vector3.ProjectOnPlane(wishDirection, normal);
                 if (surfWish.sqrMagnitude > 0.0001f)
                 {
-                    if (mastery)
+                    if (routeAirControl)
+                    {
+                        velocity = RouteAirControlMath.Accelerate(velocity, surfWish, profile.SurfWishSpeed,
+                            profile.SurfAcceleration * profile.SurfControl,
+                            profile.SurfAcceleration * profile.SurfControl, inputAmount, profile.MaximumSurfSpeed,
+                            deltaTime, out _, out _, out _, out _);
+                    }
+                    else if (mastery)
                     {
                         velocity = MasteryMovementMath.Accelerate(velocity, surfWish,
                             profile.SurfWishSpeed * Mathf.Clamp01(inputAmount),

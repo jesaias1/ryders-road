@@ -118,7 +118,7 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(CampaignFlowTrial.Mode,Is.EqualTo(CampaignTrialMode.FlowLanding));
             Assert.That(Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule.StableModuleId,Is.EqualTo(Foundry));
             foreach(var id in ModuleSelectionState.GetCampaignModuleIds())
-            foreach(var mode in new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding})
+            foreach(var mode in new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding,CampaignTrialMode.PreviousFlow})
             {
                 CampaignFlowTrial.Launch(id,mode);yield return Open();
                 var player=Object.FindAnyObjectByType<PlayerRuntimeCoordinator>();var motor=player.Motor;

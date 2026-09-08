@@ -196,6 +196,11 @@ namespace Avoidance.EditorTools
 
         private static string CopySelectedModel(string cacheRoot, WorldAssetSpec asset)
         {
+            var targetDirectory = $"{ThirdPartyRoot}/{asset.Pack.AssetDirectory}/Source";
+            var targetPath = $"{targetDirectory}/{asset.ProductionFileName}";
+            // Authored, versioned models are authoritative. Startup must not overwrite
+            // them from a workstation cache (or replace a file Unity has mapped).
+            if (File.Exists(targetPath)) return targetPath.Replace('\\', '/');
             var sourcePath = Path.Combine(
                 cacheRoot,
                 asset.Pack.ExtractDirectory,
@@ -207,9 +212,7 @@ namespace Avoidance.EditorTools
                 throw new FileNotFoundException($"Selected Kenney source model is missing: {sourcePath}");
             }
 
-            var targetDirectory = $"{ThirdPartyRoot}/{asset.Pack.AssetDirectory}/Source";
             Directory.CreateDirectory(targetDirectory);
-            var targetPath = $"{targetDirectory}/{asset.ProductionFileName}";
             File.Copy(sourcePath, targetPath, overwrite: true);
             return targetPath.Replace('\\', '/');
         }

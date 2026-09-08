@@ -21,8 +21,9 @@ namespace Avoidance.UI
             {
                 title.text = "CAMPAIGN FLOW TRIAL  /  " + modules.Single(m => m.StableModuleId == road).DisplayName;
                 hint.text = (mode == CampaignTrialMode.Accepted ? "A · Accepted motor and your saved controls"
-                    : mode == CampaignTrialMode.FlowManual ? "B · Flow motor · manual pitch"
-                    : "C · Flow motor · modest downward view + gentle descent framing")
+                    : mode == CampaignTrialMode.PreviousFlow ? "D · Previous 0.9.9 Flow motor · manual pitch"
+                    : mode == CampaignTrialMode.FlowManual ? "B · New air control · manual pitch"
+                    : "C · Same new air control · landing view")
                     + "\nPractice only · separate session times · Campaign progress stays unchanged";
                 foreach(var button in panel.GetComponentsInChildren<Button>())
                     if(button.name.StartsWith("Trial Road ") || button.name.StartsWith("Trial Mode "))
@@ -36,12 +37,12 @@ namespace Avoidance.UI
                 Button(panel.transform, "Trial Road " + id, modules.Single(m=>m.StableModuleId==id).DisplayName.Replace("Campaign ",""),
                     new Vector2(.03f+i*.24f,.62f),new Vector2(.25f+i*.24f,.79f),()=> {road=id;Refresh();});
             }
-            var modes=new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding};
-            var labels=new[]{"A · ACCEPTED","B · FLOW MANUAL","C · FLOW LANDING"};
+            var modes=new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding,CampaignTrialMode.PreviousFlow};
+            var labels=new[]{"A · ACCEPTED","B · NEW MANUAL","C · NEW LANDING","D · OLD FLOW"};
             for(int i=0;i<modes.Length;i++)
             {
                 var option=modes[i];
-                Button(panel.transform,"Trial Mode "+option,labels[i],new Vector2(.03f+i*.32f,.40f),new Vector2(.33f+i*.32f,.57f),()=> {mode=option;Refresh();});
+                Button(panel.transform,"Trial Mode "+option,labels[i],new Vector2(.03f+i*.24f,.40f),new Vector2(.25f+i*.24f,.57f),()=> {mode=option;Refresh();});
             }
             Button(panel.transform,"Trial Back","BACK",new Vector2(.03f,.035f),new Vector2(.30f,.17f),()=> {panel.SetActive(false);back();});
             Button(panel.transform,"Trial Start","START TRIAL",new Vector2(.57f,.035f),new Vector2(.97f,.17f),()=> {CampaignFlowTrial.Launch(road,mode);launch();});

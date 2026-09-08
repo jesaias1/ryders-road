@@ -42,6 +42,13 @@ namespace Avoidance.Gameplay.Player
         private float _lastPressTime = float.NegativeInfinity;
         private bool _landedFromJump;
         public Vector3 DisplacementVelocity { get; private set; }
+        public float AirProjectedSpeed { get; private set; }
+        public float AirRequestedDelta { get; private set; }
+        public float AirAppliedWishDelta { get; private set; }
+        public Vector3 AirNetDelta { get; private set; }
+        public bool AirEnergyLimited { get; private set; }
+        public Vector3 ContactVelocityDelta { get; private set; }
+        public bool SafetyLimited { get; private set; }
         public float LastJumpPressContactOffset { get; private set; }
         public float LastCompleteTakeoffRetention { get; private set; } = 1;
 
@@ -90,6 +97,7 @@ namespace Avoidance.Gameplay.Player
 
         public event System.Action<float> Landed;
         public event System.Action Jumped;
+        public event System.Action<float> Simulated;
 
         private void Awake()
         {
@@ -119,6 +127,9 @@ namespace Avoidance.Gameplay.Player
             }
 
             _movementLockRemaining = Mathf.Max(0f, _movementLockRemaining - deltaTime);
+            AirProjectedSpeed = AirRequestedDelta = AirAppliedWishDelta = 0;
+            AirNetDelta = ContactVelocityDelta = Vector3.zero;
+            AirEnergyLimited = SafetyLimited = false;
             _simulationTime += deltaTime;
             _surfDetachRemaining = Mathf.Max(0, _surfDetachRemaining - deltaTime);
             if (input.JumpPressed) _lastPressTime = _simulationTime;
@@ -151,6 +162,7 @@ namespace Avoidance.Gameplay.Player
             ClampVelocityToSafetyLimit();
             PeakHorizontalSpeed = Mathf.Max(PeakHorizontalSpeed, HorizontalSpeed);
             HandleLanding();
+            Simulated?.Invoke(deltaTime);
         }
 
         public void ResetMotion(Vector3 position, Quaternion rotation, float movementLockDuration)
@@ -161,6 +173,9 @@ namespace Avoidance.Gameplay.Player
             _controller.enabled = true;
             _horizontalVelocity = Vector3.zero;
             DisplacementVelocity = Vector3.zero;
+            AirProjectedSpeed = AirRequestedDelta = AirAppliedWishDelta = 0;
+            AirNetDelta = ContactVelocityDelta = Vector3.zero;
+            AirEnergyLimited = SafetyLimited = false;
             _surfDetachRemaining = 0;
             _landedFromJump = false;
             _lastPressTime = float.NegativeInfinity;
@@ -321,7 +336,11 @@ namespace Avoidance.Gameplay.Player
             var desiredDirection = inputAmount <= 0.001f
                 ? Vector3.zero
                 : forward * Mathf.Sign(throttle);
+            if (_profile.RealRouteAirControl)
+                desiredDirection = RouteAirControlMath.FlowWish(forward, input, _profile.FlowWishAngle);
             LastDesiredDirection = desiredDirection;
+            if (_profile.RealRouteAirControl && desiredDirection.sqrMagnitude > .001f)
+                DesiredHeadingYaw = Mathf.Atan2(desiredDirection.x, desiredDirection.z) * Mathf.Rad2Deg;
             var targetSpeed = Mathf.Lerp(_profile.WalkSpeed, _profile.BaseRunSpeed, inputAmount);
             var desiredVelocity = desiredDirection * targetSpeed * inputAmount;
             LastDesiredVelocity = desiredVelocity;
@@ -334,7 +353,7 @@ namespace Avoidance.Gameplay.Player
                     desiredDirection,
                     inputAmount,
                     _surfProfile,
-                    deltaTime, _profile.MovementMastery);
+                    deltaTime, _profile.MovementMastery, _profile.RealRouteAirControl);
                 _horizontalVelocity = Vector3.ProjectOnPlane(surfVelocity, Vector3.up);
                 _verticalVelocity = Mathf.Clamp(
                     surfVelocity.y,
@@ -348,6 +367,10 @@ namespace Avoidance.Gameplay.Player
                 var rate = inputAmount > 0.001f
                     ? _profile.Acceleration
                     : _profile.Deceleration + _profile.GroundFriction;
+                if (_profile.RealRouteAirControl && _landedFromJump
+                    && _secondsSinceLanding <= _profile.PerfectHopWindow
+                    && Vector3.Dot(_horizontalVelocity.normalized, desiredDirection) > .25f)
+                    desiredVelocity = desiredDirection * Mathf.Max(HorizontalSpeed, desiredVelocity.magnitude);
                 _horizontalVelocity = Vector3.MoveTowards(
                     _horizontalVelocity,
                     desiredVelocity,
@@ -355,11 +378,14 @@ namespace Avoidance.Gameplay.Player
             }
             else if (inputAmount > 0.001f)
             {
+                if (_profile.RealRouteAirControl)
+                {
+                    AccelerateRouteAir(desiredDirection, inputAmount, deltaTime);
+                    return;
+                }
                 if (_profile.MovementMastery)
                 {
-                    _horizontalVelocity = MasteryMovementMath.Accelerate(_horizontalVelocity,
-                        desiredDirection, _profile.AirWishSpeed,
-                        _profile.AirAcceleration * inputAmount, _profile.SoftMomentumLimit, deltaTime);
+                    AcceleratePreviousAir(desiredDirection, _profile.AirWishSpeed, inputAmount, deltaTime);
                     return;
                 }
                 var wishSpeed = Mathf.Min(
@@ -419,7 +445,7 @@ namespace Avoidance.Gameplay.Player
                     movement.DesiredDirection,
                     inputAmount,
                     _surfProfile,
-                    deltaTime, _profile.MovementMastery);
+                    deltaTime, _profile.MovementMastery, _profile.RealRouteAirControl);
                 _horizontalVelocity = Vector3.ProjectOnPlane(surfVelocity, Vector3.up);
                 _verticalVelocity = Mathf.Clamp(
                     surfVelocity.y,
@@ -473,11 +499,14 @@ namespace Avoidance.Gameplay.Player
 
             if (inputAmount > 0.001f && movement.DesiredDirection.sqrMagnitude > 0.001f)
             {
+                if (_profile.RealRouteAirControl)
+                {
+                    AccelerateRouteAir(movement.DesiredDirection, inputAmount, deltaTime);
+                    return;
+                }
                 if (_profile.MovementMastery)
                 {
-                    _horizontalVelocity = MasteryMovementMath.Accelerate(_horizontalVelocity,
-                        movement.DesiredDirection, _profile.AirWishSpeed * inputAmount,
-                        _profile.AirAcceleration * inputAmount, _profile.SoftMomentumLimit, deltaTime);
+                    AcceleratePreviousAir(movement.DesiredDirection, _profile.AirWishSpeed * inputAmount, inputAmount, deltaTime);
                     return;
                 }
                 var wishDirection = movement.DesiredDirection.normalized;
@@ -521,6 +550,33 @@ namespace Avoidance.Gameplay.Player
             LateralVelocity = MovementVectorMath.ResolveLateralVelocity(
                 _horizontalVelocity,
                 movement.ProjectedRight);
+        }
+
+        private void AccelerateRouteAir(Vector3 wish, float amount, float dt)
+        {
+            var before = _horizontalVelocity;
+            _horizontalVelocity = RouteAirControlMath.Accelerate(before, wish, _profile.AirWishSpeed,
+                _profile.AirAcceleration, _profile.AirBraking, amount, _profile.SoftMomentumLimit, dt,
+                out var projected, out var requested, out var applied, out var limited);
+            AirProjectedSpeed = projected; AirRequestedDelta = requested;
+            AirAppliedWishDelta = applied; AirEnergyLimited = limited;
+            AirNetDelta = _horizontalVelocity - before;
+            LateralVelocity = Vector3.Dot(_horizontalVelocity, LastProjectedRight);
+            VelocityHeadingYaw = Mathf.Atan2(_horizontalVelocity.x, _horizontalVelocity.z) * Mathf.Rad2Deg;
+            HeadingVelocityDelta = Mathf.Abs(Mathf.DeltaAngle(CurrentHeadingYaw, VelocityHeadingYaw));
+        }
+
+        private void AcceleratePreviousAir(Vector3 wish, float wishSpeed, float amount, float dt)
+        {
+            var before = _horizontalVelocity;
+            AirProjectedSpeed = Vector3.Dot(before, wish);
+            AirRequestedDelta = _profile.AirAcceleration * amount * dt;
+            float projectedAllowance = Mathf.Min(Mathf.Max(0, wishSpeed - AirProjectedSpeed), AirRequestedDelta);
+            _horizontalVelocity = MasteryMovementMath.Accelerate(before, wish, wishSpeed,
+                _profile.AirAcceleration * amount, _profile.SoftMomentumLimit, dt);
+            AirNetDelta = _horizontalVelocity - before;
+            AirAppliedWishDelta = Vector3.Dot(AirNetDelta, wish);
+            AirEnergyLimited = AirAppliedWishDelta + .00001f < projectedAllowance;
         }
 
         private void UpdateVerticalVelocity(float deltaTime)
@@ -609,7 +665,7 @@ namespace Avoidance.Gameplay.Player
             ClearSurfState();
 
             IsGrounded = (_controller.isGrounded
-                    || (hitGround && Vector3.Dot(hit.normal, Vector3.up) >= 0.55f))
+                    || (!_profile.RealRouteAirControl && hitGround && Vector3.Dot(hit.normal, Vector3.up) >= 0.55f))
                 && _verticalVelocity <= 0.5f;
             var nextGround = IsGrounded && hit.collider != null ? hit.collider.transform : null;
             if (nextGround != _groundTransform)
@@ -663,6 +719,7 @@ namespace Avoidance.Gameplay.Player
 
         private void ClampVelocityToSafetyLimit()
         {
+            SafetyLimited |= HorizontalSpeed > _profile.HardVelocitySafetyLimit;
             _horizontalVelocity = MovementMomentumMath.ClampHorizontalVelocity(
                 _horizontalVelocity,
                 _profile.HardVelocitySafetyLimit);
@@ -744,6 +801,7 @@ namespace Avoidance.Gameplay.Player
             // Ground contact remains owned by the existing ground probe/platform tracker.
             if (hit.normal.y >= .55f) return;
             var clipped = MasteryMovementMath.ClipIntoPlane(Velocity, hit.normal);
+            ContactVelocityDelta += clipped - Velocity;
             _horizontalVelocity = Vector3.ProjectOnPlane(clipped, Vector3.up);
             _verticalVelocity = clipped.y;
         }

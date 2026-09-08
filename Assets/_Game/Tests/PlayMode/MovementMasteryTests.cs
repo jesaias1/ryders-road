@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Avoidance.Tests.PlayMode
 {
-    public sealed class MovementMasteryTests
+    public class MovementMasteryTests
     {
         private readonly List<Object> owned = new List<Object>();
         private readonly List<Collider> suspended = new List<Collider>();
@@ -17,7 +17,7 @@ namespace Avoidance.Tests.PlayMode
                 if(collider.enabled){suspended.Add(collider);collider.enabled=false;}
         }
         private MovementProfile Profile => Resources.Load<MovementProfile>("MovementProfiles/Movement_Default");
-        private MovementProfile Candidate => Resources.Load<MovementProfile>("Training/Movement_Mastery");
+        protected virtual MovementProfile Candidate => Resources.Load<MovementProfile>("Training/Movement_Mastery");
         private sealed class Input : IPlayerInputSource, IFlowSteeringInputSource
         {
             public Vector2 Move { get; set; }

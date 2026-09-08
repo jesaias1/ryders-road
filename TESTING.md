@@ -1,3 +1,21 @@
+## 0.10.0 movement foundation
+
+240 EditMode and 83 PlayMode cases pass. RealRouteAirControlTests measures short
+left/right corrections at 8.2/10.8/14 m/s, braking, reversing poor input, yaw-only,
+an actual small-platform landing and airborne near-floor contact. Reused motor
+contracts cover both old/new candidates at 30/60/120 Hz: hops, surf and walls.
+FlowLabPlayTests covers the circuit's five real jumps with three motors; Sky City
+and Foundry exercise candidate jumps on actual authored geometry. All 16 road/mode
+loads, Retry/completion/exit and save/preference isolation pass. Logs/Movement100
+contains measurements/results; actual captures of the circuit and trial menu
+were inspected. Source validation and LFS hydration checks pass.
+
+Run Tools/Validate-LfsAssets.ps1 before Unity on a fresh checkout; git lfs pull
+and git lfs checkout restore real binary contents. Git history/LFS health alone
+does not prove the working tree contains imported media rather than pointers.
+No new candidate physical testing or Gold approval is claimed. See ADR 0022 and
+Docs/PRODUCTION_0100.md for the required S23 comparisons.
+
 ## 0.9.9 physical feedback and Campaign Flow trial
 
 0.9.9 passes 240 EditMode and 57 PlayMode tests. Production099Tests exercises real scenery falls, side-contact rejection, jump sightlines, all roads/modes, save/preference isolation, completion/Retry/exit and touch pitch/tap. SolarFoundryTests now traverses standard jumps with candidate Flow input as well as accepted input. Physical 0.9.8 feedback is user-reported; 0.9.9 still needs S23 evaluation. Evidence: Docs/PRODUCTION_099.md.

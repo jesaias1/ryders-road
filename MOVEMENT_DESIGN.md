@@ -1,3 +1,12 @@
+## 0.10.0 real-route control candidate
+
+See ADR 0022 and Docs/PRODUCTION_0100.md. Explicit Flow thumb deflection supplies
+a wish direction offset as well as the familiar yaw steering. Projected air
+acceleration, opposing-input braking, and energy limits are separate. The new
+ceiling permits steering without extra energy; no-input coasts and yaw-only
+does not accelerate. Actual controller contact owns ordinary landing. Candidate
+profile and trials are isolated pending S23 approval; accepted controls remain.
+
 ## 0.9.9 physical feedback and Campaign Flow trial
 
 S23 feedback makes Flow the promising foundation to evaluate, not an automatic global replacement. 0.9.9 exposes unchanged mastery/production assets on real Campaign roads with separate session results and no save writes. No motor numbers were tuned. Ordinary completion stays accessible; compare linked jumps/arcs/shortcuts against stop-and-line-up runs, using time and misses as well as speed. Old fully manual controls remain recoverable, not mandated as the final scheme.

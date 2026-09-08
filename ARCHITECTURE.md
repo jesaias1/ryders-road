@@ -1,3 +1,16 @@
+## 0.10.0 real-route movement candidate
+
+ADR 0022 supersedes the candidate design only. Accepted compatibility 1 and old
+mastery compatibility 2 remain selectable. Training/Movement_RealRoute opts into
+compatibility 3: explicit thumb-relative wish offset, projected acceleration with
+post-acceleration energy limiting, contact-based grounding and clean-hop grace.
+Camera modes B/C use identical physics. Trial D preserves 0.9.9. No V4 changes.
+MovementTrialTrace subscribes to completed simulation steps, buffers bounded
+development telemetry, and flushes outside normal frame simulation. It has no
+movement or save authority. Diagnostic circuit data remains in FlowLab JSON.
+Before Unity on a fresh checkout, hydrate LFS and run Tools/Validate-LfsAssets.ps1.
+STOP for S23 movement feedback at this milestone; no global promotion.
+
 ## 0.9.9 physical feedback and Campaign Flow trial
 
 ADR 0021 records the S23 findings. Solar Foundry v2 uses explicit solid-scenery landing recovery and a crane beside the route. CampaignFlowTrial is session-only and owns comparison selection/bests; UI composes existing motors/input/camera and skips all trial save writes. Normal selection clears the trial, Retry retains it. Accepted motor/input assets remain unchanged. Details: Docs/PRODUCTION_099.md.

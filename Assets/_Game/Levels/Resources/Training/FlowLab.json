@@ -279,9 +279,111 @@
       },
       "hint": "Two gaps, one lower landing. Compare VIEW, then drag right to inspect your footing.",
       "exercise": "landing"
+    },
+    {
+      "id": "training.flow.real-route",
+      "title": "AIR CONTROL CIRCUIT",
+      "exercise": "diagnostic",
+      "initialPitch": 16,
+      "hint": "Straight run-up, right then left, small landing, turn right. Pull back to brake; tap before contact.",
+      "start": {
+        "x": 0,
+        "y": 3.05,
+        "z": 0
+      },
+      "finish": {
+        "x": 12,
+        "y": 3.5,
+        "z": 34
+      },
+      "finishSize": {
+        "x": 5,
+        "y": 2,
+        "z": 4
+      },
+      "solids": [
+        {
+          "id": "training.diagnostic.runup",
+          "position": {
+            "x": 0,
+            "y": 2.5,
+            "z": 3
+          },
+          "size": {
+            "x": 6,
+            "y": 1,
+            "z": 12
+          }
+        },
+        {
+          "id": "training.diagnostic.right",
+          "position": {
+            "x": 2,
+            "y": 2.5,
+            "z": 13
+          },
+          "size": {
+            "x": 4,
+            "y": 1,
+            "z": 4
+          }
+        },
+        {
+          "id": "training.diagnostic.left",
+          "position": {
+            "x": -1,
+            "y": 2.5,
+            "z": 20
+          },
+          "size": {
+            "x": 3,
+            "y": 1,
+            "z": 4
+          }
+        },
+        {
+          "id": "training.diagnostic.precision",
+          "position": {
+            "x": 0,
+            "y": 2.5,
+            "z": 26
+          },
+          "size": {
+            "x": 2.6,
+            "y": 1,
+            "z": 3
+          }
+        },
+        {
+          "id": "training.diagnostic.turn",
+          "position": {
+            "x": 5,
+            "y": 2.5,
+            "z": 31
+          },
+          "size": {
+            "x": 5,
+            "y": 1,
+            "z": 5
+          }
+        },
+        {
+          "id": "training.diagnostic.exit",
+          "position": {
+            "x": 12,
+            "y": 2.5,
+            "z": 34
+          },
+          "size": {
+            "x": 6,
+            "y": 1,
+            "z": 6
+          }
+        }
+      ]
     }
   ],
-  "initialRoomId": "training.flow.landing",
+  "initialRoomId": "training.flow.real-route",
   "landingView": {
     "initialPitch": 16,
     "descentPitch": 8,
