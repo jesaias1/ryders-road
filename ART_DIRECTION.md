@@ -1,3 +1,33 @@
+## September 9 visual-reference update — current 0.12.0 milestone
+
+The user supplied three finished-game concepts after delivery of the playable
+slice. [Reference index](Docs/VisualReferences/README.md) archives the originals
+and their interpretation; ADR 0025 supplements ADR 0024 without restarting work.
+Inspect both `Docs/VisualReferences/target_gameplay.png` and the new
+`Docs/VisualReferences/2026-09-09_gameplay_quality_target.png` before major visual
+work. The newer image is the primary finish/composition benchmark where they
+conflict. It is aspirational; the current build has not reached that quality.
+
+Prioritize environmental composition, warm light with readable shadows, coherent
+ivory/teal materials, atmospheric depth, visible route flow and huge open sky.
+Use architecture, vegetation and waterfalls to frame each world's existing
+identity. Translate these qualities through actual Unity assets and the mobile
+budget; never trace the route, copy the HUD or change accepted movement/FOV,
+collision, Restore, Patch, rank or progression rules to resemble a concept.
+
+The main-menu reference establishes a gold Campaign primary action over a calm
+world backdrop, with readable secondary actions. Build responsive real Unity UI
+with separate visual assets, safe areas and functional buttons. Incidental copy,
+version numbers and experiment prominence in the image are not requirements.
+The loading reference establishes white Ryder's Road branding on navy for normal
+transitions; Jesaias remains secondary. Preserve visible unscaled runtime loading
+animation, actual readiness and immediate activation without artificial delays.
+Use approved branding sources; no flattened interface or arbitrary font logo.
+
+This update archives direction and production constraints. The delivered 0.12.0
+APK and its prior verification remain unchanged; its existing runtime logo is
+not yet the new white reference treatment. Completed slice work remains the base.
+
 ## 0.12.0 vertical-slice authority
 
 ADR 0024 and Docs/PRODUCTION_0120.md supersede older stop/next-world proposals.

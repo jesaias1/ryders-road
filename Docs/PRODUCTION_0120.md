@@ -1,3 +1,34 @@
+## September 9 visual-direction follow-up
+
+The user's three new concepts are archived byte-for-byte in
+[VisualReferences](VisualReferences/README.md), with source mapping and SHA256.
+[ADR 0025](Decisions/0025-visual-reference-continuity.md) supplements the original
+milestone decision. This is a continuation of the completed slice; its existing
+five-road journey, Windward revision, waterfall, UI and loading work remain.
+
+The gameplay image now sets the primary finished-quality benchmark: composed
+architecture around visible flow, coherent ivory/teal materials, warm directional
+light, readable shadowed landings and layered sky depth. It is not a route
+blueprint or evidence of current runtime quality. World-specific interpretation
+and bounded mobile cost take precedence over copying the image's density.
+
+Menu direction is Campaign-first, responsive real UGUI with separate artwork and
+functional buttons. The reference's sample version/copy/Flow Lab placement do
+not override the current journey and development-access decisions. Loading
+should foreground white Ryder's Road branding on navy; Jesaias is secondary.
+Existing unscaled indicator/readiness/recovery work provides the implementation
+foundation, with no artificial waits. The current runtime logo still uses the
+previous approved treatment; this documentation update does not claim a new
+logo asset or that the reference presentation is already implemented.
+
+Completed in this follow-up: permanent reference archive/index, current art
+interpretation, asset-manifest entry, decision record and handoff continuity.
+Only documentation/reference files change. Original-file hashes and PNG integrity,
+Markdown links, diff whitespace and runtime-tree preservation are checked.
+No Unity behavior changed, so no new regression run or APK rebuild is attributed
+to this update. The test totals and APK below remain the original delivery record;
+no additional physical-device testing or art approval is claimed.
+
 # 0.12.0 — playable Campaign vertical slice
 
 Starting checkpoint: d9852a1f591510b02e2174f1a23dff9c256aaef1; clean working tree.

@@ -1,3 +1,12 @@
+## September 9, 2026 reference archive
+
+Three unmodified user-supplied concepts are stored outside Unity Assets in
+[Docs/VisualReferences](Docs/VisualReferences/README.md): gameplay quality target,
+loading brand reference and main-menu concept. The index contains source names,
+SHA256 and use constraints. These are reference-only images, not imported UI,
+sky textures, runtime branding derivatives or evidence of finished Unity art.
+Existing source logos/application icons and the delivered APK remain unchanged.
+
 # Ryder's Road Art Asset Manifest
 
 ## 0.12.0 original slice revisions

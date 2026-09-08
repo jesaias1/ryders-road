@@ -1,8 +1,21 @@
 # Current authority — 0.12.0 vertical slice
 
-Updated 2026-09-09. ADR 0024 and PRODUCTION_0120.md are current authority.
-**STOP after delivery for physical feedback.** Worlds 006–008 remain unbuilt.
+Updated 2026-09-09. ADR 0024, ADR 0025 and PRODUCTION_0120.md are current authority.
+The user authorized a visual-reference follow-up after delivery; keep the completed
+slice as the base. Physical feedback remains pending. Worlds 006–008 remain unbuilt.
 The old 0.11.0 recommendation to start World 006 is superseded.
+
+## Current visual references
+
+See [reference index](VisualReferences/README.md): September 9 gameplay quality
+(primary finish/composition target), menu concept and loading brand reference.
+Original August target remains required context. ART_DIRECTION.md defines their
+Unity/mobile interpretation. Do not treat images as layouts, mechanics, exact UI
+copy or evidence of implementation. Preserve real responsive UI, separate assets,
+Ryder's Road-led transitions, secondary Jesaias and no artificial loading delays.
+This follow-up changes docs/reference files only. The delivered APK still uses
+the previous approved runtime logo; white-on-navy branding and the concept's
+finished environmental quality are direction, not completed runtime changes.
 
 ## Accepted foundation
 
