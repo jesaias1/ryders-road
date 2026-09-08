@@ -113,7 +113,7 @@ namespace Avoidance.Tests.PlayMode
             yield return new WaitForSecondsRealtime(.2f);
             int preference=PlayerPrefs.GetInt(TouchInputCoordinator.ControlProfilePreferenceKey,-1);
             string before=JsonUtility.ToJson(save.Current);int writes=store.Writes;
-            Click("CAMPAIGN FLOW TRIAL Button");yield return null;
+            Click("DEVELOPMENT Button");Click("CAMPAIGN FLOW TRIAL Button");yield return null;
             Capture("trial-menu");Click("Trial Start");yield return new WaitForSecondsRealtime(.6f);
             Assert.That(CampaignFlowTrial.Mode,Is.EqualTo(CampaignTrialMode.FlowLanding));
             Assert.That(Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule.StableModuleId,Is.EqualTo(Foundry));

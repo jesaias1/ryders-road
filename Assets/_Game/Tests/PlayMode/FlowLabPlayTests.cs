@@ -29,6 +29,7 @@ namespace Avoidance.Tests.PlayMode
             var campaignBefore=ModuleSelectionState.GetCampaignModuleIds();
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
             var preference=PlayerPrefs.GetInt(TouchInputCoordinator.ControlProfilePreferenceKey,-1);
+            Object.FindObjectsByType<Button>(FindObjectsSortMode.None).Single(x=>x.name=="DEVELOPMENT Button").onClick.Invoke();
             Object.FindObjectsByType<Button>(FindObjectsSortMode.None).Single(x=>x.name=="FLOW LAB  /  MOVEMENT PRACTICE Button").onClick.Invoke();
             var deadline=Time.realtimeSinceStartup+15;
             while(Object.FindAnyObjectByType<FlowLabSceneController>()==null && Time.realtimeSinceStartup<deadline)yield return null;

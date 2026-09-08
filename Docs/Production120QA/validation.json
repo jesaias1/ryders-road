@@ -1,0 +1,70 @@
+{
+  "version": "0.12.0-vertical-slice",
+  "starting_commit": "d9852a1f591510b02e2174f1a23dff9c256aaef1",
+  "source_validation": "passed",
+  "lfs_hydration": "passed",
+  "physical_device_tested": false,
+  "apk": {
+    "path": "C:\\Users\\lin4s\\Documents\\Riders Block\\Builds\\Android\\RYDERS-ROAD-0.12.0-vertical-slice-dev.apk",
+    "bytes": 182971646,
+    "sha256": "E86A7EC5C5629AB84307E84D326272311266841AAE11C8C731BBF7450CAB4FE9",
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 1,
+    "duration_seconds": 141.64,
+    "package": "com.rydersblockstudio.rydersblock",
+    "version_code": 1,
+    "min_sdk": 26,
+    "target_sdk": 36,
+    "abi": "arm64-v8a",
+    "backend": "IL2CPP",
+    "development": true,
+    "zip_crc": "passed"
+  },
+  "tests": {
+    "EditMode": {
+      "result": "Passed",
+      "total": "245",
+      "passed": "245",
+      "failed": "0",
+      "duration": "10.8414951",
+      "xml_sha256": "fa5ccbc9c5dc663580d975b8b2bd46b7c8074d63ba814e1a558bd1b1b64749b5"
+    },
+    "PlayMode": {
+      "result": "Passed",
+      "total": "90",
+      "passed": "90",
+      "failed": "0",
+      "duration": "101.1854645",
+      "xml_sha256": "0f8d43e431ef3d3d78ba8384e8b16d3440bcb46803bf52c25a359fdd1c67983d"
+    }
+  },
+  "windward": {
+    "content_version": 2,
+    "standard_jumps": 25,
+    "optional_landings": 5,
+    "min_standard_edge_gap_metres": 1.3883,
+    "max_standard_edge_gap_metres": 2.7,
+    "standard_centerline_metres": 154.5002,
+    "continuous_stop_and_go_test": "passed",
+    "all_standard_walk_attempts": "cannot cross",
+    "standard_and_chord_jump_fixtures": "passed"
+  },
+  "mountain": {
+    "triangles": 62348,
+    "renderers_before_batching": 169,
+    "placements": 47
+  },
+  "visual_review": {
+    "player_camera_views": 25,
+    "sky_directions": 20,
+    "additional_waterfall_views": 2,
+    "ui": [
+      "title",
+      "journey",
+      "loading",
+      "finale"
+    ],
+    "evidence": "Docs/Production120QA"
+  }
+}

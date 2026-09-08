@@ -41,6 +41,8 @@ namespace Avoidance.Gameplay.Visuals
         [SerializeField] private bool _authoredLighting;
         [SerializeField] private Vector3 _sunEuler = new Vector3(48,-32,0);
         public bool AuthoredLighting => _authoredLighting;
+        [SerializeField] private bool _nearArchitectureShadows;
+        public bool NearArchitectureShadows => _nearArchitectureShadows;
         public Vector3 SunEuler => _sunEuler;
         [SerializeField] private Material _skyboxMaterial;
         [SerializeField] private bool _overrideBiomeFog;

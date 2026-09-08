@@ -98,29 +98,37 @@ namespace Avoidance.UI
             CreateTitleBackdrop(canvasObject.transform);
             var safe = CreateUiObject("Safe Area", canvasObject.transform, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero, typeof(SafeAreaFitter)).transform;
             var home = CreateUiObject("Home", safe, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero);
-            var campaign = CreatePanel("Campaign Journey", safe, new Vector2(0.06f, 0.20f), new Vector2(0.94f, 0.80f), BrandPresentation.PanelNavy);
-            var settingsPanel = CreatePanel("Settings Panel", safe, new Vector2(0.29f, 0.12f), new Vector2(0.71f, 0.88f), BrandPresentation.PanelNavy);
+            var campaign = CreatePanel("Campaign Journey", safe, new Vector2(0.06f, 0.20f), new Vector2(0.94f, 0.80f), new Color(.018f,.047f,.085f,.96f));
+            var settingsPanel = CreatePanel("Settings Panel", safe, new Vector2(0.29f, 0.12f), new Vector2(0.71f, 0.88f), new Color(.018f,.047f,.085f,.96f));
             campaign.SetActive(false); settingsPanel.SetActive(false);
-            var homeGlass = CreatePanel("Home Glass", home.transform, new Vector2(0.12f, 0.12f), new Vector2(0.88f, 0.42f), BrandPresentation.PanelNavy);
-            CreateText("Home Promise", homeGlass.transform, "FIND YOUR FLOW", 32, TextAnchor.MiddleLeft, new Vector2(0.035f, 0.74f), new Vector2(0.45f, 0.96f), Vector2.zero, Vector2.zero, Color.white);
-            ProductionButton(homeGlass.transform, "CAMPAIGN", new Vector2(0.035f, 0.16f), new Vector2(0.45f, 0.68f), () => { home.SetActive(false); campaign.SetActive(true); }, true);
-            ProductionButton(homeGlass.transform, "THE SPIRAL  /  CHALLENGE", new Vector2(0.47f, 0.16f), new Vector2(0.77f, 0.68f), () =>
+            var homeGlass = CreatePanel("Home Glass", home.transform, new Vector2(.25f,.075f), new Vector2(.75f,.40f), new Color(.018f,.047f,.085f,.94f));
+            CreatePanel("Home Accent",homeGlass.transform,new Vector2(0,.988f),Vector2.one,BrandPresentation.Gold);
+            CreateText("Home Promise", homeGlass.transform, "FIND YOUR FLOW", 22, TextAnchor.MiddleCenter, new Vector2(.06f,.76f), new Vector2(.94f,.96f), Vector2.zero, Vector2.zero, Color.white);
+            ProductionButton(homeGlass.transform, "CAMPAIGN", new Vector2(.06f,.34f), new Vector2(.94f,.61f), () => { home.SetActive(false); campaign.SetActive(true); }, true);
+            ProductionButton(homeGlass.transform, "THE SPIRAL  /  CHALLENGE", new Vector2(.06f,.075f), new Vector2(.62f,.27f), () =>
             {
                 ModuleSelectionState.Select(ModuleSelectionState.SpiralModuleId);
                 StartCoroutine(LoadScene(ModuleSelectionState.ModuleRunnerSceneName));
             });
-            ProductionButton(homeGlass.transform, "SETTINGS", new Vector2(0.79f, 0.16f), new Vector2(0.965f, 0.68f), () => { home.SetActive(false); settingsPanel.SetActive(true); });
-            ProductionButton(home.transform, "FLOW LAB  /  MOVEMENT PRACTICE", new Vector2(.12f,.045f), new Vector2(.49f,.105f), () =>
+            ProductionButton(homeGlass.transform, "SETTINGS", new Vector2(.65f,.075f), new Vector2(.94f,.27f), () => { home.SetActive(false); settingsPanel.SetActive(true); });
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            var development = CreatePanel("Development Tools", safe, new Vector2(.25f,.2f), new Vector2(.75f,.78f), BrandPresentation.PanelNavy);
+            development.SetActive(false);
+            CreateText("Development Header",development.transform,"DEVELOPMENT  /  MOVEMENT COMPARISONS",24,TextAnchor.MiddleCenter,new Vector2(.04f,.78f),new Vector2(.96f,.96f),Vector2.zero,Vector2.zero,Color.white);
+            var trials = CampaignTrialMenu.Create(safe, () => development.SetActive(true), () =>
+                StartCoroutine(LoadScene(ModuleSelectionState.ModuleRunnerSceneName)));
+            ProductionButton(development.transform, "FLOW LAB  /  MOVEMENT PRACTICE", new Vector2(.08f,.5f), new Vector2(.92f,.7f), () =>
             {
                 FlowLabSceneController.RequestLaunch();
                 StartCoroutine(LoadScene("MovementLab"));
             });
-            var trials = CampaignTrialMenu.Create(safe, () => home.SetActive(true), () =>
-                StartCoroutine(LoadScene(ModuleSelectionState.ModuleRunnerSceneName)));
-            ProductionButton(home.transform, "CAMPAIGN FLOW TRIAL", new Vector2(.51f,.045f), new Vector2(.88f,.105f), () =>
+            ProductionButton(development.transform, "CAMPAIGN FLOW TRIAL", new Vector2(.08f,.26f), new Vector2(.92f,.46f), () =>
             {
-                home.SetActive(false); trials.SetActive(true);
+                development.SetActive(false); trials.SetActive(true);
             });
+            ProductionButton(development.transform,"BACK",new Vector2(.08f,.04f),new Vector2(.35f,.2f),()=>{development.SetActive(false);home.SetActive(true);});
+            ProductionButton(home.transform,"DEVELOPMENT",new Vector2(.025f,.02f),new Vector2(.16f,.065f),()=>{home.SetActive(false);development.SetActive(true);});
+#endif
             var byId = Resources.LoadAll<ModuleDefinition>("Modules").ToDictionary(module => module.StableModuleId);
             var ids = ModuleSelectionState.GetCampaignModuleIds().Where(byId.ContainsKey).ToArray();
             var modules = ids.Select(id => byId[id]).ToArray();
@@ -129,7 +137,7 @@ namespace Avoidance.UI
                 ? nextModule.EnvironmentBiomeProfile?.DisplayName : null;
             CreateText("Home Journey", homeGlass.transform,
                 nextWorld != null ? "NEXT ROAD  /  " + nextWorld.ToUpperInvariant() : "RETURN TO YOUR ROAD  /  REPLAY FOR MASTERY",
-                20, TextAnchor.MiddleRight, new Vector2(.47f,.74f), new Vector2(.965f,.96f), Vector2.zero, Vector2.zero, BrandPresentation.Cyan);
+                16, TextAnchor.MiddleCenter, new Vector2(.06f,.63f), new Vector2(.94f,.78f), Vector2.zero, Vector2.zero, BrandPresentation.Cyan);
             CreateModulePanel(campaign.GetComponent<RectTransform>(), modules, ids, progression);
             CreateSettingsPanel(settingsPanel.GetComponent<RectTransform>(), settings);
             ProductionButton(campaign.transform, "BACK", new Vector2(0.025f, 0.025f), new Vector2(0.15f, 0.13f), () => { campaign.SetActive(false); home.SetActive(true); });
@@ -144,7 +152,7 @@ namespace Avoidance.UI
         {
             var fixedCount = modules.Count(module => ModuleProgressionData.HasValidCompletion(ModuleProgressionData.GetRecord(progression, module.StableModuleId)));
             CreateText("Journey Header", panel, "THE ROAD AHEAD", 30, TextAnchor.MiddleLeft, new Vector2(0.025f, 0.82f), new Vector2(0.64f, 0.98f), Vector2.zero, Vector2.zero, Color.white);
-            CreateText("Journey Progress", panel, $"{fixedCount} / {modules.Length} MODULES FIXED", 20, TextAnchor.MiddleRight, new Vector2(0.64f, 0.84f), new Vector2(0.975f, 0.96f), Vector2.zero, Vector2.zero, BrandPresentation.Cyan);
+            CreateText("Journey Progress", panel, $"{fixedCount} / {modules.Length} ROADS RESTORED", 20, TextAnchor.MiddleRight, new Vector2(0.64f, 0.84f), new Vector2(0.975f, 0.96f), Vector2.zero, Vector2.zero, BrandPresentation.Cyan);
             var pages = Mathf.Max(1, Mathf.CeilToInt(modules.Length / 3f));
             var page = 0;
             var cards = CreateUiObject("Journey Cards", panel, new Vector2(0.02f, 0.19f), new Vector2(0.98f, 0.81f), Vector2.zero, Vector2.zero);
@@ -157,14 +165,14 @@ namespace Avoidance.UI
                     var module = modules[index];
                     var unlocked = ModuleProgressionData.IsUnlocked(progression, orderedIds, module.StableModuleId);
                     var record = ModuleProgressionData.GetRecord(progression, module.StableModuleId);
-                    var card = CreatePanel("Journey " + module.StableModuleId, cards.transform, new Vector2(column / 3f + 0.007f, 0), new Vector2((column + 1) / 3f - 0.007f, 1), new Color(0.09f, 0.29f, 0.42f, 0.8f));
+                    var card = CreatePanel("Journey " + module.StableModuleId, cards.transform, new Vector2(column / 3f + 0.007f, 0), new Vector2((column + 1) / 3f - 0.007f, 1), new Color(.04f,.13f,.20f,.98f));
                     var world = module.EnvironmentBiomeProfile != null ? module.EnvironmentBiomeProfile.DisplayName : "Sky Road";
                     var title = module.DisplayName;
                     var separator = title.IndexOf(" - ", StringComparison.Ordinal); if (separator >= 0) title = title.Substring(separator + 3);
                     CreateText("Journey World", card.transform, $"{index + 1:00}   /   {world.ToUpperInvariant()}", 18, TextAnchor.MiddleLeft, new Vector2(0.07f, 0.79f), new Vector2(0.93f, 0.95f), Vector2.zero, Vector2.zero, BrandPresentation.Cyan);
                     CreateText("Journey Title", card.transform, title.ToUpperInvariant(), 28, TextAnchor.MiddleLeft, new Vector2(0.07f, 0.55f), new Vector2(0.93f, 0.79f), Vector2.zero, Vector2.zero, Color.white);
                     CreateText("Journey Record", card.transform, ModuleSummary(module, record, unlocked), 19, TextAnchor.UpperLeft, new Vector2(0.07f, 0.24f), new Vector2(0.93f, 0.52f), Vector2.zero, Vector2.zero, BrandPresentation.MutedWhite);
-                    var label = unlocked ? (ModuleProgressionData.HasValidCompletion(record) ? "RUN AGAIN" : "ENTER MODULE") : "LOCKED";
+                    var label = unlocked ? (ModuleProgressionData.HasValidCompletion(record) ? "RUN AGAIN" : "ENTER ROAD") : "LOCKED";
                     var button = ProductionButton(card.transform, label, new Vector2(0.07f, 0.06f), new Vector2(0.93f, 0.24f), () =>
                     {
                         if (!unlocked) return;
@@ -184,8 +192,8 @@ namespace Avoidance.UI
                     ModuleSelectionState.Select(continueId);
                     StartCoroutine(LoadScene(ModuleSelectionState.ModuleRunnerSceneName));
                 }, true);
-            CreateText("Journey Rule", panel, continueId != null ? "Bronze opens the next road. Replay any open module." : "CAMPAIGN COMPLETE — replay for mastery.", 17, TextAnchor.MiddleCenter, new Vector2(0.16f, 0.02f), new Vector2(0.69f, 0.15f), Vector2.zero, Vector2.zero, BrandPresentation.MutedWhite);
-            if (pages > 1) ProductionButton(panel, "MORE ROADS", new Vector2(0.72f, 0.02f), new Vector2(0.975f, 0.14f), () => { page = (page + 1) % pages; RenderPage(); });
+            CreateText("Journey Rule", panel, continueId != null ? "Bronze opens the next road. Replay any open module." : "CAMPAIGN COMPLETE — replay for mastery.", 17, TextAnchor.MiddleCenter, new Vector2(0.16f, 0.02f), new Vector2(0.49f, 0.15f), Vector2.zero, Vector2.zero, BrandPresentation.MutedWhite);
+            if (pages > 1) ProductionButton(panel, "MORE ROADS", new Vector2(0.50f, 0.025f), new Vector2(0.68f, 0.15f), () => { page = (page + 1) % pages; RenderPage(); });
         }
 
         private static Button ProductionButton(Transform parent, string label, Vector2 min, Vector2 max, UnityEngine.Events.UnityAction action, bool primary = false)
@@ -527,7 +535,7 @@ namespace Avoidance.UI
                 Vector2.zero,
                 typeof(Image));
             var shade = shadeObject.GetComponent<Image>();
-            shade.color = new Color(0.02f, 0.12f, 0.2f, 0.06f);
+            shade.color = new Color(0.02f, 0.08f, 0.14f, 0.12f);
             shade.raycastTarget = false;
         }
 

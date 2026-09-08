@@ -17,11 +17,11 @@ MonoBehaviour:
   _internalName: module_005_windward
   _projectId: project.ryders-block
   _worldId: world.windward-observatory
-  _contentVersion: 1
+  _contentVersion: 2
   _sceneName: ModuleRunner
   _difficulty: 2
   _startPoint:
-    _position: {x: -18, y: 0.35, z: 19}
+    _position: {x: -22, y: 0.35, z: 19}
     _eulerAngles: {x: 0, y: 0, z: 0}
   _startAnchorStableId: start.module-005.windward
   _startSupportBlockStableId: m05.arrival
@@ -31,7 +31,7 @@ MonoBehaviour:
   _patchBlock:
     _stableId: patch.module-005.observatory
     _pose:
-      _position: {x: 46, y: 8.5, z: 41}
+      _position: {x: 55, y: 8.5, z: 43}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m05.patch.base
     _size: {x: 2.2, y: 2.2, z: 2.2}
@@ -39,22 +39,22 @@ MonoBehaviour:
   - _stableId: restore.module-005.west
     _order: 0
     _pose:
-      _position: {x: -18, y: 1.6, z: 40}
+      _position: {x: -22, y: 1.6, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m05.west.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-005.east
     _order: 1
     _pose:
-      _position: {x: 18, y: 4.6, z: 40}
-      _eulerAngles: {x: 0, y: 0, z: 0}
+      _position: {x: 22, y: 4.6, z: 44}
+      _eulerAngles: {x: 0, y: 135, z: 0}
     _supportBlockStableId: m05.east.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-005.lens
     _order: 2
     _pose:
-      _position: {x: 38, y: 6.6, z: 22}
-      _eulerAngles: {x: 0, y: 0, z: 0}
+      _position: {x: 47, y: 6.6, z: 19}
+      _eulerAngles: {x: 0, y: 34, z: 0}
     _supportBlockStableId: m05.lens.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   _expectedCleanTime: 50
@@ -70,228 +70,229 @@ MonoBehaviour:
   _optionalShortcuts:
   - _stableId: shortcut.module-005.chord
     _displayName: Instrument maintenance chord
-    _entryPosition: {x: -12, y: 2.1, z: 40}
-    _exitPosition: {x: 18, y: 4.6, z: 40}
-    _estimatedTimeSaved: 7
+    _entryPosition: {x: -14.666666, y: 2.1, z: 44}
+    _exitPosition: {x: 22, y: 4.6, z: 44}
+    _estimatedTimeSaved: 12
     _mechanics: 01000000
   _environmentProfile: {fileID: 11400000, guid: 01ae7109bc5abc14b9777a4587f28d2f, type: 2}
   _environmentBiomeProfile: {fileID: 11400000, guid: 82c37c0b66e6240488fbb3bc514fc5b8, type: 2}
   _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
   _loreBugDescription: Cross the wind instrument and reconnect the observatory.
-  _developerNotes: Arrival / West Anchorage / Wind Arc / Lens Ascent / Telescope
-    Terrace. Inner maintenance chord is optional. Physical timing pending.
+  _developerNotes: Approach jump rhythm / West Anchorage / separated wind arc / diagonal
+    lens ascent / telescope finale. Five-pad chord saves eleven-pad arc; approach
+    speed and late takeoff matter. Physical timing pending.
   _blocks:
   - _stableId: m05.arrival
     _pose:
-      _position: {x: -18, y: 0, z: 20}
+      _position: {x: -22, y: 0, z: 20}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 7}
+    _size: {x: 6, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.approach.a
     _pose:
-      _position: {x: -18, y: 0.4, z: 25}
+      _position: {x: -22, y: 0.35, z: 26}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 4.2, y: 0.6, z: 3.4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.approach.b
     _pose:
-      _position: {x: -18, y: 0.8, z: 30}
+      _position: {x: -22, y: 0.8, z: 32}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.8, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.approach.c
     _pose:
-      _position: {x: -18, y: 1.2, z: 35}
+      _position: {x: -22, y: 1.2, z: 38}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 4.2, y: 0.6, z: 3.4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.west.restore
     _pose:
-      _position: {x: -18, y: 1.6, z: 40}
+      _position: {x: -22, y: 1.6, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 6}
+    _size: {x: 5, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.01
     _pose:
-      _position: {x: -17.386665, y: 1.85, z: 44.65874}
+      _position: {x: -21.25037, y: 1.85, z: 49.694016}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.02
     _pose:
-      _position: {x: -15.588457, y: 2.1, z: 49}
+      _position: {x: -19.052559, y: 2.1, z: 55}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.03
     _pose:
-      _position: {x: -12.7279215, y: 2.35, z: 52.72792}
+      _position: {x: -15.556349, y: 2.35, z: 59.55635}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.04
     _pose:
-      _position: {x: -9.000001, y: 2.6, z: 55.588455}
+      _position: {x: -11.000001, y: 2.6, z: 63.05256}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.05
     _pose:
-      _position: {x: -4.658745, y: 2.85, z: 57.386665}
+      _position: {x: -5.6940217, y: 2.85, z: 65.25037}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.06
     _pose:
-      _position: {x: -0.000000786805, y: 3.1, z: 58}
+      _position: {x: -0.0000009616506, y: 3.1, z: 66}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.07
     _pose:
-      _position: {x: 4.6587434, y: 3.35, z: 57.386665}
+      _position: {x: 5.69402, y: 3.35, z: 65.25037}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.08
     _pose:
-      _position: {x: 8.999999, y: 3.6, z: 55.58846}
+      _position: {x: 10.999999, y: 3.6, z: 63.05256}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.09
     _pose:
-      _position: {x: 12.7279215, y: 3.85, z: 52.72792}
+      _position: {x: 15.556349, y: 3.85, z: 59.55635}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.10
     _pose:
-      _position: {x: 15.588457, y: 4.1, z: 49}
+      _position: {x: 19.052559, y: 4.1, z: 55}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.11
     _pose:
-      _position: {x: 17.386665, y: 4.35, z: 44.65874}
+      _position: {x: 21.250368, y: 4.35, z: 49.69402}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.east.restore
     _pose:
-      _position: {x: 18, y: 4.6, z: 40}
+      _position: {x: 22, y: 4.6, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 6}
+    _size: {x: 5, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.ascent.a
     _pose:
-      _position: {x: 22, y: 5, z: 35}
+      _position: {x: 27, y: 5, z: 39}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.6, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.ascent.b
     _pose:
-      _position: {x: 26, y: 5.4, z: 31}
+      _position: {x: 32, y: 5.4, z: 34}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.6, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.ascent.c
     _pose:
-      _position: {x: 30, y: 5.8, z: 28}
+      _position: {x: 37, y: 5.8, z: 29}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.6, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.ascent.d
     _pose:
-      _position: {x: 34, y: 6.2, z: 25}
+      _position: {x: 42, y: 6.2, z: 24}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 3.6, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.lens.restore
     _pose:
-      _position: {x: 38, y: 6.6, z: 22}
+      _position: {x: 47, y: 6.6, z: 19}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 6}
+    _size: {x: 5, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.lens.a
     _pose:
-      _position: {x: 42, y: 7, z: 26}
+      _position: {x: 51, y: 7, z: 25}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 4, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.lens.b
     _pose:
-      _position: {x: 45, y: 7.4, z: 31}
+      _position: {x: 54, y: 7.4, z: 31}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 4, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.lens.c
     _pose:
-      _position: {x: 46, y: 7.8, z: 36}
+      _position: {x: 55, y: 7.8, z: 37}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _size: {x: 4.2, y: 0.6, z: 3.6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.patch.base
     _pose:
-      _position: {x: 46, y: 8.2, z: 41}
+      _position: {x: 55, y: 8.2, z: 43}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 8, y: 0.6, z: 7}
+    _size: {x: 6, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.skill.chord.1
     _pose:
-      _position: {x: -12, y: 2.1, z: 40}
+      _position: {x: -14.666667, y: 2.1, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 1
@@ -299,7 +300,7 @@ MonoBehaviour:
     _label:
   - _stableId: m05.skill.chord.2
     _pose:
-      _position: {x: -6, y: 2.6, z: 40}
+      _position: {x: -7.3333335, y: 2.6, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 1
@@ -307,7 +308,7 @@ MonoBehaviour:
     _label:
   - _stableId: m05.skill.chord.3
     _pose:
-      _position: {x: 0, y: 3.1, z: 40}
+      _position: {x: 0, y: 3.1, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 1
@@ -315,7 +316,7 @@ MonoBehaviour:
     _label:
   - _stableId: m05.skill.chord.4
     _pose:
-      _position: {x: 6, y: 3.6, z: 40}
+      _position: {x: 7.3333335, y: 3.6, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 1
@@ -323,7 +324,7 @@ MonoBehaviour:
     _label:
   - _stableId: m05.skill.chord.5
     _pose:
-      _position: {x: 12, y: 4.1, z: 40}
+      _position: {x: 14.666667, y: 4.1, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 3.2, y: 0.6, z: 3.2}
     _visualRole: 1

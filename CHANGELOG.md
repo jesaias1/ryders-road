@@ -1,3 +1,17 @@
+## 0.12.0-vertical-slice — 2026-09-09
+
+- Windward v2 replaces the walkway with 25 separated standard jumps, a larger
+  wind arc, diagonal ascent, onward Restore headings and a later-takeoff chord.
+- Five existing Campaign roads form a complete journey with first-road guidance,
+  finale acknowledgement, PB/rank/replay and preserved sequential V4 progression.
+- Title hierarchy and Campaign pagination improve; experiments move under
+  development access. Managed loading uses the approved game logo and moving
+  indicator with budgeted construction; Jesaias stays at native startup.
+- Mountain cascade landmark rebuilt; four worlds get quieter fill/near shadows.
+  Continuous skies and accepted movement/input/camera remain unchanged.
+- Original Patch/Boost cues extend existing audio profiles. 245 EditMode and
+  90 PlayMode tests pass. Physical S23 feedback remains pending.
+
 ## 0.11.0 worlds and Windward Observatory
 
 Added complete fifth Campaign road Windward Observatory under reserved

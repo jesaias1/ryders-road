@@ -23,6 +23,7 @@ namespace Avoidance.UI
         };
 
         private Text _status;
+        private Text _onboarding;
         private Text _flowText;
         private float _flowVisible;
         private int _flowCount, _flowTotal;
@@ -84,6 +85,11 @@ namespace Avoidance.UI
             if (CampaignFlowTrial.Active)
                 foreach (var badge in _rankBadges) if (badge != null) badge.transform.parent.gameObject.SetActive(false);
             CreateResultsPanel();
+            if(module.StableModuleId==ModuleSelectionState.DefaultModuleId && !CampaignFlowTrial.Active && !ModuleProgressionData.HasValidCompletion(progress))
+            {
+                _onboarding=CreateText("First Road Guidance",_status.transform.parent,"",22,TextAnchor.MiddleCenter,new Vector2(.2f,.64f),new Vector2(.8f,.74f),Vector2.zero,Vector2.zero);
+                _onboarding.raycastTarget=false;_onboarding.color=BrandPresentation.MutedWhite;
+            }
         }
 
         private void Update()
@@ -94,6 +100,18 @@ namespace Avoidance.UI
             }
 
             if (_flowText != null) { _flowVisible -= Time.unscaledDeltaTime; _flowText.enabled = _flowVisible > 0; }
+            if(_onboarding!=null)
+            {
+                _onboarding.enabled=_player.Motor.JumpCount<3 && !_resultsPanel.gameObject.activeSelf;
+                var control=_player.Input.TouchDebugState.ControlProfile;
+                var easy=control==Avoidance.Input.TouchControlProfileKind.FlowSteerAutoBalanced || control==Avoidance.Input.TouchControlProfileKind.FlowSteerAutoDirect || control==Avoidance.Input.TouchControlProfileKind.FlowSteerAutoFlow;
+                _onboarding.text=_player.Motor.JumpCount==0
+                    ? (easy ? "LEFT THUMB  move + steer     RIGHT SIDE  tap to jump" : "LEFT THUMB  move     RIGHT THUMB  drag to look / quick tap to jump")
+                    : "CYAN RESTORES  save your place     GOLD PATCH  finishes the road";
+#if UNITY_EDITOR
+                if(_player.Motor.JumpCount==0)_onboarding.text="WASD  move     MOUSE  look     SPACE  jump";
+#endif
+            }
             var elapsed = _run.Timer.ElapsedSeconds;
             var target = ModuleRankUtility.CurrentTarget(elapsed, _module.RankThresholds);
             var targetSeconds = ModuleRankUtility.ThresholdFor(target, _module.RankThresholds);
@@ -165,6 +183,12 @@ namespace Avoidance.UI
             var challenge = FindAnyObjectByType<FlowChallenge>();
             var flow = challenge != null && challenge.Total > 0 ? $"\n<size=18><color=#71DBEF>FLOW SHARDS  {challenge.Count} / {challenge.Total}  /  {100 * challenge.Count / challenge.Total}%</color></size>" : "";
             _resultsText.text = FormatResults(result) + flow;
+            if (!CampaignFlowTrial.Active && ModuleRankUtility.IsValidForPersonalBest(result.Validity)
+                && ModuleSelectionState.IsCampaignModule(_module.StableModuleId)
+                && ModuleSelectionState.GetNextCampaignModuleId(_module.StableModuleId)==null)
+                _resultsText.text=FormatResults(result).Replace("MODULE FIXED","FIVE ROADS RESTORED")
+                    + "\n<size=18><color=#C7E8F3>Thank you for finding your flow.\nYour next challenge: a faster line.</color></size>";
+            if(_onboarding!=null)_onboarding.enabled=false;
             if (CampaignFlowTrial.Active)
                 _resultsText.text = $"<size=24>{CampaignFlowTrial.Label}</size>\n<size=36>TRIAL COMPLETE</size>\n"
                     + $"{RunTimerFormatting.Format(result.CompletionSeconds)}\nSESSION BEST {CampaignFlowTrial.Best(_module):0.00}s"
@@ -257,13 +281,13 @@ namespace Avoidance.UI
             var panelObject = CreateUiObject(
                 "Module Results",
                 _status.transform.parent,
-                new Vector2(0.32f, 0.2f),
-                new Vector2(0.68f, 0.8f),
+                new Vector2(0.27f, 0.19f),
+                new Vector2(0.73f, 0.81f),
                 Vector2.zero,
                 Vector2.zero,
                 typeof(Image));
             _resultsPanel = panelObject.GetComponent<RectTransform>();
-            panelObject.GetComponent<Image>().color = BrandPresentation.PanelNavy;
+            panelObject.GetComponent<Image>().color = new Color(.025f,.05f,.10f,.96f);
             _resultsAccent = CreateUiObject(
                 "Results Accent",
                 _resultsPanel,
@@ -283,11 +307,11 @@ namespace Avoidance.UI
                 new Vector2(1f, 1f),
                 new Vector2(18f, 18f),
                 new Vector2(-18f, -18f));
-            CreateButton(_resultsPanel, "RETRY", new Vector2(0.5f, 0.13f), _retry);
+            CreateButton(_resultsPanel, "RETRY", new Vector2(0.24f, 0.12f), _retry);
             CreateButton(_resultsPanel, ModuleSelectionState.GetNextCampaignModuleId(_module.StableModuleId) != null
-                ? "NEXT MODULE" : "CAMPAIGN", new Vector2(0.5f, 0.24f), _nextModule);
+                ? "NEXT MODULE" : "CAMPAIGN", new Vector2(0.76f, 0.12f), _nextModule);
             if (ModuleSelectionState.GetNextCampaignModuleId(_module.StableModuleId) != null)
-                CreateButton(_resultsPanel, "CAMPAIGN", new Vector2(0.5f, 0.025f), _moduleSelect);
+                CreateButton(_resultsPanel, "CAMPAIGN", new Vector2(0.5f, 0.12f), _moduleSelect);
             panelObject.SetActive(false);
         }
 
@@ -431,7 +455,7 @@ namespace Avoidance.UI
                 anchor,
                 anchor,
                 Vector2.zero,
-                new Vector2(280f, 48f),
+                new Vector2(220f, 52f),
                 typeof(Image),
                 typeof(Button));
             var rect = buttonObject.GetComponent<RectTransform>();

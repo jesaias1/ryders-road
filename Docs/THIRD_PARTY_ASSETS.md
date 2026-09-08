@@ -75,3 +75,15 @@ This is a licensed contact-feedback candidate, not an approved final mix.
 Duration, decode, amplitude and Unity hook checks do not constitute listening
 approval. S23 speaker/headphone audition remains required. Restore, completion,
 boost and ambience still need a coherent authored sound set.
+
+
+## 0.12.0 original slice cues
+
+`Tools/Render-SliceAudio.py` generates `Patch120.wav` (1.8 s, staggered ceramic
+resonances) and `Boost120.wav` (0.48 s, brief filtered pneumatic release). These
+are original deterministic synthesis with no external recordings or sample packs.
+The existing GameplayAudioProfile maps them at .32 and .22 gain; MovementFeedback
+already publishes the events. Existing Kenney contact samples/licenses, quiet
+footsteps/Restores and the original Wind110 bed remain. Master volume remains
+authoritative; no extra music/loop system. Physical speaker/headphone mix approval
+is pending.

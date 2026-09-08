@@ -229,7 +229,7 @@ namespace Avoidance.Tests.PlayMode
             var presentation=new GameObject("Startup Test Presentation").AddComponent<LoadingPresentation>();
             Assert.That(presentation.GetComponent<CanvasGroup>().alpha,Is.EqualTo(1));
             Assert.That(presentation.GetComponent<CanvasGroup>().blocksRaycasts,Is.True);
-            Assert.That(presentation.GetComponentInChildren<RawImage>().texture,Is.EqualTo(Resources.Load<Texture2D>("Branding/Jesaias_Emblem")));
+            Assert.That(presentation.GetComponentInChildren<RawImage>().texture,Is.EqualTo(Resources.Load<Texture2D>(BrandPresentation.LogoResourcePath)));
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
             yield return new WaitForSecondsRealtime(.3f);
             Assert.That(presentation.GetComponent<CanvasGroup>().alpha,Is.Zero);

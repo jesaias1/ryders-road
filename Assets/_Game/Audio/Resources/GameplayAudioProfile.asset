@@ -42,3 +42,9 @@ MonoBehaviour:
   - Cue: 5
     Clip: {fileID: 8300000, guid: 40eec4bc1f1dd6e46953a49a3c1db46a, type: 3}
     Volume: 0.16
+  - Cue: 6
+    Clip: {fileID: 8300000, guid: 88857ff72539f12468bafcc55dbdc203, type: 3}
+    Volume: 0.32
+  - Cue: 7
+    Clip: {fileID: 8300000, guid: 38502e27741ed094891278e13a8a46db, type: 3}
+    Volume: 0.22

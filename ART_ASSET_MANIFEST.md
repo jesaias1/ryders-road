@@ -1,5 +1,21 @@
 # Ryder's Road Art Asset Manifest
 
+## 0.12.0 original slice revisions
+
+- WindwardAuthoring rebuilds route supports/instrument/telescope for Windward v2;
+  original stable assets and matching collision remain.
+- MountainWorldProductionAuthoring.RebuildWaterfall updates only SplitPeakWaterfall
+  meshes/prefab/materials and the existing landmark placement. Original snow ridges,
+  shelf pools, cascades and split plunge; no downloaded assets.
+- MountainWaterfall.shader adds directional/ambient response to opaque moving water.
+- Managed loading reuses Branding/RydersRoad_Logo_UI. Jesaias SVG/native startup
+  and approved application icons remain unchanged.
+- Patch120.wav and Boost120.wav are original offline modal/noise synthesis;
+  editable generator Tools/Render-SliceAudio.py. Existing CC0 sample licenses remain.
+- Reviewed Editor evidence will be archived in Docs/Production120QA; physical
+  art, speaker mix and performance approval remain pending.
+
+
 ## 0.11.0 original presentation assets
 
 - `Assets/Branding/Source/Jesaias_Emblem.svg`: editable trace of the supplied

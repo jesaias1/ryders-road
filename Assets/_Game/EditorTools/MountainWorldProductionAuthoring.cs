@@ -173,18 +173,63 @@ namespace Avoidance.EditorTools
             b.Peak(new Vector3(-14,-13,-3),new Vector3(20,21,24),seed+29,snow);
             return b.Save(name,false);
         }
+        // Rebuild only the rejected landmark. Never reauthor the accepted mountain route.
+        public static void RebuildWaterfall()
+        {
+            foreach(var guid in AssetDatabase.FindAssets("t:Material",new[]{Root+"/Materials"}))
+            {
+                var mat=AssetDatabase.LoadAssetAtPath<Material>(AssetDatabase.GUIDToAssetPath(guid));Materials[mat.name]=mat;
+            }
+            Materials["Water"].SetColor("_BaseColor",new Color(.30f,.62f,.67f));
+            Materials["Foam"].SetColor("_BaseColor",new Color(.69f,.80f,.79f));
+            foreach(var name in new[]{"Water","Foam"}){Materials[name].SetFloat("_FlowSpeed",1.4f);EditorUtility.SetDirty(Materials[name]);}
+            SplitPeak();
+            var biome=Resources.Load<ModuleDefinition>("Modules/Module_002_MovingParts").EnvironmentBiomeProfile;
+            var so=new SerializedObject(biome);var objects=so.FindProperty("_worldObjects");
+            for(int i=0;i<objects.arraySize;i++)
+            {
+                var item=objects.GetArrayElementAtIndex(i);
+                if(item.FindPropertyRelative("_stableId").stringValue=="biome.mountain-sky.landmark.split-peak")
+                {
+                    item.FindPropertyRelative("_eulerAngles").vector3Value=new Vector3(0,-55,0);
+                    item.FindPropertyRelative("_position").vector3Value=new Vector3(-82,-15,64);
+                }
+            }
+            so.ApplyModifiedPropertiesWithoutUndo();EditorUtility.SetDirty(biome);AssetDatabase.SaveAssets();
+        }
         private static GameObject SplitPeak()
         {
-            var b=new Sculpt();b.Rock(new Vector3(-10,0,0),new Vector3(12,50,17),317,true);b.Rock(new Vector3(12,-7,3),new Vector3(11,43,15),438,true);
-            b.Rock(new Vector3(0,-20,5),new Vector3(23,23,17),579,false);
-            // Water strands bend with the cliff, are entirely outside the playable corridor and use opaque low-cost geometry.
-            for(int i=0;i<5;i++)
+            var b=new Sculpt();
+            b.Peak(new Vector3(-13,4,8),new Vector3(22,42,25),317,true);
+            b.Peak(new Vector3(17,-2,12),new Vector3(22,37,25),438,true);
+            b.Rock(new Vector3(1,-25,6),new Vector3(26,26,22),579,false);
+            // A snow-fed cleft, two eroded shelves and a widening lower plunge.
+            // Ledges sit under each basin; water crosses their lips before falling.
+            b.Rock(new Vector3(-3,22,-16),new Vector3(4.5f,5,7),613,false,false,"Stone");
+            b.Rock(new Vector3(3,4,-28),new Vector3(5,4,6),741,false,false,"Stone");
+            b.Rock(new Vector3(9,-16.7f,-38),new Vector3(5.3f,4,6),813,false,false,"Stone");
+            b.Ribbon("Water",new[]{new Vector3(-5,29,-6),new Vector3(-3,28,-13),new Vector3(-3,27.4f,-22)},5.2f);
+            b.Ribbon("Water",new[]{new Vector3(-3,27.4f,-22),new Vector3(-2,23,-23),new Vector3(0,10,-26),new Vector3(3,8.5f,-29)},4.6f);
+            b.Ribbon("Water",new[]{new Vector3(3,8.5f,-29),new Vector3(5,8.2f,-34)},7.6f);
+            b.Ribbon("Water",new[]{new Vector3(5,8.2f,-34),new Vector3(6,3,-35),new Vector3(8,-11,-38),new Vector3(9,-12.6f,-40)},5.8f);
+            b.Ribbon("Water",new[]{new Vector3(9,-12.6f,-40),new Vector3(11,-13,-44)},8.4f);
+            for(int i=0;i<3;i++)
             {
-                float x=-.9f+i*.65f;
-                b.Ribbon(i%2==0?"Water":"Foam",new[]{new Vector3(x,28,-17),new Vector3(x+1,15,-18),new Vector3(x-.5f,-2,-19),new Vector3(x+2,-18,-22),new Vector3(x+3,-48,-25)},i%2==0?1.4f:.3f);
+                float x=8+i*2.6f;
+                b.Ribbon("Water",new[]{new Vector3(x,-13,-44),new Vector3(x+1,-23,-45),new Vector3(x+3,-39,-46),new Vector3(x+4,-54,-48)},2.3f-i*.25f);
+                b.Ribbon("Foam",new[]{new Vector3(-4+i*1.4f,26,-22.12f),new Vector3(-3+i*1.4f,22,-23.12f),new Vector3(-1+i*1.4f,11,-26.12f)},.22f+i*.09f);
+                b.Ribbon("Foam",new[]{new Vector3(3+i*1.5f,7,-34.12f),new Vector3(4+i*1.5f,2,-35.12f),new Vector3(6+i*1.5f,-10,-38.12f)},.28f);
             }
-            for(int i=0;i<4;i++){b.Box("Stone",new Vector3(-10+i*2.5f,16,-13),new Vector3(1.2f,6,1.5f));b.Box("Gold",new Vector3(-10+i*2.5f,19.2f,-13),new Vector3(1.6f,.25f,2));}
-            b.Box("Stone",new Vector3(-6,13,-13),new Vector3(12,.7f,4));
+            b.Pool("Water",new Vector3(-3,27.45f,-16),new Vector2(3.6f,5.4f));
+            b.Pool("Water",new Vector3(3,8.55f,-30),new Vector2(4.3f,3.6f));
+            b.Pool("Water",new Vector3(9,-12.5f,-40),new Vector2(4.6f,3.4f));
+            b.Pool("Foam",new Vector3(1,8.58f,-28.5f),new Vector2(1.8f,1.1f));
+            b.Pool("Foam",new Vector3(8,-12.47f,-39),new Vector2(2,1.2f));
+            // Broken foam fans belong to the impact pools, not floating mist cards.
+            b.Ribbon("Foam",new[]{new Vector3(3,8.57f,-29),new Vector3(4,8.4f,-31)},5.6f);
+            b.Ribbon("Foam",new[]{new Vector3(9,-12.5f,-40),new Vector3(10,-12.7f,-42)},6.8f);
+            b.Rock(new Vector3(-10,25,-14),new Vector3(3,5,7),417,true,false);
+            b.Rock(new Vector3(4,24,-12),new Vector3(3,5,7),518,true,false);
             return b.Save("SplitPeakWaterfall",false);
         }
         private static void CreateStoneTexture()
@@ -217,7 +262,7 @@ namespace Avoidance.EditorTools
                 var v=new[]{new Vector3(-1,-1,-1),new Vector3(1,-1,-1),new Vector3(1,-1,1),new Vector3(-1,-1,1),new Vector3(-1,1,-1),new Vector3(1,1,-1),new Vector3(1,1,1),new Vector3(-1,1,1)}.Select(x=>p+Vector3.Scale(x,s)*.5f).ToArray();
                 Quad(mat,v[0],v[1],v[5],v[4]);Quad(mat,v[1],v[2],v[6],v[5]);Quad(mat,v[2],v[3],v[7],v[6]);Quad(mat,v[3],v[0],v[4],v[7]);Quad(mat,v[4],v[5],v[6],v[7]);Quad(mat,v[3],v[2],v[1],v[0]);
             }
-            public void Rock(Vector3 p,Vector3 radius,int seed,bool snow,bool peak=true)
+            public void Rock(Vector3 p,Vector3 radius,int seed,bool snow,bool peak=true,string cap=null)
             {
                 var random=new System.Random(seed);const int sides=16,rings=12;var v=new Vector3[rings,sides];
                 var rim=new float[sides];for(int i=0;i<sides;i++)rim[i]=.78f+(float)random.NextDouble()*.32f;
@@ -239,7 +284,7 @@ namespace Avoidance.EditorTools
                     Tri(mat,v[r,i],v[r+1,i],v[r+1,j]);Tri(mat,v[r,i],v[r+1,j],v[r,j]);
                 }
                 var top=p+Vector3.up*radius.y*(peak?.82f:1);
-                for(int i=0;i<sides;i++){int j=(i+1)%sides;Tri(snow?"Snow":peak?"Rock":"Moss",top,v[rings-1,j],v[rings-1,i]);Tri("Rock",p-Vector3.up*radius.y,v[0,i],v[0,j]);}
+                for(int i=0;i<sides;i++){int j=(i+1)%sides;Tri(cap??(snow?"Snow":peak?"Rock":"Moss"),top,v[rings-1,j],v[rings-1,i]);Tri("Rock",p-Vector3.up*radius.y,v[0,i],v[0,j]);}
             }
             public void Peak(Vector3 p,Vector3 size,int seed,bool snow)
             {
@@ -286,6 +331,16 @@ namespace Avoidance.EditorTools
                         Tri((branch+level)%3==0?"LeafSun":"Leaf",v,center+Vector3.up*h*.18f,w);
                         Tri("Leaf",v,w,center-Vector3.up*h*.05f);
                     }
+                }
+            }
+            public void Pool(string mat,Vector3 center,Vector2 radius)
+            {
+                for(int i=0;i<16;i++)
+                {
+                    float a=i*Mathf.PI/8,b=(i+1)*Mathf.PI/8;
+                    var p=center+new Vector3(Mathf.Cos(a)*radius.x,0,Mathf.Sin(a)*radius.y);
+                    var q=center+new Vector3(Mathf.Cos(b)*radius.x,0,Mathf.Sin(b)*radius.y);
+                    Tri(mat,center,q,p);
                 }
             }
             public void Ribbon(string mat,Vector3[] path,float width)

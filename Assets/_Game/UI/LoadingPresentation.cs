@@ -12,6 +12,9 @@ namespace Avoidance.UI
         private RawImage _image;
         private Texture2D _poster;
         private RectTransform _emblem;
+        private RectTransform _track;
+        private RectTransform _traveller;
+        private Text _loadingLabel;
 
         private Coroutine _fade;
         private LoadingTransitionProfile _profile;
@@ -35,25 +38,36 @@ namespace Avoidance.UI
             _group = gameObject.AddComponent<CanvasGroup>(); _group.alpha = 0; _group.blocksRaycasts = false;
             var back = new GameObject("Loading Background", typeof(RectTransform), typeof(Image)); back.transform.SetParent(transform, false);
             Stretch(back.GetComponent<RectTransform>()); back.GetComponent<Image>().color = new Color(5/255f,14/255f,24/255f);
-            var frame = new GameObject("Jesaias Emblem", typeof(RectTransform), typeof(RawImage)); frame.transform.SetParent(transform, false);
-            _image = frame.GetComponent<RawImage>(); _poster = Resources.Load<Texture2D>("Branding/Jesaias_Emblem"); _image.texture = _poster;
+            var frame = new GameObject("Ryders Road Loading Identity", typeof(RectTransform), typeof(RawImage)); frame.transform.SetParent(transform, false);
+            _image = frame.GetComponent<RawImage>(); _poster = Resources.Load<Texture2D>(BrandPresentation.LogoResourcePath); _image.texture = _poster;
             _image.enabled = _poster != null; _image.raycastTarget = false;
             _emblem = frame.GetComponent<RectTransform>();
             _emblem.anchorMin = _emblem.anchorMax = new Vector2(.5f,.5f);
             LayoutEmblem();
             if (_poster == null)
             {
-                var fallback = new GameObject("Studio fallback", typeof(RectTransform), typeof(Text)); fallback.transform.SetParent(transform,false);
+                var fallback = new GameObject("Game fallback", typeof(RectTransform), typeof(Text)); fallback.transform.SetParent(transform,false);
                 Stretch(fallback.GetComponent<RectTransform>()); var text=fallback.GetComponent<Text>();
-                text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); text.text="JESAIAS GAMES";
+                text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); text.text=BrandPresentation.PlayerFacingTitle;
                 text.alignment=TextAnchor.MiddleCenter; text.fontSize=24; text.color=new Color(.7f,.85f,.86f);
             }
+            var track = new GameObject("Loading Track",typeof(RectTransform),typeof(Image));track.transform.SetParent(transform,false);
+            _track=track.GetComponent<RectTransform>();_track.anchorMin=_track.anchorMax=new Vector2(.5f,.5f);
+            track.GetComponent<Image>().color=new Color(.12f,.23f,.29f);track.GetComponent<Image>().raycastTarget=false;
+            var traveller=new GameObject("Loading Traveller",typeof(RectTransform),typeof(Image));traveller.transform.SetParent(_track,false);
+            _traveller=traveller.GetComponent<RectTransform>();_traveller.anchorMin=_traveller.anchorMax=new Vector2(0,.5f);
+            traveller.GetComponent<Image>().color=BrandPresentation.Gold;traveller.GetComponent<Image>().raycastTarget=false;
+            var label=new GameObject("Loading Label",typeof(RectTransform),typeof(Text));label.transform.SetParent(transform,false);
+            _loadingLabel=label.GetComponent<Text>();_loadingLabel.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            _loadingLabel.fontSize=16;_loadingLabel.alignment=TextAnchor.MiddleCenter;_loadingLabel.color=BrandPresentation.MutedWhite;
+            _loadingLabel.text="OPENING YOUR ROAD";_loadingLabel.raycastTarget=false;
+            LayoutEmblem();
             CreateFailurePanel();
             UnitySceneLevelLoader.LoadingStarted += Begin;
             UnitySceneLevelLoader.LoadingFinished += Finish;
             UnitySceneLevelLoader.LoadingFailed += Failed;
             // Cover the first managed frame too, before Bootstrap publishes a load event.
-            // Native startup uses the same emblem through PlayerSettings.
+            // Studio identity belongs to native startup; managed transitions use the game identity.
             Begin();
         }
         private void CreateFailurePanel()
@@ -81,9 +95,14 @@ namespace Avoidance.UI
         private void LayoutEmblem()
         {
             var safe=Screen.safeArea;
-            float width=Mathf.Min(safe.width*.29f,safe.height*.56f);
-            _emblem.sizeDelta=new Vector2(width,width*430f/770f);
-            _emblem.anchoredPosition=safe.center-new Vector2(Screen.width,Screen.height)*.5f;
+            float width=Mathf.Min(safe.width*.40f,safe.height*.85f);
+            _emblem.sizeDelta=new Vector2(width,width*(_poster != null ? _poster.height/(float)_poster.width : .4f));
+            _emblem.anchoredPosition=safe.center-new Vector2(Screen.width,Screen.height)*.5f + Vector2.up*safe.height*.05f;
+            if(_track==null)return;
+            _track.sizeDelta=new Vector2(width*.58f,3);_track.anchoredPosition=_emblem.anchoredPosition-Vector2.up*(_emblem.sizeDelta.y*.5f+28);
+            _traveller.sizeDelta=new Vector2(width*.12f,3);
+            var label=_loadingLabel.rectTransform;label.anchorMin=label.anchorMax=new Vector2(.5f,.5f);
+            label.sizeDelta=new Vector2(width,30);label.anchoredPosition=_track.anchoredPosition-Vector2.up*25;
         }
         private void Update()
         {
@@ -95,6 +114,9 @@ namespace Avoidance.UI
             float period=_profile != null ? _profile.PulsePeriodSeconds : 2.4f;
             float alpha=Mathf.Lerp(.78f,1f,.5f+.5f*Mathf.Cos(Time.unscaledTime*2*Mathf.PI/Mathf.Max(.1f,period)));
             _image.color=new Color(1,1,1,alpha);
+            float travel=Mathf.PingPong(Time.unscaledTime/Mathf.Max(.1f,period)*2,1);
+            _traveller.anchoredPosition=new Vector2(Mathf.Lerp(_traveller.sizeDelta.x*.5f,_track.sizeDelta.x-_traveller.sizeDelta.x*.5f,travel),0);
+            _loadingLabel.text=request != null && request.State==SceneLoadState.AwaitingReady ? "BUILDING YOUR ROAD" : "OPENING YOUR ROAD";
         }
         private void Failed(string reason)
         {

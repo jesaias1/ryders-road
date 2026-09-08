@@ -314,7 +314,7 @@ if ($configuration -notmatch '(?m)^  _gameVersion: 0\.5\.0$') {
     $errors.Add('Game version is not 0.5.0.')
 }
 
-if ($configuration -notmatch '(?m)^  _buildVersion: 0\.11\.0-worlds-and-windward$') {
+if ($configuration -notmatch '(?m)^  _buildVersion: 0\.12\.0-vertical-slice$') {
     $errors.Add('Current production build version is invalid.')
 }
 
@@ -457,7 +457,7 @@ if ($visualBenchmarks -notmatch 'MobileBalanced' -or $visualBenchmarks -notmatch
 
 $projectSettings = Read-Text 'ProjectSettings/ProjectSettings.asset'
 if ($projectSettings -notmatch "(?m)^  productName: Ryder's Road$" `
-    -or $projectSettings -notmatch '(?m)^  bundleVersion: 0\.11\.0-worlds-and-windward$' `
+    -or $projectSettings -notmatch '(?m)^  bundleVersion: 0\.12\.0-vertical-slice$' `
     -or $projectSettings -notmatch '(?m)^  defaultScreenOrientation: 4$' `
     -or $projectSettings -notmatch '(?m)^  allowedAutorotateToPortrait: 0$' `
     -or $projectSettings -notmatch '(?m)^  allowedAutorotateToPortraitUpsideDown: 0$' `
@@ -645,4 +645,3 @@ Write-Output "Feature flags: $($flagIds.Count)"
 Write-Output "Movement profiles: $movementProfileCount"
 Write-Output "Module assets: $($moduleIds.Count)"
 Write-Output "Run Unity Test Runner and Android build after source changes."
-

@@ -32,5 +32,6 @@ MonoBehaviour:
   _ambienceGain: 0.07
   _authoredLighting: 0
   _sunEuler: {x: 48, y: -32, z: 0}
+  _nearArchitectureShadows: 0
   _skyboxMaterial: {fileID: 0}
   _overrideBiomeFog: 0

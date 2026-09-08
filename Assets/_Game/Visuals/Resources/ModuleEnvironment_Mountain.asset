@@ -17,7 +17,7 @@ MonoBehaviour:
   _skyHorizon: {r: 0.65, g: 0.82, b: 0.96, a: 1}
   _skyWarmth: {r: 1, g: 0.6, b: 0.28, a: 1}
   _fogColor: {r: 0.602, g: 0.684, b: 0.738, a: 1}
-  _ambientLight: {r: 0.46695998, g: 0.51272, b: 0.54132, a: 0.65}
+  _ambientLight: {r: 0.308912, g: 0.33918402, b: 0.35810402, a: 0.43}
   _sunLight: {r: 1, g: 0.83, b: 0.64, a: 1}
   _fogDensity: 0.0042
   _sunIntensity: 1.06
@@ -32,5 +32,6 @@ MonoBehaviour:
   _ambienceGain: 0.045
   _authoredLighting: 1
   _sunEuler: {x: 26, y: -32, z: 0}
+  _nearArchitectureShadows: 1
   _skyboxMaterial: {fileID: 2100000, guid: 2dd821dc0fc7e5646bc8aa7b1e0f20f6, type: 2}
   _overrideBiomeFog: 1

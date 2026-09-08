@@ -92,12 +92,20 @@ namespace Avoidance.UI
         private static readonly int ColorId = Shader.PropertyToID("_Color");
 
         public ModuleDefinition ActiveModule => _module;
+        private float _constructionBudgetSeconds;
+        private bool _ready;
 
         private void Awake()
         {
+            // Preserve immediate identity discovery while construction is incremental.
+            _module = LoadSelectedModule();
+            _constructionBudgetSeconds = (Resources.Load<LoadingTransitionProfile>("LoadingTransitionProfile")?.ConstructionBudgetMilliseconds ?? 4f) * .001f;
+        }
+
+        private System.Collections.IEnumerator Start()
+        {
             var configuration = Resources.Load<GameConfiguration>("FoundationGameConfiguration")
                 ?? GameConfiguration.CreateRuntimeDefault();
-            _module = LoadSelectedModule();
             _visuals = _module.VisualProfile != null
                 ? _module.VisualProfile
                 : ModuleVisualProfile.CreateRuntimeDefault();
@@ -118,7 +126,9 @@ namespace Avoidance.UI
                 GameServices.Current.TryGet<ISettingsService>(out _settings);
             }
 
+            yield return null;
             CreateEnvironment();
+            yield return CreateBiomeWorld();
             _routeCameraGraph = CreateRouteCameraGraph();
             CreateRouteCameraDebugView(_routeCameraGraph);
             var checkpointService = ResolveCheckpointService();
@@ -131,7 +141,7 @@ namespace Avoidance.UI
             }
 
             checkpointService.SetStart(start.Pose.Position, start.Pose.Rotation);
-            CreateModuleContent(checkpointService);
+            yield return CreateModuleContent(checkpointService);
             var touchInput = CreateTouchInterface(out var statusText, out var completionText);
             CreatePlayer(
                 start.Pose.Position,
@@ -145,11 +155,13 @@ namespace Avoidance.UI
                 configuration.BuildVersion,
                 statusText,
                 completionText);
+            _ready = true;
             UnitySceneLevelLoader.NotifyReady(gameObject.scene.name, _module.StableModuleId);
         }
 
         private void Update()
         {
+            if (!_ready) return;
             _telemetry?.Tick(Time.unscaledDeltaTime);
             _runSession?.Timer.Tick(Time.unscaledDeltaTime);
             HandleBenchmarkWarp();
@@ -254,7 +266,6 @@ namespace Avoidance.UI
             CreateAmbientClouds();
             if (_environment.AmbienceClip != null)
                 new GameObject("World Air").AddComponent<WorldAmbience>().Initialize(_environment.AmbienceClip, _environment.AmbienceGain);
-            CreateBiomeWorld();
             CreateDistantFragments();
             CreateVisualBenchmarks();
 
@@ -264,13 +275,16 @@ namespace Avoidance.UI
             }
         }
 
-        private void CreateModuleContent(CheckpointService checkpoints)
+        private System.Collections.IEnumerator CreateModuleContent(CheckpointService checkpoints)
         {
+            var budgetStart = Time.realtimeSinceStartup;
             for (var index = 0; index < _module.Blocks.Count; index++)
             {
                 var block = _module.Blocks[index];
                 var blockObject = CreateGameplayBlock(block.StableId, block.Pose, block.Size, block.VisualRole);
                 _authoredSupportObjects.Add(block.StableId, blockObject);
+                if (Time.realtimeSinceStartup - budgetStart > ConstructionBudgetSeconds)
+                { yield return null; budgetStart = Time.realtimeSinceStartup; }
                 if (block.EditorLabel)
                 {
                     CreateWorldLabel(block.Label, block.Pose.Position + Vector3.up * 1.2f, debugOnly: true);
@@ -1549,21 +1563,24 @@ namespace Avoidance.UI
             _visualObjectCount++;
         }
 
-        private void CreateBiomeWorld()
+        private float ConstructionBudgetSeconds => _constructionBudgetSeconds;
+
+        private System.Collections.IEnumerator CreateBiomeWorld()
         {
             if (_biome == null)
             {
-                return;
+                yield break;
             }
 
             var root = new GameObject("Biome World - " + _biome.DisplayName);
             root.transform.position = Vector3.zero;
-            CreateBiomeObjects(root.transform);
+            yield return CreateBiomeObjects(root.transform);
             if (_biome.CombineStaticGeometry) StaticBatchingUtility.Combine(root);
         }
 
-        private void CreateBiomeObjects(Transform parent)
+        private System.Collections.IEnumerator CreateBiomeObjects(Transform parent)
         {
+            var budgetStart = Time.realtimeSinceStartup;
             foreach (var worldObject in _biome.WorldObjects)
             {
                 if (worldObject == null || !worldObject.IsValid)
@@ -1585,11 +1602,16 @@ namespace Avoidance.UI
                 }
 
                 ModuleVisualPrefabLibrary.PrepareVisualInstance(instance, worldObject.HasPlayableArchitecture);
+                if(_environment.NearArchitectureShadows && worldObject.DepthBand==BiomeDepthBand.NearEnvironment)
+                    foreach(var renderer in instance.GetComponentsInChildren<Renderer>())
+                    { renderer.shadowCastingMode=ShadowCastingMode.On; renderer.receiveShadows=true; }
                 ApplyDepthBandPresentation(
                     instance,
                     worldObject.DepthBand,
                     worldObject.DepthFadeStrength);
                 _visualObjectCount++;
+                if (Time.realtimeSinceStartup - budgetStart > ConstructionBudgetSeconds)
+                { yield return null; budgetStart = Time.realtimeSinceStartup; }
             }
         }
 

@@ -33,34 +33,37 @@ namespace Avoidance.EditorTools
             var module=AssetDatabase.LoadAssetAtPath<ModuleDefinition>(ModulePath);
             if(module==null){module=ScriptableObject.CreateInstance<ModuleDefinition>();AssetDatabase.CreateAsset(module,ModulePath);}
             var blocks=new List<ModuleBlockDefinition>();
-            void B(string id,Vector3 p,float width=4.6f,float depth=4.6f,bool skill=false)
+            void B(string id,Vector3 p,float width=3.6f,float depth=3.6f,bool skill=false)
                 => blocks.Add(new ModuleBlockDefinition("m05."+id,p,new Vector3(width,.6f,depth),skill?ModuleMaterialRole.Precision:ModuleMaterialRole.Normal));
-            B("arrival",new Vector3(-18,0,20),7,7);
-            B("approach.a",new Vector3(-18,.4f,25));B("approach.b",new Vector3(-18,.8f,30));
-            B("approach.c",new Vector3(-18,1.2f,35));B("west.restore",new Vector3(-18,1.6f,40),7,6);
+            // Broad run-up courts alternate with separated landings; no continuous walkway.
+            B("arrival",new Vector3(-22,0,20),6,4);
+            B("approach.a",new Vector3(-22,.35f,26),4.2f,3.4f);
+            B("approach.b",new Vector3(-22,.8f,32),3.8f,3.2f);
+            B("approach.c",new Vector3(-22,1.2f,38),4.2f,3.4f);
+            B("west.restore",new Vector3(-22,1.6f,44),5,3.6f);
             for(int i=1;i<12;i++)
             {
                 float angle=Mathf.PI-i*Mathf.PI/12;
-                B("arc."+i.ToString("00"),new Vector3(Mathf.Cos(angle)*18,1.6f+i*.25f,40+Mathf.Sin(angle)*18));
+                B("arc."+i.ToString("00"),new Vector3(Mathf.Cos(angle)*22,1.6f+i*.25f,44+Mathf.Sin(angle)*22),3.2f,3.2f);
             }
-            B("east.restore",new Vector3(18,4.6f,40),7,6);
-            B("ascent.a",new Vector3(22,5,35));B("ascent.b",new Vector3(26,5.4f,31));
-            B("ascent.c",new Vector3(30,5.8f,28));B("ascent.d",new Vector3(34,6.2f,25));
-            B("lens.restore",new Vector3(38,6.6f,22),7,6);
-            B("lens.a",new Vector3(42,7,26));B("lens.b",new Vector3(45,7.4f,31));
-            B("lens.c",new Vector3(46,7.8f,36));B("patch.base",new Vector3(46,8.2f,41),8,7);
-            for(int i=1;i<6;i++) B("skill.chord."+i,new Vector3(-18+i*6,1.6f+i*.5f,40),3.2f,3.2f,true);
+            B("east.restore",new Vector3(22,4.6f,44),5,3.6f);
+            B("ascent.a",new Vector3(27,5,39));B("ascent.b",new Vector3(32,5.4f,34));
+            B("ascent.c",new Vector3(37,5.8f,29));B("ascent.d",new Vector3(42,6.2f,24));
+            B("lens.restore",new Vector3(47,6.6f,19),5,4);
+            B("lens.a",new Vector3(51,7,25),4,3.6f);B("lens.b",new Vector3(54,7.4f,31),4,3.6f);
+            B("lens.c",new Vector3(55,7.8f,37),4.2f,3.6f);B("patch.base",new Vector3(55,8.2f,43),6,4);
+            for(int i=1;i<6;i++) B("skill.chord."+i,new Vector3(-22+i*44f/6,1.6f+i*.5f,44),3.2f,3.2f,true);
             var restores=new[]{
-                new ModuleRestorePointDefinition("restore.module-005.west",0,new Vector3(-18,1.6f,40),new Vector3(0,.35f,0),supportBlockStableId:"m05.west.restore"),
-                new ModuleRestorePointDefinition("restore.module-005.east",1,new Vector3(18,4.6f,40),new Vector3(0,.35f,0),supportBlockStableId:"m05.east.restore"),
-                new ModuleRestorePointDefinition("restore.module-005.lens",2,new Vector3(38,6.6f,22),new Vector3(0,.35f,0),supportBlockStableId:"m05.lens.restore")};
-            module.Configure(Id,"Campaign 05 - Windward Observatory","module_005_windward","project.ryders-block","world.windward-observatory",1,
-                ModuleSelectionState.ModuleRunnerSceneName,ModuleDifficulty.Medium,new ModulePose(new Vector3(-18,.35f,19),Vector3.zero),
-                new ModulePatchBlockDefinition("patch.module-005.observatory",new Vector3(46,8.5f,41),new Vector3(2.2f,2.2f,2.2f),supportBlockStableId:"m05.patch.base"),
+                new ModuleRestorePointDefinition("restore.module-005.west",0,new Vector3(-22,1.6f,44),new Vector3(0,.35f,0),supportBlockStableId:"m05.west.restore"),
+                new ModuleRestorePointDefinition("restore.module-005.east",1,new Vector3(22,4.6f,44),new Vector3(0,.35f,0),new Vector3(0,135,0),supportBlockStableId:"m05.east.restore"),
+                new ModuleRestorePointDefinition("restore.module-005.lens",2,new Vector3(47,6.6f,19),new Vector3(0,.35f,0),new Vector3(0,34,0),supportBlockStableId:"m05.lens.restore")};
+            module.Configure(Id,"Campaign 05 - Windward Observatory","module_005_windward","project.ryders-block","world.windward-observatory",2,
+                ModuleSelectionState.ModuleRunnerSceneName,ModuleDifficulty.Medium,new ModulePose(new Vector3(-22,.35f,19),Vector3.zero),
+                new ModulePatchBlockDefinition("patch.module-005.observatory",new Vector3(55,8.5f,43),new Vector3(2.2f,2.2f,2.2f),supportBlockStableId:"m05.patch.base"),
                 restores,50,120,new[]{ModuleMechanic.StandardBlock,ModuleMechanic.PrecisionBlock,ModuleMechanic.RestorePoint,ModuleMechanic.PatchBlock,ModuleMechanic.Shortcut},
-                new[]{new ModuleShortcutDefinition("shortcut.module-005.chord","Instrument maintenance chord",new Vector3(-12,2.1f,40),new Vector3(18,4.6f,40),7,new[]{ModuleMechanic.PrecisionBlock})},
+                new[]{new ModuleShortcutDefinition("shortcut.module-005.chord","Instrument maintenance chord",new Vector3(-22+44f/6,2.1f,44),new Vector3(22,4.6f,44),12,new[]{ModuleMechanic.PrecisionBlock})},
                 Resources.Load<ModuleEnvironmentProfile>("ModuleEnvironmentProfile"),Resources.Load<ModuleVisualProfile>("ModuleVisualProfile"),
-                "Cross the wind instrument and reconnect the observatory.","Arrival / West Anchorage / Wind Arc / Lens Ascent / Telescope Terrace. Inner maintenance chord is optional. Physical timing pending.",
+                "Cross the wind instrument and reconnect the observatory.","Approach jump rhythm / West Anchorage / separated wind arc / diagonal lens ascent / telescope finale. Five-pad chord saves eleven-pad arc; approach speed and late takeoff matter. Physical timing pending.",
                 blocks.ToArray(),null,null,null,null,null,null);
             module.ConfigureRankThresholds(new ModuleRankThresholds(100,72,51,RankCalibrationState.Uncalibrated,1,"Provisional; Bronze has no deadline."));
             module.ConfigurePlayability("start.module-005.windward","m05.arrival",-20,true);
@@ -75,23 +78,23 @@ namespace Avoidance.EditorTools
             }
             var instrument=Bake();
             // The whole wind instrument sits below the playable chord. No cross-course beams.
-            instrument.Cylinder("Ink",new Vector3(0,-16,40),6,3,32);
-            instrument.Cylinder("Porcelain",new Vector3(0,-8,40),4,5,9);
+            instrument.Cylinder("Ink",new Vector3(0,-16,44),6,3,32);
+            instrument.Cylinder("Porcelain",new Vector3(0,-8,44),4,5,9);
             for(int i=0;i<32;i++)
             {
                 float a=i*Mathf.PI/16,b=(i+1)*Mathf.PI/16;
-                var p=new Vector3(Mathf.Cos(a)*19,-4,40+Mathf.Sin(a)*19);
-                var q=new Vector3(Mathf.Cos(b)*19,-4,40+Mathf.Sin(b)*19);
+                var p=new Vector3(Mathf.Cos(a)*23,-4,44+Mathf.Sin(a)*23);
+                var q=new Vector3(Mathf.Cos(b)*23,-4,44+Mathf.Sin(b)*23);
                 instrument.Beam("Brass",p,q,new Vector2(.45f,.6f));
-                if(i%4==0)instrument.Beam("Ink",new Vector3(0,-11,40),p,new Vector2(.6f,.9f));
+                if(i%4==0)instrument.Beam("Ink",new Vector3(0,-11,44),p,new Vector2(.6f,.9f));
             }
             var lens=Bake();
-            lens.Cylinder("Porcelain",new Vector3(48,-10,46),7,5,30);
-            lens.Ring("Brass",new Vector3(48,14,48),8,.6f);
-            lens.Ring("Ink",new Vector3(48,14,50),8,.45f);
+            lens.Cylinder("Porcelain",new Vector3(57,-10,46),7,5,30);
+            lens.Ring("Brass",new Vector3(57,14,48),8,.6f);
+            lens.Ring("Ink",new Vector3(57,14,50),8,.45f);
             for(int i=0;i<8;i++)
             {
-                float a=i*Mathf.PI/4;var p=new Vector3(48+Mathf.Cos(a)*8,14+Mathf.Sin(a)*8,48);
+                float a=i*Mathf.PI/4;var p=new Vector3(57+Mathf.Cos(a)*8,14+Mathf.Sin(a)*8,48);
                 lens.Beam("Porcelain",p,p+Vector3.forward*2,new Vector2(.8f,.8f));
             }
             // Off-course sail banks give the world its wind-harvesting silhouette.

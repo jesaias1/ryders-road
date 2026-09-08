@@ -1,3 +1,14 @@
+## 0.12.0 vertical-slice authority
+
+ADR 0024 and Docs/PRODUCTION_0120.md supersede older stop/next-world proposals.
+The user selected accepted Campaign controls after S23 testing; preserve that
+foundation and isolated trials. Five existing sequential roads form the compact
+slice, with redesigned Windward v2 as the finale. Worlds 006–008 remain unbuilt.
+Managed loading uses the approved game logo and budgeted world construction;
+SceneTransitionHost still owns readiness/recovery. Mountain has a rebuilt, rotated
+cascade landmark, and opt-in near shadows/quieter fill support world depth.
+V4 and stable IDs are unchanged. No physical approval or Gold designation.
+
 ## 0.11.0 Campaign presentation and World 005
 
 ADR 0023 and Docs/PRODUCTION_0110.md supersede historical production stop gates.

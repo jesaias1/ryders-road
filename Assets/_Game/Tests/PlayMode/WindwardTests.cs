@@ -82,7 +82,7 @@ namespace Avoidance.Tests.PlayMode
             {
                 var from=skill[i];var to=skill[i+1];
                 var direction=to.Pose.Position-from.Pose.Position;direction.y=0;direction.Normalize();
-                Jump(motor,from.Pose.Position+direction*.8f,from.Size,to.Pose.Position,to.Size,to.StableId);
+                Jump(motor,from.Pose.Position,from.Size,to.Pose.Position,to.Size,to.StableId);
             }
             foreach(var surface in Object.FindObjectsByType<AuthoredSurface>())Assert.That(surface.HasMatchingCollision,Is.True,surface.CollisionDetails);
             foreach(var point in module.RestorePoints)
@@ -94,6 +94,88 @@ namespace Avoidance.Tests.PlayMode
                 Assert.That(Vector3.Distance(motor.transform.position,point.RestorePosition),Is.LessThan(.25f),point.StableId);
             }
             Assert.That(Object.FindAnyObjectByType<PatchBlock>().TryComplete(motor),Is.True);
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+        [UnityTest] public IEnumerator WindwardStandardRouteContinuousStopAndGoRun()
+        {
+            yield return Open();
+            var motor=Object.FindAnyObjectByType<ParkourMotor>();
+            var route=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule.Blocks.Where(b=>!b.StableId.Contains("skill")).ToArray();
+            motor.ResetMotion(route[0].Pose.Position+Vector3.up*.34f,Quaternion.identity,0);Physics.SyncTransforms();
+            var input=new RunInput();
+            for(int link=0;link<route.Length-1;link++)
+            {
+                input.Move=Vector2.zero;
+                for(int i=0;i<20;i++)motor.Simulate(input,1f/60);
+                var from=route[link];var to=route[link+1];
+                var direction=to.Pose.Position-motor.transform.position;direction.y=0;direction.Normalize();
+                motor.transform.rotation=Quaternion.LookRotation(direction);Physics.SyncTransforms();
+                input.Move=new Vector2(0,.9f);
+                float Remaining()
+                {
+                    var local=motor.transform.position-from.Pose.Position;
+                    float x=Mathf.Abs(direction.x)>.001f?(from.Size.x*.5f-Mathf.Sign(direction.x)*local.x)/Mathf.Abs(direction.x):100;
+                    float z=Mathf.Abs(direction.z)>.001f?(from.Size.z*.5f-Mathf.Sign(direction.z)*local.z)/Mathf.Abs(direction.z):100;
+                    return Mathf.Min(x,z);
+                }
+                for(int i=0;i<90 && Remaining()>.7f;i++)motor.Simulate(input,1f/60);
+                input.JumpPressed=true;motor.Simulate(input,1f/60);input.JumpPressed=false;
+                bool airborne=false,landed=false;
+                for(int i=0;i<100;i++)
+                {
+                    motor.Simulate(input,1f/60);airborne|=!motor.IsGrounded;
+                    if(airborne&&motor.IsGrounded){landed=true;break;}
+                }
+                var delta=motor.transform.position-to.Pose.Position;
+                Assert.That(landed && Mathf.Abs(delta.y-.3f)<.3f && Mathf.Abs(delta.x)<to.Size.x*.5f+.2f && Mathf.Abs(delta.z)<to.Size.z*.5f+.2f,Is.True,
+                    from.StableId+" -> "+to.StableId+" at "+motor.transform.position);
+                yield return null;
+            }
+            Assert.That(Object.FindAnyObjectByType<PatchBlock>().TryComplete(motor),Is.True);
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+        [UnityTest] public IEnumerator WindwardCannotWalkTheStandardParkourLinks()
+        {
+            yield return Open();
+            var motor=Object.FindAnyObjectByType<ParkourMotor>();
+            var route=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule.Blocks.Where(b=>!b.StableId.Contains("skill")).ToArray();
+            for(int i=0;i<route.Length-1;i++)
+            {
+                var a=route[i];var b=route[i+1];var direction=b.Pose.Position-a.Pose.Position;direction.y=0;
+                motor.ResetMotion(a.Pose.Position+Vector3.up*.34f,Quaternion.LookRotation(direction),0);Physics.SyncTransforms();
+                bool arrived=false;var input=new RunInput{Move=Vector2.up};
+                for(int frame=0;frame<120;frame++)
+                {
+                    motor.Simulate(input,1f/60);var d=motor.transform.position-b.Pose.Position;
+                    arrived|=motor.IsGrounded && Mathf.Abs(d.y-.3f)<.25f && Mathf.Abs(d.x)<b.Size.x*.5f && Mathf.Abs(d.z)<b.Size.z*.5f;
+                }
+                Assert.That(arrived,Is.False,a.StableId+" -> "+b.StableId+" must require a jump");
+            }
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+        [UnityTest] public IEnumerator FrontendAndLiveLoadingUseGameIdentityAndSeparateActions()
+        {
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");yield return new WaitForSecondsRealtime(.25f);
+            Assert.That(Object.FindObjectsByType<Button>().Any(b=>b.name=="CAMPAIGN FLOW TRIAL Button"),Is.False);
+            Capture("Logs/Production120QA/title.png");
+            Click("CAMPAIGN Button");yield return null;Capture("Logs/Production120QA/journey.png");
+            var next=Object.FindObjectsByType<Button>().Single(b=>b.name=="CONTINUE Button").GetComponent<RectTransform>();
+            var more=Object.FindObjectsByType<Button>().Single(b=>b.name=="MORE ROADS Button").GetComponent<RectTransform>();
+            Assert.That(more.anchorMax.x,Is.LessThan(next.anchorMin.x));
+            ModuleSelectionState.Select(Id,true);
+            var request=SceneTransitionHost.Instance.Begin("ModuleRunner");
+            var loading=Object.FindAnyObjectByType<LoadingPresentation>();
+            Assert.That(loading.GetComponentInChildren<RawImage>().texture,Is.EqualTo(Resources.Load<Texture2D>(BrandPresentation.LogoResourcePath)));
+            var traveller=loading.GetComponentsInChildren<RectTransform>().Single(t=>t.name=="Loading Traveller");
+            float first=traveller.anchoredPosition.x;bool moved=false;int frames=0;
+            while(!request.IsTerminal && frames<600)
+            {
+                yield return null;frames++;moved|=Mathf.Abs(traveller.anchoredPosition.x-first)>.5f;
+                if((frames==2 || frames==5) && Camera.main!=null)Capture("Logs/Production120QA/loading-"+frames+".png");
+            }
+            Assert.That(request.State,Is.EqualTo(SceneLoadState.Ready));Assert.That(moved,Is.True,"Indicator must visibly move across real construction frames");
+            yield return new WaitForSecondsRealtime(.25f);
+            Assert.That(loading.GetComponent<CanvasGroup>().blocksRaycasts,Is.False);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
         [UnityTest] public IEnumerator RenderCampaignPlayerViewsAndSkyWrap()
@@ -112,13 +194,20 @@ namespace Avoidance.Tests.PlayMode
                     var b=route[i];camera.transform.position=b.Pose.Position+Vector3.up*1.92f;
                     var d=route[i+1].Pose.Position-b.Pose.Position;d.y=0;
                     camera.transform.rotation=Quaternion.LookRotation(d)*Quaternion.Euler(9,0,0);
-                    yield return null;Capture("Logs/Production110QA/"+id+"-"+i+".png");
+                    yield return null;Capture("Logs/Production120QA/"+id+"-"+i+".png");
+                }
+                if(id=="module.002.moving-parts")
+                {
+                    camera.transform.position=new Vector3(4,5,26);
+                    camera.transform.LookAt(new Vector3(-62,1,51));Capture("Logs/Production120QA/waterfall-player.png");
+                    camera.transform.position=new Vector3(10,11,73);
+                    camera.transform.LookAt(new Vector3(-62,-2,51));Capture("Logs/Production120QA/waterfall-ridge.png");
                 }
                 Assert.That(RenderSettings.skybox.shader.name,Is.EqualTo("RydersRoad/World Sky"));
                 foreach(float yaw in new[]{0f,90f,180f,270f})
                 {
                     camera.transform.rotation=Quaternion.Euler(-12,yaw,0);
-                    Capture("Logs/Production110QA/sky-"+id+"-"+yaw+".png");
+                    Capture("Logs/Production120QA/sky-"+id+"-"+yaw+".png");
                 }
             }
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
@@ -126,8 +215,10 @@ namespace Avoidance.Tests.PlayMode
         private static void Jump(ParkourMotor motor,Vector3 from,Vector3 fromSize,Vector3 to,Vector3 toSize,string name)
         {
             var direction=to-from;direction.y=0;direction.Normalize();
-            motor.ResetMotion(from+Vector3.up*(fromSize.y*.5f+.04f)-direction*.5f,Quaternion.LookRotation(direction),0);Physics.SyncTransforms();
-            var input=new RunInput{FlowSteeringEnabled=motor.Profile.MovementMastery};for(int i=0;i<8;i++)motor.Simulate(input,1f/60);
+            motor.ResetMotion(from+Vector3.up*(fromSize.y*.5f+.04f),Quaternion.LookRotation(direction),0);Physics.SyncTransforms();
+            var input=new RunInput{FlowSteeringEnabled=motor.Profile.MovementMastery};
+            float edge=Mathf.Min(Mathf.Abs(direction.x)>.001f?fromSize.x*.5f/Mathf.Abs(direction.x):100,Mathf.Abs(direction.z)>.001f?fromSize.z*.5f/Mathf.Abs(direction.z):100);
+            for(int i=0;i<60 && Vector3.Dot(motor.transform.position-from,direction)<edge-(name.Contains("skill")?.35f:.7f);i++)motor.Simulate(input,1f/60);
             input.JumpPressed=true;motor.Simulate(input,1f/60);input.JumpPressed=false;bool air=false,landed=false;
             for(int i=0;i<110;i++){motor.Simulate(input,1f/60);air|=!motor.IsGrounded;if(air&&motor.IsGrounded){landed=true;break;}}
             Assert.That(landed,Is.True,name+" / "+motor.transform.position);
@@ -162,10 +253,12 @@ namespace Avoidance.Tests.PlayMode
             yield return new WaitForSecondsRealtime(.3f);
             Assert.That(ModuleProgressionData.GetRecord(save.Current.progression,Id).bestRank,Is.EqualTo("Bronze"));
             Assert.That(ModuleSelectionState.GetNextCampaignModuleId(Id),Is.Null);
+            Assert.That(Object.FindObjectsByType<Text>().Any(t=>t.text.Contains("FIVE ROADS RESTORED")),Is.True);
+            Capture("Logs/Production120QA/finale.png");
             Assert.That(Object.FindObjectsByType<Button>().Any(b=>b.name=="NEXT MODULE Button" && b.gameObject.activeInHierarchy),Is.False);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");yield return new WaitForSecondsRealtime(.2f);
             Click("CAMPAIGN Button");Click("MORE ROADS Button");yield return null;
-            Capture("Logs/Production110QA/campaign-fourth-road.png");
+            Capture("Logs/Production120QA/campaign-fourth-road.png");
             Object.FindObjectsByType<Transform>().Single(t=>t.name=="Journey "+Id).GetComponentInChildren<Button>().onClick.Invoke();yield return new WaitForSecondsRealtime(.7f);
             deadline=Time.realtimeSinceStartup+12;
             while(Object.FindAnyObjectByType<ModuleSceneController>()==null && Time.realtimeSinceStartup<deadline)yield return null;
