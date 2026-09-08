@@ -1,3 +1,17 @@
+## 0.13.0 gameplay-quality correction assets
+
+- User S23 evidence is archived unchanged in Docs/Quality130Evidence, with hashes.
+- Quality130 gallery/fast-line skins are original procedural meshes and shared
+  URP materials, authored by GameplayQualityAuthoring; no downloaded or generated
+  brand assets. Foundry world meshes are remapped derivatives of the project's
+  existing authored geometry, with matching collision and source-mesh metadata.
+- The original Boost asset is retained. Runtime opaque bars/pulse are removed;
+  short shared-profile activation particles remain. Restore uses a flat corner signal with an activation pulse and no collider.
+- Shared huge safe supports no longer tile the same pad. Existing normal small
+  pads remain available; Windward/Foundry opt into the gallery library.
+- Existing WorldSky gains bounded opacity/ceiling controls; same noise samples,
+  no new lights or volumetric effects. S23 performance/quality approval pending.
+
 ## September 9, 2026 reference archive
 
 Three unmodified user-supplied concepts are stored outside Unity Assets in

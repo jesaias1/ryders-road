@@ -1,3 +1,26 @@
+## 0.13.0 compatible PB extension (V4 additive)
+
+`progression.historicalRecords` and `progression.versionedBests` are additive
+ModuleProgressRecord arrays. Missing arrays normalize empty on read. Before the
+first new completion for a module with an old PB, snapshot its entire aggregate
+record once into historicalRecords, including splits and its original metadata.
+Never mutate that snapshot. Future PB buckets use module ID + content version +
+movement compatibility + rank threshold version. Invalid runs never write a PB
+bucket. Slower runs on a revised route can establish their first compatible PB.
+
+Existing modules/attempts/completion counts/highest ranks/reward IDs still mean
+what they meant in V4 and continue owning campaign access. The aggregate PB may
+improve later, but its original snapshot and prior version buckets remain. Old
+aggregate metadata was overwritten on each completion, even when its PB stayed;
+it cannot reliably identify the PB's route version. Do not seed new compatible
+PBs or rank comparisons from it. The UI labels retained history and shows blank
+current-route PB until matching new evidence exists.
+
+No existing field or schema meaning changes, so no destructive migration or
+version increment is necessary. VersionedBestTests loads old V4 JSON, exercises
+slower/faster changed routes, invalid runs, version separation, serialization
+reload and preserved unlocks. Legacy backup/migration tests remain required.
+
 ## 0.11.0 Campaign presentation and World 005
 
 ADR 0023 and Docs/PRODUCTION_0110.md supersede historical production stop gates.

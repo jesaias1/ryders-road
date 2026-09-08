@@ -122,6 +122,8 @@ namespace Avoidance.UI
                 ? "BRONZE AVAILABLE"
                 : $"{ModuleRankUtility.Display(target)} {RunTimerFormatting.Format(targetSeconds)}";
 
+            if (_module.RankThresholds.CalibrationState == RankCalibrationState.Uncalibrated && target != ModuleRank.Bronze)
+                targetLine = "TEST TARGET  " + targetLine;
             _status.text =
                 $"<size=34><color=#F0FBFF>{RunTimerFormatting.Format(elapsed)}</color></size>\n" +
                 $"<size=18>{targetLine}   <color=#BCDDE8>{best}</color></size>";
@@ -234,6 +236,7 @@ namespace Avoidance.UI
                 + "<size=36><color=#F0FBFF>" + RunTimerFormatting.Format(result.CompletionSeconds) + "</color></size>\n"
                 + "<size=23>" + pb + "</size>\n<size=20><color=#C7E8F3>" + next + "</color></size>"
                 + (result.NewlyUnlockedModuleId != null ? "\n<size=18><color=#66E3ED>NEXT ROAD UNLOCKED</color></size>" : string.Empty)
+                + (result.RankCalibrationState == "Uncalibrated" ? "\n<size=16>PROVISIONAL RANK TARGETS</size>" : string.Empty)
                 + (valid ? string.Empty : "\nPB / PROGRESSION NOT RECORDED");
         }
 

@@ -75,7 +75,7 @@ namespace Avoidance.Tests.PlayMode
             var motor=Object.FindAnyObjectByType<ParkourMotor>();
             Assert.That(motor.Profile.MovementMastery,Is.False);
             var module=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule;
-            var standard=module.Blocks.Where(b=>!b.StableId.Contains("skill")).ToArray();
+            var standard=Quality130Tests.WindwardRoute(module);
             for(int i=0;i<standard.Length-1;i++)Jump(motor,standard[i].Pose.Position,standard[i].Size,standard[i+1].Pose.Position,standard[i+1].Size,standard[i+1].StableId);
             var skill=new[]{module.Blocks.Single(b=>b.StableId=="m05.west.restore")}.Concat(module.Blocks.Where(b=>b.StableId.Contains("skill"))).Concat(new[]{module.Blocks.Single(b=>b.StableId=="m05.east.restore")}).ToArray();
             for(int i=0;i<skill.Length-1;i++)
@@ -100,7 +100,7 @@ namespace Avoidance.Tests.PlayMode
         {
             yield return Open();
             var motor=Object.FindAnyObjectByType<ParkourMotor>();
-            var route=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule.Blocks.Where(b=>!b.StableId.Contains("skill")).ToArray();
+            var route=Quality130Tests.WindwardRoute(Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule);
             motor.ResetMotion(route[0].Pose.Position+Vector3.up*.34f,Quaternion.identity,0);Physics.SyncTransforms();
             var input=new RunInput();
             for(int link=0;link<route.Length-1;link++)
@@ -138,7 +138,7 @@ namespace Avoidance.Tests.PlayMode
         {
             yield return Open();
             var motor=Object.FindAnyObjectByType<ParkourMotor>();
-            var route=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule.Blocks.Where(b=>!b.StableId.Contains("skill")).ToArray();
+            var route=Quality130Tests.WindwardRoute(Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule);
             for(int i=0;i<route.Length-1;i++)
             {
                 var a=route[i];var b=route[i+1];var direction=b.Pose.Position-a.Pose.Position;direction.y=0;

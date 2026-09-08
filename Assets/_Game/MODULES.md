@@ -1,3 +1,11 @@
+## 0.13.0 correction ownership
+
+EditorTools owns explicit GameplayQualityAuthoring and the Windward v3 authoring
+revision. Visuals owns optional per-profile prefab libraries and tunable Boost/
+cloud presentation. SaveSystem owns additive compatible PB/history records; UI
+selects matching records and labels provisional ranks. Accepted Player/Input/
+Camera systems are unchanged. See ADR 0026 and Docs/PRODUCTION_0130.md.
+
 ## 0.9.9 physical feedback and Campaign Flow trial
 
 Levels owns removable CampaignFlowTrial selection/session times; UI owns its menu, runner composition and no-save boundary. Worlds AuthoredSurface carries explicit non-route landing intent; Respawn SceneryLandingRecovery forwards qualifying contacts to the existing RestoreController. Player motor/Input/save implementations are unchanged. Normal Campaign is still 001–004; Spiral stays separate.

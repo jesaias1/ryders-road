@@ -109,7 +109,7 @@ namespace Avoidance.UI
             _visuals = _module.VisualProfile != null
                 ? _module.VisualProfile
                 : ModuleVisualProfile.CreateRuntimeDefault();
-            _prefabLibrary = Resources.Load<ModuleVisualPrefabLibrary>(ModuleVisualPrefabLibrary.ResourceName)
+            _prefabLibrary = _visuals.PrefabLibrary != null ? _visuals.PrefabLibrary : Resources.Load<ModuleVisualPrefabLibrary>(ModuleVisualPrefabLibrary.ResourceName)
                 ?? ModuleVisualPrefabLibrary.CreateRuntimeDefault();
             _crumbleVisuals = Resources.Load<CrumbleVisualSet>(CrumbleVisualSet.ResourceName);
             _environment = _module.EnvironmentProfile != null
@@ -522,9 +522,8 @@ namespace Avoidance.UI
         private void InitializeRunSession(MovementProfile movementProfile)
         {
             var progression = CampaignFlowTrial.Active ? new ProgressionData() : EnsureProgression();
-            _progressRecord = ModuleProgressionData.GetOrCreateRecord(
-                progression,
-                _module.StableModuleId);
+            _progressRecord = ModuleProgressionData.GetVersionedBest(progression, _module.StableModuleId,
+                _module.ContentVersion, movementProfile.CompatibilityVersion, _module.RankThresholds.ThresholdVersion);
             ModuleProgressionData.RecordAttempt(progression, _module.StableModuleId);
             if (!CampaignFlowTrial.Active) _save?.Save();
 
@@ -535,7 +534,7 @@ namespace Avoidance.UI
             _runSession.Begin(
                 _module,
                 validity,
-                ToRunSplits(_progressRecord.bestSplits));
+                ToRunSplits(_progressRecord?.bestSplits));
         }
 
         private ProgressionData EnsureProgression()
@@ -575,7 +574,7 @@ namespace Avoidance.UI
             {
                 var splits = ToSaveSplits(result.Splits);
                 var utcNow = DateTime.UtcNow.ToString("O");
-                result.IsNewPersonalBest = ModuleProgressionData.RecordCompletion(
+                result.IsNewPersonalBest = ModuleProgressionData.RecordVersionedCompletion(
                     EnsureProgression(),
                     result.ModuleId,
                     result.CompletionSeconds,
@@ -592,9 +591,8 @@ namespace Avoidance.UI
                 result.PersonalBestDeltaSeconds = result.IsNewPersonalBest && previousBest > 0d
                     ? result.CompletionSeconds - previousBest
                     : 0d;
-                _progressRecord = ModuleProgressionData.GetRecord(
-                    _save.Current.progression,
-                    result.ModuleId);
+                _progressRecord = ModuleProgressionData.GetVersionedBest(_save.Current.progression, result.ModuleId,
+                    result.ModuleContentVersion, result.MovementCompatibilityVersion, result.RankThresholdVersion);
                 ModuleCompletionRewardUtility.ApplyCompletionRewards(
                     _module,
                     _save.Current,
@@ -707,8 +705,7 @@ namespace Avoidance.UI
             }
             else
             {
-                if (role == ModuleMaterialRole.Moving
-                    || role == ModuleMaterialRole.Crumbling)
+                if (role == ModuleMaterialRole.Crumbling)
                 {
                     AddRoleDetails(block, size, role);
                 }
@@ -837,13 +834,8 @@ namespace Avoidance.UI
             trigger.transform.localScale = new Vector3(1f, 0.5f, 1f);
             trigger.GetComponent<BoxCollider>().isTrigger = true;
             trigger.GetComponent<JumpBoostTrigger>().Initialize(boostBlock);
-            CreateArrowPlate(block.transform, ModuleMaterialRole.BoostArrow, boost.LaunchDirection);
-            CreateVerticalStreaks(block.transform, ModuleMaterialRole.BoostArrow, 5);
-            block.AddComponent<RuntimeVisualPulse>().Initialize(
-                _visuals.ColorFor(ModuleMaterialRole.Boost),
-                _visuals.ColorFor(ModuleMaterialRole.WarmAccent),
-                4.5f,
-                0.2f);
+            // Direction marks are part of the pad skin; no opaque bars over the launch view.
+
         }
 
         private void CreateWater(ModuleWaterVolumeDefinition water)
@@ -1008,6 +1000,7 @@ namespace Avoidance.UI
                     FindAnyObjectByType<MovementFeedback>()?.PlayRestorePoint();
                     FindAnyObjectByType<MovementFeedback>()?.PlaySplit();
                     _gameplayVfx?.PlayRestore(spawnAnchor);
+                    platform.GetComponentInChildren<RestoreSurfaceMarker>()?.Activate();
                 });
 
             var restorePrefab = _prefabLibrary != null ? _prefabLibrary.PrefabFor(ModuleMaterialRole.Restore) : null;
@@ -1019,7 +1012,12 @@ namespace Avoidance.UI
                 shrine.transform.localRotation = Quaternion.identity;
                 var supportScale = platform.transform.lossyScale;
                 shrine.transform.localScale = new Vector3(1.2f / supportScale.x, 1.2f / supportScale.y, 1.2f / supportScale.z);
-                if (string.IsNullOrEmpty(restore.SupportBlockStableId)) shrine.transform.localScale = Vector3.one * (1.2f / 3f);
+                // A surface marker fills the support and leaves the landing center open.
+                if (shrine.GetComponent<RestoreSurfaceMarker>() != null)
+                {
+                    shrine.transform.localPosition=new Vector3(0,.504f,0);
+                    shrine.transform.localScale=Vector3.one;
+                }
                 ModuleVisualPrefabLibrary.PrepareVisualInstance(shrine);
             }
 

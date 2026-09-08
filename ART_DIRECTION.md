@@ -1,3 +1,24 @@
+## 0.13.0 physical gameplay-quality rejection
+
+The user's S23 captures and report supersede assumptions that the slice's routes
+or art are nearly accepted. [Evidence](Docs/Quality130Evidence/README.md) identifies
+Abyss's flattened Restore marker, opaque Boost clutter and tiled landing field,
+and Foundry's near-touching route. The three September concepts remain the
+quality direction; none is evidence of achieved runtime quality.
+
+Make route rhythm and useful faster lines visible through shape and composition.
+Windward galleries/pressure fins/direct chord and Foundry's intake/transfer/cooling
+beats are the present correction targets. New gallery skins are the entire support
+surface with modeled panel bevels, dark structure and sparse material inlays;
+never put a cap onto an existing pad. Large courts must not become repeated pad
+fields. Retain the mechanical Boost art, remove the upright bright bars and use
+short activation-only feedback. Restore uses a flat corner signal with an activation pulse, leaving the landing clear.
+
+Three existing skies gain adjustable cloud opacity/ceiling using the existing
+continuous directional noise; no volumetric renderer, screen tint or extra lights.
+Physical visual quality and sustained mobile cost still need S23 testing. These
+changes are a correction candidate, not final-quality acceptance or a new world.
+
 ## September 9 visual-reference update — current 0.12.0 milestone
 
 The user supplied three finished-game concepts after delivery of the playable

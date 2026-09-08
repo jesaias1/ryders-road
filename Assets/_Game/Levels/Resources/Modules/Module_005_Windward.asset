@@ -17,7 +17,7 @@ MonoBehaviour:
   _internalName: module_005_windward
   _projectId: project.ryders-block
   _worldId: world.windward-observatory
-  _contentVersion: 2
+  _contentVersion: 3
   _sceneName: ModuleRunner
   _difficulty: 2
   _startPoint:
@@ -47,7 +47,7 @@ MonoBehaviour:
     _order: 1
     _pose:
       _position: {x: 22, y: 4.6, z: 44}
-      _eulerAngles: {x: 0, y: 135, z: 0}
+      _eulerAngles: {x: 0, y: 124, z: 0}
     _supportBlockStableId: m05.east.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-005.lens
@@ -57,30 +57,32 @@ MonoBehaviour:
       _eulerAngles: {x: 0, y: 34, z: 0}
     _supportBlockStableId: m05.lens.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
-  _expectedCleanTime: 50
-  _estimatedCasualTime: 120
+  _expectedCleanTime: 25
+  _estimatedCasualTime: 65
   _rankThresholds:
-    _silverSeconds: 100
-    _goldSeconds: 72
-    _diamondSeconds: 51
+    _silverSeconds: 35
+    _goldSeconds: 25
+    _diamondSeconds: 19
     _calibrationState: 0
-    _thresholdVersion: 1
-    _designerNotes: Provisional; Bronze has no deadline.
-  _mechanicsUsed: 0000000001000000030000000400000008000000
+    _thresholdVersion: 2
+    _designerNotes: '0.13.0 candidate: deterministic normal ~24s, fast line ~16s;
+      instant scripted aiming is not human calibration. S23 calibration pending;
+      Bronze has no deadline.'
+  _mechanicsUsed: 000000000100000003000000040000000800000007000000
   _optionalShortcuts:
   - _stableId: shortcut.module-005.chord
-    _displayName: Instrument maintenance chord
-    _entryPosition: {x: -14.666666, y: 2.1, z: 44}
+    _displayName: Wind instrument fast line
+    _entryPosition: {x: -12, y: 2, z: 44}
     _exitPosition: {x: 22, y: 4.6, z: 44}
-    _estimatedTimeSaved: 12
+    _estimatedTimeSaved: 7
     _mechanics: 01000000
   _environmentProfile: {fileID: 11400000, guid: 01ae7109bc5abc14b9777a4587f28d2f, type: 2}
   _environmentBiomeProfile: {fileID: 11400000, guid: 82c37c0b66e6240488fbb3bc514fc5b8, type: 2}
-  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _visualProfile: {fileID: 11400000, guid: 04543455ca0396440871b68c76e3a1c7, type: 2}
   _loreBugDescription: Cross the wind instrument and reconnect the observatory.
-  _developerNotes: Approach jump rhythm / West Anchorage / separated wind arc / diagonal
-    lens ascent / telescope finale. Five-pad chord saves eleven-pad arc; approach
-    speed and late takeoff matter. Physical timing pending.
+  _developerNotes: Approach / West Anchorage choice / north gallery and two pressure
+    fins / east court / diagonal ascent / telescope. Three long narrow chord landings
+    reward carried speed; physical enjoyment and timings pending.
   _blocks:
   - _stableId: m05.arrival
     _pose:
@@ -124,89 +126,49 @@ MonoBehaviour:
     _label:
   - _stableId: m05.arc.01
     _pose:
-      _position: {x: -21.25037, y: 1.85, z: 49.694016}
+      _position: {x: -22, y: 1.6, z: 51}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 4, y: 0.6, z: 5}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.02
     _pose:
-      _position: {x: -19.052559, y: 2.1, z: 55}
+      _position: {x: -20, y: 1.6, z: 59}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 5, y: 0.6, z: 6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.03
     _pose:
-      _position: {x: -15.556349, y: 2.35, z: 59.55635}
+      _position: {x: -13, y: 2, z: 64}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
-    _visualRole: 0
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.arc.04
-    _pose:
-      _position: {x: -11.000001, y: 2.6, z: 63.05256}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
-    _visualRole: 0
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.arc.05
-    _pose:
-      _position: {x: -5.6940217, y: 2.85, z: 65.25037}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 6, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.06
     _pose:
-      _position: {x: -0.0000009616506, y: 3.1, z: 66}
+      _position: {x: 11, y: 2.6, z: 64}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 6, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.07
     _pose:
-      _position: {x: 5.69402, y: 3.35, z: 65.25037}
+      _position: {x: 18, y: 3, z: 59}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 5, y: 0.6, z: 6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.08
     _pose:
-      _position: {x: 10.999999, y: 3.6, z: 63.05256}
+      _position: {x: 22, y: 3.5, z: 52}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
-    _visualRole: 0
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.arc.09
-    _pose:
-      _position: {x: 15.556349, y: 3.85, z: 59.55635}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
-    _visualRole: 0
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.arc.10
-    _pose:
-      _position: {x: 19.052559, y: 4.1, z: 55}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
-    _visualRole: 0
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.arc.11
-    _pose:
-      _position: {x: 21.250368, y: 4.35, z: 49.69402}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 4, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
@@ -214,13 +176,13 @@ MonoBehaviour:
     _pose:
       _position: {x: 22, y: 4.6, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 3.6}
+    _size: {x: 8.6, y: 0.6, z: 6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.ascent.a
     _pose:
-      _position: {x: 27, y: 5, z: 39}
+      _position: {x: 29.5, y: 5, z: 39}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 3.6, y: 0.6, z: 3.6}
     _visualRole: 0
@@ -292,41 +254,25 @@ MonoBehaviour:
     _label:
   - _stableId: m05.skill.chord.1
     _pose:
-      _position: {x: -14.666667, y: 2.1, z: 44}
+      _position: {x: -12, y: 2, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 8, y: 0.6, z: 3.4}
     _visualRole: 1
     _editorLabel: 0
     _label:
   - _stableId: m05.skill.chord.2
     _pose:
-      _position: {x: -7.3333335, y: 2.6, z: 44}
+      _position: {x: -1, y: 2.8, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 8, y: 0.6, z: 3.4}
     _visualRole: 1
     _editorLabel: 0
     _label:
   - _stableId: m05.skill.chord.3
     _pose:
-      _position: {x: 0, y: 3.1, z: 44}
+      _position: {x: 11, y: 3.6, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
-    _visualRole: 1
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.skill.chord.4
-    _pose:
-      _position: {x: 7.3333335, y: 3.6, z: 44}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
-    _visualRole: 1
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.skill.chord.5
-    _pose:
-      _position: {x: 14.666667, y: 4.1, z: 44}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _size: {x: 8.4, y: 0.6, z: 3.4}
     _visualRole: 1
     _editorLabel: 0
     _label:
@@ -334,7 +280,25 @@ MonoBehaviour:
   _boostBlocks: []
   _waterVolumes: []
   _surfSurfaces: []
-  _crumblingBlocks: []
+  _crumblingBlocks:
+  - _stableId: m05.arc.04
+    _pose:
+      _position: {x: -5, y: 2.2, z: 64}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5, y: 0.6, z: 4}
+    _activationDelay: 0.03
+    _fallDelay: 1.2
+    _resetTime: 4
+    _shakeAmount: 0.015
+  - _stableId: m05.arc.05
+    _pose:
+      _position: {x: 3, y: 2.2, z: 64}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 5, y: 0.6, z: 4}
+    _activationDelay: 0.03
+    _fallDelay: 1.2
+    _resetTime: 4
+    _shakeAmount: 0.015
   _decorations: []
   _cameraHints: []
   _completionRewards: []

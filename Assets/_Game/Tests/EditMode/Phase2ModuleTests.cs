@@ -1814,12 +1814,13 @@ namespace Avoidance.Tests.EditMode
         }
 
         [Test]
-        public void Phase057_ModularTilingRemainsOnlyAsExplicitHugeSurfaceFallback()
+        public void Quality130_HugeSurfaceUsesOneAuthoredDeckInsteadOfPadField()
         {
             var library = Resources.Load<ModuleVisualPrefabLibrary>(ModuleVisualPrefabLibrary.ResourceName);
             var huge = library.PlacementFor(ModuleMaterialRole.Normal, new Vector3(8f, 0.6f, 8f));
 
-            Assert.That(huge.FitMode, Is.EqualTo(VisualFitMode.ModularTile));
+            Assert.That(huge.FitMode, Is.EqualTo(VisualFitMode.ExactFootprint));
+            Assert.That(huge.Prefab.name, Is.EqualTo("GalleryDeck"));
             Assert.That(
                 ModuleVisualPrefabLibrary.ResolveModularTileCounts(new Vector3(8f, 0.6f, 8f)),
                 Is.EqualTo(new Vector2Int(6, 6)));

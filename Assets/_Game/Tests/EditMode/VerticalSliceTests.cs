@@ -22,7 +22,9 @@ namespace Avoidance.Tests.EditMode
             }
             var arc=module.Blocks.Where(b=>b.StableId.StartsWith("m05.arc.")).ToArray();
             var chord=module.Blocks.Where(b=>b.StableId.Contains("skill")).ToArray();
-            Assert.That(arc.Length-chord.Length,Is.EqualTo(6));
+            Assert.That(arc.Length,Is.EqualTo(6));
+            Assert.That(chord.Length,Is.EqualTo(3));
+            Assert.That(module.CrumblingBlocks.Count,Is.EqualTo(2));
             Assert.That(ModuleDefinitionValidator.Validate(module),Is.Empty);
         }
         [Test] public void SliceAudioAndLightingUseSharedProfiles()

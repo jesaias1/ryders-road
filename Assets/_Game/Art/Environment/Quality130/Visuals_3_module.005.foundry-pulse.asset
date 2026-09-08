@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b06b1d8ce555446aa9eb216414219b, type: 3}
+  m_Name: Visuals_3_module.005.foundry-pulse
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Visuals.ModuleVisualProfile
+  _prefabLibrary: {fileID: 11400000, guid: 2cf649f2f005c774193ec904f6570227, type: 2}
+  _boostParticleCount: 8
+  _boostParticleSize: 0.045
+  _boostParticleLifetime: 0.22
+  _normal: {r: 0.86, g: 0.88, b: 0.91, a: 1}
+  _precision: {r: 0.63, g: 0.96, b: 0.84, a: 1}
+  _moving: {r: 0.12, g: 0.38, b: 0.82, a: 1}
+  _restore: {r: 0.08, g: 0.92, b: 1, a: 1}
+  _patch: {r: 1, g: 0.48, b: 0.03, a: 1}
+  _boost: {r: 1, g: 0.66, b: 0.04, a: 1}
+  _water: {r: 0.02, g: 0.74, b: 1, a: 0.62}
+  _crumbling: {r: 0.86, g: 0.36, b: 0.2, a: 1}
+  _shortcutCue: {r: 1, g: 0.22, b: 0.46, a: 1}
+  _nullSpace: {r: 0.025, g: 0.018, b: 0.075, a: 1}
+  _underside: {r: 0.16, g: 0.18, b: 0.28, a: 1}
+  _edge: {r: 0.08, g: 0.11, b: 0.19, a: 1}
+  _towerCore: {r: 0.3, g: 0.34, b: 0.48, a: 1}
+  _decorationStone: {r: 0.54, g: 0.58, b: 0.72, a: 1}
+  _vegetation: {r: 0.08, g: 0.56, b: 0.36, a: 1}
+  _cloud: {r: 0.96, g: 0.92, b: 1, a: 0.56}
+  _stoneSide: {r: 0.44, g: 0.5, b: 0.66, a: 1}
+  _waterFoam: {r: 0.72, g: 1, b: 1, a: 0.86}
+  _patchCore: {r: 1, g: 0.92, b: 0.32, a: 1}
+  _boostArrow: {r: 1, g: 0.98, b: 0.58, a: 1}
+  _movingAccent: {r: 0.12, g: 0.9, b: 1, a: 1}
+  _crumbleFault: {r: 1, g: 0.24, b: 0.08, a: 1}
+  _corruption: {r: 0.42, g: 0.1, b: 0.78, a: 0.5}
+  _gloveDark: {r: 0.055, g: 0.07, b: 0.15, a: 1}
+  _gloveAccent: {r: 1, g: 0.52, b: 0.06, a: 1}
+  _surfaceHighlight: {r: 0.98, g: 0.97, b: 0.9, a: 1}
+  _surfaceInset: {r: 0.66, g: 0.72, b: 0.86, a: 1}
+  _circuitLine: {r: 0.1, g: 0.94, b: 1, a: 1}
+  _warmAccent: {r: 1, g: 0.52, b: 0.06, a: 1}
+  _flower: {r: 1, g: 0.24, b: 0.48, a: 1}
+  _surf: {r: 0.04, g: 0.86, b: 0.92, a: 0.82}
+  _hudPanel: {r: 0.015, g: 0.025, b: 0.07, a: 0.58}
+  _hudText: {r: 0.94, g: 0.98, b: 1, a: 1}
+  _bronze: {r: 0.88, g: 0.43, b: 0.15, a: 1}
+  _silver: {r: 0.78, g: 0.88, b: 0.94, a: 1}
+  _gold: {r: 1, g: 0.78, b: 0.08, a: 1}
+  _diamond: {r: 0.22, g: 0.9, b: 1, a: 1}
+  _hudPanelOpacity: 0.58
+  _surfaceInsetScale: 0.7
+  _edgeTrimScale: 0.08
+  _heroAccentDensity: 1

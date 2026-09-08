@@ -23,7 +23,7 @@ MonoBehaviour:
   _mistLayers: []
   _worldObjects:
   - _stableId: biome.solar-foundry.service-spine
-    _prefab: {fileID: 4401878656790661591, guid: 98e7eebd8ee8fd34993183ef96c44f16, type: 3}
+    _prefab: {fileID: 4507172609901415034, guid: c77ecd381a15d3f4cbc167b24a748a9a, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
@@ -32,7 +32,7 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.intake-vessel
-    _prefab: {fileID: 2773434300531870483, guid: 14655614a44fe2b48938196dd75b10a1, type: 3}
+    _prefab: {fileID: 6616393296360589670, guid: 12c40f76ada52b944829d9312185c930, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
@@ -41,7 +41,7 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.reactor-vessel
-    _prefab: {fileID: 2132708545588606767, guid: 905f7e6bdd0e61e4f8f23938b89c61f8, type: 3}
+    _prefab: {fileID: 5299895725158414990, guid: d0a815026eae3f842a2524785a83ecee, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
@@ -50,7 +50,7 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.crown-vessel
-    _prefab: {fileID: 5124571381587018794, guid: ae61f2f28fa30a94a864c4293b5d6d88, type: 3}
+    _prefab: {fileID: 7311176664852157936, guid: 2182a8dcfadeeb749bc0bc97ee41c6fa, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
@@ -59,7 +59,7 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.transfer-crane
-    _prefab: {fileID: 1276373774169160382, guid: 9192c5fe18026ce4fbadf9effc8ba3f9, type: 3}
+    _prefab: {fileID: 8954226896976436313, guid: 01a415c36e889a545ba3820c18237993, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
@@ -69,7 +69,7 @@ MonoBehaviour:
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.heliostat.hero
     _prefab: {fileID: 1374039436313391154, guid: 76b9e73aaa2ee4948b530cb0ad9b80b5, type: 3}
-    _position: {x: 52, y: -17, z: 120}
+    _position: {x: 52, y: -17, z: 126.38}
     _eulerAngles: {x: 0, y: -25, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.heliostat.west
     _prefab: {fileID: 1374039436313391154, guid: 76b9e73aaa2ee4948b530cb0ad9b80b5, type: 3}
-    _position: {x: -140, y: -44, z: 175}
+    _position: {x: -140, y: -44, z: 181.38}
     _eulerAngles: {x: 0, y: 35, z: 0}
     _scale: {x: 0.65, y: 0.65, z: 0.65}
     _staticBatch: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.heliostat.north
     _prefab: {fileID: 1374039436313391154, guid: 76b9e73aaa2ee4948b530cb0ad9b80b5, type: 3}
-    _position: {x: 70, y: -55, z: 230}
+    _position: {x: 70, y: -55, z: 236.38}
     _eulerAngles: {x: 0, y: -25, z: 0}
     _scale: {x: 0.9, y: 0.9, z: 0.9}
     _staticBatch: 1
@@ -96,7 +96,7 @@ MonoBehaviour:
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.lower.heat-exchanger
     _prefab: {fileID: 288002584290542435, guid: a6c8d1e1c22061148816117c6a02e26a, type: 3}
-    _position: {x: 55, y: -85, z: 15}
+    _position: {x: 55, y: -85, z: 18.300001}
     _eulerAngles: {x: 0, y: 35, z: 0}
     _scale: {x: 1.1, y: 1.1, z: 1.1}
     _staticBatch: 1

@@ -25,7 +25,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _CloudAmount: 0.62
+    - _CloudAmount: 0.78
+    - _CloudCeiling: 0.86
+    - _CloudOpacity: 0.82
     m_Colors:
     - _Cloud: {r: 0.9, g: 0.77, b: 0.61, a: 1}
     - _Horizon: {r: 0.86, g: 0.64, b: 0.43, a: 1}

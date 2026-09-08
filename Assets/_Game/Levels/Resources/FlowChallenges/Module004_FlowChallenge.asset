@@ -15,6 +15,6 @@ MonoBehaviour:
   ModuleId: module.004.solar-foundry
   Shards:
   - StableId: shard.m04.transfer-cut
-    Position: {x: 17.5, y: 5, z: 30.5}
+    Position: {x: 17.5, y: 5, z: 36.88}
   - StableId: shard.m04.transfer-exit
-    Position: {x: 23, y: 5.4, z: 38.1}
+    Position: {x: 23, y: 5.4, z: 44.48}

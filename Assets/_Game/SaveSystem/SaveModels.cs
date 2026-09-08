@@ -19,6 +19,8 @@ namespace Avoidance.SaveSystem
     public sealed class ProgressionData
     {
         public ModuleProgressRecord[] modules = Array.Empty<ModuleProgressRecord>();
+        public ModuleProgressRecord[] historicalRecords = Array.Empty<ModuleProgressRecord>();
+        public ModuleProgressRecord[] versionedBests = Array.Empty<ModuleProgressRecord>();
         public string[] exceptionalUnlocks = Array.Empty<string>();
         public string[] claimedRewardIds = Array.Empty<string>();
     }
@@ -278,6 +280,53 @@ namespace Avoidance.SaveSystem
             return isNewPersonalBest;
         }
 
+        // V4 additive extension: legacy aggregate metadata describes the latest run,
+        // not necessarily its PB. Never guess a compatible PB from that record.
+        public static ModuleProgressRecord GetVersionedBest(ProgressionData data, string id,
+            int content, int movement, int thresholds)
+        {
+            if (data == null) return null;
+            EnsureArrays(data);
+            foreach (var record in data.versionedBests)
+                if (record != null && record.moduleId == id && record.moduleContentVersion == content
+                    && record.movementCompatibilityVersion == movement && record.rankThresholdVersion == thresholds)
+                    return record;
+            return null;
+        }
+
+        public static bool RecordVersionedCompletion(ProgressionData data, string id, double seconds,
+            string rank, long score, ModuleSplitRecord[] splits, bool valid, int content,
+            int movement, int thresholds, string calibration, string validity, string utc)
+        {
+            EnsureArrays(data);
+            var legacy = GetRecord(data, id);
+            bool archived = false;
+            foreach (var item in data.historicalRecords) archived |= item != null && item.moduleId == id;
+            if (!archived && legacy != null && legacy.bestTimeSeconds > 0)
+            {
+                var archive = data.historicalRecords;
+                Array.Resize(ref archive, archive.Length + 1);
+                archive[archive.Length - 1] = UnityEngine.JsonUtility.FromJson<ModuleProgressRecord>(UnityEngine.JsonUtility.ToJson(legacy));
+                data.historicalRecords = archive;
+            }
+            // Retain aggregate completion counts, rewards and unlock meaning.
+            RecordCompletion(data, id, seconds, rank, score, splits, valid, content, movement,
+                thresholds, calibration, validity, utc);
+            if (!valid) return false;
+            var record = GetVersionedBest(data, id, content, movement, thresholds);
+            if (record == null)
+            {
+                record = new ModuleProgressRecord { moduleId = id };
+                var entries = data.versionedBests;
+                Array.Resize(ref entries, entries.Length + 1);
+                entries[entries.Length - 1] = record;
+                data.versionedBests = entries;
+            }
+            var bucket = new ProgressionData { modules = new[] { record } };
+            return RecordCompletion(bucket, id, seconds, rank, score, splits, true, content, movement,
+                thresholds, calibration, validity, utc);
+        }
+
         public static void RecordAttempt(ProgressionData progression, string moduleId)
         {
             GetOrCreateRecord(progression, moduleId).attemptCount++;
@@ -291,6 +340,8 @@ namespace Avoidance.SaveSystem
             }
 
             progression.modules ??= Array.Empty<ModuleProgressRecord>();
+            progression.historicalRecords ??= Array.Empty<ModuleProgressRecord>();
+            progression.versionedBests ??= Array.Empty<ModuleProgressRecord>();
             progression.exceptionalUnlocks ??= Array.Empty<string>();
             progression.claimedRewardIds ??= Array.Empty<string>();
         }

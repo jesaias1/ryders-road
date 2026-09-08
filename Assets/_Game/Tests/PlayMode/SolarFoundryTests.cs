@@ -121,7 +121,10 @@ namespace Avoidance.Tests.PlayMode
         {
             var direction=to-from;direction.y=0;direction.Normalize();
             motor.ResetMotion(from+Vector3.up*(fromSize.y*.5f+.04f)-direction*.5f,Quaternion.LookRotation(direction),0);Physics.SyncTransforms();
-            var input=new RunInput{FlowSteeringEnabled=motor.Profile.MovementMastery};for(int i=0;i<8;i++)motor.Simulate(input,1f/60);
+            var input=new RunInput{FlowSteeringEnabled=motor.Profile.MovementMastery};
+            float edge=Mathf.Min(Mathf.Abs(direction.x)>.001f?fromSize.x*.5f/Mathf.Abs(direction.x):100,Mathf.Abs(direction.z)>.001f?fromSize.z*.5f/Mathf.Abs(direction.z):100);
+            if((name.Contains("cooling") || name.Contains("ferry"))){for(int i=0;i<8;i++)motor.Simulate(input,1f/60);}
+            else for(int i=0;i<90 && Vector3.Dot(motor.transform.position-from,direction)<edge-.45f;i++)motor.Simulate(input,1f/60);
             input.JumpPressed=true;motor.Simulate(input,1f/60);input.JumpPressed=false;bool air=false,landed=false;
             for(int i=0;i<110;i++){motor.Simulate(input,1f/60);air|=!motor.IsGrounded;if(air&&motor.IsGrounded){landed=true;break;}}
             Assert.That(landed,Is.True,name+" / "+motor.transform.position);
@@ -151,7 +154,7 @@ namespace Avoidance.Tests.PlayMode
                 var from=bracketRoute[i];var to=bracketRoute[i+1];var direction=to.Pose.Position-from.Pose.Position;direction.y=0;direction.Normalize();
                 // Deliberate edge takeoff for the optional narrow route, using ordinary production physics.
                 float extent=Mathf.Min(from.Size.x*.5f/Mathf.Max(.001f,Mathf.Abs(direction.x)),from.Size.z*.5f/Mathf.Max(.001f,Mathf.Abs(direction.z)));
-                Jump(motor,from.Pose.Position+direction*Mathf.Max(0,extent-.85f),from.Size,to.Pose.Position,to.Size,to.StableId);
+                Jump(motor,from.Pose.Position,from.Size,to.Pose.Position,to.Size,to.StableId);
             }
             var challenge=Object.FindAnyObjectByType<FlowChallenge>();Assert.That(challenge.Total,Is.EqualTo(2));
             motor.ResetMotion(Object.FindObjectsByType<FlowPickup>().First().transform.position,Quaternion.identity,0);Physics.SyncTransforms();

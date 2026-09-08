@@ -419,8 +419,12 @@ namespace Avoidance.UI
         {
             if (!unlocked) return "Complete the previous module\nto open this road.";
             if (!ModuleProgressionData.HasValidCompletion(record)) return "OPEN TO EXPLORE\nPersonal best  --:--.---";
-            var rank = string.IsNullOrWhiteSpace(record.highestRank) ? "Bronze" : record.highestRank;
-            return rank.ToUpperInvariant() + "  /  FIXED\nPB  " + RunTimerFormatting.Format(record.bestTimeSeconds);
+            var data = GameServices.Current != null && GameServices.Current.TryGet<ISaveService>(out var service)
+                ? service.Current.progression : null;
+            var current = ModuleProgressionData.GetVersionedBest(data, module.StableModuleId,
+                module.ContentVersion, 1, module.RankThresholds.ThresholdVersion);
+            if (current == null) return "ROAD RESTORED  /  HISTORY KEPT\nCurrent route PB  --:--.---";
+            return current.highestRank.ToUpperInvariant() + "  /  CURRENT ROUTE\nPB  " + RunTimerFormatting.Format(current.bestTimeSeconds);
         }
 
         private static void CreateSummary(

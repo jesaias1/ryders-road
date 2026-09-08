@@ -126,12 +126,12 @@ namespace Avoidance.Gameplay.Visuals
                 position + Vector3.up * 0.35f,
                 travel,
                 ModuleMaterialRole.Boost,
-                16,
+                _visuals != null ? _visuals.BoostParticleCount : 8,
                 ParticleSystemShapeType.Cone,
-                0.32f,
-                0.34f,
-                4.2f,
-                0.08f);
+                0.22f,
+                _visuals != null ? _visuals.BoostParticleLifetime : .22f,
+                3f,
+                _visuals != null ? _visuals.BoostParticleSize : .045f);
             Emit(
                 position + Vector3.up * 0.18f,
                 travel,

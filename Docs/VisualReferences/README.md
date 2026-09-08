@@ -1,3 +1,7 @@
+Current correction: [ADR 0026](../Decisions/0026-gameplay-quality-correction.md),
+[physical failure evidence](../Quality130Evidence/README.md) and
+[0.13.0 delivery](../PRODUCTION_0130.md). The concepts below remain the direction.
+
 # Visual references
 
 ## Current direction: September 9, 2026

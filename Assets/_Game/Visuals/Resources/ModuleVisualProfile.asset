@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b06b1d8ce555446aa9eb216414219b, type: 3}
   m_Name: ModuleVisualProfile
   m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Visuals.ModuleVisualProfile
+  _prefabLibrary: {fileID: 0}
+  _boostParticleCount: 8
+  _boostParticleSize: 0.045
+  _boostParticleLifetime: 0.22
   _normal: {r: 0.86, g: 0.88, b: 0.91, a: 1}
   _precision: {r: 0.63, g: 0.96, b: 0.84, a: 1}
   _moving: {r: 0.12, g: 0.38, b: 0.82, a: 1}

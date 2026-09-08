@@ -9,6 +9,17 @@ namespace Avoidance.Gameplay.Visuals
     {
         public const string ResourceName = "ModuleVisualProfile";
 
+        [SerializeField] private ModuleVisualPrefabLibrary _prefabLibrary;
+        public ModuleVisualPrefabLibrary PrefabLibrary => _prefabLibrary;
+
+        [Header("Boost activation")]
+        [SerializeField] private int _boostParticleCount = 8;
+        [SerializeField] private float _boostParticleSize = .045f;
+        [SerializeField] private float _boostParticleLifetime = .22f;
+        public int BoostParticleCount => _boostParticleCount;
+        public float BoostParticleSize => _boostParticleSize;
+        public float BoostParticleLifetime => _boostParticleLifetime;
+
         [Header("Gameplay roles")]
         [SerializeField] private Color _normal = new Color(0.82f, 0.88f, 0.96f);
         [SerializeField] private Color _precision = new Color(0.58f, 0.94f, 0.82f);

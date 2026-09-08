@@ -1,3 +1,19 @@
+## 0.13.0 gameplay-quality correction
+
+ADR 0026 supersedes the prior physical-acceptance assumption. Accepted motor,
+input, camera and trial contracts remain intact. EditorTools explicitly authors
+Windward v3/Foundry v3; runtime never regenerates these routes. ModuleVisualProfile
+can optionally select a ModuleVisualPrefabLibrary; null retains the shared kit.
+Shared broad supports use one complete deck skin, and Boost keeps its original
+mechanical skin with fitted bounds and event feedback. Restore marker scales
+compensate all support axes, including legacy implicit supports.
+
+SaveSystem owns additive V4 historicalRecords/versionedBests; the original
+aggregate completion API and progression/reward meaning remain. UI reads PBs and
+splits only for matching module/content/movement/threshold versions. Legacy
+latest-run metadata never seeds a supposedly compatible PB. See SAVE_SCHEMA.md
+and Docs/PRODUCTION_0130.md. Physical fun, ranks and performance remain unapproved.
+
 ## 0.12.0 vertical-slice authority
 
 ADR 0024 and Docs/PRODUCTION_0120.md supersede older stop/next-world proposals.

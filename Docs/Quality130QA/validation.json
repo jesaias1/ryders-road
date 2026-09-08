@@ -1,0 +1,383 @@
+{
+  "version": "0.13.0-gameplay-quality",
+  "tests": {
+    "edit": {
+      "result": "Passed",
+      "total": "246",
+      "passed": "246",
+      "failed": "0",
+      "duration": "11.0004437"
+    },
+    "play": {
+      "result": "Passed",
+      "total": "92",
+      "passed": "92",
+      "failed": "0",
+      "duration": "104.0881367"
+    }
+  },
+  "sourceValidator": "passed",
+  "lfsHydration": "passed",
+  "physicalDeviceTested": false,
+  "protectedFiles": [
+    {
+      "path": "Assets/_Game/Camera/.gitkeep",
+      "workingFileSha256": "88638d740a1aed33820c24c5541f9ae71e6063821edb2cfc1223b01652cb7b53"
+    },
+    {
+      "path": "Assets/_Game/Camera/BranchIntentResolver.cs",
+      "workingFileSha256": "fef6a468336af7f91f515bd92519cbcda82b9f1e81dfd0152f02b20d6940e159"
+    },
+    {
+      "path": "Assets/_Game/Camera/BranchIntentResolver.cs.meta",
+      "workingFileSha256": "1d394782801170298ea31a041976d3a4bdbb24d18f8df317c8b71874fa369ea5"
+    },
+    {
+      "path": "Assets/_Game/Camera/Configuration.meta",
+      "workingFileSha256": "35384851ba5bb1c0c2dfbb8af55b5363f605dbdd974a8e631f7d7618eeb0f0f2"
+    },
+    {
+      "path": "Assets/_Game/Camera/Configuration/CameraProfile.cs",
+      "workingFileSha256": "816ed1e2255dfdd582f83d9788c8e02e84b68fb1c791c98357b26d6271057f9c"
+    },
+    {
+      "path": "Assets/_Game/Camera/Configuration/CameraProfile.cs.meta",
+      "workingFileSha256": "df0fbf439a556541a238cbb1c8d7a25c16b14a1dbb99cc73859250f90d436370"
+    },
+    {
+      "path": "Assets/_Game/Camera/Configuration/Resources.meta",
+      "workingFileSha256": "5d745bf7e9db6c3ff01c20a2701c08622418cf45a8ca30a39fab77729e58d70d"
+    },
+    {
+      "path": "Assets/_Game/Camera/Configuration/Resources/Camera_Default.asset",
+      "workingFileSha256": "7d3f2c043b5f83d3576128f6be6121e4ea7d1dfdbd2cf4017fc3ca96ea782799"
+    },
+    {
+      "path": "Assets/_Game/Camera/Configuration/Resources/Camera_Default.asset.meta",
+      "workingFileSha256": "c71326b3fe057dabc9fefb68e6910b9949745072628c0198387fef22cfb5326e"
+    },
+    {
+      "path": "Assets/_Game/Camera/FirstPersonCameraRig.cs",
+      "workingFileSha256": "089daf63d35b846c8a3d004262a8f5710b6ecbfd614a1b0fb1cf48a3c49029aa"
+    },
+    {
+      "path": "Assets/_Game/Camera/FirstPersonCameraRig.cs.meta",
+      "workingFileSha256": "2c5460e3e7bbebbd0689d24efeecdb75adbc11bf9b800b93d7daaf37cc973c2c"
+    },
+    {
+      "path": "Assets/_Game/Camera/LandingView.cs",
+      "workingFileSha256": "79a5ad258780dcf40c8e0ea017b95849555558ca1c22b845c3aa6f648e1ff325"
+    },
+    {
+      "path": "Assets/_Game/Camera/LandingView.cs.meta",
+      "workingFileSha256": "4088deb45ab8323735f959601ff41cafc0b2d99a346f0ddd736145ca7aa40efe"
+    },
+    {
+      "path": "Assets/_Game/Camera/ParkourCameraProfile.cs",
+      "workingFileSha256": "7145baec7a7a2b4a4e81c495b71cab400292b75b2cc37af29b4eb476f7c27b8c"
+    },
+    {
+      "path": "Assets/_Game/Camera/ParkourCameraProfile.cs.meta",
+      "workingFileSha256": "aa94bd00ba200de038a1d24c051b5bc814b4b5cc3cc012b2644baf90d4e6bbc5"
+    },
+    {
+      "path": "Assets/_Game/Camera/RouteCameraDebugView.cs",
+      "workingFileSha256": "4e4cb77d85920aeeaada10abe3aba5c51583baf8ea309b0da491fdc9ad16efba"
+    },
+    {
+      "path": "Assets/_Game/Camera/RouteCameraDebugView.cs.meta",
+      "workingFileSha256": "a3721dabc3f08c8abf6b7fc9a571c3a0a1522dda7e58457871dd569f38d4f868"
+    },
+    {
+      "path": "Assets/_Game/Camera/RouteCameraGraph.cs",
+      "workingFileSha256": "082a6a4cce87f9adf3721bbb959ccb06ab654feea9e970c0ca04530d0ec87cb6"
+    },
+    {
+      "path": "Assets/_Game/Camera/RouteCameraGraph.cs.meta",
+      "workingFileSha256": "1843b5f7b3994392bb054131c23a59b2696dec45495e64b07ac1eb6f489c8a07"
+    },
+    {
+      "path": "Assets/_Game/Camera/SmartParkourCameraController.cs",
+      "workingFileSha256": "c5d65ff9a84597278f3b3831cae29fd834649497677c6cbb7510cd9911f0547e"
+    },
+    {
+      "path": "Assets/_Game/Camera/SmartParkourCameraController.cs.meta",
+      "workingFileSha256": "7e05cdb14b692af9423eed1cf18facf84f26bfaf9700e1e78542219f29bfa669"
+    },
+    {
+      "path": "Assets/_Game/Input/Configuration.meta",
+      "workingFileSha256": "c61e9b7d045a1f7619522af7136e1ae03eeb1cb7e5b0b62c0b63a79f48e77d8b"
+    },
+    {
+      "path": "Assets/_Game/Input/Configuration/Resources.meta",
+      "workingFileSha256": "17ff3d3488179698d8173ee60000d4f6b594addbb81d0905e9bebe7a7b61522e"
+    },
+    {
+      "path": "Assets/_Game/Input/Configuration/Resources/Touch_Default.asset",
+      "workingFileSha256": "1755f6b7556e5f7ca9fa8391fe0417ff8efe9d951eb5f0304592ab181de5765d"
+    },
+    {
+      "path": "Assets/_Game/Input/Configuration/Resources/Touch_Default.asset.meta",
+      "workingFileSha256": "ddedbec52cc7d706803e397c8bf1462ddafae76cf8a64d0d2a0eb10b77974480"
+    },
+    {
+      "path": "Assets/_Game/Input/Configuration/TouchControlLayout.cs",
+      "workingFileSha256": "88fab57286fff3a1794bd9fd61aa9806253b32f7c3febca9f43c1b8db7586afb"
+    },
+    {
+      "path": "Assets/_Game/Input/Configuration/TouchControlLayout.cs.meta",
+      "workingFileSha256": "353ba7cf609b3dfe4c83ca33c14c89abb5a9a5ab8eac57bf339bfe524ad43df6"
+    },
+    {
+      "path": "Assets/_Game/Input/FlickGestureDetector.cs",
+      "workingFileSha256": "89a2189e329814a42fad68329992473e453476203561c013da38e7c85b521ba2"
+    },
+    {
+      "path": "Assets/_Game/Input/FlickGestureDetector.cs.meta",
+      "workingFileSha256": "8e418b548a3c4ed3e6418761e42afbf3cbf70ebc2bf4fbfa673958f30e4c293c"
+    },
+    {
+      "path": "Assets/_Game/Input/Game.Input.asmdef",
+      "workingFileSha256": "a802d10ae966e22c8e16ca828a46efdd1666394ef7a0efb74cc2710d066efc2c"
+    },
+    {
+      "path": "Assets/_Game/Input/Game.Input.asmdef.meta",
+      "workingFileSha256": "908a7fa05f71e9b1d28e7375aba1f28eadf1f64f5a135e169b7fb674dab0ed0a"
+    },
+    {
+      "path": "Assets/_Game/Input/IPlayerInputSource.cs",
+      "workingFileSha256": "3dd80d5ee1d86f4764aa4719496ab9316eced8fd895bdcd67f4daaf39595eed0"
+    },
+    {
+      "path": "Assets/_Game/Input/IPlayerInputSource.cs.meta",
+      "workingFileSha256": "5ec360d19e0aa20fe8215d8cdfd7657cfba61ee9d93a0869c873b83ca38c7541"
+    },
+    {
+      "path": "Assets/_Game/Input/PlayerInputRouter.cs",
+      "workingFileSha256": "8b5fb0da6e46f38d91d0ded915251aa8bf768983905ffbd9f270a5abc88b5a55"
+    },
+    {
+      "path": "Assets/_Game/Input/PlayerInputRouter.cs.meta",
+      "workingFileSha256": "37a1048573b28e8dce46046980294a8588d110a33134b38311c4a9a16b8e2685"
+    },
+    {
+      "path": "Assets/_Game/Input/TapDragGestureClassifier.cs",
+      "workingFileSha256": "75bbabaf0465aba7e9efd5ae1ef768cec08d9b256e645de4d0c3c00f653ac21e"
+    },
+    {
+      "path": "Assets/_Game/Input/TapDragGestureClassifier.cs.meta",
+      "workingFileSha256": "7a6281835f977b813f35c2f7c2095875e162c304c4b2760fa35019699966fc11"
+    },
+    {
+      "path": "Assets/_Game/Input/TouchControlGeometry.cs",
+      "workingFileSha256": "8978ad9e083b9ea46741fc29aacdfb9e627ed105943feb525698aa613e3ef34b"
+    },
+    {
+      "path": "Assets/_Game/Input/TouchControlGeometry.cs.meta",
+      "workingFileSha256": "df991871d86f4eb3976c72bb6fd5823b2a7b495d1ba51001306ec4e18563e26c"
+    },
+    {
+      "path": "Assets/_Game/Input/TouchControlProfiles.cs",
+      "workingFileSha256": "7dba12747eb625c2a5b1d66270384704cd7515f8d469ed71d7726c38266d6f3f"
+    },
+    {
+      "path": "Assets/_Game/Input/TouchControlProfiles.cs.meta",
+      "workingFileSha256": "a5c135a64a860e72ecdf698c99d221b6c81194e2a3355cc3f652bbc645988c25"
+    },
+    {
+      "path": "Assets/_Game/Input/TouchInputContracts.cs",
+      "workingFileSha256": "8f842ded4aa363ffbdac457a7881d701722c4b2e71c93cee73f24c3a07698a36"
+    },
+    {
+      "path": "Assets/_Game/Input/TouchInputContracts.cs.meta",
+      "workingFileSha256": "570fc207aa6904895abc05abc462b102b69981f41e29fb9dd927a07c372fc3ff"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration.meta",
+      "workingFileSha256": "fb59a1ee3b463a70b253195240f1ab4a4a6bf72ea6ac543daf91be3e1dca1a2c"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/MovementProfile.cs",
+      "workingFileSha256": "f98efcac886302c71d618bfd5601950927d3e784086567704aa1d217dd9de730"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/MovementProfile.cs.meta",
+      "workingFileSha256": "27279a274c1724903fb02b96e2668b804dac683b8c4b5231109c31f2726c5806"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources.meta",
+      "workingFileSha256": "c50356e1348291ae5cb7c1fcaff3586ffb7cbe57d6dcd6938ad7f6121d8a09b5"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles.meta",
+      "workingFileSha256": "9743ff6761662b40884326b1c71473edfa7247fa0d55bc111450ff6bf104b72c"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles/Movement_Default.asset",
+      "workingFileSha256": "7033fce42199859f46fc4f8e522da68c20dffbf2e7e2f6b142145f41439b172c"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles/Movement_Default.asset.meta",
+      "workingFileSha256": "553807fcfcb66fa7cd7271336085b3151fcfbd4ac0d79dc7cb9bf97198c65b4a"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles/Movement_Experimental.asset",
+      "workingFileSha256": "8b56c84da62ecd03afcabba2694bccabd4f4379fcc682e2f7b100b3983b9a856"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles/Movement_Experimental.asset.meta",
+      "workingFileSha256": "ea666b3773a682fd44e606929961cab284fd9c8fabac37f1422fb49e65c03f8b"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles/Movement_Forgiving.asset",
+      "workingFileSha256": "139261bedc6928868006c8485980b7b76b47e542fe8facd18dac8671e342eaca"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles/Movement_Forgiving.asset.meta",
+      "workingFileSha256": "7166a56d04777eed4a23dc173b4ff27f44f15d6982a7040b8454c2c8e1d9fbd2"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles/Movement_Precise.asset",
+      "workingFileSha256": "b95ee6195aeab4439ab20ccd657286bd7d170d4873680655902bd1f39283f9fe"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/MovementProfiles/Movement_Precise.asset.meta",
+      "workingFileSha256": "e71c01a9bb5564fccc84968cc096ef5607b4a7523b21cfec559d4428921a30ea"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/Training.meta",
+      "workingFileSha256": "b6b4365df2c0034a3e695625a06e77b9d79a25c4e25c20c11ec56a894c3e14b3"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/Training/Movement_Mastery.asset",
+      "workingFileSha256": "dc4695ebb07c38f2f29a8520708b56b84ac12992d0d38694735e2c9a50a5a3ce"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/Training/Movement_Mastery.asset.meta",
+      "workingFileSha256": "586a52106d60fc8234e4cb1d0dd538ee083d38d1885c9b7d0f9f91e7d4388278"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/Training/Movement_RealRoute.asset",
+      "workingFileSha256": "209eb720aae053cde0271ce69c72fc7ebf0f23f79942d5ccc9ea4b2f839e13c6"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/Resources/Training/Movement_RealRoute.asset.meta",
+      "workingFileSha256": "0cf22caeea19b346d2101263aa6e646dfc4437417917035a6c8f69c05e12d6f2"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/SurfProfile.cs",
+      "workingFileSha256": "504a11d4060f46ae55fbdaea869168cd5e26a6581df3dde23afedf9f175029b5"
+    },
+    {
+      "path": "Assets/_Game/Player/Configuration/SurfProfile.cs.meta",
+      "workingFileSha256": "4a4ff297a5152faf65680a8d4e12b3a22424e6ad98520270077084394cef6b8d"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement.meta",
+      "workingFileSha256": "ce39678462bb172fe0a9fd2d7cb268a058fb761f67b829bc6374685387e0fb9b"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/JumpWindowState.cs",
+      "workingFileSha256": "0865cfbff565cb19e6946dbabe2012fcf07a233511f78b5359e4e32094c547e7"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/JumpWindowState.cs.meta",
+      "workingFileSha256": "2d7b674b185ec65477b240b7fc86efa47aae0e4b3f175c8a2b8a3d269d103fec"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MasteryMovementMath.cs",
+      "workingFileSha256": "35e73d9d11cfd7f2b199e07982ee226de9c500ce94b79e488ed2e1a61b122f51"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MasteryMovementMath.cs.meta",
+      "workingFileSha256": "a9433370126fb4f87baef555d8e01b0545373da50b026043c8e3f9d7eb60f5f7"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MovementEnvelopeMeasurement.cs",
+      "workingFileSha256": "ae92c89058735ea52279c55818280ba1255d05489a4e76a5523573c76e104eec"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MovementEnvelopeMeasurement.cs.meta",
+      "workingFileSha256": "268c1d8427d8298fd741197e67a10b89d5f7ed4b4081b7d3da409ff8d7b60bcd"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MovementMomentumMath.cs",
+      "workingFileSha256": "9159cf076338452cc89f063177bda9cce1feaa15fbdb5d74decd670a4064a44d"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MovementMomentumMath.cs.meta",
+      "workingFileSha256": "80510f0b93e4c1634c3d6537dfc041265334819c158c90a0d59ddeab72803dbd"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MovementTrialTrace.cs",
+      "workingFileSha256": "be78bd97ad55f499b1d49893a63176fa89654e8da9ee844260d3bb3de0955cf6"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MovementTrialTrace.cs.meta",
+      "workingFileSha256": "dceffa88d508d77470189cada0a2aafa4afc7c06108e9d26a48c31c11d648709"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MovementVectorMath.cs",
+      "workingFileSha256": "c103f97db34a8282e390ec520097d7bef6a5abedda5486c6baea2c8c24300d2d"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/MovementVectorMath.cs.meta",
+      "workingFileSha256": "7369ce5e7164f060b7f048aa1abb572a3c734b8484fedbb97e23db6f713ff7cd"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/ParkourMotor.cs",
+      "workingFileSha256": "5f648aeff63a8308909728aafa9a105b01b3ee1d76f53670d0a4420d45cbc6d1"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/ParkourMotor.cs.meta",
+      "workingFileSha256": "0b1037133117458b136758a87048cc18870f2c90331a7a19070c4ae6e2674eea"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/RouteAirControlMath.cs",
+      "workingFileSha256": "50bd7df2c5bfdbfc6035ed1c56346ed2aaa05327770f3e2e981f1694bf741f5a"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/RouteAirControlMath.cs.meta",
+      "workingFileSha256": "2d2e13568878261cae6142f8a4a767978eecf418b5177eca7b091d297205f89f"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/SurfMovementMath.cs",
+      "workingFileSha256": "84380f7c99a1bb728df31601a7d78536ebdc8b2f5d2309402fe454ec12188af8"
+    },
+    {
+      "path": "Assets/_Game/Player/Movement/SurfMovementMath.cs.meta",
+      "workingFileSha256": "ccf3d0218c8898628bcaf8d0cd472e731f707636a15e9a8217ac350a8256fb52"
+    },
+    {
+      "path": "Assets/_Game/Player/PlayerRuntimeCoordinator.cs",
+      "workingFileSha256": "6d0146ca41e94cb2faf5e78c0bde145b1808e8f8e447a64bd7e0dcf8f53c41da"
+    },
+    {
+      "path": "Assets/_Game/Player/PlayerRuntimeCoordinator.cs.meta",
+      "workingFileSha256": "06dd007c139b82b446c75e61221a5b448086928f2b2adac305e8b26096100cff"
+    }
+  ],
+  "scriptedSeconds": {
+    "module.004.solar-foundry-fast": 16.55,
+    "module.005.foundry-pulse-fast": 16.317,
+    "module.005.foundry-pulse-normal": 24.216
+  },
+  "apk": {
+    "path": "Builds/Android/RYDERS-ROAD-0.13.0-gameplay-quality-dev.apk",
+    "bytes": 178321994,
+    "sha256": "bc07274e14ad2b8b8aacc96c249a3f5d46ae51955e3188fcea29b127629a98c1",
+    "zipCrc": "passed"
+  },
+  "androidBuild": {
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 1,
+    "seconds": 152.098,
+    "package": "com.rydersblockstudio.rydersblock",
+    "versionCode": 1,
+    "minSdk": 26,
+    "targetSdk": 36,
+    "abi": "arm64-v8a",
+    "log": "Logs/quality130-android-build.log"
+  }
+}

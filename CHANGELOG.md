@@ -1,3 +1,12 @@
+## 0.13.0-gameplay-quality — 2026-09-09
+
+Reauthored Windward galleries, crumbling pressure pair and three-landing fast line;
+separated Foundry opening and revised optional transfers/crown landings. Added
+complete gallery skins, removed opaque Boost clutter and tiled broad courts, and
+replaced flattened Restore markers with surface signals. Versioned current-route
+PBs preserve legacy history and campaign progress. Candidate ranks remain provisional.
+See [production evidence](Docs/PRODUCTION_0130.md).
+
 ## 0.12.0-vertical-slice — 2026-09-09
 
 - Windward v2 replaces the walkway with 25 separated standard jumps, a larger

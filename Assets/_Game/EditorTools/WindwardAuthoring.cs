@@ -41,31 +41,38 @@ namespace Avoidance.EditorTools
             B("approach.b",new Vector3(-22,.8f,32),3.8f,3.2f);
             B("approach.c",new Vector3(-22,1.2f,38),4.2f,3.4f);
             B("west.restore",new Vector3(-22,1.6f,44),5,3.6f);
-            for(int i=1;i<12;i++)
-            {
-                float angle=Mathf.PI-i*Mathf.PI/12;
-                B("arc."+i.ToString("00"),new Vector3(Mathf.Cos(angle)*22,1.6f+i*.25f,44+Mathf.Sin(angle)*22),3.2f,3.2f);
-            }
-            B("east.restore",new Vector3(22,4.6f,44),5,3.6f);
-            B("ascent.a",new Vector3(27,5,39));B("ascent.b",new Vector3(32,5.4f,34));
+            // Distinct north galleries: run-in, lateral turn, pressure pair, exit.
+            B("arc.01",new Vector3(-22,1.6f,51),4,5);
+            B("arc.02",new Vector3(-20,1.6f,59),5,6);
+            B("arc.03",new Vector3(-13,2,64),6,4);
+            B("arc.06",new Vector3(11,2.6f,64),6,4);
+            B("arc.07",new Vector3(18,3,59),5,6);
+            B("arc.08",new Vector3(22,3.5f,52),4,4);
+            var pressure=new[]{
+                new ModuleCrumblingBlockDefinition("m05.arc.04",new Vector3(-5,2.2f,64),new Vector3(5,.6f,4),.03f,1.2f,4,.015f),
+                new ModuleCrumblingBlockDefinition("m05.arc.05",new Vector3(3,2.2f,64),new Vector3(5,.6f,4),.03f,1.2f,4,.015f)};
+            B("east.restore",new Vector3(22,4.6f,44),8.6f,6);
+            B("ascent.a",new Vector3(29.5f,5,39));B("ascent.b",new Vector3(32,5.4f,34));
             B("ascent.c",new Vector3(37,5.8f,29));B("ascent.d",new Vector3(42,6.2f,24));
             B("lens.restore",new Vector3(47,6.6f,19),5,4);
             B("lens.a",new Vector3(51,7,25),4,3.6f);B("lens.b",new Vector3(54,7.4f,31),4,3.6f);
             B("lens.c",new Vector3(55,7.8f,37),4.2f,3.6f);B("patch.base",new Vector3(55,8.2f,43),6,4);
-            for(int i=1;i<6;i++) B("skill.chord."+i,new Vector3(-22+i*44f/6,1.6f+i*.5f,44),3.2f,3.2f,true);
+            B("skill.chord.1",new Vector3(-12,2f,44),8,3.4f,true);
+            B("skill.chord.2",new Vector3(-1,2.8f,44),8,3.4f,true);
+            B("skill.chord.3",new Vector3(11,3.6f,44),8.4f,3.4f,true);
             var restores=new[]{
                 new ModuleRestorePointDefinition("restore.module-005.west",0,new Vector3(-22,1.6f,44),new Vector3(0,.35f,0),supportBlockStableId:"m05.west.restore"),
-                new ModuleRestorePointDefinition("restore.module-005.east",1,new Vector3(22,4.6f,44),new Vector3(0,.35f,0),new Vector3(0,135,0),supportBlockStableId:"m05.east.restore"),
+                new ModuleRestorePointDefinition("restore.module-005.east",1,new Vector3(22,4.6f,44),new Vector3(0,.35f,0),new Vector3(0,124,0),supportBlockStableId:"m05.east.restore"),
                 new ModuleRestorePointDefinition("restore.module-005.lens",2,new Vector3(47,6.6f,19),new Vector3(0,.35f,0),new Vector3(0,34,0),supportBlockStableId:"m05.lens.restore")};
-            module.Configure(Id,"Campaign 05 - Windward Observatory","module_005_windward","project.ryders-block","world.windward-observatory",2,
+            module.Configure(Id,"Campaign 05 - Windward Observatory","module_005_windward","project.ryders-block","world.windward-observatory",3,
                 ModuleSelectionState.ModuleRunnerSceneName,ModuleDifficulty.Medium,new ModulePose(new Vector3(-22,.35f,19),Vector3.zero),
                 new ModulePatchBlockDefinition("patch.module-005.observatory",new Vector3(55,8.5f,43),new Vector3(2.2f,2.2f,2.2f),supportBlockStableId:"m05.patch.base"),
-                restores,50,120,new[]{ModuleMechanic.StandardBlock,ModuleMechanic.PrecisionBlock,ModuleMechanic.RestorePoint,ModuleMechanic.PatchBlock,ModuleMechanic.Shortcut},
-                new[]{new ModuleShortcutDefinition("shortcut.module-005.chord","Instrument maintenance chord",new Vector3(-22+44f/6,2.1f,44),new Vector3(22,4.6f,44),12,new[]{ModuleMechanic.PrecisionBlock})},
+                restores,25,65,new[]{ModuleMechanic.StandardBlock,ModuleMechanic.PrecisionBlock,ModuleMechanic.RestorePoint,ModuleMechanic.PatchBlock,ModuleMechanic.Shortcut,ModuleMechanic.CrumblingBlock},
+                new[]{new ModuleShortcutDefinition("shortcut.module-005.chord","Wind instrument fast line",new Vector3(-12,2f,44),new Vector3(22,4.6f,44),7,new[]{ModuleMechanic.PrecisionBlock})},
                 Resources.Load<ModuleEnvironmentProfile>("ModuleEnvironmentProfile"),Resources.Load<ModuleVisualProfile>("ModuleVisualProfile"),
-                "Cross the wind instrument and reconnect the observatory.","Approach jump rhythm / West Anchorage / separated wind arc / diagonal lens ascent / telescope finale. Five-pad chord saves eleven-pad arc; approach speed and late takeoff matter. Physical timing pending.",
-                blocks.ToArray(),null,null,null,null,null,null);
-            module.ConfigureRankThresholds(new ModuleRankThresholds(100,72,51,RankCalibrationState.Uncalibrated,1,"Provisional; Bronze has no deadline."));
+                "Cross the wind instrument and reconnect the observatory.","Approach / West Anchorage choice / north gallery and two pressure fins / east court / diagonal ascent / telescope. Three long narrow chord landings reward carried speed; physical enjoyment and timings pending.",
+                blocks.ToArray(),null,null,null,pressure,null,null);
+            module.ConfigureRankThresholds(new ModuleRankThresholds(35,25,19,RankCalibrationState.Uncalibrated,2,"0.13.0 candidate: deterministic normal ~24s, fast line ~16s; instant scripted aiming is not human calibration. S23 calibration pending; Bronze has no deadline."));
             module.ConfigurePlayability("start.module-005.windward","m05.arrival",-20,true);
             WorldMeshBake Bake()=>new WorldMeshBake(Root,mats);
             var supports=Bake();

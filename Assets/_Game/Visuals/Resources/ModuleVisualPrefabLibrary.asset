@@ -41,14 +41,14 @@ MonoBehaviour:
     _maximumAspectRatio: 0
     _fitMode: 4
   - _role: 0
-    _prefab: {fileID: 771249841736351956, guid: 8ef1d5c975616f1428a866982c193ab5, type: 3}
+    _prefab: {fileID: 8902442476117566181, guid: b510ab1ff8ee5e5469d660cd4acc1a6c, type: 3}
     _localPosition: {x: 0, y: 0, z: 0}
     _localEulerAngles: {x: 0, y: 0, z: 0}
-    _localScale: {x: 1.5, y: 1.5, z: 1.5}
+    _localScale: {x: 1, y: 1, z: 1}
     _minimumBlockExtent: 6
     _minimumAspectRatio: 1
     _maximumAspectRatio: 1.14
-    _fitMode: 2
+    _fitMode: 4
   - _role: 1
     _prefab: {fileID: 771249841736351956, guid: 8ef1d5c975616f1428a866982c193ab5, type: 3}
     _localPosition: {x: 0, y: 0, z: 0}
@@ -77,23 +77,23 @@ MonoBehaviour:
     _maximumAspectRatio: 0
     _fitMode: 3
   - _role: 3
-    _prefab: {fileID: 3528899385549103898, guid: 62a2ad1ee72d6d844b9f0353e8e17f3c, type: 3}
+    _prefab: {fileID: 2329389075906007041, guid: 625636d2a9df15a47985f36a23155921, type: 3}
     _localPosition: {x: 0, y: 0, z: 0}
     _localEulerAngles: {x: 0, y: 0, z: 0}
-    _localScale: {x: 1.6, y: 1.6, z: 1.6}
+    _localScale: {x: 1, y: 1, z: 1}
     _minimumBlockExtent: 0
     _minimumAspectRatio: 1
     _maximumAspectRatio: 0
-    _fitMode: 0
+    _fitMode: 4
   - _role: 5
     _prefab: {fileID: 3829110868700266225, guid: f825d2c886c7f9244a2026990e754370, type: 3}
     _localPosition: {x: 0, y: 0, z: 0}
     _localEulerAngles: {x: 0, y: 0, z: 0}
-    _localScale: {x: 1.8, y: 1.8, z: 1.8}
+    _localScale: {x: 1, y: 1, z: 1}
     _minimumBlockExtent: 0
     _minimumAspectRatio: 1
     _maximumAspectRatio: 0
-    _fitMode: 0
+    _fitMode: 4
   - _role: 4
     _prefab: {fileID: 8034649391654953924, guid: cb8a1896357d8ac4d9d8f990adf24983, type: 3}
     _localPosition: {x: 0, y: 0, z: 0}

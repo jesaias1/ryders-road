@@ -1,3 +1,23 @@
+## 0.13.0 gameplay-quality correction
+
+Current evidence/results are in Docs/PRODUCTION_0130.md. Quality130Tests uses
+continuous accepted-motor input with no per-link position/velocity resets;
+CrumblingBlock.Tick advances alongside motor time. Normal and direct Windward
+routes are compared separately. Foundry keeps real ferry carry/boarding and
+mechanic tests; changed launch positions in legacy link tests use edge-aware
+input rather than obsolete center takeoffs. These establish feasibility only.
+
+Inspect current Restore shapes, idle/active Boost, broad court, route silhouettes
+and full sky turns. New PB tests must retain old V4 JSON/history and progression,
+exclude invalid runs and separate content/movement/threshold versions after reload.
+Keep original movement, camera, Editor and touch regression coverage. No test run
+establishes that a route is fun or that a candidate Diamond is physically calibrated.
+
+S23 remains disconnected. Build the APK, preserve the previous binary, and report
+exact new hash/path. User testing must cover both landscapes, normal/faster routes,
+Crumble recovery, readable landings, PB history/current separation, rank difficulty,
+Boost feedback, repeat motivation and 10–15 minute thermal/frame pacing.
+
 ## 0.12.0 vertical-slice authority
 
 ADR 0024 and Docs/PRODUCTION_0120.md supersede older stop/next-world proposals.
