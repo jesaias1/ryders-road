@@ -54,15 +54,9 @@ namespace Avoidance.Tests.PlayMode
         public IEnumerator UnavailableVideoDoesNotBlockActualSpiralButton()
         {
             yield return Boot();
-            var video = Object.FindAnyObjectByType<LoadingPresentation>().GetComponent<VideoPlayer>();
-            video.Stop(); video.enabled = false;
-            try
-            {
-                LogAssert.Expect(LogType.Warning, new System.Text.RegularExpressions.Regex("\\[RoadLoading\\] Poster fallback: Video unavailable"));
-                Button("THE SPIRAL  /  CHALLENGE Button").onClick.Invoke();
-                yield return Gameplay("module.004.the-spiral");
-            }
-            finally { video.enabled = true; }
+            Assert.That(Object.FindAnyObjectByType<LoadingPresentation>().GetComponent<VideoPlayer>(), Is.Null);
+            Button("THE SPIRAL  /  CHALLENGE Button").onClick.Invoke();
+            yield return Gameplay("module.004.the-spiral");
         }
         [UnityTest]
         public IEnumerator MissingSceneFailsVisiblyAndReturnsToMenu()
@@ -87,20 +81,8 @@ namespace Avoidance.Tests.PlayMode
             yield return CaptureProduct("menu");
             Button("CAMPAIGN Button").onClick.Invoke(); yield return null;
             yield return CaptureProduct("campaign");
-            var video = Object.FindAnyObjectByType<LoadingPresentation>().GetComponent<VideoPlayer>();
-            Assert.That(video.clip, Is.Not.Null);
-            Assert.That(Resources.Load<Texture2D>("Loading/RydersRoad_LoadingPoster"), Is.Not.Null);
-            video.Play(); var deadline = Time.realtimeSinceStartup + 5;
-            while (video.frame < 2 && Time.realtimeSinceStartup < deadline) yield return null;
-            var first = video.frame; deadline = Time.realtimeSinceStartup + 5;
-            while (video.frame <= first && Time.realtimeSinceStartup < deadline) yield return null;
-            Assert.That(video.frame, Is.GreaterThan(first), $"Editor decoder must advance actual frames: prepared={video.isPrepared} playing={video.isPlaying} time={video.time} scale={Time.timeScale}");
-            var frameTexture = new Texture2D(1280, 720, TextureFormat.RGB24, false);
-            var previousTarget = RenderTexture.active; RenderTexture.active = video.targetTexture;
-            frameTexture.ReadPixels(new Rect(0, 0, 1280, 720), 0, 0); frameTexture.Apply();
-            File.WriteAllBytes("Logs/Phase092VisualQA/decoded-video-frame.png", frameTexture.EncodeToPNG());
-            RenderTexture.active = previousTarget; Object.Destroy(frameTexture);
-            video.Pause();
+            Assert.That(Object.FindAnyObjectByType<LoadingPresentation>().GetComponent<VideoPlayer>(), Is.Null);
+            Assert.That(Resources.Load<Texture2D>("Branding/Jesaias_Emblem"), Is.Not.Null);
             var card = Object.FindObjectsByType<Transform>(FindObjectsSortMode.None).Single(x => x.name == "Journey module.001.first-steps");
             card.GetComponentsInChildren<Button>().Single(x => x.interactable).onClick.Invoke();
             CaptureNow("loading");
@@ -214,8 +196,7 @@ namespace Avoidance.Tests.PlayMode
                 yield return null;
             }
             var module = Object.FindAnyObjectByType<ModuleSceneController>();
-            var video = overlay.GetComponent<VideoPlayer>();
-            var state = $"scene={SceneManager.GetActiveScene().name} module={module?.ActiveModule?.StableModuleId} player={Object.FindAnyObjectByType<ParkourMotor>() != null} overlay={overlay.GetComponent<CanvasGroup>().alpha} raycasts={overlay.GetComponent<CanvasGroup>().blocksRaycasts} videoSource={video.source} prepared={video.isPrepared} playing={video.isPlaying} frame={video.frame} texture={video.texture != null}";
+            var state = $"scene={SceneManager.GetActiveScene().name} module={module?.ActiveModule?.StableModuleId} overlay={overlay.GetComponent<CanvasGroup>().alpha}";
             Directory.CreateDirectory("Logs/Phase092VisualQA");
             File.AppendAllText("Logs/Phase092VisualQA/navigation-trace.txt", id + " | " + state + "\n");
             Assert.That(module, Is.Not.Null, state);

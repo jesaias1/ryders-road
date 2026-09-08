@@ -1,3 +1,14 @@
+## 0.11.0 Campaign presentation and World 005
+
+ADR 0023 and Docs/PRODUCTION_0110.md supersede historical production stop gates.
+Accepted Campaign controls and all isolated 0.10.0 movement trials remain intact.
+World 005 is Windward Observatory, using reserved `module.005.foundry-pulse`;
+Spiral stays separate. V4 identities and persisted meanings are unchanged.
+Continuous directional skies and opt-in profile lighting replace Campaign's
+mismatched illustrated cubemap. Loading keeps the existing transition host with
+an editable Jesaias emblem and lightweight opacity pulse. Physical S23 approval,
+rank calibration, final audio mix and sustained performance remain open.
+
 ## 0.9.9 physical feedback and Campaign Flow trial
 
 A solid non-route ledge must not strand the player. Foundry uses AuthoredSurface.RestoreOnLanding on scenery only; the contact relay requests normal fall recovery for walkable normals, ignoring wall/underside contacts. Default is false; do not tag legitimate architecture or shortcuts indiscriminately. Verify jump sightlines at takeoff and airborne eye heights in addition to capsule clearance. Foundry route geometry/difficulty is unchanged; content version is 2.

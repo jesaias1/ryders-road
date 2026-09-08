@@ -44,6 +44,16 @@ Source license URL: https://creativecommons.org/publicdomain/zero/1.0/
 | Castle_Wall_Corner | Kenney Castle Kit | https://kenney.nl/assets/castle-kit | CC0 1.0 | wall-corner.fbx | Assets/_Game/Art/ThirdParty/Kenney/CastleKit/Source/RR_Castle_Wall_Corner.fbx; Assets/_Game/Art/Environment/WorldAssets/AncientAbyss/PF_RR_World_Castle_Wall_Corner.prefab | Material replaced with MAT_RR_World_Ancient_Ivory. |
 | Castle_Gate | Kenney Castle Kit | https://kenney.nl/assets/castle-kit | CC0 1.0 | gate.fbx | Assets/_Game/Art/ThirdParty/Kenney/CastleKit/Source/RR_Castle_Gate.fbx; Assets/_Game/Art/Environment/WorldAssets/AncientAbyss/PF_RR_World_Castle_Gate.prefab | Material replaced with MAT_RR_World_Deep_Slate. |
 
+## 0.11.0 audio additions (2026-09-08)
+
+No new third-party pack. Existing CC0 `footstep_concrete_001.ogg` is also used
+for quiet grounded steps (.13); `click_003.ogg` for Restore Point (.18) and
+`impactSoft_heavy_000.ogg` for Restore (.16). Original sources/licenses below
+remain intact. `Wind110.wav` is original offline filtered periodic noise, authored
+by Tools/Render-Wind.py with deterministic seed 110; no sampled recording or
+external melody. Gain .045 in existing Campaign worlds, .09 in Windward.
+These gains remain subject to S23 speaker/headphone listening approval.
+
 ## 0.9.7 contact-audio candidate (2026-09-08)
 
 Creator: Kenney. Impact Sounds 1.0: https://kenney.nl/assets/impact-sounds .

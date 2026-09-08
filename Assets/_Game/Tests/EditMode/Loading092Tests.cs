@@ -11,11 +11,7 @@ namespace Avoidance.Tests.EditMode
         [Test]
         public void PackagedMediaAndBoundedTransitionProfileExist()
         {
-            var clip = Resources.Load<VideoClip>("Loading/RydersRoad_Loading");
-            Assert.That(clip, Is.Not.Null);
-            Assert.That(clip.width, Is.EqualTo(1280)); Assert.That(clip.height, Is.EqualTo(720));
-            Assert.That(clip.frameCount, Is.GreaterThan(240));
-            Assert.That(Resources.Load<Texture2D>("Loading/RydersRoad_LoadingPoster"), Is.Not.Null);
+            Assert.That(Resources.Load<Texture2D>("Branding/Jesaias_Emblem"), Is.Not.Null);
             var profile = Resources.Load<LoadingTransitionProfile>("LoadingTransitionProfile");
             Assert.That(profile, Is.Not.Null);
             Assert.That(profile.SceneTimeoutSeconds, Is.InRange(5, 30));
@@ -29,9 +25,9 @@ namespace Avoidance.Tests.EditMode
             Assert.That(PlayerSettings.SplashScreen.showUnityLogo, Is.False);
             Assert.That(PlayerSettings.SplashScreen.background, Is.Not.Null);
             Assert.That(AssetDatabase.GetAssetPath(PlayerSettings.SplashScreen.background),
-                Is.EqualTo("Assets/Branding/Android/RydersRoad_Startup.jpg"));
+                Is.EqualTo("Assets/Branding/Android/Jesaias_Startup.png"));
             Assert.That(PlayerSettings.SplashScreen.blurBackgroundImage, Is.False);
-            var importer = (TextureImporter)AssetImporter.GetAtPath("Assets/Branding/Android/RydersRoad_Startup.jpg");
+            var importer = (TextureImporter)AssetImporter.GetAtPath("Assets/Branding/Android/Jesaias_Startup.png");
             Assert.That(importer.isReadable, Is.True, "Android native splash export needs CPU texture access");
             Assert.That(importer.textureCompression, Is.EqualTo(TextureImporterCompression.Uncompressed));
             var settings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/ProjectSettings.asset")[0]);

@@ -220,8 +220,8 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(Object.FindAnyObjectByType<PatchBlock>().TryComplete(Object.FindAnyObjectByType<ParkourMotor>()),Is.True);
             yield return new WaitForSecondsRealtime(.3f);
             Assert.That(ModuleProgressionData.GetRecord(save.Current.progression,Id).bestRank,Is.EqualTo("Bronze"));
-            Assert.That(ModuleSelectionState.GetNextCampaignModuleId(Id),Is.Null);
-            Assert.That(Object.FindObjectsByType<Button>().Any(b=>b.name=="NEXT MODULE Button" && b.gameObject.activeInHierarchy),Is.False);
+            Assert.That(ModuleSelectionState.GetNextCampaignModuleId(Id),Is.EqualTo("module.005.foundry-pulse"));
+            Assert.That(Object.FindObjectsByType<Button>().Any(b=>b.name=="NEXT MODULE Button" && b.gameObject.activeInHierarchy),Is.True);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");yield return new WaitForSecondsRealtime(.2f);
             Click("CAMPAIGN Button");Click("MORE ROADS Button");yield return null;
             Capture("Logs/Production098QA/campaign-fourth-road.png");

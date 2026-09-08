@@ -34,6 +34,14 @@ namespace Avoidance.Gameplay.Visuals
         [SerializeField] private float _distantIslandDensity = 1f;
         [SerializeField] private float _horizonLayerOpacity = 0.72f;
 
+        [SerializeField] private AudioClip _ambienceClip;
+        [SerializeField, Range(0,1)] private float _ambienceGain = .07f;
+        public AudioClip AmbienceClip => _ambienceClip;
+        public float AmbienceGain => _ambienceGain;
+        [SerializeField] private bool _authoredLighting;
+        [SerializeField] private Vector3 _sunEuler = new Vector3(48,-32,0);
+        public bool AuthoredLighting => _authoredLighting;
+        public Vector3 SunEuler => _sunEuler;
         [SerializeField] private Material _skyboxMaterial;
         [SerializeField] private bool _overrideBiomeFog;
         public Material SkyboxMaterial => _skyboxMaterial;

@@ -87,7 +87,7 @@ MonoBehaviour:
     _exitPosition: {x: 3, y: 4.6, z: 67}
     _estimatedTimeSaved: 3.6
     _mechanics: 0800000001000000
-  _environmentProfile: {fileID: 11400000, guid: 7eb7a0625794d0d408e4b41b47de1a9a, type: 2}
+  _environmentProfile: {fileID: 11400000, guid: 2638eba4c4ecea44581ba9daca021c54, type: 2}
   _environmentBiomeProfile: {fileID: 11400000, guid: 805a1458c0ac84f4fa75428e5b7749c2, type: 2}
   _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
   _loreBugDescription: A broken route compiler has made the road unstable around

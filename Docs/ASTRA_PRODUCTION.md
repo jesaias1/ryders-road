@@ -1,3 +1,14 @@
+## 0.11.0 Campaign presentation and World 005
+
+ADR 0023 and Docs/PRODUCTION_0110.md supersede historical production stop gates.
+Accepted Campaign controls and all isolated 0.10.0 movement trials remain intact.
+World 005 is Windward Observatory, using reserved `module.005.foundry-pulse`;
+Spiral stays separate. V4 identities and persisted meanings are unchanged.
+Continuous directional skies and opt-in profile lighting replace Campaign's
+mismatched illustrated cubemap. Loading keeps the existing transition host with
+an editable Jesaias emblem and lightweight opacity pulse. Physical S23 approval,
+rank calibration, final audio mix and sustained performance remain open.
+
 ## 0.9.9 physical feedback and Campaign Flow trial
 
 Current physical priority: verify 0.9.9 fixes and select the Flow foundation on real roads through Campaign Flow Trial. The user prefers Flow over fully manual and accepts easier ordinary Foundry completion; no forced difficulty escalation. Old motor stays recoverable pending replacement approval. Continue audio/mix and a complete fifth world under the shared art rules after this coherent test milestone; see AI_HANDOFF.md and PRODUCTION_099.md.

@@ -28,5 +28,9 @@ MonoBehaviour:
   _qualityProfile: 1
   _distantIslandDensity: 1
   _horizonLayerOpacity: 0.82
+  _ambienceClip: {fileID: 0}
+  _ambienceGain: 0.07
+  _authoredLighting: 0
+  _sunEuler: {x: 48, y: -32, z: 0}
   _skyboxMaterial: {fileID: 0}
   _overrideBiomeFog: 0

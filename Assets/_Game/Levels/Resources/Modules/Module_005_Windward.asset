@@ -1,0 +1,339 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e4f289b8713814bbfc1b113461f7cf, type: 3}
+  m_Name: Module_005_Windward
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Levels.ModuleDefinition
+  _stableModuleId: module.005.foundry-pulse
+  _displayName: Campaign 05 - Windward Observatory
+  _internalName: module_005_windward
+  _projectId: project.ryders-block
+  _worldId: world.windward-observatory
+  _contentVersion: 1
+  _sceneName: ModuleRunner
+  _difficulty: 2
+  _startPoint:
+    _position: {x: -18, y: 0.35, z: 19}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+  _startAnchorStableId: start.module-005.windward
+  _startSupportBlockStableId: m05.arrival
+  _useCustomFallThreshold: 1
+  _fallThresholdY: -20
+  _disableAutomaticDistantFragments: 1
+  _patchBlock:
+    _stableId: patch.module-005.observatory
+    _pose:
+      _position: {x: 46, y: 8.5, z: 41}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: m05.patch.base
+    _size: {x: 2.2, y: 2.2, z: 2.2}
+  _restorePoints:
+  - _stableId: restore.module-005.west
+    _order: 0
+    _pose:
+      _position: {x: -18, y: 1.6, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: m05.west.restore
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  - _stableId: restore.module-005.east
+    _order: 1
+    _pose:
+      _position: {x: 18, y: 4.6, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: m05.east.restore
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  - _stableId: restore.module-005.lens
+    _order: 2
+    _pose:
+      _position: {x: 38, y: 6.6, z: 22}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _supportBlockStableId: m05.lens.restore
+    _restoreOffset: {x: 0, y: 0.35, z: 0}
+  _expectedCleanTime: 50
+  _estimatedCasualTime: 120
+  _rankThresholds:
+    _silverSeconds: 100
+    _goldSeconds: 72
+    _diamondSeconds: 51
+    _calibrationState: 0
+    _thresholdVersion: 1
+    _designerNotes: Provisional; Bronze has no deadline.
+  _mechanicsUsed: 0000000001000000030000000400000008000000
+  _optionalShortcuts:
+  - _stableId: shortcut.module-005.chord
+    _displayName: Instrument maintenance chord
+    _entryPosition: {x: -12, y: 2.1, z: 40}
+    _exitPosition: {x: 18, y: 4.6, z: 40}
+    _estimatedTimeSaved: 7
+    _mechanics: 01000000
+  _environmentProfile: {fileID: 11400000, guid: 01ae7109bc5abc14b9777a4587f28d2f, type: 2}
+  _environmentBiomeProfile: {fileID: 11400000, guid: 82c37c0b66e6240488fbb3bc514fc5b8, type: 2}
+  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _loreBugDescription: Cross the wind instrument and reconnect the observatory.
+  _developerNotes: Arrival / West Anchorage / Wind Arc / Lens Ascent / Telescope
+    Terrace. Inner maintenance chord is optional. Physical timing pending.
+  _blocks:
+  - _stableId: m05.arrival
+    _pose:
+      _position: {x: -18, y: 0, z: 20}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 7, y: 0.6, z: 7}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.approach.a
+    _pose:
+      _position: {x: -18, y: 0.4, z: 25}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.approach.b
+    _pose:
+      _position: {x: -18, y: 0.8, z: 30}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.approach.c
+    _pose:
+      _position: {x: -18, y: 1.2, z: 35}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.west.restore
+    _pose:
+      _position: {x: -18, y: 1.6, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 7, y: 0.6, z: 6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.01
+    _pose:
+      _position: {x: -17.386665, y: 1.85, z: 44.65874}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.02
+    _pose:
+      _position: {x: -15.588457, y: 2.1, z: 49}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.03
+    _pose:
+      _position: {x: -12.7279215, y: 2.35, z: 52.72792}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.04
+    _pose:
+      _position: {x: -9.000001, y: 2.6, z: 55.588455}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.05
+    _pose:
+      _position: {x: -4.658745, y: 2.85, z: 57.386665}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.06
+    _pose:
+      _position: {x: -0.000000786805, y: 3.1, z: 58}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.07
+    _pose:
+      _position: {x: 4.6587434, y: 3.35, z: 57.386665}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.08
+    _pose:
+      _position: {x: 8.999999, y: 3.6, z: 55.58846}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.09
+    _pose:
+      _position: {x: 12.7279215, y: 3.85, z: 52.72792}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.10
+    _pose:
+      _position: {x: 15.588457, y: 4.1, z: 49}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.arc.11
+    _pose:
+      _position: {x: 17.386665, y: 4.35, z: 44.65874}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.east.restore
+    _pose:
+      _position: {x: 18, y: 4.6, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 7, y: 0.6, z: 6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.ascent.a
+    _pose:
+      _position: {x: 22, y: 5, z: 35}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.ascent.b
+    _pose:
+      _position: {x: 26, y: 5.4, z: 31}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.ascent.c
+    _pose:
+      _position: {x: 30, y: 5.8, z: 28}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.ascent.d
+    _pose:
+      _position: {x: 34, y: 6.2, z: 25}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.lens.restore
+    _pose:
+      _position: {x: 38, y: 6.6, z: 22}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 7, y: 0.6, z: 6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.lens.a
+    _pose:
+      _position: {x: 42, y: 7, z: 26}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.lens.b
+    _pose:
+      _position: {x: 45, y: 7.4, z: 31}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.lens.c
+    _pose:
+      _position: {x: 46, y: 7.8, z: 36}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4.6, y: 0.6, z: 4.6}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.patch.base
+    _pose:
+      _position: {x: 46, y: 8.2, z: 41}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 8, y: 0.6, z: 7}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.skill.chord.1
+    _pose:
+      _position: {x: -12, y: 2.1, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _visualRole: 1
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.skill.chord.2
+    _pose:
+      _position: {x: -6, y: 2.6, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _visualRole: 1
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.skill.chord.3
+    _pose:
+      _position: {x: 0, y: 3.1, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _visualRole: 1
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.skill.chord.4
+    _pose:
+      _position: {x: 6, y: 3.6, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _visualRole: 1
+    _editorLabel: 0
+    _label:
+  - _stableId: m05.skill.chord.5
+    _pose:
+      _position: {x: 12, y: 4.1, z: 40}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3.2, y: 0.6, z: 3.2}
+    _visualRole: 1
+    _editorLabel: 0
+    _label:
+  _movingBlocks: []
+  _boostBlocks: []
+  _waterVolumes: []
+  _surfSurfaces: []
+  _crumblingBlocks: []
+  _decorations: []
+  _cameraHints: []
+  _completionRewards: []

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c697171b4cfac4eb14deb1444c8044, type: 3}
+  m_Name: Biome_Windward
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Worlds.EnvironmentBiomeProfile
+  _combineStaticGeometry: 0
+  _biomeId: biome.windward
+  _displayName: Windward Observatory
+  _kind: 5
+  _atmosphereTint: {r: 0.63, g: 0.7, b: 0.8, a: 1}
+  _mistColor: {r: 0.7, g: 0.74, b: 0.8, a: 1}
+  _hazeColor: {r: 0.36, g: 0.43, b: 0.6, a: 1}
+  _mistOceanY: -65
+  _mistLayers: []
+  _worldObjects:
+  - _stableId: biome.windward.route-structure
+    _prefab: {fileID: 8596286133590913722, guid: 7ff04eb61ea6f814393146f670c3aa60, type: 3}
+    _position: {x: 0, y: 0, z: 0}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 1, y: 1, z: 1}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 1
+    _depthBand: 1
+    _depthFadeStrength: 0.65
+  - _stableId: biome.windward.wind-instrument
+    _prefab: {fileID: 8708733099380218088, guid: e10ee531a49e8334f8619e794972b50f, type: 3}
+    _position: {x: 0, y: 0, z: 0}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 1, y: 1, z: 1}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 1
+    _depthBand: 1
+    _depthFadeStrength: 0.65
+  - _stableId: biome.windward.telescope
+    _prefab: {fileID: 1915091833274101508, guid: 6377b8f3e123518469cec554de1c1e52, type: 3}
+    _position: {x: 0, y: 0, z: 0}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 1, y: 1, z: 1}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 1
+    _depthBand: 1
+    _depthFadeStrength: 0.65
+  - _stableId: biome.windward.west-sail
+    _prefab: {fileID: 8828810961623718655, guid: 8fc792553ee598d4680b7a495bd608f4, type: 3}
+    _position: {x: -62, y: -12, z: 65}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 1.5, y: 1.5, z: 1.5}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 0
+    _depthBand: 3
+    _depthFadeStrength: 0.65
+  - _stableId: biome.windward.north-sail
+    _prefab: {fileID: 8828810961623718655, guid: 8fc792553ee598d4680b7a495bd608f4, type: 3}
+    _position: {x: 8, y: -24, z: 119}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 2.2, y: 2.2, z: 2.2}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 0
+    _depthBand: 3
+    _depthFadeStrength: 0.65
+  - _stableId: biome.windward.east-sail
+    _prefab: {fileID: 8828810961623718655, guid: 8fc792553ee598d4680b7a495bd608f4, type: 3}
+    _position: {x: 98, y: -18, z: 74}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 1.3, y: 1.3, z: 1.3}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 0
+    _depthBand: 3
+    _depthFadeStrength: 0.65

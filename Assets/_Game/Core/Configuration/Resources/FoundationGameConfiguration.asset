@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameTitle: RYDER'S ROAD
   _gameVersion: 0.5.0
-  _buildVersion: 0.10.0-real-route-air-control
+  _buildVersion: 0.11.0-worlds-and-windward
   _initialScene: ModuleSelector
   _developerTelemetryEnabled: 0
   _featureFlags:

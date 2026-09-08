@@ -16,11 +16,11 @@ MonoBehaviour:
   _skyMid: {r: 0.04, g: 0.58, b: 0.95, a: 1}
   _skyHorizon: {r: 0.65, g: 0.82, b: 0.96, a: 1}
   _skyWarmth: {r: 1, g: 0.6, b: 0.28, a: 1}
-  _fogColor: {r: 0.55, g: 0.72, b: 0.82, a: 1}
-  _ambientLight: {r: 0.62, g: 0.74, b: 0.83, a: 1}
-  _sunLight: {r: 1, g: 0.93, b: 0.8, a: 1}
-  _fogDensity: 0.004
-  _sunIntensity: 1.35
+  _fogColor: {r: 0.532, g: 0.714, b: 0.83199996, a: 1}
+  _ambientLight: {r: 0.43264, g: 0.5356, b: 0.59279996, a: 0.65}
+  _sunLight: {r: 1, g: 0.94, b: 0.84, a: 1}
+  _fogDensity: 0.0028
+  _sunIntensity: 1.24
   _nullSpaceY: -26
   _cloudDensity: 1
   _decorationDensity: 1
@@ -28,5 +28,9 @@ MonoBehaviour:
   _qualityProfile: 1
   _distantIslandDensity: 1
   _horizonLayerOpacity: 0.82
-  _skyboxMaterial: {fileID: 2100000, guid: 70f5bdd6103063141a85eb3e82cc3f0d, type: 2}
+  _ambienceClip: {fileID: 8300000, guid: 67eaadd0b83956a4e930633cb5ff06e0, type: 3}
+  _ambienceGain: 0.045
+  _authoredLighting: 1
+  _sunEuler: {x: 48, y: -32, z: 0}
+  _skyboxMaterial: {fileID: 2100000, guid: 6d437c76077284a4197cb74b6e3afe82, type: 2}
   _overrideBiomeFog: 1

@@ -186,8 +186,8 @@ namespace Avoidance.EditorTools
 
         private static void ConfigureStartupPresentation()
         {
-            const string source = "Assets/_Game/UI/Resources/Loading/RydersRoad_LoadingPoster.jpg";
-            const string target = "Assets/Branding/Android/RydersRoad_Startup.jpg";
+            const string source = "Assets/Branding/Android/Jesaias_Startup.png";
+            const string target = "Assets/Branding/Android/Jesaias_Startup.png";
             if (!File.Exists(target))
             {
                 File.Copy(source, target);
@@ -208,7 +208,7 @@ namespace Avoidance.EditorTools
             PlayerSettings.SplashScreen.show = true;
             PlayerSettings.SplashScreen.showUnityLogo = false;
             // A blank logo entry holds the supplied poster without duplicating its embedded brand.
-            PlayerSettings.SplashScreen.logos = new[] { PlayerSettings.SplashScreenLogo.Create(2f, null) };
+            PlayerSettings.SplashScreen.logos = new[] { PlayerSettings.SplashScreenLogo.Create(0f, null) };
             PlayerSettings.SplashScreen.background = poster;
             PlayerSettings.SplashScreen.backgroundPortrait = poster;
             PlayerSettings.SplashScreen.blurBackgroundImage = false;

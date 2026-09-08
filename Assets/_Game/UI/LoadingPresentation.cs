@@ -2,7 +2,7 @@ using System.Collections;
 using Avoidance.Gameplay.Levels;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Video;
+
 
 namespace Avoidance.UI
 {
@@ -11,15 +11,15 @@ namespace Avoidance.UI
         private CanvasGroup _group;
         private RawImage _image;
         private Texture2D _poster;
-        private VideoPlayer _video;
-        private RenderTexture _target;
+        private RectTransform _emblem;
+
         private Coroutine _fade;
         private LoadingTransitionProfile _profile;
         private GameObject _failure;
         private Text _failureText;
-        private bool _showing, _failedMedia;
-        private float _lastFrameAt;
-        private long _lastFrame = -1;
+        private bool _showing;
+
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Install()
         {
@@ -33,25 +33,27 @@ namespace Avoidance.UI
             var canvas = gameObject.AddComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.sortingOrder = 1000;
             gameObject.AddComponent<GraphicRaycaster>();
             _group = gameObject.AddComponent<CanvasGroup>(); _group.alpha = 0; _group.blocksRaycasts = false;
-            var back = new GameObject("Loading Blue", typeof(RectTransform), typeof(Image)); back.transform.SetParent(transform, false);
-            Stretch(back.GetComponent<RectTransform>()); back.GetComponent<Image>().color = new Color(0.025f, 0.15f, 0.28f);
-            var frame = new GameObject("Supplied Loading Film", typeof(RectTransform), typeof(RawImage), typeof(AspectRatioFitter)); frame.transform.SetParent(transform, false);
-            Stretch(frame.GetComponent<RectTransform>());
-            var fit = frame.GetComponent<AspectRatioFitter>(); fit.aspectMode = AspectRatioFitter.AspectMode.EnvelopeParent; fit.aspectRatio = 16f / 9f;
-            _image = frame.GetComponent<RawImage>(); _poster = Resources.Load<Texture2D>("Loading/RydersRoad_LoadingPoster"); _image.texture = _poster;
-            _target = new RenderTexture(1280, 720, 0, RenderTextureFormat.ARGB32) { name = "Road Loading Video Target" }; _target.Create();
-            _video = gameObject.AddComponent<VideoPlayer>(); _video.playOnAwake = false; _video.isLooping = true;
-            _video.source = VideoSource.VideoClip; _video.clip = Resources.Load<VideoClip>("Loading/RydersRoad_Loading");
-            _video.renderMode = VideoRenderMode.RenderTexture; _video.targetTexture = _target;
-            _video.audioOutputMode = VideoAudioOutputMode.None; _video.timeUpdateMode = VideoTimeUpdateMode.DSPTime;
-            _video.waitForFirstFrame = true;
-            _video.prepareCompleted += Ready; _video.errorReceived += VideoError;
+            var back = new GameObject("Loading Background", typeof(RectTransform), typeof(Image)); back.transform.SetParent(transform, false);
+            Stretch(back.GetComponent<RectTransform>()); back.GetComponent<Image>().color = new Color(5/255f,14/255f,24/255f);
+            var frame = new GameObject("Jesaias Emblem", typeof(RectTransform), typeof(RawImage)); frame.transform.SetParent(transform, false);
+            _image = frame.GetComponent<RawImage>(); _poster = Resources.Load<Texture2D>("Branding/Jesaias_Emblem"); _image.texture = _poster;
+            _image.enabled = _poster != null; _image.raycastTarget = false;
+            _emblem = frame.GetComponent<RectTransform>();
+            _emblem.anchorMin = _emblem.anchorMax = new Vector2(.5f,.5f);
+            LayoutEmblem();
+            if (_poster == null)
+            {
+                var fallback = new GameObject("Studio fallback", typeof(RectTransform), typeof(Text)); fallback.transform.SetParent(transform,false);
+                Stretch(fallback.GetComponent<RectTransform>()); var text=fallback.GetComponent<Text>();
+                text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); text.text="JESAIAS GAMES";
+                text.alignment=TextAnchor.MiddleCenter; text.fontSize=24; text.color=new Color(.7f,.85f,.86f);
+            }
             CreateFailurePanel();
             UnitySceneLevelLoader.LoadingStarted += Begin;
             UnitySceneLevelLoader.LoadingFinished += Finish;
             UnitySceneLevelLoader.LoadingFailed += Failed;
             // Cover the first managed frame too, before Bootstrap publishes a load event.
-            // Native startup uses the same approved poster through PlayerSettings.
+            // Native startup uses the same emblem through PlayerSettings.
             Begin();
         }
         private void CreateFailurePanel()
@@ -73,41 +75,34 @@ namespace Avoidance.UI
         private void Begin()
         {
             if (_fade != null) StopCoroutine(_fade); _fade = null;
-            _failure.SetActive(false); _showing = true; _failedMedia = false; _lastFrame = -1; _lastFrameAt = Time.realtimeSinceStartup;
+            _failure.SetActive(false); _showing = true;
             _group.alpha = 1; _group.blocksRaycasts = true; _image.texture = _poster;
-            if (_video.clip == null || !_video.isActiveAndEnabled) { MediaFallback("Video unavailable"); return; }
-            if (_video.isPrepared) _video.Play(); else _video.Prepare();
         }
-        private void Ready(VideoPlayer player) { if (_showing && !_failedMedia) player.Play(); }
+        private void LayoutEmblem()
+        {
+            var safe=Screen.safeArea;
+            float width=Mathf.Min(safe.width*.29f,safe.height*.56f);
+            _emblem.sizeDelta=new Vector2(width,width*430f/770f);
+            _emblem.anchoredPosition=safe.center-new Vector2(Screen.width,Screen.height)*.5f;
+        }
         private void Update()
         {
             if (!_showing) return;
             var request = UnitySceneLevelLoader.ActiveRequest;
             // Terminal state is authoritative even if a presentation callback was missed.
             if (request != null && request.IsTerminal) { if (request.State == SceneLoadState.Failed) Failed(request.Error); else Finish(); return; }
-            if (_failedMedia) return;
-            if (_video.isPrepared && _video.frame >= 0 && _video.frame != _lastFrame)
-            {
-                _lastFrame = _video.frame; _lastFrameAt = Time.realtimeSinceStartup; _image.texture = _target;
-            }
-            if (Time.realtimeSinceStartup - _lastFrameAt > (_profile != null ? _profile.MediaTimeoutSeconds : 2)) MediaFallback("No new decoded video frame before watchdog deadline");
-        }
-        private void VideoError(VideoPlayer player, string error) { MediaFallback(error); }
-        private void MediaFallback(string reason)
-        {
-            _failedMedia = true; _image.texture = _poster;
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
-            Debug.LogWarning($"[RoadLoading] Poster fallback: {reason}; source={_video.source} prepared={_video.isPrepared} playing={_video.isPlaying} frame={_video.frame}; {UnitySceneLevelLoader.ActiveRequest}");
-#endif
-            _video.Stop();
+            LayoutEmblem();
+            float period=_profile != null ? _profile.PulsePeriodSeconds : 2.4f;
+            float alpha=Mathf.Lerp(.78f,1f,.5f+.5f*Mathf.Cos(Time.unscaledTime*2*Mathf.PI/Mathf.Max(.1f,period)));
+            _image.color=new Color(1,1,1,alpha);
         }
         private void Failed(string reason)
         {
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            Debug.LogWarning($"[RoadLoading] Transition failed: {reason}; services={Avoidance.Core.Services.GameServices.Current != null} activeScene={UnityEngine.SceneManagement.SceneManager.GetActiveScene().name} overlay={_group.alpha} videoPrepared={_video.isPrepared} videoPlaying={_video.isPlaying} videoFrame={_video.frame}; {UnitySceneLevelLoader.ActiveRequest}");
+            Debug.LogWarning($"[RoadLoading] Transition failed: {reason}; services={Avoidance.Core.Services.GameServices.Current != null} activeScene={UnityEngine.SceneManagement.SceneManager.GetActiveScene().name} overlay={_group.alpha}; {UnitySceneLevelLoader.ActiveRequest}");
 #endif
             if (_fade != null) StopCoroutine(_fade); _fade = null; _showing = false;
-            _group.alpha = 1; _group.blocksRaycasts = true; _image.texture = _poster; _video.Pause();
+            _group.alpha = 1; _group.blocksRaycasts = true; _image.texture = _poster;
             _failureText.text = "This road could not open. Try returning to the menu.\nIf loading still fails, restart the app.";
             _failure.SetActive(true);
         }
@@ -120,13 +115,13 @@ namespace Avoidance.UI
         {
             var duration = _profile != null ? _profile.RevealSeconds : .18f;
             while (_group.alpha > 0) { _group.alpha = Mathf.MoveTowards(_group.alpha, 0, Time.unscaledDeltaTime / Mathf.Max(.01f, duration)); if (_group.alpha > 0) yield return null; }
-            _group.blocksRaycasts = false; _video.Pause(); _image.texture = _poster; _fade = null;
+            _group.blocksRaycasts = false; _image.texture = _poster; _fade = null;
         }
         private void OnDestroy()
         {
             UnitySceneLevelLoader.LoadingStarted -= Begin; UnitySceneLevelLoader.LoadingFinished -= Finish; UnitySceneLevelLoader.LoadingFailed -= Failed;
-            if (_video != null) { _video.prepareCompleted -= Ready; _video.errorReceived -= VideoError; _video.targetTexture = null; }
-            if (_target != null) { _target.Release(); Destroy(_target); }
+
+
         }
     }
 }

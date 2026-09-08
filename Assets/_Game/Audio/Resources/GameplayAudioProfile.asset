@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976f2bbeb1e6a7b47852e53cc8b9c897, type: 3}
   m_Name: GameplayAudioProfile
   m_EditorClassIdentifier:
+  _footstepDistance: 2.1
   _hardLandingSpeed: 14
   _entries:
   - Cue: 0
@@ -32,3 +33,12 @@ MonoBehaviour:
   - Cue: 19
     Clip: {fileID: 8300000, guid: ef0d8dfb3b8b16f43a722196fb120662, type: 3}
     Volume: 0.25
+  - Cue: 22
+    Clip: {fileID: 8300000, guid: 73eb56c7be377e749ad417eca0e62d14, type: 3}
+    Volume: 0.13
+  - Cue: 3
+    Clip: {fileID: 8300000, guid: ef0d8dfb3b8b16f43a722196fb120662, type: 3}
+    Volume: 0.18
+  - Cue: 5
+    Clip: {fileID: 8300000, guid: 40eec4bc1f1dd6e46953a49a3c1db46a, type: 3}
+    Volume: 0.16

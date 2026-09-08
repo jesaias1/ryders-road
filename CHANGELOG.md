@@ -1,3 +1,15 @@
+## 0.11.0 worlds and Windward Observatory
+
+Added complete fifth Campaign road Windward Observatory under reserved
+`module.005.foundry-pulse`, three Restores and an optional chord shortcut.
+Replaced loading video with an editable Jesaias emblem and subtle pulse;
+preserved transition readiness/recovery. Fixed Campaign sky source-wrap cuts
+with continuous directional atmosphere, per-world lighting/fog and matte
+Mountain materials. Added quiet ground footsteps, Restore cues and wind.
+Accepted controls, 0.10.0 experiments, existing routes, Spiral separation and
+V4 meanings remain. 243 EditMode / 87 PlayMode pass. See Docs/PRODUCTION_0110.md.
+Physical S23 approval and ranks remain open.
+
 ## 0.9.9 physical feedback and Campaign Flow trial
 
 Moved Foundry crane outside jump sightlines; added counted-fall Restore on explicitly marked scenery landings, preserving legitimate supports/shortcuts. Added Campaign Flow Trial across all four roads with accepted/Flow manual/Flow landing choices, transient speed/time feedback, safe Retry and no progression/preference writes. Preserved both motor assets and existing route difficulty. Foundry content v2; V4 unchanged. 240 EditMode / 57 PlayMode pass.

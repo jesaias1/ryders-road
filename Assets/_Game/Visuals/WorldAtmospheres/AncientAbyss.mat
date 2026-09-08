@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AncientAbyss
+  m_Shader: {fileID: 4800000, guid: 76137470716deef41b614ff20b75c8f5, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _CloudAmount: 0.62
+    m_Colors:
+    - _Cloud: {r: 0.63, g: 0.69, b: 0.78, a: 1}
+    - _Horizon: {r: 0.53, g: 0.61, b: 0.74, a: 1}
+    - _Nadir: {r: 0.12, g: 0.19, b: 0.31, a: 1}
+    - _SunColor: {r: 1, g: 0.85, b: 0.68, a: 1}
+    - _SunDirection: {r: 0.44939703, g: 0.52991927, b: -0.7191856, a: 0}
+    - _Zenith: {r: 0.1, g: 0.15, b: 0.32, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

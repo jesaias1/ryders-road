@@ -226,24 +226,25 @@ namespace Avoidance.UI
             RenderSettings.fog = true;
             RenderSettings.fogMode = FogMode.ExponentialSquared;
             RenderSettings.fogColor = _environment.OverrideBiomeFog ? _environment.FogColor : (_biome != null ? _biome.HazeColor : _environment.FogColor);
-            RenderSettings.fogDensity = _environment.OverrideBiomeFog ? _environment.FogDensity : ShouldUseGoldSlicePresentation()
+            RenderSettings.fogDensity = _environment.OverrideBiomeFog ? _environment.FogDensity : (!_environment.AuthoredLighting && ShouldUseGoldSlicePresentation())
                 ? 0.0055f
                 : (_biome != null ? 0.0075f : _environment.FogDensity);
-            RenderSettings.ambientLight = ShouldUseGoldSlicePresentation()
+            if (_environment.AuthoredLighting) RenderSettings.ambientMode = AmbientMode.Flat;
+            RenderSettings.ambientLight = (!_environment.AuthoredLighting && ShouldUseGoldSlicePresentation())
                 ? new Color(0.52f, 0.58f, 0.74f)
                 : _environment.AmbientLight;
             RenderSettings.skybox = CreateProceduralSkybox();
 
             var sunObject = new GameObject("Module Sun", typeof(Light));
-            sunObject.transform.rotation = ShouldUseGoldSlicePresentation()
+            sunObject.transform.rotation = _environment.AuthoredLighting ? Quaternion.Euler(_environment.SunEuler) : (!_environment.AuthoredLighting && ShouldUseGoldSlicePresentation())
                 ? Quaternion.Euler(42f, -46f, 0f)
                 : Quaternion.Euler(48f, -32f, 0f);
             var sun = sunObject.GetComponent<Light>();
             sun.type = LightType.Directional;
-            sun.intensity = ShouldUseGoldSlicePresentation()
+            sun.intensity = (!_environment.AuthoredLighting && ShouldUseGoldSlicePresentation())
                 ? Mathf.Max(_environment.SunIntensity, 1.86f)
                 : _environment.SunIntensity;
-            sun.color = ShouldUseGoldSlicePresentation()
+            sun.color = _environment.AuthoredLighting ? _environment.SunLight : ShouldUseGoldSlicePresentation()
                 ? new Color(1f, 0.88f, 0.68f)
                 : (_biome != null ? Color.Lerp(_environment.SunLight, _biome.AtmosphereTint, 0.25f) : _environment.SunLight);
             sun.shadows = LightShadows.Soft;
@@ -251,6 +252,8 @@ namespace Avoidance.UI
 
             CreateMobilePresentationVolume();
             CreateAmbientClouds();
+            if (_environment.AmbienceClip != null)
+                new GameObject("World Air").AddComponent<WorldAmbience>().Initialize(_environment.AmbienceClip, _environment.AmbienceGain);
             CreateBiomeWorld();
             CreateDistantFragments();
             CreateVisualBenchmarks();
@@ -397,6 +400,7 @@ namespace Avoidance.UI
             var input = new PlayerInputRouter(touchInput);
             var stats = new MovementSessionStats();
             var feedback = player.GetComponent<MovementFeedback>();
+            player.AddComponent<GroundTravelAudio>().Initialize(motor, feedback);
             player.AddComponent<AndroidGameplayHaptics>();
             player.AddComponent<MomentumPresentation>().Initialize(motor, feedback, _gameplayVfx, cameraObject.transform);
             var challenge = gameObject.AddComponent<FlowChallenge>();

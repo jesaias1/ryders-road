@@ -60,8 +60,8 @@ namespace Avoidance.Tests.EditMode
         [Test] public void FreshBronzeSequentialProgressionAndExplicitCampaignEnd()
         {
             var p=new ProgressionData();var ids=ModuleSelectionState.GetCampaignModuleIds();
-            Assert.That(ids,Is.EqualTo(new[]{"module.001.first-steps","module.002.moving-parts","module.003.flow-error","module.004.solar-foundry"}));
-            Assert.That(ids.Select(id=>ModuleProgressionData.IsUnlocked(p,ids,id)),Is.EqualTo(new[]{true,false,false,false}));
+            Assert.That(ids,Is.EqualTo(new[]{"module.001.first-steps","module.002.moving-parts","module.003.flow-error","module.004.solar-foundry", "module.005.foundry-pulse"}));
+            Assert.That(ids.Select(id=>ModuleProgressionData.IsUnlocked(p,ids,id)),Is.EqualTo(new[]{true,false,false,false,false}));
             Assert.That(ModuleProgressionData.GetContinueModuleId(p,ids),Is.EqualTo(ids[0]));
             for(int i=0;i<ids.Length;i++)
             {

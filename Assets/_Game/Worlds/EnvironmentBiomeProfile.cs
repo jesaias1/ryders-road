@@ -10,7 +10,8 @@ namespace Avoidance.Gameplay.Worlds
         MountainSky,
         AncientAbyss,
         EnergyVoid,
-        SolarFoundry
+        SolarFoundry,
+        Windward
     }
 
     public enum BiomeDepthBand
