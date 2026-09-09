@@ -1,3 +1,12 @@
+## 0.14.2 movement reference verification
+
+FoundationMotorTests adds speed/alignment measurements, actual post-bound
+diagnostics and separate neutral-ground/air checks. Production099Tests drives
+both real joystick and right look/hold handlers through the router/camera/motor.
+Keep full EditMode/PlayMode suites, real Campaign routes, Boost/surf, save
+isolation and Android build checks. Evidence: Docs/PRODUCTION_0142.md.
+Injected Unity UI events do not establish S23 touch delivery or physical feel.
+
 ## 0.14.1 whole-right-surface hold
 
 Production099Tests raycasts nine positions across the actual right gameplay area,

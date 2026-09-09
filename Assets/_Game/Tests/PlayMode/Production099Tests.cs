@@ -238,20 +238,32 @@ namespace Avoidance.Tests.PlayMode
             var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.layer=LayerMask.NameToLayer("Ground");
             floor.transform.position=new Vector3(1000,-.5f,0);floor.transform.localScale=new Vector3(300,1,300);
             Physics.SyncTransforms();player.Input.SetMode(PlayerInputMode.Touch);
+            var joystick=Object.FindAnyObjectByType<MovementJoystickControl>();
+            var ring=GameObject.Find("Movement Floating Origin").GetComponent<RectTransform>();
             foreach(int hz in new[]{30,60,120})
             {
                 touch.ResetState();player.Motor.ResetMotion(new Vector3(1000,.05f,0),Quaternion.identity,0);
                 var e=Pointer(804,new Vector2(.9f,.4f));look.OnPointerDown(e);
-                touch.SetMovement(Vector2.up);int before=player.Motor.JumpCount;
+                var move=Pointer(807,new Vector2(.25f,.4f));joystick.OnPointerDown(move);
+                int before=player.Motor.JumpCount;
                 for(int i=0;i<hz*5;i++)
                 {
-                    e.delta=new Vector2(.1f,-.02f);look.OnDrag(e);player.Input.Sample();
+                    // Two real UI pointer streams, including deliberate alternating strafe.
+                    var stick=new Vector2(i<hz*2 ? .65f : -.65f,1).normalized;
+                    move.position=RectTransformUtility.WorldToScreenPoint(null,
+                        ring.TransformPoint(stick*ring.rect.width*.5f));
+                    joystick.OnDrag(move);
+                    e.delta=new Vector2(24f/hz,-1.2f/hz);e.position+=e.delta;
+                    look.OnDrag(e);player.Input.Sample();
                     Assert.That(player.Input.JumpHeld,Is.True);
+                    Assert.That(player.Input.Move.x*stick.x,Is.GreaterThan(0));
                     player.CameraRig.ApplyLook(player.Input,PlayerInputMode.Touch,1f/hz,player.Motor);
                     player.Motor.Simulate(player.Input,1f/hz);
                 }
                 Assert.That(player.Motor.JumpCount-before,Is.GreaterThanOrEqualTo(6));
+                Debug.Log($"REFERENCE TOUCH hz={hz} jumps={player.Motor.JumpCount-before} yaw={player.transform.eulerAngles.y:F2} speed={player.Motor.HorizontalSpeed:F3}");
                 look.OnPointerUp(e);int released=player.Motor.JumpCount;
+                joystick.OnPointerUp(move);
                 for(int i=0;i<hz*2;i++){player.Input.Sample();player.Motor.Simulate(player.Input,1f/hz);}
                 Assert.That(player.Motor.JumpCount,Is.EqualTo(released));
                 Assert.That(player.Input.JumpHeld,Is.False);

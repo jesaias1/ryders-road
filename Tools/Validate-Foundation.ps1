@@ -314,7 +314,7 @@ if ($configuration -notmatch '(?m)^  _gameVersion: 0\.5\.0$') {
     $errors.Add('Game version is not 0.5.0.')
 }
 
-if ($configuration -notmatch '(?m)^  _buildVersion: 0\.14\.1-right-hold-look$') {
+if ($configuration -notmatch '(?m)^  _buildVersion: 0\.14\.2-goldsrc-reference$') {
     $errors.Add('Current production build version is invalid.')
 }
 
@@ -457,7 +457,7 @@ if ($visualBenchmarks -notmatch 'MobileBalanced' -or $visualBenchmarks -notmatch
 
 $projectSettings = Read-Text 'ProjectSettings/ProjectSettings.asset'
 if ($projectSettings -notmatch "(?m)^  productName: Ryder's Road$" `
-    -or $projectSettings -notmatch '(?m)^  bundleVersion: 0\.14\.1-right-hold-look$' `
+    -or $projectSettings -notmatch '(?m)^  bundleVersion: 0\.14\.2-goldsrc-reference$' `
     -or $projectSettings -notmatch '(?m)^  defaultScreenOrientation: 4$' `
     -or $projectSettings -notmatch '(?m)^  allowedAutorotateToPortrait: 0$' `
     -or $projectSettings -notmatch '(?m)^  allowedAutorotateToPortraitUpsideDown: 0$' `

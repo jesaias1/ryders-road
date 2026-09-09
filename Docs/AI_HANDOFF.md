@@ -1,3 +1,11 @@
+# Current authority - 0.14.2 GoldSrc reference verification
+
+See PRODUCTION_0142.md, GOLDSRC_MOVEMENT_REFERENCE.md and ADR 0028.
+Same compatibility-4 physics/tuning and whole-right hold controls as 0.14.1;
+applied air telemetry now measures the post-bound net change. New regression
+measurements confirm useful steering. Accepted Campaign/saves/PBs stay protected.
+Deliver the APK and Git milestone, then STOP for physical S23 feedback.
+
 # Current authority - 0.14.1 whole-right-area hold correction
 
 The entire right gameplay look area activates JumpHeld on contact, keeps it true

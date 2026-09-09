@@ -242,6 +242,68 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(motor.JumpCount,Is.EqualTo(2),"One buffered tap, one legitimate jump");
         }
 
+        [TestCase(30)] [TestCase(50)] [TestCase(60)] [TestCase(120)]
+        public void ReferenceAuditMeasuresUsefulStrafeAndPoorAlignment(int hz)
+        {
+            var motor = Motor(Vector3.up * 100, Candidate);
+            float dt = 1f / hz;
+            foreach (float speed in new[] { 7.8f, 10.8f, 14f, 17f })
+            {
+                motor.ResetMotion(Vector3.up * 100, Quaternion.identity, 0);
+                motor.ApplyLaunch(Vector3.forward * speed, true);
+                var input = new Input { Move = Vector2.right };
+                for (int i = 0; i < hz / 2; i++) motor.Simulate(input, dt);
+                float heading = Vector3.Angle(Vector3.forward, motor.ActualHorizontalVelocity);
+                Assert.That(heading, Is.GreaterThan(25), "Half-second deliberate side correction at " + speed);
+                Assert.That(motor.HorizontalSpeed, Is.GreaterThanOrEqualTo(speed - .002f));
+                if (speed < Candidate.SoftMomentumLimit)
+                    Assert.That(motor.HorizontalSpeed, Is.GreaterThan(speed + .5f));
+                Debug.Log($"REFERENCE STRAFE hz={hz} initial={speed:F1} final={motor.HorizontalSpeed:F3} heading={heading:F2}");
+
+                if (speed < Candidate.SoftMomentumLimit) continue;
+                motor.ResetMotion(Vector3.up * 100, Quaternion.Euler(0, 10, 0), 0);
+                motor.ApplyLaunch(Vector3.forward * speed, true);
+                input.Move = Vector2.up;
+                for (int i = 0; i < hz / 2; i++) motor.Simulate(input, dt);
+                Assert.That(motor.ActualHorizontalVelocity, Is.EqualTo(Vector3.forward * speed),
+                    "Poorly aligned input cannot gain speed or automatically turn existing momentum");
+            }
+        }
+
+        [TestCase(false)] [TestCase(true)]
+        public void AirDiagnosticReportsActualPostBoundWishChange(bool foundation)
+        {
+            var profile = foundation ? Candidate : Resources.Load<MovementProfile>("Training/Movement_RealRoute");
+            var motor = Motor(Vector3.up * 100, profile);
+            var initial = Vector3.forward * 14;
+            motor.ApplyLaunch(initial, true);
+            motor.Simulate(new Input { Move = Vector2.right }, 1f / 60);
+            var net = motor.ActualHorizontalVelocity - initial;
+            Assert.That(motor.AirEnergyLimited, Is.True);
+            Assert.That(motor.AirAppliedWishDelta,
+                Is.EqualTo(Vector3.Dot(net, motor.LastDesiredDirection.normalized)).Within(.000001f));
+            Assert.That(motor.AirAppliedWishDelta, Is.LessThan(motor.AirRequestedDelta));
+            Assert.That(net.z, Is.LessThan(0), "The bounded adaptation scales perpendicular momentum at its ceiling");
+        }
+
+        [TestCase(30)] [TestCase(60)] [TestCase(120)]
+        public void NeutralGroundStopsWhileNeutralAirCoasts(int hz)
+        {
+            Box(new Vector3(0, -.5f, 0), new Vector3(100, 1, 100));
+            var motor = Motor(Vector3.up * .05f, Candidate);
+            var input = new Input();
+            for (int i = 0; i < 10; i++) motor.Simulate(input, 1f / hz);
+            motor.ApplyLaunch(Vector3.forward * 14, true);
+            for (int i = 0; i < hz / 2; i++) motor.Simulate(input, 1f / hz);
+            Assert.That(motor.HorizontalSpeed, Is.LessThan(.001f));
+            // Separate airborne controller: teleporting the grounded controller
+            // retains Unity's last Move contact flags until its next Move.
+            motor = Motor(Vector3.up * 100, Candidate);
+            motor.ApplyLaunch(Vector3.forward * 14, true);
+            for (int i = 0; i < hz / 2; i++) motor.Simulate(input, 1f / hz);
+            Assert.That(motor.HorizontalSpeed, Is.EqualTo(14).Within(.001f));
+        }
+
         [Test] public void BufferedTapSurvivesCandidateMovementLock()
         {
             Box(new Vector3(0,-.5f,0),new Vector3(20,1,20));

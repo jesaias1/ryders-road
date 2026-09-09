@@ -1,3 +1,13 @@
+## 0.14.2 current movement-reference authority
+
+See Docs/GOLDSRC_MOVEMENT_REFERENCE.md and ADR 0028 for the inspected Xash3D/HLSDK
+principles and deliberate Unity differences. Foundation E retains compatibility
+4 and all 0.14.1 tuning, including whole-right LOOK + JUMP HOLD. It remains the
+intended shared model pending physical approval; accepted Campaign is recoverable.
+Half-second side input turns 17 m/s momentum about 40 degrees without speed loss.
+The bounded energy envelope remains a physical-test question. No upstream code
+or assets are imported. Docs/PRODUCTION_0142.md records evidence and handoff.
+
 ## 0.11.0 Campaign presentation and World 005
 
 ADR 0023 and Docs/PRODUCTION_0110.md supersede historical production stop gates.

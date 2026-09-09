@@ -1,3 +1,10 @@
+## 0.14.2 GoldSrc reference verification
+
+ADR 0028 retains Foundation compatibility 4 and the 0.14.1 whole-right-surface
+input. Corrected post-bound air telemetry has no velocity authority. Movement,
+profiles, Campaign isolation and V4 semantics remain unchanged. See
+Docs/GOLDSRC_MOVEMENT_REFERENCE.md and Docs/PRODUCTION_0142.md.
+
 ## 0.14.1 input correction
 
 The whole existing right gameplay look area now owns Foundation JumpHeld. Touch

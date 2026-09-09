@@ -562,10 +562,13 @@ namespace Avoidance.Gameplay.Player
                 : _profile.AirWishSpeed;
             _horizontalVelocity = RouteAirControlMath.Accelerate(before, wish, wishSpeed,
                 _profile.AirAcceleration, _profile.AirBraking, amount, _profile.SoftMomentumLimit, dt,
-                out var projected, out var requested, out var applied, out var limited);
+                out var projected, out var requested, out _, out var limited);
             AirProjectedSpeed = projected; AirRequestedDelta = requested;
-            AirAppliedWishDelta = applied; AirEnergyLimited = limited;
+            AirEnergyLimited = limited;
             AirNetDelta = _horizontalVelocity - before;
+            // Report the velocity change that survived the energy bound, as the
+            // previous candidate does. The pre-bound allowance overstates control.
+            AirAppliedWishDelta = Vector3.Dot(AirNetDelta, wish.normalized);
             LateralVelocity = Vector3.Dot(_horizontalVelocity, LastProjectedRight);
             VelocityHeadingYaw = Mathf.Atan2(_horizontalVelocity.x, _horizontalVelocity.z) * Mathf.Rad2Deg;
             HeadingVelocityDelta = Mathf.Abs(Mathf.DeltaAngle(CurrentHeadingYaw, VelocityHeadingYaw));

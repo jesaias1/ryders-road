@@ -1,3 +1,11 @@
+## 0.14.2 - GoldSrc reference verification
+
+- Inspected pinned upstream Xash3D FWGS/HLSDK movement; documented original Unity differences.
+- Retained Foundation physics/tuning and whole-right LOOK + JUMP HOLD for physical evaluation.
+- Corrected applied air telemetry after the speed bound; added measured steering/ground regressions.
+- Exercised simultaneous real joystick and right hold/drag event handlers. Campaign/save isolation remains.
+- Android artifact and verification: Docs/PRODUCTION_0142.md. Physical feedback pending.
+
 ## 0.13.0-gameplay-quality — 2026-09-09
 
 Reauthored Windward galleries, crumbling pressure pair and three-landing fast line;
