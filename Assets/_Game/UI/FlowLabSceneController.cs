@@ -24,7 +24,7 @@ namespace Avoidance.UI
         private TouchInputCoordinator touch;
         private Transform course;
         private Text feedback, instruction;
-        private MovementProfile baseline, candidate, previous;
+        private MovementProfile baseline, candidate, previous, foundation;
         private MovementLabVisualProfile visuals;
         private int roomIndex, restoreCount;
         private float feedbackCountdown;
@@ -43,6 +43,7 @@ namespace Avoidance.UI
             baseline=Resources.Load<MovementProfile>("MovementProfiles/Movement_Default");
             candidate=Resources.Load<MovementProfile>("Training/Movement_RealRoute");
             previous=Resources.Load<MovementProfile>("Training/Movement_Mastery");
+            foundation=Resources.Load<MovementProfile>("Training/Movement_Foundation");
             RenderSettings.fog=true;RenderSettings.fogColor=visuals.SkyFog;RenderSettings.fogDensity=.004f;
             RenderSettings.ambientLight=visuals.AmbientLight;
             var sun=new GameObject("Flow Lab Sun",typeof(Light));sun.transform.rotation=Quaternion.Euler(45,-25,0);
@@ -53,7 +54,7 @@ namespace Avoidance.UI
             touch.SetSessionControlProfile(TouchControlProfileKind.FlowSteerAutoDirect);
             checkpoints=new CheckpointService();checkpoints.SetStart(Room.start,Quaternion.identity);
             BuildRoom();
-            player=factory.CreatePlayer(Room.start,new MovementProfileSet(new[]{candidate,baseline,previous}),
+            player=factory.CreatePlayer(Room.start,new MovementProfileSet(new[]{candidate,baseline,previous,foundation}),
                 Resources.Load<CameraProfile>("Camera_Default"),touch,checkpoints,Application.version,oldStatus,oldCompletion,true);
             player.gameObject.AddComponent<MovementTrialTrace>().Configure(player.Motor, Room.id);
             RenderSettings.skybox=Resources.Load<Material>("Materials/MAT_RR_Skybox_Seamless");
@@ -63,7 +64,7 @@ namespace Avoidance.UI
             feedback=Label(safe,"Flow feedback",new Vector2(.25f,.71f),new Vector2(.75f,.81f),24);
             Button(safe,"ROOM",.02f,()=>SelectRoom((roomIndex+1)%definition.rooms.Length));
             Button(safe,"RETRY",.18f,Retry);
-            Button(safe,"MOTOR A/B/D",.34f,Compare);
+            Button(safe,"MOTOR A/B/D/E",.34f,Compare);
             viewButton=Button(safe,"VIEW: MANUAL",.50f,CompareView);
             Button(safe,"CONTROLS",.66f,()=> {touch.SetSessionControlProfile(touch.RuntimeProfile.FlowSteeringEnabled
                 ? TouchControlProfileKind.LeftMoveRightLookTapJump : TouchControlProfileKind.FlowSteerAutoDirect);Retry();});
@@ -84,14 +85,26 @@ namespace Avoidance.UI
         }
         public void Compare()
         {
-            player.Profiles.Select(player.Motor.Profile.RealRouteAirControl ? baseline.ProfileId
-                : player.Motor.Profile.MovementMastery ? candidate.ProfileId : previous.ProfileId);
-            player.Motor.SetProfile(player.Profiles.Current);Retry();
+            var current=player.Motor.Profile;
+            player.Profiles.Select(current.MovementFoundation ? candidate.ProfileId
+                : current.RealRouteAirControl ? baseline.ProfileId
+                : current.MovementMastery ? foundation.ProfileId : previous.ProfileId);
+            player.Motor.SetProfile(player.Profiles.Current);
+            ApplyTrialControls();Retry();
+        }
+        private void ApplyTrialControls()
+        {
+            if(player.Motor.Profile.MovementFoundation) touch.EnableFoundationJumpLook();
+            else
+            {
+                touch.DisableFoundationJumpLook();
+                touch.SetSessionControlProfile(TouchControlProfileKind.FlowSteerAutoDirect);
+            }
         }
         public void SelectPrevious()
         {
             player.Profiles.Select(previous.ProfileId);
-            player.Motor.SetProfile(previous);Retry();
+            player.Motor.SetProfile(previous);ApplyTrialControls();Retry();
         }
         public void Retry()
         {
@@ -115,6 +128,7 @@ namespace Avoidance.UI
         private void LateUpdate()
         {
             if(player==null)return;
+            if(player.Motor.Profile.MovementFoundation != touch.JumpLookEnabled){ApplyTrialControls();Retry();}
             var restore=player.GetComponent<RestoreController>();
             if(restoreCount!=restore.RestoreCount || player.transform.position.y<Room.start.y-definition.fallDepth)
                 Retry();
@@ -124,10 +138,13 @@ namespace Avoidance.UI
         }
         public void RefreshFeedback()
         {
-            string mode=player.Motor.Profile.RealRouteAirControl?"NEW ROUTE FLOW":player.Motor.Profile.MovementMastery?"PREVIOUS FLOW":"PRODUCTION BASELINE";
+            string mode=player.Motor.Profile.MovementFoundation?"FOUNDATION: HOLD JUMP + DRAG LOOK":player.Motor.Profile.RealRouteAirControl?"ROUTE FLOW":player.Motor.Profile.MovementMastery?"PREVIOUS FLOW":"PRODUCTION BASELINE";
             string view=!touch.RuntimeProfile.FlowSteeringEnabled ? "CLASSIC MANUAL"
                 : landingViewEnabled ? "LANDING VIEW" : "MANUAL VIEW";
-            instruction.text=$"{Room.title}  /  {mode}  /  {view}\n{Room.hint}";
+            string hint=player.Motor.Profile.MovementFoundation
+                ? "Left stick moves. Hold the Jump glyph and drag to look. Release for walking or surfing."
+                : Room.hint;
+            instruction.text=$"{Room.title}  /  {mode}  /  {view}\n{hint}";
             string metric=Room.exercise=="air"?$"Air gain +{session.AirGain:0.0} m/s"
                 :Room.exercise=="bhop"?$"Chain {session.BestChain}/{definition.requiredChain}  |  Takeoff retained {player.Motor.LastCompleteTakeoffRetention:P0}"
                 :Room.exercise=="landing" || Room.exercise=="diagnostic"?$"Clean jumps {session.Jumps}  |  Gold finish ahead"

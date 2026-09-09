@@ -114,7 +114,7 @@ namespace Avoidance.UI.Touch
             return Mathf.Max(1f, Mathf.Min(rect.width, rect.height));
         }
 
-        private Vector2 NormalizeDelta(Vector2 pixelDelta)
+        public Vector2 NormalizeDelta(Vector2 pixelDelta)
         {
             return pixelDelta * (1080f / ReferenceLength());
         }

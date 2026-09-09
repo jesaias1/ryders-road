@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Avoidance.UI.Touch
 {
     [DisallowMultipleComponent]
-    public sealed class TouchInputCoordinator : MonoBehaviour, ITouchInputProvider
+    public sealed class TouchInputCoordinator : MonoBehaviour, ITouchInputProvider, IHeldJumpInputSource
     {
         public const string ControlProfilePreferenceKey = "settings.touch-control-profile";
         public const string ControlProfilePreferenceVersionKey = "settings.touch-control-profile-version";
@@ -51,6 +51,46 @@ namespace Avoidance.UI.Touch
         private ISettingsService _settings;
 
         public Vector2 Movement => _movement;
+        public bool JumpLookEnabled { get; private set; }
+        private Vector2 _savedJumpMin, _savedJumpMax, _savedJumpPosition, _savedJumpSize;
+        public bool JumpHeld => JumpLookEnabled
+            && _ownership.GetOwner(TouchControlRole.Jump) != TouchOwnershipRegistry.UnassignedPointerId;
+
+        public void EnableFoundationJumpLook()
+        {
+            if (JumpLookEnabled) return;
+            JumpLookEnabled = true;
+            SetSessionControlProfile(TouchControlProfileKind.LeftMoveRightLookTapAndButton);
+            // Keep a distinct inward acquisition area, with ordinary look outside it.
+            if (_jump != null)
+            {
+                var rect = _jump.GetComponent<RectTransform>();
+                _savedJumpMin = rect.anchorMin; _savedJumpMax = rect.anchorMax;
+                _savedJumpPosition = rect.anchoredPosition; _savedJumpSize = rect.sizeDelta;
+                rect.anchorMin = rect.anchorMax = EnsureLayout().RightRestCenter;
+                rect.anchoredPosition = Vector2.zero;
+                rect.sizeDelta = Vector2.one * EnsureLayout().JumpButtonSize;
+            }
+        }
+
+        public void DisableFoundationJumpLook()
+        {
+            if (!JumpLookEnabled) return;
+            JumpLookEnabled = false;
+            ResetState();
+            if (_jump != null)
+            {
+                var rect = _jump.GetComponent<RectTransform>();
+                rect.anchorMin = _savedJumpMin; rect.anchorMax = _savedJumpMax;
+                rect.anchoredPosition = _savedJumpPosition; rect.sizeDelta = _savedJumpSize;
+            }
+        }
+
+        public void DragJumpLook(int pointerId, Vector2 normalizedDelta)
+        {
+            if (JumpLookEnabled && IsOwner(TouchControlRole.Jump, pointerId))
+                AddLookDelta(normalizedDelta);
+        }
         public TouchInputDebugState DebugState => new TouchInputDebugState(
             _rawMovement,
             _postDeadZoneMovement,
@@ -129,6 +169,7 @@ namespace Avoidance.UI.Touch
 
         public void SetControlProfile(TouchControlProfileKind controlProfile)
         {
+            if (JumpLookEnabled) return; // This isolated trial evaluates manual view only.
             SetSessionControlProfile(controlProfile);
             PersistControlProfile();
         }
@@ -137,6 +178,7 @@ namespace Avoidance.UI.Touch
         public void SetSessionControlProfile(TouchControlProfileKind controlProfile)
         {
             EnsureLayout();
+            if (JumpLookEnabled) controlProfile = TouchControlProfileKind.LeftMoveRightLookTapAndButton;
             _controlProfile = controlProfile;
             _jumpMode = ResolveJumpModeForControlProfile(_controlProfile);
             ApplyRuntimeProfile();

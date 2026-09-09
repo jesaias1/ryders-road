@@ -15,11 +15,12 @@ namespace Avoidance.Tests.PlayMode
 {
     public sealed class FlowLabPlayTests
     {
-        private sealed class FlowInput : IPlayerInputSource,IFlowSteeringInputSource
+        private sealed class FlowInput : IPlayerInputSource,IFlowSteeringInputSource,IHeldJumpInputSource
         {
             public Vector2 Move {get;set;}=Vector2.up;
             public Vector2 LookDelta {get;set;}
             public bool JumpPressed {get;set;}
+            public bool JumpHeld {get;set;}
             public bool FlowSteeringEnabled=>true;
             public AutoCameraProfileKind AutoCameraProfile=>AutoCameraProfileKind.Direct;
             public void ResetState(){Move=Vector2.zero;JumpPressed=false;}
@@ -61,14 +62,23 @@ namespace Avoidance.Tests.PlayMode
             }
             lab.Compare();Assert.That(motor.Profile.MovementMastery,Is.False);
             lab.Compare();Assert.That(motor.Profile.MovementMastery,Is.True);
+            lab.Compare();Assert.That(motor.Profile.MovementFoundation,Is.True);
+            Assert.That(touch.JumpLookEnabled,Is.True);Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.False);
+            Assert.That(touch.TryClaim(TouchControlRole.Jump,73),Is.True);
+            lab.Compare();Assert.That(motor.Profile.CompatibilityVersion,Is.EqualTo(3));
+            Assert.That(touch.JumpHeld,Is.False);Assert.That(touch.JumpLookEnabled,Is.False);
+            Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.True);
             Assert.That(PlayerPrefs.GetInt(TouchInputCoordinator.ControlProfilePreferenceKey,-1),Is.EqualTo(preference));
             Assert.That(ModuleSelectionState.GetCampaignModuleIds(),Is.EqualTo(campaignBefore));
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
-        [UnityTest] public IEnumerator SurfRoomRealEntryContactExitAndRetry()
+        [UnityTest] public IEnumerator SurfRoomRealEntryContactExitAndRetry() => VerifySurfRoom(false);
+        [UnityTest] public IEnumerator FoundationSurfRoomEntryExitAndRetry() => VerifySurfRoom(true);
+        private IEnumerator VerifySurfRoom(bool foundation)
         {
             FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
             var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
+            if(foundation){lab.Compare();lab.Compare();lab.Compare();}
             lab.SelectRoom(2);yield return null;
             var motor=lab.Player.Motor;var input=new FlowInput();float contact=0;
             for(int i=0;i<600 && !lab.Session.Complete;i++)
@@ -83,6 +93,24 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(motor.transform.position,Is.EqualTo(lab.Room.start));Assert.That(motor.IsSurfing,Is.False);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
+        [UnityTest] public IEnumerator FoundationHeldLaneCompletesWithoutRepeatedPresses()
+        {
+            FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
+            lab.Compare();lab.Compare();lab.Compare();lab.SelectRoom(1);yield return null;
+            var motor=lab.Player.Motor;var input=new FlowInput();int frame=0;
+            bool capture=System.Environment.GetEnvironmentVariable("RYDERS_FOUNDATION_CAPTURE")=="1";
+            for(int i=0;i<600 && !lab.Session.Complete;i++)
+            {
+                input.JumpHeld=motor.transform.position.z>5;
+                motor.Simulate(input,1f/60);lab.Session.Tick(motor,1f/60);
+                if(capture && i%4==0){lab.RefreshFeedback();Capture("Logs/Foundation140QA/held-"+(frame++).ToString("D4")+".png");}
+            }
+            Assert.That(lab.Session.Complete,Is.True);Assert.That(motor.JumpCount,Is.GreaterThanOrEqualTo(3));
+            Assert.That(input.JumpPressed,Is.False,"No repeated tap intents");
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+
         [UnityTest] public IEnumerator AirBhopAndShortFlowHaveReachableMeasuredFinishes()
         {
             FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;

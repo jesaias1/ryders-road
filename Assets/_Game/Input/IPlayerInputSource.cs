@@ -3,6 +3,12 @@ using UnityEngine;
 
 namespace Avoidance.Input
 {
+    // Optional capability preserves existing tap-only input implementations.
+    public interface IHeldJumpInputSource
+    {
+        bool JumpHeld { get; }
+    }
+
     public interface IPlayerInputSource
     {
         Vector2 Move { get; }

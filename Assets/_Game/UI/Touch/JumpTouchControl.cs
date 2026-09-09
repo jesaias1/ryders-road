@@ -9,6 +9,7 @@ namespace Avoidance.UI.Touch
     public sealed class JumpTouchControl :
         MonoBehaviour,
         IPointerDownHandler,
+        IDragHandler,
         IPointerUpHandler
     {
         private TouchInputCoordinator _coordinator;
@@ -53,6 +54,15 @@ namespace Avoidance.UI.Touch
 
             _coordinator.Release(TouchControlRole.Jump, eventData.pointerId);
             SetPressed(false);
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            // Match the adjacent look surface's sensitivity; ownership stays with
+            // the initial Jump contact even when it moves outside the button.
+            var look = GetComponentInParent<Canvas>()?.GetComponentInChildren<TouchLookControl>();
+            if (look != null)
+                _coordinator.DragJumpLook(eventData.pointerId, look.NormalizeDelta(eventData.delta));
         }
 
         public void ResetVisual() => SetPressed(false);

@@ -21,6 +21,15 @@ namespace Avoidance.Tests.EditMode
             CampaignFlowTrial.Complete(foundry,100);
             CampaignFlowTrial.Launch(foundry.StableModuleId,CampaignTrialMode.FlowLanding);
             Assert.That(CampaignFlowTrial.Best(foundry),Is.EqualTo(74));
+            CampaignFlowTrial.Launch(foundry.StableModuleId,CampaignTrialMode.Foundation);
+            Assert.That(CampaignFlowTrial.Best(foundry),Is.Zero);
+            var profile=Resources.Load<Avoidance.Gameplay.Player.MovementProfile>(CampaignFlowTrial.MovementResource);
+            Assert.That(profile.MovementFoundation && profile.HoldToHop,Is.True);
+            Assert.That(profile.CompatibilityVersion,Is.EqualTo(4));
+            CampaignFlowTrial.Complete(foundry,42);
+            CampaignFlowTrial.Launch(foundry.StableModuleId,CampaignTrialMode.FlowLanding);
+            Assert.That(CampaignFlowTrial.Best(foundry),Is.EqualTo(74));
+            Assert.That(Resources.Load<Avoidance.Gameplay.Player.MovementProfile>("MovementProfiles/Movement_Default").HoldToHop,Is.False);
             ModuleSelectionState.Select(first.StableModuleId);
             Assert.That(CampaignFlowTrial.Active,Is.False);
             Assert.That(ModuleSelectionState.DevelopmentOverride,Is.False);

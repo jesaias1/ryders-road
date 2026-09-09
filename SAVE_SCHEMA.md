@@ -1,3 +1,11 @@
+## 0.14.0 isolated movement candidate
+
+No schema or persisted meaning changes. Compatibility 4 exists only in transient
+Campaign trial E / Flow Lab. Trial attempts, rewards, completions and PBs skip save
+writes; E gets its own session-best key. Accepted Campaign still uses compatibility
+1 with the existing V4 historical/versioned PB extension. Physical approval is
+required before any explicit future Campaign compatibility promotion (ADR 0027).
+
 ## 0.13.0 compatible PB extension (V4 additive)
 
 `progression.historicalRecords` and `progression.versionedBests` are additive

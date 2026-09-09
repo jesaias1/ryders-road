@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816f4832d83144d48426712a70384e4b, type: 3}
+  m_Name: Movement_Foundation
+  m_EditorClassIdentifier:
+  _profileId: movement.foundation-v1
+  _displayName: Foundation candidate
+  _compatibilityVersion: 4
+  _movementMastery: 1
+  _realRouteAirControl: 1
+  _flowWishAngle: 65
+  _airBraking: 30
+  _surfDetachDuration: 0.12
+  _walkSpeed: 5.4
+  _runSpeed: 7.8
+  _acceleration: 52
+  _deceleration: 62
+  _groundFriction: 12
+  _groundDirectionResponse: 1.12
+  _steeringYawRate: 220
+  _lowSpeedYawRate: 260
+  _highSpeedYawRate: 150
+  _groundSteeringStrength: 1
+  _airSteeringStrength: 0.72
+  _surfSteeringStrength: 0.85
+  _maximumHeadingDeltaPerSecond: 260
+  _steeringAcceleration: 8
+  _steeringDeceleration: 12
+  _steeringResponseCurve: 1.15
+  _softMomentumLimit: 10.8
+  _hardVelocitySafetyLimit: 18
+  _airAcceleration: 26
+  _airWishSpeed: 8.2
+  _airControl: 0.72
+  _airTurnStrength: 4.7
+  _airMomentumGain: 0.32
+  _maxAirSpeedContribution: 3.1
+  _jumpHeight: 1.66
+  _gravity: 25
+  _timeToApex: 0.335
+  _gravityScale: 1
+  _fallGravityMultiplier: 1.38
+  _baseTakeoffMomentumRetention: 0.9
+  _highMomentumTakeoffRetention: 1
+  _takeoffMomentumRetentionPower: 1.6
+  _landingMomentumRetention: 1
+  _maximumFallSpeed: 34
+  _perfectHopWindow: 0.055
+  _goodHopWindow: 0.12
+  _bufferedHopWindow: 0.18
+  _perfectHopRetention: 1
+  _goodHopRetention: 0.96
+  _bufferedHopRetention: 0.9
+  _lateHopPenalty: 0.72
+  _coyoteTime: 0.15
+  _jumpBufferDuration: 0.17
+  _groundSnap: 0.22
+  _edgeTolerance: 0.11
+  _landingAssistance: 1
+  _movingPlatformInheritance: 1
+  _respawnMovementLockDuration: 0.08
+  _movementFoundation: 1
+  _holdToHop: 1
+  _overspeedWishRatio: 0.95

@@ -16,6 +16,13 @@ namespace Avoidance.Gameplay.Player
         [SerializeField] private bool _movementMastery;
         [Range(0f, .3f)] [SerializeField] private float _surfDetachDuration = .12f;
         public bool MovementMastery => _movementMastery;
+        [Header("Movement foundation trial")]
+        [SerializeField] private bool _movementFoundation;
+        [SerializeField] private bool _holdToHop;
+        [Range(0f, 1f)] [SerializeField] private float _overspeedWishRatio = .95f;
+        public bool MovementFoundation => _movementFoundation;
+        public bool HoldToHop => _holdToHop;
+        public float OverspeedWishRatio => _overspeedWishRatio;
         [Header("Isolated real-route candidate")]
         [SerializeField] private bool _realRouteAirControl;
         [Range(0f, 90f)] [SerializeField] private float _flowWishAngle = 65f;

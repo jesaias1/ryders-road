@@ -60,11 +60,15 @@ namespace Avoidance.Tests.PlayMode
         {
             yield return VerifyBronzeRoute(true);
         }
-        private static IEnumerator VerifyBronzeRoute(bool candidate)
+        [UnityTest] public IEnumerator FoundationSupportsJumpsAndFerryHaveTruthfulClearance()
+        {
+            yield return VerifyBronzeRoute(true,CampaignTrialMode.Foundation);
+        }
+        private static IEnumerator VerifyBronzeRoute(bool candidate, CampaignTrialMode mode = CampaignTrialMode.FlowLanding)
         {
             if(candidate)
             {
-                CampaignFlowTrial.Launch(Id,CampaignTrialMode.FlowLanding);
+                CampaignFlowTrial.Launch(Id,mode);
                 yield return new UnitySceneLevelLoader().LoadAsync("ModuleRunner");
                 yield return new WaitForSecondsRealtime(.3f);
                 Object.FindAnyObjectByType<PlayerRuntimeCoordinator>().enabled=false;

@@ -396,7 +396,11 @@ namespace Avoidance.UI
                 cameraProfile,
                 ParkourCameraProfile.CreateRuntimeDefault(),
                 routeCameraGraph);
-            if (CampaignFlowTrial.UsesCandidate)
+            if (CampaignFlowTrial.Mode == CampaignTrialMode.Foundation)
+            {
+                touchInput.EnableFoundationJumpLook();
+            }
+            else if (CampaignFlowTrial.UsesCandidate)
             {
                 touchInput.SetSessionControlProfile(TouchControlProfileKind.FlowSteerAutoDirect);
                 if (CampaignFlowTrial.Mode == CampaignTrialMode.FlowLanding)

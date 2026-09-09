@@ -266,9 +266,15 @@ namespace Avoidance.Tests.PlayMode
         }
 
         [UnityTest]
-        public IEnumerator Module003_BoostTriggerLandsRealMotorOnBronzeDestination()
+        public IEnumerator Module003_BoostTriggerLandsRealMotorOnBronzeDestination() => VerifyBoost(false);
+
+        [UnityTest]
+        public IEnumerator FoundationBoostTriggerLandsRealMotorOnBronzeDestination() => VerifyBoost(true);
+
+        private IEnumerator VerifyBoost(bool foundation)
         {
-            ModuleSelectionState.Select("module.003.flow-error");
+            if(foundation) CampaignFlowTrial.Launch("module.003.flow-error",CampaignTrialMode.Foundation);
+            else ModuleSelectionState.Select("module.003.flow-error");
             yield return LoadScene("ModuleRunner");
             yield return WaitForPlayer();
             var motor = Object.FindAnyObjectByType<ParkourMotor>();

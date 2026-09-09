@@ -56,13 +56,16 @@ namespace Avoidance.Tests.PlayMode
             public Vector2 Move{get;set;}=Vector2.up;public Vector2 LookDelta=>Vector2.zero;
             public bool JumpPressed{get;set;}public void ResetState(){JumpPressed=false;}
         }
-        [UnityTest] public IEnumerator ContinuousWindwardNormalAndFastLine()
+        [UnityTest] public IEnumerator ContinuousWindwardNormalAndFastLine() => VerifyContinuous(false);
+        [UnityTest] public IEnumerator FoundationContinuousWindwardAndFoundry() => VerifyContinuous(true);
+        private IEnumerator VerifyContinuous(bool foundation)
         {
             foreach(var id in new[]{"module.005.foundry-pulse","module.004.solar-foundry"})
             foreach(bool fast in new[]{false,true})
             {
                 if(id.Contains("solar") && !fast) continue;
-                ModuleSelectionState.Select(id,true);
+                if(foundation) CampaignFlowTrial.Launch(id,CampaignTrialMode.Foundation);
+                else ModuleSelectionState.Select(id,true);
                 yield return new UnitySceneLevelLoader().LoadAsync("ModuleRunner");yield return null;
                 Object.FindAnyObjectByType<PlayerRuntimeCoordinator>().enabled=false;
                 var motor=Object.FindAnyObjectByType<ParkourMotor>();
@@ -71,7 +74,15 @@ namespace Avoidance.Tests.PlayMode
                 var crumble=Object.FindObjectsByType<CrumblingBlock>();foreach(var c in crumble)c.enabled=false;
                 float elapsed=0;var input=new Input();
                 motor.ResetMotion(route[0].Pose.Position+Vector3.up*.34f,Quaternion.identity,0);Physics.SyncTransforms();
-                void Step(){motor.Simulate(input,1f/60);foreach(var c in crumble)c.Tick(1f/60);elapsed+=1f/60;}
+                int captureFrame=0,simulationStep=0;
+                bool capture=foundation && !fast && id.Contains("005")
+                    && System.Environment.GetEnvironmentVariable("RYDERS_FOUNDATION_CAPTURE")=="1";
+                void Step()
+                {
+                    motor.Simulate(input,1f/60);foreach(var c in crumble)c.Tick(1f/60);elapsed+=1f/60;
+                    if(capture && elapsed<12 && simulationStep++%4==0)
+                        Capture("foundation-route-"+(captureFrame++).ToString("D4"),Camera.main);
+                }
                 for(int link=0;link<route.Length-1;link++)
                 {
                     var from=route[link];var to=route[link+1];
@@ -91,7 +102,21 @@ namespace Avoidance.Tests.PlayMode
                     for(int i=0;i<150 && Remaining()>margin;i++)Step();
                     input.JumpPressed=true;Step();input.JumpPressed=false;
                     bool air=false,land=false;
-                    for(int i=0;i<110;i++){Step();air|=!motor.IsGrounded;if(air&&motor.IsGrounded)
+                    for(int i=0;i<110;i++){
+                        if(foundation)
+                        {
+                            // Test pilot only: explicit stick correction, never runtime assistance.
+                            float v=motor.VerticalSpeed,g=motor.Profile.FallGravity;
+                            float height=motor.transform.position.y-to.Pose.Position.y-.3f;
+                            float remaining=v>0 ? v/motor.Profile.JumpGravity
+                                +Mathf.Sqrt(Mathf.Max(0,2*(height+v*v/(2*motor.Profile.JumpGravity))/g))
+                                :(v+Mathf.Sqrt(Mathf.Max(0,v*v+2*g*height)))/g;
+                            var offset=to.Pose.Position-motor.transform.position;offset.y=0;
+                            var wanted=offset/Mathf.Max(.08f,remaining)-motor.ActualHorizontalVelocity;
+                            var local=motor.transform.InverseTransformDirection(wanted);
+                            input.Move=Vector2.ClampMagnitude(new Vector2(local.x,local.z)/2f,1);
+                        }
+                        Step();air|=!motor.IsGrounded;if(air&&motor.IsGrounded)
                         {
                             // Ground probes can report contact before the capsule finishes
                             // descending to the top. Observe stable arrival without resetting it.
@@ -112,7 +137,7 @@ namespace Avoidance.Tests.PlayMode
                 Assert.That(patch.GetComponent<Collider>().bounds.Intersects(motor.GetComponent<CharacterController>().bounds),Is.True,"Finish trigger reached continuously");
                 Assert.That(patch.TryComplete(motor),Is.True);
                 Directory.CreateDirectory("Logs/Quality130QA");
-                File.WriteAllText("Logs/Quality130QA/"+id+"-"+(fast?"fast":"normal")+".txt",elapsed.ToString("F3",System.Globalization.CultureInfo.InvariantCulture));
+                File.WriteAllText("Logs/Quality130QA/"+(foundation?"foundation-":"")+id+"-"+(fast?"fast":"normal")+".txt",elapsed.ToString("F3",System.Globalization.CultureInfo.InvariantCulture));
                 Debug.Log("QUALITY130 "+id+" "+(fast?"fast":"normal")+" continuous seconds="+elapsed);
             }
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");

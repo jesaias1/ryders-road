@@ -13,14 +13,15 @@ namespace Avoidance.UI
             var panel = Box(parent, "Campaign Trial Menu", new Vector2(.08f,.15f), new Vector2(.92f,.85f));
             panel.AddComponent<Image>().color = BrandPresentation.PanelNavy;
             string road = "module.004.solar-foundry";
-            var mode = CampaignTrialMode.FlowLanding;
+            var mode = CampaignTrialMode.Foundation;
             var title = Label(panel.transform, "Trial Selection", "", .83f, .98f, 30);
             var hint = Label(panel.transform, "Trial Hint", "", .19f, .35f, 22);
             var modules = Resources.LoadAll<ModuleDefinition>("Modules");
             void Refresh()
             {
                 title.text = "CAMPAIGN FLOW TRIAL  /  " + modules.Single(m => m.StableModuleId == road).DisplayName;
-                hint.text = (mode == CampaignTrialMode.Accepted ? "A · Accepted motor and your saved controls"
+                hint.text = (mode == CampaignTrialMode.Foundation ? "E · Hold JUMP + drag to look · left stick moves · release to stop hopping"
+                    : mode == CampaignTrialMode.Accepted ? "A · Accepted motor and your saved controls"
                     : mode == CampaignTrialMode.PreviousFlow ? "D · Previous 0.9.9 Flow motor · manual pitch"
                     : mode == CampaignTrialMode.FlowManual ? "B · New air control · manual pitch"
                     : "C · Same new air control · landing view")
@@ -35,14 +36,14 @@ namespace Avoidance.UI
             {
                 var id=ids[i];
                 Button(panel.transform, "Trial Road " + id, modules.Single(m=>m.StableModuleId==id).DisplayName.Replace("Campaign ",""),
-                    new Vector2(.03f+i*.24f,.62f),new Vector2(.25f+i*.24f,.79f),()=> {road=id;Refresh();});
+                    new Vector2(.03f+i*(.94f/ids.Length),.62f),new Vector2(.03f+(i+1)*(.94f/ids.Length)-.015f,.79f),()=> {road=id;Refresh();});
             }
-            var modes=new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding,CampaignTrialMode.PreviousFlow};
-            var labels=new[]{"A · ACCEPTED","B · NEW MANUAL","C · NEW LANDING","D · OLD FLOW"};
+            var modes=new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding,CampaignTrialMode.PreviousFlow,CampaignTrialMode.Foundation};
+            var labels=new[]{"A · ACCEPTED","B · ROUTE MANUAL","C · ROUTE LANDING","D · OLD FLOW","E · FOUNDATION"};
             for(int i=0;i<modes.Length;i++)
             {
                 var option=modes[i];
-                Button(panel.transform,"Trial Mode "+option,labels[i],new Vector2(.03f+i*.24f,.40f),new Vector2(.25f+i*.24f,.57f),()=> {mode=option;Refresh();});
+                Button(panel.transform,"Trial Mode "+option,labels[i],new Vector2(.03f+i*(.94f/modes.Length),.40f),new Vector2(.03f+(i+1)*(.94f/modes.Length)-.015f,.57f),()=> {mode=option;Refresh();});
             }
             Button(panel.transform,"Trial Back","BACK",new Vector2(.03f,.035f),new Vector2(.30f,.17f),()=> {panel.SetActive(false);back();});
             Button(panel.transform,"Trial Start","START TRIAL",new Vector2(.57f,.035f),new Vector2(.97f,.17f),()=> {CampaignFlowTrial.Launch(road,mode);launch();});

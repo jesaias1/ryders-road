@@ -1,3 +1,19 @@
+## 0.14.0 movement foundation
+
+Run all EditMode/PlayMode tests and Tools/Validate-Foundation.ps1. FoundationMotorTests
+adds 30/50/60/120 Hz held chains, release, ordinary/high-speed manual correction,
+yaw-only coasting, reversal, buffer/coyote single-use, plus existing controller
+wall/surf/tap contracts. Production099Tests covers candidate E in all five actual
+roads, same-pointer drag/hold and release/reset, accepted controls and save/retry
+isolation. FlowLabPlayTests exercises E's surf room and reversible control cycling.
+SolarFoundryTests covers E's ordinary links/ferry; BootstrapPlayModeTests covers its
+real Abyss Boost trigger at slow/nominal/full approach speeds. Quality130Tests runs
+continuous Windward normal/direct and Foundry optional sequences with explicit
+scripted air braking/correction. This test pilot is not a runtime assistance system.
+Optional RYDERS_FOUNDATION_CAPTURE=1 emits the first 12 seconds of the normal
+Windward candidate simulation as 15 fps PNGs in Logs/Quality130QA.
+Final results and remaining S23 checks: Docs/PRODUCTION_0140.md. No physical approval.
+
 ## 0.13.0 gameplay-quality correction
 
 Current evidence/results are in Docs/PRODUCTION_0130.md. Quality130Tests uses

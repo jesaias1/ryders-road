@@ -140,7 +140,9 @@ namespace Avoidance.Gameplay.Player
             _jumpWindow.Tick(
                 deltaTime,
                 IsGrounded || IsSurfing,
-                input.JumpPressed,
+                input.JumpPressed || (_profile.HoldToHop
+                    && input is IHeldJumpInputSource held && held.JumpHeld
+                    && (IsGrounded || IsSurfing)),
                 _profile.CoyoteTime,
                 _profile.JumpBufferDuration);
 
@@ -279,7 +281,7 @@ namespace Avoidance.Gameplay.Player
         private void UpdateHorizontalVelocity(IPlayerInputSource input, float deltaTime)
         {
             var moveInput = _movementLockRemaining > 0f ? Vector2.zero : input.Move;
-            if (input is IFlowSteeringInputSource flow && flow.FlowSteeringEnabled)
+            if (!_profile.MovementFoundation && input is IFlowSteeringInputSource flow && flow.FlowSteeringEnabled)
             {
                 UpdateFlowSteeringVelocity(moveInput, deltaTime);
                 return;
@@ -470,7 +472,7 @@ namespace Avoidance.Gameplay.Player
                     if (alignment > 0.25f && currentSpeed > targetSpeed)
                     {
                         desiredVelocity = movement.DesiredDirection.normalized
-                            * Mathf.Min(currentSpeed, _profile.SoftMomentumLimit);
+                            * (_profile.MovementFoundation ? currentSpeed : Mathf.Min(currentSpeed, _profile.SoftMomentumLimit));
                     }
                     else if (alignment < -0.25f)
                     {
@@ -555,7 +557,10 @@ namespace Avoidance.Gameplay.Player
         private void AccelerateRouteAir(Vector3 wish, float amount, float dt)
         {
             var before = _horizontalVelocity;
-            _horizontalVelocity = RouteAirControlMath.Accelerate(before, wish, _profile.AirWishSpeed,
+            var wishSpeed = _profile.MovementFoundation
+                ? Mathf.Max(_profile.AirWishSpeed * amount, before.magnitude * _profile.OverspeedWishRatio)
+                : _profile.AirWishSpeed;
+            _horizontalVelocity = RouteAirControlMath.Accelerate(before, wish, wishSpeed,
                 _profile.AirAcceleration, _profile.AirBraking, amount, _profile.SoftMomentumLimit, dt,
                 out var projected, out var requested, out var applied, out var limited);
             AirProjectedSpeed = projected; AirRequestedDelta = requested;
@@ -581,7 +586,11 @@ namespace Avoidance.Gameplay.Player
 
         private void UpdateVerticalVelocity(float deltaTime)
         {
-            if (_jumpWindow.TryConsumeJump() && _movementLockRemaining <= 0f)
+            // Preserve accepted consumption ordering; only the new candidate keeps
+            // a buffered tap pending through a restore movement lock.
+            var jumpRequested = !(_profile.MovementFoundation && _movementLockRemaining > 0f)
+                && _jumpWindow.TryConsumeJump();
+            if (jumpRequested && _movementLockRemaining <= 0f)
             {
                 float beforeTakeoff = HorizontalSpeed;
                 ApplyTakeoffMomentumRetention();

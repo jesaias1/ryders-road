@@ -115,23 +115,52 @@ namespace Avoidance.Tests.PlayMode
             string before=JsonUtility.ToJson(save.Current);int writes=store.Writes;
             Click("DEVELOPMENT Button");Click("CAMPAIGN FLOW TRIAL Button");yield return null;
             Capture("trial-menu");Click("Trial Start");yield return new WaitForSecondsRealtime(.6f);
-            Assert.That(CampaignFlowTrial.Mode,Is.EqualTo(CampaignTrialMode.FlowLanding));
+            Assert.That(CampaignFlowTrial.Mode,Is.EqualTo(CampaignTrialMode.Foundation));
             Assert.That(Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule.StableModuleId,Is.EqualTo(Foundry));
             foreach(var id in ModuleSelectionState.GetCampaignModuleIds())
-            foreach(var mode in new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding,CampaignTrialMode.PreviousFlow})
+            foreach(var mode in new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding,CampaignTrialMode.PreviousFlow,CampaignTrialMode.Foundation})
             {
                 CampaignFlowTrial.Launch(id,mode);yield return Open();
                 var player=Object.FindAnyObjectByType<PlayerRuntimeCoordinator>();var motor=player.Motor;
                 var touch=Object.FindAnyObjectByType<TouchInputCoordinator>();
                 Assert.That(motor.Profile.MovementMastery,Is.EqualTo(mode!=CampaignTrialMode.Accepted));
-                if(mode!=CampaignTrialMode.Accepted)
+                if(mode==CampaignTrialMode.Foundation)
+                {
+                    Assert.That(motor.Profile.CompatibilityVersion,Is.EqualTo(4));
+                    Assert.That(touch.JumpLookEnabled && touch.RuntimeProfile.EnableFixedButton,Is.True);
+                    Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.False);
+                    player.Input.SetMode(PlayerInputMode.Touch);
+                    var button=Object.FindAnyObjectByType<JumpTouchControl>();
+                    var e=new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current)
+                        {pointerId=901,position=new Vector2(1000,400),delta=new Vector2(20,-10)};
+                    Assert.That(touch.TryClaim(TouchControlRole.Movement,900),Is.True);
+                    touch.SetMovement(Vector2.up);
+                    button.OnPointerDown(e);button.OnDrag(e);player.Input.Sample();
+                    Assert.That(player.Input.JumpPressed && player.Input.JumpHeld,Is.True);
+                    Assert.That(player.Input.Move,Is.EqualTo(Vector2.up));
+                    Assert.That(player.Input.LookDelta.sqrMagnitude,Is.GreaterThan(0));
+                    var yaw=player.transform.eulerAngles.y;
+                    player.CameraRig.ApplyLook(player.Input,PlayerInputMode.Touch,1f/60,motor);
+                    Assert.That(Mathf.Abs(Mathf.DeltaAngle(yaw,player.transform.eulerAngles.y)),Is.GreaterThan(.01f));
+                    e.position=new Vector2(700,600);button.OnDrag(e);player.Input.Sample();
+                    Assert.That(player.Input.JumpHeld,Is.True);Assert.That(player.Input.JumpPressed,Is.False);
+                    var stranger=new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current){pointerId=902};
+                    button.OnPointerUp(stranger);Assert.That(touch.JumpHeld,Is.True);
+                    button.OnPointerUp(e);player.Input.Sample();Assert.That(player.Input.JumpHeld,Is.False);
+                    Assert.That(player.Input.JumpPressed,Is.False,"Release must not emit a second jump");
+                    button.OnPointerDown(e);touch.ResetState();player.Input.Sample();
+                    Assert.That(player.Input.JumpHeld,Is.False);Assert.That(player.Input.JumpPressed,Is.False);
+                    touch.Release(TouchControlRole.Movement,900);
+
+                }
+                else if(mode!=CampaignTrialMode.Accepted)
                 {
                     Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.True);
                     Assert.That(touch.RuntimeProfile.EnableFixedButton,Is.False);
                     Assert.That(player.CameraRig.Pitch,Is.EqualTo(mode==CampaignTrialMode.FlowLanding?16:9).Within(.1f));
                 }
                 Assert.That(JsonUtility.ToJson(save.Current),Is.EqualTo(before));Assert.That(store.Writes,Is.EqualTo(writes));
-                if(id==Foundry && mode==CampaignTrialMode.FlowLanding)
+                if(id==Foundry && (mode==CampaignTrialMode.FlowLanding || mode==CampaignTrialMode.Foundation))
                 {
                     player.Input.SetMode(PlayerInputMode.Touch);touch.SetMovement(Vector2.up);
                     Assert.That(touch.TryClaim(TouchControlRole.Look,77),Is.True);
@@ -141,7 +170,7 @@ namespace Avoidance.Tests.PlayMode
                     player.CameraRig.ApplyLook(player.Input,PlayerInputMode.Touch,1f/60,motor);
                     Assert.That(player.CameraRig.Pitch,Is.LessThan(pitch));
                     player.GetComponent<RestoreController>().RestoreNow();Assert.That(touch.Movement,Is.EqualTo(Vector2.zero));
-                    Assert.That(player.CameraRig.Pitch,Is.EqualTo(16).Within(.1f));
+                    Assert.That(player.CameraRig.Pitch,Is.EqualTo(mode==CampaignTrialMode.FlowLanding?16:9).Within(.1f));
                     Capture("foundry-flow");
                     Assert.That(Object.FindAnyObjectByType<PatchBlock>().TryComplete(motor),Is.True);
                     yield return new WaitForSecondsRealtime(.3f);Capture("trial-results");

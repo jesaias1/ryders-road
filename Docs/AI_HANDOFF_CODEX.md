@@ -1,3 +1,7 @@
+> Historical handoff. Current authority: [AI_HANDOFF.md](AI_HANDOFF.md),
+> [0.14.0 movement candidate](PRODUCTION_0140.md) and ADR 0027. No physical
+> approval of the new movement is implied by historical testing statements.
+
 # AI Handoff for Codex — RYDER'S ROAD
 
 **Project Name**: `RYDER'S ROAD` (legacy codename: `RYDERS BLOCK`)  

@@ -1,3 +1,13 @@
+## 0.14.0 movement foundation authority
+
+ADR 0027 supersedes the prior movement-work stop. Intended future standard is
+compatibility 4, currently isolated in Campaign trial E and Flow Lab's motor cycle.
+ParkourMotor reuses ADR 0022 with full manual wish input, overspeed correction and
+contact-rearmed hold-hop. IHeldJumpInputSource is optional; accepted tap contracts
+remain. Touch coordinator owns held contact and same-pointer Jump drag looking.
+Accepted Campaign and V4 history/progression remain unchanged pending S23 approval.
+See Docs/PRODUCTION_0140.md for verification and promotion/rollback boundaries.
+
 ## 0.13.0 gameplay-quality correction
 
 ADR 0026 supersedes the prior physical-acceptance assumption. Accepted motor,
