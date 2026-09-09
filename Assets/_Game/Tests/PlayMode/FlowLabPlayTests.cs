@@ -36,6 +36,8 @@ namespace Avoidance.Tests.PlayMode
             while(Object.FindAnyObjectByType<FlowLabSceneController>()==null && Time.realtimeSinceStartup<deadline)yield return null;
             yield return new WaitForSecondsRealtime(.3f);
             var lab=Object.FindAnyObjectByType<FlowLabSceneController>();Assert.That(lab,Is.Not.Null);
+            Assert.That(lab.Player.Motor.Profile.ResponsiveAirControl,Is.True);
+            lab.Compare(); // Explicit development comparison retains the archived Flow tests.
             var player=lab.Player;player.enabled=false;var motor=player.Motor;
             Assert.That(motor.Profile.MovementMastery,Is.True);
             var touch=Object.FindAnyObjectByType<TouchInputCoordinator>();
@@ -78,7 +80,7 @@ namespace Avoidance.Tests.PlayMode
         {
             FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
             var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
-            if(foundation){lab.Compare();lab.Compare();lab.Compare();}
+            if(!foundation)lab.Compare();
             lab.SelectRoom(2);yield return null;
             var motor=lab.Player.Motor;var input=new FlowInput();float contact=0;
             for(int i=0;i<600 && !lab.Session.Complete;i++)
@@ -97,7 +99,7 @@ namespace Avoidance.Tests.PlayMode
         {
             FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
             var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
-            lab.Compare();lab.Compare();lab.Compare();lab.SelectRoom(1);yield return null;
+            lab.SelectRoom(1);yield return null;
             var motor=lab.Player.Motor;var input=new FlowInput();int frame=0;
             bool capture=System.Environment.GetEnvironmentVariable("RYDERS_FOUNDATION_CAPTURE")=="1";
             for(int i=0;i<600 && !lab.Session.Complete;i++)
@@ -139,7 +141,7 @@ namespace Avoidance.Tests.PlayMode
         [UnityTest] public IEnumerator LandingViewComparisonPreservesManualControlsAndMotor()
         {
             FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
-            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;lab.Compare(); // Archived motor/view comparison.
             Assert.That(lab.Room.id,Is.EqualTo("training.flow.real-route"));
             lab.SelectRoom("training.flow.landing");yield return null;
             var player=lab.Player;var rig=player.CameraRig;var input=new FlowInput();
@@ -172,7 +174,7 @@ namespace Avoidance.Tests.PlayMode
         [UnityTest] public IEnumerator LandingCourseIsCompletableWithBothMotorsAndViews()
         {
             FlowLabSceneController.RequestLaunch();yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
-            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;
+            var lab=Object.FindAnyObjectByType<FlowLabSceneController>();lab.Player.enabled=false;lab.enabled=false;lab.Compare(); // Archived motor/view comparison.
             foreach(bool candidate in new[]{true,false})
             foreach(bool landing in new[]{false,true})
             {

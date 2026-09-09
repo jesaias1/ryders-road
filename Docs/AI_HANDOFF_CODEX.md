@@ -1,5 +1,5 @@
 > Historical handoff. Current authority: [AI_HANDOFF.md](AI_HANDOFF.md),
-> [0.14.1 right-surface correction](PRODUCTION_0141.md) and ADR 0027. No physical
+> [0.15.0 shared movement and music](PRODUCTION_0150.md) and ADR 0029. No physical
 > approval of the new movement is implied by historical testing statements.
 
 # AI Handoff for Codex — RYDER'S ROAD

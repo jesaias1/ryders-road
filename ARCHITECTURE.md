@@ -1,3 +1,11 @@
+## 0.15.0 shared movement and music
+
+ADR 0029 promotes movement.shared compatibility 5 to every normal player entry.
+Responsive projection plus speed-preserving explicit steering replaces the ordinary
+air envelope. Whole-right hold/manual look is shared; legacy controls stay dev-only.
+MusicDirector is a persistent two-source presentation service with streaming clips
+and independent music volume. See Docs/PRODUCTION_0150.md and Docs/Audio150/README.md.
+
 ## 0.14.2 GoldSrc reference verification
 
 ADR 0028 retains Foundation compatibility 4 and the 0.14.1 whole-right-surface

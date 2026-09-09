@@ -1,0 +1,62 @@
+{
+  "version": "0.15.0-shared-movement-music",
+  "movementId": "movement.shared",
+  "compatibility": 5,
+  "physicalDeviceTested": false,
+  "editMode": {
+    "failed": 0,
+    "file": "Logs/shared-final-EditMode.xml",
+    "passed": 248
+  },
+  "playMode": {
+    "failed": 0,
+    "file": "Logs/shared-final-PlayMode.xml",
+    "passed": 145
+  },
+  "additionalRegressions": {
+    "failed": 0,
+    "file": "Logs/shared-delivery-checks.xml",
+    "passed": 2
+  },
+  "measurements": [
+    "QUALITY130 module.005.foundry-pulse normal continuous seconds=25.04979",
+    "QUALITY130 module.005.foundry-pulse fast continuous seconds=17.28324",
+    "QUALITY130 module.004.solar-foundry fast continuous seconds=19.96653",
+    "QUALITY130 module.005.foundry-pulse normal continuous seconds=25.04979",
+    "QUALITY130 module.005.foundry-pulse fast continuous seconds=17.28324",
+    "QUALITY130 module.004.solar-foundry fast continuous seconds=19.96653",
+    "SHARED150 hz=30 speed=7.8 correction10=0.621->9.140 side=61.212->74.175",
+    "SHARED150 hz=30 speed=10.8 correction10=0.000->8.472 side=56.256->66.705",
+    "SHARED150 hz=30 speed=14 correction10=0.000->7.639 side=46.805->59.192",
+    "SHARED150 hz=30 speed=17 correction10=0.000->6.945 side=40.130->54.045",
+    "SHARED150 hz=50 speed=7.8 correction10=0.621->9.132 side=61.239->74.132",
+    "SHARED150 hz=50 speed=10.8 correction10=0.000->8.463 side=56.384->66.667",
+    "SHARED150 hz=50 speed=14 correction10=0.000->7.630 side=46.832->59.162",
+    "SHARED150 hz=50 speed=17 correction10=0.000->6.938 side=40.108->54.048",
+    "SHARED150 hz=60 speed=7.8 correction10=0.621->9.140 side=61.246->74.175",
+    "SHARED150 hz=60 speed=10.8 correction10=0.000->8.472 side=56.418->66.705",
+    "SHARED150 hz=60 speed=14 correction10=0.000->7.639 side=46.839->59.192",
+    "SHARED150 hz=60 speed=17 correction10=0.000->6.945 side=40.103->54.080",
+    "SHARED150 hz=120 speed=7.8 correction10=0.621->9.140 side=61.272->74.175",
+    "SHARED150 hz=120 speed=10.8 correction10=0.000->8.472 side=56.503->66.705",
+    "SHARED150 hz=120 speed=14 correction10=0.000->7.639 side=46.859->59.192",
+    "SHARED150 hz=120 speed=17 correction10=0.000->6.945 side=40.090->54.097",
+    "SHARED150 GROUND hz=30 stop=0.133 reverse=0.067 heldSpeed=14.000",
+    "SHARED150 GROUND hz=60 stop=0.117 reverse=0.067 heldSpeed=14.000",
+    "SHARED150 GROUND hz=120 stop=0.108 reverse=0.067 heldSpeed=14.000"
+  ],
+  "notes": "Scripted Unity input and real controller collision. Not reference-engine execution, physical phone feel, musical seam approval or rank calibration.",
+  "android": {
+    "signature": "v2 verified",
+    "targetSdk": 36,
+    "warnings": 1,
+    "bytes": 182858783,
+    "zipCrc": "Passed",
+    "path": "C:/Users/lin4s/Documents/Riders Block/Builds/Android/RYDERS-ROAD-0.15.0-shared-movement-music-dev.apk",
+    "sha256": "51EBD6EB7F250A4801A61CEECA210ADE7A2ABEC0BB2E0B8B557AF2ABFA4EC6A1",
+    "buildSeconds": 156.302,
+    "minSdk": 26,
+    "architecture": "arm64-v8a",
+    "errors": 0
+  }
+}

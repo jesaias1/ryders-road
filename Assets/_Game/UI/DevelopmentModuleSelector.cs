@@ -4,6 +4,8 @@ using Avoidance.Core.Configuration;
 using Avoidance.Core.Services;
 using Avoidance.Gameplay.Camera;
 using Avoidance.Gameplay.Levels;
+using Avoidance.Gameplay.Player;
+using Avoidance.Gameplay.Audio;
 using Avoidance.Gameplay.Timing;
 using Avoidance.Gameplay.Visuals;
 using Avoidance.Input;
@@ -27,6 +29,7 @@ namespace Avoidance.UI
             var configuration = Resources.Load<GameConfiguration>("FoundationGameConfiguration")
                 ?? GameConfiguration.CreateRuntimeDefault();
             CreateEnvironment();
+            MusicDirector.SetContext("menu");
             CreateUi(configuration);
             UnitySceneLevelLoader.NotifyReady(gameObject.scene.name);
         }
@@ -101,15 +104,17 @@ namespace Avoidance.UI
             var campaign = CreatePanel("Campaign Journey", safe, new Vector2(0.06f, 0.20f), new Vector2(0.94f, 0.80f), new Color(.018f,.047f,.085f,.96f));
             var settingsPanel = CreatePanel("Settings Panel", safe, new Vector2(0.29f, 0.12f), new Vector2(0.71f, 0.88f), new Color(.018f,.047f,.085f,.96f));
             campaign.SetActive(false); settingsPanel.SetActive(false);
-            var homeGlass = CreatePanel("Home Glass", home.transform, new Vector2(.25f,.075f), new Vector2(.75f,.40f), new Color(.018f,.047f,.085f,.94f));
+            var homeGlass = CreatePanel("Home Glass", home.transform, new Vector2(.25f,.075f), new Vector2(.75f,.48f), new Color(.018f,.047f,.085f,.94f));
             CreatePanel("Home Accent",homeGlass.transform,new Vector2(0,.988f),Vector2.one,BrandPresentation.Gold);
-            CreateText("Home Promise", homeGlass.transform, "FIND YOUR FLOW", 22, TextAnchor.MiddleCenter, new Vector2(.06f,.76f), new Vector2(.94f,.96f), Vector2.zero, Vector2.zero, Color.white);
-            ProductionButton(homeGlass.transform, "CAMPAIGN", new Vector2(.06f,.34f), new Vector2(.94f,.61f), () => { home.SetActive(false); campaign.SetActive(true); }, true);
+            CreateText("Home Promise", homeGlass.transform, "FIND YOUR FLOW", 22, TextAnchor.MiddleCenter, new Vector2(.06f,.83f), new Vector2(.94f,.96f), Vector2.zero, Vector2.zero, Color.white);
+            ProductionButton(homeGlass.transform, "CAMPAIGN", new Vector2(.06f,.51f), new Vector2(.94f,.68f), () => { home.SetActive(false); campaign.SetActive(true); }, true);
             ProductionButton(homeGlass.transform, "THE SPIRAL  /  CHALLENGE", new Vector2(.06f,.075f), new Vector2(.62f,.27f), () =>
             {
                 ModuleSelectionState.Select(ModuleSelectionState.SpiralModuleId);
                 StartCoroutine(LoadScene(ModuleSelectionState.ModuleRunnerSceneName));
             });
+            ProductionButton(homeGlass.transform, "FLOW LAB", new Vector2(.06f,.29f), new Vector2(.94f,.46f), () =>
+            { FlowLabSceneController.RequestLaunch(); StartCoroutine(LoadScene("MovementLab")); });
             ProductionButton(homeGlass.transform, "SETTINGS", new Vector2(.65f,.075f), new Vector2(.94f,.27f), () => { home.SetActive(false); settingsPanel.SetActive(true); });
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
             var development = CreatePanel("Development Tools", safe, new Vector2(.25f,.2f), new Vector2(.75f,.78f), BrandPresentation.PanelNavy);
@@ -137,7 +142,7 @@ namespace Avoidance.UI
                 ? nextModule.EnvironmentBiomeProfile?.DisplayName : null;
             CreateText("Home Journey", homeGlass.transform,
                 nextWorld != null ? "NEXT ROAD  /  " + nextWorld.ToUpperInvariant() : "RETURN TO YOUR ROAD  /  REPLAY FOR MASTERY",
-                16, TextAnchor.MiddleCenter, new Vector2(.06f,.63f), new Vector2(.94f,.78f), Vector2.zero, Vector2.zero, BrandPresentation.Cyan);
+                16, TextAnchor.MiddleCenter, new Vector2(.06f,.70f), new Vector2(.94f,.82f), Vector2.zero, Vector2.zero, BrandPresentation.Cyan);
             CreateModulePanel(campaign.GetComponent<RectTransform>(), modules, ids, progression);
             CreateSettingsPanel(settingsPanel.GetComponent<RectTransform>(), settings);
             ProductionButton(campaign.transform, "BACK", new Vector2(0.025f, 0.025f), new Vector2(0.15f, 0.13f), () => { campaign.SetActive(false); home.SetActive(true); });
@@ -209,209 +214,45 @@ namespace Avoidance.UI
 
         private static void CreateSettingsPanel(RectTransform panel, ISettingsService settings)
         {
-            CreateText(
-                "Settings Header",
-                panel,
-                "SETTINGS",
-                30,
-                TextAnchor.UpperLeft,
-                new Vector2(0f, 0.88f),
-                Vector2.one,
-                new Vector2(28f, -28f),
-                new Vector2(-28f, -18f),
-                Color.white);
-
-            var layout = Resources.Load<TouchControlLayout>("Touch_Default")
-                ?? TouchControlLayout.CreateRuntimeDefault();
-            Text controlText = null;
-            Text steeringText = null;
-            Text lookText = null;
-            Text fovText = null;
-            Text graphicsText = null;
-            Text hapticsText = null;
-            Text audioText = null;
-
-            void Refresh()
+            CreateText("Settings Header", panel, "SETTINGS", 28, TextAnchor.MiddleCenter,
+                new Vector2(.06f,.86f),new Vector2(.94f,.98f),Vector2.zero,Vector2.zero,Color.white);
+            var buttons = new System.Collections.Generic.List<System.Action>();
+            void Option(string name, int row, int column, System.Func<string> label, System.Action change)
             {
-                var control = TouchInputCoordinator.LoadPreferredControlProfile(
-                    layout.DefaultControlProfile);
-                var steering = TouchInputCoordinator.LoadPreferredMovementSensitivity(
-                    layout.DefaultMovementSensitivity);
-                var fov = ResolveStoredFieldOfView();
-                if (controlText != null)
-                {
-                    controlText.text = IsEasyControl(control) ? "CONTROL  EASY" : "CONTROL  CLASSIC";
-                }
-
-                if (steeringText != null)
-                {
-                    steeringText.text = "STEERING  " + steering.ToString().ToUpperInvariant();
-                }
-
-                if (lookText != null)
-                {
-                    lookText.text = "LOOK  " + LookLabel(settings);
-                }
-
-                if (fovText != null)
-                {
-                    fovText.text = "FOV  " + fov.ToString("0");
-                }
-
-                if (graphicsText != null)
-                {
-                    var names = QualitySettings.names;
-                    var quality = names.Length == 0
-                        ? "MOBILE"
-                        : names[Mathf.Clamp(QualitySettings.GetQualityLevel(), 0, names.Length - 1)];
-                    graphicsText.text = "GRAPHICS  " + quality.ToUpperInvariant();
-                }
-
-                if (hapticsText != null)
-                {
-                    hapticsText.text = PlayerPrefs.GetInt(TouchInputCoordinator.HapticsPreferenceKey, 1) != 0
-                        ? "HAPTICS  ON"
-                        : "HAPTICS  OFF";
-                }
-
-                if (audioText != null)
-                {
-                    var volume = Mathf.RoundToInt((settings?.Current.masterVolume ?? AudioListener.volume) * 100f);
-                    audioText.text = "AUDIO  " + volume + "%";
-                }
+                float x = column == 0 ? .06f : .52f;
+                float top = .82f-row*.16f;
+                var button = ProductionButton(panel,name,new Vector2(x,top-.13f),new Vector2(x+.42f,top),
+                    () => { change(); foreach(var refresh in buttons)refresh(); });
+                var text=button.GetComponentInChildren<Text>();
+                System.Action update=()=>text.text=label();buttons.Add(update);update();
             }
-
-            controlText = CreateButton(
-                panel,
-                "CONTROL",
-                new Vector2(28f, -120f),
-                new Vector2(330f, 50f),
-                () =>
-                {
-                    var control = TouchInputCoordinator.LoadPreferredControlProfile(
-                        layout.DefaultControlProfile);
-                    TouchInputCoordinator.StorePreferredControlProfile(
-                        IsEasyControl(control)
-                            ? TouchControlProfileKind.LeftMoveRightLookTapJump
-                            : TouchControlProfileKind.FlowSteerAutoBalanced);
-                    Refresh();
-                },
-                BrandPresentation.DeepNavy,
-                18);
-            steeringText = CreateButton(
-                panel,
-                "STEERING",
-                new Vector2(28f, -184f),
-                new Vector2(330f, 50f),
-                () =>
-                {
-                    var current = TouchInputCoordinator.LoadPreferredMovementSensitivity(
-                        layout.DefaultMovementSensitivity);
-                    TouchInputCoordinator.StorePreferredMovementSensitivity(
-                        TouchControlRuntimeProfile.Next(current));
-                    Refresh();
-                },
-                BrandPresentation.DeepNavy,
-                18);
-            lookText = CreateButton(
-                panel,
-                "LOOK",
-                new Vector2(28f, -248f),
-                new Vector2(330f, 50f),
-                () =>
-                {
-                    if (settings != null)
-                    {
-                        settings.Current.lookSensitivity = NextLookSensitivity(settings.Current.lookSensitivity);
-                        settings.Save();
-                    }
-
-                    Refresh();
-                },
-                BrandPresentation.DeepNavy,
-                18);
-            fovText = CreateButton(
-                panel,
-                "FOV",
-                new Vector2(28f, -312f),
-                new Vector2(330f, 50f),
-                () =>
-                {
-                    PlayerPrefs.SetFloat(
-                        FirstPersonCameraRig.FieldOfViewPreferenceKey,
-                        NextFieldOfView(ResolveStoredFieldOfView()));
-                    PlayerPrefs.Save();
-                    Refresh();
-                },
-                BrandPresentation.DeepNavy,
-                18);
-            graphicsText = CreateButton(
-                panel,
-                "GRAPHICS",
-                new Vector2(28f, -376f),
-                new Vector2(330f, 50f),
-                () =>
-                {
-                    var names = QualitySettings.names;
-                    if (names.Length > 0)
-                    {
-                        QualitySettings.SetQualityLevel(
-                            (QualitySettings.GetQualityLevel() + 1) % names.Length,
-                            applyExpensiveChanges: true);
-                    }
-
-                    Refresh();
-                },
-                BrandPresentation.DeepNavy,
-                18);
-            hapticsText = CreateButton(
-                panel,
-                "HAPTICS",
-                new Vector2(28f, -440f),
-                new Vector2(330f, 50f),
-                () =>
-                {
-                    var enabled = PlayerPrefs.GetInt(TouchInputCoordinator.HapticsPreferenceKey, 1) == 0;
-                    PlayerPrefs.SetInt(TouchInputCoordinator.HapticsPreferenceKey, enabled ? 1 : 0);
-                    PlayerPrefs.Save();
-                    Refresh();
-                },
-                BrandPresentation.DeepNavy,
-                18);
-            audioText = CreateButton(
-                panel,
-                "AUDIO",
-                new Vector2(28f, -504f),
-                new Vector2(330f, 50f),
-                () =>
-                {
-                    var current = settings?.Current.masterVolume ?? AudioListener.volume;
-                    var next = current >= 0.95f ? 0.65f : current >= 0.8f ? 1f : 0.85f;
-                    AudioListener.volume = next;
-                    if (settings != null)
-                    {
-                        settings.Current.masterVolume = next;
-                        settings.Save();
-                    }
-
-                    Refresh();
-                },
-                BrandPresentation.DeepNavy,
-                18);
-            CreateText(
-                "Settings Note",
-                panel,
-                "Easy uses smart parkour camera. Classic keeps right-thumb manual look.",
-                17,
-                TextAnchor.UpperLeft,
-                new Vector2(0f, 0f),
-                new Vector2(1f, 0.24f),
-                new Vector2(28f, 28f),
-                new Vector2(-28f, -8f),
-                BrandPresentation.MutedWhite);
-            Refresh();
+            Option("LOOK",0,0,()=>"LOOK  "+LookLabel(settings),()=>
+            {
+                if(settings==null)return;
+                settings.Current.lookSensitivity=NextLookSensitivity(settings.Current.lookSensitivity);settings.Save();
+            });
+            Option("FOV",0,1,()=>"FOV  "+ResolveStoredFieldOfView().ToString("0"),()=>
+            { PlayerPrefs.SetFloat("settings.camera-fov",NextFieldOfView(ResolveStoredFieldOfView()));PlayerPrefs.Save(); });
+            Option("AUDIO",1,0,()=>"MASTER  "+Mathf.RoundToInt(AudioListener.volume*100)+"%",()=>
+            {
+                float next=AudioListener.volume>=.99f ? 0 : Mathf.Min(1,AudioListener.volume+.25f);
+                AudioListener.volume=next;
+                if(settings!=null){settings.Current.masterVolume=next;settings.Save();}
+            });
+            Option("MUSIC",1,1,()=>"MUSIC  "+Mathf.RoundToInt((settings?.Current.musicVolume ?? PlayerPrefs.GetFloat(PlayerPrefsSettingsService.MusicVolumeKey,.65f))*100)+"%",()=>
+            {
+                float current=settings?.Current.musicVolume ?? PlayerPrefs.GetFloat(PlayerPrefsSettingsService.MusicVolumeKey,.65f);
+                float next=current>=.99f?0:Mathf.Min(1,current+.2f);
+                if(settings!=null){settings.Current.musicVolume=next;settings.Save();}
+                else {PlayerPrefs.SetFloat(PlayerPrefsSettingsService.MusicVolumeKey,next);PlayerPrefs.Save();}
+            });
+            Option("HAPTICS",2,0,()=>"HAPTICS  "+(PlayerPrefs.GetInt(TouchInputCoordinator.HapticsPreferenceKey,1)==1?"ON":"OFF"),()=>
+            { PlayerPrefs.SetInt(TouchInputCoordinator.HapticsPreferenceKey,1-PlayerPrefs.GetInt(TouchInputCoordinator.HapticsPreferenceKey,1));PlayerPrefs.Save(); });
+            Option("GRAPHICS",2,1,()=>"GRAPHICS  "+QualitySettings.names[QualitySettings.GetQualityLevel()].ToUpperInvariant(),()=>
+            { QualitySettings.SetQualityLevel((QualitySettings.GetQualityLevel()+1)%QualitySettings.names.Length,true); });
+            CreateText("Shared Controls",panel,"LEFT: MOVE / STRAFE\nRIGHT: HOLD TO HOP + DRAG TO LOOK",18,TextAnchor.MiddleCenter,
+                new Vector2(.06f,.17f),new Vector2(.94f,.32f),Vector2.zero,Vector2.zero,BrandPresentation.MutedWhite);
         }
-
         private static string ModuleSummary(
             ModuleDefinition module,
             ModuleProgressRecord record,
@@ -422,7 +263,7 @@ namespace Avoidance.UI
             var data = GameServices.Current != null && GameServices.Current.TryGet<ISaveService>(out var service)
                 ? service.Current.progression : null;
             var current = ModuleProgressionData.GetVersionedBest(data, module.StableModuleId,
-                module.ContentVersion, 1, module.RankThresholds.ThresholdVersion);
+                module.ContentVersion, MovementProfile.LoadShared().CompatibilityVersion, module.RankThresholds.ThresholdVersion);
             if (current == null) return "ROAD RESTORED  /  HISTORY KEPT\nCurrent route PB  --:--.---";
             return current.highestRank.ToUpperInvariant() + "  /  CURRENT ROUTE\nPB  " + RunTimerFormatting.Format(current.bestTimeSeconds);
         }

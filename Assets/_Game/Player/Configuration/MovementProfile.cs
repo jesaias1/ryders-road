@@ -6,6 +6,14 @@ namespace Avoidance.Gameplay.Player
     [CreateAssetMenu(menuName = "RYDERS BLOCK/Movement Profile", fileName = "Movement_Profile")]
     public sealed class MovementProfile : ScriptableObject
     {
+        public const string SharedResource = "Movement_Shared";
+        [Header("Shared movement rollout")]
+        [SerializeField] private bool _responsiveAirControl;
+        [Range(0f, 1f)] [SerializeField] private float _projectionSteering = 1f;
+        public bool ResponsiveAirControl => _responsiveAirControl;
+        public float ProjectionSteering => _projectionSteering;
+        public static MovementProfile LoadShared() => Resources.Load<MovementProfile>(SharedResource)
+            ?? throw new InvalidOperationException("Shared movement profile is missing.");
         [Header("Identity")]
         [SerializeField] private string _profileId = "movement.default";
         [SerializeField] private string _displayName = "Default";

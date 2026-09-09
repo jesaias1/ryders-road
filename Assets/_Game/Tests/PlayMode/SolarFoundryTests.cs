@@ -76,7 +76,7 @@ namespace Avoidance.Tests.PlayMode
             else yield return Open();
             var motor=Object.FindAnyObjectByType<ParkourMotor>();
             var module=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule;
-            Assert.That(module.StableModuleId,Is.EqualTo(Id));Assert.That(motor.Profile.MovementMastery,Is.EqualTo(candidate));
+            Assert.That(module.StableModuleId,Is.EqualTo(Id));Assert.That(motor.Profile.MovementMastery,Is.True);if(!candidate)Assert.That(motor.Profile.ResponsiveAirControl,Is.True);
             var moving=Object.FindAnyObjectByType<MovingBlock>();moving.enabled=false;
             foreach(var b in module.Blocks)
             foreach(float x in new[]{-.35f,0,.35f})foreach(float z in new[]{-.35f,0,.35f})

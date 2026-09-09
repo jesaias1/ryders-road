@@ -69,11 +69,11 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(steps,Is.EqualTo(before),"Airborne travel never produces foot contact");
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
-        [UnityTest] public IEnumerator StandardAndOptionalRoutesUseAcceptedMotor()
+        [UnityTest] public IEnumerator StandardAndOptionalRoutesUseSharedMotor()
         {
             yield return Open();
             var motor=Object.FindAnyObjectByType<ParkourMotor>();
-            Assert.That(motor.Profile.MovementMastery,Is.False);
+            Assert.That(motor.Profile.ResponsiveAirControl,Is.True);
             var module=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule;
             var standard=Quality130Tests.WindwardRoute(module);
             for(int i=0;i<standard.Length-1;i++)Jump(motor,standard[i].Pose.Position,standard[i].Size,standard[i+1].Pose.Position,standard[i+1].Size,standard[i+1].StableId);

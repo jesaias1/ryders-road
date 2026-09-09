@@ -37,13 +37,14 @@ namespace Avoidance.UI
 
         public void Initialize(MovementLabSceneController factory)
         {
+            Avoidance.Gameplay.Audio.MusicDirector.SetContext("practice");
             definition=JsonUtility.FromJson<FlowLabDefinition>(Resources.Load<TextAsset>("Training/FlowLab").text);
             roomIndex=Mathf.Max(0,System.Array.FindIndex(definition.rooms,r=>r.id==definition.initialRoomId));
             visuals=Resources.Load<MovementLabVisualProfile>(MovementLabVisualProfile.ResourceName);
             baseline=Resources.Load<MovementProfile>("MovementProfiles/Movement_Default");
             candidate=Resources.Load<MovementProfile>("Training/Movement_RealRoute");
             previous=Resources.Load<MovementProfile>("Training/Movement_Mastery");
-            foundation=Resources.Load<MovementProfile>("Training/Movement_Foundation");
+            foundation=MovementProfile.LoadShared();
             RenderSettings.fog=true;RenderSettings.fogColor=visuals.SkyFog;RenderSettings.fogDensity=.004f;
             RenderSettings.ambientLight=visuals.AmbientLight;
             var sun=new GameObject("Flow Lab Sun",typeof(Light));sun.transform.rotation=Quaternion.Euler(45,-25,0);
@@ -54,7 +55,7 @@ namespace Avoidance.UI
             touch.SetSessionControlProfile(TouchControlProfileKind.FlowSteerAutoDirect);
             checkpoints=new CheckpointService();checkpoints.SetStart(Room.start,Quaternion.identity);
             BuildRoom();
-            player=factory.CreatePlayer(Room.start,new MovementProfileSet(new[]{candidate,baseline,previous,foundation}),
+            player=factory.CreatePlayer(Room.start,new MovementProfileSet(new[]{foundation,candidate,baseline,previous}),
                 Resources.Load<CameraProfile>("Camera_Default"),touch,checkpoints,Application.version,oldStatus,oldCompletion,true);
             player.gameObject.AddComponent<MovementTrialTrace>().Configure(player.Motor, Room.id);
             RenderSettings.skybox=Resources.Load<Material>("Materials/MAT_RR_Skybox_Seamless");
@@ -64,12 +65,12 @@ namespace Avoidance.UI
             feedback=Label(safe,"Flow feedback",new Vector2(.25f,.71f),new Vector2(.75f,.81f),24);
             Button(safe,"ROOM",.02f,()=>SelectRoom((roomIndex+1)%definition.rooms.Length));
             Button(safe,"RETRY",.18f,Retry);
-            Button(safe,"MOTOR A/B/D/E",.34f,Compare);
+            Button(safe,"DEV: COMPARE",.34f,Compare);
             viewButton=Button(safe,"VIEW: MANUAL",.50f,CompareView);
             Button(safe,"CONTROLS",.66f,()=> {touch.SetSessionControlProfile(touch.RuntimeProfile.FlowSteeringEnabled
                 ? TouchControlProfileKind.LeftMoveRightLookTapJump : TouchControlProfileKind.FlowSteerAutoDirect);Retry();});
             Button(safe,"EXIT",.82f,()=>StartCoroutine(new UnitySceneLevelLoader().LoadAsync("ModuleSelector")));
-            Retry();
+            ApplyTrialControls();Retry();
             UnitySceneLevelLoader.NotifyReady(gameObject.scene.name);
         }
         public void SelectRoom(int index)

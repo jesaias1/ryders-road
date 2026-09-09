@@ -144,6 +144,7 @@ namespace Avoidance.UI.Touch
 
         public void CycleControlProfile()
         {
+            if (JumpLookEnabled) return;
             EnsureLayout();
             _controlProfile = TouchControlRuntimeProfile.Next(_controlProfile);
             _jumpMode = ResolveJumpModeForControlProfile(_controlProfile);
@@ -180,6 +181,7 @@ namespace Avoidance.UI.Touch
 
         public void CycleJumpMode()
         {
+            if (JumpLookEnabled) return;
             EnsureLayout();
             CycleJumpModeVariant();
             ApplyRuntimeProfile();

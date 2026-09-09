@@ -26,6 +26,7 @@ namespace Avoidance.Gameplay.Player
         private Vector3 _lastPlatformVelocity;
         private float _movementLockRemaining;
         private bool _wasGrounded;
+        private bool _contactFresh;
         private float _preMoveVerticalVelocity;
         private float _secondsSinceLanding = float.MaxValue;
         private SurfSurface _surfSurface;
@@ -154,6 +155,7 @@ namespace Avoidance.Gameplay.Player
             var movement = (_horizontalVelocity + Vector3.up * _verticalVelocity) * deltaTime;
             var beforeMove = transform.position;
             var collisionFlags = _controller.Move(movement);
+            _contactFresh = true;
             DisplacementVelocity = (transform.position - beforeMove) / deltaTime;
             if ((collisionFlags & CollisionFlags.Above) != 0 && _verticalVelocity > 0f)
             {
@@ -214,6 +216,7 @@ namespace Avoidance.Gameplay.Player
             _movementLockRemaining = Mathf.Max(0f, movementLockDuration);
             _jumpWindow.Reset();
             _wasGrounded = false;
+            _contactFresh = false;
             ProbeGround();
         }
 
@@ -557,6 +560,19 @@ namespace Avoidance.Gameplay.Player
         private void AccelerateRouteAir(Vector3 wish, float amount, float dt)
         {
             var before = _horizontalVelocity;
+            if (_profile.ResponsiveAirControl)
+            {
+                _horizontalVelocity = RouteAirControlMath.AccelerateResponsive(before, wish,
+                    _profile.AirWishSpeed * amount, _profile.AirAcceleration, _profile.AirBraking,
+                    amount, _profile.ProjectionSteering, dt, out var projection, out var request);
+                AirProjectedSpeed = projection; AirRequestedDelta = request;
+                AirNetDelta = _horizontalVelocity - before;
+                AirAppliedWishDelta = Vector3.Dot(AirNetDelta, wish.normalized);
+                LateralVelocity = Vector3.Dot(_horizontalVelocity, LastProjectedRight);
+                VelocityHeadingYaw = Mathf.Atan2(_horizontalVelocity.x, _horizontalVelocity.z) * Mathf.Rad2Deg;
+                HeadingVelocityDelta = Mathf.Abs(Mathf.DeltaAngle(CurrentHeadingYaw, VelocityHeadingYaw));
+                return;
+            }
             var wishSpeed = _profile.MovementFoundation
                 ? Mathf.Max(_profile.AirWishSpeed * amount, before.magnitude * _profile.OverspeedWishRatio)
                 : _profile.AirWishSpeed;
@@ -676,7 +692,7 @@ namespace Avoidance.Gameplay.Player
 
             ClearSurfState();
 
-            IsGrounded = (_controller.isGrounded
+            IsGrounded = ((_controller.isGrounded && (!_profile.ResponsiveAirControl || _contactFresh))
                     || (!_profile.RealRouteAirControl && hitGround && Vector3.Dot(hit.normal, Vector3.up) >= 0.55f))
                 && _verticalVelocity <= 0.5f;
             var nextGround = IsGrounded && hit.collider != null ? hit.collider.transform : null;
@@ -709,7 +725,12 @@ namespace Avoidance.Gameplay.Player
             _lastPlatformVelocity = deltaTime > 0f ? delta / deltaTime : Vector3.zero;
             if (delta.sqrMagnitude > 0f)
             {
-                _controller.Move(delta * _profile.MovingPlatformInheritance);
+                // A horizontal carry Move clears Unity's ground flag unless it
+                // also resolves contact. Settle only an already-owned support;
+                // never turn the broad airborne probe into a landing detector.
+                var settle = _profile.ResponsiveAirControl && IsGrounded && _verticalVelocity <= 0
+                    ? Vector3.down * _controller.skinWidth : Vector3.zero;
+                _controller.Move(delta * _profile.MovingPlatformInheritance + settle);
             }
         }
 

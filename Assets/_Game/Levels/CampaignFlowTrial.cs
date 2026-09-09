@@ -12,9 +12,9 @@ namespace Avoidance.Gameplay.Levels
         public static CampaignTrialMode Mode { get; private set; }
         public static bool Active => Mode != CampaignTrialMode.None;
         public static bool UsesCandidate => Mode == CampaignTrialMode.Foundation || Mode == CampaignTrialMode.FlowManual || Mode == CampaignTrialMode.FlowLanding || Mode == CampaignTrialMode.PreviousFlow;
-        public static string MovementResource => Mode == CampaignTrialMode.Foundation ? "Training/Movement_Foundation" : !UsesCandidate ? "MovementProfiles/Movement_Default"
+        public static string MovementResource => Mode == CampaignTrialMode.Foundation ? "Movement_Shared" : !UsesCandidate ? "MovementProfiles/Movement_Default"
             : Mode == CampaignTrialMode.PreviousFlow ? "Training/Movement_Mastery" : "Training/Movement_RealRoute";
-        public static string Label => Mode == CampaignTrialMode.Foundation ? "FOUNDATION / HOLD JUMP + LOOK" : Mode == CampaignTrialMode.Accepted ? "ACCEPTED CONTROLS"
+        public static string Label => Mode == CampaignTrialMode.Foundation ? "SHARED / HOLD JUMP + LOOK" : Mode == CampaignTrialMode.Accepted ? "LEGACY ROLLBACK (DEV)"
             : Mode == CampaignTrialMode.PreviousFlow ? "PREVIOUS FLOW 0.9.9"
             : Mode == CampaignTrialMode.FlowManual ? "ROUTE FLOW / MANUAL VIEW" : "ROUTE FLOW / LANDING VIEW";
 

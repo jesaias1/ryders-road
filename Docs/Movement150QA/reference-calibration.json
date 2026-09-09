@@ -1,0 +1,194 @@
+{
+  "method": "Independent arithmetic at 120 Hz; no actual engine run",
+  "unitConvention": "CS 250 u/s and Q3 320 u/s normalized separately to 7.8 m/s",
+  "scenarios": {
+    "cs_projection": {
+      "parameters": {
+        "run": 7.8,
+        "projection": 0.936,
+        "air": 78.0,
+        "ground": 39.0,
+        "friction": 4,
+        "stop": 2.34
+      },
+      "secondsToRun": 0.4083333333333333,
+      "groundReleaseSeconds": 0.55,
+      "air": [
+        {
+          "initial": 7.8,
+          "small": {
+            "heading": 0.0,
+            "speed": 7.8,
+            "forward": 7.8
+          },
+          "side": {
+            "heading": 6.842773412630938,
+            "speed": 7.855959266696843,
+            "forward": 7.8
+          },
+          "reverse": {
+            "heading": 179.99999999999994,
+            "speed": 0.936,
+            "forward": -0.936
+          },
+          "explicit89DegreeStrafeSpeed": 11.762900026566289,
+          "neutralAirSpeed": 7.8
+        },
+        {
+          "initial": 10.8,
+          "small": {
+            "heading": 0.0,
+            "speed": 10.8,
+            "forward": 10.8
+          },
+          "side": {
+            "heading": 4.953257477842058,
+            "speed": 10.840484122030714,
+            "forward": 10.8
+          },
+          "reverse": {
+            "heading": 179.99999999999991,
+            "speed": 0.936,
+            "forward": -0.936
+          },
+          "explicit89DegreeStrafeSpeed": 14.193308078161689,
+          "neutralAirSpeed": 10.8
+        },
+        {
+          "initial": 14,
+          "small": {
+            "heading": 0.0,
+            "speed": 14.0,
+            "forward": 14.0
+          },
+          "side": {
+            "heading": 3.8249398888711337,
+            "speed": 14.031254256124075,
+            "forward": 14.0
+          },
+          "reverse": {
+            "heading": 179.9999999999999,
+            "speed": 0.936,
+            "forward": -0.936
+          },
+          "explicit89DegreeStrafeSpeed": 16.990880940297526,
+          "neutralAirSpeed": 14
+        },
+        {
+          "initial": 17,
+          "small": {
+            "heading": 0.0,
+            "speed": 17.0,
+            "forward": 17.0
+          },
+          "side": {
+            "heading": 3.1514562641612187,
+            "speed": 17.025748030556542,
+            "forward": 17.0
+          },
+          "reverse": {
+            "heading": 179.99999999999986,
+            "speed": 0.936,
+            "forward": -0.936
+          },
+          "explicit89DegreeStrafeSpeed": 19.541621149233222,
+          "neutralAirSpeed": 17
+        }
+      ]
+    },
+    "quake3_projection": {
+      "parameters": {
+        "run": 7.8,
+        "projection": 7.8,
+        "air": 7.8,
+        "ground": 78.0,
+        "friction": 6,
+        "stop": 2.4375
+      },
+      "secondsToRun": 0.15833333333333333,
+      "groundReleaseSeconds": 0.35833333333333334,
+      "air": [
+        {
+          "initial": 7.8,
+          "small": {
+            "heading": 0.14892388341609267,
+            "speed": 7.916725994733723,
+            "forward": 7.91669925243018
+          },
+          "side": {
+            "heading": 26.565051177077972,
+            "speed": 8.720665112249177,
+            "forward": 7.8
+          },
+          "reverse": {
+            "heading": 7.016709298534917e-15,
+            "speed": 3.8999999999999773,
+            "forward": 3.8999999999999773
+          },
+          "explicit89DegreeStrafeSpeed": 7.968270828171787,
+          "neutralAirSpeed": 7.8
+        },
+        {
+          "initial": 10.8,
+          "small": {
+            "heading": 0.0,
+            "speed": 10.8,
+            "forward": 10.8
+          },
+          "side": {
+            "heading": 19.855214369321043,
+            "speed": 11.482595525402782,
+            "forward": 10.8
+          },
+          "reverse": {
+            "heading": 3.965966125258835e-15,
+            "speed": 6.9000000000000155,
+            "forward": 6.9000000000000155
+          },
+          "explicit89DegreeStrafeSpeed": 10.95942106704398,
+          "neutralAirSpeed": 10.8
+        },
+        {
+          "initial": 14,
+          "small": {
+            "heading": 0.0,
+            "speed": 14.0,
+            "forward": 14.0
+          },
+          "side": {
+            "heading": 15.566317824856807,
+            "speed": 14.533065746772083,
+            "forward": 14.0
+          },
+          "reverse": {
+            "heading": 2.709422402404548e-15,
+            "speed": 10.10000000000003,
+            "forward": 10.10000000000003
+          },
+          "explicit89DegreeStrafeSpeed": 14.154130733382214,
+          "neutralAirSpeed": 14
+        },
+        {
+          "initial": 17,
+          "small": {
+            "heading": 0.0,
+            "speed": 17.0,
+            "forward": 17.0
+          },
+          "side": {
+            "heading": 12.920750335831558,
+            "speed": 17.44161689752415,
+            "forward": 17.0
+          },
+          "reverse": {
+            "heading": 2.0889439896401533e-15,
+            "speed": 13.100000000000003,
+            "forward": 13.100000000000003
+          },
+          "explicit89DegreeStrafeSpeed": 17.150969687477467,
+          "neutralAirSpeed": 17
+        }
+      ]
+    }
+  }
+}

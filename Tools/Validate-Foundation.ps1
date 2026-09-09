@@ -314,7 +314,7 @@ if ($configuration -notmatch '(?m)^  _gameVersion: 0\.5\.0$') {
     $errors.Add('Game version is not 0.5.0.')
 }
 
-if ($configuration -notmatch '(?m)^  _buildVersion: 0\.14\.2-goldsrc-reference$') {
+if ($configuration -notmatch '(?m)^  _buildVersion: 0\.15\.0-shared-movement-music$') {
     $errors.Add('Current production build version is invalid.')
 }
 
@@ -457,7 +457,7 @@ if ($visualBenchmarks -notmatch 'MobileBalanced' -or $visualBenchmarks -notmatch
 
 $projectSettings = Read-Text 'ProjectSettings/ProjectSettings.asset'
 if ($projectSettings -notmatch "(?m)^  productName: Ryder's Road$" `
-    -or $projectSettings -notmatch '(?m)^  bundleVersion: 0\.14\.2-goldsrc-reference$' `
+    -or $projectSettings -notmatch '(?m)^  bundleVersion: 0\.15\.0-shared-movement-music$' `
     -or $projectSettings -notmatch '(?m)^  defaultScreenOrientation: 4$' `
     -or $projectSettings -notmatch '(?m)^  allowedAutorotateToPortrait: 0$' `
     -or $projectSettings -notmatch '(?m)^  allowedAutorotateToPortraitUpsideDown: 0$' `
@@ -495,9 +495,9 @@ if ($brandPresentation -notmatch 'PlayerFacingTitle = "RYDER''S ROAD"' `
 
 $selector = Read-Text 'Assets/_Game/UI/DevelopmentModuleSelector.cs'
 if ($selector -notmatch 'BrandPresentation\.LoadLogoSprite' `
-    -or $selector -notmatch 'CONTROL  EASY' `
+    -or $selector -notmatch 'MusicVolumeKey' `
     -or $selector -notmatch 'FirstPersonCameraRig\.FieldOfViewPreferenceKey') {
-    $errors.Add('Module selector must use the approved logo and alpha settings controls.')
+    $errors.Add('Module selector must use the approved logo, shared music settings and FOV controls.')
 }
 
 if ($selector -notmatch 'ProductionButton' `

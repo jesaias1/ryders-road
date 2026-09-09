@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Road",
+    "sourceIndex": 0,
+    "sourceSha256": "a4b0c3a8cc5a6fed4787b1761364b67f0ff61a31beeaa8fd09b18a88d5b97b56",
+    "sourceStartSeconds": 18.36698412698413,
+    "sourceEndSeconds": 77.020589569161,
+    "crossfadeSeconds": 1.8343764172335568,
+    "loopSeconds": 58.65360544217687,
+    "gainDb": -7.32,
+    "loudness": {
+      "input_i": "-22.00",
+      "input_tp": "-8.34",
+      "input_lra": "4.40",
+      "input_thresh": "-32.00",
+      "output_i": "-22.90",
+      "output_tp": "-9.58",
+      "output_lra": "3.90",
+      "output_thresh": "-32.90",
+      "normalization_type": "dynamic",
+      "target_offset": "0.90"
+    },
+    "boundaryStep": 0.004817072302103043,
+    "interiorStep99": 0.01622704043984413,
+    "sha256": "34e6a8783ee9c96120f477a3eb0d028009380594c83006d80c9408bc2e0d90fa"
+  },
+  {
+    "name": "Menu",
+    "sourceIndex": 1,
+    "sourceSha256": "e87d6cd28b2a379c6b6aadc668f4c0ce498ce35bf5a3e8088fa93d416edbe5bc",
+    "sourceStartSeconds": 154.0,
+    "sourceEndSeconds": 210.0,
+    "crossfadeSeconds": 4.0,
+    "loopSeconds": 56.0,
+    "gainDb": -0.370000000000001,
+    "loudness": {
+      "input_i": "-22.00",
+      "input_tp": "-6.27",
+      "input_lra": "7.20",
+      "input_thresh": "-32.89",
+      "output_i": "-20.73",
+      "output_tp": "-5.18",
+      "output_lra": "5.50",
+      "output_thresh": "-31.60",
+      "normalization_type": "dynamic",
+      "target_offset": "-1.27"
+    },
+    "boundaryStep": 0.007407214492559433,
+    "interiorStep99": 0.020370835438370705,
+    "sha256": "da1b03cd3632eb1f6cec6a1a5f921e80a4074ca8c8179d9c9e3f687eeb08ead3"
+  },
+  {
+    "name": "Momentum",
+    "sourceIndex": 2,
+    "sourceSha256": "a1b84cf1c35c8475456f3645832ce93b162bd29a599a4b2dfd0beb94ab6187b3",
+    "sourceStartSeconds": 16.091428571428573,
+    "sourceEndSeconds": 86.42467120181406,
+    "crossfadeSeconds": 1.462857142857132,
+    "loopSeconds": 70.33324263038548,
+    "gainDb": -7.59,
+    "loudness": {
+      "input_i": "-22.00",
+      "input_tp": "-10.28",
+      "input_lra": "1.90",
+      "input_thresh": "-32.02",
+      "output_i": "-22.00",
+      "output_tp": "-10.39",
+      "output_lra": "1.80",
+      "output_thresh": "-32.02",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.00"
+    },
+    "boundaryStep": 0.00139567069709301,
+    "interiorStep99": 0.017857760190963745,
+    "sha256": "e3fc23ed6d29463afc7a55c5a38d00f00cf8de6e495b99299c9aacc1bc4d3515"
+  }
+]

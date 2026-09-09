@@ -1,3 +1,5 @@
+> Historical 0.14.2 investigation. Physical feedback rejected the restrictive steering; [0.15.0 correction and reference calibration](Movement150QA/README.md) and ADR 0029 supersede its preserve-envelope decision. Normal play now uses shared compatibility 5.
+
 # GoldSrc movement reference - Ryder's Road 0.14.2
 
 Inspected 2026-09-09, alongside ADR 0022, ADR 0027, the 0.10.0 real-route

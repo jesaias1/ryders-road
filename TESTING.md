@@ -1,3 +1,13 @@
+## 0.15.0 shared rollout
+
+SharedMovementTests measures before/after with real controllers at 30/50/60/120 Hz.
+Production099Tests covers normal Campaign two-pointer hold/look, all six module
+entries, reload/Restore and stale preferences. MusicPlaybackTests checks streaming,
+loop boundaries, volume, interrupted transitions and application pause. Versioned
+PB tests preserve old history when compatibility 5 begins. Keep legacy camera
+comparisons explicitly on legacy profiles. Full results: Docs/PRODUCTION_0150.md.
+Physical S23 feel, musical seams, touch delivery and sustained FPS remain unverified.
+
 ## 0.14.2 movement reference verification
 
 FoundationMotorTests adds speed/alignment measurements, actual post-bound

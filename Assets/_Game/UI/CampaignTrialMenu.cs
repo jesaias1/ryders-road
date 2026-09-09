@@ -21,10 +21,10 @@ namespace Avoidance.UI
             {
                 title.text = "CAMPAIGN FLOW TRIAL  /  " + modules.Single(m => m.StableModuleId == road).DisplayName;
                 hint.text = (mode == CampaignTrialMode.Foundation ? "E · Hold anywhere on the right + drag to look · left stick moves · release to stop hopping"
-                    : mode == CampaignTrialMode.Accepted ? "A · Accepted motor and your saved controls"
+                    : mode == CampaignTrialMode.Accepted ? "A · Development rollback: legacy motor and saved controls"
                     : mode == CampaignTrialMode.PreviousFlow ? "D · Previous 0.9.9 Flow motor · manual pitch"
-                    : mode == CampaignTrialMode.FlowManual ? "B · New air control · manual pitch"
-                    : "C · Same new air control · landing view")
+                    : mode == CampaignTrialMode.FlowManual ? "B · Archived air control · manual pitch"
+                    : "C · Archived air control · landing view")
                     + "\nPractice only · separate session times · Campaign progress stays unchanged";
                 foreach(var button in panel.GetComponentsInChildren<Button>())
                     if(button.name.StartsWith("Trial Road ") || button.name.StartsWith("Trial Mode "))
@@ -39,7 +39,7 @@ namespace Avoidance.UI
                     new Vector2(.03f+i*(.94f/ids.Length),.62f),new Vector2(.03f+(i+1)*(.94f/ids.Length)-.015f,.79f),()=> {road=id;Refresh();});
             }
             var modes=new[]{CampaignTrialMode.Accepted,CampaignTrialMode.FlowManual,CampaignTrialMode.FlowLanding,CampaignTrialMode.PreviousFlow,CampaignTrialMode.Foundation};
-            var labels=new[]{"A · ACCEPTED","B · ROUTE MANUAL","C · ROUTE LANDING","D · OLD FLOW","E · FOUNDATION"};
+            var labels=new[]{"A · LEGACY DEV","B · ROUTE MANUAL","C · ROUTE LANDING","D · OLD FLOW","E · SHARED"};
             for(int i=0;i<modes.Length;i++)
             {
                 var option=modes[i];

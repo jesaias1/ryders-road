@@ -1,3 +1,12 @@
+## 0.15.0 — Shared responsive movement and music (2026-09-09)
+
+- Promote compatibility-5 shared movement and whole-right hold/manual look to normal Campaign, Spiral and practice.
+- Stronger explicit air correction/braking; remove ordinary energy envelope, preserve neutral momentum and clean hops; fix fresh contact/platform carry.
+- Preserve old PB history/unlocks using existing compatibility buckets.
+- Analyze three original soundtracks; add streaming context loops and separate Music volume.
+- Continue approved frontend with normal Flow Lab entry and responsive Settings.
+- Verification and physical limits: Docs/PRODUCTION_0150.md. Stop for S23 feedback.
+
 ## 0.14.2 - GoldSrc reference verification
 
 - Inspected pinned upstream Xash3D FWGS/HLSDK movement; documented original Unity differences.

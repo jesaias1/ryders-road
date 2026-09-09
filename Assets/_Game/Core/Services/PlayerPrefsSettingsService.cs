@@ -5,6 +5,7 @@ namespace Avoidance.Core.Services
     public sealed class PlayerPrefsSettingsService : ISettingsService
     {
         private const string MasterVolumeKey = "settings.master-volume";
+        public const string MusicVolumeKey = "settings.music-volume";
         private const string LookSensitivityKey = "settings.look-sensitivity";
         private const string DiagnosticsVisibleKey = "settings.diagnostics-visible";
 
@@ -13,6 +14,7 @@ namespace Avoidance.Core.Services
         public void Load()
         {
             Current.masterVolume = PlayerPrefs.GetFloat(MasterVolumeKey, 1f);
+            Current.musicVolume = Mathf.Clamp01(PlayerPrefs.GetFloat(MusicVolumeKey, .65f));
             Current.lookSensitivity = PlayerPrefs.GetFloat(LookSensitivityKey, 0.5f);
             Current.diagnosticsVisible = PlayerPrefs.GetInt(DiagnosticsVisibleKey, 1) != 0;
         }
@@ -20,6 +22,7 @@ namespace Avoidance.Core.Services
         public void Save()
         {
             PlayerPrefs.SetFloat(MasterVolumeKey, Mathf.Clamp01(Current.masterVolume));
+            PlayerPrefs.SetFloat(MusicVolumeKey, Mathf.Clamp01(Current.musicVolume));
             PlayerPrefs.SetFloat(LookSensitivityKey, Mathf.Clamp01(Current.lookSensitivity));
             PlayerPrefs.SetInt(DiagnosticsVisibleKey, Current.diagnosticsVisible ? 1 : 0);
             PlayerPrefs.Save();

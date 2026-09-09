@@ -63,6 +63,8 @@ namespace Avoidance.UI
             checkpointService.SetStart(startPosition, Quaternion.identity);
             CreateCourse(checkpointService);
             var touchInput = CreateTouchInterface(touchLayout, out var statusText, out var completionText);
+            touchInput.EnableFoundationJumpLook();
+            Avoidance.Gameplay.Audio.MusicDirector.SetContext("practice");
             CreatePlayer(
                 startPosition,
                 movementProfiles,
@@ -76,10 +78,7 @@ namespace Avoidance.UI
 
         private static MovementProfileSet LoadMovementProfiles()
         {
-            var profiles = Resources.LoadAll<MovementProfile>("MovementProfiles")
-                .OrderBy(ProfileOrder)
-                .ToArray();
-            return new MovementProfileSet(profiles);
+            return new MovementProfileSet(new[] { MovementProfile.LoadShared() });
         }
 
         private static int ProfileOrder(MovementProfile profile)

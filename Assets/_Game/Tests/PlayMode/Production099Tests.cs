@@ -126,7 +126,7 @@ namespace Avoidance.Tests.PlayMode
                 Assert.That(motor.Profile.MovementMastery,Is.EqualTo(mode!=CampaignTrialMode.Accepted));
                 if(mode==CampaignTrialMode.Foundation)
                 {
-                    Assert.That(motor.Profile.CompatibilityVersion,Is.EqualTo(4));
+                    Assert.That(motor.Profile.CompatibilityVersion,Is.EqualTo(5));
                     Assert.That(touch.JumpLookEnabled,Is.True);
                     Assert.That(touch.RuntimeProfile.EnableFixedButton,Is.False);
                     Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.False);
@@ -186,12 +186,18 @@ namespace Avoidance.Tests.PlayMode
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
             Assert.That(CampaignFlowTrial.Active,Is.False);
             ModuleSelectionState.Select(Foundry,true);yield return Open();
-            Assert.That(Object.FindAnyObjectByType<ParkourMotor>().Profile.MovementMastery,Is.False);
+            Assert.That(Object.FindAnyObjectByType<ParkourMotor>().Profile.ResponsiveAirControl,Is.True);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
         [UnityTest] public IEnumerator FoundationWholeRightSurfaceHoldDragReleaseAndUiBoundaries()
+            => WholeRightSurfaceHoldDragReleaseAndUiBoundaries(false);
+        [UnityTest] public IEnumerator NormalCampaignWholeRightSurfaceHoldDragReleaseAndUiBoundaries()
+            => WholeRightSurfaceHoldDragReleaseAndUiBoundaries(true);
+        private IEnumerator WholeRightSurfaceHoldDragReleaseAndUiBoundaries(bool normal)
         {
-            CampaignFlowTrial.Launch(Foundry,CampaignTrialMode.Foundation);yield return Open();
+            if(normal) ModuleSelectionState.Select(Foundry);
+            else CampaignFlowTrial.Launch(Foundry,CampaignTrialMode.Foundation);
+            yield return Open();
             var player=Object.FindAnyObjectByType<PlayerRuntimeCoordinator>();
             var touch=Object.FindAnyObjectByType<TouchInputCoordinator>();
             var look=Object.FindAnyObjectByType<TouchLookControl>();
@@ -281,6 +287,42 @@ namespace Avoidance.Tests.PlayMode
             look.OnPointerDown(held);touch.SendMessage("OnApplicationPause",true);Assert.That(touch.JumpHeld,Is.False);
             look.OnPointerDown(held);touch.SendMessage("OnApplicationFocus",false);Assert.That(touch.JumpHeld,Is.False);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+
+        [UnityTest] public IEnumerator SharedMovementIsNormalAcrossWorldsRetryRestoreAndLegacyPreferences()
+        {
+            string key=TouchInputCoordinator.ControlProfilePreferenceKey;
+            bool had=PlayerPrefs.HasKey(key);int saved=PlayerPrefs.GetInt(key);
+            try
+            {
+                PlayerPrefs.SetInt(key,(int)TouchControlProfileKind.FlowSteerAutoBalanced);
+                foreach(var id in ModuleSelectionState.GetCampaignModuleIds().Concat(new[]{ModuleSelectionState.SpiralModuleId}))
+                {
+                    ModuleSelectionState.Select(id);yield return Open();
+                    var player=Object.FindAnyObjectByType<PlayerRuntimeCoordinator>();
+                    var touch=Object.FindAnyObjectByType<TouchInputCoordinator>();
+                    Assert.That(CampaignFlowTrial.Active,Is.False);
+                    Assert.That(ModuleSelectionState.DevelopmentOverride,Is.False);
+                    Assert.That(player.Motor.Profile.ProfileId,Is.EqualTo("movement.shared"));
+                    Assert.That(player.Motor.Profile.CompatibilityVersion,Is.EqualTo(5));
+                    Assert.That(player.Profiles.Count,Is.EqualTo(1));
+                    Assert.That(touch.JumpLookEnabled,Is.True);
+                    Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.False);
+                    touch.CycleControlProfile();touch.CycleJumpMode();
+                    Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.False);
+                    Assert.That(touch.RuntimeProfile.EnableFixedButton,Is.False);
+                    player.GetComponent<RestoreController>().RestoreNow();
+                    Assert.That(player.Motor.Profile.ResponsiveAirControl,Is.True);
+                    yield return new UnitySceneLevelLoader().LoadAsync("ModuleRunner");yield return null;
+                    Assert.That(Object.FindAnyObjectByType<ParkourMotor>().Profile.ResponsiveAirControl,Is.True);
+                    Debug.Log("SHARED150 WORLD "+id+" normal/reload/restore compatibility=5");
+                }
+                yield return new UnitySceneLevelLoader().LoadAsync("MovementLab");yield return null;
+                Assert.That(Object.FindAnyObjectByType<ParkourMotor>().Profile.ResponsiveAirControl,Is.True);
+                Assert.That(Object.FindAnyObjectByType<TouchInputCoordinator>().JumpLookEnabled,Is.True);
+                yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+            }
+            finally {if(had)PlayerPrefs.SetInt(key,saved);else PlayerPrefs.DeleteKey(key);}
         }
 
         private static void Click(string name)=>Object.FindObjectsByType<Button>().Single(b=>b.name==name).onClick.Invoke();

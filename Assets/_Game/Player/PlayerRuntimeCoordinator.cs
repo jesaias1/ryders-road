@@ -181,9 +181,11 @@ namespace Avoidance.Gameplay.Player
             _diagnostics.SetValue("Momentum ratio", _motor.MomentumRatio.ToString("0.00"));
             _diagnostics.SetValue("Peak speed", _motor.PeakHorizontalSpeed.ToString("0.00"));
             _diagnostics.SetValue("Surf speed", _motor.SurfSpeed.ToString("0.00"));
-            _diagnostics.SetValue("Movement profile", _motor.Profile.DisplayName);
+            _diagnostics.SetValue("Movement profile", $"{_motor.Profile.DisplayName} / {_motor.Profile.ProfileId} / v{_motor.Profile.CompatibilityVersion}");
+            _diagnostics.SetValue("Development build", Application.version);
             _diagnostics.SetValue("Base run speed", _motor.Profile.BaseRunSpeed.ToString("0.00"));
-            _diagnostics.SetValue("Soft momentum limit", _motor.Profile.SoftMomentumLimit.ToString("0.00"));
+            _diagnostics.SetValue("Soft momentum limit", _motor.Profile.ResponsiveAirControl
+                ? "No ordinary air envelope" : _motor.Profile.SoftMomentumLimit.ToString("0.00"));
             _diagnostics.SetValue("Hard velocity limit", _motor.Profile.HardVelocitySafetyLimit.ToString("0.00"));
             _diagnostics.SetValue("Jump height", _motor.Profile.JumpHeight.ToString("0.00"));
             _diagnostics.SetValue("Time to apex", _motor.Profile.TimeToApex.ToString("0.000"));

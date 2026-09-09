@@ -16,6 +16,38 @@ namespace Avoidance.Tests.PlayMode
 {
     public sealed class HotfixNavigationTests
     {
+        [UnityTest] public IEnumerator SharedFrontendMusicSettingsAndNormalFlowLab()
+        {
+            yield return Boot();
+            CaptureNow("shared150-home");
+            Button("SETTINGS Button").onClick.Invoke();yield return null;
+            var music=Button("MUSIC Button");
+            const string key=Avoidance.Core.Services.PlayerPrefsSettingsService.MusicVolumeKey;
+            bool existed=PlayerPrefs.HasKey(key);float saved=PlayerPrefs.GetFloat(key,.65f);
+            try
+            {
+                string before=music.GetComponentInChildren<Text>().text;
+                music.onClick.Invoke();yield return null;
+                Assert.That(music.GetComponentInChildren<Text>().text,Is.Not.EqualTo(before));
+                var settings=new Avoidance.Core.Services.PlayerPrefsSettingsService();settings.Load();
+                Assert.That(music.GetComponentInChildren<Text>().text,Does.Contain(Mathf.RoundToInt(settings.Current.musicVolume*100).ToString()));
+                foreach(var size in new[]{new Vector2Int(1560,720),new Vector2Int(1280,720),new Vector2Int(1920,1080)})
+                    CaptureNow("shared150-settings-"+size.x,size.x,size.y,true);
+                Button("BACK Button").onClick.Invoke();yield return null;
+                Button("FLOW LAB Button").onClick.Invoke();
+                float deadline=Time.realtimeSinceStartup+10;
+                while(Object.FindAnyObjectByType<FlowLabSceneController>()==null && Time.realtimeSinceStartup<deadline)yield return null;
+                var lab=Object.FindAnyObjectByType<FlowLabSceneController>();Assert.That(lab,Is.Not.Null);
+                Assert.That(lab.Player.Motor.Profile.ResponsiveAirControl,Is.True);
+            }
+            finally
+            {
+                if(existed)PlayerPrefs.SetFloat(key,saved);else PlayerPrefs.DeleteKey(key);PlayerPrefs.Save();
+                Avoidance.Core.Services.ISettingsService settings=null;
+                Avoidance.Core.Services.GameServices.Current?.TryGet(out settings);settings?.Load();
+            }
+        }
+
         [UnityTest]
         public IEnumerator MenuSpiralButtonActivatesGameplayAndDismissesOverlay()
         {
@@ -135,20 +167,35 @@ namespace Avoidance.Tests.PlayMode
             yield return null;
             CaptureNow(name);
         }
-        private static void CaptureNow(string name)
+        private static void CaptureNow(string name,int width=1560,int height=720,bool checkSettings=false)
         {
             Directory.CreateDirectory("Logs/Phase092VisualQA");
             var camera = Camera.main;
             var canvases = Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None).Where(canvas => canvas.renderMode == RenderMode.ScreenSpaceOverlay).ToArray();
-            var render = new RenderTexture(1560, 720, 24);
-            var texture = new Texture2D(1560, 720, TextureFormat.RGB24, false);
+            var render = new RenderTexture(width, height, 24);
+            var texture = new Texture2D(width, height, TextureFormat.RGB24, false);
             var previous = RenderTexture.active;
             var aspect = camera.aspect;
             try
             {
-                camera.targetTexture = render; camera.aspect = 1560f / 720;
+                camera.targetTexture = render; camera.aspect = (float)width / height;
                 foreach (var canvas in canvases) { canvas.renderMode = RenderMode.ScreenSpaceCamera; canvas.worldCamera = camera; canvas.planeDistance = 1f; }
                 Canvas.ForceUpdateCanvases();
+                if(checkSettings)
+                {
+                    var panel=(RectTransform)GameObject.Find("Settings Panel").transform;
+                    foreach(var button in panel.GetComponentsInChildren<Button>())
+                    {
+                        var rect=(RectTransform)button.transform;
+                        var bounds=RectTransformUtility.CalculateRelativeRectTransformBounds(panel,rect);
+                        Assert.That(bounds.min.x,Is.GreaterThanOrEqualTo(panel.rect.xMin-1));
+                        Assert.That(bounds.max.x,Is.LessThanOrEqualTo(panel.rect.xMax+1));
+                        Assert.That(bounds.min.y,Is.GreaterThanOrEqualTo(panel.rect.yMin-1));
+                        Assert.That(bounds.max.y,Is.LessThanOrEqualTo(panel.rect.yMax+1));
+                        var label=button.GetComponentInChildren<Text>();
+                        Assert.That(label.preferredWidth,Is.LessThanOrEqualTo(((RectTransform)label.transform).rect.width+1),label.text);
+                    }
+                }
                 Assert.That(camera.rect, Is.EqualTo(new Rect(0, 0, 1, 1)), "Full gameplay camera viewport");
                 foreach (var canvas in canvases)
                 foreach (var fit in canvas.GetComponentsInChildren<AspectRatioFitter>())
@@ -163,7 +210,7 @@ namespace Avoidance.Tests.PlayMode
                     Assert.That(bounds.max.y, Is.GreaterThanOrEqualTo(root.rect.yMax - 1));
                 }
                 camera.Render(); RenderTexture.active = render;
-                texture.ReadPixels(new Rect(0, 0, 1560, 720), 0, 0); texture.Apply();
+                texture.ReadPixels(new Rect(0, 0, width, height), 0, 0); texture.Apply();
                 File.WriteAllBytes("Logs/Phase092VisualQA/" + name + ".png", texture.EncodeToPNG());
             }
             finally

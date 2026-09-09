@@ -1,3 +1,11 @@
+## 0.15.0 frontend continuation
+
+Preserve the approved poster/logo and existing road art. Home exposes normal Flow
+Lab alongside Campaign and Spiral. Settings uses a responsive two-column grid and
+separate Music/Master controls; obsolete normal movement-mode choices are removed.
+No level geometry, world materials, branding assets or visual movement shortcuts
+are authorized by this presentation work. See Docs/PRODUCTION_0150.md.
+
 ## 0.13.0 physical gameplay-quality rejection
 
 The user's S23 captures and report supersede assumptions that the slice's routes

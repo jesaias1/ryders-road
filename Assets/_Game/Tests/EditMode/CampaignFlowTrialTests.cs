@@ -25,7 +25,7 @@ namespace Avoidance.Tests.EditMode
             Assert.That(CampaignFlowTrial.Best(foundry),Is.Zero);
             var profile=Resources.Load<Avoidance.Gameplay.Player.MovementProfile>(CampaignFlowTrial.MovementResource);
             Assert.That(profile.MovementFoundation && profile.HoldToHop,Is.True);
-            Assert.That(profile.CompatibilityVersion,Is.EqualTo(4));
+            Assert.That(profile.CompatibilityVersion,Is.EqualTo(5));
             CampaignFlowTrial.Complete(foundry,42);
             CampaignFlowTrial.Launch(foundry.StableModuleId,CampaignTrialMode.FlowLanding);
             Assert.That(CampaignFlowTrial.Best(foundry),Is.EqualTo(74));

@@ -1,3 +1,13 @@
+## 0.15.0 current movement authority
+
+The user requested game-wide promotion after reporting restrictive 0.14.2 air feel.
+Shared compatibility 5 uses explicit 40 m/s² air acceleration/braking, fixed wish
+projection, tangential input correction and no ordinary 10.8 m/s energy envelope.
+Neutral air, manual camera and clean-hop momentum are preserved; hard cap stays18.
+This deliberate mobile adaptation is not a literal CS1.6 clone. Details, measured
+before/after and reference distinctions: Docs/Movement150QA/README.md; ADR 0029.
+Earlier candidate-only statements below are historical. Physical tuning is pending.
+
 ## 0.14.2 current movement-reference authority
 
 See Docs/GOLDSRC_MOVEMENT_REFERENCE.md and ADR 0028 for the inspected Xash3D/HLSDK

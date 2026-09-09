@@ -1,3 +1,14 @@
+# Current authority — 0.15.0 shared movement and music
+
+See PRODUCTION_0150.md, ADR 0029, Movement150QA and Audio150.
+The user's physical feedback approves the existing whole-right hold controls and
+explicitly authorizes game-wide rollout. New responsive movement.shared compatibility
+5 is normal across Campaign, Spiral and practice; no development trial is needed.
+Old history/unlocks stay intact, new PBs use separate compatibility buckets.
+Original music is integrated with independent Music volume. Physical tuning and
+listening remain pending. Deliver then STOP for S23 feedback.
+Earlier candidate-only instructions below are historical where they conflict.
+
 # Current authority - 0.14.2 GoldSrc reference verification
 
 See PRODUCTION_0142.md, GOLDSRC_MOVEMENT_REFERENCE.md and ADR 0028.

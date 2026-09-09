@@ -67,6 +67,7 @@ namespace Avoidance.Core.Services
     public sealed class GameSettings
     {
         [Range(0f, 1f)] public float masterVolume = 1f;
+        [Range(0f, 1f)] public float musicVolume = .65f;
         [Range(0f, 1f)] public float lookSensitivity = 0.5f;
         public bool diagnosticsVisible = true;
     }

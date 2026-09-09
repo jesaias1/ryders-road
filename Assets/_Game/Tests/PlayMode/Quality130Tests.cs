@@ -65,7 +65,7 @@ namespace Avoidance.Tests.PlayMode
             {
                 if(id.Contains("solar") && !fast) continue;
                 if(foundation) CampaignFlowTrial.Launch(id,CampaignTrialMode.Foundation);
-                else ModuleSelectionState.Select(id,true);
+                else ModuleSelectionState.Select(id);
                 yield return new UnitySceneLevelLoader().LoadAsync("ModuleRunner");yield return null;
                 Object.FindAnyObjectByType<PlayerRuntimeCoordinator>().enabled=false;
                 var motor=Object.FindAnyObjectByType<ParkourMotor>();
@@ -103,7 +103,7 @@ namespace Avoidance.Tests.PlayMode
                     input.JumpPressed=true;Step();input.JumpPressed=false;
                     bool air=false,land=false;
                     for(int i=0;i<110;i++){
-                        if(foundation)
+                        if(motor.Profile.MovementFoundation)
                         {
                             // Test pilot only: explicit stick correction, never runtime assistance.
                             float v=motor.VerticalSpeed,g=motor.Profile.FallGravity;

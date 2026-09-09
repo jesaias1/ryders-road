@@ -99,6 +99,7 @@ namespace Avoidance.UI
         {
             // Preserve immediate identity discovery while construction is incremental.
             _module = LoadSelectedModule();
+            MusicDirector.SetContext(_module.StableModuleId);
             _constructionBudgetSeconds = (Resources.Load<LoadingTransitionProfile>("LoadingTransitionProfile")?.ConstructionBudgetMilliseconds ?? 4f) * .001f;
         }
 
@@ -197,10 +198,7 @@ namespace Avoidance.UI
         {
             if (CampaignFlowTrial.Active)
                 return new MovementProfileSet(new[] { Resources.Load<MovementProfile>(CampaignFlowTrial.MovementResource) });
-            var profiles = Resources.LoadAll<MovementProfile>("MovementProfiles")
-                .OrderBy(ProfileOrder)
-                .ToArray();
-            return new MovementProfileSet(profiles);
+            return new MovementProfileSet(new[] { MovementProfile.LoadShared() });
         }
 
         private static int ProfileOrder(MovementProfile profile)
@@ -396,7 +394,7 @@ namespace Avoidance.UI
                 cameraProfile,
                 ParkourCameraProfile.CreateRuntimeDefault(),
                 routeCameraGraph);
-            if (CampaignFlowTrial.Mode == CampaignTrialMode.Foundation)
+            if (motor.Profile.MovementFoundation)
             {
                 touchInput.EnableFoundationJumpLook();
             }

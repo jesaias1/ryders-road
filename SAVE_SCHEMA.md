@@ -1,3 +1,13 @@
+## 0.15.0 shared compatibility and music settings
+
+The user's rollout request authorizes normal compatibility 5. Existing V4 versioned
+PB/history rules separate these results from compatibility 1–4 without rewriting
+old records or unlocks. No rank-threshold or content-version migration occurs.
+GameSettings adds musicVolume (default 0.65). PlayerPrefs settings.music-volume is
+the runtime authority, matching existing settings practice; old save meaning is
+unchanged and absent music keys use the default. No schema-version bump is needed.
+Earlier trial-only compatibility restrictions below are historical (ADR 0029).
+
 ## 0.14.0 isolated movement candidate
 
 No schema or persisted meaning changes. Compatibility 4 exists only in transient
