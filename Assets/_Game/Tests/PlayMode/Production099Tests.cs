@@ -127,16 +127,18 @@ namespace Avoidance.Tests.PlayMode
                 if(mode==CampaignTrialMode.Foundation)
                 {
                     Assert.That(motor.Profile.CompatibilityVersion,Is.EqualTo(4));
-                    Assert.That(touch.JumpLookEnabled && touch.RuntimeProfile.EnableFixedButton,Is.True);
+                    Assert.That(touch.JumpLookEnabled,Is.True);
+                    Assert.That(touch.RuntimeProfile.EnableFixedButton,Is.False);
                     Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.False);
                     player.Input.SetMode(PlayerInputMode.Touch);
-                    var button=Object.FindAnyObjectByType<JumpTouchControl>();
+                    var button=Object.FindAnyObjectByType<TouchLookControl>();
                     var e=new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current)
                         {pointerId=901,position=new Vector2(1000,400),delta=new Vector2(20,-10)};
                     Assert.That(touch.TryClaim(TouchControlRole.Movement,900),Is.True);
                     touch.SetMovement(Vector2.up);
                     button.OnPointerDown(e);button.OnDrag(e);player.Input.Sample();
-                    Assert.That(player.Input.JumpPressed && player.Input.JumpHeld,Is.True);
+                    Assert.That(player.Input.JumpHeld,Is.True);
+                    Assert.That(player.Input.JumpPressed,Is.False);
                     Assert.That(player.Input.Move,Is.EqualTo(Vector2.up));
                     Assert.That(player.Input.LookDelta.sqrMagnitude,Is.GreaterThan(0));
                     var yaw=player.transform.eulerAngles.y;
@@ -165,7 +167,7 @@ namespace Avoidance.Tests.PlayMode
                     player.Input.SetMode(PlayerInputMode.Touch);touch.SetMovement(Vector2.up);
                     Assert.That(touch.TryClaim(TouchControlRole.Look,77),Is.True);
                     touch.BeginLookGesture(77,new Vector2(1000,400),1);touch.EndLookGesture(77,new Vector2(1000,400),1.05f,800);
-                    touch.Release(TouchControlRole.Look,77);Assert.That(touch.ConsumeJumpPressed(),Is.True);
+                    touch.Release(TouchControlRole.Look,77);Assert.That(touch.ConsumeJumpPressed(),Is.EqualTo(mode!=CampaignTrialMode.Foundation));
                     touch.AddLookDelta(new Vector2(0,20));player.Input.Sample();float pitch=player.CameraRig.Pitch;
                     player.CameraRig.ApplyLook(player.Input,PlayerInputMode.Touch,1f/60,motor);
                     Assert.That(player.CameraRig.Pitch,Is.LessThan(pitch));
@@ -187,6 +189,88 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(Object.FindAnyObjectByType<ParkourMotor>().Profile.MovementMastery,Is.False);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
+        [UnityTest] public IEnumerator FoundationWholeRightSurfaceHoldDragReleaseAndUiBoundaries()
+        {
+            CampaignFlowTrial.Launch(Foundry,CampaignTrialMode.Foundation);yield return Open();
+            var player=Object.FindAnyObjectByType<PlayerRuntimeCoordinator>();
+            var touch=Object.FindAnyObjectByType<TouchInputCoordinator>();
+            var look=Object.FindAnyObjectByType<TouchLookControl>();
+            var jump=Object.FindAnyObjectByType<JumpTouchControl>();
+            Assert.That(jump.GetComponent<Image>().raycastTarget,Is.False);
+            var safe=(RectTransform)look.transform.parent;
+            Canvas.ForceUpdateCanvases();
+            UnityEngine.EventSystems.PointerEventData Pointer(int id,Vector2 normalized)
+            {
+                var rect=safe.rect;
+                var world=safe.TransformPoint(new Vector3(Mathf.Lerp(rect.xMin,rect.xMax,normalized.x),Mathf.Lerp(rect.yMin,rect.yMax,normalized.y),0));
+                return new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current)
+                    {pointerId=id,position=RectTransformUtility.WorldToScreenPoint(null,world)};
+            }
+            GameObject Target(UnityEngine.EventSystems.PointerEventData e)
+            {
+                var hits=new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
+                UnityEngine.EventSystems.EventSystem.current.RaycastAll(e,hits);
+                Assert.That(hits,Is.Not.Empty);
+                return UnityEngine.EventSystems.ExecuteEvents.GetEventHandler<UnityEngine.EventSystems.IPointerDownHandler>(hits[0].gameObject);
+            }
+            foreach(float x in new[]{.62f,.77f,.94f}) foreach(float y in new[]{.2f,.5f,.8f})
+            {
+                var e=Pointer(801,new Vector2(x,y));var target=Target(e);
+                Assert.That(target,Is.EqualTo(look.gameObject),"Right camera acquisition at "+x+","+y);
+                UnityEngine.EventSystems.ExecuteEvents.Execute(target,e,UnityEngine.EventSystems.ExecuteEvents.pointerDownHandler);
+                Assert.That(touch.JumpHeld,Is.True,"Immediate hold, no gesture delay");
+                look.OnInitializePotentialDrag(e);Assert.That(e.useDragThreshold,Is.False);
+                e.delta=new Vector2(.1f,.1f);look.OnDrag(e);
+                Assert.That(touch.ConsumeLookDelta().sqrMagnitude,Is.GreaterThan(0));
+                look.OnPointerUp(e);Assert.That(touch.JumpHeld,Is.False);
+                Assert.That(touch.ConsumeJumpPressed(),Is.False,"No queued release tap");
+            }
+            var left=Pointer(802,new Vector2(.25f,.4f));
+            Assert.That(Target(left),Is.Not.EqualTo(look.gameObject));
+            var menu=Object.FindObjectsByType<Button>().Single(b=>b.name=="II Button");
+            var menuPoint=new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current)
+                {pointerId=803,button=UnityEngine.EventSystems.PointerEventData.InputButton.Left,
+                 position=RectTransformUtility.WorldToScreenPoint(null,menu.transform.position)};
+            Assert.That(Target(menuPoint),Is.EqualTo(menu.gameObject));
+            UnityEngine.EventSystems.ExecuteEvents.Execute(menu.gameObject,menuPoint,UnityEngine.EventSystems.ExecuteEvents.pointerDownHandler);
+            Assert.That(touch.JumpHeld,Is.False,"UI down must not enter gameplay");
+
+            var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.layer=LayerMask.NameToLayer("Ground");
+            floor.transform.position=new Vector3(1000,-.5f,0);floor.transform.localScale=new Vector3(300,1,300);
+            Physics.SyncTransforms();player.Input.SetMode(PlayerInputMode.Touch);
+            foreach(int hz in new[]{30,60,120})
+            {
+                touch.ResetState();player.Motor.ResetMotion(new Vector3(1000,.05f,0),Quaternion.identity,0);
+                var e=Pointer(804,new Vector2(.9f,.4f));look.OnPointerDown(e);
+                touch.SetMovement(Vector2.up);int before=player.Motor.JumpCount;
+                for(int i=0;i<hz*5;i++)
+                {
+                    e.delta=new Vector2(.1f,-.02f);look.OnDrag(e);player.Input.Sample();
+                    Assert.That(player.Input.JumpHeld,Is.True);
+                    player.CameraRig.ApplyLook(player.Input,PlayerInputMode.Touch,1f/hz,player.Motor);
+                    player.Motor.Simulate(player.Input,1f/hz);
+                }
+                Assert.That(player.Motor.JumpCount-before,Is.GreaterThanOrEqualTo(6));
+                look.OnPointerUp(e);int released=player.Motor.JumpCount;
+                for(int i=0;i<hz*2;i++){player.Input.Sample();player.Motor.Simulate(player.Input,1f/hz);}
+                Assert.That(player.Motor.JumpCount,Is.EqualTo(released));
+                Assert.That(player.Input.JumpHeld,Is.False);
+            }
+            Object.Destroy(floor);
+            var held=Pointer(805,new Vector2(.8f,.4f));look.OnPointerDown(held);
+            UnityEngine.EventSystems.ExecuteEvents.Execute(menu.gameObject,menuPoint,UnityEngine.EventSystems.ExecuteEvents.pointerClickHandler);
+            Assert.That(touch.JumpHeld,Is.False,"Opening the menu cancels gameplay hold");
+            yield return null;
+            Assert.That(GameObject.Find("Alpha Run Menu"),Is.Not.Null);
+            Canvas.ForceUpdateCanvases();
+            var covered=Pointer(806,new Vector2(.6f,.5f));Assert.That(Target(covered),Is.Not.EqualTo(look.gameObject));
+            menu.onClick.Invoke();
+            look.OnPointerDown(held);look.enabled=false;Assert.That(touch.JumpHeld,Is.False);look.enabled=true;
+            look.OnPointerDown(held);touch.SendMessage("OnApplicationPause",true);Assert.That(touch.JumpHeld,Is.False);
+            look.OnPointerDown(held);touch.SendMessage("OnApplicationFocus",false);Assert.That(touch.JumpHeld,Is.False);
+            yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
+        }
+
         private static void Click(string name)=>Object.FindObjectsByType<Button>().Single(b=>b.name==name).onClick.Invoke();
         private static void Capture(string name)
         {

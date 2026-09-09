@@ -1,0 +1,52 @@
+{
+  "version": "0.14.1-right-hold-look",
+  "physicalDeviceTesting": false,
+  "movementCompatibility": 4,
+  "physicsChanged": false,
+  "runs": [
+    {
+      "file": "Logs\\right-hold-EditMode.xml",
+      "sha256": "145e71898f4c909f8b284d785a3c79d2b92b6b15d68f176fb50177217ac4aab2",
+      "id": "2",
+      "testcasecount": "246",
+      "result": "Passed",
+      "total": "246",
+      "passed": "246",
+      "failed": "0",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-09-09 02:09:31Z",
+      "end-time": "2026-09-09 02:09:41Z",
+      "duration": "10.9836081"
+    },
+    {
+      "file": "Logs\\right-hold-PlayMode.xml",
+      "sha256": "9b82a1364a393de1aa8ba832316e14b65a9339557077e471f02eb92a905bd2ce",
+      "id": "2",
+      "testcasecount": "126",
+      "result": "Passed",
+      "total": "126",
+      "passed": "126",
+      "failed": "0",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-09-09 02:09:53Z",
+      "end-time": "2026-09-09 02:11:50Z",
+      "duration": "116.9580587"
+    }
+  ],
+  "apk": {
+    "path": "C:\\Users\\lin4s\\Documents\\Riders Block\\Builds\\Android\\RYDERS-ROAD-0.14.1-right-hold-look-dev.apk",
+    "bytes": 178338616,
+    "sha256": "D3A5E8C7BA447FD59188AEE472622EDF0F955E7623190FC15D7B3171241E3CE3",
+    "crc": "PASS",
+    "buildResult": "Succeeded",
+    "physicalTesting": false
+  }
+}

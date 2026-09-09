@@ -1,4 +1,17 @@
-# Current authority - 0.14.0 movement foundation candidate
+# Current authority - 0.14.1 whole-right-area hold correction
+
+The entire right gameplay look area activates JumpHeld on contact, keeps it true
+while dragging the camera, and stops on release/cancellation. There is no separate
+Jump glyph or activation gesture in E. The 0.14.0 movement motor, compatibility 4,
+all tuning/camera physics and accepted Campaign/save isolation remain unchanged.
+
+Open DEVELOPMENT > CAMPAIGN FLOW TRIAL > E - FOUNDATION; A remains the accepted
+comparison. Flow Lab E has the same corrected surface. Read PRODUCTION_0141.md
+for the corrected APK, validation and S23 checklist. ADR 0027's correction replaces
+the old glyph scheme. STOP after delivery for physical feedback; no S23 test or
+Gold approval is claimed. Previous handoff below is historical where it conflicts.
+
+# Historical - 0.14.0 movement foundation candidate
 
 Updated 2026-09-09. The new user mission supersedes 0.13.0's movement-work stop.
 ADR 0027 defines the intended future shared standard: Quake-inspired manual wish

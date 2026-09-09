@@ -64,7 +64,7 @@ namespace Avoidance.Tests.PlayMode
             lab.Compare();Assert.That(motor.Profile.MovementMastery,Is.True);
             lab.Compare();Assert.That(motor.Profile.MovementFoundation,Is.True);
             Assert.That(touch.JumpLookEnabled,Is.True);Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.False);
-            Assert.That(touch.TryClaim(TouchControlRole.Jump,73),Is.True);
+            Assert.That(touch.TryClaim(TouchControlRole.Look,73),Is.True);
             lab.Compare();Assert.That(motor.Profile.CompatibilityVersion,Is.EqualTo(3));
             Assert.That(touch.JumpHeld,Is.False);Assert.That(touch.JumpLookEnabled,Is.False);
             Assert.That(touch.RuntimeProfile.FlowSteeringEnabled,Is.True);

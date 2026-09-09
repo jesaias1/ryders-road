@@ -1,3 +1,13 @@
+## 0.14.1 whole-right-surface hold
+
+Production099Tests raycasts nine positions across the actual right gameplay area,
+checks independent left/UI ownership and no fixed-button raycast, drives tiny
+camera drags without a gesture delay, and holds the actual touch router across
+multiple motor landings at 30/60/120 Hz. Release prevents subsequent auto-hops;
+unrelated pointer release, menu opening/coverage, component disable, pause and
+focus loss are covered. Legacy tap gestures, all trial modes and save isolation
+remain regression requirements. Results/APK: Docs/PRODUCTION_0141.md.
+
 ## 0.14.0 movement foundation
 
 Run all EditMode/PlayMode tests and Tools/Validate-Foundation.ps1. FoundationMotorTests

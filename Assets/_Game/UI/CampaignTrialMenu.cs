@@ -20,7 +20,7 @@ namespace Avoidance.UI
             void Refresh()
             {
                 title.text = "CAMPAIGN FLOW TRIAL  /  " + modules.Single(m => m.StableModuleId == road).DisplayName;
-                hint.text = (mode == CampaignTrialMode.Foundation ? "E · Hold JUMP + drag to look · left stick moves · release to stop hopping"
+                hint.text = (mode == CampaignTrialMode.Foundation ? "E · Hold anywhere on the right + drag to look · left stick moves · release to stop hopping"
                     : mode == CampaignTrialMode.Accepted ? "A · Accepted motor and your saved controls"
                     : mode == CampaignTrialMode.PreviousFlow ? "D · Previous 0.9.9 Flow motor · manual pitch"
                     : mode == CampaignTrialMode.FlowManual ? "B · New air control · manual pitch"

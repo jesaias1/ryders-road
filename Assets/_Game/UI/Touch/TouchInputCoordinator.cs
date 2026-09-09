@@ -52,25 +52,14 @@ namespace Avoidance.UI.Touch
 
         public Vector2 Movement => _movement;
         public bool JumpLookEnabled { get; private set; }
-        private Vector2 _savedJumpMin, _savedJumpMax, _savedJumpPosition, _savedJumpSize;
         public bool JumpHeld => JumpLookEnabled
-            && _ownership.GetOwner(TouchControlRole.Jump) != TouchOwnershipRegistry.UnassignedPointerId;
+            && _ownership.GetOwner(TouchControlRole.Look) != TouchOwnershipRegistry.UnassignedPointerId;
 
         public void EnableFoundationJumpLook()
         {
             if (JumpLookEnabled) return;
             JumpLookEnabled = true;
-            SetSessionControlProfile(TouchControlProfileKind.LeftMoveRightLookTapAndButton);
-            // Keep a distinct inward acquisition area, with ordinary look outside it.
-            if (_jump != null)
-            {
-                var rect = _jump.GetComponent<RectTransform>();
-                _savedJumpMin = rect.anchorMin; _savedJumpMax = rect.anchorMax;
-                _savedJumpPosition = rect.anchoredPosition; _savedJumpSize = rect.sizeDelta;
-                rect.anchorMin = rect.anchorMax = EnsureLayout().RightRestCenter;
-                rect.anchoredPosition = Vector2.zero;
-                rect.sizeDelta = Vector2.one * EnsureLayout().JumpButtonSize;
-            }
+            SetSessionControlProfile(TouchControlProfileKind.LeftMoveRightLookTapJump);
         }
 
         public void DisableFoundationJumpLook()
@@ -78,12 +67,6 @@ namespace Avoidance.UI.Touch
             if (!JumpLookEnabled) return;
             JumpLookEnabled = false;
             ResetState();
-            if (_jump != null)
-            {
-                var rect = _jump.GetComponent<RectTransform>();
-                rect.anchorMin = _savedJumpMin; rect.anchorMax = _savedJumpMax;
-                rect.anchoredPosition = _savedJumpPosition; rect.sizeDelta = _savedJumpSize;
-            }
         }
 
         public void DragJumpLook(int pointerId, Vector2 normalizedDelta)
@@ -178,7 +161,7 @@ namespace Avoidance.UI.Touch
         public void SetSessionControlProfile(TouchControlProfileKind controlProfile)
         {
             EnsureLayout();
-            if (JumpLookEnabled) controlProfile = TouchControlProfileKind.LeftMoveRightLookTapAndButton;
+            if (JumpLookEnabled) controlProfile = TouchControlProfileKind.LeftMoveRightLookTapJump;
             _controlProfile = controlProfile;
             _jumpMode = ResolveJumpModeForControlProfile(_controlProfile);
             ApplyRuntimeProfile();
@@ -370,6 +353,7 @@ namespace Avoidance.UI.Touch
 
         public void BeginLookGesture(int pointerId, Vector2 screenPosition, float time)
         {
+            if (JumpLookEnabled) return; // Look ownership itself is the held intent.
             if (!_runtimeProfile.EnableRightTap || !IsOwner(TouchControlRole.Look, pointerId))
             {
                 return;
@@ -389,7 +373,7 @@ namespace Avoidance.UI.Touch
                 return false;
             }
 
-            if (!_runtimeProfile.EnableRightTap)
+            if (JumpLookEnabled || !_runtimeProfile.EnableRightTap)
             {
                 return true;
             }
@@ -410,6 +394,7 @@ namespace Avoidance.UI.Touch
             float time,
             float referenceLength)
         {
+            if (JumpLookEnabled) return; // Never synthesize a release tap.
             if (!_runtimeProfile.EnableRightTap || !IsOwner(TouchControlRole.Look, pointerId))
             {
                 return;
@@ -434,6 +419,7 @@ namespace Avoidance.UI.Touch
         public void CancelLookGesture(int pointerId)
         {
             _lookGesture.Cancel(pointerId);
+            if (JumpLookEnabled) Release(TouchControlRole.Look, pointerId);
         }
 
         public void PressRestart()

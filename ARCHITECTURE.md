@@ -1,3 +1,11 @@
+## 0.14.1 input correction
+
+The whole existing right gameplay look area now owns Foundation JumpHeld. Touch
+acquisition activates hold immediately, dragging remains camera input, and release
+or cancellation clears hold without a queued tap. No fixed Jump glyph is enabled.
+Motor, movement profiles, camera solver and Campaign isolation remain unchanged.
+See ADR 0027's correction and Docs/PRODUCTION_0141.md. Physical approval is pending.
+
 ## 0.14.0 movement foundation authority
 
 ADR 0027 supersedes the prior movement-work stop. Intended future standard is

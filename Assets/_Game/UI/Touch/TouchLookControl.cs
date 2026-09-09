@@ -9,6 +9,7 @@ namespace Avoidance.UI.Touch
     public sealed class TouchLookControl :
         MonoBehaviour,
         IPointerDownHandler,
+        IInitializePotentialDragHandler,
         IDragHandler,
         IPointerUpHandler
     {
@@ -18,6 +19,7 @@ namespace Avoidance.UI.Touch
         private float _baseOpacity = 0.001f;
         private bool _zonesVisible;
         private bool _manualLookEnabled = true;
+        private int _activePointer = TouchOwnershipRegistry.UnassignedPointerId;
 
         public void Configure(RectTransform zone, float baseOpacity)
         {
@@ -37,11 +39,24 @@ namespace Avoidance.UI.Touch
         {
             if (_coordinator.TryClaim(TouchControlRole.Look, eventData.pointerId))
             {
+                _activePointer = eventData.pointerId;
                 _coordinator.BeginLookGesture(
                     eventData.pointerId,
                     eventData.position,
                     Time.unscaledTime);
             }
+        }
+
+        public void OnInitializePotentialDrag(PointerEventData eventData)
+        {
+            if (_coordinator.JumpLookEnabled) eventData.useDragThreshold = false;
+        }
+
+        private void OnDisable()
+        {
+            if (_coordinator != null && _coordinator.JumpLookEnabled)
+                _coordinator.CancelLookGesture(_activePointer);
+            _activePointer = TouchOwnershipRegistry.UnassignedPointerId;
         }
 
         public void OnDrag(PointerEventData eventData)

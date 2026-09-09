@@ -1,3 +1,25 @@
+## 2026-09-09 correction - 0.14.1
+
+This supersedes the dedicated glyph scheme described below. The user explicitly
+requires the entire right gameplay camera area to be LOOK + JUMP HOLD. Foundation
+JumpHeld derives from Look pointer ownership immediately on down. No fixed button,
+activation gesture, repeated taps or third finger is required. Every drag delta
+continues through the accepted camera normalization/sensitivity; hold is independent
+of displacement, gesture duration and camera movement. Unity's drag threshold is
+disabled for this candidate surface, and tap classification is bypassed.
+
+Right touch supplies held intent only, not a separate buffered press or release
+tap. The unchanged motor rearms the hold at valid contacts, so lifting the thumb
+before landing does not leave a queued auto-hop. Editor Space and legacy accepted
+tap input retain their contracts. Releasing, disabling the surface, canceling the
+contact, pause/focus loss, Restore/retry or opening the menu clears ownership.
+UI receives its own raycasts; left movement and existing safe-area boundaries remain.
+
+Keep compatibility 4 and all 0.14.0 movement math/tuning exactly unchanged. This is
+an input correction within trial E / Flow Lab E, not Campaign promotion. The prior
+fixed-button implementation and APK remain recoverable in commit 5a98fa5. Current
+verification/build/handoff: ../PRODUCTION_0141.md. No physical testing is claimed.
+
 # ADR 0027 - intended shared movement foundation, isolated physical candidate
 
 2026-09-09. The user's new movement mission supersedes ADR 0026's prohibition on

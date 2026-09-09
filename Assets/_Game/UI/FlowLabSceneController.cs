@@ -142,7 +142,7 @@ namespace Avoidance.UI
             string view=!touch.RuntimeProfile.FlowSteeringEnabled ? "CLASSIC MANUAL"
                 : landingViewEnabled ? "LANDING VIEW" : "MANUAL VIEW";
             string hint=player.Motor.Profile.MovementFoundation
-                ? "Left stick moves. Hold the Jump glyph and drag to look. Release for walking or surfing."
+                ? "Left stick moves. Hold anywhere on the right and drag to look. Release for walking or surfing."
                 : Room.hint;
             instruction.text=$"{Room.title}  /  {mode}  /  {view}\n{hint}";
             string metric=Room.exercise=="air"?$"Air gain +{session.AirGain:0.0} m/s"

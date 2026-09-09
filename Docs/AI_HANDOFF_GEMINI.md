@@ -1,5 +1,5 @@
 > Historical handoff. Current authority: [AI_HANDOFF.md](AI_HANDOFF.md),
-> [0.14.0 movement candidate](PRODUCTION_0140.md) and ADR 0027. No physical
+> [0.14.1 right-surface correction](PRODUCTION_0141.md) and ADR 0027. No physical
 > approval of the new movement is implied by historical testing statements.
 
 # AI Handoff For Gemini & Next Coding Agent

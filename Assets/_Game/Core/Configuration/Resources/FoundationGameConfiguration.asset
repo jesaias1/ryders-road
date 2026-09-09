@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameTitle: RYDER'S ROAD
   _gameVersion: 0.5.0
-  _buildVersion: 0.14.0-movement-foundation
+  _buildVersion: 0.14.1-right-hold-look
   _initialScene: ModuleSelector
   _developerTelemetryEnabled: 0
   _featureFlags:
