@@ -1,0 +1,9 @@
+from,to,initialSpeed,launchSpeed,landingSpeed,flightDistance,landingOffset
+m05.arrival,m05.approach.b,17,17.000,14.552,10.114,0
+m05.arrival,m05.approach.b,17,17.000,14.608,10.129,0.75
+m05.approach.a,m05.approach.c,17,17.000,16.740,10.197,0
+m05.approach.a,m05.approach.c,17,17.000,16.794,10.196,0.75
+m05.lens.a,m05.lens.c,17,17.000,15.952,10.181,0
+m05.lens.a,m05.lens.c,17,17.000,16.008,10.181,0.75
+m05.arc.03,m05.arc.05,17,17.000,13.412,10.118,0
+m05.arc.03,m05.arc.05,17,17.000,13.490,10.132,0.75

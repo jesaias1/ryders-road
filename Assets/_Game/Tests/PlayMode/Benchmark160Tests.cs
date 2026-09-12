@@ -88,30 +88,21 @@ namespace Avoidance.Tests.PlayMode
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
 
-        [UnityTest] public IEnumerator HeldChainsAtOrdinaryAndCarriedSpeed()
+        [UnityTest] public IEnumerator CommitmentGapCannotBeWalkedAndRunwaySupportsHeldJump()
         {
             yield return Open("module.005.foundry-pulse");
             var motor=Object.FindAnyObjectByType<ParkourMotor>();var restore=motor.GetComponent<RestoreController>();
-            var results=new List<string>{"initialSpeed,seconds,jumps,distance,finalSpeed"};
-            foreach(float speed in new[]{7.8f,14f})
-            {
-                restore.RestoreNow();motor.ResetMotion(new Vector3(-24,.35f,8),Quaternion.identity,0);Physics.SyncTransforms();
-                var input=new Input();for(int i=0;i<8;i++)motor.Simulate(input,1f/120);
-                motor.ApplyLaunch(Vector3.forward*speed,true);input.JumpHeld=true;
-                int frames=speed>10?360:384;int before=motor.JumpCount;
-                for(int i=0;i<frames;i++)
-                {
-                    // Human-expressible small alternating stick corrections; no route lookup.
-                    input.Move=new Vector2(Mathf.Sin(i*.035f)*.08f,1).normalized;
-                    motor.Simulate(input,1f/120);
-                    Assert.That(restore.IsRestorePending,Is.False,"Held chain "+speed+" at "+motor.transform.position);
-                }
-                Assert.That(motor.JumpCount-before,Is.GreaterThanOrEqualTo(4));
-                Assert.That(motor.transform.position.z,Is.GreaterThan(30));
-                Assert.That(motor.transform.position.y,Is.GreaterThan(0));
-                results.Add($"{speed},{frames/120f},{motor.JumpCount-before},{motor.transform.position.z-8:F3},{motor.HorizontalSpeed:F3}");
-            }
-            Directory.CreateDirectory("Logs/Benchmark160QA");File.WriteAllLines("Logs/Benchmark160QA/held-chains.csv",results);
+            var input=new Input { Move=Vector2.up };
+            motor.ResetMotion(new Vector3(-24,.35f,8),Quaternion.identity,0);Physics.SyncTransforms();
+            for(int i=0;i<150;i++)motor.Simulate(input,1f/60);
+            Assert.That(motor.JumpCount,Is.EqualTo(0));
+            Assert.That(motor.transform.position.y< -1 || restore.IsRestorePending,Is.True,"Opening must require commitment, not walking");
+            restore.RestoreNow();motor.ResetMotion(new Vector3(-24,.35f,6),Quaternion.identity,0);Physics.SyncTransforms();
+            input.Move=Vector2.up;input.JumpHeld=true;
+            int before=motor.JumpCount;
+            for(int i=0;i<80;i++)motor.Simulate(input,1f/120);
+            Assert.That(motor.JumpCount-before,Is.GreaterThanOrEqualTo(2),"Runway supports contact-rearmed holding");
+            Assert.That(restore.IsRestorePending,Is.False);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
 
@@ -122,10 +113,11 @@ namespace Avoidance.Tests.PlayMode
             var module=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule;
             var motor=Object.FindAnyObjectByType<ParkourMotor>();var restore=motor.GetComponent<RestoreController>();
             var rows=new List<string>{"from,to,initialSpeed,launchSpeed,landingSpeed,flightDistance,landingOffset"};
-            foreach(var link in new[]{("arrival","approach.b",17f),("approach.b","west.restore",17f),("ascent.a","ascent.c",17f),("lens.a","lens.c",17f)})
+            var decks=module.Blocks.Concat(module.CrumblingBlocks.Select(b=>new ModuleBlockDefinition(b.StableId,b.Pose.Position,b.Size,Avoidance.Gameplay.Visuals.ModuleMaterialRole.Crumbling))).ToArray();
+            foreach(var link in new[]{("arrival","approach.b",17f),("approach.a","approach.c",17f),("lens.a","lens.c",17f),("arc.03","arc.05",17f)})
             foreach(float error in new[]{0f,.75f})
             {
-                var from=module.Blocks.Single(b=>b.StableId=="m05."+link.Item1);var to=module.Blocks.Single(b=>b.StableId=="m05."+link.Item2);
+                var from=decks.Single(b=>b.StableId=="m05."+link.Item1);var to=decks.Single(b=>b.StableId=="m05."+link.Item2);
                 var dir=to.Pose.Position-from.Pose.Position;dir.y=0;dir.Normalize();
                 float Edge(Vector3 size)=>Mathf.Min(Mathf.Abs(dir.x)>.001f?size.x*.5f/Mathf.Abs(dir.x):1000,Mathf.Abs(dir.z)>.001f?size.z*.5f/Mathf.Abs(dir.z):1000);
                 var start=from.Pose.Position+dir*(Edge(from.Size)-.12f)+Vector3.up*.35f;

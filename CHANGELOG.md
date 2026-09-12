@@ -1,3 +1,11 @@
+## 0.16.1 route cadence correction
+
+Windward content 5 now uses one shared sweep: 22 supports, five large anchors,
+21 committed gaps and four measured same-route skip opportunities. Repeated
+scaffold braces and the separate chord are removed. Shared movement remains 5.
+EditMode 249/249 and PlayMode 151/151 pass. See Docs/PRODUCTION_0161.md for the
+APK and verification evidence. Stop after delivery for physical S23 feedback.
+
 ## 0.16.0 — Windward benchmark and fatal scenery (2026-09-11)
 
 - Reauthor only Windward around substantial runways, safe intermediate landings, wide recovery and speed-based skips.

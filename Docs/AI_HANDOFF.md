@@ -1,3 +1,11 @@
+## 0.16.1 route cadence correction
+
+Windward content 5 now uses one shared sweep: 22 supports, five large anchors,
+21 committed gaps and four measured same-route skip opportunities. Repeated
+scaffold braces and the separate chord are removed. Shared movement remains 5.
+EditMode 249/249 and PlayMode 151/151 pass. See Docs/PRODUCTION_0161.md for the
+APK and verification evidence. Stop after delivery for physical S23 feedback.
+
 Release status 2026-09-12: PlayMode 151/151 passed; EditMode 249/249 passed after Unity Hub license refresh; source/LFS checks passed; Android dev APK built and verified. APK: `Builds/Android/RYDERS-ROAD-0.16.0-flow-benchmark-fatal-scenery-dev.apk`, SHA-256 `9BFC0CC2DA87CC0018C2F34A5344BC1BB623F4C57E9FF6D13F6C5C0C08A81825`. Commit/push this milestone, then stop for physical S23 feedback. See PRODUCTION_0160.md.
 
 # Current authority — 0.16.0 movement-aware benchmark and fatal scenery

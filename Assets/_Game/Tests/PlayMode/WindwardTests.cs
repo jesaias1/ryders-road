@@ -69,7 +69,7 @@ namespace Avoidance.Tests.PlayMode
             Assert.That(steps,Is.EqualTo(before),"Airborne travel never produces foot contact");
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
-        [UnityTest] public IEnumerator StandardAndOptionalRoutesUseSharedMotor()
+        [UnityTest] public IEnumerator StandardRouteUsesSharedMotorAndPreservesRestore()
         {
             yield return Open();
             var motor=Object.FindAnyObjectByType<ParkourMotor>();
@@ -77,13 +77,7 @@ namespace Avoidance.Tests.PlayMode
             var module=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule;
             var standard=Quality130Tests.WindwardRoute(module);
             for(int i=0;i<standard.Length-1;i++)Jump(motor,standard[i].Pose.Position,standard[i].Size,standard[i+1].Pose.Position,standard[i+1].Size,standard[i+1].StableId);
-            var skill=new[]{module.Blocks.Single(b=>b.StableId=="m05.west.restore")}.Concat(module.Blocks.Where(b=>b.StableId.Contains("skill"))).Concat(new[]{module.Blocks.Single(b=>b.StableId=="m05.east.restore")}).ToArray();
-            for(int i=0;i<skill.Length-1;i++)
-            {
-                var from=skill[i];var to=skill[i+1];
-                var direction=to.Pose.Position-from.Pose.Position;direction.y=0;direction.Normalize();
-                Jump(motor,from.Pose.Position,from.Size,to.Pose.Position,to.Size,to.StableId);
-            }
+            // Same-route carried-speed omissions are measured by Benchmark160Tests.
             foreach(var surface in Object.FindObjectsByType<AuthoredSurface>())Assert.That(surface.HasMatchingCollision,Is.True,surface.CollisionDetails);
             foreach(var point in module.RestorePoints)
             {
@@ -153,7 +147,7 @@ namespace Avoidance.Tests.PlayMode
             {
                 var a=route[i];var b=route[i+1];var direction=b.Pose.Position-a.Pose.Position;direction.y=0;
                 float gap=Mathf.Max(Mathf.Abs(direction.x)-(a.Size.x+b.Size.x)*.5f,Mathf.Abs(direction.z)-(a.Size.z+b.Size.z)*.5f);
-                if(gap<1.25f)continue; // Broad recovery courts and run-through approach edges are intentional.
+                if(gap<1.25f)continue;
                 openGaps++;
                 motor.ResetMotion(a.Pose.Position+Vector3.up*.34f,Quaternion.LookRotation(direction),0);Physics.SyncTransforms();
                 bool arrived=false;var input=new RunInput{Move=Vector2.up};
@@ -164,7 +158,7 @@ namespace Avoidance.Tests.PlayMode
                 }
                 Assert.That(arrived,Is.False,a.StableId+" -> "+b.StableId+" must require a jump");
             }
-            Assert.That(openGaps,Is.GreaterThanOrEqualTo(2),"Pressure sequence keeps real open jumps");
+            Assert.That(openGaps,Is.EqualTo(route.Length-1),"Every route beat requires commitment");
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
         [UnityTest] public IEnumerator FrontendAndLiveLoadingUseGameIdentityAndSeparateActions()

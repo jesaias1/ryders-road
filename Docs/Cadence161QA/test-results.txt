@@ -1,0 +1,2 @@
+cadence-editmode.xml: result=Passed, total=249, passed=249, failed=0
+cadence-playmode-final.xml: result=Passed, total=151, passed=151, failed=0

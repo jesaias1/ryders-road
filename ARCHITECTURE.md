@@ -1,3 +1,11 @@
+## 0.16.1 route cadence correction
+
+Windward content 5 supersedes the broad 0.16.0 benchmark: a shared sweep with
+committed gaps, smaller intermediate landings and sparse recovery anchors.
+The separate chord and repeated scaffold braces are removed. Shared movement 5,
+fatal scenery semantics, V4 history and other Campaign routes remain unchanged.
+See Docs/Decisions/0031-route-cadence-correction.md and Docs/PRODUCTION_0161.md.
+
 ## 0.16.0 benchmark and fatal scenery
 
 ADR 0030 keeps shared compatibility-5 movement and music intact. Windward is the

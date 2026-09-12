@@ -1,5 +1,6 @@
 using System.Linq;
 using Avoidance.Gameplay.Audio;
+using Avoidance.Gameplay.Visuals;
 using Avoidance.Gameplay.Levels;
 using NUnit.Framework;
 using UnityEngine;
@@ -17,28 +18,24 @@ namespace Avoidance.Tests.EditMode
             Assert.That(scenery.GeometryKind,Is.EqualTo(Avoidance.Gameplay.Worlds.WorldGeometryKind.FatalScenery));
             Assert.That(route.GeometryKind,Is.EqualTo(Avoidance.Gameplay.Worlds.WorldGeometryKind.Traversable));
         }
-        [Test] public void WindwardHasRealGapsAndShorterOptionalChord()
+        [Test] public void WindwardHasCommittedGapsAndSharedSkipGeometry()
         {
             var module=Resources.Load<ModuleDefinition>("Modules/Module_005_Windward");
-            var route=module.Blocks.Where(b=>!b.StableId.Contains("skill")).ToArray();
-            for(int i=0;i<route.Length-1;i++)
+            var route=module.Blocks.ToList();
+            route.InsertRange(route.FindIndex(b=>b.StableId=="m05.arc.03")+1,
+                module.CrumblingBlocks.Select(b=>new ModuleBlockDefinition(b.StableId,b.Pose.Position,b.Size,ModuleMaterialRole.Crumbling)));
+            Assert.That(module.ContentVersion,Is.EqualTo(5));
+            Assert.That(route.Count,Is.EqualTo(22));
+            Assert.That(route.Any(b=>b.StableId.Contains("skill")),Is.False,"Same-route skips, no separate chord");
+            for(int i=0;i<route.Count-1;i++)
             {
-                var b=route[i+1];
-                Assert.That(Mathf.Min(b.Size.x,b.Size.z),Is.GreaterThanOrEqualTo(7f),"Benchmark recovery width");
+                var a=route[i];var b=route[i+1];
+                float dx=Mathf.Max(0,Mathf.Abs(a.Pose.Position.x-b.Pose.Position.x)-(a.Size.x+b.Size.x)*.5f);
+                float dz=Mathf.Max(0,Mathf.Abs(a.Pose.Position.z-b.Pose.Position.z)-(a.Size.z+b.Size.z)*.5f);
+                Assert.That(new Vector2(dx,dz).magnitude,Is.GreaterThanOrEqualTo(2f),a.StableId+" must not become a walkable seam");
             }
-            var arc=module.Blocks.Where(b=>b.StableId.StartsWith("m05.arc.")).ToArray();
-            var chord=module.Blocks.Where(b=>b.StableId.Contains("skill")).ToArray();
-            Assert.That(arc.Length,Is.EqualTo(6));
-            Assert.That(chord.Length,Is.EqualTo(3));
+            Assert.That(route.Count(b=>b.Size.x*b.Size.z>=100),Is.EqualTo(5),"Large surfaces are sparse anchors");
             Assert.That(module.CrumblingBlocks.Count,Is.EqualTo(2));
-            var pressure=module.CrumblingBlocks;
-            Assert.That(Vector3.Distance(pressure[0].Pose.Position,pressure[1].Pose.Position)
-                -(pressure[0].Size.x+pressure[1].Size.x)*.5f,Is.GreaterThan(1.25f));
-            var west=module.Blocks.Single(b=>b.StableId=="m05.west.restore");
-            var east=module.Blocks.Single(b=>b.StableId=="m05.east.restore");
-            float Length(ModuleBlockDefinition[] points)=>points.Zip(points.Skip(1),(a,b)=>Vector3.Distance(a.Pose.Position,b.Pose.Position)).Sum();
-            Assert.That(Length(new[]{west}.Concat(chord).Concat(new[]{east}).ToArray()),
-                Is.LessThan(Length(new[]{west}.Concat(arc).Concat(new[]{east}).ToArray())*.75f),"Direct chord saves physical distance");
             Assert.That(ModuleDefinitionValidator.Validate(module),Is.Empty);
         }
         [Test] public void SliceAudioAndLightingUseSharedProfiles()

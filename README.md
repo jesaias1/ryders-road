@@ -1,3 +1,11 @@
+## 0.16.1 route cadence correction
+
+Windward content 5 now uses one shared sweep: 22 supports, five large anchors,
+21 committed gaps and four measured same-route skip opportunities. Repeated
+scaffold braces and the separate chord are removed. Shared movement remains 5.
+EditMode 249/249 and PlayMode 151/151 pass. See Docs/PRODUCTION_0161.md for the
+APK and verification evidence. Stop after delivery for physical S23 feedback.
+
 > Current milestone: [0.16.0 Windward benchmark and fatal scenery](Docs/PRODUCTION_0160.md). Movement tuning remains unchanged. Awaiting physical S23 benchmark feedback.
 
 > Current milestone: [0.15.0 shared responsive movement and original soundtrack](Docs/PRODUCTION_0150.md). Normal Campaign/Spiral/practice use compatibility 5. Physical S23 tuning remains pending.

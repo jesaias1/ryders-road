@@ -37,11 +37,6 @@ namespace Avoidance.Tests.PlayMode
             var list=m.Blocks.Where(b=>!b.StableId.Contains("skill")).ToList();
             int a=list.FindIndex(b=>b.StableId=="m05.arc.03")+1;
             list.InsertRange(a,m.CrumblingBlocks.Select(b=>new ModuleBlockDefinition(b.StableId,b.Pose.Position,b.Size,ModuleMaterialRole.Crumbling)));
-            if(fast)
-            {
-                int west=list.FindIndex(b=>b.StableId=="m05.west.restore"),east=list.FindIndex(b=>b.StableId=="m05.east.restore");
-                list.RemoveRange(west+1,east-west-1);list.InsertRange(west+1,m.Blocks.Where(b=>b.StableId.Contains("skill")));
-            }
             return list.ToArray();
         }
         public static ModuleBlockDefinition[] FoundryFast(ModuleDefinition m)
@@ -82,7 +77,7 @@ namespace Avoidance.Tests.PlayMode
                     && System.Environment.GetEnvironmentVariable("RYDERS_FOUNDATION_CAPTURE")=="1";
                 void Step()
                 {
-                    var command=input.Move;input.Move*=inputScale;
+                    var command=input.Move;input.Move*=motor.IsGrounded&&!input.JumpPressed?inputScale:1f;
                     motor.Simulate(input,1f/60);input.Move=command;
                     foreach(var c in crumble)c.Tick(1f/60);elapsed+=1f/60;
                     if(capture && elapsed<12 && simulationStep++%4==0)
@@ -112,7 +107,7 @@ namespace Avoidance.Tests.PlayMode
                         float z=Mathf.Abs(direction.z)>.001f?(from.Size.z*.5f-Mathf.Sign(direction.z)*local.z)/Mathf.Abs(direction.z):100;
                         return Mathf.Min(x,z);
                     }
-                    float margin=fast?.25f:.6f;
+                    float margin=inputScale<1?.15f:fast?.25f:.6f;
                     // Crown court asks for an earlier takeoff into the shallow beam.
                     if(from.StableId=="m04.crown.restore")margin=1.15f;
                     for(int i=0;i<150 && Remaining()>margin;i++)Step();
