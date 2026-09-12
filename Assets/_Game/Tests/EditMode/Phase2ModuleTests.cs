@@ -373,7 +373,7 @@ namespace Avoidance.Tests.EditMode
                 .ToArray();
 
             Assert.That(decorationIds, Is.Empty);
-            Assert.That(flowError.EnvironmentBiomeProfile.WorldObjects.Count, Is.EqualTo(9));
+            Assert.That(flowError.EnvironmentBiomeProfile.WorldObjects.Count, Is.EqualTo(10));
         }
 
         [Test]
@@ -387,7 +387,7 @@ namespace Avoidance.Tests.EditMode
             Assert.That(biome.Kind, Is.EqualTo(EnvironmentBiomeKind.AncientAbyss));
             Assert.That(biome.MistOceanY, Is.EqualTo(-72f));
             Assert.That(biome.MistLayers, Is.Empty);
-            Assert.That(biome.WorldObjects.Count, Is.EqualTo(9));
+            Assert.That(biome.WorldObjects.Count, Is.EqualTo(10));
 
             var objectIds = biome.WorldObjects.Select(obj => obj.StableId).ToArray();
             Assert.That(objectIds, Does.Contain("biome.ancient-abyss.place.arrival-sanctuary"));
@@ -444,8 +444,8 @@ namespace Avoidance.Tests.EditMode
             Assert.That(sunkenCity.Position.y, Is.LessThanOrEqualTo(-80f));
             Assert.That(sunkenCity.DepthBand, Is.EqualTo(BiomeDepthBand.LowerAbyss));
 
-            Assert.That(biome.WorldObjects.Count, Is.EqualTo(9));
-            Assert.That(biome.WorldObjects.Count(obj => obj.DepthBand == BiomeDepthBand.NearEnvironment), Is.EqualTo(5));
+            Assert.That(biome.WorldObjects.Count, Is.EqualTo(10));
+            Assert.That(biome.WorldObjects.Count(obj => obj.DepthBand == BiomeDepthBand.NearEnvironment), Is.EqualTo(6));
             Assert.That(biome.WorldObjects.Count(obj => obj.DepthBand == BiomeDepthBand.MidWorld), Is.EqualTo(2));
             Assert.That(biome.WorldObjects.Count(obj => obj.DepthBand == BiomeDepthBand.FarWorld), Is.EqualTo(1));
             Assert.That(biome.WorldObjects.Count(obj => obj.DepthBand == BiomeDepthBand.LowerAbyss), Is.EqualTo(1));
@@ -462,7 +462,7 @@ namespace Avoidance.Tests.EditMode
 
             Assert.That(spiral.DisplayName, Is.EqualTo("THE SPIRAL"));
             Assert.That(spiral.Difficulty, Is.EqualTo(ModuleDifficulty.Easy));
-            Assert.That(spiral.ContentVersion, Is.EqualTo(2));
+            Assert.That(spiral.ContentVersion, Is.EqualTo(3));
             Assert.That(spiral.ExpectedCleanTime, Is.EqualTo(150f));
             Assert.That(spiral.EstimatedCasualTime, Is.EqualTo(300f));
             Assert.That(spiral.StartAnchorStableId, Is.EqualTo("SpiralStartAnchor"));
@@ -870,12 +870,12 @@ namespace Avoidance.Tests.EditMode
             var modules = Resources.LoadAll<ModuleDefinition>("Modules");
             var m01 = modules.First(m => m.StableModuleId == "module.001.first-steps");
             var startBlock = m01.Blocks.First(b => b.StableId == "m01.start");
-            Assert.That(startBlock.Size.x, Is.EqualTo(6f));
-            Assert.That(startBlock.Size.z, Is.EqualTo(4f));
+            Assert.That(startBlock.Size.x, Is.EqualTo(10f));
+            Assert.That(startBlock.Size.z, Is.EqualTo(10f));
 
             var step01 = m01.Blocks.First(b => b.StableId == "m01.step.01");
-            Assert.That(step01.Size.x, Is.EqualTo(2.5f));
-            Assert.That(step01.Size.z, Is.EqualTo(2.5f));
+            Assert.That(step01.Size.x, Is.EqualTo(8f));
+            Assert.That(step01.Size.z, Is.EqualTo(3f));
         }
 
         [Test]
@@ -1493,14 +1493,14 @@ namespace Avoidance.Tests.EditMode
             var standard = firstSteps.Blocks.Single(block => block.StableId == "m01.step.01");
             var safe = firstSteps.Blocks.Single(block => block.StableId == "m01.start");
 
-            Assert.That(standard.Size, Is.EqualTo(new Vector3(2.5f, 0.6f, 2.5f)));
-            Assert.That(safe.Size, Is.EqualTo(new Vector3(6f, 0.6f, 4f)));
+            Assert.That(standard.Size, Is.EqualTo(new Vector3(8f, 0.6f, 3f)));
+            Assert.That(safe.Size, Is.EqualTo(new Vector3(10f, 0.6f, 10f)));
             Assert.That(
                 ModuleVisualPrefabLibrary.ResolveTopAlignedUniformLocalScale(standard.Size),
-                Is.EqualTo(new Vector3(1f, 2.5f / .6f, 1f)));
+                Is.EqualTo(new Vector3(3f / 8f, 3f / .6f, 1f)));
             Assert.That(
                 ModuleVisualPrefabLibrary.ResolveTopAlignedUniformLocalScale(safe.Size),
-                Is.EqualTo(new Vector3(4f / 6f, 4f / .6f, 1f)));
+                Is.EqualTo(new Vector3(1f, 10f / .6f, 1f)));
         }
 
         [Test]
@@ -1629,7 +1629,7 @@ namespace Avoidance.Tests.EditMode
             var moving = module.MovingBlocks.Single();
             var crumbles = module.CrumblingBlocks.ToDictionary(item => item.StableId);
 
-            Assert.That(module.ContentVersion, Is.EqualTo(8));
+            Assert.That(module.ContentVersion, Is.EqualTo(9));
             Assert.That(module.Difficulty, Is.EqualTo(ModuleDifficulty.Medium));
             Assert.That(module.RestorePoints.Count, Is.EqualTo(3));
             Assert.That(module.OptionalShortcuts.Count, Is.EqualTo(3));
@@ -1639,44 +1639,12 @@ namespace Avoidance.Tests.EditMode
                 Is.EqualTo(Avoidance.Gameplay.Ranking.RankCalibrationState.Uncalibrated));
             Assert.That(module.RankThresholds.DesignerNotes, Does.Contain("Samsung S23"));
 
-            var route = new[]
-            {
-                Support(blocks["m03.start"]),
-                Support(blocks["m03.opening.01"]),
-                Support(blocks["m03.opening.02"]),
-                Support(blocks["m03.opening.03"]),
-                Support(blocks["m03.arrival.approach"]),
-                Support(blocks["m03.arrival.court"]),
-                Support(restores["restore.module-003.arrival-sanctuary"]),
-                Support(blocks["m03.crossing.approach"]),
-                Support(blocks["m03.moving-setup"]),
-                new RouteSupport(moving.StableId + ".entry", new ModulePose(moving.PathPoints[0], Vector3.zero), moving.Size),
-                new RouteSupport(moving.StableId + ".exit", new ModulePose(moving.PathPoints[moving.PathPoints.Count - 1], Vector3.zero), moving.Size),
-                Support(blocks["m03.motion-exit"]),
-                Support(restores["restore.module-003.broken-crossing"]),
-                Support(blocks["m03.temple.entry"]),
-                Support(crumbles["crumble.m03.01"]),
-                Support(crumbles["crumble.m03.02"]),
-                Support(crumbles["crumble.m03.03"]),
-                Support(blocks["m03.temple.exit"]),
-                Support(restores["restore.module-003.collapsed-temple"]),
-                Support(blocks["m03.spine.approach"]),
-                Support(blocks["m03.boost-runup"]),
-                new RouteSupport(boost.StableId, boost.Pose, boost.Size),
-                Support(blocks["m03.boost-landing"]),
-                Support(blocks["m03.final.01"]),
-                Support(blocks["m03.final.02"]),
-                Support(blocks["m03.final.03"]),
-                Support(blocks["m03.final.04"]),
-                Support(blocks["m03.final.05"]),
-                Support(blocks["m03.final.06"]),
-                new RouteSupport(
-                    module.PatchBlock.StableId + ".platform",
-                    new ModulePose(
-                        module.PatchBlock.Pose.Position + Vector3.down * 0.8f,
-                        module.PatchBlock.Pose.EulerAngles),
-                    new Vector3(3f, 0.6f, 3f))
-            };
+            var route = module.Blocks.Where(b=>!b.StableId.Contains("mastery")).Select(Support)
+                .Concat(module.CrumblingBlocks.Select(Support))
+                .Append(new RouteSupport(moving.StableId+".entry",new ModulePose(moving.PathPoints[0],Vector3.zero),moving.Size))
+                .Append(new RouteSupport(moving.StableId+".exit",new ModulePose(moving.PathPoints[moving.PathPoints.Count-1],Vector3.zero),moving.Size))
+                .Append(new RouteSupport(boost.StableId,boost.Pose,boost.Size))
+                .OrderBy(r=>r.Pose.Position.z).ToArray();
 
             Assert.That(route.Take(10).Select(item => item.StableId), Does.Not.Contain("water.m03.lower-flow"));
             for (var index = 0; index < route.Length - 1; index++)
@@ -1693,10 +1661,9 @@ namespace Avoidance.Tests.EditMode
                 }
             }
 
-            var specialPositions = module.RestorePoints.Select(item => item.Pose.Position)
+            var specialPositions = module.RestorePoints.Where(item=>string.IsNullOrEmpty(item.SupportBlockStableId)).Select(item => item.Pose.Position)
                 .Concat(module.BoostBlocks.Select(item => item.Pose.Position))
                 .Concat(module.CrumblingBlocks.Select(item => item.Pose.Position))
-                .Append(module.PatchBlock.Pose.Position + Vector3.down * 0.8f)
                 .ToArray();
             Assert.That(
                 module.Blocks.All(block => specialPositions.All(position =>
@@ -1794,7 +1761,7 @@ namespace Avoidance.Tests.EditMode
         {
             var flowError = Resources.Load<ModuleDefinition>("Modules/Module_003_FlowError");
             Assert.That(flowError.Decorations, Is.Empty);
-            Assert.That(flowError.EnvironmentBiomeProfile.WorldObjects.Count, Is.EqualTo(9));
+            Assert.That(flowError.EnvironmentBiomeProfile.WorldObjects.Count, Is.EqualTo(10));
         }
 
         [Test]

@@ -1,3 +1,9 @@
+## 0.17.0 existing-world authoring
+
+ADR 0033 supersedes the previous art-production stop. The explicit stable-ID recipe in `Assets/_Game/EditorTools/Data/WorldFlow170.json` is applied only through Editor authoring. `WorldFlowAuthoring` owns route/anchor/metadata placement; `WorldSceneryRefit` preserves paired visible/fatal meshes; `WorldKitAuthoring` owns collider-free deck skins and sparse fatal foundations. Startup must preserve all authored content, including Spiral version 3.
+
+`ModuleEnvironmentProfile` opts into cohesive lighting. `WorldLightingPresentation` owns a disposable scene-local URP volume and ambient fill; `ModuleSceneController` composes lighting and shadow participation. These presentation systems do not write movement, camera aim, input, progression or save state. Shared movement compatibility 5 and Windward content-6 geometry are unchanged. See `Docs/PRODUCTION_0170.md` and ADR 0033 for validation and the unavailable 3DAIStudio portion.
+
 ## 0.16.2 movement sequences
 
 Windward content 6 replaces the alternating cadence with four coherent movement

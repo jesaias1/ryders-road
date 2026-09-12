@@ -1,0 +1,5653 @@
+{
+  "worlds": [
+    {
+      "resource": "Modules/Module_001_FirstSteps",
+      "world": "SkyCity",
+      "version": 4,
+      "entries": [
+        {
+          "id": "m01.start",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "position": {
+            "x": 0,
+            "y": 0.0,
+            "z": 0
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m01.step.01",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 4.5
+          },
+          "position": {
+            "x": 0,
+            "y": 0.0,
+            "z": 8.5
+          },
+          "size": {
+            "x": 8,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m01.step.02",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 8.5
+          },
+          "position": {
+            "x": 0,
+            "y": 0.0,
+            "z": 12.5
+          },
+          "size": {
+            "x": 9,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m01.step.03",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 12.5
+          },
+          "position": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": 17
+          },
+          "size": {
+            "x": 9,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m01.turn.01",
+          "field": "_blocks",
+          "old": {
+            "x": 1.8,
+            "y": 0.25,
+            "z": 16.5
+          },
+          "position": {
+            "x": 1.3,
+            "y": 0.25,
+            "z": 22
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m01.turn.02",
+          "field": "_blocks",
+          "old": {
+            "x": 4.0,
+            "y": 0.45,
+            "z": 20.5
+          },
+          "position": {
+            "x": 2.5,
+            "y": 0.45,
+            "z": 28
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m01.restore.approach",
+          "field": "_blocks",
+          "old": {
+            "x": 5.8,
+            "y": 0.45,
+            "z": 25.0
+          },
+          "position": {
+            "x": 4,
+            "y": 0.45,
+            "z": 37
+          },
+          "size": {
+            "x": 14,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m01.flow.01",
+          "field": "_blocks",
+          "old": {
+            "x": 5.8,
+            "y": 0.65,
+            "z": 29.5
+          },
+          "position": {
+            "x": 4,
+            "y": 0.65,
+            "z": 46
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m01.flow.02",
+          "field": "_blocks",
+          "old": {
+            "x": 7.4,
+            "y": 0.85,
+            "z": 33.5
+          },
+          "position": {
+            "x": 4.8,
+            "y": 0.85,
+            "z": 51
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m01.flow.03",
+          "field": "_blocks",
+          "old": {
+            "x": 5.6,
+            "y": 1.05,
+            "z": 37.5
+          },
+          "position": {
+            "x": 5.6,
+            "y": 1.05,
+            "z": 56.5
+          },
+          "size": {
+            "x": 11,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m01.final-runup",
+          "field": "_blocks",
+          "old": {
+            "x": 7.0,
+            "y": 1.15,
+            "z": 41.5
+          },
+          "position": {
+            "x": 6.4,
+            "y": 1.15,
+            "z": 62
+          },
+          "size": {
+            "x": 11,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m01.patch.base",
+          "field": "_blocks",
+          "old": {
+            "x": 7.0,
+            "y": 1.15,
+            "z": 46.5
+          },
+          "position": {
+            "x": 7,
+            "y": 1.15,
+            "z": 71
+          },
+          "size": {
+            "x": 14,
+            "y": 0.6,
+            "z": 10
+          }
+        }
+      ],
+      "scenery": [
+        {
+          "id": "biome.sky-city.arrival.terrace",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 0.0
+          },
+          "sourceGuid": "9e05754f44bebfe499847f63fb268d1d",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.step.01",
+          "position": {
+            "x": 0.0,
+            "y": -4.3,
+            "z": 8.5
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": -0.3,
+            "z": 4.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.step.02",
+          "position": {
+            "x": 0.0,
+            "y": -4.3,
+            "z": 13.5
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": -0.3,
+            "z": 8.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.step.03",
+          "position": {
+            "x": 0.5,
+            "y": -4.3,
+            "z": 18.5
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": -0.3,
+            "z": 12.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.turn.01",
+          "position": {
+            "x": 1.3,
+            "y": -4.050000012,
+            "z": 24.0
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 1.8,
+            "y": -0.050000012,
+            "z": 16.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.turn.02",
+          "position": {
+            "x": 2.5,
+            "y": -3.85000002,
+            "z": 30.0
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 4.0,
+            "y": 0.14999998,
+            "z": 20.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.flow.01",
+          "position": {
+            "x": 4.0,
+            "y": -3.65000004,
+            "z": 48.0
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 5.8,
+            "y": 0.34999996,
+            "z": 29.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.flow.02",
+          "position": {
+            "x": 4.8,
+            "y": -3.45,
+            "z": 53.0
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 7.4,
+            "y": 0.55,
+            "z": 33.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.flow.03",
+          "position": {
+            "x": 5.6,
+            "y": -3.25000006,
+            "z": 58.5
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 5.6,
+            "y": 0.74999994,
+            "z": 37.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge-pier.m01.final-runup",
+          "position": {
+            "x": 6.4,
+            "y": -3.15000004,
+            "z": 64.0
+          },
+          "sourceGuid": "e64a28a7ee6dfc344bb3233fb42e868e",
+          "sourcePosition": {
+            "x": 7.0,
+            "y": 0.84999996,
+            "z": 41.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.garden.restore-court",
+          "position": {
+            "x": 4.0,
+            "y": -3.55,
+            "z": 39.0
+          },
+          "sourceGuid": "558cc1f176f4d724fbcf46e43350f173",
+          "sourcePosition": {
+            "x": 5.8,
+            "y": 0.45,
+            "z": 25.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.gateway.sun-portal",
+          "position": {
+            "x": 7.0,
+            "y": -2.85,
+            "z": 73.0
+          },
+          "sourceGuid": "61384af11da60a14d9f722c09a097e36",
+          "sourcePosition": {
+            "x": 7.0,
+            "y": 1.15,
+            "z": 46.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.overlook.patch-terrace",
+          "position": {
+            "x": 7.0,
+            "y": -2.85,
+            "z": 73.0
+          },
+          "sourceGuid": "cfe1b71668730474db49847018eeb443",
+          "sourcePosition": {
+            "x": 7.0,
+            "y": 1.15,
+            "z": 46.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        }
+      ],
+      "anchors": [
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-001.midpoint",
+          "position": {
+            "x": 4,
+            "y": 0.45,
+            "z": 37
+          },
+          "support": "m01.restore.approach"
+        },
+        {
+          "field": "_startPoint",
+          "id": "",
+          "position": {
+            "x": 0,
+            "y": 0.35,
+            "z": 0
+          },
+          "support": "m01.start"
+        },
+        {
+          "field": "_patchBlock",
+          "id": "",
+          "position": {
+            "x": 7,
+            "y": 1.45,
+            "z": 71
+          },
+          "support": "m01.patch.base"
+        }
+      ],
+      "metadata": [
+        {
+          "field": "_cameraHints",
+          "id": "camera.m01.final",
+          "property": "_position",
+          "value": {
+            "x": 5.4,
+            "y": 2.6,
+            "z": 61.5
+          }
+        }
+      ],
+      "shards": [],
+      "distant": [
+        {
+          "id": "biome.sky-city.district.west-gardens",
+          "sourcePosition": {
+            "x": -31.0,
+            "y": -21.0,
+            "z": 28.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 18.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.district.east-marina",
+          "sourcePosition": {
+            "x": 36.0,
+            "y": -28.0,
+            "z": 51.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -35.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.2,
+            "y": 1.2,
+            "z": 1.2
+          }
+        },
+        {
+          "id": "biome.sky-city.landmark.sun-observatory",
+          "sourcePosition": {
+            "x": -20.0,
+            "y": -19.0,
+            "z": 79.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 12.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.bridge.west-aqueduct",
+          "sourcePosition": {
+            "x": -36.0,
+            "y": -13.0,
+            "z": 58.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -20.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.sky-city.district.north-crown",
+          "sourcePosition": {
+            "x": 32.0,
+            "y": -30.0,
+            "z": 130.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -10.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.5,
+            "y": 1.5,
+            "z": 1.5
+          }
+        },
+        {
+          "id": "biome.sky-city.district.west-horizon",
+          "sourcePosition": {
+            "x": -75.0,
+            "y": -38.0,
+            "z": 114.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 25.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.7,
+            "y": 1.7,
+            "z": 1.7
+          }
+        },
+        {
+          "id": "biome.sky-city.district.east-horizon",
+          "sourcePosition": {
+            "x": 85.0,
+            "y": -48.0,
+            "z": 118.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -30.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.35,
+            "y": 1.35,
+            "z": 1.35
+          }
+        },
+        {
+          "id": "biome.sky-city.district.lower-port",
+          "sourcePosition": {
+            "x": -25.0,
+            "y": -75.0,
+            "z": 3.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 65.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.3,
+            "y": 1.3,
+            "z": 1.3
+          }
+        }
+      ]
+    },
+    {
+      "resource": "Modules/Module_002_MovingParts",
+      "world": "Mountain",
+      "version": 5,
+      "entries": [
+        {
+          "id": "m02.start",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m02.rhythm.01",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.6,
+            "z": 4.5
+          },
+          "position": {
+            "x": 0,
+            "y": 0.2,
+            "z": 8.5
+          },
+          "size": {
+            "x": 9,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m02.rhythm.02",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 1.2,
+            "z": 8.5
+          },
+          "position": {
+            "x": 0,
+            "y": 0.4,
+            "z": 13.5
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.after-moving.01",
+          "field": "_blocks",
+          "old": {
+            "x": 3.0,
+            "y": 1.8,
+            "z": 17.5
+          },
+          "position": {
+            "x": 2,
+            "y": 0.8,
+            "z": 24
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.after-moving.02",
+          "field": "_blocks",
+          "old": {
+            "x": 4.0,
+            "y": 2.4,
+            "z": 21.5
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "z": 30
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.restore.platform",
+          "field": "_blocks",
+          "old": {
+            "x": 4.0,
+            "y": 3.0,
+            "z": 26.0
+          },
+          "position": {
+            "x": 4,
+            "y": 1.2,
+            "z": 39
+          },
+          "size": {
+            "x": 14,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m02.safe.01",
+          "field": "_blocks",
+          "old": {
+            "x": 1.0,
+            "y": 3.6,
+            "z": 30.5
+          },
+          "position": {
+            "x": 3,
+            "y": 1.4,
+            "z": 48
+          },
+          "size": {
+            "x": 11,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m02.safe.02",
+          "field": "_blocks",
+          "old": {
+            "x": -2.0,
+            "y": 4.2,
+            "z": 34.5
+          },
+          "position": {
+            "x": 1,
+            "y": 1.6,
+            "z": 53
+          },
+          "size": {
+            "x": 11,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.safe.03",
+          "field": "_blocks",
+          "old": {
+            "x": -5.0,
+            "y": 4.8,
+            "z": 38.5
+          },
+          "position": {
+            "x": -1,
+            "y": 1.8,
+            "z": 59
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.safe.04",
+          "field": "_blocks",
+          "old": {
+            "x": -6.0,
+            "y": 5.4,
+            "z": 42.5
+          },
+          "position": {
+            "x": -3,
+            "y": 2,
+            "z": 65
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.garden.exit",
+          "field": "_blocks",
+          "old": {
+            "x": -4.0,
+            "y": 6.0,
+            "z": 46.5
+          },
+          "position": {
+            "x": -4,
+            "y": 2.2,
+            "z": 71
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 7.7
+          }
+        },
+        {
+          "id": "m02.ridge.01",
+          "field": "_blocks",
+          "old": {
+            "x": -1.0,
+            "y": 6.4,
+            "z": 50.5
+          },
+          "position": {
+            "x": -3,
+            "y": 2.4,
+            "z": 78
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 5
+          }
+        },
+        {
+          "id": "m02.ridge.02",
+          "field": "_blocks",
+          "old": {
+            "x": 3.0,
+            "y": 6.8,
+            "z": 54.5
+          },
+          "position": {
+            "x": -1,
+            "y": 2.6,
+            "z": 84
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.rejoin",
+          "field": "_blocks",
+          "old": {
+            "x": 6.0,
+            "y": 7.2,
+            "z": 58.5
+          },
+          "position": {
+            "x": 1,
+            "y": 2.8,
+            "z": 94
+          },
+          "size": {
+            "x": 20,
+            "y": 0.6,
+            "z": 12
+          }
+        },
+        {
+          "id": "m02.lift.exit",
+          "field": "_blocks",
+          "old": {
+            "x": 9.0,
+            "y": 8.8,
+            "z": 69.0
+          },
+          "position": {
+            "x": 9,
+            "y": 8.8,
+            "z": 134
+          },
+          "size": {
+            "x": 14,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m02.ascent.01",
+          "field": "_blocks",
+          "old": {
+            "x": 12.0,
+            "y": 9.4,
+            "z": 73.0
+          },
+          "position": {
+            "x": 10,
+            "y": 9,
+            "z": 143
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m02.ascent.02",
+          "field": "_blocks",
+          "old": {
+            "x": 15.0,
+            "y": 10.0,
+            "z": 77.0
+          },
+          "position": {
+            "x": 11,
+            "y": 9.2,
+            "z": 148
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.ascent.03",
+          "field": "_blocks",
+          "old": {
+            "x": 15.0,
+            "y": 10.6,
+            "z": 81.0
+          },
+          "position": {
+            "x": 12,
+            "y": 9.4,
+            "z": 154
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.ascent.04",
+          "field": "_blocks",
+          "old": {
+            "x": 13.0,
+            "y": 11.2,
+            "z": 85.0
+          },
+          "position": {
+            "x": 12,
+            "y": 9.6,
+            "z": 160
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m02.final-runup",
+          "field": "_blocks",
+          "old": {
+            "x": 10.0,
+            "y": 11.8,
+            "z": 89.0
+          },
+          "position": {
+            "x": 11,
+            "y": 9.8,
+            "z": 166
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 5
+          }
+        },
+        {
+          "id": "m02.patch.base",
+          "field": "_blocks",
+          "old": {
+            "x": 8.0,
+            "y": 12.4,
+            "z": 93.0
+          },
+          "position": {
+            "x": 10,
+            "y": 10,
+            "z": 176
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 12
+          }
+        },
+        {
+          "id": "m02.risky.01",
+          "field": "_blocks",
+          "old": {
+            "x": 7.0,
+            "y": 3.7,
+            "z": 31.0
+          },
+          "position": {
+            "x": 10,
+            "y": 1.4,
+            "z": 46
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.6,
+            "z": 2.0
+          }
+        },
+        {
+          "id": "m02.risky.02",
+          "field": "_blocks",
+          "old": {
+            "x": 8.0,
+            "y": 4.3,
+            "z": 36.0
+          },
+          "position": {
+            "x": 11,
+            "y": 1.6,
+            "z": 52
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.6,
+            "z": 2.0
+          }
+        },
+        {
+          "id": "m02.risky.03",
+          "field": "_blocks",
+          "old": {
+            "x": 8.0,
+            "y": 4.9,
+            "z": 41.0
+          },
+          "position": {
+            "x": 11,
+            "y": 1.8,
+            "z": 58
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.6,
+            "z": 2.0
+          }
+        },
+        {
+          "id": "m02.risky.04",
+          "field": "_blocks",
+          "old": {
+            "x": 7.0,
+            "y": 5.5,
+            "z": 46.0
+          },
+          "position": {
+            "x": 8,
+            "y": 2.0,
+            "z": 65
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.6,
+            "z": 2.0
+          }
+        },
+        {
+          "id": "m02.risky.05",
+          "field": "_blocks",
+          "old": {
+            "x": 6.0,
+            "y": 6.2,
+            "z": 51.0
+          },
+          "position": {
+            "x": 5,
+            "y": 2.2,
+            "z": 72
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.6,
+            "z": 2.0
+          }
+        },
+        {
+          "id": "m02.risky.06",
+          "field": "_blocks",
+          "old": {
+            "x": 6.0,
+            "y": 6.7,
+            "z": 54.5
+          },
+          "position": {
+            "x": 6,
+            "y": 2.4000000000000004,
+            "z": 79
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.6,
+            "z": 2.0
+          }
+        },
+        {
+          "id": "m02.mastery.lift-cut",
+          "field": "_blocks",
+          "old": {
+            "x": 12.2,
+            "y": 8.2,
+            "z": 63.5
+          },
+          "position": {
+            "x": 16.5,
+            "y": 3.5,
+            "z": 99
+          },
+          "size": {
+            "x": 4,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "moving.m02.first",
+          "field": "_movingBlocks",
+          "old": {
+            "x": -2.0,
+            "y": 1.3,
+            "z": 13.0
+          },
+          "position": {
+            "x": 0,
+            "y": 0.6,
+            "z": 18.5
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          },
+          "path": [
+            {
+              "x": 0.0,
+              "y": 0.6,
+              "z": 18.5
+            },
+            {
+              "x": 4.5,
+              "y": 0.6,
+              "z": 18.5
+            }
+          ]
+        },
+        {
+          "id": "moving.m02.final",
+          "field": "_movingBlocks",
+          "old": {
+            "x": 6.0,
+            "y": 7.4,
+            "z": 62.5
+          },
+          "position": {
+            "x": 6,
+            "y": 3,
+            "z": 104
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 6.5
+          },
+          "path": [
+            {
+              "x": 6.0,
+              "y": 3.0,
+              "z": 104.0
+            },
+            {
+              "x": 9.0,
+              "y": 8.499999999999998,
+              "z": 125
+            }
+          ],
+          "pause": 1.4
+        },
+        {
+          "id": "m02.mastery.lift-cut.01",
+          "field": "_blocks",
+          "old": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "position": {
+            "x": 18,
+            "y": 4.3,
+            "z": 104
+          },
+          "size": {
+            "x": 3,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m02.mastery.lift-cut.02",
+          "field": "_blocks",
+          "old": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "position": {
+            "x": 18,
+            "y": 5.1,
+            "z": 109
+          },
+          "size": {
+            "x": 3,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m02.mastery.lift-cut.03",
+          "field": "_blocks",
+          "old": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "position": {
+            "x": 18,
+            "y": 5.9,
+            "z": 114
+          },
+          "size": {
+            "x": 3,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m02.mastery.lift-cut.04",
+          "field": "_blocks",
+          "old": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "position": {
+            "x": 18,
+            "y": 6.7,
+            "z": 119
+          },
+          "size": {
+            "x": 3,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m02.mastery.lift-cut.05",
+          "field": "_blocks",
+          "old": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "size": {
+            "x": 3,
+            "y": 0.6,
+            "z": 3
+          },
+          "position": {
+            "x": 18,
+            "y": 7.5,
+            "z": 124
+          }
+        },
+        {
+          "id": "m02.mastery.lift-cut.06",
+          "field": "_blocks",
+          "old": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "size": {
+            "x": 3,
+            "y": 0.6,
+            "z": 3
+          },
+          "position": {
+            "x": 18,
+            "y": 8.3,
+            "z": 129
+          }
+        }
+      ],
+      "scenery": [
+        {
+          "id": "biome.mountain-sky.footing.m02.start",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 0.0
+          },
+          "sourceGuid": "17e8ec1b13a5cdf48acf0441810bc9d7",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.rhythm.01",
+          "position": {
+            "x": 0.0,
+            "y": -3.4,
+            "z": 4.5
+          },
+          "sourceGuid": "75ec52caa0812c744a64190af0f86be3",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.6,
+            "z": 4.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.rhythm.02",
+          "position": {
+            "x": 0.0,
+            "y": -2.8,
+            "z": 8.5
+          },
+          "sourceGuid": "6ba5c2490b865704eb6a1f00c49c7690",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 1.2,
+            "z": 8.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.after-moving.01",
+          "position": {
+            "x": 3.0,
+            "y": -2.2,
+            "z": 17.5
+          },
+          "sourceGuid": "55240a84a8a03514791dec40499e9d1c",
+          "sourcePosition": {
+            "x": 3.0,
+            "y": 1.8,
+            "z": 17.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.after-moving.02",
+          "position": {
+            "x": 4.0,
+            "y": -1.6,
+            "z": 21.5
+          },
+          "sourceGuid": "16aa52aed2e93364cbb144954fbae700",
+          "sourcePosition": {
+            "x": 4.0,
+            "y": 2.4,
+            "z": 21.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.restore.platform",
+          "position": {
+            "x": 4.0,
+            "y": -1.0,
+            "z": 26.0
+          },
+          "sourceGuid": "30a2c9a0af4452c4f9adfa27dd0b5d13",
+          "sourcePosition": {
+            "x": 4.0,
+            "y": 3.0,
+            "z": 26.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.safe.01",
+          "position": {
+            "x": 1.0,
+            "y": -0.3999999999999999,
+            "z": 30.5
+          },
+          "sourceGuid": "1cb3aac62f96e4e4ba1c3fb4b676bb6a",
+          "sourcePosition": {
+            "x": 1.0,
+            "y": 3.6,
+            "z": 30.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.safe.02",
+          "position": {
+            "x": -2.0,
+            "y": 0.20000000000000018,
+            "z": 34.5
+          },
+          "sourceGuid": "2c1053a72bf5aed429693ecc16b0a2a1",
+          "sourcePosition": {
+            "x": -2.0,
+            "y": 4.2,
+            "z": 34.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.safe.03",
+          "position": {
+            "x": -5.0,
+            "y": 0.7999999999999998,
+            "z": 38.5
+          },
+          "sourceGuid": "279d62f536b5dfd41b5e8b18f2bdf634",
+          "sourcePosition": {
+            "x": -5.0,
+            "y": 4.8,
+            "z": 38.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.safe.04",
+          "position": {
+            "x": -6.0,
+            "y": 1.4000000000000004,
+            "z": 42.5
+          },
+          "sourceGuid": "d316337168e38f14d815c975a5cc6ae1",
+          "sourcePosition": {
+            "x": -6.0,
+            "y": 5.4,
+            "z": 42.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.garden.exit",
+          "position": {
+            "x": -4.0,
+            "y": 2.0,
+            "z": 46.5
+          },
+          "sourceGuid": "f09b38e3198ff934982685ad48fb4785",
+          "sourcePosition": {
+            "x": -4.0,
+            "y": 6.0,
+            "z": 46.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.ridge.01",
+          "position": {
+            "x": -1.0,
+            "y": 2.4000000000000004,
+            "z": 50.5
+          },
+          "sourceGuid": "1fba17e68f849ca43913cb395155838b",
+          "sourcePosition": {
+            "x": -1.0,
+            "y": 6.4,
+            "z": 50.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.ridge.02",
+          "position": {
+            "x": 3.0,
+            "y": 2.8,
+            "z": 54.5
+          },
+          "sourceGuid": "3c0ae089e14f26445860509aecf87d2d",
+          "sourcePosition": {
+            "x": 3.0,
+            "y": 6.8,
+            "z": 54.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.rejoin",
+          "position": {
+            "x": 6.0,
+            "y": 3.2,
+            "z": 58.5
+          },
+          "sourceGuid": "71b830ed4f864ac49b4278f3702c7cb5",
+          "sourcePosition": {
+            "x": 6.0,
+            "y": 7.2,
+            "z": 58.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.lift.exit",
+          "position": {
+            "x": 9.0,
+            "y": 4.800000000000001,
+            "z": 69.0
+          },
+          "sourceGuid": "46b7401800941b242ac2516350c1d3bc",
+          "sourcePosition": {
+            "x": 9.0,
+            "y": 8.8,
+            "z": 69.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.ascent.01",
+          "position": {
+            "x": 12.0,
+            "y": 5.4,
+            "z": 73.0
+          },
+          "sourceGuid": "30010cdac61245c4fbebb1a2b13ce7e1",
+          "sourcePosition": {
+            "x": 12.0,
+            "y": 9.4,
+            "z": 73.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.ascent.02",
+          "position": {
+            "x": 15.0,
+            "y": 6.0,
+            "z": 77.0
+          },
+          "sourceGuid": "b482df9f65cbd4041b334c02004f2836",
+          "sourcePosition": {
+            "x": 15.0,
+            "y": 10.0,
+            "z": 77.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.ascent.03",
+          "position": {
+            "x": 15.0,
+            "y": 6.6,
+            "z": 81.0
+          },
+          "sourceGuid": "981a1099349c9d749bccf17f5d8ced15",
+          "sourcePosition": {
+            "x": 15.0,
+            "y": 10.6,
+            "z": 81.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.ascent.04",
+          "position": {
+            "x": 13.0,
+            "y": 7.199999999999999,
+            "z": 85.0
+          },
+          "sourceGuid": "3805b7af8c7745149ba16b0344b0c8e1",
+          "sourcePosition": {
+            "x": 13.0,
+            "y": 11.2,
+            "z": 85.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.final-runup",
+          "position": {
+            "x": 10.0,
+            "y": 7.800000000000001,
+            "z": 89.0
+          },
+          "sourceGuid": "aa6fa3e94582a9643a75ec03f48004cf",
+          "sourcePosition": {
+            "x": 10.0,
+            "y": 11.8,
+            "z": 89.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.patch.base",
+          "position": {
+            "x": 8.0,
+            "y": 8.4,
+            "z": 93.0
+          },
+          "sourceGuid": "ad126cf3b3a181b45ad1097670ab4c7a",
+          "sourcePosition": {
+            "x": 8.0,
+            "y": 12.4,
+            "z": 93.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.risky.01",
+          "position": {
+            "x": 7.0,
+            "y": -0.2999999999999998,
+            "z": 31.0
+          },
+          "sourceGuid": "cffaedb44c1e3864d9163455afb2d62d",
+          "sourcePosition": {
+            "x": 7.0,
+            "y": 3.7,
+            "z": 31.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.risky.02",
+          "position": {
+            "x": 8.0,
+            "y": 0.2999999999999998,
+            "z": 36.0
+          },
+          "sourceGuid": "39593747da3d6da42a430128cb9e4380",
+          "sourcePosition": {
+            "x": 8.0,
+            "y": 4.3,
+            "z": 36.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.risky.03",
+          "position": {
+            "x": 8.0,
+            "y": 0.9000000000000004,
+            "z": 41.0
+          },
+          "sourceGuid": "f032c75d858279144a83bbbbf2ff0ae7",
+          "sourcePosition": {
+            "x": 8.0,
+            "y": 4.9,
+            "z": 41.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.risky.04",
+          "position": {
+            "x": 7.0,
+            "y": 1.5,
+            "z": 46.0
+          },
+          "sourceGuid": "8e1de478617f0324cb098ec0efb56956",
+          "sourcePosition": {
+            "x": 7.0,
+            "y": 5.5,
+            "z": 46.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.risky.05",
+          "position": {
+            "x": 6.0,
+            "y": 2.2,
+            "z": 51.0
+          },
+          "sourceGuid": "f0157a943520cf14daffeabb3112acb9",
+          "sourcePosition": {
+            "x": 6.0,
+            "y": 6.2,
+            "z": 51.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.risky.06",
+          "position": {
+            "x": 6.0,
+            "y": 2.7,
+            "z": 54.5
+          },
+          "sourceGuid": "890734385c9e49e4389a9d255e41ca36",
+          "sourcePosition": {
+            "x": 6.0,
+            "y": 6.7,
+            "z": 54.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.footing.m02.mastery.lift-cut",
+          "position": {
+            "x": 12.2,
+            "y": 4.199999999999999,
+            "z": 63.5
+          },
+          "sourceGuid": "c95e87be3a335f74f93228dfbe19fba5",
+          "sourcePosition": {
+            "x": 12.2,
+            "y": 8.2,
+            "z": 63.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.arrival.cliff",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 0.0
+          },
+          "sourceGuid": "20fde50b7c77f3d4a94245010f66eeb2",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.pass.fractured-abutment",
+          "position": {
+            "x": 0.0,
+            "y": -2.8,
+            "z": 8.5
+          },
+          "sourceGuid": "a5d27bbfa4772a04fb1424b9d314011f",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 1.2,
+            "z": 8.5
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.garden.waterfall-shrine",
+          "position": {
+            "x": 18.0,
+            "y": -1.0,
+            "z": 26.0
+          },
+          "sourceGuid": "55dbea4dde3912242871bcc0b8b9a8f8",
+          "sourcePosition": {
+            "x": 18.0,
+            "y": 3.0,
+            "z": 26.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.ridge.old-lift",
+          "position": {
+            "x": 6.0,
+            "y": 3.2,
+            "z": 58.0
+          },
+          "sourceGuid": "ec915e1cd31277f42b8540c0265436ff",
+          "sourcePosition": {
+            "x": 6.0,
+            "y": 7.2,
+            "z": 58.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.summit.stone-crown",
+          "position": {
+            "x": 8.0,
+            "y": 8.4,
+            "z": 93.0
+          },
+          "sourceGuid": "cf52942dee945574daca883982f0d95a",
+          "sourcePosition": {
+            "x": 8.0,
+            "y": 12.4,
+            "z": 93.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.garden.fractured-wall",
+          "position": {
+            "x": 4.0,
+            "y": -1.0,
+            "z": 26.0
+          },
+          "sourceGuid": "02517ab1a441ac347a9888b054159892",
+          "sourcePosition": {
+            "x": 4.0,
+            "y": 3.0,
+            "z": 26.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.ridge.fractured-wall",
+          "position": {
+            "x": 12.0,
+            "y": 5.4,
+            "z": 73.0
+          },
+          "sourceGuid": "1f493fe47adc2c449a9567d7d5c4f5f4",
+          "sourcePosition": {
+            "x": 12.0,
+            "y": 9.4,
+            "z": 73.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.garden.valley-foundation",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 39.0
+          },
+          "sourceGuid": "ff70215269f4ba14da8d6ce09f65ba1b",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 39.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.ridge.upper-foundation",
+          "position": {
+            "x": 13.0,
+            "y": 5.0,
+            "z": 81.0
+          },
+          "sourceGuid": "641ef47becc47864d92ab46a81cdbbe2",
+          "sourcePosition": {
+            "x": 13.0,
+            "y": 9.0,
+            "z": 81.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        }
+      ],
+      "anchors": [
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-002.branch",
+          "position": {
+            "x": 4,
+            "y": 1.2,
+            "z": 39
+          },
+          "support": "m02.restore.platform"
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-002.ridge",
+          "position": {
+            "x": 1,
+            "y": 2.8,
+            "z": 94
+          },
+          "support": "m02.rejoin"
+        },
+        {
+          "field": "_startPoint",
+          "id": "",
+          "position": {
+            "x": 0,
+            "y": 0.35,
+            "z": 0
+          },
+          "support": "m02.start"
+        },
+        {
+          "field": "_patchBlock",
+          "id": "",
+          "position": {
+            "x": 10,
+            "y": 10.3,
+            "z": 176
+          },
+          "support": "m02.patch.base"
+        }
+      ],
+      "metadata": [
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-002.risky-inner",
+          "property": "_entryPosition",
+          "value": {
+            "x": 10.0,
+            "y": 1.3999999999999995,
+            "z": 46.0
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-002.risky-inner",
+          "property": "_exitPosition",
+          "value": {
+            "x": 1.0,
+            "y": 2.8,
+            "z": 94.0
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-002.lift-cut",
+          "property": "_entryPosition",
+          "value": {
+            "x": 16.5,
+            "y": 3.5,
+            "z": 99.0
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-002.lift-cut",
+          "property": "_exitPosition",
+          "value": {
+            "x": 9.0,
+            "y": 8.8,
+            "z": 134.0
+          }
+        }
+      ],
+      "shards": [
+        {
+          "resource": "FlowChallenges/Module002_FlowChallenge",
+          "id": "shard.m02.inner-ridge",
+          "value": {
+            "x": 11.0,
+            "y": 2.8,
+            "z": 58.0
+          }
+        },
+        {
+          "resource": "FlowChallenges/Module002_FlowChallenge",
+          "id": "shard.m02.lift-cut",
+          "value": {
+            "x": 16.5,
+            "y": 4.5,
+            "z": 99.0
+          }
+        }
+      ],
+      "distant": [
+        {
+          "id": "biome.mountain-sky.west.headwall",
+          "sourcePosition": {
+            "x": -65.0,
+            "y": -49.0,
+            "z": 19.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 25.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.1,
+            "y": 1.1,
+            "z": 1.1
+          }
+        },
+        {
+          "id": "biome.mountain-sky.east.waterfall-headwall",
+          "sourcePosition": {
+            "x": 78.0,
+            "y": -42.0,
+            "z": 44.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -25.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.25,
+            "y": 1.25,
+            "z": 1.25
+          }
+        },
+        {
+          "id": "biome.mountain-sky.west.high-ridge",
+          "sourcePosition": {
+            "x": -58.0,
+            "y": -40.0,
+            "z": 124.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 55.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.2,
+            "y": 1.2,
+            "z": 1.2
+          }
+        },
+        {
+          "id": "biome.mountain-sky.landmark.split-peak",
+          "sourcePosition": {
+            "x": -82.0,
+            "y": -15.0,
+            "z": 64.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -55.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.west.valley",
+          "sourcePosition": {
+            "x": -165.0,
+            "y": -60.0,
+            "z": 180.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 13.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 2.2,
+            "y": 2.2,
+            "z": 2.2
+          }
+        },
+        {
+          "id": "biome.mountain-sky.north.range",
+          "sourcePosition": {
+            "x": -26.0,
+            "y": -58.0,
+            "z": 280.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -31.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 2.6,
+            "y": 2.6,
+            "z": 2.6
+          }
+        },
+        {
+          "id": "biome.mountain-sky.east.range",
+          "sourcePosition": {
+            "x": 195.0,
+            "y": -65.0,
+            "z": 240.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 75.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 2.4,
+            "y": 2.4,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "biome.mountain-sky.very-far.west",
+          "sourcePosition": {
+            "x": -270.0,
+            "y": -80.0,
+            "z": 460.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 20.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 4.6,
+            "y": 4.6,
+            "z": 4.6
+          }
+        },
+        {
+          "id": "biome.mountain-sky.very-far.east",
+          "sourcePosition": {
+            "x": 280.0,
+            "y": -90.0,
+            "z": 520.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 55.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 5.0,
+            "y": 5.0,
+            "z": 5.0
+          }
+        },
+        {
+          "id": "biome.mountain-sky.below.valley-spur",
+          "sourcePosition": {
+            "x": -30.0,
+            "y": -105.0,
+            "z": -24.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 10.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.8,
+            "y": 1.8,
+            "z": 1.8
+          }
+        }
+      ]
+    },
+    {
+      "resource": "Modules/Module_003_FlowError",
+      "world": "AncientAbyss",
+      "version": 9,
+      "entries": [
+        {
+          "id": "m03.start",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -7.0
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": -7
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m03.opening.01",
+          "field": "_blocks",
+          "old": {
+            "x": -2.5,
+            "y": 0.1,
+            "z": -2.5
+          },
+          "position": {
+            "x": -1,
+            "y": 0.1,
+            "z": 1.5
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m03.opening.02",
+          "field": "_blocks",
+          "old": {
+            "x": -4.0,
+            "y": 0.3,
+            "z": 2.0
+          },
+          "position": {
+            "x": -1.5,
+            "y": 0.3,
+            "z": 6.5
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m03.opening.03",
+          "field": "_blocks",
+          "old": {
+            "x": -2.0,
+            "y": 0.5,
+            "z": 6.5
+          },
+          "position": {
+            "x": -1,
+            "y": 0.5,
+            "z": 14
+          },
+          "size": {
+            "x": 11,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m03.arrival.approach",
+          "field": "_blocks",
+          "old": {
+            "x": 1.0,
+            "y": 0.8,
+            "z": 11.0
+          },
+          "position": {
+            "x": 1,
+            "y": 0.7,
+            "z": 21
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m03.arrival.court",
+          "field": "_blocks",
+          "old": {
+            "x": 4.0,
+            "y": 1.0,
+            "z": 15.5
+          },
+          "position": {
+            "x": 4,
+            "y": 0.9,
+            "z": 31
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 12
+          }
+        },
+        {
+          "id": "m03.crossing.approach",
+          "field": "_blocks",
+          "old": {
+            "x": 7.0,
+            "y": 1.5,
+            "z": 25.0
+          },
+          "position": {
+            "x": 7.0,
+            "y": 1.5,
+            "z": 48.0
+          },
+          "size": {
+            "x": 8,
+            "y": 0.6,
+            "z": 3.0
+          }
+        },
+        {
+          "id": "m03.moving-setup",
+          "field": "_blocks",
+          "old": {
+            "x": 7.0,
+            "y": 1.8,
+            "z": 30.0
+          },
+          "position": {
+            "x": 7.0,
+            "y": 1.8,
+            "z": 53.0
+          },
+          "size": {
+            "x": 8,
+            "y": 0.6,
+            "z": 3.5
+          }
+        },
+        {
+          "id": "m03.motion-exit",
+          "field": "_blocks",
+          "old": {
+            "x": -6.0,
+            "y": 2.5,
+            "z": 43.0
+          },
+          "position": {
+            "x": -6.0,
+            "y": 2.5,
+            "z": 66.0
+          },
+          "size": {
+            "x": 8,
+            "y": 0.6,
+            "z": 4.0
+          }
+        },
+        {
+          "id": "m03.temple.entry",
+          "field": "_blocks",
+          "old": {
+            "x": -3.0,
+            "y": 3.0,
+            "z": 51.0
+          },
+          "position": {
+            "x": -3,
+            "y": 3,
+            "z": 74
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 8
+          }
+        },
+        {
+          "id": "m03.temple.exit",
+          "field": "_blocks",
+          "old": {
+            "x": 3.0,
+            "y": 4.6,
+            "z": 67.0
+          },
+          "position": {
+            "x": 3,
+            "y": 3.8,
+            "z": 103
+          },
+          "size": {
+            "x": 14,
+            "y": 0.6,
+            "z": 13
+          }
+        },
+        {
+          "id": "m03.spine.approach",
+          "field": "_blocks",
+          "old": {
+            "x": 3.0,
+            "y": 5.2,
+            "z": 75.0
+          },
+          "position": {
+            "x": 3,
+            "y": 4.2,
+            "z": 112
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m03.boost-runup",
+          "field": "_blocks",
+          "old": {
+            "x": 6.0,
+            "y": 5.6,
+            "z": 80.0
+          },
+          "position": {
+            "x": 6,
+            "y": 4.6,
+            "z": 118
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m03.boost-landing",
+          "field": "_blocks",
+          "old": {
+            "x": -1.0,
+            "y": 8.8,
+            "z": 96.0
+          },
+          "position": {
+            "x": -1,
+            "y": 7.8,
+            "z": 134
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m03.final.01",
+          "field": "_blocks",
+          "old": {
+            "x": -3.0,
+            "y": 9.4,
+            "z": 102.0
+          },
+          "position": {
+            "x": -2,
+            "y": 8,
+            "z": 143
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m03.final.02",
+          "field": "_blocks",
+          "old": {
+            "x": -6.0,
+            "y": 10.0,
+            "z": 107.0
+          },
+          "position": {
+            "x": -2.5,
+            "y": 8.2,
+            "z": 148
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m03.final.03",
+          "field": "_blocks",
+          "old": {
+            "x": -4.0,
+            "y": 10.7,
+            "z": 112.0
+          },
+          "position": {
+            "x": -1.5,
+            "y": 8.4,
+            "z": 154
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m03.final.04",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 11.5,
+            "z": 116.0
+          },
+          "position": {
+            "x": 0.5,
+            "y": 8.6,
+            "z": 160
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m03.final.05",
+          "field": "_blocks",
+          "old": {
+            "x": 4.0,
+            "y": 12.4,
+            "z": 120.0
+          },
+          "position": {
+            "x": 3,
+            "y": 8.8,
+            "z": 166
+          },
+          "size": {
+            "x": 13,
+            "y": 0.6,
+            "z": 5.7
+          }
+        },
+        {
+          "id": "m03.final.06",
+          "field": "_blocks",
+          "old": {
+            "x": 7.0,
+            "y": 13.4,
+            "z": 124.0
+          },
+          "position": {
+            "x": 6,
+            "y": 9,
+            "z": 176
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 12
+          }
+        },
+        {
+          "id": "m03.mastery.arrival-cut",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.55,
+            "z": 5.0
+          },
+          "position": {
+            "x": 1.0,
+            "y": 0.55,
+            "z": 10.5
+          },
+          "size": {
+            "x": 1.5,
+            "y": 0.6,
+            "z": 1.5
+          }
+        },
+        {
+          "id": "m03.mastery.moving-bypass.01",
+          "field": "_blocks",
+          "old": {
+            "x": 2.2,
+            "y": 2.2,
+            "z": 30.7
+          },
+          "position": {
+            "x": 2.1999999999999993,
+            "y": 2.2,
+            "z": 53.7
+          },
+          "size": {
+            "x": 1.5,
+            "y": 0.6,
+            "z": 1.5
+          }
+        },
+        {
+          "id": "m03.mastery.moving-bypass.02",
+          "field": "_blocks",
+          "old": {
+            "x": -3.6,
+            "y": 2.35,
+            "z": 33.4
+          },
+          "position": {
+            "x": -3.5999999999999996,
+            "y": 2.3499999999999996,
+            "z": 56.400000000000006
+          },
+          "size": {
+            "x": 1.5,
+            "y": 0.6,
+            "z": 1.5
+          }
+        },
+        {
+          "id": "m03.mastery.moving-bypass.03",
+          "field": "_blocks",
+          "old": {
+            "x": -8.9,
+            "y": 2.5,
+            "z": 36.5
+          },
+          "position": {
+            "x": -9,
+            "y": 2.5,
+            "z": 57
+          },
+          "size": {
+            "x": 3,
+            "y": 0.6,
+            "z": 2
+          }
+        },
+        {
+          "id": "moving.m03.motion-gallery",
+          "field": "_movingBlocks",
+          "old": {
+            "x": 7.0,
+            "y": 2.1,
+            "z": 34.0
+          },
+          "position": {
+            "x": 7.0,
+            "y": 2.1,
+            "z": 57.0
+          },
+          "size": {
+            "x": 8,
+            "y": 0.6,
+            "z": 4.0
+          },
+          "path": [
+            {
+              "x": 7.0,
+              "y": 2.1,
+              "z": 57.0
+            },
+            {
+              "x": -6.0,
+              "y": 2.4,
+              "z": 62.0
+            }
+          ]
+        },
+        {
+          "id": "crumble.m03.01",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 0.0,
+            "y": 3.4,
+            "z": 55.0
+          },
+          "position": {
+            "x": 0,
+            "y": 3.2,
+            "z": 82
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "crumble.m03.02",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 3.5,
+            "y": 3.8,
+            "z": 59.0
+          },
+          "position": {
+            "x": 2,
+            "y": 3.4,
+            "z": 87
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 5
+          }
+        },
+        {
+          "id": "crumble.m03.03",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 5.0,
+            "y": 4.2,
+            "z": 63.0
+          },
+          "position": {
+            "x": 3,
+            "y": 3.6,
+            "z": 93
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "boost.m03.first",
+          "field": "_boostBlocks",
+          "old": {
+            "x": 6.0,
+            "y": 5.9,
+            "z": 84.0
+          },
+          "position": {
+            "x": 6.0,
+            "y": 4.9,
+            "z": 122.0
+          },
+          "size": {
+            "x": 8,
+            "y": 0.6,
+            "z": 3.0
+          }
+        },
+        {
+          "id": "m03.sanctuary.bridge",
+          "field": "_blocks",
+          "old": {
+            "x": 5,
+            "y": 1.2,
+            "z": 22
+          },
+          "position": {
+            "x": 5,
+            "y": 1.2,
+            "z": 41
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m03.mastery.moving-bypass.04",
+          "field": "_blocks",
+          "old": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "position": {
+            "x": -12,
+            "y": 2.5,
+            "z": 62
+          },
+          "size": {
+            "x": 3,
+            "y": 0.6,
+            "z": 3
+          }
+        }
+      ],
+      "scenery": [
+        {
+          "id": "biome.ancient-abyss.place.arrival-sanctuary",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 6.0
+          },
+          "sourceGuid": "ebbee35c5dbe7d6438c1b4a4ba4b4d97",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 6.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.ancient-abyss.place.broken-crossing",
+          "position": {
+            "x": 0.0,
+            "y": -2.0,
+            "z": 36.0
+          },
+          "sourceGuid": "a51324dbbc0e4974db846ed0cb544b18",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 2.0,
+            "z": 36.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.ancient-abyss.place.collapsed-temple",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 59.0
+          },
+          "sourceGuid": "f75c377fea2622f4eb70253eac633937",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 4.0,
+            "z": 59.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.ancient-abyss.place.energy-spine",
+          "position": {
+            "x": 0.0,
+            "y": 3.0,
+            "z": 90.0
+          },
+          "sourceGuid": "96e23fe61ed7a824a88f988240bfecf2",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 7.0,
+            "z": 90.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.ancient-abyss.place.patch-sanctum",
+          "position": {
+            "x": 8.0,
+            "y": 10.0,
+            "z": 129.0
+          },
+          "sourceGuid": "d6651c4afb2a6c2429f0bb3abbdc1183",
+          "sourcePosition": {
+            "x": 8.0,
+            "y": 14.0,
+            "z": 129.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        }
+      ],
+      "anchors": [
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-003.arrival-sanctuary",
+          "position": {
+            "x": 4,
+            "y": 0.9,
+            "z": 31
+          },
+          "support": "m03.arrival.court"
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-003.broken-crossing",
+          "position": {
+            "x": -6.0,
+            "y": 2.5,
+            "z": 66.0
+          },
+          "support": "m03.motion-exit"
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-003.collapsed-temple",
+          "position": {
+            "x": 3,
+            "y": 4.2,
+            "z": 112
+          },
+          "support": "m03.spine.approach"
+        },
+        {
+          "field": "_startPoint",
+          "id": "",
+          "position": {
+            "x": 0,
+            "y": 0.35,
+            "z": -7
+          },
+          "support": "m03.start"
+        },
+        {
+          "field": "_patchBlock",
+          "id": "",
+          "position": {
+            "x": 6,
+            "y": 9.3,
+            "z": 176
+          },
+          "support": "m03.final.06"
+        }
+      ],
+      "retired": [
+        "m03.mastery.temple-ledge.01",
+        "m03.mastery.temple-ledge.02"
+      ],
+      "metadata": [
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-003.arrival-court-cut",
+          "property": "_entryPosition",
+          "value": {
+            "x": -1.0,
+            "y": 0.1,
+            "z": 1.5
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-003.arrival-court-cut",
+          "property": "_exitPosition",
+          "value": {
+            "x": 1.0,
+            "y": 0.7,
+            "z": 21.0
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-003.moving-bypass",
+          "property": "_entryPosition",
+          "value": {
+            "x": 7.0,
+            "y": 1.8,
+            "z": 53.0
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-003.moving-bypass",
+          "property": "_exitPosition",
+          "value": {
+            "x": -6.0,
+            "y": 2.5,
+            "z": 66.0
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-003.temple-upper-ledge",
+          "property": "_entryPosition",
+          "value": {
+            "x": -3.0,
+            "y": 3.0,
+            "z": 74.0
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-003.temple-upper-ledge",
+          "property": "_exitPosition",
+          "value": {
+            "x": 3.0,
+            "y": 3.799999999999999,
+            "z": 103.0
+          }
+        },
+        {
+          "field": "_cameraHints",
+          "id": "camera.m03.motion-gallery",
+          "property": "_position",
+          "value": {
+            "x": 4.440892098500626e-16,
+            "y": 2.9999999999999996,
+            "z": 59.00000000000001
+          }
+        },
+        {
+          "field": "_cameraHints",
+          "id": "camera.m03.final-ascent",
+          "property": "_position",
+          "value": {
+            "x": 1.5,
+            "y": 8.100000000000001,
+            "z": 156.0
+          }
+        }
+      ],
+      "shards": [
+        {
+          "resource": "FlowChallenges/FlowChallenge_Module003",
+          "id": "flow.m03.arrival-cut",
+          "value": {
+            "x": 1.0,
+            "y": 1.95,
+            "z": 10.5
+          }
+        },
+        {
+          "resource": "FlowChallenges/FlowChallenge_Module003",
+          "id": "flow.m03.crossing-near",
+          "value": {
+            "x": 3.5,
+            "y": 3.6,
+            "z": 57.5
+          }
+        },
+        {
+          "resource": "FlowChallenges/FlowChallenge_Module003",
+          "id": "flow.m03.crossing-far",
+          "value": {
+            "x": -1.4999999999999996,
+            "y": 3.7499999999999996,
+            "z": 60.50000000000001
+          }
+        },
+        {
+          "resource": "FlowChallenges/FlowChallenge_Module003",
+          "id": "flow.m03.temple-ledge",
+          "value": {
+            "x": -2.0,
+            "y": 5.5,
+            "z": 84.0
+          }
+        },
+        {
+          "resource": "FlowChallenges/FlowChallenge_Module003",
+          "id": "flow.m03.temple-exit",
+          "value": {
+            "x": -1.0,
+            "y": 5.3999999999999995,
+            "z": 93.0
+          }
+        }
+      ],
+      "distant": [
+        {
+          "id": "biome.ancient-abyss.mid.broken-procession",
+          "sourcePosition": {
+            "x": -110.0,
+            "y": -60.0,
+            "z": 95.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 24.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.25,
+            "y": 1.25,
+            "z": 1.25
+          }
+        },
+        {
+          "id": "biome.ancient-abyss.mid.celestial-arch",
+          "sourcePosition": {
+            "x": 120.0,
+            "y": -70.0,
+            "z": 155.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -38.0,
+            "z": -4.0
+          },
+          "sourceScale": {
+            "x": 1.35,
+            "y": 1.35,
+            "z": 1.35
+          }
+        },
+        {
+          "id": "biome.ancient-abyss.hero.shattered-crown",
+          "sourcePosition": {
+            "x": 45.0,
+            "y": -42.0,
+            "z": 245.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -20.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.55,
+            "y": 1.55,
+            "z": 1.55
+          }
+        },
+        {
+          "id": "biome.ancient-abyss.below.sunken-city",
+          "sourcePosition": {
+            "x": 4.0,
+            "y": -94.0,
+            "z": 148.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -12.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.05,
+            "y": 1.05,
+            "z": 1.05
+          }
+        }
+      ]
+    },
+    {
+      "resource": "Modules/Module_004_SolarFoundry",
+      "world": "SolarFoundry",
+      "version": 5,
+      "entries": [
+        {
+          "id": "m04.intake.start",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m04.intake.pipe-a",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 0.5,
+            "z": 6.1000004
+          },
+          "position": {
+            "x": 0,
+            "y": 0.2,
+            "z": 8.5
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m04.intake.pipe-b",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 11.59
+          },
+          "position": {
+            "x": 0,
+            "y": 0.4,
+            "z": 13.5
+          },
+          "size": {
+            "x": 11,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.intake.gantry",
+          "field": "_blocks",
+          "old": {
+            "x": 2.0,
+            "y": 1.5,
+            "z": 17.08
+          },
+          "position": {
+            "x": 1,
+            "y": 0.6,
+            "z": 21
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.inspection.a",
+          "field": "_blocks",
+          "old": {
+            "x": 5.0,
+            "y": 2.0,
+            "z": 23.18
+          },
+          "position": {
+            "x": 3,
+            "y": 0.8,
+            "z": 28
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 6
+          }
+        },
+        {
+          "id": "m04.inspection.b",
+          "field": "_blocks",
+          "old": {
+            "x": 8.0,
+            "y": 2.5,
+            "z": 29.28
+          },
+          "position": {
+            "x": 6,
+            "y": 1,
+            "z": 35
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 5
+          }
+        },
+        {
+          "id": "m04.transfer.dock",
+          "field": "_blocks",
+          "old": {
+            "x": 11.0,
+            "y": 3.0,
+            "z": 35.38
+          },
+          "position": {
+            "x": 9,
+            "y": 1.2,
+            "z": 44
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 12
+          }
+        },
+        {
+          "id": "m04.transfer.exit",
+          "field": "_blocks",
+          "old": {
+            "x": 19.0,
+            "y": 4.0,
+            "z": 48.38
+          },
+          "position": {
+            "x": 19,
+            "y": 2.2,
+            "z": 65
+          },
+          "size": {
+            "x": 14,
+            "y": 0.6,
+            "z": 10
+          }
+        },
+        {
+          "id": "m04.outer.a",
+          "field": "_blocks",
+          "old": {
+            "x": 22.0,
+            "y": 4.5,
+            "z": 53.38
+          },
+          "position": {
+            "x": 22,
+            "y": 2.4,
+            "z": 74
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 3
+          }
+        },
+        {
+          "id": "m04.outer.b",
+          "field": "_blocks",
+          "old": {
+            "x": 24.0,
+            "y": 5.0,
+            "z": 57.88
+          },
+          "position": {
+            "x": 24,
+            "y": 2.6,
+            "z": 79
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.outer.c",
+          "field": "_blocks",
+          "old": {
+            "x": 24.0,
+            "y": 5.5,
+            "z": 62.38
+          },
+          "position": {
+            "x": 24,
+            "y": 2.8,
+            "z": 85
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.furnace.court",
+          "field": "_blocks",
+          "old": {
+            "x": 22.0,
+            "y": 6.0,
+            "z": 67.38
+          },
+          "position": {
+            "x": 22,
+            "y": 3,
+            "z": 94
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 12
+          }
+        },
+        {
+          "id": "m04.cooling.safe",
+          "field": "_blocks",
+          "old": {
+            "x": 11.0,
+            "y": 7.0,
+            "z": 79.38
+          },
+          "position": {
+            "x": 11,
+            "y": 3.6,
+            "z": 117
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 12
+          }
+        },
+        {
+          "id": "m04.crown.run-a",
+          "field": "_blocks",
+          "old": {
+            "x": 8.0,
+            "y": 7.5,
+            "z": 84.38
+          },
+          "position": {
+            "x": 8,
+            "y": 3.8,
+            "z": 127
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.crown.run-b",
+          "field": "_blocks",
+          "old": {
+            "x": 5.0,
+            "y": 8.0,
+            "z": 89.38
+          },
+          "position": {
+            "x": 5,
+            "y": 4,
+            "z": 133
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 5.5
+          }
+        },
+        {
+          "id": "m04.crown.restore",
+          "field": "_blocks",
+          "old": {
+            "x": 2.0,
+            "y": 8.5,
+            "z": 94.38
+          },
+          "position": {
+            "x": 2,
+            "y": 4.2,
+            "z": 143
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 12
+          }
+        },
+        {
+          "id": "m04.crown.beam-a",
+          "field": "_blocks",
+          "old": {
+            "x": 0.0,
+            "y": 9.0,
+            "z": 99.38
+          },
+          "position": {
+            "x": 0,
+            "y": 4.4,
+            "z": 153
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.crown.beam-b",
+          "field": "_blocks",
+          "old": {
+            "x": -3.0,
+            "y": 9.5,
+            "z": 104.38
+          },
+          "position": {
+            "x": -3,
+            "y": 4.6,
+            "z": 159
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.patch.base",
+          "field": "_blocks",
+          "old": {
+            "x": -5.0,
+            "y": 10.0,
+            "z": 109.38
+          },
+          "position": {
+            "x": -5,
+            "y": 4.8,
+            "z": 173
+          },
+          "size": {
+            "x": 16,
+            "y": 0.6,
+            "z": 22
+          }
+        },
+        {
+          "id": "m04.mastery.transfer-a",
+          "field": "_blocks",
+          "old": {
+            "x": 17.5,
+            "y": 3.4,
+            "z": 36.88
+          },
+          "position": {
+            "x": 22,
+            "y": 1.6,
+            "z": 48
+          },
+          "size": {
+            "x": 4,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.mastery.transfer-b",
+          "field": "_blocks",
+          "old": {
+            "x": 22.5,
+            "y": 3.6,
+            "z": 39.38
+          },
+          "position": {
+            "x": 27,
+            "y": 1.8,
+            "z": 53.5
+          },
+          "size": {
+            "x": 4,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "m04.mastery.transfer-c",
+          "field": "_blocks",
+          "old": {
+            "x": 23.0,
+            "y": 3.8,
+            "z": 44.48
+          },
+          "position": {
+            "x": 27,
+            "y": 2.0,
+            "z": 59
+          },
+          "size": {
+            "x": 4,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "moving.m04.transfer",
+          "field": "_movingBlocks",
+          "old": {
+            "x": 11.0,
+            "y": 3.1,
+            "z": 40.38
+          },
+          "position": {
+            "x": 11,
+            "y": 1.3,
+            "z": 54
+          },
+          "size": {
+            "x": 10,
+            "y": 0.6,
+            "z": 5
+          },
+          "path": [
+            {
+              "x": 11.0,
+              "y": 1.3,
+              "z": 54.0
+            },
+            {
+              "x": 19.0,
+              "y": 1.8,
+              "z": 57.0
+            }
+          ]
+        },
+        {
+          "id": "crumble.m04.cooling-a",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 19.0,
+            "y": 6.3,
+            "z": 72.38
+          },
+          "position": {
+            "x": 19,
+            "y": 3.2,
+            "z": 104
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "crumble.m04.cooling-b",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 15.0,
+            "y": 6.6,
+            "z": 75.88
+          },
+          "position": {
+            "x": 15,
+            "y": 3.4,
+            "z": 109
+          },
+          "size": {
+            "x": 12,
+            "y": 0.6,
+            "z": 4
+          }
+        },
+        {
+          "id": "boost.m04.mastery.cooling-vent",
+          "field": "_boostBlocks",
+          "old": {
+            "x": 12,
+            "y": 3,
+            "z": 96
+          },
+          "position": {
+            "x": 12,
+            "y": 3,
+            "z": 96
+          },
+          "size": {
+            "x": 4,
+            "y": 0.6,
+            "z": 4
+          },
+          "direction": {
+            "x": -0.03,
+            "y": 0,
+            "z": 1
+          },
+          "vertical": 16,
+          "horizontal": 14,
+          "cooldown": 0.35
+        },
+        {
+          "id": "surf.m04.mastery.cooling-spillway",
+          "field": "_surfSurfaces",
+          "old": {
+            "x": 4,
+            "y": 3,
+            "z": 106
+          },
+          "position": {
+            "x": 4,
+            "y": 3,
+            "z": 106
+          },
+          "size": {
+            "x": 8,
+            "y": 0.45,
+            "z": 14
+          },
+          "direction": {
+            "x": 0,
+            "y": 0,
+            "z": 1
+          },
+          "rotation": {
+            "x": 22,
+            "y": 0,
+            "z": -26
+          }
+        }
+      ],
+      "scenery": [
+        {
+          "id": "biome.solar-foundry.service-spine",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 0.0
+          },
+          "sourceGuid": "c77ecd381a15d3f4cbc167b24a748a9a",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.solar-foundry.intake-vessel",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 0.0
+          },
+          "sourceGuid": "12c40f76ada52b944829d9312185c930",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.solar-foundry.reactor-vessel",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 0.0
+          },
+          "sourceGuid": "d0a815026eae3f842a2524785a83ecee",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.solar-foundry.crown-vessel",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 0.0
+          },
+          "sourceGuid": "2182a8dcfadeeb749bc0bc97ee41c6fa",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.solar-foundry.transfer-crane",
+          "position": {
+            "x": 0.0,
+            "y": -4.0,
+            "z": 0.0
+          },
+          "sourceGuid": "01a415c36e889a545ba3820c18237993",
+          "sourcePosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        }
+      ],
+      "anchors": [
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-004.transfer",
+          "position": {
+            "x": 9,
+            "y": 1.2,
+            "z": 44
+          },
+          "support": "m04.transfer.dock"
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-004.furnace",
+          "position": {
+            "x": 22,
+            "y": 3,
+            "z": 94
+          },
+          "support": "m04.furnace.court"
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-004.crown",
+          "position": {
+            "x": 2,
+            "y": 4.2,
+            "z": 143
+          },
+          "support": "m04.crown.restore"
+        },
+        {
+          "field": "_startPoint",
+          "id": "",
+          "position": {
+            "x": 0,
+            "y": 0.35,
+            "z": 0
+          },
+          "support": "m04.intake.start"
+        },
+        {
+          "field": "_patchBlock",
+          "id": "",
+          "position": {
+            "x": -5,
+            "y": 5.1,
+            "z": 173
+          },
+          "support": "m04.patch.base"
+        }
+      ],
+      "metadata": [
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-004.transfer",
+          "property": "_entryPosition",
+          "value": {
+            "x": 22.0,
+            "y": 1.6,
+            "z": 47.99999999999999
+          }
+        },
+        {
+          "field": "_optionalShortcuts",
+          "id": "shortcut.module-004.transfer",
+          "property": "_exitPosition",
+          "value": {
+            "x": 19.0,
+            "y": 2.2,
+            "z": 65.0
+          }
+        }
+      ],
+      "shards": [
+        {
+          "resource": "FlowChallenges/Module004_FlowChallenge",
+          "id": "shard.m04.transfer-cut",
+          "value": {
+            "x": 22.0,
+            "y": 3.1999999999999997,
+            "z": 47.99999999999999
+          }
+        },
+        {
+          "resource": "FlowChallenges/Module004_FlowChallenge",
+          "id": "shard.m04.transfer-exit",
+          "value": {
+            "x": 27.0,
+            "y": 3.6000000000000005,
+            "z": 58.99999999999999
+          }
+        }
+      ],
+      "distant": [
+        {
+          "id": "biome.solar-foundry.heliostat.hero",
+          "sourcePosition": {
+            "x": 52.0,
+            "y": -17.0,
+            "z": 126.38
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -25.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "id": "biome.solar-foundry.heliostat.west",
+          "sourcePosition": {
+            "x": -140.0,
+            "y": -44.0,
+            "z": 181.38
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 35.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 0.65,
+            "y": 0.65,
+            "z": 0.65
+          }
+        },
+        {
+          "id": "biome.solar-foundry.heliostat.north",
+          "sourcePosition": {
+            "x": 70.0,
+            "y": -55.0,
+            "z": 236.38
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": -25.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 0.9,
+            "y": 0.9,
+            "z": 0.9
+          }
+        },
+        {
+          "id": "biome.solar-foundry.lower.heat-exchanger",
+          "sourcePosition": {
+            "x": 55.0,
+            "y": -85.0,
+            "z": 18.300001
+          },
+          "sourceRotation": {
+            "x": 0.0,
+            "y": 35.0,
+            "z": 0.0
+          },
+          "sourceScale": {
+            "x": 1.1,
+            "y": 1.1,
+            "z": 1.1
+          }
+        }
+      ]
+    },
+    {
+      "resource": "Modules/Module_004_TheSpiral",
+      "world": "Spiral",
+      "version": 3,
+      "entries": [
+        {
+          "id": "m04.start",
+          "field": "_blocks",
+          "old": {
+            "x": -2.0981465e-06,
+            "y": 0.0,
+            "z": -24.0
+          },
+          "position": {
+            "x": -2.0981465e-06,
+            "y": 0.0,
+            "z": -24.0
+          },
+          "size": {
+            "x": 4.5,
+            "y": 0.8,
+            "z": 4.5
+          }
+        },
+        {
+          "id": "m04.route.01.setup",
+          "field": "_blocks",
+          "old": {
+            "x": -3.274537,
+            "y": 0.2,
+            "z": -23.664518
+          },
+          "position": {
+            "x": -3.274537,
+            "y": 0.2,
+            "z": -23.664518
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.02.easy",
+          "field": "_blocks",
+          "old": {
+            "x": -6.9493365,
+            "y": 0.5,
+            "z": -22.741922
+          },
+          "position": {
+            "x": -6.9493365,
+            "y": 0.5,
+            "z": -22.741922
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.03.flow",
+          "field": "_blocks",
+          "old": {
+            "x": -10.072129,
+            "y": 0.75,
+            "z": -21.420107
+          },
+          "position": {
+            "x": -10.072129,
+            "y": 0.75,
+            "z": -21.420107
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.7
+          }
+        },
+        {
+          "id": "m04.route.04.normal",
+          "field": "_blocks",
+          "old": {
+            "x": -13.909286,
+            "y": 1.25,
+            "z": -19.01592
+          },
+          "position": {
+            "x": -13.909286,
+            "y": 1.25,
+            "z": -19.01592
+          },
+          "size": {
+            "x": 2.2,
+            "y": 0.6,
+            "z": 2.2
+          }
+        },
+        {
+          "id": "m04.route.05.run",
+          "field": "_blocks",
+          "old": {
+            "x": -15.68577,
+            "y": 1.35,
+            "z": -17.632826
+          },
+          "position": {
+            "x": -15.68577,
+            "y": 1.35,
+            "z": -17.632826
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 3.0
+          }
+        },
+        {
+          "id": "m04.route.06.vertical",
+          "field": "_blocks",
+          "old": {
+            "x": -17.938566,
+            "y": 2.2,
+            "z": -15.165352
+          },
+          "position": {
+            "x": -17.938566,
+            "y": 2.2,
+            "z": -15.165352
+          },
+          "size": {
+            "x": 2.3,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.07.normal",
+          "field": "_blocks",
+          "old": {
+            "x": -20.353125,
+            "y": 2.7,
+            "z": -11.505417
+          },
+          "position": {
+            "x": -20.353125,
+            "y": 2.7,
+            "z": -11.505417
+          },
+          "size": {
+            "x": 2.2,
+            "y": 0.6,
+            "z": 2.2
+          }
+        },
+        {
+          "id": "m04.route.08.commit",
+          "field": "_blocks",
+          "old": {
+            "x": -22.12878,
+            "y": 3.4,
+            "z": -6.9682846
+          },
+          "position": {
+            "x": -22.12878,
+            "y": 3.4,
+            "z": -6.9682846
+          },
+          "size": {
+            "x": 2.3,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.09.easy",
+          "field": "_blocks",
+          "old": {
+            "x": -22.85996,
+            "y": 3.7,
+            "z": -3.2511754
+          },
+          "position": {
+            "x": -22.85996,
+            "y": 3.7,
+            "z": -3.2511754
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.14.setup",
+          "field": "_blocks",
+          "old": {
+            "x": -17.784403,
+            "y": 5.65,
+            "z": 13.503468
+          },
+          "position": {
+            "x": -17.784403,
+            "y": 5.65,
+            "z": 13.503468
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.17.easy",
+          "field": "_blocks",
+          "old": {
+            "x": -9.27654,
+            "y": 6.75,
+            "z": 20.036764
+          },
+          "position": {
+            "x": -9.27654,
+            "y": 6.75,
+            "z": 20.036764
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.25.easy",
+          "field": "_blocks",
+          "old": {
+            "x": 17.642538,
+            "y": 10.2,
+            "z": 11.242192
+          },
+          "position": {
+            "x": 17.642538,
+            "y": 10.2,
+            "z": 11.242192
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.26.run",
+          "field": "_blocks",
+          "old": {
+            "x": 18.783243,
+            "y": 10.3,
+            "z": 9.30113
+          },
+          "position": {
+            "x": 18.783243,
+            "y": 10.3,
+            "z": 9.30113
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 3.0
+          }
+        },
+        {
+          "id": "m04.route.27.flow",
+          "field": "_blocks",
+          "old": {
+            "x": 19.933655,
+            "y": 10.55,
+            "z": 6.1132274
+          },
+          "position": {
+            "x": 19.933655,
+            "y": 10.55,
+            "z": 6.1132274
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.7
+          }
+        },
+        {
+          "id": "m04.route.28.normal",
+          "field": "_blocks",
+          "old": {
+            "x": 20.662374,
+            "y": 11.05,
+            "z": 1.7926264
+          },
+          "position": {
+            "x": 20.662374,
+            "y": 11.05,
+            "z": 1.7926264
+          },
+          "size": {
+            "x": 2.2,
+            "y": 0.6,
+            "z": 2.2
+          }
+        },
+        {
+          "id": "m04.route.29.commit",
+          "field": "_blocks",
+          "old": {
+            "x": 20.344538,
+            "y": 11.75,
+            "z": -2.9686546
+          },
+          "position": {
+            "x": 20.344538,
+            "y": 11.75,
+            "z": -2.9686546
+          },
+          "size": {
+            "x": 2.3,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.34.normal",
+          "field": "_blocks",
+          "old": {
+            "x": 9.675958,
+            "y": 13.8,
+            "z": -17.274702
+          },
+          "position": {
+            "x": 9.675958,
+            "y": 13.8,
+            "z": -17.274702
+          },
+          "size": {
+            "x": 2.2,
+            "y": 0.6,
+            "z": 2.2
+          }
+        },
+        {
+          "id": "m04.route.35.run",
+          "field": "_blocks",
+          "old": {
+            "x": 7.67021,
+            "y": 13.900001,
+            "z": -18.29735
+          },
+          "position": {
+            "x": 7.67021,
+            "y": 13.900001,
+            "z": -18.29735
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 3.0
+          }
+        },
+        {
+          "id": "m04.route.36.commit",
+          "field": "_blocks",
+          "old": {
+            "x": 3.0353277,
+            "y": 14.6,
+            "z": -19.424261
+          },
+          "position": {
+            "x": 3.0353277,
+            "y": 14.6,
+            "z": -19.424261
+          },
+          "size": {
+            "x": 2.3,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.37.setup",
+          "field": "_blocks",
+          "old": {
+            "x": -0.25107664,
+            "y": 14.8,
+            "z": -19.548374
+          },
+          "position": {
+            "x": -0.25107664,
+            "y": 14.8,
+            "z": -19.548374
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.38.normal",
+          "field": "_blocks",
+          "old": {
+            "x": -4.581394,
+            "y": 15.3,
+            "z": -18.89243
+          },
+          "position": {
+            "x": -4.581394,
+            "y": 15.3,
+            "z": -18.89243
+          },
+          "size": {
+            "x": 2.2,
+            "y": 0.6,
+            "z": 2.2
+          }
+        },
+        {
+          "id": "m04.route.39.flow",
+          "field": "_blocks",
+          "old": {
+            "x": -7.754786,
+            "y": 15.55,
+            "z": -17.70626
+          },
+          "position": {
+            "x": -7.754786,
+            "y": 15.55,
+            "z": -17.70626
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.7
+          }
+        },
+        {
+          "id": "m04.route.45.run",
+          "field": "_blocks",
+          "old": {
+            "x": -18.538311,
+            "y": 18.050001,
+            "z": -0.24919541
+          },
+          "position": {
+            "x": -18.538311,
+            "y": 18.050001,
+            "z": -0.24919541
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 3.0
+          }
+        },
+        {
+          "id": "m04.route.46.easy",
+          "field": "_blocks",
+          "old": {
+            "x": -18.09301,
+            "y": 18.35,
+            "z": 3.5081792
+          },
+          "position": {
+            "x": -18.09301,
+            "y": 18.35,
+            "z": 3.5081792
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.47.flow",
+          "field": "_blocks",
+          "old": {
+            "x": -17.040146,
+            "y": 18.6,
+            "z": 6.7272015
+          },
+          "position": {
+            "x": -17.040146,
+            "y": 18.6,
+            "z": 6.7272015
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.7
+          }
+        },
+        {
+          "id": "m04.route.48.normal",
+          "field": "_blocks",
+          "old": {
+            "x": -14.861052,
+            "y": 19.1,
+            "z": 10.523908
+          },
+          "position": {
+            "x": -14.861052,
+            "y": 19.1,
+            "z": 10.523908
+          },
+          "size": {
+            "x": 2.2,
+            "y": 0.6,
+            "z": 2.2
+          }
+        },
+        {
+          "id": "m04.route.49.commit",
+          "field": "_blocks",
+          "old": {
+            "x": -11.4910345,
+            "y": 19.800001,
+            "z": 13.893755
+          },
+          "position": {
+            "x": -11.4910345,
+            "y": 19.800001,
+            "z": 13.893755
+          },
+          "size": {
+            "x": 2.3,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.54.commit",
+          "field": "_blocks",
+          "old": {
+            "x": 6.9060316,
+            "y": 22.35,
+            "z": 15.752653
+          },
+          "position": {
+            "x": 6.9060316,
+            "y": 22.35,
+            "z": 15.752653
+          },
+          "size": {
+            "x": 2.3,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.55.run",
+          "field": "_blocks",
+          "old": {
+            "x": 8.922533,
+            "y": 22.45,
+            "z": 14.751454
+          },
+          "position": {
+            "x": 8.922533,
+            "y": 22.45,
+            "z": 14.751454
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 3.0
+          }
+        },
+        {
+          "id": "m04.route.56.easy",
+          "field": "_blocks",
+          "old": {
+            "x": 11.855752,
+            "y": 22.800001,
+            "z": 12.364361
+          },
+          "position": {
+            "x": 11.855752,
+            "y": 22.800001,
+            "z": 12.364361
+          },
+          "size": {
+            "x": 3.1,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.57.vertical",
+          "field": "_blocks",
+          "old": {
+            "x": 13.942285,
+            "y": 23.650002,
+            "z": 9.7617855
+          },
+          "position": {
+            "x": 13.942285,
+            "y": 23.650002,
+            "z": 9.7617855
+          },
+          "size": {
+            "x": 2.3,
+            "y": 0.6,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "m04.route.58.normal",
+          "field": "_blocks",
+          "old": {
+            "x": 15.871326,
+            "y": 24.2,
+            "z": 5.8351064
+          },
+          "position": {
+            "x": 15.871326,
+            "y": 24.2,
+            "z": 5.8351064
+          },
+          "size": {
+            "x": 2.2,
+            "y": 0.6,
+            "z": 2.2
+          }
+        },
+        {
+          "id": "m04.summit.approach.01",
+          "field": "_blocks",
+          "old": {
+            "x": 12.670795,
+            "y": 24.650002,
+            "z": 4.6584287
+          },
+          "position": {
+            "x": 12.670795,
+            "y": 24.650002,
+            "z": 4.6584287
+          },
+          "size": {
+            "x": 3.2,
+            "y": 0.6,
+            "z": 3.2
+          }
+        },
+        {
+          "id": "m04.summit.approach.02",
+          "field": "_blocks",
+          "old": {
+            "x": 9.8550625,
+            "y": 25.400002,
+            "z": 3.623222
+          },
+          "position": {
+            "x": 9.8550625,
+            "y": 25.400002,
+            "z": 3.623222
+          },
+          "size": {
+            "x": 2.8,
+            "y": 0.6,
+            "z": 2.8
+          }
+        },
+        {
+          "id": "m04.summit.approach.03",
+          "field": "_blocks",
+          "old": {
+            "x": 7.0393305,
+            "y": 26.150002,
+            "z": 2.5880158
+          },
+          "position": {
+            "x": 7.0393305,
+            "y": 26.150002,
+            "z": 2.5880158
+          },
+          "size": {
+            "x": 2.8,
+            "y": 0.6,
+            "z": 2.8
+          }
+        },
+        {
+          "id": "m04.summit.approach.04",
+          "field": "_blocks",
+          "old": {
+            "x": 4.035883,
+            "y": 26.900002,
+            "z": 1.4837959
+          },
+          "position": {
+            "x": 4.035883,
+            "y": 26.900002,
+            "z": 1.4837959
+          },
+          "size": {
+            "x": 2.8,
+            "y": 0.6,
+            "z": 2.8
+          }
+        },
+        {
+          "id": "moving.m04.required-crossing",
+          "field": "_movingBlocks",
+          "old": {
+            "x": -5.100957,
+            "y": 7.25,
+            "z": 21.369625
+          },
+          "position": {
+            "x": -5.100957,
+            "y": 7.25,
+            "z": 21.369625
+          },
+          "size": {
+            "x": 3.0,
+            "y": 0.6,
+            "z": 2.4
+          },
+          "path": [
+            {
+              "x": -5.100957,
+              "y": 7.25,
+              "z": 21.369625
+            },
+            {
+              "x": -1.7373596,
+              "y": 7.5,
+              "z": 21.790844
+            }
+          ]
+        },
+        {
+          "id": "crumble.m04.route.11",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -22.371916,
+            "y": 4.1000004,
+            "z": 3.6017835
+          },
+          "position": {
+            "x": -22.371916,
+            "y": 4.1000004,
+            "z": 3.6017835
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.12",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -21.153309,
+            "y": 4.6000004,
+            "z": 7.8127995
+          },
+          "position": {
+            "x": -21.153309,
+            "y": 4.6000004,
+            "z": 7.8127995
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.13",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -19.667511,
+            "y": 5.4500003,
+            "z": 10.804741
+          },
+          "position": {
+            "x": -19.667511,
+            "y": 5.4500003,
+            "z": 10.804741
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.15",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -14.377898,
+            "y": 6.35,
+            "z": 16.849281
+          },
+          "position": {
+            "x": -14.377898,
+            "y": 6.35,
+            "z": 16.849281
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.16",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -12.617909,
+            "y": 6.45,
+            "z": 18.253336
+          },
+          "position": {
+            "x": -12.617909,
+            "y": 6.45,
+            "z": 18.253336
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.21",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 4.963819,
+            "y": 7.85,
+            "z": 20.847183
+          },
+          "position": {
+            "x": 4.963819,
+            "y": 7.85,
+            "z": 20.847183
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.22",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 8.1071005,
+            "y": 8.7,
+            "z": 19.718443
+          },
+          "position": {
+            "x": 8.1071005,
+            "y": 8.7,
+            "z": 19.718443
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.23",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 11.9139185,
+            "y": 9.2,
+            "z": 17.547714
+          },
+          "position": {
+            "x": 11.9139185,
+            "y": 9.2,
+            "z": 17.547714
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.24",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 15.415567,
+            "y": 9.9,
+            "z": 14.304572
+          },
+          "position": {
+            "x": 15.415567,
+            "y": 9.9,
+            "z": 14.304572
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.31",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 17.82617,
+            "y": 12.15,
+            "z": -9.351159
+          },
+          "position": {
+            "x": 17.82617,
+            "y": 12.15,
+            "z": -9.351159
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.32",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 15.668617,
+            "y": 12.45,
+            "z": -12.461718
+          },
+          "position": {
+            "x": 15.668617,
+            "y": 12.45,
+            "z": -12.461718
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.33",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 13.300745,
+            "y": 13.3,
+            "z": -14.815458
+          },
+          "position": {
+            "x": 13.300745,
+            "y": 13.3,
+            "z": -14.815458
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.41",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -13.12249,
+            "y": 15.9,
+            "z": -13.601828
+          },
+          "position": {
+            "x": -13.12249,
+            "y": 15.9,
+            "z": -13.601828
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.42",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -15.813939,
+            "y": 16.4,
+            "z": -10.148049
+          },
+          "position": {
+            "x": -15.813939,
+            "y": 16.4,
+            "z": -10.148049
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.43",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -17.693884,
+            "y": 17.1,
+            "z": -5.766977
+          },
+          "position": {
+            "x": -17.693884,
+            "y": 17.1,
+            "z": -5.766977
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.44",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -18.331503,
+            "y": 17.95,
+            "z": -2.4910648
+          },
+          "position": {
+            "x": -18.331503,
+            "y": 17.95,
+            "z": -2.4910648
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.51",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -5.2838893,
+            "y": 20.25,
+            "z": 16.788088
+          },
+          "position": {
+            "x": -5.2838893,
+            "y": 20.25,
+            "z": 16.788088
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.52",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": -1.9996665,
+            "y": 21.1,
+            "z": 17.375294
+          },
+          "position": {
+            "x": -1.9996665,
+            "y": 21.1,
+            "z": 17.375294
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "crumble.m04.route.53",
+          "field": "_crumblingBlocks",
+          "old": {
+            "x": 2.3734431,
+            "y": 21.65,
+            "z": 17.217157
+          },
+          "position": {
+            "x": 2.3734431,
+            "y": 21.65,
+            "z": 17.217157
+          },
+          "size": {
+            "x": 2.4,
+            "y": 0.6,
+            "z": 2.4
+          }
+        },
+        {
+          "id": "boost.m04.first-ascent",
+          "field": "_boostBlocks",
+          "old": {
+            "x": 17.375975,
+            "y": 11.75,
+            "z": -2.535485
+          },
+          "position": {
+            "x": 17.375975,
+            "y": 11.75,
+            "z": -2.535485
+          },
+          "size": {
+            "x": 2.2,
+            "y": 0.6,
+            "z": 2.2
+          }
+        }
+      ],
+      "anchors": [
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-004.r1-base-turn",
+          "position": {
+            "x": -22.768787000000003,
+            "y": 3.8500001,
+            "z": 0.2346827199999999
+          }
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-004.r2-moving-exit",
+          "position": {
+            "x": 1.7331582,
+            "y": 7.65,
+            "z": 21.470152000000002
+          }
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-004.r3-water-exit",
+          "position": {
+            "x": 19.243296,
+            "y": 11.899999999999999,
+            "z": -6.2731767
+          }
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-004.r4-boost-landing",
+          "position": {
+            "x": -10.637471000000001,
+            "y": 15.7,
+            "z": -15.755119999999998
+          }
+        },
+        {
+          "field": "_restorePoints",
+          "id": "restore.module-004.r5-final-gate",
+          "position": {
+            "x": -8.442505000000002,
+            "y": 19.949999999999996,
+            "z": 15.568161000000002
+          }
+        },
+        {
+          "field": "_startPoint",
+          "id": "",
+          "position": {
+            "x": -2.0981465e-06,
+            "y": 0.45,
+            "z": -24.0
+          }
+        },
+        {
+          "field": "_patchBlock",
+          "id": "",
+          "position": {
+            "x": 0.0,
+            "y": 28.000001999999995,
+            "z": 0.0
+          }
+        }
+      ],
+      "metadata": [],
+      "shards": []
+    }
+  ]
+}

@@ -260,6 +260,14 @@ namespace Avoidance.UI
             sun.shadows = LightShadows.Soft;
             sun.shadowStrength = 0.35f;
 
+            if(_environment.CohesiveLighting)
+            {
+                sun.shadowStrength=_environment.ShadowStrength;
+                sun.shadowBias=_environment.ShadowBias;
+                sun.shadowNormalBias=_environment.ShadowNormalBias;
+                new GameObject("World Lighting").AddComponent<WorldLightingPresentation>().Initialize(_environment);
+            }
+
             CreateMobilePresentationVolume();
             CreateAmbientClouds();
             if (_environment.AmbienceClip != null)
@@ -383,6 +391,8 @@ namespace Avoidance.UI
             camera.clearFlags = CameraClearFlags.Skybox;
             camera.backgroundColor = _environment.SkyZenith;
             camera.nearClipPlane = 0.04f;
+            if(_environment.CohesiveLighting)
+                camera.GetUniversalAdditionalCameraData().renderPostProcessing=true;
 
             var motor = player.GetComponent<ParkourMotor>();
             motor.Initialize(profiles.Current);
@@ -804,6 +814,9 @@ namespace Avoidance.UI
             if (placement.FitMode == VisualFitMode.ExactFootprint)
                 ModuleVisualPrefabLibrary.FitExactBounds(visual.transform, block.transform);
             ModuleVisualPrefabLibrary.PrepareVisualInstance(visual);
+            if(_environment.CohesiveLighting)
+                foreach(var renderer in visual.GetComponentsInChildren<Renderer>())
+                { renderer.shadowCastingMode=ShadowCastingMode.On; renderer.receiveShadows=true; }
             block.GetComponent<Renderer>().enabled = false;
             _visualObjectCount++;
             return true;
@@ -1700,6 +1713,7 @@ namespace Avoidance.UI
 
         private void CreateMobilePresentationVolume()
         {
+            if(_environment.CohesiveLighting)return;
             if (!ShouldUseGoldSlicePresentation())
             {
                 return;

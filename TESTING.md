@@ -1,3 +1,9 @@
+## 0.17.0 verification
+
+Run the complete EditMode and PlayMode suites after authoring. `AllWorldFlowTests` covers 180 entry/error cases across ten sequences; Windward retains its separate 72-case matrix. `WorldContinuousRouteTests` reaches actual Campaign Patch triggers at two input paces with actual moving paths, crumbles and Boost physics. It supplies test-only stick correction, not runtime assistance. Optional transfers, swept clearance, collision truth, startup preservation and lighting/skin budgets have dedicated checks.
+
+`WorldReauthorTests.CaptureEveryWorld` writes five 1560x720 environment views and runtime inventories for each of six worlds. Static combined meshes are counted once. Camera.Render samples are desktop CPU wall time, not GPU/device FPS. See `Docs/World170QA/ROUTES.md` for fixture limits and `Docs/PRODUCTION_0170.md` for final results. Physical S23 feel, Classic/Easy, both landscape safe areas and sustained thermal performance remain required.
+
 ## 0.16.2 movement sequences
 
 Windward content 6 replaces the alternating cadence with four coherent movement

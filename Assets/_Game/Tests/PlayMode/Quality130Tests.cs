@@ -43,7 +43,7 @@ namespace Avoidance.Tests.PlayMode
         {
             var list=m.Blocks.Where(b=>!b.StableId.Contains("mastery")).ToList();
             list.InsertRange(list.FindIndex(b=>b.StableId=="m04.transfer.dock")+1,m.Blocks.Where(b=>b.StableId.Contains("mastery")));
-            list.InsertRange(list.FindIndex(b=>b.StableId=="m04.furnace.court")+1,m.CrumblingBlocks.Take(1).Select(b=>new ModuleBlockDefinition(b.StableId,b.Pose.Position,b.Size,ModuleMaterialRole.Crumbling)));
+            list.InsertRange(list.FindIndex(b=>b.StableId=="m04.furnace.court")+1,m.CrumblingBlocks.Select(b=>new ModuleBlockDefinition(b.StableId,b.Pose.Position,b.Size,ModuleMaterialRole.Crumbling)));
             return list.ToArray();
         }
         private sealed class Input : Avoidance.Input.IPlayerInputSource

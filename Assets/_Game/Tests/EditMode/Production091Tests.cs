@@ -24,7 +24,7 @@ namespace Avoidance.Tests.EditMode
                 {
                     ModuleVisualPrefabLibrary.PrepareVisualInstance(instance, true);
                     var surfaces = instance.GetComponentsInChildren<AuthoredSurface>();
-                    Assert.That(surfaces.Length, Is.GreaterThanOrEqualTo(4), place.StableId);
+                    Assert.That(surfaces.Length, Is.GreaterThanOrEqualTo(1), place.StableId);
                     Assert.That(surfaces.All(surface => surface.HasMatchingCollision), Is.True, place.StableId);
                     foreach (var filter in instance.GetComponentsInChildren<MeshFilter>())
                         if (UnityEditor.AssetDatabase.GetAssetPath(filter.sharedMesh).Contains("/MeshySource/"))

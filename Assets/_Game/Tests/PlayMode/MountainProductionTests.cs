@@ -249,13 +249,13 @@ namespace Avoidance.Tests.PlayMode
                 var motor=Object.FindAnyObjectByType<ParkourMotor>();
                 var module=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule;
                 foreach(var moving in Object.FindObjectsByType<MovingBlock>(FindObjectsSortMode.None))moving.enabled=false;
-                var ids=id.Contains("002")?new[]{"m02.rejoin","m02.mastery.lift-cut","m02.lift.exit"}
-                    :new[]{"m03.moving-setup","m03.mastery.moving-bypass.01","m03.mastery.moving-bypass.02","m03.mastery.moving-bypass.03","m03.motion-exit"};
+                var ids=id.Contains("002")?new[]{"m02.rejoin","m02.mastery.lift-cut","m02.mastery.lift-cut.01","m02.mastery.lift-cut.02","m02.mastery.lift-cut.03","m02.mastery.lift-cut.04","m02.mastery.lift-cut.05","m02.mastery.lift-cut.06","m02.lift.exit"}
+                    :new[]{"m03.moving-setup","m03.mastery.moving-bypass.01","m03.mastery.moving-bypass.02","m03.mastery.moving-bypass.03","m03.mastery.moving-bypass.04","m03.motion-exit"};
                 for(int i=0;i<ids.Length-1;i++)
                 {
                     var from=module.Blocks.Single(b=>b.StableId==ids[i]);var to=module.Blocks.Single(b=>b.StableId==ids[i+1]);
                     if(Vector3.ProjectOnPlane(to.Pose.Position-from.Pose.Position,Vector3.up).magnitude<5.6f)
-                        Jump(motor,from.Pose.Position,from.Size,to.Pose.Position,to.Size,ids[i]+" -> "+ids[i+1]);
+                        Jump(motor,from.Pose.Position,from.Size,to.Pose.Position,to.Size,ids[i]+" -> "+ids[i+1],true);
                     else EdgeJump(motor,from.Pose.Position,from.Size,to.Pose.Position,to.Size,ids[i]+" -> "+ids[i+1]);
                 }
                 if(id.Contains("003"))
@@ -263,9 +263,9 @@ namespace Avoidance.Tests.PlayMode
                     var def=module.MovingBlocks.Single();var moving=Object.FindAnyObjectByType<MovingBlock>();
                     var from=module.Blocks.Single(b=>b.StableId=="m03.moving-setup");var to=module.Blocks.Single(b=>b.StableId=="m03.motion-exit");
                     moving.transform.position=def.PathPoints[0];if(moving.TryGetComponent<Rigidbody>(out var body))body.position=def.PathPoints[0];Physics.SyncTransforms();
-                    Jump(motor,from.Pose.Position,from.Size,def.PathPoints[0],def.Size,"003 ferry boarding");
+                    Jump(motor,from.Pose.Position,from.Size,def.PathPoints[0],def.Size,"003 ferry boarding",true);
                     moving.transform.position=def.PathPoints[1];if(body!=null)body.position=def.PathPoints[1];Physics.SyncTransforms();
-                    Jump(motor,def.PathPoints[1],def.Size,to.Pose.Position,to.Size,"003 ferry exit");
+                    Jump(motor,def.PathPoints[1],def.Size,to.Pose.Position,to.Size,"003 ferry exit",true);
                 }
             }
         }
@@ -296,11 +296,14 @@ namespace Avoidance.Tests.PlayMode
         {
             public Vector2 Move=>new Vector2(0,.9f);public Vector2 LookDelta=>Vector2.zero;public bool JumpPressed{get;set;}public void ResetState(){JumpPressed=false;}
         }
-        private static void Jump(ParkourMotor motor,Vector3 from,Vector3 fromSize,Vector3 to,Vector3 toSize,string label)
+        private static void Jump(ParkourMotor motor,Vector3 from,Vector3 fromSize,Vector3 to,Vector3 toSize,string label,bool shortRunup=false)
         {
             var direction=to-from;direction.y=0;direction.Normalize();
             motor.ResetMotion(from+Vector3.up*(fromSize.y*.5f+.04f)-direction*.5f,Quaternion.LookRotation(direction),0);Physics.SyncTransforms();
-            var input=new RouteInput();for(int f=0;f<8;f++)motor.Simulate(input,1f/60);
+            var input=new RouteInput();
+            float edge=Mathf.Min(fromSize.x*.5f/Mathf.Max(.001f,Mathf.Abs(direction.x)),fromSize.z*.5f/Mathf.Max(.001f,Mathf.Abs(direction.z)));
+            if(shortRunup){for(int f=0;f<8;f++)motor.Simulate(input,1f/60);}
+            else for(int f=0;f<150&&Vector3.Dot(motor.transform.position-from,direction)<edge-.4f;f++)motor.Simulate(input,1f/60);
             input.JumpPressed=true;motor.Simulate(input,1f/60);input.JumpPressed=false;bool air=false,landed=false;
             for(int f=0;f<110;f++){motor.Simulate(input,1f/60);air|=!motor.IsGrounded;if(air&&motor.IsGrounded){landed=true;break;}}
             Directory.CreateDirectory("Logs/Phase094VisualQA");File.AppendAllText("Logs/Phase094VisualQA/jumps.txt",$"{label}: {motor.transform.position} ground={motor.GroundTransform?.name} speed={motor.LastTakeoffHorizontalSpeed}\n");

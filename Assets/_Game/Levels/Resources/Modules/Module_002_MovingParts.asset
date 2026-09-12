@@ -17,11 +17,11 @@ MonoBehaviour:
   _internalName: module_002_moving_parts
   _projectId: project.ryders-block
   _worldId: world.prototype-sky
-  _contentVersion: 4
+  _contentVersion: 5
   _sceneName: ModuleRunner
   _difficulty: 1
   _startPoint:
-    _position: {x: 0, y: 0.35, z: -0.8}
+    _position: {x: 0, y: 0.35, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
   _startAnchorStableId: start.module-002.cliffside
   _startSupportBlockStableId: m02.start
@@ -31,7 +31,7 @@ MonoBehaviour:
   _patchBlock:
     _stableId: patch.module-002
     _pose:
-      _position: {x: 8, y: 12.7, z: 93}
+      _position: {x: 10, y: 10.3, z: 176}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m02.patch.base
     _size: {x: 2.2, y: 2.2, z: 2.2}
@@ -39,14 +39,14 @@ MonoBehaviour:
   - _stableId: restore.module-002.branch
     _order: 0
     _pose:
-      _position: {x: 4, y: 3, z: 26}
+      _position: {x: 4, y: 1.2, z: 39}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m02.restore.platform
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-002.ridge
     _order: 1
     _pose:
-      _position: {x: 6, y: 7.2, z: 58.5}
+      _position: {x: 1, y: 2.8, z: 94}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m02.rejoin
     _restoreOffset: {x: 0, y: 0.35, z: 0}
@@ -64,19 +64,19 @@ MonoBehaviour:
   _optionalShortcuts:
   - _stableId: shortcut.module-002.risky-inner
     _displayName: Inner rock spine
-    _entryPosition: {x: 7, y: 3.7, z: 31}
-    _exitPosition: {x: 6, y: 7.2, z: 58.5}
+    _entryPosition: {x: 10, y: 1.4, z: 46}
+    _exitPosition: {x: 1, y: 2.8, z: 94}
     _estimatedTimeSaved: 5
     _mechanics: 01000000
   - _stableId: shortcut.module-002.lift-cut
     _displayName: Windward lift cut
-    _entryPosition: {x: 12.2, y: 8.2, z: 63.5}
-    _exitPosition: {x: 9, y: 8.8, z: 69}
+    _entryPosition: {x: 16.5, y: 3.5, z: 99}
+    _exitPosition: {x: 9, y: 8.8, z: 134}
     _estimatedTimeSaved: 3
     _mechanics: 01000000
   _environmentProfile: {fileID: 11400000, guid: c9b408ed1608b1143b4b0a4e2beb60e4, type: 2}
   _environmentBiomeProfile: {fileID: 11400000, guid: 13eaf394ff8038b4f983897a36c4fbe9, type: 2}
-  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _visualProfile: {fileID: 11400000, guid: 2d549c9aeaae89443ae553563eeb5742, type: 2}
   _loreBugDescription: Repair a broken passage through the high mountains.
   _developerNotes: Cliffside Arrival / Broken Mountain Pass / Waterfall Garden /
     High Ridge / Summit Patch. Standard route needs no advanced movement. V2 ranks
@@ -86,235 +86,283 @@ MonoBehaviour:
     _pose:
       _position: {x: 0, y: 0, z: 0}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 6, y: 0.6, z: 5}
+    _size: {x: 10, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.rhythm.01
     _pose:
-      _position: {x: 0, y: 0.6, z: 4.5}
+      _position: {x: 0, y: 0.2, z: 8.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 9, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.rhythm.02
     _pose:
-      _position: {x: 0, y: 1.2, z: 8.5}
+      _position: {x: 0, y: 0.4, z: 13.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3}
+    _size: {x: 10, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.after-moving.01
     _pose:
-      _position: {x: 3, y: 1.8, z: 17.5}
+      _position: {x: 2, y: 0.8, z: 24}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 10, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.after-moving.02
     _pose:
-      _position: {x: 4, y: 2.4, z: 21.5}
+      _position: {x: 3, y: 1, z: 30}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 10, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.restore.platform
     _pose:
-      _position: {x: 4, y: 3, z: 26}
+      _position: {x: 4, y: 1.2, z: 39}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 6, y: 0.6, z: 4.5}
+    _size: {x: 14, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.safe.01
     _pose:
-      _position: {x: 1, y: 3.6, z: 30.5}
+      _position: {x: 3, y: 1.4, z: 48}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 11, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.safe.02
     _pose:
-      _position: {x: -2, y: 4.2, z: 34.5}
+      _position: {x: 1, y: 1.6, z: 53}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 11, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.safe.03
     _pose:
-      _position: {x: -5, y: 4.8, z: 38.5}
+      _position: {x: -1, y: 1.8, z: 59}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.safe.04
     _pose:
-      _position: {x: -6, y: 5.4, z: 42.5}
+      _position: {x: -3, y: 2, z: 65}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.garden.exit
     _pose:
-      _position: {x: -4, y: 6, z: 46.5}
+      _position: {x: -4, y: 2.2, z: 71}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 7.7}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.ridge.01
     _pose:
-      _position: {x: -1, y: 6.4, z: 50.5}
+      _position: {x: -3, y: 2.4, z: 78}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 5}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.ridge.02
     _pose:
-      _position: {x: 3, y: 6.8, z: 54.5}
+      _position: {x: -1, y: 2.6, z: 84}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.rejoin
     _pose:
-      _position: {x: 6, y: 7.2, z: 58.5}
+      _position: {x: 1, y: 2.8, z: 94}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 4}
+    _size: {x: 20, y: 0.6, z: 12}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.lift.exit
     _pose:
-      _position: {x: 9, y: 8.8, z: 69}
+      _position: {x: 9, y: 8.8, z: 134}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 14, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.ascent.01
     _pose:
-      _position: {x: 12, y: 9.4, z: 73}
+      _position: {x: 10, y: 9, z: 143}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.ascent.02
     _pose:
-      _position: {x: 15, y: 10, z: 77}
+      _position: {x: 11, y: 9.2, z: 148}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.ascent.03
     _pose:
-      _position: {x: 15, y: 10.6, z: 81}
+      _position: {x: 12, y: 9.4, z: 154}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.ascent.04
     _pose:
-      _position: {x: 13, y: 11.2, z: 85}
+      _position: {x: 12, y: 9.6, z: 160}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.9, y: 0.6, z: 2.9}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.final-runup
     _pose:
-      _position: {x: 10, y: 11.8, z: 89}
+      _position: {x: 11, y: 9.8, z: 166}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.5, y: 0.6, z: 3}
+    _size: {x: 12, y: 0.6, z: 5}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.patch.base
     _pose:
-      _position: {x: 8, y: 12.4, z: 93}
+      _position: {x: 10, y: 10, z: 176}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 6, y: 0.6, z: 5}
+    _size: {x: 16, y: 0.6, z: 12}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.risky.01
     _pose:
-      _position: {x: 7, y: 3.7, z: 31}
+      _position: {x: 10, y: 1.4, z: 46}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.8, y: 0.6, z: 2}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.risky.02
     _pose:
-      _position: {x: 8, y: 4.3, z: 36}
+      _position: {x: 11, y: 1.6, z: 52}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.8, y: 0.6, z: 2}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.risky.03
     _pose:
-      _position: {x: 8, y: 4.9, z: 41}
+      _position: {x: 11, y: 1.8, z: 58}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.8, y: 0.6, z: 2}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.risky.04
     _pose:
-      _position: {x: 7, y: 5.5, z: 46}
+      _position: {x: 8, y: 2, z: 65}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.8, y: 0.6, z: 2}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.risky.05
     _pose:
-      _position: {x: 6, y: 6.2, z: 51}
+      _position: {x: 5, y: 2.2, z: 72}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.8, y: 0.6, z: 2}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.risky.06
     _pose:
-      _position: {x: 6, y: 6.7, z: 54.5}
+      _position: {x: 6, y: 2.4, z: 79}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.8, y: 0.6, z: 2}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m02.mastery.lift-cut
     _pose:
-      _position: {x: 12.2, y: 8.2, z: 63.5}
+      _position: {x: 16.5, y: 3.5, z: 99}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 1.9, y: 0.6, z: 2}
+    _size: {x: 4, y: 0.6, z: 4}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
+  - _stableId: m02.mastery.lift-cut.01
+    _pose:
+      _position: {x: 18, y: 4.3, z: 104}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m02.mastery.lift-cut.02
+    _pose:
+      _position: {x: 18, y: 5.1, z: 109}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m02.mastery.lift-cut.03
+    _pose:
+      _position: {x: 18, y: 5.9, z: 114}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m02.mastery.lift-cut.04
+    _pose:
+      _position: {x: 18, y: 6.7, z: 119}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m02.mastery.lift-cut.05
+    _pose:
+      _position: {x: 18, y: 7.5, z: 124}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
+  - _stableId: m02.mastery.lift-cut.06
+    _pose:
+      _position: {x: 18, y: 8.3, z: 129}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 0
+    _label:
   _movingBlocks:
   - _stableId: moving.m02.first
     _pose:
-      _position: {x: -2, y: 1.3, z: 13}
+      _position: {x: 0, y: 0.6, z: 18.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3}
+    _size: {x: 10, y: 0.6, z: 4}
     _pathPoints:
-    - {x: -2, y: 1.3, z: 13}
-    - {x: 2.5, y: 1.3, z: 13}
+    - {x: 0, y: 0.6, z: 18.5}
+    - {x: 4.5, y: 0.6, z: 18.5}
     _pathSpace: 0
     _loopMode: 0
     _easing: 1
@@ -323,17 +371,17 @@ MonoBehaviour:
     _startingPhase: 0
   - _stableId: moving.m02.final
     _pose:
-      _position: {x: 6, y: 7.4, z: 62.5}
+      _position: {x: 6, y: 3, z: 104}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3.5}
+    _size: {x: 12, y: 0.6, z: 6.5}
     _pathPoints:
-    - {x: 6, y: 7.4, z: 62.5}
-    - {x: 9, y: 8.5, z: 65.5}
+    - {x: 6, y: 3, z: 104}
+    - {x: 9, y: 8.5, z: 125}
     _pathSpace: 0
     _loopMode: 0
     _easing: 1
     _speed: 2
-    _pauseAtEndpoints: 0.65
+    _pauseAtEndpoints: 1.4
     _startingPhase: 0
   _boostBlocks: []
   _waterVolumes: []
@@ -348,14 +396,14 @@ MonoBehaviour:
     _quantity: 150
     _minimumRank: 1
     _firstCompletionOnly: 1
-    _unlockType: 
+    _unlockType:
   - _stableId: reward.module-002.bronze.package
     _kind: 1
     _contentId: loot.package.module-002
     _quantity: 1
     _minimumRank: 1
     _firstCompletionOnly: 1
-    _unlockType: 
+    _unlockType:
   - _stableId: reward.module-002.bronze.skin
     _kind: 2
     _contentId: skin.ryder.signal-blue

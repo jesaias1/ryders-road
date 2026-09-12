@@ -1,3 +1,26 @@
+## 0.17.0 existing-world flow and cohesion
+
+The existing five Campaign worlds and Spiral now use authored route/presentation
+updates with shared lighting and distinct deck kits. Windward content-6 geometry
+and movement compatibility 5 remain unchanged. EditMode **252/252** and PlayMode
+**156/156** pass, including 180 new sequence cases, Windward’s 72 cases and ten
+complete Campaign runs. The ARM64 Android development APK is verified:
+`Builds/Android/RYDERS-ROAD-0.17.0-world-flow-dev.apk` (189,190,245 bytes).
+
+See [delivery report](PRODUCTION_0170.md) and [before/after evidence](World170QA/README.md).
+New art is Editor-authored or reused/refitted production content: **3DAIStudio was
+unavailable and that requested portion remains incomplete**. No physical S23
+acceptance is claimed. This authority supersedes the earlier art stop; stop after
+this delivery for physical and visual feedback. Earlier entries below are history.
+
+Authoring ownership and regression limits are recorded in ADR 0033 and World170QA.
+Content versions: Sky 4 / Mountain 5 / Abyss 9 / Foundry 5 / Windward 6 / Spiral 3.
+The final lift is a diagonal climb with an outside optional bypass; Abyss’s ferry
+bypass now has four ledges. Foundry’s optional Boost lands on the cooling court;
+surf contact and manual detachment are tested, not a complete expert speedrun.
+Save V4 meaning, Bronze progression, controls and music architecture are preserved.
+The APK SHA-256 is `AD4DA3EBDBCAAB5ED6CD7A225113CBA499E3BA8AB006A64D4FE714DFB0009B39`.
+
 ## 0.16.2 flow sequences
 
 Windward content 6 uses four coherent sequences, 20 shared supports and three

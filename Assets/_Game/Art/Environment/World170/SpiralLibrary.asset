@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1fe6758aa618e419b10859693324f1, type: 3}
+  m_Name: SpiralLibrary
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Visuals.ModuleVisualPrefabLibrary
+  _rolePrefabs:
+  - _role: 0
+    _prefab: {fileID: 4061962287760849208, guid: 26233361088de114cb3d18b01ddd3d41, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 1, y: 1, z: 1}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 1.14
+    _fitMode: 4
+  - _role: 0
+    _prefab: {fileID: 4061962287760849208, guid: 26233361088de114cb3d18b01ddd3d41, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 1, y: 1, z: 1}
+    _minimumBlockExtent: 2.75
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 1.14
+    _fitMode: 4
+  - _role: 0
+    _prefab: {fileID: 4061962287760849208, guid: 26233361088de114cb3d18b01ddd3d41, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 1, y: 1, z: 1}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1.14
+    _maximumAspectRatio: 0
+    _fitMode: 4
+  - _role: 0
+    _prefab: {fileID: 4061962287760849208, guid: 26233361088de114cb3d18b01ddd3d41, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 1, y: 1, z: 1}
+    _minimumBlockExtent: 6
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 1.14
+    _fitMode: 4
+  - _role: 1
+    _prefab: {fileID: 771249841736351956, guid: 8ef1d5c975616f1428a866982c193ab5, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 1.3, y: 1.3, z: 1.3}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 3
+  - _role: 2
+    _prefab: {fileID: 6556292484694471733, guid: b2dfb10038289154e84e7b51cd6929c5, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 3, y: 1.285, z: 4.57}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 4
+  - _role: 7
+    _prefab: {fileID: 771249841736351956, guid: 8ef1d5c975616f1428a866982c193ab5, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 1.4, y: 1.4, z: 1.4}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 3
+  - _role: 3
+    _prefab: {fileID: 2329389075906007041, guid: 625636d2a9df15a47985f36a23155921, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 1, y: 1, z: 1}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 4
+  - _role: 5
+    _prefab: {fileID: 3829110868700266225, guid: f825d2c886c7f9244a2026990e754370, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 1, y: 1, z: 1}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 4
+  - _role: 4
+    _prefab: {fileID: 8034649391654953924, guid: cb8a1896357d8ac4d9d8f990adf24983, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 2.2, y: 2.2, z: 2.2}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 0
+  - _role: 12
+    _prefab: {fileID: 3535603880236951467, guid: 9a07f20a98acaf44aa1bc5e1768ac124, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 8, y: 8, z: 8}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 0
+  - _role: 12
+    _prefab: {fileID: 3433610106493567562, guid: b79b5534cc8900b4c89d2a1ffcbe2116, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 6.5, y: 6.5, z: 6.5}
+    _minimumBlockExtent: 3.5
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 0
+  - _role: 13
+    _prefab: {fileID: 2534199765708580153, guid: f11934aa2dfdc9b43a507efa7bbe3cfd, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 4.5, y: 4.5, z: 4.5}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 0
+  - _role: 14
+    _prefab: {fileID: 557865058762689118, guid: 9042272272c2b6248914a454e8bd20eb, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 4, y: 4, z: 4}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 0
+  - _role: 29
+    _prefab: {fileID: 9196380997906582778, guid: 85874a62dcb081049b88414828db9ca8, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 2.5, y: 2.5, z: 2.5}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 0
+  - _role: 8
+    _prefab: {fileID: 661391203318733012, guid: c83ea7beb971d9846a1c9f2e3ad62a1e, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 5, y: 5, z: 5}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 0
+  - _role: 27
+    _prefab: {fileID: 1803536969285450941, guid: 9bad2b7727d6e3546bf302023b580e68, type: 3}
+    _localPosition: {x: 0, y: 0, z: 0}
+    _localEulerAngles: {x: 0, y: 0, z: 0}
+    _localScale: {x: 4.5, y: 4.5, z: 4.5}
+    _minimumBlockExtent: 0
+    _minimumAspectRatio: 1
+    _maximumAspectRatio: 0
+    _fitMode: 0

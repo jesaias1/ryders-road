@@ -37,7 +37,7 @@ namespace Avoidance.EditorTools
         public const string AdaptiveIconBackgroundPath =
             "Assets/Branding/Android/RydersRoad_Icon_AdaptiveBackground.png";
         public const string GameVersion = "0.5.0";
-        public const string BuildVersion = "0.16.2-flow-sequences";
+        public const string BuildVersion = "0.17.0-world-flow";
 
         [MenuItem("RYDERS BLOCK/Validate Project")]
         public static void ValidateFromMenu()

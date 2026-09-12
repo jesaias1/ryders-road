@@ -1,0 +1,77 @@
+kind,name,detail
+scene,instances,181
+scene,instancedTriangles,60230
+scene,materials,30
+scene,shadowCasters,155
+scene,lodGroups,0
+machine,gpu,NVIDIA GeForce RTX 5070
+material,Metal,Universal Render Pipeline/Lit instancing=True
+material,Copper,Universal Render Pipeline/Lit instancing=False
+material,Gold,Universal Render Pipeline/Lit instancing=False
+material,Structure,Universal Render Pipeline/Lit instancing=True
+material,Ceramic,Universal Render Pipeline/Lit instancing=False
+material,Warm,Universal Render Pipeline/Lit instancing=True
+material,RB Module Crumbling,Universal Render Pipeline/Lit instancing=False
+material,Ivory,Universal Render Pipeline/Lit instancing=True
+material,Steel,Universal Render Pipeline/Lit instancing=False
+material,Ivory,Universal Render Pipeline/Lit instancing=False
+material,RB Module Edge,Universal Render Pipeline/Lit instancing=False
+material,Flow Shard Cyan,Universal Render Pipeline/Lit instancing=False
+material,RB Module Normal,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_RouteStone_02,512x512 _MainTex
+texture,RydersRoad_RouteStone_02,512x512 _BaseMap
+material,RB Module WaterFoam,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_CyanEnergy_01,512x512 _MainTex
+texture,RydersRoad_CyanEnergy_01,512x512 _BaseMap
+material,Cyan,Universal Render Pipeline/Lit instancing=False
+material,RB Module Precision,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_RouteStone_02,512x512 _MainTex
+texture,RydersRoad_RouteStone_02,512x512 _BaseMap
+material,Glass,Universal Render Pipeline/Lit instancing=False
+material,MAT_RR_Platform_Long,Universal Render Pipeline/Lit instancing=False
+texture,RR_Platform_Long_Base,1024x1024 _MainTex
+texture,RR_Platform_Long_Normal,1024x1024 _BumpMap
+texture,RR_Platform_Long_Base,1024x1024 _BaseMap
+texture,RR_Platform_Long_Metallic,1024x1024 _MetallicGlossMap
+texture,RR_Platform_Long_CyanEmission,1024x1024 _EmissionMap
+material,MAT_RR_BoostPad,Universal Render Pipeline/Lit instancing=False
+texture,RR_BoostPad_Base,2048x2048 _MainTex
+texture,RR_BoostPad_Normal,2048x2048 _BumpMap
+texture,RR_BoostPad_Base,2048x2048 _BaseMap
+texture,RR_BoostPad_Metallic,2048x2048 _MetallicGlossMap
+texture,RR_BoostPad_CyanEmission,2048x2048 _EmissionMap
+material,RB Module CircuitLine,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_CyanEnergy_01,512x512 _MainTex
+texture,RydersRoad_CyanEnergy_01,512x512 _BaseMap
+material,RB Module StoneSide,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_RouteStone_02,512x512 _MainTex
+texture,RydersRoad_RouteStone_02,512x512 _BaseMap
+material,RB Module Surf,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_CyanEnergy_01,512x512 _MainTex
+texture,RydersRoad_CyanEnergy_01,512x512 _BaseMap
+material,RB Module Underside,Universal Render Pipeline/Lit instancing=False
+material,MAT_RR_Block_Standard,Universal Render Pipeline/Lit instancing=False
+texture,RR_Block_Standard_Base,1024x1024 _MainTex
+texture,RR_Block_Standard_Normal,1024x1024 _BumpMap
+texture,RR_Block_Standard_Base,1024x1024 _BaseMap
+texture,RR_Block_Standard_Metallic,1024x1024 _MetallicGlossMap
+texture,RR_Block_Standard_CyanEmission,1024x1024 _EmissionMap
+material,MAT_RR_Crumble_Stage1,Universal Render Pipeline/Lit instancing=False
+texture,RR_Crumble_Stage1_Base,1024x1024 _MainTex
+texture,RR_Crumble_Stage1_Normal,1024x1024 _BumpMap
+texture,RR_Crumble_Stage1_Base,1024x1024 _BaseMap
+texture,RR_Crumble_Stage1_Metallic,1024x1024 _MetallicGlossMap
+material,Lit,Universal Render Pipeline/Lit instancing=False
+material,MAT_RR_PatchBlock,Universal Render Pipeline/Lit instancing=False
+texture,RR_PatchBlock_Base,2048x2048 _MainTex
+texture,RR_PatchBlock_Normal,2048x2048 _BumpMap
+texture,RR_PatchBlock_Base,2048x2048 _BaseMap
+texture,RR_PatchBlock_Metallic,2048x2048 _MetallicGlossMap
+texture,RR_PatchBlock_CyanEmission,2048x2048 _EmissionMap
+material,RB Module Moving,Universal Render Pipeline/Lit instancing=False
+material,RB Module SurfaceHighlight,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_RouteStone_02,512x512 _MainTex
+texture,RydersRoad_RouteStone_02,512x512 _BaseMap
+material,RB Module Boost,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_GoldRoute_01,512x512 _MainTex
+texture,RydersRoad_GoldRoute_01,512x512 _BaseMap

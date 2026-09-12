@@ -23,7 +23,7 @@ MonoBehaviour:
   _mistLayers: []
   _worldObjects:
   - _stableId: biome.mountain-sky.footing.m02.start
-    _prefab: {fileID: 1921295651784320719, guid: 17e8ec1b13a5cdf48acf0441810bc9d7, type: 3}
+    _prefab: {fileID: 4236960439101118245, guid: a5514bbfda0a4ee4980e8d66a1a93377, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
@@ -33,8 +33,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.rhythm.01
-    _prefab: {fileID: 8131010086562063012, guid: 75ec52caa0812c744a64190af0f86be3, type: 3}
-    _position: {x: 0, y: 0.6, z: 4.5}
+    _prefab: {fileID: 3455032342000179752, guid: 2ce31fc6cd63e1041a6fdc05217816b7, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -43,8 +43,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.rhythm.02
-    _prefab: {fileID: 6832204055581530270, guid: 6ba5c2490b865704eb6a1f00c49c7690, type: 3}
-    _position: {x: 0, y: 1.2, z: 8.5}
+    _prefab: {fileID: 98549885941522279, guid: 7cdcc36657e93da4198fc752bf882147, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -53,8 +53,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.after-moving.01
-    _prefab: {fileID: 6951745450916252168, guid: 55240a84a8a03514791dec40499e9d1c, type: 3}
-    _position: {x: 3, y: 1.8, z: 17.5}
+    _prefab: {fileID: 7464194589205385846, guid: b4f2e7b71fc018e46874cd9d53aa48e4, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -63,8 +63,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.after-moving.02
-    _prefab: {fileID: 3140318225958517805, guid: 16aa52aed2e93364cbb144954fbae700, type: 3}
-    _position: {x: 4, y: 2.4, z: 21.5}
+    _prefab: {fileID: 2769380517409113122, guid: 33b5f59def45efe44a05868089d2a1af, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -73,8 +73,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.restore.platform
-    _prefab: {fileID: 3457714459219939268, guid: 30a2c9a0af4452c4f9adfa27dd0b5d13, type: 3}
-    _position: {x: 4, y: 3, z: 26}
+    _prefab: {fileID: 16748887544614107, guid: 1bc9eea0cd3973f48b71e39f15a288c9, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -83,8 +83,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.safe.01
-    _prefab: {fileID: 5592945558433887935, guid: 1cb3aac62f96e4e4ba1c3fb4b676bb6a, type: 3}
-    _position: {x: 1, y: 3.6, z: 30.5}
+    _prefab: {fileID: 4881670701262551420, guid: 7b8403d5b66aafc4484bebc1740b7667, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -93,8 +93,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.safe.02
-    _prefab: {fileID: 2242269306417721803, guid: 2c1053a72bf5aed429693ecc16b0a2a1, type: 3}
-    _position: {x: -2, y: 4.2, z: 34.5}
+    _prefab: {fileID: 3786646723174972669, guid: 4d4963400bf12754ab1a7658b85afc04, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -103,8 +103,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.safe.03
-    _prefab: {fileID: 120261081264506626, guid: 279d62f536b5dfd41b5e8b18f2bdf634, type: 3}
-    _position: {x: -5, y: 4.8, z: 38.5}
+    _prefab: {fileID: 8399588277608398505, guid: 380989681dce25841a80472106d50709, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -113,8 +113,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.safe.04
-    _prefab: {fileID: 3191061415653658778, guid: d316337168e38f14d815c975a5cc6ae1, type: 3}
-    _position: {x: -6, y: 5.4, z: 42.5}
+    _prefab: {fileID: 6978326295365636260, guid: 5f9efb8115cffea41a87fbaac7eda925, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -123,8 +123,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.garden.exit
-    _prefab: {fileID: 6181181572701529656, guid: f09b38e3198ff934982685ad48fb4785, type: 3}
-    _position: {x: -4, y: 6, z: 46.5}
+    _prefab: {fileID: 917591304136347024, guid: dcb8870fbd501d74fa190c2e947babf0, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -133,8 +133,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ridge.01
-    _prefab: {fileID: 7311612000512307154, guid: 1fba17e68f849ca43913cb395155838b, type: 3}
-    _position: {x: -1, y: 6.4, z: 50.5}
+    _prefab: {fileID: 2957217840513946409, guid: 9e548c03d951f444dbe97814b326d347, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -143,8 +143,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ridge.02
-    _prefab: {fileID: 3085424171484386717, guid: 3c0ae089e14f26445860509aecf87d2d, type: 3}
-    _position: {x: 3, y: 6.8, z: 54.5}
+    _prefab: {fileID: 5587789717956943700, guid: c2cc139b68c669e42b927149385c944b, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -153,8 +153,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.rejoin
-    _prefab: {fileID: 3676096409511422589, guid: 71b830ed4f864ac49b4278f3702c7cb5, type: 3}
-    _position: {x: 6, y: 7.2, z: 58.5}
+    _prefab: {fileID: 2466247851229470569, guid: 1220963de425d2f49a429a1fd2493fa1, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -163,8 +163,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.lift.exit
-    _prefab: {fileID: 1254218622441674560, guid: 46b7401800941b242ac2516350c1d3bc, type: 3}
-    _position: {x: 9, y: 8.8, z: 69}
+    _prefab: {fileID: 4488319117832538376, guid: 0bd0b249a954409498ab052ef35ab766, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -173,8 +173,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ascent.01
-    _prefab: {fileID: 8926669138488308864, guid: 30010cdac61245c4fbebb1a2b13ce7e1, type: 3}
-    _position: {x: 12, y: 9.4, z: 73}
+    _prefab: {fileID: 2578499250012430223, guid: 74f2d29e6d272694ca20a9e783aba918, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -183,8 +183,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ascent.02
-    _prefab: {fileID: 6951921493819600791, guid: b482df9f65cbd4041b334c02004f2836, type: 3}
-    _position: {x: 15, y: 10, z: 77}
+    _prefab: {fileID: 8080098190518131022, guid: 65ed51842252f254a902e962c00b9a47, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -193,8 +193,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ascent.03
-    _prefab: {fileID: 5665003969758572469, guid: 981a1099349c9d749bccf17f5d8ced15, type: 3}
-    _position: {x: 15, y: 10.6, z: 81}
+    _prefab: {fileID: 852825681485882317, guid: bc164583f2ae6c241bf22111cd858b83, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -203,8 +203,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ascent.04
-    _prefab: {fileID: 2732867431984966708, guid: 3805b7af8c7745149ba16b0344b0c8e1, type: 3}
-    _position: {x: 13, y: 11.2, z: 85}
+    _prefab: {fileID: 7601063855770795230, guid: a044ed1958dc4924ebbf3f3bb1e6c6e1, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -213,8 +213,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.final-runup
-    _prefab: {fileID: 9116085169212749197, guid: aa6fa3e94582a9643a75ec03f48004cf, type: 3}
-    _position: {x: 10, y: 11.8, z: 89}
+    _prefab: {fileID: 5654235967510404236, guid: 36c99ed5a9a9f35439fea4f7738a6b88, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -223,8 +223,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.patch.base
-    _prefab: {fileID: 6752723034296149173, guid: ad126cf3b3a181b45ad1097670ab4c7a, type: 3}
-    _position: {x: 8, y: 12.4, z: 93}
+    _prefab: {fileID: 5589571112117212830, guid: f8ea287669fb71f419b17a7329cc78fd, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -233,8 +233,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.01
-    _prefab: {fileID: 3048494409580904813, guid: cffaedb44c1e3864d9163455afb2d62d, type: 3}
-    _position: {x: 7, y: 3.7, z: 31}
+    _prefab: {fileID: 4226109073435966979, guid: b139ea14482877549a1b79f7a9d74ce0, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -243,8 +243,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.02
-    _prefab: {fileID: 1903468550894648681, guid: 39593747da3d6da42a430128cb9e4380, type: 3}
-    _position: {x: 8, y: 4.3, z: 36}
+    _prefab: {fileID: 5308009485556386023, guid: 94b2f826ef190ff4e9682b1e7f998d36, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -253,8 +253,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.03
-    _prefab: {fileID: 6843589816116396345, guid: f032c75d858279144a83bbbbf2ff0ae7, type: 3}
-    _position: {x: 8, y: 4.9, z: 41}
+    _prefab: {fileID: 3778249463786226597, guid: 7b16b26206e492143bcd9c18f0bc75f0, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -263,8 +263,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.04
-    _prefab: {fileID: 9058943258353304255, guid: 8e1de478617f0324cb098ec0efb56956, type: 3}
-    _position: {x: 7, y: 5.5, z: 46}
+    _prefab: {fileID: 7408568828786082976, guid: 34781728cf92f65419e05a61b630bd41, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -273,8 +273,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.05
-    _prefab: {fileID: 3917918285971215234, guid: f0157a943520cf14daffeabb3112acb9, type: 3}
-    _position: {x: 6, y: 6.2, z: 51}
+    _prefab: {fileID: 2118916083769736021, guid: 4c4ec46bb2f95ff4f9f7781b71304eb5, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -283,8 +283,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.06
-    _prefab: {fileID: 5671549192074775334, guid: 890734385c9e49e4389a9d255e41ca36, type: 3}
-    _position: {x: 6, y: 6.7, z: 54.5}
+    _prefab: {fileID: 5152867563715380719, guid: e8f47fdb1ab02c843bfec5efbcabb22b, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -293,8 +293,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.mastery.lift-cut
-    _prefab: {fileID: 2458745997238737466, guid: c95e87be3a335f74f93228dfbe19fba5, type: 3}
-    _position: {x: 12.2, y: 8.2, z: 63.5}
+    _prefab: {fileID: 5969345987098111673, guid: 76796827e0120b64cab03491b1c89df2, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -303,7 +303,7 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.arrival.cliff
-    _prefab: {fileID: 7211308907409432356, guid: 20fde50b7c77f3d4a94245010f66eeb2, type: 3}
+    _prefab: {fileID: 5396231017860759245, guid: d2ba9958856a484449d3fbe6871bd540, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
@@ -313,8 +313,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.pass.fractured-abutment
-    _prefab: {fileID: 2123169095456437512, guid: a5d27bbfa4772a04fb1424b9d314011f, type: 3}
-    _position: {x: 0, y: 1.2, z: 8.5}
+    _prefab: {fileID: 1346965689913973776, guid: 9b107e272c4617a46a479971fb9313dd, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -323,8 +323,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.garden.waterfall-shrine
-    _prefab: {fileID: 5986855760478432491, guid: 55dbea4dde3912242871bcc0b8b9a8f8, type: 3}
-    _position: {x: 18, y: 3, z: 26}
+    _prefab: {fileID: 4492728341964208828, guid: 9543248520678ab49a065c7febe0e924, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -333,8 +333,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.ridge.old-lift
-    _prefab: {fileID: 1744900161945365502, guid: ec915e1cd31277f42b8540c0265436ff, type: 3}
-    _position: {x: 6, y: 7.2, z: 58}
+    _prefab: {fileID: 6932138846225847882, guid: 1977211c474d5dc439ad214f0a47bb84, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -343,8 +343,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.summit.stone-crown
-    _prefab: {fileID: 1716721074201867688, guid: cf52942dee945574daca883982f0d95a, type: 3}
-    _position: {x: 8, y: 12.4, z: 93}
+    _prefab: {fileID: 2276649255610752681, guid: 216649aa6b9d94d47b094491152ad8be, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -353,8 +353,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.garden.fractured-wall
-    _prefab: {fileID: 3613309213682893653, guid: 02517ab1a441ac347a9888b054159892, type: 3}
-    _position: {x: 4, y: 3, z: 26}
+    _prefab: {fileID: 3951871334600709250, guid: 4da542bb14e85504bae44ca7066394c4, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -363,8 +363,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.ridge.fractured-wall
-    _prefab: {fileID: 1557550749768510195, guid: 1f493fe47adc2c449a9567d7d5c4f5f4, type: 3}
-    _position: {x: 12, y: 9.4, z: 73}
+    _prefab: {fileID: 863976826079051439, guid: 6d804281eb13d204b80871bb2954fb3d, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -373,8 +373,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.garden.valley-foundation
-    _prefab: {fileID: 1324817689879955214, guid: ff70215269f4ba14da8d6ce09f65ba1b, type: 3}
-    _position: {x: 0, y: 0, z: 39}
+    _prefab: {fileID: 744849797378562946, guid: da87af38e2600654c974252807b5169a, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -383,8 +383,8 @@ MonoBehaviour:
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.ridge.upper-foundation
-    _prefab: {fileID: 8782792297047349240, guid: 641ef47becc47864d92ab46a81cdbbe2, type: 3}
-    _position: {x: 13, y: 9, z: 81}
+    _prefab: {fileID: 4114117707921181256, guid: af5439b56e2f9474d9ed7c3dee7e12f7, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
@@ -414,7 +414,7 @@ MonoBehaviour:
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.west.high-ridge
     _prefab: {fileID: 328354128707298564, guid: 8be0acb6c6ed0a44180a8c858ecce53a, type: 3}
-    _position: {x: -58, y: -40, z: 124}
+    _position: {x: -70.22012, y: -40, z: 124}
     _eulerAngles: {x: 0, y: 55, z: 0}
     _scale: {x: 1.2, y: 1.2, z: 1.2}
     _staticBatch: 1
@@ -444,7 +444,7 @@ MonoBehaviour:
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.north.range
     _prefab: {fileID: 2082395447475902059, guid: fe7315e90708e0145a538e7e17193920, type: 3}
-    _position: {x: -26, y: -58, z: 280}
+    _position: {x: -128.70062, y: -58, z: 280}
     _eulerAngles: {x: 0, y: -31, z: 0}
     _scale: {x: 2.6, y: 2.6, z: 2.6}
     _staticBatch: 1
@@ -484,7 +484,7 @@ MonoBehaviour:
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.below.valley-spur
     _prefab: {fileID: 328354128707298564, guid: 8be0acb6c6ed0a44180a8c858ecce53a, type: 3}
-    _position: {x: -30, y: -105, z: -24}
+    _position: {x: -86.56201, y: -105, z: -24}
     _eulerAngles: {x: 0, y: 10, z: 0}
     _scale: {x: 1.8, y: 1.8, z: 1.8}
     _staticBatch: 1
@@ -492,3 +492,13 @@ MonoBehaviour:
     _traversableArchitecture: 0
     _depthBand: 4
     _depthFadeStrength: 0.8
+  - _stableId: biome.flow-foundations.module.002.moving-parts
+    _prefab: {fileID: 3748315293812584253, guid: cc9d081c1449690439dd0c1cabc99ad2, type: 3}
+    _position: {x: 0, y: 0, z: 0}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 1, y: 1, z: 1}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
+    _depthBand: 1
+    _depthFadeStrength: 0.3

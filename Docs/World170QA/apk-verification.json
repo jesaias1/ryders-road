@@ -1,0 +1,17 @@
+{
+  "version": "0.17.0-world-flow",
+  "apk": "C:\\Users\\lin4s\\Documents\\Riders Block\\Builds\\Android\\RYDERS-ROAD-0.17.0-world-flow-dev.apk",
+  "bytes": 189190245,
+  "sha256": "AD4DA3EBDBCAAB5ED6CD7A225113CBA499E3BA8AB006A64D4FE714DFB0009B39",
+  "package": "com.rydersblockstudio.rydersblock",
+  "architecture": "arm64-v8a",
+  "minSdk": 26,
+  "targetSdk": 36,
+  "signature": "APK Signature Scheme v2 verified; one signer",
+  "zipIntegrity": "Passed",
+  "buildErrors": 0,
+  "buildWarnings": [
+    "Legacy icons deprecated; existing approved branding retained"
+  ],
+  "physicalDeviceTested": false
+}

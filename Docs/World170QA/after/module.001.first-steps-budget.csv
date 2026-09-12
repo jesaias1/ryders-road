@@ -1,0 +1,43 @@
+kind,name,detail
+scene,instances,172
+scene,instancedTriangles,151573
+scene,materials,18
+scene,shadowCasters,111
+scene,lodGroups,0
+machine,gpu,NVIDIA GeForce RTX 5070
+material,Brass,Universal Render Pipeline/Lit instancing=False
+material,Ocean,Universal Render Pipeline/Lit instancing=False
+material,Light,Universal Render Pipeline/Lit instancing=False
+material,Porcelain,Universal Render Pipeline/Lit instancing=False
+material,RB Module Normal,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_RouteStone_02,512x512 _MainTex
+texture,RydersRoad_RouteStone_02,512x512 _BaseMap
+material,Limestone,Universal Render Pipeline/Lit instancing=False
+material,Leaf,Universal Render Pipeline/Lit instancing=False
+material,RB Module Precision,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_RouteStone_02,512x512 _MainTex
+texture,RydersRoad_RouteStone_02,512x512 _BaseMap
+material,Cyan,Universal Render Pipeline/Lit instancing=False
+material,LeafSun,Universal Render Pipeline/Lit instancing=False
+material,Bark,Universal Render Pipeline/Lit instancing=False
+material,Ivory,Universal Render Pipeline/Lit instancing=True
+material,Warm,Universal Render Pipeline/Lit instancing=True
+material,MAT_RR_Block_Standard,Universal Render Pipeline/Lit instancing=False
+texture,RR_Block_Standard_Base,1024x1024 _MainTex
+texture,RR_Block_Standard_Normal,1024x1024 _BumpMap
+texture,RR_Block_Standard_Base,1024x1024 _BaseMap
+texture,RR_Block_Standard_Metallic,1024x1024 _MetallicGlossMap
+texture,RR_Block_Standard_CyanEmission,1024x1024 _EmissionMap
+material,Structure,Universal Render Pipeline/Lit instancing=True
+material,MAT_RR_Tree_Floating,Universal Render Pipeline/Lit instancing=False
+texture,RR_Tree_Floating_Base,1024x1024 _MainTex
+texture,RR_Tree_Floating_Normal,1024x1024 _BumpMap
+texture,RR_Tree_Floating_Base,1024x1024 _BaseMap
+texture,RR_Tree_Floating_Metallic,1024x1024 _MetallicGlossMap
+material,Glass,Universal Render Pipeline/Lit instancing=False
+material,MAT_RR_PatchBlock,Universal Render Pipeline/Lit instancing=False
+texture,RR_PatchBlock_Base,2048x2048 _MainTex
+texture,RR_PatchBlock_Normal,2048x2048 _BumpMap
+texture,RR_PatchBlock_Base,2048x2048 _BaseMap
+texture,RR_PatchBlock_Metallic,2048x2048 _MetallicGlossMap
+texture,RR_PatchBlock_CyanEmission,2048x2048 _EmissionMap

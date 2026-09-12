@@ -581,6 +581,7 @@ namespace Avoidance.EditorTools
             ModuleVisualProfile visual,
             ModuleEnvironmentProfile environment)
         {
+            if(module.ContentVersion>=3&&module.StableModuleId=="module.004.the-spiral")return;
             var authored = BuildSpiral056Route();
             module.name = "Module_004_TheSpiral";
             module.Configure(

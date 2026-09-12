@@ -1,3 +1,7 @@
+## 0.17.0 content compatibility
+
+Save schema V4 and movement compatibility 5 remain unchanged. Content versions are Sky City 4, Mountain 5, Ancient Abyss 9, Solar Foundry 5, Windward 6 and Spiral 3. Existing record buckets preserve earlier geometry's PBs/ranks; the reauthored layouts do not silently reinterpret old performance. Stable module/Restore/Patch IDs and Bronze-sufficient Campaign progression remain intact. New optional ledges/Boost/surf use authored stable content IDs, not hierarchy order. Lighting and mesh authoring introduce no persisted state, so no save migration is required. Rank thresholds remain provisional pending physical feedback.
+
 ## 0.16.2 movement sequences
 
 Windward content 6 replaces the alternating cadence with four coherent movement

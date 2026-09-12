@@ -23,48 +23,53 @@ MonoBehaviour:
   _mistLayers: []
   _worldObjects:
   - _stableId: biome.ancient-abyss.place.arrival-sanctuary
-    _prefab: {fileID: 5846083874182026478, guid: ebbee35c5dbe7d6438c1b4a4ba4b4d97, type: 3}
-    _position: {x: 0, y: 0, z: 6}
+    _prefab: {fileID: 4137047647015917207, guid: 4fcb8d4d3abddaa42a8a0379a4959b47, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.04
   - _stableId: biome.ancient-abyss.place.broken-crossing
-    _prefab: {fileID: 4903280685784949648, guid: a51324dbbc0e4974db846ed0cb544b18, type: 3}
-    _position: {x: 0, y: 2, z: 36}
+    _prefab: {fileID: 191175809767253731, guid: 413d098253dc4e7489368b21744ed358, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.04
   - _stableId: biome.ancient-abyss.place.collapsed-temple
-    _prefab: {fileID: 399829615027830492, guid: f75c377fea2622f4eb70253eac633937, type: 3}
-    _position: {x: 0, y: 4, z: 59}
+    _prefab: {fileID: 8504111075632175937, guid: 53e1ddae13090ae41a754f36be630675, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.04
   - _stableId: biome.ancient-abyss.place.energy-spine
-    _prefab: {fileID: 7951826889921354992, guid: 96e23fe61ed7a824a88f988240bfecf2, type: 3}
-    _position: {x: 0, y: 7, z: 90}
+    _prefab: {fileID: 1256760178441731746, guid: d0565e54983fa4d41b3164ea17a20033, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.04
   - _stableId: biome.ancient-abyss.place.patch-sanctum
-    _prefab: {fileID: 8923314594763558230, guid: d6651c4afb2a6c2429f0bb3abbdc1183, type: 3}
-    _position: {x: 8, y: 14, z: 129}
+    _prefab: {fileID: 4835224412435466622, guid: 02d51bbc7be32e4439ae336ed337ee9d, type: 3}
+    _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.04
   - _stableId: biome.ancient-abyss.mid.broken-procession
@@ -74,6 +79,7 @@ MonoBehaviour:
     _scale: {x: 1.25, y: 1.25, z: 1.25}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 2
     _depthFadeStrength: 0.52
   - _stableId: biome.ancient-abyss.mid.celestial-arch
@@ -83,6 +89,7 @@ MonoBehaviour:
     _scale: {x: 1.35, y: 1.35, z: 1.35}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 2
     _depthFadeStrength: 0.48
   - _stableId: biome.ancient-abyss.hero.shattered-crown
@@ -92,14 +99,26 @@ MonoBehaviour:
     _scale: {x: 1.55, y: 1.55, z: 1.55}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 3
     _depthFadeStrength: 0.32
   - _stableId: biome.ancient-abyss.below.sunken-city
     _prefab: {fileID: 1407622931912130956, guid: 06b2cc2fde6806445b02b59589b32715, type: 3}
-    _position: {x: 4, y: -94, z: 148}
+    _position: {x: -62.66062, y: -94, z: 148}
     _eulerAngles: {x: 0, y: -12, z: 0}
     _scale: {x: 1.05, y: 1.05, z: 1.05}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 4
     _depthFadeStrength: 0.9
+  - _stableId: biome.flow-foundations.module.003.flow-error
+    _prefab: {fileID: 6708950767787818270, guid: f1b94e7dd91dbc64db403cb17588357a, type: 3}
+    _position: {x: 0, y: 0, z: 0}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 1, y: 1, z: 1}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
+    _depthBand: 1
+    _depthFadeStrength: 0.3

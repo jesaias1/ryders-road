@@ -1,3 +1,18 @@
+## 0.17.0 existing-world flow and cohesion
+
+The existing five Campaign worlds and Spiral now use authored route/presentation
+updates with shared lighting and distinct deck kits. Windward content-6 geometry
+and movement compatibility 5 remain unchanged. EditMode **252/252** and PlayMode
+**156/156** pass, including 180 new sequence cases, Windward’s 72 cases and ten
+complete Campaign runs. The ARM64 Android development APK is verified:
+`Builds/Android/RYDERS-ROAD-0.17.0-world-flow-dev.apk` (189,190,245 bytes).
+
+See [delivery report](Docs/PRODUCTION_0170.md) and [before/after evidence](Docs/World170QA/README.md).
+New art is Editor-authored or reused/refitted production content: **3DAIStudio was
+unavailable and that requested portion remains incomplete**. No physical S23
+acceptance is claimed. This authority supersedes the earlier art stop; stop after
+this delivery for physical and visual feedback. Earlier entries below are history.
+
 ## 0.16.2 flow sequences
 
 Windward content 6 uses four coherent sequences, 20 shared supports and three

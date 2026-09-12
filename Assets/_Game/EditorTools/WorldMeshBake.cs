@@ -19,6 +19,24 @@ namespace Avoidance.EditorTools
                 parts[material].Add(new CombineInstance{mesh=mesh,transform=Matrix4x4.TRS(p,rotation,scale)});temporary.Add(mesh);
             }
             public void Box(string material,Vector3 p,Vector3 size) => Beam(material,p-Vector3.up*size.y*.5f,p+Vector3.up*size.y*.5f,new Vector2(size.x,size.z));
+            public void BeveledBox(string material,Vector3 p,Vector3 size,float bevel)
+            {
+                float x=size.x*.5f,z=size.z*.5f,h=size.y*.5f;
+                float b=Mathf.Min(bevel,Mathf.Min(x,z)*.3f);
+                var ring=new[]{new Vector2(-x+b,-z),new Vector2(x-b,-z),new Vector2(x,-z+b),new Vector2(x,z-b),new Vector2(x-b,z),new Vector2(-x+b,z),new Vector2(-x,z-b),new Vector2(-x,-z+b)};
+                var v=new List<Vector3>();var t=new List<int>();
+                void Tri(Vector3 a,Vector3 c,Vector3 d){int n=v.Count;v.AddRange(new[]{a,c,d});t.AddRange(new[]{n,n+1,n+2});}
+                for(int i=0;i<8;i++)
+                {
+                    var a=ring[i];var c=ring[(i+1)%8];
+                    var at=new Vector3(a.x*.94f,h,a.y*.94f);var ct=new Vector3(c.x*.94f,h,c.y*.94f);
+                    var ar=new Vector3(a.x,h-size.y*.25f,a.y);var cr=new Vector3(c.x,h-size.y*.25f,c.y);
+                    var ab=new Vector3(a.x*.96f,-h,a.y*.96f);var cb=new Vector3(c.x*.96f,-h,c.y*.96f);
+                    Tri(Vector3.up*h,ct,at);Tri(at,ct,ar);Tri(ar,ct,cr);
+                    Tri(ar,cr,ab);Tri(ab,cr,cb);Tri(Vector3.down*h,ab,cb);
+                }
+                Add(material,Mesh(v,t),p,Quaternion.identity,Vector3.one);
+            }
             public void Beam(string material,Vector3 a,Vector3 b,Vector2 width)
             {
                 var primitive=GameObject.CreatePrimitive(PrimitiveType.Cube);var mesh=Object.Instantiate(primitive.GetComponent<MeshFilter>().sharedMesh);Object.DestroyImmediate(primitive);

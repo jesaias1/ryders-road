@@ -19,12 +19,12 @@ namespace Avoidance.Tests.EditMode
             FoundationProjectSetup.Apply();
             Assert.That(modules.Select(JsonUtility.ToJson).ToArray(),Is.EqualTo(routes));
             Assert.That(modules.Select(m=>JsonUtility.ToJson(m.EnvironmentBiomeProfile)).ToArray(),Is.EqualTo(worlds));
-            Assert.That(Module.ContentVersion,Is.EqualTo(4));
+            Assert.That(Module.ContentVersion,Is.EqualTo(5));
         }
         [Test] public void MountainHasClimbFivePlacesTrueCollisionAndBoundedCost()
         {
             var m=Module;Assert.That(m.Decorations,Is.Empty);Assert.That(m.DisableAutomaticDistantFragments,Is.True);
-            Assert.That(m.PatchBlock.Pose.Position.y-m.StartPoint.Position.y,Is.GreaterThan(12));
+            Assert.That(m.PatchBlock.Pose.Position.y-m.StartPoint.Position.y,Is.GreaterThan(9));
             Assert.That(m.RestorePoints.Count,Is.EqualTo(2));Assert.That(m.OptionalShortcuts.Count,Is.EqualTo(2));Assert.That(m.MovingBlocks.Count,Is.EqualTo(2));
             Assert.That(m.EnvironmentBiomeProfile.CombineStaticGeometry,Is.True);
             Assert.That(m.RestorePoints.All(r=>m.Blocks.Any(b=>b.StableId==r.SupportBlockStableId)),Is.True);

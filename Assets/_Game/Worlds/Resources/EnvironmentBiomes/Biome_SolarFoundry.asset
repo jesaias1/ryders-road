@@ -23,48 +23,53 @@ MonoBehaviour:
   _mistLayers: []
   _worldObjects:
   - _stableId: biome.solar-foundry.service-spine
-    _prefab: {fileID: 4507172609901415034, guid: c77ecd381a15d3f4cbc167b24a748a9a, type: 3}
+    _prefab: {fileID: 2054316926916902933, guid: d43ccdf94c1510b469d1b715c292da84, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.intake-vessel
-    _prefab: {fileID: 6616393296360589670, guid: 12c40f76ada52b944829d9312185c930, type: 3}
+    _prefab: {fileID: 6428387812671912601, guid: 53f82e38b9d1aa84a853d2b8f03f2dc6, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.reactor-vessel
-    _prefab: {fileID: 5299895725158414990, guid: d0a815026eae3f842a2524785a83ecee, type: 3}
+    _prefab: {fileID: 8984533738650876965, guid: dacb1a7dfe788594b9374c271182e71e, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.crown-vessel
-    _prefab: {fileID: 7311176664852157936, guid: 2182a8dcfadeeb749bc0bc97ee41c6fa, type: 3}
+    _prefab: {fileID: 1625114919748301667, guid: 633709f69dea52b4293333418326b686, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.transfer-crane
-    _prefab: {fileID: 8954226896976436313, guid: 01a415c36e889a545ba3820c18237993, type: 3}
+    _prefab: {fileID: 3236188804870940828, guid: ea4fd7953915f724a8d561a654a3cb61, type: 3}
     _position: {x: 0, y: 0, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.heliostat.hero
@@ -74,6 +79,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 2
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.heliostat.west
@@ -83,6 +89,7 @@ MonoBehaviour:
     _scale: {x: 0.65, y: 0.65, z: 0.65}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 3
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.heliostat.north
@@ -92,6 +99,7 @@ MonoBehaviour:
     _scale: {x: 0.9, y: 0.9, z: 0.9}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 3
     _depthFadeStrength: 0.75
   - _stableId: biome.solar-foundry.lower.heat-exchanger
@@ -101,5 +109,16 @@ MonoBehaviour:
     _scale: {x: 1.1, y: 1.1, z: 1.1}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 4
     _depthFadeStrength: 0.75
+  - _stableId: biome.flow-foundations.module.004.solar-foundry
+    _prefab: {fileID: 7387476651622986128, guid: 1305d60ef6e6b2e4ea80c3c0060c2813, type: 3}
+    _position: {x: 0, y: 0, z: 0}
+    _eulerAngles: {x: 0, y: 0, z: 0}
+    _scale: {x: 1, y: 1, z: 1}
+    _staticBatch: 1
+    _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
+    _depthBand: 1
+    _depthFadeStrength: 0.3

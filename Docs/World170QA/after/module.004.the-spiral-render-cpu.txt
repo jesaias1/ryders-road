@@ -1,0 +1,1 @@
+1560x720 Camera.Render desktop CPU wall time, 12 warm samples. Median 0.500 ms; max 0.688 ms. Not GPU time, device FPS or sustained S23 performance.

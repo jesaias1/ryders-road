@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebc6b04a21814949a411f2f981c3e8c, type: 3}
+  m_Name: SpiralEnvironment
+  m_EditorClassIdentifier: Game.Gameplay::Avoidance.Gameplay.Visuals.ModuleEnvironmentProfile
+  _skyZenith: {r: 0.12, g: 0.34, b: 0.78, a: 1}
+  _skyMid: {r: 0.04, g: 0.58, b: 0.95, a: 1}
+  _skyHorizon: {r: 0.65, g: 0.82, b: 0.96, a: 1}
+  _skyWarmth: {r: 1, g: 0.6, b: 0.28, a: 1}
+  _fogColor: {r: 0.35, g: 0.35, b: 0.57, a: 1}
+  _ambientLight: {r: 0.31, g: 0.31, b: 0.49, a: 1}
+  _sunLight: {r: 1, g: 0.86, b: 0.66, a: 1}
+  _fogDensity: 0.0058
+  _sunIntensity: 1.25
+  _nullSpaceY: -26
+  _cloudDensity: 1
+  _decorationDensity: 1
+  _vfxDensity: 0.85
+  _qualityProfile: 1
+  _distantIslandDensity: 1
+  _horizonLayerOpacity: 0.82
+  _ambienceClip: {fileID: 8300000, guid: 67eaadd0b83956a4e930633cb5ff06e0, type: 3}
+  _ambienceGain: 0.045
+  _authoredLighting: 1
+  _sunEuler: {x: 32, y: -32, z: 0}
+  _nearArchitectureShadows: 1
+  _cohesiveLighting: 1
+  _ambientGround: {r: 0.09, g: 0.14, b: 0.21, a: 1}
+  _shadowStrength: 0.78
+  _shadowBias: 0.25
+  _shadowNormalBias: 0.35
+  _postExposure: -0.08
+  _contrast: 12
+  _saturation: -2
+  _bloomIntensity: 0.12
+  _bloomThreshold: 1.3
+  _skyboxMaterial: {fileID: 2100000, guid: 4f3f18d194f9a774bb63f1d75aa69376, type: 2}
+  _overrideBiomeFog: 1

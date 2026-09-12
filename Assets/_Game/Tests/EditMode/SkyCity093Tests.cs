@@ -18,7 +18,7 @@ namespace Avoidance.Tests.EditMode
             FoundationProjectSetup.Apply();
             Assert.That(JsonUtility.ToJson(module),Is.EqualTo(route));
             Assert.That(JsonUtility.ToJson(module.EnvironmentBiomeProfile),Is.EqualTo(city));
-            Assert.That(module.ContentVersion,Is.EqualTo(3));
+            Assert.That(module.ContentVersion,Is.EqualTo(4));
         }
         [Test]
         public void NearArchitectureIsSolidAndDistantDistrictsStayOutsideJumpReach()

@@ -1,0 +1,1640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="252" result="Passed" total="252" passed="252" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-12 16:11:45Z" end-time="2026-09-12 16:11:58Z" duration="13.1512524">
+  <test-suite type="TestSuite" id="1000" name="Ryder's Road" fullname="Ryder's Road" runstate="Runnable" testcasecount="252" result="Passed" start-time="2026-09-12 16:11:45Z" end-time="2026-09-12 16:11:58Z" duration="13.151252" total="252" passed="252" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1284" name="Game.EditModeTests.dll" fullname="C:/Users/lin4s/Documents/Riders Block/Library/ScriptAssemblies/Game.EditModeTests.dll" runstate="Runnable" testcasecount="252" result="Passed" start-time="2026-09-12 16:11:45Z" end-time="2026-09-12 16:11:58Z" duration="13.147093" total="252" passed="252" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="51132" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1285" name="Avoidance" fullname="Avoidance" runstate="Runnable" testcasecount="252" result="Passed" start-time="2026-09-12 16:11:45Z" end-time="2026-09-12 16:11:58Z" duration="13.146924" total="252" passed="252" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1286" name="Tests" fullname="Avoidance.Tests" runstate="Runnable" testcasecount="252" result="Passed" start-time="2026-09-12 16:11:45Z" end-time="2026-09-12 16:11:58Z" duration="13.146879" total="252" passed="252" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1287" name="EditMode" fullname="Avoidance.Tests.EditMode" runstate="Runnable" testcasecount="252" result="Passed" start-time="2026-09-12 16:11:45Z" end-time="2026-09-12 16:11:58Z" duration="13.146704" total="252" passed="252" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="AuthoredContentPreservationTests" fullname="Avoidance.Tests.EditMode.AuthoredContentPreservationTests" classname="Avoidance.Tests.EditMode.AuthoredContentPreservationTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-12 16:11:45Z" end-time="2026-09-12 16:11:48Z" duration="2.930880" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1002" name="StartupPreservesAuthoredAncientAbyssIncludingDesignerEdits" fullname="Avoidance.Tests.EditMode.AuthoredContentPreservationTests.StartupPreservesAuthoredAncientAbyssIncludingDesignerEdits" methodname="StartupPreservesAuthoredAncientAbyssIncludingDesignerEdits" classname="Avoidance.Tests.EditMode.AuthoredContentPreservationTests" runstate="Runnable" seed="1739550404" result="Passed" start-time="2026-09-12 16:11:45Z" end-time="2026-09-12 16:11:48Z" duration="2.923371" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Main Object Name 'Authored preservation sentinel' does not match filename 'Module_003_FlowError'
+Main Object Name 'Authored preservation sentinel' does not match filename 'Module_003_FlowError'
+Main Object Name 'Authored preservation sentinel' does not match filename 'Module_003_FlowError'
+]]></output>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1003" name="BootstrapAndSceneTests" fullname="Avoidance.Tests.EditMode.BootstrapAndSceneTests" classname="Avoidance.Tests.EditMode.BootstrapAndSceneTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.103490" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1007" name="AndroidOrientation_AllowsBothLandscapeDirectionsOnly" fullname="Avoidance.Tests.EditMode.BootstrapAndSceneTests.AndroidOrientation_AllowsBothLandscapeDirectionsOnly" methodname="AndroidOrientation_AllowsBothLandscapeDirectionsOnly" classname="Avoidance.Tests.EditMode.BootstrapAndSceneTests" runstate="Runnable" seed="1015028331" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.001733" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="CompositionRoot_RegistersRequiredFoundationServices" fullname="Avoidance.Tests.EditMode.BootstrapAndSceneTests.CompositionRoot_RegistersRequiredFoundationServices" methodname="CompositionRoot_RegistersRequiredFoundationServices" classname="Avoidance.Tests.EditMode.BootstrapAndSceneTests" runstate="Runnable" seed="1718745565" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.006247" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1006" name="GameplayMaterialShader_IsValidForUrp" fullname="Avoidance.Tests.EditMode.BootstrapAndSceneTests.GameplayMaterialShader_IsValidForUrp" methodname="GameplayMaterialShader_IsValidForUrp" classname="Avoidance.Tests.EditMode.BootstrapAndSceneTests" runstate="Runnable" seed="816699308" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000118" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1005" name="SceneConfiguration_IsValid" fullname="Avoidance.Tests.EditMode.BootstrapAndSceneTests.SceneConfiguration_IsValid" methodname="SceneConfiguration_IsValid" classname="Avoidance.Tests.EditMode.BootstrapAndSceneTests" runstate="Runnable" seed="447726909" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.090749" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1008" name="CampaignFlowTrialTests" fullname="Avoidance.Tests.EditMode.CampaignFlowTrialTests" classname="Avoidance.Tests.EditMode.CampaignFlowTrialTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.007200" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1009" name="SessionTimesSeparateRoadsModesAndNormalSelection" fullname="Avoidance.Tests.EditMode.CampaignFlowTrialTests.SessionTimesSeparateRoadsModesAndNormalSelection" methodname="SessionTimesSeparateRoadsModesAndNormalSelection" classname="Avoidance.Tests.EditMode.CampaignFlowTrialTests" runstate="Runnable" seed="7675305" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.005521" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1010" name="ContactAudioTests" fullname="Avoidance.Tests.EditMode.ContactAudioTests" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.025195" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="ParameterizedMethod" id="1017" name="ContactCuesHaveShortMonoFoleyWithHeadroom" fullname="Avoidance.Tests.EditMode.ContactAudioTests.ContactCuesHaveShortMonoFoleyWithHeadroom" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.009552" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1011" name="ContactCuesHaveShortMonoFoleyWithHeadroom(Jump)" fullname="Avoidance.Tests.EditMode.ContactAudioTests.ContactCuesHaveShortMonoFoleyWithHeadroom(Jump)" methodname="ContactCuesHaveShortMonoFoleyWithHeadroom" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" seed="2084976298" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.003930" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1012" name="ContactCuesHaveShortMonoFoleyWithHeadroom(Landing)" fullname="Avoidance.Tests.EditMode.ContactAudioTests.ContactCuesHaveShortMonoFoleyWithHeadroom(Landing)" methodname="ContactCuesHaveShortMonoFoleyWithHeadroom" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" seed="1060760118" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000430" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1013" name="ContactCuesHaveShortMonoFoleyWithHeadroom(HardLanding)" fullname="Avoidance.Tests.EditMode.ContactAudioTests.ContactCuesHaveShortMonoFoleyWithHeadroom(HardLanding)" methodname="ContactCuesHaveShortMonoFoleyWithHeadroom" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" seed="1724915451" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.001136" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1014" name="ContactCuesHaveShortMonoFoleyWithHeadroom(CrumbleWarning)" fullname="Avoidance.Tests.EditMode.ContactAudioTests.ContactCuesHaveShortMonoFoleyWithHeadroom(CrumbleWarning)" methodname="ContactCuesHaveShortMonoFoleyWithHeadroom" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" seed="2012993676" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.001270" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1015" name="ContactCuesHaveShortMonoFoleyWithHeadroom(CrumbleCollapse)" fullname="Avoidance.Tests.EditMode.ContactAudioTests.ContactCuesHaveShortMonoFoleyWithHeadroom(CrumbleCollapse)" methodname="ContactCuesHaveShortMonoFoleyWithHeadroom" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" seed="2031598709" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.001878" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1016" name="ContactCuesHaveShortMonoFoleyWithHeadroom(Ui)" fullname="Avoidance.Tests.EditMode.ContactAudioTests.ContactCuesHaveShortMonoFoleyWithHeadroom(Ui)" methodname="ContactCuesHaveShortMonoFoleyWithHeadroom" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" seed="1150662882" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000297" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1018" name="LoopChangesClipAndMissingCueOrProfileStopsPreviousSound" fullname="Avoidance.Tests.EditMode.ContactAudioTests.LoopChangesClipAndMissingCueOrProfileStopsPreviousSound" methodname="LoopChangesClipAndMissingCueOrProfileStopsPreviousSound" classname="Avoidance.Tests.EditMode.ContactAudioTests" runstate="Runnable" seed="1561554333" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.015161" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1019" name="FoundationUtilityTests" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.013214" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1038" name="AndroidDevelopmentBuilder_RemovesStaleApkBeforeBuild" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.AndroidDevelopmentBuilder_RemovesStaleApkBeforeBuild" methodname="AndroidDevelopmentBuilder_RemovesStaleApkBeforeBuild" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="863412187" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.003039" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1037" name="AndroidDevelopmentBuilder_ReportsOutputFileSize" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.AndroidDevelopmentBuilder_ReportsOutputFileSize" methodname="AndroidDevelopmentBuilder_ReportsOutputFileSize" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="737125039" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.001877" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1031" name="AndroidDisplayService_RecordsImmersiveRequestAndSafeArea" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.AndroidDisplayService_RecordsImmersiveRequestAndSafeArea" methodname="AndroidDisplayService_RecordsImmersiveRequestAndSafeArea" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="3396346" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.002149" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1033" name="BrandPresentation_LoadsLogoTextureFromResources" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.BrandPresentation_LoadsLogoTextureFromResources" methodname="BrandPresentation_LoadsLogoTextureFromResources" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1922953852" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000474" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1032" name="BrandPresentation_UsesRydersRoadPublicIdentity" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.BrandPresentation_UsesRydersRoadPublicIdentity" methodname="BrandPresentation_UsesRydersRoadPublicIdentity" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="2122809841" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000104" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1034" name="CameraFieldOfViewPreference_ClampsToMobileAlphaRange" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.CameraFieldOfViewPreference_ClampsToMobileAlphaRange" methodname="CameraFieldOfViewPreference_ClampsToMobileAlphaRange" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1735529224" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000699" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1035" name="CameraFieldOfViewPreference_DefaultsToWideMobileParkourView" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.CameraFieldOfViewPreference_DefaultsToWideMobileParkourView" methodname="CameraFieldOfViewPreference_DefaultsToWideMobileParkourView" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="331499577" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000148" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1040" name="FeatureFlags_DevelopmentOnlyFlagIsOffInRelease" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.FeatureFlags_DevelopmentOnlyFlagIsOffInRelease" methodname="FeatureFlags_DevelopmentOnlyFlagIsOffInRelease" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="245335524" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000751" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1039" name="FeatureFlags_PersistThroughStore" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.FeatureFlags_PersistThroughStore" methodname="FeatureFlags_PersistThroughStore" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1229569562" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000338" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1030" name="SafeAreaHelper_ConvertsPixelsToNormalizedAnchors" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.SafeAreaHelper_ConvertsPixelsToNormalizedAnchors" methodname="SafeAreaHelper_ConvertsPixelsToNormalizedAnchors" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="2040988187" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000365" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1023" name="StableId_AcceptsCanonicalIds" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_AcceptsCanonicalIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000557" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1020" name="StableId_AcceptsCanonicalIds(&quot;level.world-01.level-01&quot;)" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_AcceptsCanonicalIds(&quot;level.world-01.level-01&quot;)" methodname="StableId_AcceptsCanonicalIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1527409699" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000220" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1021" name="StableId_AcceptsCanonicalIds(&quot;powerup.jump-boost&quot;)" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_AcceptsCanonicalIds(&quot;powerup.jump-boost&quot;)" methodname="StableId_AcceptsCanonicalIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1327026560" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000028" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1022" name="StableId_AcceptsCanonicalIds(&quot;cosmetic.gloves-neon&quot;)" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_AcceptsCanonicalIds(&quot;cosmetic.gloves-neon&quot;)" methodname="StableId_AcceptsCanonicalIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="558493451" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000021" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-suite type="ParameterizedMethod" id="1029" name="StableId_RejectsUnstableOrUnsafeIds" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_RejectsUnstableOrUnsafeIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000406" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1024" name="StableId_RejectsUnstableOrUnsafeIds(&quot;&quot;)" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_RejectsUnstableOrUnsafeIds(&quot;&quot;)" methodname="StableId_RejectsUnstableOrUnsafeIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1213325508" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000066" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1025" name="StableId_RejectsUnstableOrUnsafeIds(&quot;Level 1&quot;)" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_RejectsUnstableOrUnsafeIds(&quot;Level 1&quot;)" methodname="StableId_RejectsUnstableOrUnsafeIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1190094144" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000021" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1026" name="StableId_RejectsUnstableOrUnsafeIds(&quot;level/one&quot;)" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_RejectsUnstableOrUnsafeIds(&quot;level/one&quot;)" methodname="StableId_RejectsUnstableOrUnsafeIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1178440815" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000019" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1027" name="StableId_RejectsUnstableOrUnsafeIds(&quot;01-level&quot;)" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_RejectsUnstableOrUnsafeIds(&quot;01-level&quot;)" methodname="StableId_RejectsUnstableOrUnsafeIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="1339078139" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000016" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1028" name="StableId_RejectsUnstableOrUnsafeIds(&quot;UPPERCASE&quot;)" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.StableId_RejectsUnstableOrUnsafeIds(&quot;UPPERCASE&quot;)" methodname="StableId_RejectsUnstableOrUnsafeIds" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="2022153908" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000016" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1036" name="TouchControlPreferences_PersistControlAndMovementMode" fullname="Avoidance.Tests.EditMode.FoundationUtilityTests.TouchControlPreferences_PersistControlAndMovementMode" methodname="TouchControlPreferences_PersistControlAndMovementMode" classname="Avoidance.Tests.EditMode.FoundationUtilityTests" runstate="Runnable" seed="392639451" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.001022" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1041" name="LandingViewTests" fullname="Avoidance.Tests.EditMode.LandingViewTests" classname="Avoidance.Tests.EditMode.LandingViewTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.001433" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="ParameterizedMethod" id="1045" name="DescentFramesSmoothlyAndReturnsOnGround" fullname="Avoidance.Tests.EditMode.LandingViewTests.DescentFramesSmoothlyAndReturnsOnGround" classname="Avoidance.Tests.EditMode.LandingViewTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000664" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1042" name="DescentFramesSmoothlyAndReturnsOnGround(30)" fullname="Avoidance.Tests.EditMode.LandingViewTests.DescentFramesSmoothlyAndReturnsOnGround(30)" methodname="DescentFramesSmoothlyAndReturnsOnGround" classname="Avoidance.Tests.EditMode.LandingViewTests" runstate="Runnable" seed="1581695430" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000362" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1043" name="DescentFramesSmoothlyAndReturnsOnGround(60)" fullname="Avoidance.Tests.EditMode.LandingViewTests.DescentFramesSmoothlyAndReturnsOnGround(60)" methodname="DescentFramesSmoothlyAndReturnsOnGround" classname="Avoidance.Tests.EditMode.LandingViewTests" runstate="Runnable" seed="1758399136" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000059" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1044" name="DescentFramesSmoothlyAndReturnsOnGround(120)" fullname="Avoidance.Tests.EditMode.LandingViewTests.DescentFramesSmoothlyAndReturnsOnGround(120)" methodname="DescentFramesSmoothlyAndReturnsOnGround" classname="Avoidance.Tests.EditMode.LandingViewTests" runstate="Runnable" seed="963668254" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000077" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1047" name="DisabledSurfAndAscentDoNotAddPitchAndResetClearsHistory" fullname="Avoidance.Tests.EditMode.LandingViewTests.DisabledSurfAndAscentDoNotAddPitchAndResetClearsHistory" methodname="DisabledSurfAndAscentDoNotAddPitchAndResetClearsHistory" classname="Avoidance.Tests.EditMode.LandingViewTests" runstate="Runnable" seed="2042014112" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000234" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1046" name="ManualTakeoverHoldsAndNeverForcesAnAlreadyDownwardView" fullname="Avoidance.Tests.EditMode.LandingViewTests.ManualTakeoverHoldsAndNeverForcesAnAlreadyDownwardView" methodname="ManualTakeoverHoldsAndNeverForcesAnAlreadyDownwardView" classname="Avoidance.Tests.EditMode.LandingViewTests" runstate="Runnable" seed="363207390" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000100" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1048" name="Loading092Tests" fullname="Avoidance.Tests.EditMode.Loading092Tests" classname="Avoidance.Tests.EditMode.Loading092Tests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.002875" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1050" name="ColdStartUsesApprovedNativePosterBeforeManagedLoading" fullname="Avoidance.Tests.EditMode.Loading092Tests.ColdStartUsesApprovedNativePosterBeforeManagedLoading" methodname="ColdStartUsesApprovedNativePosterBeforeManagedLoading" classname="Avoidance.Tests.EditMode.Loading092Tests" runstate="Runnable" seed="49963019" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000833" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1051" name="FullscreenAllowsBothLandscapesAndRendersBehindSafeArea" fullname="Avoidance.Tests.EditMode.Loading092Tests.FullscreenAllowsBothLandscapesAndRendersBehindSafeArea" methodname="FullscreenAllowsBothLandscapesAndRendersBehindSafeArea" classname="Avoidance.Tests.EditMode.Loading092Tests" runstate="Runnable" seed="1823374843" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000372" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1049" name="PackagedMediaAndBoundedTransitionProfileExist" fullname="Avoidance.Tests.EditMode.Loading092Tests.PackagedMediaAndBoundedTransitionProfileExist" methodname="PackagedMediaAndBoundedTransitionProfileExist" classname="Avoidance.Tests.EditMode.Loading092Tests" runstate="Runnable" seed="1090924782" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.001278" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1052" name="Mountain094Tests" fullname="Avoidance.Tests.EditMode.Mountain094Tests" classname="Avoidance.Tests.EditMode.Mountain094Tests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:50Z" duration="1.958691" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1055" name="FreshBronzeSequentialProgressionAndExplicitCampaignEnd" fullname="Avoidance.Tests.EditMode.Mountain094Tests.FreshBronzeSequentialProgressionAndExplicitCampaignEnd" methodname="FreshBronzeSequentialProgressionAndExplicitCampaignEnd" classname="Avoidance.Tests.EditMode.Mountain094Tests" runstate="Runnable" seed="765078945" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.002195" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1056" name="LegacyEarnedProgressSurvivesLaterPracticeAndOutOfOrderRecords" fullname="Avoidance.Tests.EditMode.Mountain094Tests.LegacyEarnedProgressSurvivesLaterPracticeAndOutOfOrderRecords" methodname="LegacyEarnedProgressSurvivesLaterPracticeAndOutOfOrderRecords" classname="Avoidance.Tests.EditMode.Mountain094Tests" runstate="Runnable" seed="1518111547" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000759" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1054" name="MountainHasClimbFivePlacesTrueCollisionAndBoundedCost" fullname="Avoidance.Tests.EditMode.Mountain094Tests.MountainHasClimbFivePlacesTrueCollisionAndBoundedCost" methodname="MountainHasClimbFivePlacesTrueCollisionAndBoundedCost" classname="Avoidance.Tests.EditMode.Mountain094Tests" runstate="Runnable" seed="1159637160" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.022101" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1057" name="PracticeNeverOpensNextRoadAndAnAttemptIsNotCompletion" fullname="Avoidance.Tests.EditMode.Mountain094Tests.PracticeNeverOpensNextRoadAndAnAttemptIsNotCompletion" methodname="PracticeNeverOpensNextRoadAndAnAttemptIsNotCompletion" classname="Avoidance.Tests.EditMode.Mountain094Tests" runstate="Runnable" seed="1317210652" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:48Z" duration="0.000179" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1053" name="StartupPreservesMountainAndAcceptedNeighbours" fullname="Avoidance.Tests.EditMode.Mountain094Tests.StartupPreservesMountainAndAcceptedNeighbours" methodname="StartupPreservesMountainAndAcceptedNeighbours" classname="Avoidance.Tests.EditMode.Mountain094Tests" runstate="Runnable" seed="1923901772" result="Passed" start-time="2026-09-12 16:11:48Z" end-time="2026-09-12 16:11:50Z" duration="1.932897" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1058" name="MovementStateTests" fullname="Avoidance.Tests.EditMode.MovementStateTests" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" testcasecount="73" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.047589" total="73" passed="73" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1122" name="CameraReset_CanPreserveRecentPitchAcrossFallRestore" fullname="Avoidance.Tests.EditMode.MovementStateTests.CameraReset_CanPreserveRecentPitchAcrossFallRestore" methodname="CameraReset_CanPreserveRecentPitchAcrossFallRestore" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="2055539407" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.003258" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1121" name="CameraReset_UsesDefaultDownwardPitchAndCheckpointYaw" fullname="Avoidance.Tests.EditMode.MovementStateTests.CameraReset_UsesDefaultDownwardPitchAndCheckpointYaw" methodname="CameraReset_UsesDefaultDownwardPitchAndCheckpointYaw" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="326441116" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001474" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1062" name="CheckpointService_KeepsLatestOrderedRestorePoint" fullname="Avoidance.Tests.EditMode.MovementStateTests.CheckpointService_KeepsLatestOrderedRestorePoint" methodname="CheckpointService_KeepsLatestOrderedRestorePoint" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1293205214" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000560" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1061" name="CoyoteTime_Expires" fullname="Avoidance.Tests.EditMode.MovementStateTests.CoyoteTime_Expires" methodname="CoyoteTime_Expires" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1715495873" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000227" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1060" name="CoyoteTime_IsEligibleBrieflyAfterLeavingGround" fullname="Avoidance.Tests.EditMode.MovementStateTests.CoyoteTime_IsEligibleBrieflyAfterLeavingGround" methodname="CoyoteTime_IsEligibleBrieflyAfterLeavingGround" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="56289867" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000098" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1066" name="DefaultProfile_DerivesPredictableJumpVelocityAndDistance" fullname="Avoidance.Tests.EditMode.MovementStateTests.DefaultProfile_DerivesPredictableJumpVelocityAndDistance" methodname="DefaultProfile_DerivesPredictableJumpVelocityAndDistance" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1245873855" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000598" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1132" name="FirstPersonArmProfile_UsesRyderArmV2CanonicalAnimatedPose" fullname="Avoidance.Tests.EditMode.MovementStateTests.FirstPersonArmProfile_UsesRyderArmV2CanonicalAnimatedPose" methodname="FirstPersonArmProfile_UsesRyderArmV2CanonicalAnimatedPose" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="635988852" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001181" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1131" name="FirstPersonHands_ArePresentationOnlyAndDoNotMoveGameplayRoot" fullname="Avoidance.Tests.EditMode.MovementStateTests.FirstPersonHands_ArePresentationOnlyAndDoNotMoveGameplayRoot" methodname="FirstPersonHands_ArePresentationOnlyAndDoNotMoveGameplayRoot" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="114178141" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.005008" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1130" name="FirstPersonHands_HiddenProfileDoesNotCreateArmRenderers" fullname="Avoidance.Tests.EditMode.MovementStateTests.FirstPersonHands_HiddenProfileDoesNotCreateArmRenderers" methodname="FirstPersonHands_HiddenProfileDoesNotCreateArmRenderers" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="432899626" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000475" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1135" name="FirstPersonHands_HiddenProfileLeavesWorldCameraAndAudioListenerOnly" fullname="Avoidance.Tests.EditMode.MovementStateTests.FirstPersonHands_HiddenProfileLeavesWorldCameraAndAudioListenerOnly" methodname="FirstPersonHands_HiddenProfileLeavesWorldCameraAndAudioListenerOnly" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="202679612" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000669" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1133" name="FirstPersonHands_RunForwardOffsetsAlternateAndStayBounded" fullname="Avoidance.Tests.EditMode.MovementStateTests.FirstPersonHands_RunForwardOffsetsAlternateAndStayBounded" methodname="FirstPersonHands_RunForwardOffsetsAlternateAndStayBounded" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="905117716" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000368" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1134" name="FirstPersonHands_RunLateralOffsetsOnlyOpenAwayFromCenter" fullname="Avoidance.Tests.EditMode.MovementStateTests.FirstPersonHands_RunLateralOffsetsOnlyOpenAwayFromCenter" methodname="FirstPersonHands_RunLateralOffsetsOnlyOpenAwayFromCenter" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="341521814" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000387" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1095" name="FlickDetector_AllowsDiagonalUpWithinTolerance" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_AllowsDiagonalUpWithinTolerance" methodname="FlickDetector_AllowsDiagonalUpWithinTolerance" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="2109274279" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000859" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1086" name="FlickDetector_FastUpTriggersJumpIntent" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_FastUpTriggersJumpIntent" methodname="FlickDetector_FastUpTriggersJumpIntent" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1915756241" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000222" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1088" name="FlickDetector_HoldingUpperPositionDoesNotRepeat" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_HoldingUpperPositionDoesNotRepeat" methodname="FlickDetector_HoldingUpperPositionDoesNotRepeat" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1119270319" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000148" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1096" name="FlickDetector_RearmsAfterRetreatAndSecondImpulse" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_RearmsAfterRetreatAndSecondImpulse" methodname="FlickDetector_RearmsAfterRetreatAndSecondImpulse" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1817514504" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000119" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1094" name="FlickDetector_RejectsNonUpwardOrSmallGestures" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_RejectsNonUpwardOrSmallGestures" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000930" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1089" name="FlickDetector_RejectsNonUpwardOrSmallGestures(80.0f,0.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_RejectsNonUpwardOrSmallGestures(80.0f,0.0f)" methodname="FlickDetector_RejectsNonUpwardOrSmallGestures" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1561993337" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000284" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1090" name="FlickDetector_RejectsNonUpwardOrSmallGestures(-80.0f,0.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_RejectsNonUpwardOrSmallGestures(-80.0f,0.0f)" methodname="FlickDetector_RejectsNonUpwardOrSmallGestures" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="698313186" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000035" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1091" name="FlickDetector_RejectsNonUpwardOrSmallGestures(0.0f,-70.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_RejectsNonUpwardOrSmallGestures(0.0f,-70.0f)" methodname="FlickDetector_RejectsNonUpwardOrSmallGestures" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="673387076" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000020" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1092" name="FlickDetector_RejectsNonUpwardOrSmallGestures(0.0f,20.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_RejectsNonUpwardOrSmallGestures(0.0f,20.0f)" methodname="FlickDetector_RejectsNonUpwardOrSmallGestures" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="139072692" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000017" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1093" name="FlickDetector_RejectsNonUpwardOrSmallGestures(90.0f,70.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_RejectsNonUpwardOrSmallGestures(90.0f,70.0f)" methodname="FlickDetector_RejectsNonUpwardOrSmallGestures" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1429952497" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000016" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1087" name="FlickDetector_SlowUpwardDragDoesNotTrigger" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlickDetector_SlowUpwardDragDoesNotTrigger" methodname="FlickDetector_SlowUpwardDragDoesNotTrigger" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="664772512" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000108" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1105" name="FlowSteering_RightInputRotatesHeadingWithoutDroppingThrottle" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlowSteering_RightInputRotatesHeadingWithoutDroppingThrottle" methodname="FlowSteering_RightInputRotatesHeadingWithoutDroppingThrottle" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1348193620" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.002796" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1125" name="FlowSteeringTouchCamera_UsesRightDragForPitchOnly" fullname="Avoidance.Tests.EditMode.MovementStateTests.FlowSteeringTouchCamera_UsesRightDragForPitchOnly" methodname="FlowSteeringTouchCamera_UsesRightDragForPitchOnly" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1977856508" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000611" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1115" name="HopRetention_PerfectPreservesMoreMomentumThanLate" fullname="Avoidance.Tests.EditMode.MovementStateTests.HopRetention_PerfectPreservesMoreMomentumThanLate" methodname="HopRetention_PerfectPreservesMoreMomentumThanLate" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1882150782" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000489" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1064" name="InputSourceSelector_SwitchesBetweenEditorAndTouch" fullname="Avoidance.Tests.EditMode.MovementStateTests.InputSourceSelector_SwitchesBetweenEditorAndTouch" methodname="InputSourceSelector_SwitchesBetweenEditorAndTouch" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1648530996" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000202" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1059" name="JumpBuffer_RemainsEligibleUntilGrounded" fullname="Avoidance.Tests.EditMode.MovementStateTests.JumpBuffer_RemainsEligibleUntilGrounded" methodname="JumpBuffer_RemainsEligibleUntilGrounded" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1008390532" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000119" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1127" name="ManualLookSuppressesLandingAutoPitch" fullname="Avoidance.Tests.EditMode.MovementStateTests.ManualLookSuppressesLandingAutoPitch" methodname="ManualLookSuppressesLandingAutoPitch" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="165306769" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000680" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1065" name="MovementProfileSet_CyclesAndSelectsByStableId" fullname="Avoidance.Tests.EditMode.MovementStateTests.MovementProfileSet_CyclesAndSelectsByStableId" methodname="MovementProfileSet_CyclesAndSelectsByStableId" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1394305967" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000381" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1113" name="MovementVectorMath_DiagonalInputDoesNotExceedUnitMagnitude" fullname="Avoidance.Tests.EditMode.MovementStateTests.MovementVectorMath_DiagonalInputDoesNotExceedUnitMagnitude" methodname="MovementVectorMath_DiagonalInputDoesNotExceedUnitMagnitude" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1951344142" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000478" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1112" name="MovementVectorMath_ForwardFollowsCameraYaw" fullname="Avoidance.Tests.EditMode.MovementStateTests.MovementVectorMath_ForwardFollowsCameraYaw" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000766" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1108" name="MovementVectorMath_ForwardFollowsCameraYaw(0.0f,0.0f,0.0f,1.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.MovementVectorMath_ForwardFollowsCameraYaw(0.0f,0.0f,0.0f,1.0f)" methodname="MovementVectorMath_ForwardFollowsCameraYaw" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1150470451" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000210" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1109" name="MovementVectorMath_ForwardFollowsCameraYaw(90.0f,1.0f,0.0f,0.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.MovementVectorMath_ForwardFollowsCameraYaw(90.0f,1.0f,0.0f,0.0f)" methodname="MovementVectorMath_ForwardFollowsCameraYaw" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="468981530" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000032" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1110" name="MovementVectorMath_ForwardFollowsCameraYaw(180.0f,0.0f,0.0f,-1.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.MovementVectorMath_ForwardFollowsCameraYaw(180.0f,0.0f,0.0f,-1.0f)" methodname="MovementVectorMath_ForwardFollowsCameraYaw" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="2080900932" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000020" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1111" name="MovementVectorMath_ForwardFollowsCameraYaw(270.0f,-1.0f,0.0f,0.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.MovementVectorMath_ForwardFollowsCameraYaw(270.0f,-1.0f,0.0f,0.0f)" methodname="MovementVectorMath_ForwardFollowsCameraYaw" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1108538403" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000018" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1107" name="MovementVectorMath_MapsCardinalInputsAtYawZero" fullname="Avoidance.Tests.EditMode.MovementStateTests.MovementVectorMath_MapsCardinalInputsAtYawZero" methodname="MovementVectorMath_MapsCardinalInputsAtYawZero" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="645260430" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000155" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1129" name="Phase076_PlayerGroundingProfileIsSubtleAndHeightFaded" fullname="Avoidance.Tests.EditMode.MovementStateTests.Phase076_PlayerGroundingProfileIsSubtleAndHeightFaded" methodname="Phase076_PlayerGroundingProfileIsSubtleAndHeightFaded" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1014846444" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000239" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1128" name="Phase077_GlobalCameraProfileEnablesManualPitchAndKeepsLockedFov" fullname="Avoidance.Tests.EditMode.MovementStateTests.Phase077_GlobalCameraProfileEnablesManualPitchAndKeepsLockedFov" methodname="Phase077_GlobalCameraProfileEnablesManualPitchAndKeepsLockedFov" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1298796152" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000178" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1114" name="PlatformTracker_ReturnsDeterministicPlatformDelta" fullname="Avoidance.Tests.EditMode.MovementStateTests.PlatformTracker_ReturnsDeterministicPlatformDelta" methodname="PlatformTracker_ReturnsDeterministicPlatformDelta" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="877886969" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000166" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1120" name="ResetMotion_ClearsVelocityAndRestoresPosition" fullname="Avoidance.Tests.EditMode.MovementStateTests.ResetMotion_ClearsVelocityAndRestoresPosition" methodname="ResetMotion_ClearsVelocityAndRestoresPosition" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1186077022" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001929" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1078" name="SafeOriginClamp_KeepsRightMovementTravelInsideComfortMargins" fullname="Avoidance.Tests.EditMode.MovementStateTests.SafeOriginClamp_KeepsRightMovementTravelInsideComfortMargins" methodname="SafeOriginClamp_KeepsRightMovementTravelInsideComfortMargins" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="2096485060" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000400" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1082" name="SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects" fullname="Avoidance.Tests.EditMode.MovementStateTests.SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000606" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1079" name="SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects(1280.0f,720.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects(1280.0f,720.0f)" methodname="SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1291587242" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000190" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1080" name="SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects(1920.0f,1080.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects(1920.0f,1080.0f)" methodname="SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="452719945" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000027" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1081" name="SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects(2400.0f,1080.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects(2400.0f,1080.0f)" methodname="SafeOriginClamp_ProducesValidAreasAcrossLandscapeAspects" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="986848678" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000021" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-suite type="ParameterizedMethod" id="1085" name="SafeOriginClamp_RespectsLandscapeSafeAreaCutouts" fullname="Avoidance.Tests.EditMode.MovementStateTests.SafeOriginClamp_RespectsLandscapeSafeAreaCutouts" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000309" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1083" name="SafeOriginClamp_RespectsLandscapeSafeAreaCutouts(120.0f,0.0f,2340.0f,1080.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.SafeOriginClamp_RespectsLandscapeSafeAreaCutouts(120.0f,0.0f,2340.0f,1080.0f)" methodname="SafeOriginClamp_RespectsLandscapeSafeAreaCutouts" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="425062706" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000110" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1084" name="SafeOriginClamp_RespectsLandscapeSafeAreaCutouts(0.0f,0.0f,2220.0f,1080.0f)" fullname="Avoidance.Tests.EditMode.MovementStateTests.SafeOriginClamp_RespectsLandscapeSafeAreaCutouts(0.0f,0.0f,2220.0f,1080.0f)" methodname="SafeOriginClamp_RespectsLandscapeSafeAreaCutouts" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="585071471" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000020" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1117" name="SurfMath_RequiresAuthoredValidAngleAndProjectsVelocity" fullname="Avoidance.Tests.EditMode.MovementStateTests.SurfMath_RequiresAuthoredValidAngleAndProjectsVelocity" methodname="SurfMath_RequiresAuthoredValidAngleAndProjectsVelocity" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1357108018" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000566" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1067" name="TakeoffMomentumRetention_PreservesEarnedMomentumMoreThanNormalJump" fullname="Avoidance.Tests.EditMode.MovementStateTests.TakeoffMomentumRetention_PreservesEarnedMomentumMoreThanNormalJump" methodname="TakeoffMomentumRetention_PreservesEarnedMomentumMoreThanNormalJump" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="313485209" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000201" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1098" name="TapDragClassifier_DragActivatesCameraAndReleaseDoesNotTap" fullname="Avoidance.Tests.EditMode.MovementStateTests.TapDragClassifier_DragActivatesCameraAndReleaseDoesNotTap" methodname="TapDragClassifier_DragActivatesCameraAndReleaseDoesNotTap" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="522175061" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000501" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1099" name="TapDragClassifier_LongHoldDoesNotTap" fullname="Avoidance.Tests.EditMode.MovementStateTests.TapDragClassifier_LongHoldDoesNotTap" methodname="TapDragClassifier_LongHoldDoesNotTap" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1343023272" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000089" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1097" name="TapDragClassifier_ShortStationaryReleaseProducesTap" fullname="Avoidance.Tests.EditMode.MovementStateTests.TapDragClassifier_ShortStationaryReleaseProducesTap" methodname="TapDragClassifier_ShortStationaryReleaseProducesTap" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="684476568" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000190" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1126" name="TouchCamera_FastSwipeTurnsWithoutRoll" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCamera_FastSwipeTurnsWithoutRoll" methodname="TouchCamera_FastSwipeTurnsWithoutRoll" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="498826938" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000542" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1123" name="TouchCamera_MicroJitterDoesNotRotate" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCamera_MicroJitterDoesNotRotate" methodname="TouchCamera_MicroJitterDoesNotRotate" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1733087831" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000339" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1124" name="TouchCamera_VerticalDragChangesPitchAndClampsWithoutRoll" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCamera_VerticalDragChangesPitchAndClampsWithoutRoll" methodname="TouchCamera_VerticalDragChangesPitchAndClampsWithoutRoll" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1955653231" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000508" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1119" name="TouchCameraSensitivity_LoadsAndSavesSettingsPreset" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCameraSensitivity_LoadsAndSavesSettingsPreset" methodname="TouchCameraSensitivity_LoadsAndSavesSettingsPreset" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="150307431" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.007529" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1104" name="TouchCoordinator_DevelopmentJumpCycleSwitchesClassicVariants" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCoordinator_DevelopmentJumpCycleSwitchesClassicVariants" methodname="TouchCoordinator_DevelopmentJumpCycleSwitchesClassicVariants" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="2121070235" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000965" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1101" name="TouchCoordinator_LeftMovementTouchNeverJumps" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCoordinator_LeftMovementTouchNeverJumps" methodname="TouchCoordinator_LeftMovementTouchNeverJumps" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="887887820" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000437" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1106" name="TouchCoordinator_ReleasingJoystickOwnerReturnsMovementToZero" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCoordinator_ReleasingJoystickOwnerReturnsMovementToZero" methodname="TouchCoordinator_ReleasingJoystickOwnerReturnsMovementToZero" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="194601158" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000402" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1102" name="TouchCoordinator_RightCameraDragReleaseDoesNotJump" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCoordinator_RightCameraDragReleaseDoesNotJump" methodname="TouchCoordinator_RightCameraDragReleaseDoesNotJump" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1176434752" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000545" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1103" name="TouchCoordinator_RightDragFeedsCameraOnActivationFrame" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCoordinator_RightDragFeedsCameraOnActivationFrame" methodname="TouchCoordinator_RightDragFeedsCameraOnActivationFrame" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1116491727" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000411" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1100" name="TouchCoordinator_RightTapJumpPreservesMovementAndOwnership" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchCoordinator_RightTapJumpPreservesMovementAndOwnership" methodname="TouchCoordinator_RightTapJumpPreservesMovementAndOwnership" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1524376770" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000275" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1118" name="TouchDevelopmentActions_AreEdgeTriggered" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchDevelopmentActions_AreEdgeTriggered" methodname="TouchDevelopmentActions_AreEdgeTriggered" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="189797341" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000224" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1077" name="TouchLayout_ClassicManualProfileRemainsAvailable" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchLayout_ClassicManualProfileRemainsAvailable" methodname="TouchLayout_ClassicManualProfileRemainsAvailable" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1423519624" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000279" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1072" name="TouchLayout_DefaultsToResponsiveClassicManualMode" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchLayout_DefaultsToResponsiveClassicManualMode" methodname="TouchLayout_DefaultsToResponsiveClassicManualMode" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1860185419" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000414" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1073" name="TouchLayout_SmartParkourEasyModeRemainsAvailable" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchLayout_SmartParkourEasyModeRemainsAvailable" methodname="TouchLayout_SmartParkourEasyModeRemainsAvailable" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1798244405" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000187" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1068" name="TouchOwnership_KeepsMovementLookAndJumpIndependent" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchOwnership_KeepsMovementLookAndJumpIndependent" methodname="TouchOwnership_KeepsMovementLookAndJumpIndependent" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1006479245" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000142" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1069" name="TouchOwnership_ReleasingNonOwnerDoesNotClearOwner" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchOwnership_ReleasingNonOwnerDoesNotClearOwner" methodname="TouchOwnership_ReleasingNonOwnerDoesNotClearOwner" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="206180727" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000069" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1075" name="TouchProfilePreference_MigratesPreVersionedEasyBackToClassic" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchProfilePreference_MigratesPreVersionedEasyBackToClassic" methodname="TouchProfilePreference_MigratesPreVersionedEasyBackToClassic" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1459381854" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000187" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1074" name="TouchProfilePreference_MigratesPreVersionedNonClassicBackToClassic" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchProfilePreference_MigratesPreVersionedNonClassicBackToClassic" methodname="TouchProfilePreference_MigratesPreVersionedNonClassicBackToClassic" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1088922434" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000220" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1076" name="TouchProfilePreference_PreservesVersionedEasyChoice" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchProfilePreference_PreservesVersionedEasyChoice" methodname="TouchProfilePreference_PreservesVersionedEasyChoice" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1062206444" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000128" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1070" name="TouchStickDeadZone_RemapsRemainingRangeLinearly" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchStickDeadZone_RemapsRemainingRangeLinearly" methodname="TouchStickDeadZone_RemapsRemainingRangeLinearly" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="291054425" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000287" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1071" name="TouchStickMath_UsesRectCenterAsNeutral" fullname="Avoidance.Tests.EditMode.MovementStateTests.TouchStickMath_UsesRectCenterAsNeutral" methodname="TouchStickMath_UsesRectCenterAsNeutral" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="904262222" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000324" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1116" name="VelocitySafetyLimit_ClampsHorizontalMagnitude" fullname="Avoidance.Tests.EditMode.MovementStateTests.VelocitySafetyLimit_ClampsHorizontalMagnitude" methodname="VelocitySafetyLimit_ClampsHorizontalMagnitude" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="1817481870" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000113" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1063" name="VoidRule_DetectsNullSpaceBoundary" fullname="Avoidance.Tests.EditMode.MovementStateTests.VoidRule_DetectsNullSpaceBoundary" methodname="VoidRule_DetectsNullSpaceBoundary" classname="Avoidance.Tests.EditMode.MovementStateTests" runstate="Runnable" seed="547719316" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000069" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1136" name="Phase2ModuleTests" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" testcasecount="65" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.088337" total="65" passed="65" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1144" name="CrumblingBlock_ShakesVisualOnlyAndRestoresDeterministically" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.CrumblingBlock_ShakesVisualOnlyAndRestoresDeterministically" methodname="CrumblingBlock_ShakesVisualOnlyAndRestoresDeterministically" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1571576528" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.003999" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1145" name="CrumblingContactRelay_ActivatesOnlyFromWalkableSupportContact" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.CrumblingContactRelay_ActivatesOnlyFromWalkableSupportContact" methodname="CrumblingContactRelay_ActivatesOnlyFromWalkableSupportContact" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="2067444761" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000938" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1143" name="CrumblingState_AdvancesThreeStagesThenDropsAndResets" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.CrumblingState_AdvancesThreeStagesThenDropsAndResets" methodname="CrumblingState_AdvancesThreeStagesThenDropsAndResets" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="2002708139" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000191" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1148" name="DefaultTouchCamera_DoesNotAutoSteerWithoutManualLookDelta" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.DefaultTouchCamera_DoesNotAutoSteerWithoutManualLookDelta" methodname="DefaultTouchCamera_DoesNotAutoSteerWithoutManualLookDelta" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1237087685" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000353" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1141" name="JumpBoostMath_UsesConfiguredVerticalAndHorizontalStrengths" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.JumpBoostMath_UsesConfiguredVerticalAndHorizontalStrengths" methodname="JumpBoostMath_UsesConfiguredVerticalAndHorizontalStrengths" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1484383051" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000303" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1137" name="ModuleValidator_AcceptsValidModuleDefinition" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.ModuleValidator_AcceptsValidModuleDefinition" methodname="ModuleValidator_AcceptsValidModuleDefinition" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="544111622" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000528" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1138" name="ModuleValidator_RejectsDuplicateModuleIds" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.ModuleValidator_RejectsDuplicateModuleIds" methodname="ModuleValidator_RejectsDuplicateModuleIds" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1635395967" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000366" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1139" name="ModuleValidator_RejectsInvalidStableIdsAndMissingPatchBlock" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.ModuleValidator_RejectsInvalidStableIdsAndMissingPatchBlock" methodname="ModuleValidator_RejectsInvalidStableIdsAndMissingPatchBlock" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1143549194" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000542" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1163" name="ModuleVisualProfile_AllMaterialRolesResolveToUrpSafeMaterials" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.ModuleVisualProfile_AllMaterialRolesResolveToUrpSafeMaterials" methodname="ModuleVisualProfile_AllMaterialRolesResolveToUrpSafeMaterials" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="2061989495" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001791" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1140" name="MovingBlockMath_PingPongsAlongConfiguredPath" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.MovingBlockMath_PingPongsAlongConfiguredPath" methodname="MovingBlockMath_PingPongsAlongConfiguredPath" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1026872467" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000567" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1147" name="ParkourMotor_ExternalLaunchDoesNotMutateMovementProfile" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.ParkourMotor_ExternalLaunchDoesNotMutateMovementProfile" methodname="ParkourMotor_ExternalLaunchDoesNotMutateMovementProfile" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="848608417" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000469" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1146" name="PatchBlock_CompletesOnlyOnce" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.PatchBlock_CompletesOnlyOnce" methodname="PatchBlock_CompletesOnlyOnce" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1884265805" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000549" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1160" name="Phase047VisualIdentity_ProfileKeepsRouteWarmReadableAndNullSpaceDeep" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase047VisualIdentity_ProfileKeepsRouteWarmReadableAndNullSpaceDeep" methodname="Phase047VisualIdentity_ProfileKeepsRouteWarmReadableAndNullSpaceDeep" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="186842859" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000257" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1162" name="Phase04VisualIdentity_BenchmarkNamesAreStable" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase04VisualIdentity_BenchmarkNamesAreStable" methodname="Phase04VisualIdentity_BenchmarkNamesAreStable" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1566741978" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000420" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1152" name="Phase04VisualIdentity_ModuleThreeHasCleanMapDressing" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase04VisualIdentity_ModuleThreeHasCleanMapDressing" methodname="Phase04VisualIdentity_ModuleThreeHasCleanMapDressing" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1601890061" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000322" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1159" name="Phase04VisualIdentity_ProfileUsesMobileBalancedQuality" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase04VisualIdentity_ProfileUsesMobileBalancedQuality" methodname="Phase04VisualIdentity_ProfileUsesMobileBalancedQuality" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1385656747" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000283" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1166" name="Phase050MeshyArtKit_EnvironmentPrefabsResolveAndStayVisualOnly" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase050MeshyArtKit_EnvironmentPrefabsResolveAndStayVisualOnly" methodname="Phase050MeshyArtKit_EnvironmentPrefabsResolveAndStayVisualOnly" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1802741841" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.004023" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1168" name="Phase050MeshyArtKit_FirstPersonOptimizedArmsAreIntegratedAndVisualOnly" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase050MeshyArtKit_FirstPersonOptimizedArmsAreIntegratedAndVisualOnly" methodname="Phase050MeshyArtKit_FirstPersonOptimizedArmsAreIntegratedAndVisualOnly" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1956823850" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.015567" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1169" name="Phase050MeshyArtKit_GallerySceneIsEditorOnly" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase050MeshyArtKit_GallerySceneIsEditorOnly" methodname="Phase050MeshyArtKit_GallerySceneIsEditorOnly" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="505982739" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000625" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1167" name="Phase050MeshyArtKit_PrefabLibraryMapsRolesAndLongNormalBlocks" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase050MeshyArtKit_PrefabLibraryMapsRolesAndLongNormalBlocks" methodname="Phase050MeshyArtKit_PrefabLibraryMapsRolesAndLongNormalBlocks" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="310948932" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000753" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1158" name="Phase050ModeSplit_CampaignOrderExcludesSpiralAndUnlocksLinearly" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase050ModeSplit_CampaignOrderExcludesSpiralAndUnlocksLinearly" methodname="Phase050ModeSplit_CampaignOrderExcludesSpiralAndUnlocksLinearly" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1447345192" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000748" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1164" name="Phase050Presentation_TextureAssetsAndModeSplitAreAvailable" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase050Presentation_TextureAssetsAndModeSplitAreAvailable" methodname="Phase050Presentation_TextureAssetsAndModeSplitAreAvailable" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="663473331" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001264" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1165" name="Phase051VisualPrefabLibrary_DefaultsEmptyAndKeepsPrefabVisualOnly" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase051VisualPrefabLibrary_DefaultsEmptyAndKeepsPrefabVisualOnly" methodname="Phase051VisualPrefabLibrary_DefaultsEmptyAndKeepsPrefabVisualOnly" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1467180550" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000815" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1178" name="Phase052WorldScale_ArtScaleCollisionLabSceneExists" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase052WorldScale_ArtScaleCollisionLabSceneExists" methodname="Phase052WorldScale_ArtScaleCollisionLabSceneExists" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="160880697" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000174" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1172" name="Phase052WorldScale_TheSpiralHasFiveRestorePointsAndHumanScaleBlocks" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase052WorldScale_TheSpiralHasFiveRestorePointsAndHumanScaleBlocks" methodname="Phase052WorldScale_TheSpiralHasFiveRestorePointsAndHumanScaleBlocks" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="963687760" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000348" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1173" name="Phase053HandPresentation_ProfileRetainsSubstantialCameraSpaceScale" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase053HandPresentation_ProfileRetainsSubstantialCameraSpaceScale" methodname="Phase053HandPresentation_ProfileRetainsSubstantialCameraSpaceScale" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1230003391" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000311" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1174" name="Phase053WorldCleanup_EnvironmentProfileHasBrightCyanSkyAndAiryFog" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase053WorldCleanup_EnvironmentProfileHasBrightCyanSkyAndAiryFog" methodname="Phase053WorldCleanup_EnvironmentProfileHasBrightCyanSkyAndAiryFog" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="548847454" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000204" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1179" name="Phase054b_PlatformTruthLab_HasAllTenCanonicalMechanicsAndStations" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase054b_PlatformTruthLab_HasAllTenCanonicalMechanicsAndStations" methodname="Phase054b_PlatformTruthLab_HasAllTenCanonicalMechanicsAndStations" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1614564755" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000476" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1180" name="Phase054b_RestorePoints_AllHaveCenteredSafelyElevatedSpawnAnchors" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase054b_RestorePoints_AllHaveCenteredSafelyElevatedSpawnAnchors" methodname="Phase054b_RestorePoints_AllHaveCenteredSafelyElevatedSpawnAnchors" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="440363295" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000331" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1183" name="Phase054b_SurfAndBoost_HaveDistinctRolesAndProfiles" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase054b_SurfAndBoost_HaveDistinctRolesAndProfiles" methodname="Phase054b_SurfAndBoost_HaveDistinctRolesAndProfiles" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1914964912" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000209" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1186" name="Phase055_GameplayRoleGallery_AssetAndSceneExistWithAllRoles" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase055_GameplayRoleGallery_AssetAndSceneExistWithAllRoles" methodname="Phase055_GameplayRoleGallery_AssetAndSceneExistWithAllRoles" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1699821096" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000304" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1188" name="Phase055_PlatformLong_FormFittingScale_MatchesTopSurface" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase055_PlatformLong_FormFittingScale_MatchesTopSurface" methodname="Phase055_PlatformLong_FormFittingScale_MatchesTopSurface" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="600786955" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000530" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1187" name="Phase055_TheSpiral_RecoveredHumanScaleParkourLayout" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase055_TheSpiral_RecoveredHumanScaleParkourLayout" methodname="Phase055_TheSpiral_RecoveredHumanScaleParkourLayout" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="760280091" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000405" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1185" name="Phase056_MovementEnvelope_IsMeasuredFromLockedProductionProfile" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase056_MovementEnvelope_IsMeasuredFromLockedProductionProfile" methodname="Phase056_MovementEnvelope_IsMeasuredFromLockedProductionProfile" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="108607412" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000485" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1182" name="Phase056_Skybox_MaterialIsProceduralAndRuntimeReady" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase056_Skybox_MaterialIsProceduralAndRuntimeReady" methodname="Phase056_Skybox_MaterialIsProceduralAndRuntimeReady" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1485307418" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000264" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1184" name="Phase056_SpiralStart_ResolvesDeterministicallyWithoutCorrection" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase056_SpiralStart_ResolvesDeterministicallyWithoutCorrection" methodname="Phase056_SpiralStart_ResolvesDeterministicallyWithoutCorrection" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="408773856" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000889" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1177" name="Phase056HandPoseLab_UsesProductionProfileAtExactGameplayFov" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase056HandPoseLab_UsesProductionProfileAtExactGameplayFov" methodname="Phase056HandPoseLab_UsesProductionProfileAtExactGameplayFov" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1733640423" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000222" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1175" name="Phase056Skybox_SeamlessProceduralMaterialIsAvailableInResources" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase056Skybox_SeamlessProceduralMaterialIsAvailableInResources" methodname="Phase056Skybox_SeamlessProceduralMaterialIsAvailableInResources" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1665204626" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000119" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1157" name="Phase056Spiral_BronzeSupportsHaveSafeVariedMeasuredSpacing" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase056Spiral_BronzeSupportsHaveSafeVariedMeasuredSpacing" methodname="Phase056Spiral_BronzeSupportsHaveSafeVariedMeasuredSpacing" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1624359905" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.004533" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1156" name="Phase056Spiral_RhythmLanguageAndMechanicsStayBronzeFriendly" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase056Spiral_RhythmLanguageAndMechanicsStayBronzeFriendly" methodname="Phase056Spiral_RhythmLanguageAndMechanicsStayBronzeFriendly" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="330794032" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001320" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1189" name="Phase057_CanonicalPlatformsResolveWithoutDefaultCarpetTiling" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase057_CanonicalPlatformsResolveWithoutDefaultCarpetTiling" methodname="Phase057_CanonicalPlatformsResolveWithoutDefaultCarpetTiling" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="667385566" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000359" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1191" name="Phase057_DeathRestorePreservesYawWhileManualRestoreUsesCheckpointYaw" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase057_DeathRestorePreservesYawWhileManualRestoreUsesCheckpointYaw" methodname="Phase057_DeathRestorePreservesYawWhileManualRestoreUsesCheckpointYaw" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1937799331" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000234" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1190" name="Phase057_StandardAndSafeKeepTruthfulAuthoredColliderFootprints" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase057_StandardAndSafeKeepTruthfulAuthoredColliderFootprints" methodname="Phase057_StandardAndSafeKeepTruthfulAuthoredColliderFootprints" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1545181624" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000544" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1170" name="Phase057MeshyArtKit_SpiralHasIntentionalVisualOnlyWorldLayers" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase057MeshyArtKit_SpiralHasIntentionalVisualOnlyWorldLayers" methodname="Phase057MeshyArtKit_SpiralHasIntentionalVisualOnlyWorldLayers" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="21506839" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000282" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1200" name="Phase058_SpiralBoostPointsAtReachableGapCloserLanding" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase058_SpiralBoostPointsAtReachableGapCloserLanding" methodname="Phase058_SpiralBoostPointsAtReachableGapCloserLanding" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1824558764" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000447" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1155" name="Phase058Spiral_HasExplicitSafeStartConnectedLandmarksAndOptionalMasteryLines" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase058Spiral_HasExplicitSafeStartConnectedLandmarksAndOptionalMasteryLines" methodname="Phase058Spiral_HasExplicitSafeStartConnectedLandmarksAndOptionalMasteryLines" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1677992304" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000809" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1192" name="Phase060_SpiralWorldHasMandatorySequentialCrumbleLanguage" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase060_SpiralWorldHasMandatorySequentialCrumbleLanguage" methodname="Phase060_SpiralWorldHasMandatorySequentialCrumbleLanguage" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1487818898" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.004541" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1193" name="Phase063_ExposedVisualOnlyDecorationsDoNotPretendToBePlatforms" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase063_ExposedVisualOnlyDecorationsDoNotPretendToBePlatforms" methodname="Phase063_ExposedVisualOnlyDecorationsDoNotPretendToBePlatforms" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="285448228" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000279" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1199" name="Phase065_Recovery_FlowErrorKeepsOnlyIntentionalCleanLandmarks" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase065_Recovery_FlowErrorKeepsOnlyIntentionalCleanLandmarks" methodname="Phase065_Recovery_FlowErrorKeepsOnlyIntentionalCleanLandmarks" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1653323119" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000111" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1198" name="Phase065_Recovery_RemovesFillerDepthClustersFromEarlyModules" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase065_Recovery_RemovesFillerDepthClustersFromEarlyModules" methodname="Phase065_Recovery_RemovesFillerDepthClustersFromEarlyModules" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1776425522" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000152" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1151" name="Phase073CampaignBiomes_AreAssignedAndUsePreparedWorldAssets" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase073CampaignBiomes_AreAssignedAndUsePreparedWorldAssets" methodname="Phase073CampaignBiomes_AreAssignedAndUsePreparedWorldAssets" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1232926628" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000551" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1181" name="Phase075_ArmPresentation_HidesButPreservesRecoveredRyderArmV2" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase075_ArmPresentation_HidesButPreservesRecoveredRyderArmV2" methodname="Phase075_ArmPresentation_HidesButPreservesRecoveredRyderArmV2" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1012685994" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.012948" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1154" name="Phase076AncientAbyss_HasGroupedDepthCompositionAndHeroLandmarkFocus" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase076AncientAbyss_HasGroupedDepthCompositionAndHeroLandmarkFocus" methodname="Phase076AncientAbyss_HasGroupedDepthCompositionAndHeroLandmarkFocus" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="327343071" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001096" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1150" name="Phase076VisualSlice_UsesRouteSupportRolesAndGroupedVegetation" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase076VisualSlice_UsesRouteSupportRolesAndGroupedVegetation" methodname="Phase076VisualSlice_UsesRouteSupportRolesAndGroupedVegetation" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1242356058" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001191" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1194" name="Phase079_FlowErrorDoesNotPutTriggerOnlyWaterOnTheRequiredRoute" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase079_FlowErrorDoesNotPutTriggerOnlyWaterOnTheRequiredRoute" methodname="Phase079_FlowErrorDoesNotPutTriggerOnlyWaterOnTheRequiredRoute" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1165909404" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000164" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1195" name="Phase079_FlowErrorRequiredRouteIsDistinctSupportedAndBronzeBounded" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase079_FlowErrorRequiredRouteIsDistinctSupportedAndBronzeBounded" methodname="Phase079_FlowErrorRequiredRouteIsDistinctSupportedAndBronzeBounded" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="77682633" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.007621" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1161" name="Phase079RouteReadability_OrdinaryBlocksHaveNoGeneratedFlowHelpers" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase079RouteReadability_OrdinaryBlocksHaveNoGeneratedFlowHelpers" methodname="Phase079RouteReadability_OrdinaryBlocksHaveNoGeneratedFlowHelpers" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="407110878" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000330" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1153" name="Phase080AncientAbyss_HasCuratedWorldEnvelopeWithoutPlanarMistFloor" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase080AncientAbyss_HasCuratedWorldEnvelopeWithoutPlanarMistFloor" methodname="Phase080AncientAbyss_HasCuratedWorldEnvelopeWithoutPlanarMistFloor" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1291475501" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001140" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1196" name="Phase081_Module003BoostArcComfortablyReachesTheAuthoredLanding" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase081_Module003BoostArcComfortablyReachesTheAuthoredLanding" methodname="Phase081_Module003BoostArcComfortablyReachesTheAuthoredLanding" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="635734844" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000723" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1197" name="Phase081_Module003MovingBridgeProvidesUsefulSafeTransportation" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase081_Module003MovingBridgeProvidesUsefulSafeTransportation" methodname="Phase081_Module003MovingBridgeProvidesUsefulSafeTransportation" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1175619218" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000563" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1176" name="Phase081AncientAbyssSkybox_UsesSeamlessCubemapProjection" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase081AncientAbyssSkybox_UsesSeamlessCubemapProjection" methodname="Phase081AncientAbyssSkybox_UsesSeamlessCubemapProjection" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="927180995" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000626" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1149" name="Phase2ModuleAssets_ArePresentAndValid" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Phase2ModuleAssets_ArePresentAndValid" methodname="Phase2ModuleAssets_ArePresentAndValid" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="992694862" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000701" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1201" name="Quality130_HugeSurfaceUsesOneAuthoredDeckInsteadOfPadField" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.Quality130_HugeSurfaceUsesOneAuthoredDeckInsteadOfPadField" methodname="Quality130_HugeSurfaceUsesOneAuthoredDeckInsteadOfPadField" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1200929023" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000474" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1171" name="SkyCity093_OpeningTerraceAndStandardStepsUseWelcomingFootprints" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.SkyCity093_OpeningTerraceAndStandardStepsUseWelcomingFootprints" methodname="SkyCity093_OpeningTerraceAndStandardStepsUseWelcomingFootprints" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1010457390" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000325" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1142" name="WaterFlowMath_CapsAddedVelocity" fullname="Avoidance.Tests.EditMode.Phase2ModuleTests.WaterFlowMath_CapsAddedVelocity" methodname="WaterFlowMath_CapsAddedVelocity" classname="Avoidance.Tests.EditMode.Phase2ModuleTests" runstate="Runnable" seed="1454022644" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000269" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1202" name="Phase3RankingTests" fullname="Avoidance.Tests.EditMode.Phase3RankingTests" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.009991" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1213" name="CompletionRewards_DevelopmentRunsDoNotGrant" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.CompletionRewards_DevelopmentRunsDoNotGrant" methodname="CompletionRewards_DevelopmentRunsDoNotGrant" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="441423485" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001285" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1212" name="CompletionRewards_ValidBronzeCompletionGrantsOnce" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.CompletionRewards_ValidBronzeCompletionGrantsOnce" methodname="CompletionRewards_ValidBronzeCompletionGrantsOnce" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1094424198" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001241" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1208" name="ModuleValidator_RejectsInvalidRankThresholdOrdering" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.ModuleValidator_RejectsInvalidRankThresholdOrdering" methodname="ModuleValidator_RejectsInvalidRankThresholdOrdering" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1951723349" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000293" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1211" name="PersonalBest_FasterValidRunReplacesButSlowerAndInvalidDoNot" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.PersonalBest_FasterValidRunReplacesButSlowerAndInvalidDoNot" methodname="PersonalBest_FasterValidRunReplacesButSlowerAndInvalidDoNot" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1657620940" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000353" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1210" name="Progression_BronzeCompletionUnlocksNextModule" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.Progression_BronzeCompletionUnlocksNextModule" methodname="Progression_BronzeCompletionUnlocksNextModule" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1396549315" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000221" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1207" name="RankEvaluation_UsesBronzeMinimumAndExactBoundaries" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.RankEvaluation_UsesBronzeMinimumAndExactBoundaries" methodname="RankEvaluation_UsesBronzeMinimumAndExactBoundaries" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1901801988" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000248" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1217" name="ResultModel_DuplicateCompletionReturnsSameFrozenResult" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.ResultModel_DuplicateCompletionReturnsSameFrozenResult" methodname="ResultModel_DuplicateCompletionReturnsSameFrozenResult" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="850815862" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000971" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1216" name="ResultModel_ReportsNextRankGap" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.ResultModel_ReportsNextRankGap" methodname="ResultModel_ReportsNextRankGap" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="947535527" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000207" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1204" name="RunTimer_CompletionFreezesFinalTime" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.RunTimer_CompletionFreezesFinalTime" methodname="RunTimer_CompletionFreezesFinalTime" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1123287107" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000125" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1203" name="RunTimer_RestoreDoesNotResetButFullRestartDoes" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.RunTimer_RestoreDoesNotResetButFullRestartDoes" methodname="RunTimer_RestoreDoesNotResetButFullRestartDoes" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="871785959" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000104" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1205" name="RunTimer_StopPausesUntilStartedAgain" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.RunTimer_StopPausesUntilStartedAgain" methodname="RunTimer_StopPausesUntilStartedAgain" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1490723090" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000085" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1209" name="Score_IsStrictlyBetterForFasterComparableRuns" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.Score_IsStrictlyBetterForFasterComparableRuns" methodname="Score_IsStrictlyBetterForFasterComparableRuns" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1147295013" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.001775" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1215" name="SplitComparison_AllowsZeroMissingAndManyRestorePoints" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.SplitComparison_AllowsZeroMissingAndManyRestorePoints" methodname="SplitComparison_AllowsZeroMissingAndManyRestorePoints" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="889344797" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000875" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1214" name="SplitComparison_ComputesAheadAndBehindDeltas" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.SplitComparison_ComputesAheadAndBehindDeltas" methodname="SplitComparison_ComputesAheadAndBehindDeltas" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="995958718" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000300" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1206" name="TimerFormatting_UsesMinutesSecondsMilliseconds" fullname="Avoidance.Tests.EditMode.Phase3RankingTests.TimerFormatting_UsesMinutesSecondsMilliseconds" methodname="TimerFormatting_UsesMinutesSecondsMilliseconds" classname="Avoidance.Tests.EditMode.Phase3RankingTests" runstate="Runnable" seed="1940844613" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000451" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1218" name="Production091Tests" fullname="Avoidance.Tests.EditMode.Production091Tests" classname="Avoidance.Tests.EditMode.Production091Tests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.045928" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1219" name="EveryNearArchitecturalMeshHasOptedInMatchingCollision" fullname="Avoidance.Tests.EditMode.Production091Tests.EveryNearArchitecturalMeshHasOptedInMatchingCollision" methodname="EveryNearArchitecturalMeshHasOptedInMatchingCollision" classname="Avoidance.Tests.EditMode.Production091Tests" runstate="Runnable" seed="1781453609" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.041910" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1221" name="FlowChallengeUsesUniqueAuthoredIdsAndCountsEachOnlyOnce" fullname="Avoidance.Tests.EditMode.Production091Tests.FlowChallengeUsesUniqueAuthoredIdsAndCountsEachOnlyOnce" methodname="FlowChallengeUsesUniqueAuthoredIdsAndCountsEachOnlyOnce" classname="Avoidance.Tests.EditMode.Production091Tests" runstate="Runnable" seed="1464848474" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.002639" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1220" name="HapticsAreRestrainedAndDoNotFireForContinuousMovement" fullname="Avoidance.Tests.EditMode.Production091Tests.HapticsAreRestrainedAndDoNotFireForContinuousMovement" methodname="HapticsAreRestrainedAndDoNotFireForContinuousMovement" classname="Avoidance.Tests.EditMode.Production091Tests" runstate="Runnable" seed="645147004" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.000717" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1222" name="Production110Tests" fullname="Avoidance.Tests.EditMode.Production110Tests" classname="Avoidance.Tests.EditMode.Production110Tests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:52Z" duration="1.939566" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1224" name="CampaignHasDistinctTextureFreeAtmospheresAndQuietAudio" fullname="Avoidance.Tests.EditMode.Production110Tests.CampaignHasDistinctTextureFreeAtmospheresAndQuietAudio" methodname="CampaignHasDistinctTextureFreeAtmospheresAndQuietAudio" classname="Avoidance.Tests.EditMode.Production110Tests" runstate="Runnable" seed="1825813979" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:50Z" duration="0.002599" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1223" name="FifthRoadIsCompleteAndStartupPreservesIt" fullname="Avoidance.Tests.EditMode.Production110Tests.FifthRoadIsCompleteAndStartupPreservesIt" methodname="FifthRoadIsCompleteAndStartupPreservesIt" classname="Avoidance.Tests.EditMode.Production110Tests" runstate="Runnable" seed="762657588" result="Passed" start-time="2026-09-12 16:11:50Z" end-time="2026-09-12 16:11:52Z" duration="1.936038" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1225" name="ProductionTakeoverTests" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.013690" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1240" name="AncientAbyssDecorativeFoundationsStayWellBelowThePlayableLane" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.AncientAbyssDecorativeFoundationsStayWellBelowThePlayableLane" methodname="AncientAbyssDecorativeFoundationsStayWellBelowThePlayableLane" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="1879043232" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.009109" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1237" name="FerryDwellsAtBothEndpointsAndResumesWithoutTeleporting" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.FerryDwellsAtBothEndpointsAndResumesWithoutTeleporting" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.001019" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1235" name="FerryDwellsAtBothEndpointsAndResumesWithoutTeleporting(Linear)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.FerryDwellsAtBothEndpointsAndResumesWithoutTeleporting(Linear)" methodname="FerryDwellsAtBothEndpointsAndResumesWithoutTeleporting" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="240058261" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000481" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1236" name="FerryDwellsAtBothEndpointsAndResumesWithoutTeleporting(SmoothStep)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.FerryDwellsAtBothEndpointsAndResumesWithoutTeleporting(SmoothStep)" methodname="FerryDwellsAtBothEndpointsAndResumesWithoutTeleporting" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="1908038040" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000057" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1238" name="FerryHandlesRepeatedPointsAndZeroPause" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.FerryHandlesRepeatedPointsAndZeroPause" methodname="FerryHandlesRepeatedPointsAndZeroPause" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="1372493834" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000129" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1239" name="MissingAudioIsSilentButStillPublishesFeedbackIntent" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.MissingAudioIsSilentButStillPublishesFeedbackIntent" methodname="MissingAudioIsSilentButStillPublishesFeedbackIntent" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="1549402747" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000700" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1233" name="NextCampaignNeverIncludesSpiralOrLabs" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.NextCampaignNeverIncludesSpiralOrLabs" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000754" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1226" name="NextCampaignNeverIncludesSpiralOrLabs(&quot;module.001.first-steps&quot;,&quot;module.002.moving-parts&quot;)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.NextCampaignNeverIncludesSpiralOrLabs(&quot;module.001.first-steps&quot;,&quot;module.002.moving-parts&quot;)" methodname="NextCampaignNeverIncludesSpiralOrLabs" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="1471353457" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000163" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1227" name="NextCampaignNeverIncludesSpiralOrLabs(&quot;module.002.moving-parts&quot;,&quot;module.003.flow-error&quot;)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.NextCampaignNeverIncludesSpiralOrLabs(&quot;module.002.moving-parts&quot;,&quot;module.003.flow-error&quot;)" methodname="NextCampaignNeverIncludesSpiralOrLabs" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="1089549150" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000028" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1228" name="NextCampaignNeverIncludesSpiralOrLabs(&quot;module.003.flow-error&quot;,&quot;module.004.solar-foundry&quot;)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.NextCampaignNeverIncludesSpiralOrLabs(&quot;module.003.flow-error&quot;,&quot;module.004.solar-foundry&quot;)" methodname="NextCampaignNeverIncludesSpiralOrLabs" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="584780560" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000022" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1229" name="NextCampaignNeverIncludesSpiralOrLabs(&quot;module.004.solar-foundry&quot;,&quot;module.005.foundry-pulse&quot;)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.NextCampaignNeverIncludesSpiralOrLabs(&quot;module.004.solar-foundry&quot;,&quot;module.005.foundry-pulse&quot;)" methodname="NextCampaignNeverIncludesSpiralOrLabs" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="1055157539" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000020" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1230" name="NextCampaignNeverIncludesSpiralOrLabs(&quot;module.005.foundry-pulse&quot;,null)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.NextCampaignNeverIncludesSpiralOrLabs(&quot;module.005.foundry-pulse&quot;,null)" methodname="NextCampaignNeverIncludesSpiralOrLabs" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="288257593" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000020" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1231" name="NextCampaignNeverIncludesSpiralOrLabs(&quot;module.004.the-spiral&quot;,null)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.NextCampaignNeverIncludesSpiralOrLabs(&quot;module.004.the-spiral&quot;,null)" methodname="NextCampaignNeverIncludesSpiralOrLabs" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="278167701" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000019" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1232" name="NextCampaignNeverIncludesSpiralOrLabs(&quot;module.lab.art-scale-collision&quot;,null)" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.NextCampaignNeverIncludesSpiralOrLabs(&quot;module.lab.art-scale-collision&quot;,null)" methodname="NextCampaignNeverIncludesSpiralOrLabs" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="725097493" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000023" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1234" name="ResultsPrioritizeMasteryWithoutEconomyClutter" fullname="Avoidance.Tests.EditMode.ProductionTakeoverTests.ResultsPrioritizeMasteryWithoutEconomyClutter" methodname="ResultsPrioritizeMasteryWithoutEconomyClutter" classname="Avoidance.Tests.EditMode.ProductionTakeoverTests" runstate="Runnable" seed="844919337" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000900" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1241" name="SaveSystemTests" fullname="Avoidance.Tests.EditMode.SaveSystemTests" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.019113" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1248" name="EconomyProgression_AddsAndSpendsStableCurrency" fullname="Avoidance.Tests.EditMode.SaveSystemTests.EconomyProgression_AddsAndSpendsStableCurrency" methodname="EconomyProgression_AddsAndSpendsStableCurrency" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="643455238" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000293" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1242" name="Initialize_CreatesNewSave_WhenNoSaveExists" fullname="Avoidance.Tests.EditMode.SaveSystemTests.Initialize_CreatesNewSave_WhenNoSaveExists" methodname="Initialize_CreatesNewSave_WhenNoSaveExists" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="1881626581" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.001007" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1250" name="InventoryProgression_EquipsOnlyUnlockedCosmetics" fullname="Avoidance.Tests.EditMode.SaveSystemTests.InventoryProgression_EquipsOnlyUnlockedCosmetics" methodname="InventoryProgression_EquipsOnlyUnlockedCosmetics" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="1062930908" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000412" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1249" name="InventoryProgression_StacksItemsAndPreservesFirstAcquiredTime" fullname="Avoidance.Tests.EditMode.SaveSystemTests.InventoryProgression_StacksItemsAndPreservesFirstAcquiredTime" methodname="InventoryProgression_StacksItemsAndPreservesFirstAcquiredTime" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="855451142" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000165" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1243" name="Reload_LoadsExistingSave" fullname="Avoidance.Tests.EditMode.SaveSystemTests.Reload_LoadsExistingSave" methodname="Reload_LoadsExistingSave" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="477443821" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000459" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1245" name="Reload_MigratesExampleV1ToV2" fullname="Avoidance.Tests.EditMode.SaveSystemTests.Reload_MigratesExampleV1ToV2" methodname="Reload_MigratesExampleV1ToV2" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="1926574849" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000672" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1246" name="Reload_MigratesV2ToV3ProgressionShape" fullname="Avoidance.Tests.EditMode.SaveSystemTests.Reload_MigratesV2ToV3ProgressionShape" methodname="Reload_MigratesV2ToV3ProgressionShape" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="1983454431" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000442" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1247" name="Reload_MigratesV3ToV4EconomyInventoryShape" fullname="Avoidance.Tests.EditMode.SaveSystemTests.Reload_MigratesV3ToV4EconomyInventoryShape" methodname="Reload_MigratesV3ToV4EconomyInventoryShape" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="414215094" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000500" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1244" name="Reload_RecoversBackup_WhenPrimaryIsCorrupt" fullname="Avoidance.Tests.EditMode.SaveSystemTests.Reload_RecoversBackup_WhenPrimaryIsCorrupt" methodname="Reload_RecoversBackup_WhenPrimaryIsCorrupt" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="104016358" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000345" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1251" name="SavePathMigration_CopiesLegacySaveWhenCurrentSaveIsMissing" fullname="Avoidance.Tests.EditMode.SaveSystemTests.SavePathMigration_CopiesLegacySaveWhenCurrentSaveIsMissing" methodname="SavePathMigration_CopiesLegacySaveWhenCurrentSaveIsMissing" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="184505678" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.010030" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Copied legacy save data from C:/Users/lin4s/AppData/Local/Temp/Ryders Block Studio/Ryder's Road\RydersRoadSaveMigration_ea6938000f184951a4b64b894a715844\RYDERS BLOCK\Saves for Ryder's Road.
+]]></output>
+              </test-case>
+              <test-case id="1252" name="SavePathMigration_DoesNotOverwriteCurrentSave" fullname="Avoidance.Tests.EditMode.SaveSystemTests.SavePathMigration_DoesNotOverwriteCurrentSave" methodname="SavePathMigration_DoesNotOverwriteCurrentSave" classname="Avoidance.Tests.EditMode.SaveSystemTests" runstate="Runnable" seed="1623059582" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.003879" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1253" name="SkyCity093Tests" fullname="Avoidance.Tests.EditMode.SkyCity093Tests" classname="Avoidance.Tests.EditMode.SkyCity093Tests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:54Z" duration="1.912155" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1257" name="BakedWorldStaysWithinMobileGeometryBudget" fullname="Avoidance.Tests.EditMode.SkyCity093Tests.BakedWorldStaysWithinMobileGeometryBudget" methodname="BakedWorldStaysWithinMobileGeometryBudget" classname="Avoidance.Tests.EditMode.SkyCity093Tests" runstate="Runnable" seed="1165570917" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000754" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1256" name="IntroRouteKeepsStableContractsAndHasWelcomingLandings" fullname="Avoidance.Tests.EditMode.SkyCity093Tests.IntroRouteKeepsStableContractsAndHasWelcomingLandings" methodname="IntroRouteKeepsStableContractsAndHasWelcomingLandings" classname="Avoidance.Tests.EditMode.SkyCity093Tests" runstate="Runnable" seed="1826668820" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.000546" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1255" name="NearArchitectureIsSolidAndDistantDistrictsStayOutsideJumpReach" fullname="Avoidance.Tests.EditMode.SkyCity093Tests.NearArchitectureIsSolidAndDistantDistrictsStayOutsideJumpReach" methodname="NearArchitectureIsSolidAndDistantDistrictsStayOutsideJumpReach" classname="Avoidance.Tests.EditMode.SkyCity093Tests" runstate="Runnable" seed="1109620303" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:52Z" duration="0.010419" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1254" name="StartupSetupPreservesAuthoredCityAndRoute" fullname="Avoidance.Tests.EditMode.SkyCity093Tests.StartupSetupPreservesAuthoredCityAndRoute" methodname="StartupSetupPreservesAuthoredCityAndRoute" classname="Avoidance.Tests.EditMode.SkyCity093Tests" runstate="Runnable" seed="794435038" result="Passed" start-time="2026-09-12 16:11:52Z" end-time="2026-09-12 16:11:54Z" duration="1.899767" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1258" name="SmartParkourCameraTests" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.008235" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1266" name="BranchIntent_CommitsAfterSustainedShortcutEvidence" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.BranchIntent_CommitsAfterSustainedShortcutEvidence" methodname="BranchIntent_CommitsAfterSustainedShortcutEvidence" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="2101263913" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.002530" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1267" name="BranchIntent_HysteresisRejectsBriefForkNoise" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.BranchIntent_HysteresisRejectsBriefForkNoise" methodname="BranchIntent_HysteresisRejectsBriefForkNoise" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="2135444326" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.000274" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1265" name="BranchIntent_StaysNeutralWithoutMovementEvidence" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.BranchIntent_StaysNeutralWithoutMovementEvidence" methodname="BranchIntent_StaysNeutralWithoutMovementEvidence" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="236606865" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.000200" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1259" name="CameraCone_HasDeadZoneAndSmoothOuterResponse" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.CameraCone_HasDeadZoneAndSmoothOuterResponse" methodname="CameraCone_HasDeadZoneAndSmoothOuterResponse" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="292753826" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.000384" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1260" name="CameraCone_ResponseIsContinuousAndMonotonic" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.CameraCone_ResponseIsContinuousAndMonotonic" methodname="CameraCone_ResponseIsContinuousAndMonotonic" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="750119208" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.000434" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1268" name="RouteGraph_ReacquiresShortcutNearBranchAndPrimaryAfterMerge" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.RouteGraph_ReacquiresShortcutNearBranchAndPrimaryAfterMerge" methodname="RouteGraph_ReacquiresShortcutNearBranchAndPrimaryAfterMerge" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="580366290" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.000434" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1261" name="SmartCamera_DoesNotUseRawStickNoiseWhenVelocityIsClear" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.SmartCamera_DoesNotUseRawStickNoiseWhenVelocityIsClear" methodname="SmartCamera_DoesNotUseRawStickNoiseWhenVelocityIsClear" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="849695011" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.001907" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1263" name="SmartCamera_OffRouteFallsBackToVelocityLookAhead" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.SmartCamera_OffRouteFallsBackToVelocityLookAhead" methodname="SmartCamera_OffRouteFallsBackToVelocityLookAhead" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="1918395485" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.000244" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1262" name="SmartCamera_StationarySteeringCanTurnCameraWithoutVelocity" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.SmartCamera_StationarySteeringCanTurnCameraWithoutVelocity" methodname="SmartCamera_StationarySteeringCanTurnCameraWithoutVelocity" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="866432947" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.000167" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1264" name="SmartCamera_VerticalFramingPitchesUpAndDown" fullname="Avoidance.Tests.EditMode.SmartParkourCameraTests.SmartCamera_VerticalFramingPitchesUpAndDown" methodname="SmartCamera_VerticalFramingPitchesUpAndDown" classname="Avoidance.Tests.EditMode.SmartParkourCameraTests" runstate="Runnable" seed="2066907541" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.000351" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1269" name="SolarFoundryContentTests" fullname="Avoidance.Tests.EditMode.SolarFoundryContentTests" classname="Avoidance.Tests.EditMode.SolarFoundryContentTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:56Z" duration="2.024537" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1271" name="FoundryHasCompleteBoundedContentAndExplicitCollision" fullname="Avoidance.Tests.EditMode.SolarFoundryContentTests.FoundryHasCompleteBoundedContentAndExplicitCollision" methodname="FoundryHasCompleteBoundedContentAndExplicitCollision" classname="Avoidance.Tests.EditMode.SolarFoundryContentTests" runstate="Runnable" seed="1746036073" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:54Z" duration="0.005072" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Solar Foundry world: 17664 triangles, 44 renderers before combining.
+]]></output>
+              </test-case>
+              <test-case id="1270" name="StartupPreservesFoundryAndLegacySpiralIdentity" fullname="Avoidance.Tests.EditMode.SolarFoundryContentTests.StartupPreservesFoundryAndLegacySpiralIdentity" methodname="StartupPreservesFoundryAndLegacySpiralIdentity" classname="Avoidance.Tests.EditMode.SolarFoundryContentTests" runstate="Runnable" seed="349745439" result="Passed" start-time="2026-09-12 16:11:54Z" end-time="2026-09-12 16:11:56Z" duration="2.019057" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1272" name="VersionedBestTests" fullname="Avoidance.Tests.EditMode.VersionedBestTests" classname="Avoidance.Tests.EditMode.VersionedBestTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.002777" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1274" name="LegacyRecordsAndUnlocksSurviveNewSlowerRouteAndReload" fullname="Avoidance.Tests.EditMode.VersionedBestTests.LegacyRecordsAndUnlocksSurviveNewSlowerRouteAndReload" methodname="LegacyRecordsAndUnlocksSurviveNewSlowerRouteAndReload" classname="Avoidance.Tests.EditMode.VersionedBestTests" runstate="Runnable" seed="1012215695" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.000981" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1273" name="MusicDefaultsAndPreferencesAreAdditive" fullname="Avoidance.Tests.EditMode.VersionedBestTests.MusicDefaultsAndPreferencesAreAdditive" methodname="MusicDefaultsAndPreferencesAreAdditive" classname="Avoidance.Tests.EditMode.VersionedBestTests" runstate="Runnable" seed="50353318" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.000588" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1275" name="SharedMovementCreatesItsOwnBucketWithoutRelabelingHistory" fullname="Avoidance.Tests.EditMode.VersionedBestTests.SharedMovementCreatesItsOwnBucketWithoutRelabelingHistory" methodname="SharedMovementCreatesItsOwnBucketWithoutRelabelingHistory" classname="Avoidance.Tests.EditMode.VersionedBestTests" runstate="Runnable" seed="1256455860" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.000250" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1276" name="VerticalSliceTests" fullname="Avoidance.Tests.EditMode.VerticalSliceTests" classname="Avoidance.Tests.EditMode.VerticalSliceTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.006136" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1279" name="SliceAudioAndLightingUseSharedProfiles" fullname="Avoidance.Tests.EditMode.VerticalSliceTests.SliceAudioAndLightingUseSharedProfiles" methodname="SliceAudioAndLightingUseSharedProfiles" classname="Avoidance.Tests.EditMode.VerticalSliceTests" runstate="Runnable" seed="1014404902" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.004053" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1277" name="SolidSceneryRequiresExplicitTraversalOptIn" fullname="Avoidance.Tests.EditMode.VerticalSliceTests.SolidSceneryRequiresExplicitTraversalOptIn" methodname="SolidSceneryRequiresExplicitTraversalOptIn" classname="Avoidance.Tests.EditMode.VerticalSliceTests" runstate="Runnable" seed="1696622826" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.000314" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1278" name="WindwardHasCommittedGapsAndSharedSkipGeometry" fullname="Avoidance.Tests.EditMode.VerticalSliceTests.WindwardHasCommittedGapsAndSharedSkipGeometry" methodname="WindwardHasCommittedGapsAndSharedSkipGeometry" classname="Avoidance.Tests.EditMode.VerticalSliceTests" runstate="Runnable" seed="1855923389" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.001395" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1280" name="World170Tests" fullname="Avoidance.Tests.EditMode.World170Tests" classname="Avoidance.Tests.EditMode.World170Tests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:58Z" duration="1.983339" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1282" name="AllWorldsUseCohesiveLightingAndColliderFreeSkins" fullname="Avoidance.Tests.EditMode.World170Tests.AllWorldsUseCohesiveLightingAndColliderFreeSkins" methodname="AllWorldsUseCohesiveLightingAndColliderFreeSkins" classname="Avoidance.Tests.EditMode.World170Tests" runstate="Runnable" seed="2028487424" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.000523" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1283" name="FoundryAddsOptionalExistingMechanicsWithoutReplacingSafeCourse" fullname="Avoidance.Tests.EditMode.World170Tests.FoundryAddsOptionalExistingMechanicsWithoutReplacingSafeCourse" methodname="FoundryAddsOptionalExistingMechanicsWithoutReplacingSafeCourse" classname="Avoidance.Tests.EditMode.World170Tests" runstate="Runnable" seed="480049241" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:56Z" duration="0.000269" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1281" name="StartupPreservesAuthoredSpiralGeometryAndPresentation" fullname="Avoidance.Tests.EditMode.World170Tests.StartupPreservesAuthoredSpiralGeometryAndPresentation" methodname="StartupPreservesAuthoredSpiralGeometryAndPresentation" classname="Avoidance.Tests.EditMode.World170Tests" runstate="Runnable" seed="642279212" result="Passed" start-time="2026-09-12 16:11:56Z" end-time="2026-09-12 16:11:58Z" duration="1.982125" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/lin4s/AppData/LocalLow/Ryders Block Studio/Ryder's Road\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

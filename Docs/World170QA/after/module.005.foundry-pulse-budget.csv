@@ -1,0 +1,32 @@
+kind,name,detail
+scene,instances,119
+scene,instancedTriangles,24619
+scene,materials,14
+scene,shadowCasters,101
+scene,lodGroups,0
+machine,gpu,NVIDIA GeForce RTX 5070
+material,Brass,Universal Render Pipeline/Lit instancing=False
+material,Ivory,Universal Render Pipeline/Lit instancing=True
+material,Porcelain,Universal Render Pipeline/Lit instancing=False
+material,Sail,Universal Render Pipeline/Lit instancing=False
+material,RB Module Normal,Universal Render Pipeline/Lit instancing=False
+texture,RydersRoad_RouteStone_02,512x512 _MainTex
+texture,RydersRoad_RouteStone_02,512x512 _BaseMap
+material,Structure,Universal Render Pipeline/Lit instancing=True
+material,RB Module Crumbling,Universal Render Pipeline/Lit instancing=False
+material,Metal,Universal Render Pipeline/Lit instancing=True
+material,Warm,Universal Render Pipeline/Lit instancing=True
+material,Ink,Universal Render Pipeline/Lit instancing=False
+material,MAT_RR_Crumble_Stage1,Universal Render Pipeline/Lit instancing=False
+texture,RR_Crumble_Stage1_Base,1024x1024 _MainTex
+texture,RR_Crumble_Stage1_Normal,1024x1024 _BumpMap
+texture,RR_Crumble_Stage1_Base,1024x1024 _BaseMap
+texture,RR_Crumble_Stage1_Metallic,1024x1024 _MetallicGlossMap
+material,Cyan,Universal Render Pipeline/Lit instancing=False
+material,MAT_RR_PatchBlock,Universal Render Pipeline/Lit instancing=False
+texture,RR_PatchBlock_Base,2048x2048 _MainTex
+texture,RR_PatchBlock_Normal,2048x2048 _BumpMap
+texture,RR_PatchBlock_Base,2048x2048 _BaseMap
+texture,RR_PatchBlock_Metallic,2048x2048 _MetallicGlossMap
+texture,RR_PatchBlock_CyanEmission,2048x2048 _EmissionMap
+material,Lit,Universal Render Pipeline/Lit instancing=False

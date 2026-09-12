@@ -1,0 +1,1 @@
+Compared baseline HEAD 088ecad50f1421522d45ac0929f84d2d839ff362 module serialization against 0.17.0. Identical after excluding the visual-profile pointer and trailing whitespace. Geometry, anchors, content version, ranks and mechanics unchanged.

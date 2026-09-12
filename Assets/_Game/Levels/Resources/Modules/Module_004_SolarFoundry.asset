@@ -17,11 +17,11 @@ MonoBehaviour:
   _internalName: module_004_solar_foundry
   _projectId: project.ryders-block
   _worldId: world.solar-foundry
-  _contentVersion: 4
+  _contentVersion: 5
   _sceneName: ModuleRunner
   _difficulty: 2
   _startPoint:
-    _position: {x: 0, y: 0.35, z: -1}
+    _position: {x: 0, y: 0.35, z: 0}
     _eulerAngles: {x: 0, y: 0, z: 0}
   _startAnchorStableId: start.module-004.solar-foundry
   _startSupportBlockStableId: m04.intake.start
@@ -31,7 +31,7 @@ MonoBehaviour:
   _patchBlock:
     _stableId: patch.module-004.solar-foundry
     _pose:
-      _position: {x: -5, y: 10.3, z: 109.38}
+      _position: {x: -5, y: 5.1, z: 173}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m04.patch.base
     _size: {x: 2.2, y: 2.2, z: 2.2}
@@ -39,21 +39,21 @@ MonoBehaviour:
   - _stableId: restore.module-004.transfer
     _order: 0
     _pose:
-      _position: {x: 11, y: 3, z: 35.38}
+      _position: {x: 9, y: 1.2, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m04.transfer.dock
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-004.furnace
     _order: 1
     _pose:
-      _position: {x: 22, y: 6, z: 67.38}
+      _position: {x: 22, y: 3, z: 94}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m04.furnace.court
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-004.crown
     _order: 2
     _pose:
-      _position: {x: 2, y: 8.5, z: 94.38}
+      _position: {x: 2, y: 4.2, z: 143}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m04.crown.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
@@ -67,17 +67,17 @@ MonoBehaviour:
     _thresholdVersion: 2
     _designerNotes: '0.13.0 candidate: continuous scripted fast line ~17s; old S23
       PB 28.421s is a different layout. Human calibration pending; Bronze unlimited.'
-  _mechanicsUsed: 000000000200000007000000030000000400000008000000
+  _mechanicsUsed: 000000000200000007000000030000000400000008000000050000000a000000
   _optionalShortcuts:
   - _stableId: shortcut.module-004.transfer
     _displayName: Outer maintenance brackets
-    _entryPosition: {x: 17.5, y: 3.4, z: 36.88}
-    _exitPosition: {x: 19, y: 4, z: 48.38}
+    _entryPosition: {x: 22, y: 1.6, z: 48}
+    _exitPosition: {x: 19, y: 2.2, z: 65}
     _estimatedTimeSaved: 4
     _mechanics: 01000000
   _environmentProfile: {fileID: 11400000, guid: 0a91a0194510cb941a376c99f05d6c77, type: 2}
   _environmentBiomeProfile: {fileID: 11400000, guid: c0ede96237c851b4587bf2eac87cd8f0, type: 2}
-  _visualProfile: {fileID: 11400000, guid: 9a80bac5e23eb1242b67a89e9782a19c, type: 2}
+  _visualProfile: {fileID: 11400000, guid: d867b5cd24fb5bf4580920e8cf9f9066, type: 2}
   _loreBugDescription: Reconnect the suspended solar works.
   _developerNotes: Intake / Inspection Gantry / Transfer / Cooling Fins / Crown.
     Explicitly authored; no startup regeneration. Physical rank calibration pending.
@@ -86,211 +86,226 @@ MonoBehaviour:
     _pose:
       _position: {x: 0, y: 0, z: 0}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 4}
+    _size: {x: 10, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.intake.pipe-a
     _pose:
-      _position: {x: 0, y: 0.5, z: 6.1000004}
+      _position: {x: 0, y: 0.2, z: 8.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3}
+    _size: {x: 10, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.intake.pipe-b
     _pose:
-      _position: {x: 0, y: 1, z: 11.59}
+      _position: {x: 0, y: 0.4, z: 13.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3}
+    _size: {x: 11, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.intake.gantry
     _pose:
-      _position: {x: 2, y: 1.5, z: 17.08}
+      _position: {x: 1, y: 0.6, z: 21}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 4}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.inspection.a
     _pose:
-      _position: {x: 5, y: 2, z: 23.18}
+      _position: {x: 3, y: 0.8, z: 28}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 4}
+    _size: {x: 12, y: 0.6, z: 6}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.inspection.b
     _pose:
-      _position: {x: 8, y: 2.5, z: 29.28}
+      _position: {x: 6, y: 1, z: 35}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 4}
+    _size: {x: 12, y: 0.6, z: 5}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.transfer.dock
     _pose:
-      _position: {x: 11, y: 3, z: 35.38}
+      _position: {x: 9, y: 1.2, z: 44}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 6, y: 0.6, z: 5}
+    _size: {x: 16, y: 0.6, z: 12}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.transfer.exit
     _pose:
-      _position: {x: 19, y: 4, z: 48.38}
+      _position: {x: 19, y: 2.2, z: 65}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 6, y: 0.6, z: 5}
+    _size: {x: 14, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.outer.a
     _pose:
-      _position: {x: 22, y: 4.5, z: 53.38}
+      _position: {x: 22, y: 2.4, z: 74}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.6, y: 0.6, z: 3.6}
+    _size: {x: 12, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.outer.b
     _pose:
-      _position: {x: 24, y: 5, z: 57.88}
+      _position: {x: 24, y: 2.6, z: 79}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.6, y: 0.6, z: 3.6}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.outer.c
     _pose:
-      _position: {x: 24, y: 5.5, z: 62.38}
+      _position: {x: 24, y: 2.8, z: 85}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.6, y: 0.6, z: 3.6}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.furnace.court
     _pose:
-      _position: {x: 22, y: 6, z: 67.38}
+      _position: {x: 22, y: 3, z: 94}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 5}
+    _size: {x: 16, y: 0.6, z: 12}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.cooling.safe
     _pose:
-      _position: {x: 11, y: 7, z: 79.38}
+      _position: {x: 11, y: 3.6, z: 117}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 6, y: 0.6, z: 5.4}
+    _size: {x: 16, y: 0.6, z: 12}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.crown.run-a
     _pose:
-      _position: {x: 8, y: 7.5, z: 84.38}
+      _position: {x: 8, y: 3.8, z: 127}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 4}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.crown.run-b
     _pose:
-      _position: {x: 5, y: 8, z: 89.38}
+      _position: {x: 5, y: 4, z: 133}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 4}
+    _size: {x: 12, y: 0.6, z: 5.5}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.crown.restore
     _pose:
-      _position: {x: 2, y: 8.5, z: 94.38}
+      _position: {x: 2, y: 4.2, z: 143}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 5}
+    _size: {x: 16, y: 0.6, z: 12}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.crown.beam-a
     _pose:
-      _position: {x: 0, y: 9, z: 99.38}
+      _position: {x: 0, y: 4.4, z: 153}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 3}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.crown.beam-b
     _pose:
-      _position: {x: -3, y: 9.5, z: 104.38}
+      _position: {x: -3, y: 4.6, z: 159}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 3}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.patch.base
     _pose:
-      _position: {x: -5, y: 10, z: 109.38}
+      _position: {x: -5, y: 4.8, z: 173}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 8, y: 0.6, z: 6}
+    _size: {x: 16, y: 0.6, z: 22}
     _visualRole: 0
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.mastery.transfer-a
     _pose:
-      _position: {x: 17.5, y: 3.4, z: 36.88}
+      _position: {x: 22, y: 1.6, z: 48}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 4, y: 0.6, z: 4}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.mastery.transfer-b
     _pose:
-      _position: {x: 22.5, y: 3.6, z: 39.38}
+      _position: {x: 27, y: 1.8, z: 53.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 4, y: 0.6, z: 4}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   - _stableId: m04.mastery.transfer-c
     _pose:
-      _position: {x: 23, y: 3.8, z: 44.48}
+      _position: {x: 27, y: 2, z: 59}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 4, y: 0.6, z: 4}
     _visualRole: 1
     _editorLabel: 0
-    _label: 
+    _label:
   _movingBlocks:
   - _stableId: moving.m04.transfer
     _pose:
-      _position: {x: 11, y: 3.1, z: 40.38}
+      _position: {x: 11, y: 1.3, z: 54}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3.6}
+    _size: {x: 10, y: 0.6, z: 5}
     _pathPoints:
-    - {x: 11, y: 3.1, z: 40.38}
-    - {x: 19, y: 3.6, z: 43.38}
+    - {x: 11, y: 1.3, z: 54}
+    - {x: 19, y: 1.8, z: 57}
     _pathSpace: 0
     _loopMode: 0
     _easing: 1
     _speed: 3
     _pauseAtEndpoints: 0.65
     _startingPhase: 0
-  _boostBlocks: []
+  _boostBlocks:
+  - _stableId: boost.m04.mastery.cooling-vent
+    _pose:
+      _position: {x: 12, y: 3, z: 96}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 4, y: 0.6, z: 4}
+    _launchDirection: {x: -0.03, y: 0, z: 1}
+    _verticalStrength: 16
+    _horizontalStrength: 14
+    _cooldown: 0.35
   _waterVolumes: []
-  _surfSurfaces: []
+  _surfSurfaces:
+  - _stableId: surf.m04.mastery.cooling-spillway
+    _pose:
+      _position: {x: 4, y: 3, z: 106}
+      _eulerAngles: {x: 22, y: 0, z: -26}
+    _size: {x: 8, y: 0.45, z: 14}
+    _flowDirection: {x: 0, y: 0, z: 1}
   _crumblingBlocks:
   - _stableId: crumble.m04.cooling-a
     _pose:
-      _position: {x: 19, y: 6.3, z: 72.38}
+      _position: {x: 19, y: 3.2, z: 104}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.6, y: 0.6, z: 3.6}
+    _size: {x: 12, y: 0.6, z: 4}
     _activationDelay: 0.03
     _fallDelay: 1
     _resetTime: 4
     _shakeAmount: 0.025
   - _stableId: crumble.m04.cooling-b
     _pose:
-      _position: {x: 15, y: 6.6, z: 75.88}
+      _position: {x: 15, y: 3.4, z: 109}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3.6, y: 0.6, z: 3.6}
+    _size: {x: 12, y: 0.6, z: 4}
     _activationDelay: 0.03
     _fallDelay: 1
     _resetTime: 4

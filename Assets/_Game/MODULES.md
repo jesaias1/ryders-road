@@ -1,3 +1,7 @@
+## 0.17.0 module ownership
+
+Existing-world recipes live in EditorTools/Data and are applied by WorldFlowAuthoring, WorldSceneryRefit and WorldKitAuthoring. No authoring tool runs at gameplay startup. The Visuals runtime module owns ModuleEnvironmentProfile and scene-local WorldLightingPresentation; the Gameplay assembly references URP/Core runtime rendering APIs, never UnityEditor. ModuleSceneController composes these removable presentation pieces. Movement, input, camera aim, audio, progression and save contracts remain independent. See ADR 0033 and Docs/PRODUCTION_0170.md for current content versions, tests and the unavailable 3DAIStudio integration.
+
 ## 0.16.2 movement sequences
 
 Windward content 6 replaces the alternating cadence with four coherent movement

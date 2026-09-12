@@ -17,10 +17,10 @@ MonoBehaviour:
   _skyHorizon: {r: 0.65, g: 0.82, b: 0.96, a: 1}
   _skyWarmth: {r: 1, g: 0.6, b: 0.28, a: 1}
   _fogColor: {r: 0.602, g: 0.684, b: 0.738, a: 1}
-  _ambientLight: {r: 0.308912, g: 0.33918402, b: 0.35810402, a: 0.43}
-  _sunLight: {r: 1, g: 0.83, b: 0.64, a: 1}
+  _ambientLight: {r: 0.32, g: 0.45, b: 0.59, a: 1}
+  _sunLight: {r: 1, g: 0.92, b: 0.8, a: 1}
   _fogDensity: 0.0042
-  _sunIntensity: 1.06
+  _sunIntensity: 1.5
   _nullSpaceY: -26
   _cloudDensity: 1
   _decorationDensity: 1
@@ -35,3 +35,13 @@ MonoBehaviour:
   _nearArchitectureShadows: 1
   _skyboxMaterial: {fileID: 2100000, guid: 2dd821dc0fc7e5646bc8aa7b1e0f20f6, type: 2}
   _overrideBiomeFog: 1
+  _cohesiveLighting: 1
+  _ambientGround: {r: 0.09, g: 0.14, b: 0.21, a: 1}
+  _shadowStrength: 0.78
+  _shadowBias: 0.25
+  _shadowNormalBias: 0.35
+  _postExposure: -0.12
+  _contrast: 9
+  _saturation: -2
+  _bloomIntensity: 0.06
+  _bloomThreshold: 1.3

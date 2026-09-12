@@ -92,7 +92,8 @@ namespace Avoidance.Tests.EditMode
             var module = Resources.LoadAll<ModuleDefinition>("Modules")
                 .Single(item => item.StableModuleId == "module.003.flow-error");
             var places = module.EnvironmentBiomeProfile.WorldObjects
-                .Where(item => item.DepthBand == BiomeDepthBand.NearEnvironment).ToArray();
+                .Where(item => item.DepthBand == BiomeDepthBand.NearEnvironment
+                    && !item.StableId.StartsWith("biome.flow-foundations.")).ToArray();
             Assert.That(places.Length, Is.EqualTo(5));
             foreach (var place in places)
             {
@@ -106,7 +107,8 @@ namespace Avoidance.Tests.EditMode
                     {
                         foreach (var renderer in foundation.GetComponentsInChildren<Renderer>())
                         {
-                            Assert.That(renderer.bounds.max.y, Is.LessThan(-5f), foundation.name);
+                            var nearest=module.Blocks.OrderBy(b=>Mathf.Abs(b.Pose.Position.z-renderer.bounds.center.z)).First();
+                            Assert.That(renderer.bounds.max.y, Is.LessThan(nearest.Pose.Position.y-3f), foundation.name+" beneath local route height");
                         }
                         Assert.That(foundation.GetComponentsInChildren<Avoidance.Gameplay.Worlds.AuthoredSurface>().All(surface => surface.HasMatchingCollision), Is.True);
                     }

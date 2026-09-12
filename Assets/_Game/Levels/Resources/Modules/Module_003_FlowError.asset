@@ -17,7 +17,7 @@ MonoBehaviour:
   _internalName: module_003_flow_error
   _projectId: project.ryders-block
   _worldId: world.prototype-sky
-  _contentVersion: 8
+  _contentVersion: 9
   _sceneName: ModuleRunner
   _difficulty: 2
   _startPoint:
@@ -31,31 +31,31 @@ MonoBehaviour:
   _patchBlock:
     _stableId: patch.module-003
     _pose:
-      _position: {x: 8, y: 15, z: 129}
+      _position: {x: 6, y: 9.3, z: 176}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId: m03.final.06
     _size: {x: 2.2, y: 2.2, z: 2.2}
   _restorePoints:
   - _stableId: restore.module-003.arrival-sanctuary
     _order: 0
     _pose:
-      _position: {x: 5, y: 1.15, z: 20}
+      _position: {x: 4, y: 0.9, z: 31}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId: m03.arrival.court
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-003.broken-crossing
     _order: 1
     _pose:
-      _position: {x: -5, y: 2.85, z: 47}
+      _position: {x: -6, y: 2.5, z: 66}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId: m03.motion-exit
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-003.collapsed-temple
     _order: 2
     _pose:
-      _position: {x: 1, y: 4.95, z: 71}
+      _position: {x: 3, y: 4.2, z: 112}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId: m03.spine.approach
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   _expectedCleanTime: 72
   _estimatedCasualTime: 160
@@ -71,25 +71,25 @@ MonoBehaviour:
   _optionalShortcuts:
   - _stableId: shortcut.module-003.arrival-court-cut
     _displayName: Arrival court momentum cut
-    _entryPosition: {x: -2.5, y: 0.1, z: -2.5}
-    _exitPosition: {x: 1, y: 0.8, z: 11}
+    _entryPosition: {x: -1, y: 0.1, z: 1.5}
+    _exitPosition: {x: 1, y: 0.7, z: 21}
     _estimatedTimeSaved: 2.8
     _mechanics: 0800000001000000
   - _stableId: shortcut.module-003.moving-bypass
     _displayName: Broken crossing upper ledge
-    _entryPosition: {x: 7, y: 1.8, z: 30}
-    _exitPosition: {x: -6, y: 2.5, z: 43}
+    _entryPosition: {x: 7, y: 1.8, z: 53}
+    _exitPosition: {x: -6, y: 2.5, z: 66}
     _estimatedTimeSaved: 4.5
     _mechanics: 0800000001000000
   - _stableId: shortcut.module-003.temple-upper-ledge
     _displayName: Collapsed temple upper ledge
-    _entryPosition: {x: -3, y: 3, z: 51}
-    _exitPosition: {x: 3, y: 4.6, z: 67}
+    _entryPosition: {x: -3, y: 3, z: 74}
+    _exitPosition: {x: 3, y: 3.8, z: 103}
     _estimatedTimeSaved: 3.6
     _mechanics: 0800000001000000
   _environmentProfile: {fileID: 11400000, guid: 2638eba4c4ecea44581ba9daca021c54, type: 2}
   _environmentBiomeProfile: {fileID: 11400000, guid: 805a1458c0ac84f4fa75428e5b7749c2, type: 2}
-  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _visualProfile: {fileID: 11400000, guid: 80db6f61d132e594b978934c0622fcb4, type: 2}
   _loreBugDescription: A broken route compiler has made the road unstable around
     an ancient abyss sanctuary.
   _developerNotes: '0.9.1 collision-truth and flow continuation: a connected journey
@@ -100,165 +100,173 @@ MonoBehaviour:
     _pose:
       _position: {x: 0, y: 0, z: -7}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 4}
+    _size: {x: 10, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.start
   - _stableId: m03.opening.01
     _pose:
-      _position: {x: -2.5, y: 0.1, z: -2.5}
+      _position: {x: -1, y: 0.1, z: 1.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _size: {x: 10, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.opening.01
   - _stableId: m03.opening.02
     _pose:
-      _position: {x: -4, y: 0.3, z: 2}
+      _position: {x: -1.5, y: 0.3, z: 6.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _size: {x: 10, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.opening.02
   - _stableId: m03.opening.03
     _pose:
-      _position: {x: -2, y: 0.5, z: 6.5}
+      _position: {x: -1, y: 0.5, z: 14}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _size: {x: 11, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.opening.03
   - _stableId: m03.arrival.approach
     _pose:
-      _position: {x: 1, y: 0.8, z: 11}
+      _position: {x: 1, y: 0.7, z: 21}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 2.5}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.arrival.approach
   - _stableId: m03.arrival.court
     _pose:
-      _position: {x: 4, y: 1, z: 15.5}
+      _position: {x: 4, y: 0.9, z: 31}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3}
+    _size: {x: 16, y: 0.6, z: 12}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.arrival.court
+  - _stableId: m03.sanctuary.bridge
+    _pose:
+      _position: {x: 5, y: 1.2, z: 41}
+      _eulerAngles: {x: 0, y: 0, z: 0}
+    _size: {x: 10, y: 0.6, z: 3}
+    _visualRole: 0
+    _editorLabel: 1
+    _label: m03.mastery.temple-ledge.02
   - _stableId: m03.crossing.approach
     _pose:
-      _position: {x: 7, y: 1.5, z: 25}
+      _position: {x: 7, y: 1.5, z: 48}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 8, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.crossing.approach
   - _stableId: m03.moving-setup
     _pose:
-      _position: {x: 7, y: 1.8, z: 30}
+      _position: {x: 7, y: 1.8, z: 53}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3.5}
+    _size: {x: 8, y: 0.6, z: 3.5}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.moving-setup
   - _stableId: m03.motion-exit
     _pose:
-      _position: {x: -6, y: 2.5, z: 43}
+      _position: {x: -6, y: 2.5, z: 66}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 4}
+    _size: {x: 8, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.motion-exit
   - _stableId: m03.temple.entry
     _pose:
-      _position: {x: -3, y: 3, z: 51}
+      _position: {x: -3, y: 3, z: 74}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 2.5}
+    _size: {x: 12, y: 0.6, z: 8}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.temple.entry
   - _stableId: m03.temple.exit
     _pose:
-      _position: {x: 3, y: 4.6, z: 67}
+      _position: {x: 3, y: 3.8, z: 103}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 14, y: 0.6, z: 13}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.temple.exit
   - _stableId: m03.spine.approach
     _pose:
-      _position: {x: 3, y: 5.2, z: 75}
+      _position: {x: 3, y: 4.2, z: 112}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 10, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.spine.approach
   - _stableId: m03.boost-runup
     _pose:
-      _position: {x: 6, y: 5.6, z: 80}
+      _position: {x: 6, y: 4.6, z: 118}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 3}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.boost-runup
   - _stableId: m03.boost-landing
     _pose:
-      _position: {x: -1, y: 8.8, z: 96}
+      _position: {x: -1, y: 7.8, z: 134}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 8, y: 0.6, z: 8}
+    _size: {x: 16, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.boost-landing
   - _stableId: m03.final.01
     _pose:
-      _position: {x: -3, y: 9.4, z: 102}
+      _position: {x: -2, y: 8, z: 143}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 12, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.final.01
   - _stableId: m03.final.02
     _pose:
-      _position: {x: -6, y: 10, z: 107}
+      _position: {x: -2.5, y: 8.2, z: 148}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.final.02
   - _stableId: m03.final.03
     _pose:
-      _position: {x: -4, y: 10.7, z: 112}
+      _position: {x: -1.5, y: 8.4, z: 154}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.2, y: 0.6, z: 2.2}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.final.03
   - _stableId: m03.final.04
     _pose:
-      _position: {x: 0, y: 11.5, z: 116}
+      _position: {x: 0.5, y: 8.6, z: 160}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.final.04
   - _stableId: m03.final.05
     _pose:
-      _position: {x: 4, y: 12.4, z: 120}
+      _position: {x: 3, y: 8.8, z: 166}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2.5, y: 0.6, z: 2.5}
+    _size: {x: 13, y: 0.6, z: 5.7}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.final.05
   - _stableId: m03.final.06
     _pose:
-      _position: {x: 7, y: 13.4, z: 124}
+      _position: {x: 6, y: 9, z: 176}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 16, y: 0.6, z: 12}
     _visualRole: 0
     _editorLabel: 1
     _label: m03.final.06
   - _stableId: m03.mastery.arrival-cut
     _pose:
-      _position: {x: 0, y: 0.55, z: 5}
+      _position: {x: 1, y: 0.55, z: 10.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.5, y: 0.6, z: 1.5}
     _visualRole: 1
@@ -266,7 +274,7 @@ MonoBehaviour:
     _label: m03.mastery.arrival-cut
   - _stableId: m03.mastery.moving-bypass.01
     _pose:
-      _position: {x: 2.2, y: 2.2, z: 30.7}
+      _position: {x: 2.2, y: 2.2, z: 53.7}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.5, y: 0.6, z: 1.5}
     _visualRole: 1
@@ -274,7 +282,7 @@ MonoBehaviour:
     _label: m03.mastery.moving-bypass.01
   - _stableId: m03.mastery.moving-bypass.02
     _pose:
-      _position: {x: -3.6, y: 2.35, z: 33.4}
+      _position: {x: -3.6, y: 2.35, z: 56.4}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _size: {x: 1.5, y: 0.6, z: 1.5}
     _visualRole: 1
@@ -282,37 +290,29 @@ MonoBehaviour:
     _label: m03.mastery.moving-bypass.02
   - _stableId: m03.mastery.moving-bypass.03
     _pose:
-      _position: {x: -8.9, y: 2.5, z: 36.5}
+      _position: {x: -9, y: 2.5, z: 57}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 1.5, y: 0.6, z: 1.5}
+    _size: {x: 3, y: 0.6, z: 2}
     _visualRole: 1
     _editorLabel: 1
     _label: m03.mastery.moving-bypass.03
-  - _stableId: m03.mastery.temple-ledge.01
+  - _stableId: m03.mastery.moving-bypass.04
     _pose:
-      _position: {x: -2, y: 4.3, z: 57}
+      _position: {x: -12, y: 2.5, z: 62}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 1.5, y: 0.6, z: 1.5}
-    _visualRole: 1
+    _size: {x: 3, y: 0.6, z: 3}
+    _visualRole: 0
     _editorLabel: 1
-    _label: m03.mastery.temple-ledge.01
-  - _stableId: m03.mastery.temple-ledge.02
-    _pose:
-      _position: {x: 1, y: 4.6, z: 63}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 1.5, y: 0.6, z: 1.5}
-    _visualRole: 1
-    _editorLabel: 1
-    _label: m03.mastery.temple-ledge.02
+    _label: m03.mastery.moving-bypass.03
   _movingBlocks:
   - _stableId: moving.m03.motion-gallery
     _pose:
-      _position: {x: 7, y: 2.1, z: 34}
+      _position: {x: 7, y: 2.1, z: 57}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 4, y: 0.6, z: 4}
+    _size: {x: 8, y: 0.6, z: 4}
     _pathPoints:
-    - {x: 7, y: 2.1, z: 34}
-    - {x: -6, y: 2.4, z: 39}
+    - {x: 7, y: 2.1, z: 57}
+    - {x: -6, y: 2.4, z: 62}
     _pathSpace: 0
     _loopMode: 0
     _easing: 1
@@ -322,9 +322,9 @@ MonoBehaviour:
   _boostBlocks:
   - _stableId: boost.m03.first
     _pose:
-      _position: {x: 6, y: 5.9, z: 84}
+      _position: {x: 6, y: 4.9, z: 122}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 3}
+    _size: {x: 8, y: 0.6, z: 3}
     _launchDirection: {x: -0.504, y: 0, z: 0.864}
     _verticalStrength: 16
     _horizontalStrength: 12.2
@@ -334,27 +334,27 @@ MonoBehaviour:
   _crumblingBlocks:
   - _stableId: crumble.m03.01
     _pose:
-      _position: {x: 0, y: 3.4, z: 55}
+      _position: {x: 0, y: 3.2, z: 82}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2, y: 0.6, z: 2}
+    _size: {x: 12, y: 0.6, z: 3}
     _activationDelay: 0.03
     _fallDelay: 1
     _resetTime: 4
     _shakeAmount: 0.03
   - _stableId: crumble.m03.02
     _pose:
-      _position: {x: 3.5, y: 3.8, z: 59}
+      _position: {x: 2, y: 3.4, z: 87}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2, y: 0.6, z: 2}
+    _size: {x: 12, y: 0.6, z: 5}
     _activationDelay: 0.03
     _fallDelay: 1
     _resetTime: 4
     _shakeAmount: 0.03
   - _stableId: crumble.m03.03
     _pose:
-      _position: {x: 5, y: 4.2, z: 63}
+      _position: {x: 3, y: 3.6, z: 93}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 2, y: 0.6, z: 2}
+    _size: {x: 12, y: 0.6, z: 4}
     _activationDelay: 0.03
     _fallDelay: 1
     _resetTime: 4
@@ -362,13 +362,13 @@ MonoBehaviour:
   _decorations: []
   _cameraHints:
   - _stableId: camera.m03.motion-gallery
-    _position: {x: 0, y: 3, z: 36}
+    _position: {x: 4.440892e-16, y: 3, z: 59}
     _size: {x: 24, y: 9, z: 28}
     _preferredYaw: 2
     _preferredPitch: -8
     _maxAssistDegrees: 12
   - _stableId: camera.m03.final-ascent
-    _position: {x: 1, y: 11, z: 112}
+    _position: {x: 1.5, y: 8.1, z: 156}
     _size: {x: 22, y: 14, z: 40}
     _preferredYaw: 8
     _preferredPitch: -10
@@ -380,14 +380,14 @@ MonoBehaviour:
     _quantity: 200
     _minimumRank: 1
     _firstCompletionOnly: 1
-    _unlockType: 
+    _unlockType:
   - _stableId: reward.module-003.bronze.package
     _kind: 1
     _contentId: loot.package.module-003
     _quantity: 1
     _minimumRank: 1
     _firstCompletionOnly: 1
-    _unlockType: 
+    _unlockType:
   - _stableId: reward.module-003.bronze.skin
     _kind: 2
     _contentId: skin.ryder.circuit-mint

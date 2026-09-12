@@ -1,3 +1,9 @@
+## 0.17.0 existing-world visual pass
+
+The full-game brief authorizes route/art work across the existing five Campaign worlds and Spiral, superseding the earlier art stop. Six small Editor-authored deck kits use seven shared untextured material families. Sky/Windward use ivory architectural panels; Mountain uses cut stone over geology; Abyss uses masonry/cyan seams; Foundry uses paired metal plates and warm stiffeners; Spiral retains celestial ruins and its helix. Existing landmark kits remain the primary world silhouettes.
+
+Cohesive lighting uses world-specific sun/ambient/fog, restrained grading/bloom and distance-limited soft shadows. Readability and device performance remain acceptance criteria. This is not a claim of matching the reference image or physical visual approval. 3DAIStudio was unavailable; no new asset is represented as its output. See the before/after gallery and provenance in `Docs/World170QA`.
+
 ## 0.16.2 movement sequences
 
 Windward content 6 replaces the alternating cadence with four coherent movement

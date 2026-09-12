@@ -19,13 +19,13 @@ namespace Avoidance.Tests.PlayMode
         {
             yield return IntroJumps(false);
         }
-        [UnityTest] public IEnumerator CandidateIntroJumpsUseActualSkyCityGeometry()
+        [UnityTest] public IEnumerator SharedTrialIntroJumpsUseActualSkyCityGeometry()
         {
             yield return IntroJumps(true);
         }
         private IEnumerator IntroJumps(bool candidate)
         {
-            if(candidate) CampaignFlowTrial.Launch("module.001.first-steps",CampaignTrialMode.FlowManual);
+            if(candidate) CampaignFlowTrial.Launch("module.001.first-steps",CampaignTrialMode.Foundation);
             else ModuleSelectionState.Select("module.001.first-steps");
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleRunner");
             yield return new WaitForSecondsRealtime(.4f);
@@ -51,8 +51,9 @@ namespace Avoidance.Tests.PlayMode
                 var direction=to.Pose.Position-from.Pose.Position;direction.y=0;direction.Normalize();
                 motor.ResetMotion(from.Pose.Position+Vector3.up*(from.Size.y*.5f+.04f)-direction*.5f,Quaternion.LookRotation(direction),0);
                 Physics.SyncTransforms();
-                var input=new RouteInput { FlowSteeringEnabled=candidate };
-                for(int frame=0;frame<8;frame++)motor.Simulate(input,1f/60);
+                var input=new RouteInput { FlowSteeringEnabled=false };
+                float edge=Mathf.Min(from.Size.x*.5f/Mathf.Max(.001f,Mathf.Abs(direction.x)),from.Size.z*.5f/Mathf.Max(.001f,Mathf.Abs(direction.z)));
+                for(int frame=0;frame<150&&Vector3.Dot(motor.transform.position-from.Pose.Position,direction)<edge-.4f;frame++)motor.Simulate(input,1f/60);
                 input.JumpPressed=true;motor.Simulate(input,1f/60);input.JumpPressed=false;
                 bool airborne=false,landed=false;
                 for(int frame=0;frame<100;frame++)

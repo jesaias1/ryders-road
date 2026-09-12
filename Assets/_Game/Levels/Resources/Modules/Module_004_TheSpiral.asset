@@ -17,7 +17,7 @@ MonoBehaviour:
   _internalName: module_004_the_spiral
   _projectId: project.ryders-block
   _worldId: world.prototype-sky
-  _contentVersion: 2
+  _contentVersion: 3
   _sceneName: ModuleRunner
   _difficulty: 1
   _startPoint:
@@ -33,7 +33,7 @@ MonoBehaviour:
     _pose:
       _position: {x: 0, y: 28.000002, z: 0}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId:
     _size: {x: 2.2, y: 2.2, z: 2.2}
   _restorePoints:
   - _stableId: restore.module-004.r1-base-turn
@@ -41,35 +41,35 @@ MonoBehaviour:
     _pose:
       _position: {x: -22.768787, y: 3.8500001, z: 0.23468272}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId:
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-004.r2-moving-exit
     _order: 1
     _pose:
       _position: {x: 1.7331582, y: 7.65, z: 21.470152}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId:
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-004.r3-water-exit
     _order: 2
     _pose:
       _position: {x: 19.243296, y: 11.9, z: -6.2731767}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId:
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-004.r4-boost-landing
     _order: 3
     _pose:
       _position: {x: -10.637471, y: 15.7, z: -15.75512}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId:
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-004.r5-final-gate
     _order: 4
     _pose:
       _position: {x: -8.442505, y: 19.95, z: 15.568161}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _supportBlockStableId: 
+    _supportBlockStableId:
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   _expectedCleanTime: 150
   _estimatedCasualTime: 300
@@ -114,9 +114,9 @@ MonoBehaviour:
     _exitPosition: {x: 6.9060316, y: 22.35, z: 15.752653}
     _estimatedTimeSaved: 4
     _mechanics: 0700000001000000
-  _environmentProfile: {fileID: 11400000, guid: 7eb7a0625794d0d408e4b41b47de1a9a, type: 2}
+  _environmentProfile: {fileID: 11400000, guid: 4a13d4814689b3a4e9c5ae9733a99f3f, type: 2}
   _environmentBiomeProfile: {fileID: 0}
-  _visualProfile: {fileID: 11400000, guid: c915561f40237fc4482f33fed1bde616, type: 2}
+  _visualProfile: {fileID: 11400000, guid: 892db58ad36d6d342a5cde534a9a0314, type: 2}
   _loreBugDescription: A deliberate ascending route wraps a broken sky spire and
     converges on its Patch summit.
   _developerNotes: '0.6.5 recovery: measured Bronze spacing, five Restore decks,
@@ -137,7 +137,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -3.274537, y: 0.2, z: -23.664518}
       _eulerAngles: {x: 0, y: -82.121826, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.01.setup
@@ -145,7 +145,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -6.9493365, y: 0.5, z: -22.741922}
       _eulerAngles: {x: 0, y: -73.008224, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.02.easy
@@ -153,7 +153,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -10.072129, y: 0.75, z: -21.420107}
       _eulerAngles: {x: 0, y: -64.81623, z: 0}
-    _size: {x: 2.2, y: 0.6, z: 2.7}
+    _size: {x: 3.1, y: 0.6, z: 2.7}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.03.flow
@@ -201,7 +201,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -22.85996, y: 3.7, z: -3.2511754}
       _eulerAngles: {x: 0, y: -8.094401, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.09.easy
@@ -209,7 +209,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -17.784403, y: 5.65, z: 13.503468}
       _eulerAngles: {x: 0, y: 37.20893, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.14.setup
@@ -217,7 +217,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -9.27654, y: 6.75, z: 20.036764}
       _eulerAngles: {x: 0, y: 65.157, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.17.easy
@@ -225,7 +225,7 @@ MonoBehaviour:
     _pose:
       _position: {x: 17.642538, y: 10.2, z: 11.242192}
       _eulerAngles: {x: 0, y: 147.49387, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.25.easy
@@ -241,7 +241,7 @@ MonoBehaviour:
     _pose:
       _position: {x: 19.933655, y: 10.55, z: 6.1132274}
       _eulerAngles: {x: 0, y: 162.95033, z: 0}
-    _size: {x: 2.2, y: 0.6, z: 2.7}
+    _size: {x: 3.1, y: 0.6, z: 2.7}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.27.flow
@@ -289,7 +289,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -0.25107664, y: 14.8, z: -19.548374}
       _eulerAngles: {x: 0, y: -89.26414, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.37.setup
@@ -305,7 +305,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -7.754786, y: 15.55, z: -17.70626}
       _eulerAngles: {x: 0, y: -66.34809, z: 0}
-    _size: {x: 2.2, y: 0.6, z: 2.7}
+    _size: {x: 3.1, y: 0.6, z: 2.7}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.39.flow
@@ -321,7 +321,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -18.09301, y: 18.35, z: 3.5081792}
       _eulerAngles: {x: 0, y: 10.97331, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.46.easy
@@ -329,7 +329,7 @@ MonoBehaviour:
     _pose:
       _position: {x: -17.040146, y: 18.6, z: 6.7272015}
       _eulerAngles: {x: 0, y: 21.543383, z: 0}
-    _size: {x: 2.2, y: 0.6, z: 2.7}
+    _size: {x: 3.1, y: 0.6, z: 2.7}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.47.flow
@@ -369,7 +369,7 @@ MonoBehaviour:
     _pose:
       _position: {x: 11.855752, y: 22.800001, z: 12.364361}
       _eulerAngles: {x: 0, y: 133.797, z: 0}
-    _size: {x: 2.3, y: 0.6, z: 2.3}
+    _size: {x: 3.1, y: 0.6, z: 2.3}
     _visualRole: 0
     _editorLabel: 1
     _label: m04.route.56.easy
@@ -1045,14 +1045,14 @@ MonoBehaviour:
     _quantity: 250
     _minimumRank: 1
     _firstCompletionOnly: 1
-    _unlockType: 
+    _unlockType:
   - _stableId: reward.module-004.bronze.package
     _kind: 1
     _contentId: loot.package.module-004
     _quantity: 1
     _minimumRank: 1
     _firstCompletionOnly: 1
-    _unlockType: 
+    _unlockType:
   - _stableId: reward.module-004.bronze.skin
     _kind: 2
     _contentId: skin.ryder.patch-glow

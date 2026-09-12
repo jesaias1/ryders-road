@@ -78,7 +78,7 @@ MonoBehaviour:
     _mechanics: 01000000
   _environmentProfile: {fileID: 11400000, guid: 01ae7109bc5abc14b9777a4587f28d2f, type: 2}
   _environmentBiomeProfile: {fileID: 11400000, guid: 82c37c0b66e6240488fbb3bc514fc5b8, type: 2}
-  _visualProfile: {fileID: 11400000, guid: 04543455ca0396440871b68c76e3a1c7, type: 2}
+  _visualProfile: {fileID: 11400000, guid: 25796e1990fdc2940b5daba040883cef, type: 2}
   _loreBugDescription: Cross the wind instrument and reconnect the observatory.
   _developerNotes: '0.16.2 flow sequences: acceleration, sustained sweep, rising
     diagonal, final carry. Wide lateral catches; held-hop omissions and recovery
