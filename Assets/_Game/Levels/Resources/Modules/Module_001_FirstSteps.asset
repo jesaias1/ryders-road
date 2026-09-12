@@ -17,7 +17,7 @@ MonoBehaviour:
   _internalName: module_001_first_steps
   _projectId: project.ryders-block
   _worldId: world.prototype-sky
-  _contentVersion: 2
+  _contentVersion: 3
   _sceneName: ModuleRunner
   _difficulty: 0
   _startPoint:

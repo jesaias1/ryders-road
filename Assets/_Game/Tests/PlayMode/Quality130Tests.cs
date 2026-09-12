@@ -58,11 +58,13 @@ namespace Avoidance.Tests.PlayMode
         }
         [UnityTest] public IEnumerator ContinuousWindwardNormalAndFastLine() => VerifyContinuous(false);
         [UnityTest] public IEnumerator FoundationContinuousWindwardAndFoundry() => VerifyContinuous(true);
-        private IEnumerator VerifyContinuous(bool foundation)
+        [UnityTest] public IEnumerator SlowOrdinaryWindwardCompletion() => VerifyContinuous(false,.7f);
+        private IEnumerator VerifyContinuous(bool foundation,float inputScale=1)
         {
             foreach(var id in new[]{"module.005.foundry-pulse","module.004.solar-foundry"})
             foreach(bool fast in new[]{false,true})
             {
+                if(inputScale<1 && (fast||id.Contains("solar")))continue;
                 if(id.Contains("solar") && !fast) continue;
                 if(foundation) CampaignFlowTrial.Launch(id,CampaignTrialMode.Foundation);
                 else ModuleSelectionState.Select(id);
@@ -73,13 +75,16 @@ namespace Avoidance.Tests.PlayMode
                 var route=id.Contains("005")?WindwardRoute(m,fast):FoundryFast(m);
                 var crumble=Object.FindObjectsByType<CrumblingBlock>();foreach(var c in crumble)c.enabled=false;
                 float elapsed=0;var input=new Input();
+                var measures=new List<string>{"from,to,fromWidth,fromLength,toWidth,toLength,approachSpeed,takeoffSpeed,landingSpeed,flightDistance"};
                 motor.ResetMotion(route[0].Pose.Position+Vector3.up*.34f,Quaternion.identity,0);Physics.SyncTransforms();
                 int captureFrame=0,simulationStep=0;
                 bool capture=foundation && !fast && id.Contains("005")
                     && System.Environment.GetEnvironmentVariable("RYDERS_FOUNDATION_CAPTURE")=="1";
                 void Step()
                 {
-                    motor.Simulate(input,1f/60);foreach(var c in crumble)c.Tick(1f/60);elapsed+=1f/60;
+                    var command=input.Move;input.Move*=inputScale;
+                    motor.Simulate(input,1f/60);input.Move=command;
+                    foreach(var c in crumble)c.Tick(1f/60);elapsed+=1f/60;
                     if(capture && elapsed<12 && simulationStep++%4==0)
                         Capture("foundation-route-"+(captureFrame++).ToString("D4"),Camera.main);
                 }
@@ -87,6 +92,17 @@ namespace Avoidance.Tests.PlayMode
                 {
                     var from=route[link];var to=route[link+1];
                     if(!fast){input.Move=Vector2.zero;for(int i=0;i<12;i++)Step();}
+                    if(from.StableId=="m05.lens.restore")
+                    {
+                        // Safe pilot crosses the recovery terrace before turning.
+                        // Cutting straight from its near-left corner is an expert gap.
+                        for(int i=0;i<240;i++)
+                        {
+                            var across=from.Pose.Position-motor.transform.position;across.y=0;
+                            if(across.magnitude<.7f)break;
+                            motor.transform.rotation=Quaternion.LookRotation(across);input.Move=Vector2.up;Step();
+                        }
+                    }
                     var direction=to.Pose.Position-motor.transform.position;direction.y=0;direction.Normalize();
                     motor.transform.rotation=Quaternion.LookRotation(direction);Physics.SyncTransforms();input.Move=Vector2.up;
                     float Remaining()
@@ -100,6 +116,7 @@ namespace Avoidance.Tests.PlayMode
                     // Crown court asks for an earlier takeoff into the shallow beam.
                     if(from.StableId=="m04.crown.restore")margin=1.15f;
                     for(int i=0;i<150 && Remaining()>margin;i++)Step();
+                    var takeoffPosition=motor.transform.position;float approachSpeed=motor.HorizontalSpeed;
                     input.JumpPressed=true;Step();input.JumpPressed=false;
                     bool air=false,land=false;
                     for(int i=0;i<110;i++){
@@ -123,6 +140,7 @@ namespace Avoidance.Tests.PlayMode
                             if(Mathf.Abs(motor.transform.position.y-to.Pose.Position.y-.3f)<.3f){land=true;break;}
                         }}
                     var delta=motor.transform.position-to.Pose.Position;
+                    measures.Add($"{from.StableId},{to.StableId},{from.Size.x},{from.Size.z},{to.Size.x},{to.Size.z},{approachSpeed:F3},{motor.LastTakeoffHorizontalSpeed:F3},{motor.HorizontalSpeed:F3},{Vector3.ProjectOnPlane(motor.transform.position-takeoffPosition,Vector3.up).magnitude:F3}");
                     Assert.That(land&&Mathf.Abs(delta.y-.3f)<.3f&&Mathf.Abs(delta.x)<to.Size.x*.5f+.2f&&Mathf.Abs(delta.z)<to.Size.z*.5f+.2f,Is.True,
                         (fast?"fast":"normal")+" "+from.StableId+" -> "+to.StableId+" at "+motor.transform.position+" speed "+motor.Velocity.magnitude);
                     yield return null;
@@ -137,8 +155,10 @@ namespace Avoidance.Tests.PlayMode
                 Assert.That(patch.GetComponent<Collider>().bounds.Intersects(motor.GetComponent<CharacterController>().bounds),Is.True,"Finish trigger reached continuously");
                 Assert.That(patch.TryComplete(motor),Is.True);
                 Directory.CreateDirectory("Logs/Quality130QA");
+                Directory.CreateDirectory("Logs/Benchmark160QA");
+                File.WriteAllLines("Logs/Benchmark160QA/"+(inputScale<1?"slow-":foundation?"trial-":"normal-")+id+"-"+(fast?"direct":"safe")+".csv",measures);
                 File.WriteAllText("Logs/Quality130QA/"+(foundation?"foundation-":"")+id+"-"+(fast?"fast":"normal")+".txt",elapsed.ToString("F3",System.Globalization.CultureInfo.InvariantCulture));
-                Debug.Log("QUALITY130 "+id+" "+(fast?"fast":"normal")+" continuous seconds="+elapsed);
+                Debug.Log("QUALITY130 "+id+" "+(fast?"fast":"normal")+" inputScale="+inputScale+" continuous seconds="+elapsed);
             }
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }

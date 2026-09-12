@@ -1,3 +1,11 @@
+## 0.16.0 content compatibility
+
+Movement compatibility remains 5 and save schema remains V4. Windward becomes
+content 4 for its benchmark route; Sky City/Mountain/Ancient Abyss/Foundry become
+3/4/8/4 for fatal scenery semantics without reauthoring their routes. Spiral stays
+2. Existing versioned PB/history buckets preserve prior results and unlocks.
+Rank thresholds are unchanged and not newly calibrated. See ADR 0030.
+
 ## 0.15.0 shared compatibility and music settings
 
 The user's rollout request authorizes normal compatibility 5. Existing V4 versioned

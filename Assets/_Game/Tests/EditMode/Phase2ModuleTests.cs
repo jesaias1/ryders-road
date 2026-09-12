@@ -1629,7 +1629,7 @@ namespace Avoidance.Tests.EditMode
             var moving = module.MovingBlocks.Single();
             var crumbles = module.CrumblingBlocks.ToDictionary(item => item.StableId);
 
-            Assert.That(module.ContentVersion, Is.EqualTo(7));
+            Assert.That(module.ContentVersion, Is.EqualTo(8));
             Assert.That(module.Difficulty, Is.EqualTo(ModuleDifficulty.Medium));
             Assert.That(module.RestorePoints.Count, Is.EqualTo(3));
             Assert.That(module.OptionalShortcuts.Count, Is.EqualTo(3));

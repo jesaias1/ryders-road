@@ -17,7 +17,7 @@ MonoBehaviour:
   _internalName: module_003_flow_error
   _projectId: project.ryders-block
   _worldId: world.prototype-sky
-  _contentVersion: 7
+  _contentVersion: 8
   _sceneName: ModuleRunner
   _difficulty: 2
   _startPoint:

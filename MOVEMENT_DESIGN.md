@@ -1,3 +1,9 @@
+## 0.16.0 geometry benchmark
+
+Physical feedback approves the stronger 0.15 air control. This milestone adapts
+Windward geometry and fatal scenery response; movement tuning stays compatibility
+5. See Docs/PRODUCTION_0160.md and ADR 0030. Final device feedback remains pending.
+
 ## 0.15.0 current movement authority
 
 The user requested game-wide promotion after reporting restrictive 0.14.2 air feel.

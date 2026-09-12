@@ -59,7 +59,7 @@ namespace Avoidance.Tests.PlayMode
             yield return new WaitForSecondsRealtime(.2f);
             Object.FindAnyObjectByType<PlayerRuntimeCoordinator>().enabled=false;
         }
-        [UnityTest] public IEnumerator SceneryFallsRecoverButRouteAndSideContactsRemainPlayable()
+        [UnityTest] public IEnumerator SceneryContactFailsButRouteRemainsPlayable()
         {
             ModuleSelectionState.Select(Foundry,true);yield return Open();
             var motor=Object.FindAnyObjectByType<ParkourMotor>();var restore=motor.GetComponent<RestoreController>();
@@ -70,7 +70,8 @@ namespace Avoidance.Tests.PlayMode
             {
                 Assert.That(surface.HasMatchingCollision,Is.True);
                 relay.NotifyContact(surface.GetComponent<Collider>(),Vector3.right);
-                Assert.That(restore.IsRestorePending,Is.False,"Wall brushes must not restore");
+                Assert.That(restore.IsRestorePending,Is.True,"Every fatal scenery face must fail immediately");
+                restore.Tick(false,1);
             }
             // Sample real low ledges, then fall with the actual character controller onto each.
             int recovered=0;

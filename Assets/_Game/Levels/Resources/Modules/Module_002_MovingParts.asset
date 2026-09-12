@@ -17,7 +17,7 @@ MonoBehaviour:
   _internalName: module_002_moving_parts
   _projectId: project.ryders-block
   _worldId: world.prototype-sky
-  _contentVersion: 3
+  _contentVersion: 4
   _sceneName: ModuleRunner
   _difficulty: 1
   _startPoint:

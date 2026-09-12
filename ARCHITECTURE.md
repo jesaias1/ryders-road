@@ -1,3 +1,13 @@
+## 0.16.0 benchmark and fatal scenery
+
+ADR 0030 keeps shared compatibility-5 movement and music intact. Windward is the
+single reauthored route benchmark. BiomeWorldObject explicitly separates collision
+from traversal permission; AuthoredSurface forwards fatal contact to the existing
+RestoreController. A pending fatal restore suspends simulation until ResetMotion.
+No object-name checks, new motor, invisible route assistance or near-route death floor.
+Content-version buckets separate revised geometry/collision from older records.
+See Docs/PRODUCTION_0160.md and Docs/Benchmark160QA.
+
 ## 0.15.0 shared movement and music
 
 ADR 0029 promotes movement.shared compatibility 5 to every normal player entry.

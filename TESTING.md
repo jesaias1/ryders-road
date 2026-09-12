@@ -1,3 +1,14 @@
+## 0.16.0 benchmark and fatal contact
+
+Benchmark160Tests audits every Campaign/Spiral biome, drops actual controllers onto
+scenery, checks immediate failure and frozen pending Restore, tests valid decks,
+controlled high-speed skips and off-center recovery, and continuous held chains.
+Quality130Tests records platform dimensions, approach/takeoff/landing speeds and
+flight distances for complete authored safe/direct routes. Existing Boost, surf,
+lift, touch, music and save tests remain required. Fixtures injecting incoming
+speed do not prove earning that speed during an entire human run. Physical S23
+feel/performance remains pending; results in Docs/PRODUCTION_0160.md.
+
 ## 0.15.0 shared rollout
 
 SharedMovementTests measures before/after with real controllers at 30/50/60/120 Hz.

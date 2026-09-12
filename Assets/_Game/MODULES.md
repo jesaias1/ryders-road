@@ -1,3 +1,11 @@
+## 0.16.0 ownership
+
+EditorTools owns explicit MovementBenchmarkAuthoring. Worlds owns the traversal/
+fatal/non-colliding geometry contract. UI applies world-object intent at composition.
+Respawn handles fatal contact via normal Restore; Player only suspends simulation
+until reset. Movement tuning, input, camera, music and save schema remain unchanged.
+See ADR 0030 and Docs/PRODUCTION_0160.md.
+
 ## 0.13.0 correction ownership
 
 EditorTools owns explicit GameplayQualityAuthoring and the Windward v3 authoring

@@ -32,7 +32,8 @@ namespace Avoidance.Gameplay.Worlds
         [SerializeField] private Vector3 _eulerAngles;
         [SerializeField] private Vector3 _scale = Vector3.one;
         [SerializeField] private bool _staticBatch = true;
-        [SerializeField] private bool _hasPlayableArchitecture;
+        [SerializeField, Tooltip("Retain mesh collision; this does not authorize traversal.")] private bool _hasPlayableArchitecture;
+        [SerializeField, Tooltip("Explicit route opportunity. Otherwise retained scenery collision is fatal.")] private bool _traversableArchitecture;
         [SerializeField] private BiomeDepthBand _depthBand = BiomeDepthBand.MidWorld;
         [SerializeField] private float _depthFadeStrength = 1f;
 
@@ -45,9 +46,11 @@ namespace Avoidance.Gameplay.Worlds
             bool staticBatch = true,
             BiomeDepthBand depthBand = BiomeDepthBand.MidWorld,
             float depthFadeStrength = 1f,
-            bool hasPlayableArchitecture = false)
+            bool hasPlayableArchitecture = false,
+            bool traversableArchitecture = false)
         {
             _hasPlayableArchitecture = hasPlayableArchitecture;
+            _traversableArchitecture = traversableArchitecture;
             _stableId = stableId;
             _prefab = prefab;
             _position = position;
@@ -65,6 +68,9 @@ namespace Avoidance.Gameplay.Worlds
         public Quaternion Rotation => Quaternion.Euler(_eulerAngles);
         public Vector3 Scale => _scale == Vector3.zero ? Vector3.one : _scale;
         public bool HasPlayableArchitecture => _hasPlayableArchitecture;
+        // Historical "playable" flag means mesh collision, not route authorization.
+        public WorldGeometryKind GeometryKind => !_hasPlayableArchitecture ? WorldGeometryKind.NonCollidingScenery
+            : _traversableArchitecture ? WorldGeometryKind.Traversable : WorldGeometryKind.FatalScenery;
         public bool StaticBatch => _staticBatch;
         public BiomeDepthBand DepthBand => _depthBand;
         public float DepthFadeStrength => Mathf.Clamp01(_depthFadeStrength);

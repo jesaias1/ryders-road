@@ -1,0 +1,17 @@
+from,to,fromWidth,fromLength,toWidth,toLength,approachSpeed,takeoffSpeed,landingSpeed,flightDistance
+m05.arrival,m05.approach.a,10,14,7,7,7.800,7.800,4.586,4.100
+m05.approach.a,m05.approach.b,7,7,9,10,7.800,7.800,8.200,4.976
+m05.approach.b,m05.approach.c,9,10,9,7,7.959,7.959,4.383,4.163
+m05.approach.c,m05.west.restore,9,7,12,12,0.635,0.635,8.200,3.869
+m05.west.restore,m05.skill.chord.1,12,12,14,9,7.800,7.800,8.263,4.811
+m05.skill.chord.1,m05.skill.chord.2,14,9,14,9,8.263,8.263,8.200,4.646
+m05.skill.chord.2,m05.skill.chord.3,14,9,14,9,8.200,8.200,8.200,4.781
+m05.skill.chord.3,m05.east.restore,14,9,14,12,8.200,8.200,8.200,4.645
+m05.east.restore,m05.ascent.a,14,12,10,10,5.631,6.068,10.124,5.640
+m05.ascent.a,m05.ascent.b,10,10,11,10,8.414,8.414,10.858,6.128
+m05.ascent.b,m05.ascent.c,11,10,12,11,10.556,10.556,4.857,4.778
+m05.ascent.c,m05.lens.restore,12,11,28,14,7.800,7.800,8.259,5.013
+m05.lens.restore,m05.lens.a,28,14,12,11,4.345,4.345,8.548,3.636
+m05.lens.a,m05.lens.b,12,11,12,12,7.800,7.800,4.940,4.720
+m05.lens.b,m05.lens.c,12,12,12,12,7.800,7.800,4.061,4.169
+m05.lens.c,m05.patch.base,12,12,16,14,7.800,7.800,8.200,5.050

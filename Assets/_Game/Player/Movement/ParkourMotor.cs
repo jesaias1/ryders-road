@@ -27,6 +27,8 @@ namespace Avoidance.Gameplay.Player
         private float _movementLockRemaining;
         private bool _wasGrounded;
         private bool _contactFresh;
+        private bool _suspendedUntilRestore;
+        public void SuspendUntilRestore() { _suspendedUntilRestore = true; }
         private float _preMoveVerticalVelocity;
         private float _secondsSinceLanding = float.MaxValue;
         private SurfSurface _surfSurface;
@@ -122,7 +124,7 @@ namespace Avoidance.Gameplay.Player
 
         public void Simulate(IPlayerInputSource input, float deltaTime)
         {
-            if (_controller == null || !_controller.enabled || deltaTime <= 0f)
+            if (_suspendedUntilRestore || _controller == null || !_controller.enabled || deltaTime <= 0f)
             {
                 return;
             }
@@ -136,6 +138,7 @@ namespace Avoidance.Gameplay.Player
             if (input.JumpPressed) _lastPressTime = _simulationTime;
             _secondsSinceLanding += deltaTime;
             ApplyMovingPlatformDelta(deltaTime);
+            if (_suspendedUntilRestore) return;
             ProbeGround();
             if (_profile.MovementMastery) HandleLanding();
             _jumpWindow.Tick(
@@ -155,6 +158,7 @@ namespace Avoidance.Gameplay.Player
             var movement = (_horizontalVelocity + Vector3.up * _verticalVelocity) * deltaTime;
             var beforeMove = transform.position;
             var collisionFlags = _controller.Move(movement);
+            if (_suspendedUntilRestore) return;
             _contactFresh = true;
             DisplacementVelocity = (transform.position - beforeMove) / deltaTime;
             if ((collisionFlags & CollisionFlags.Above) != 0 && _verticalVelocity > 0f)
@@ -217,6 +221,7 @@ namespace Avoidance.Gameplay.Player
             _jumpWindow.Reset();
             _wasGrounded = false;
             _contactFresh = false;
+            _suspendedUntilRestore = false;
             ProbeGround();
         }
 

@@ -29,6 +29,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.rhythm.01
@@ -38,6 +39,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.rhythm.02
@@ -47,6 +49,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.after-moving.01
@@ -56,6 +59,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.after-moving.02
@@ -65,6 +69,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.restore.platform
@@ -74,6 +79,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.safe.01
@@ -83,6 +89,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.safe.02
@@ -92,6 +99,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.safe.03
@@ -101,6 +109,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.safe.04
@@ -110,6 +119,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.garden.exit
@@ -119,6 +129,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ridge.01
@@ -128,6 +139,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ridge.02
@@ -137,6 +149,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.rejoin
@@ -146,6 +159,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.lift.exit
@@ -155,6 +169,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ascent.01
@@ -164,6 +179,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ascent.02
@@ -173,6 +189,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ascent.03
@@ -182,6 +199,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.ascent.04
@@ -191,6 +209,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.final-runup
@@ -200,6 +219,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.patch.base
@@ -209,6 +229,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.01
@@ -218,6 +239,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.02
@@ -227,6 +249,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.03
@@ -236,6 +259,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.04
@@ -245,6 +269,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.05
@@ -254,6 +279,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.risky.06
@@ -263,6 +289,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.footing.m02.mastery.lift-cut
@@ -272,6 +299,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.arrival.cliff
@@ -281,6 +309,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.pass.fractured-abutment
@@ -290,15 +319,17 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.garden.waterfall-shrine
     _prefab: {fileID: 5986855760478432491, guid: 55dbea4dde3912242871bcc0b8b9a8f8, type: 3}
-    _position: {x: 4, y: 3, z: 26}
+    _position: {x: 18, y: 3, z: 26}
     _eulerAngles: {x: 0, y: 0, z: 0}
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.ridge.old-lift
@@ -308,6 +339,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.summit.stone-crown
@@ -317,6 +349,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.garden.fractured-wall
@@ -326,6 +359,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.ridge.fractured-wall
@@ -335,6 +369,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.garden.valley-foundation
@@ -344,6 +379,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.ridge.upper-foundation
@@ -353,6 +389,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 1
+    _traversableArchitecture: 0
     _depthBand: 1
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.west.headwall
@@ -362,6 +399,7 @@ MonoBehaviour:
     _scale: {x: 1.1, y: 1.1, z: 1.1}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 2
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.east.waterfall-headwall
@@ -371,6 +409,7 @@ MonoBehaviour:
     _scale: {x: 1.25, y: 1.25, z: 1.25}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 2
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.west.high-ridge
@@ -380,6 +419,7 @@ MonoBehaviour:
     _scale: {x: 1.2, y: 1.2, z: 1.2}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 2
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.landmark.split-peak
@@ -389,6 +429,7 @@ MonoBehaviour:
     _scale: {x: 1, y: 1, z: 1}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 2
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.west.valley
@@ -398,6 +439,7 @@ MonoBehaviour:
     _scale: {x: 2.2, y: 2.2, z: 2.2}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 3
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.north.range
@@ -407,6 +449,7 @@ MonoBehaviour:
     _scale: {x: 2.6, y: 2.6, z: 2.6}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 3
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.east.range
@@ -416,6 +459,7 @@ MonoBehaviour:
     _scale: {x: 2.4, y: 2.4, z: 2.4}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 3
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.very-far.west
@@ -425,6 +469,7 @@ MonoBehaviour:
     _scale: {x: 4.6, y: 4.6, z: 4.6}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 3
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.very-far.east
@@ -434,6 +479,7 @@ MonoBehaviour:
     _scale: {x: 5, y: 5, z: 5}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 3
     _depthFadeStrength: 0.8
   - _stableId: biome.mountain-sky.below.valley-spur
@@ -443,5 +489,6 @@ MonoBehaviour:
     _scale: {x: 1.8, y: 1.8, z: 1.8}
     _staticBatch: 1
     _hasPlayableArchitecture: 0
+    _traversableArchitecture: 0
     _depthBand: 4
     _depthFadeStrength: 0.8

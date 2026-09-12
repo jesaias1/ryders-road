@@ -127,6 +127,14 @@ namespace Avoidance.Gameplay.Respawn
             }
         }
 
+        public void RequestFatalContact()
+        {
+            if (_pending) return;
+            RequestRestore(true);
+            _input?.ResetState();
+            _motor?.SuspendUntilRestore();
+        }
+
         public void RestoreNow()
         {
             var checkpoint = _checkpoints.Current;

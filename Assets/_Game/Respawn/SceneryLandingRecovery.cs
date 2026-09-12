@@ -3,18 +3,17 @@ using UnityEngine;
 
 namespace Avoidance.Gameplay.Respawn
 {
-    // Solid scenery remains truthful, but explicitly non-route landings end a fall.
+    // Explicit non-route collision ends the run on any face, never only the top.
     [DisallowMultipleComponent]
     [RequireComponent(typeof(RestoreController), typeof(CharacterController))]
     public sealed class SceneryLandingRecovery : MonoBehaviour
     {
         private RestoreController restore;
-        private CharacterController character;
+        public Collider LastFatalCollider { get; private set; }
 
         private void Awake()
         {
             restore = GetComponent<RestoreController>();
-            character = GetComponent<CharacterController>();
         }
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -24,11 +23,10 @@ namespace Avoidance.Gameplay.Respawn
 
         public void NotifyContact(Collider collider, Vector3 normal)
         {
-            if (restore == null || collider == null || restore.IsRestorePending
-                || restore.SpawnProtectionRemaining > 0f
-                || normal.y < Mathf.Cos(character.slopeLimit * Mathf.Deg2Rad)) return;
+            if (restore == null || collider == null || restore.IsRestorePending) return;
             var surface = collider.GetComponent<AuthoredSurface>();
-            if (surface != null && surface.RestoreOnLanding) restore.RequestRestore(true);
+            if (surface != null && surface.GeometryKind == WorldGeometryKind.FatalScenery)
+            { LastFatalCollider=collider; restore.RequestFatalContact(); }
         }
     }
 }

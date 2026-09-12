@@ -1,3 +1,14 @@
+Release status 2026-09-12: PlayMode 151/151 passed; EditMode 249/249 passed after Unity Hub license refresh; source/LFS checks passed; Android dev APK built and verified. APK: `Builds/Android/RYDERS-ROAD-0.16.0-flow-benchmark-fatal-scenery-dev.apk`, SHA-256 `9BFC0CC2DA87CC0018C2F34A5344BC1BB623F4C57E9FF6D13F6C5C0C08A81825`. Commit/push this milestone, then stop for physical S23 feedback. See PRODUCTION_0160.md.
+
+# Current authority — 0.16.0 movement-aware benchmark and fatal scenery
+
+User S23 feedback approves the stronger 0.15.0 air-strafing. Preserve the motor,
+whole-right hold controls and music. Windward is the one reauthored benchmark;
+all Campaign scenery now follows explicit traversal/fatal/non-collision intent.
+See PRODUCTION_0160.md and ADR 0030 for safe/flow/expert lines, record compatibility,
+audit counts, tests and APK. Do not tune speed before physical benchmark feedback.
+Deliver then STOP. Older gates and route details below are historical.
+
 # Current authority — 0.15.0 shared movement and music
 
 See PRODUCTION_0150.md, ADR 0029, Movement150QA and Audio150.

@@ -304,7 +304,7 @@ namespace Avoidance.Tests.PlayMode
             input.JumpPressed=true;motor.Simulate(input,1f/60);input.JumpPressed=false;bool air=false,landed=false;
             for(int f=0;f<110;f++){motor.Simulate(input,1f/60);air|=!motor.IsGrounded;if(air&&motor.IsGrounded){landed=true;break;}}
             Directory.CreateDirectory("Logs/Phase094VisualQA");File.AppendAllText("Logs/Phase094VisualQA/jumps.txt",$"{label}: {motor.transform.position} ground={motor.GroundTransform?.name} speed={motor.LastTakeoffHorizontalSpeed}\n");
-            Assert.That(landed,Is.True,label);var delta=motor.transform.position-to;
+            Assert.That(landed,Is.True,label+" fatal="+motor.GetComponent<Avoidance.Gameplay.Respawn.SceneryLandingRecovery>()?.LastFatalCollider?.transform.parent?.name+"/"+motor.GetComponent<Avoidance.Gameplay.Respawn.SceneryLandingRecovery>()?.LastFatalCollider?.name+" at "+motor.transform.position);var delta=motor.transform.position-to;
             Assert.That(Mathf.Abs(delta.x),Is.LessThan(toSize.x*.5f+.2f),label+" x");Assert.That(Mathf.Abs(delta.z),Is.LessThan(toSize.z*.5f+.2f),label+" z");
             Assert.That(Mathf.Abs(motor.transform.position.y-(to.y+toSize.y*.5f)),Is.LessThan(.3f),label+" landing height (ground probe clearance)");
         }

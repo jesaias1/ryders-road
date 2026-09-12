@@ -1,3 +1,11 @@
+## 0.16.0 — Windward benchmark and fatal scenery (2026-09-11)
+
+- Reauthor only Windward around substantial runways, safe intermediate landings, wide recovery and speed-based skips.
+- Classify solid scenery as fatal unless explicitly traversable; immediately fail and suspend until normal Restore.
+- Move Mountain's obstructing garden arch off the existing jump; retain all other route geometry.
+- Preserve movement tuning, music, controls, history/unlocks and uncalibrated rank thresholds.
+- See Docs/PRODUCTION_0160.md. Stop for S23 benchmark feedback.
+
 ## 0.15.0 — Shared responsive movement and music (2026-09-09)
 
 - Promote compatibility-5 shared movement and whole-right hold/manual look to normal Campaign, Spiral and practice.

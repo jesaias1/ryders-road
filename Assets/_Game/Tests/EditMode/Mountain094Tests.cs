@@ -19,7 +19,7 @@ namespace Avoidance.Tests.EditMode
             FoundationProjectSetup.Apply();
             Assert.That(modules.Select(JsonUtility.ToJson).ToArray(),Is.EqualTo(routes));
             Assert.That(modules.Select(m=>JsonUtility.ToJson(m.EnvironmentBiomeProfile)).ToArray(),Is.EqualTo(worlds));
-            Assert.That(Module.ContentVersion,Is.EqualTo(3));
+            Assert.That(Module.ContentVersion,Is.EqualTo(4));
         }
         [Test] public void MountainHasClimbFivePlacesTrueCollisionAndBoundedCost()
         {

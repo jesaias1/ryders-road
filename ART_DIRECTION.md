@@ -1,3 +1,13 @@
+## 0.16.0 movement-aware route benchmark
+
+The user's S23 feedback approves the stronger air-strafe feel. Windward now gives
+that same motor room: substantial offset landings, long approaches, a broad north
+sweep and diagonal shortcuts. Safe intermediate surfaces remain. Dark narrow
+underside keels replace false secondary landing slabs, and the lower instrument
+and displaced telescope preserve world depth without competing with route decks.
+Other Campaign route geometry and all approved branding/music are preserved.
+See ADR 0030 and Docs/PRODUCTION_0160.md; physical benchmark feedback is pending.
+
 ## 0.15.0 frontend continuation
 
 Preserve the approved poster/logo and existing road art. Home exposes normal Flow

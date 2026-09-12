@@ -1602,6 +1602,8 @@ namespace Avoidance.UI
                 }
 
                 ModuleVisualPrefabLibrary.PrepareVisualInstance(instance, worldObject.HasPlayableArchitecture);
+                foreach(var surface in instance.GetComponentsInChildren<Avoidance.Gameplay.Worlds.AuthoredSurface>(true))
+                    surface.SetRestoreOnLanding(worldObject.GeometryKind == Avoidance.Gameplay.Worlds.WorldGeometryKind.FatalScenery);
                 if(_environment.NearArchitectureShadows && worldObject.DepthBand==BiomeDepthBand.NearEnvironment)
                     foreach(var renderer in instance.GetComponentsInChildren<Renderer>())
                     { renderer.shadowCastingMode=ShadowCastingMode.On; renderer.receiveShadows=true; }

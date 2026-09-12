@@ -1,5 +1,5 @@
 > Historical handoff. Current authority: [AI_HANDOFF.md](AI_HANDOFF.md),
-> [0.15.0 shared movement and music](PRODUCTION_0150.md) and ADR 0029. No physical
+> [0.16.0 benchmark and fatal scenery](PRODUCTION_0160.md) and ADR 0030. No physical
 > approval of the new movement is implied by historical testing statements.
 
 # AI Handoff For Gemini & Next Coding Agent
