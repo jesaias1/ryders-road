@@ -15,7 +15,7 @@ namespace Avoidance.Tests.EditMode
             var module=Resources.Load<ModuleDefinition>("Modules/Module_005_Windward");
             Assert.That(ModuleDefinitionValidator.Validate(module),Is.Empty);
             Assert.That(module.RestorePoints.Count,Is.EqualTo(3));
-            Assert.That(module.Blocks.Count,Is.InRange(20,26));
+            Assert.That(module.Blocks.Count,Is.InRange(18,26));
             Assert.That(module.OptionalShortcuts.Count,Is.EqualTo(1));
             Assert.That(ModuleSelectionState.GetNextCampaignModuleId("module.004.solar-foundry"),Is.EqualTo(module.StableModuleId));
             Assert.That(ModuleSelectionState.GetNextCampaignModuleId(module.StableModuleId),Is.Null);

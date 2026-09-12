@@ -1,3 +1,11 @@
+## 0.16.2 movement sequences
+
+Windward content 6 replaces the alternating cadence with four coherent movement
+sequences and three recovery Restores. Slow/flow/expert use the same 20 supports;
+held sequences and imperfect entries are verified without per-hop resets. Shared
+movement 5, input, camera, music, fatal scenery and V4 meaning remain unchanged.
+See Docs/Decisions/0032-movement-sequence-windward.md and Docs/PRODUCTION_0162.md.
+
 ## 0.16.1 route cadence correction
 
 Windward content 5 supersedes the broad 0.16.0 benchmark: a shared sweep with

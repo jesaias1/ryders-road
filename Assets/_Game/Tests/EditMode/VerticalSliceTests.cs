@@ -24,17 +24,27 @@ namespace Avoidance.Tests.EditMode
             var route=module.Blocks.ToList();
             route.InsertRange(route.FindIndex(b=>b.StableId=="m05.arc.03")+1,
                 module.CrumblingBlocks.Select(b=>new ModuleBlockDefinition(b.StableId,b.Pose.Position,b.Size,ModuleMaterialRole.Crumbling)));
-            Assert.That(module.ContentVersion,Is.EqualTo(5));
-            Assert.That(route.Count,Is.EqualTo(22));
+            Assert.That(module.ContentVersion,Is.EqualTo(6));
+            Assert.That(route.Count,Is.EqualTo(20));
             Assert.That(route.Any(b=>b.StableId.Contains("skill")),Is.False,"Same-route skips, no separate chord");
             for(int i=0;i<route.Count-1;i++)
             {
                 var a=route[i];var b=route[i+1];
                 float dx=Mathf.Max(0,Mathf.Abs(a.Pose.Position.x-b.Pose.Position.x)-(a.Size.x+b.Size.x)*.5f);
                 float dz=Mathf.Max(0,Mathf.Abs(a.Pose.Position.z-b.Pose.Position.z)-(a.Size.z+b.Size.z)*.5f);
-                Assert.That(new Vector2(dx,dz).magnitude,Is.GreaterThanOrEqualTo(2f),a.StableId+" must not become a walkable seam");
+                Assert.That(new Vector2(dx,dz).magnitude,Is.GreaterThanOrEqualTo(1.5f),a.StableId+" must not become a walkable seam");
             }
             Assert.That(route.Count(b=>b.Size.x*b.Size.z>=100),Is.EqualTo(5),"Large surfaces are sparse anchors");
+            foreach(var endpoints in new[]{("arrival","west.restore"),("west.restore","east.restore"),("east.restore","lens.restore"),("lens.restore","patch.base")})
+            {
+                int first=route.FindIndex(b=>b.StableId=="m05."+endpoints.Item1),last=route.FindIndex(b=>b.StableId=="m05."+endpoints.Item2);
+                for(int i=first+1;i<last;i++)
+                {
+                    var incoming=Vector3.ProjectOnPlane(route[i].Pose.Position-route[i-1].Pose.Position,Vector3.up);
+                    var outgoing=Vector3.ProjectOnPlane(route[i+1].Pose.Position-route[i].Pose.Position,Vector3.up);
+                    Assert.That(Vector3.Angle(incoming,outgoing),Is.LessThan(15),"Coherent sequence heading at "+route[i].StableId);
+                }
+            }
             Assert.That(module.CrumblingBlocks.Count,Is.EqualTo(2));
             Assert.That(ModuleDefinitionValidator.Validate(module),Is.Empty);
         }

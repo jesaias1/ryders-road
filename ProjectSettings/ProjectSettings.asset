@@ -150,7 +150,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.16.1-route-cadence
+  bundleVersion: 0.16.2-flow-sequences
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0

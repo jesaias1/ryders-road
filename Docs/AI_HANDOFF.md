@@ -1,3 +1,12 @@
+## 0.16.2 flow sequences
+
+Windward content 6 uses four coherent sequences, 20 shared supports and three
+recovery Restores. Slow/flow/expert sequence testing passes all 72 clean/error
+cases; EditMode 249/249 and PlayMode 152/152 pass. Movement compatibility 5,
+controls, music and fatal scenery remain unchanged. See Docs/PRODUCTION_0162.md
+for before/after captures, measurements and APK. Stop for physical S23 feedback;
+do not begin 3DAIStudio art production before physical route approval.
+
 ## 0.16.1 route cadence correction
 
 Windward content 5 now uses one shared sweep: 22 supports, five large anchors,

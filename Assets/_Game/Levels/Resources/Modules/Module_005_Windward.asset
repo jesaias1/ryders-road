@@ -17,7 +17,7 @@ MonoBehaviour:
   _internalName: module_005_windward
   _projectId: project.ryders-block
   _worldId: world.windward-observatory
-  _contentVersion: 5
+  _contentVersion: 6
   _sceneName: ModuleRunner
   _difficulty: 2
   _startPoint:
@@ -31,7 +31,7 @@ MonoBehaviour:
   _patchBlock:
     _stableId: patch.module-005.observatory
     _pose:
-      _position: {x: 70, y: 5.3, z: 49.5}
+      _position: {x: -58, y: 1.5, z: 146}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m05.patch.base
     _size: {x: 2.2, y: 2.2, z: 2.2}
@@ -39,22 +39,22 @@ MonoBehaviour:
   - _stableId: restore.module-005.west
     _order: 0
     _pose:
-      _position: {x: -24, y: 1, z: 47}
+      _position: {x: -24, y: 0.2, z: 39}
       _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m05.west.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-005.east
     _order: 1
     _pose:
-      _position: {x: 34, y: 2.8, z: 39}
-      _eulerAngles: {x: 0, y: 124, z: 0}
+      _position: {x: -43, y: 0.4, z: 88}
+      _eulerAngles: {x: 0, y: -25, z: 0}
     _supportBlockStableId: m05.east.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   - _stableId: restore.module-005.lens
     _order: 2
     _pose:
-      _position: {x: 68, y: 4, z: 9}
-      _eulerAngles: {x: 0, y: 34, z: 0}
+      _position: {x: -58, y: 1.2, z: 117}
+      _eulerAngles: {x: 0, y: 0, z: 0}
     _supportBlockStableId: m05.lens.restore
     _restoreOffset: {x: 0, y: 0.35, z: 0}
   _expectedCleanTime: 25
@@ -72,16 +72,17 @@ MonoBehaviour:
   _optionalShortcuts:
   - _stableId: shortcut.module-005.chord
     _displayName: Pressure fin carry
-    _entryPosition: {x: -6, y: 1.6, z: 71}
-    _exitPosition: {x: 9.5, y: 1.6, z: 70}
+    _entryPosition: {x: -27, y: 0.2, z: 58}
+    _exitPosition: {x: -34, y: 0.2, z: 70}
     _estimatedTimeSaved: 7
     _mechanics: 01000000
   _environmentProfile: {fileID: 11400000, guid: 01ae7109bc5abc14b9777a4587f28d2f, type: 2}
   _environmentBiomeProfile: {fileID: 11400000, guid: 82c37c0b66e6240488fbb3bc514fc5b8, type: 2}
   _visualProfile: {fileID: 11400000, guid: 04543455ca0396440871b68c76e3a1c7, type: 2}
   _loreBugDescription: Cross the wind instrument and reconnect the observatory.
-  _developerNotes: '0.16.1 cadence: one shared sweep, committed gaps, sparse anchors,
-    optional same-route skips and two pressure fins. Movement unchanged; ranks provisional.'
+  _developerNotes: '0.16.2 flow sequences: acceleration, sustained sweep, rising
+    diagonal, final carry. Wide lateral catches; held-hop omissions and recovery
+    terraces. Movement unchanged; ranks provisional.'
   _blocks:
   - _stableId: m05.arrival
     _pose:
@@ -93,153 +94,137 @@ MonoBehaviour:
     _label:
   - _stableId: m05.approach.a
     _pose:
-      _position: {x: -24, y: 0.2, z: 23.5}
+      _position: {x: -24, y: 0, z: 22.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 3}
+    _size: {x: 9, y: 0.6, z: 2}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.approach.b
     _pose:
-      _position: {x: -22, y: 0.4, z: 30}
+      _position: {x: -24, y: 0, z: 26.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 4}
+    _size: {x: 10, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.approach.c
     _pose:
-      _position: {x: -24, y: 0.6, z: 37}
+      _position: {x: -24, y: 0, z: 31}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 4}
+    _size: {x: 11, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.west.restore
     _pose:
-      _position: {x: -24, y: 1, z: 47}
+      _position: {x: -24, y: 0.2, z: 39}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 10, y: 0.6, z: 10}
+    _size: {x: 14, y: 0.6, z: 8}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.01
     _pose:
-      _position: {x: -21, y: 1.2, z: 58}
+      _position: {x: -24, y: 0.2, z: 47}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 6}
+    _size: {x: 10, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.02
     _pose:
-      _position: {x: -16, y: 1.4, z: 67}
+      _position: {x: -25, y: 0.2, z: 52}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 8, y: 0.6, z: 6}
+    _size: {x: 10, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.03
     _pose:
-      _position: {x: -6, y: 1.6, z: 71}
+      _position: {x: -27, y: 0.2, z: 58}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 8, y: 0.6, z: 7}
+    _size: {x: 11, y: 0.6, z: 5}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.arc.06
     _pose:
-      _position: {x: 19, y: 2, z: 68}
+      _position: {x: -38, y: 0.2, z: 76.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 8, y: 0.6, z: 8}
-    _visualRole: 0
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.arc.07
-    _pose:
-      _position: {x: 28.5, y: 2.2, z: 61}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 7}
-    _visualRole: 0
-    _editorLabel: 0
-    _label:
-  - _stableId: m05.arc.08
-    _pose:
-      _position: {x: 32, y: 2.4, z: 51}
-      _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 7}
+    _size: {x: 12, y: 0.6, z: 6}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.east.restore
     _pose:
-      _position: {x: 34, y: 2.8, z: 39}
+      _position: {x: -43, y: 0.4, z: 88}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 11, y: 0.6, z: 11}
+    _size: {x: 16, y: 0.6, z: 11}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.ascent.a
     _pose:
-      _position: {x: 45, y: 3.1, z: 31}
+      _position: {x: -47, y: 0.6, z: 97.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 7}
+    _size: {x: 14, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.ascent.b
     _pose:
-      _position: {x: 50, y: 3.3, z: 23}
+      _position: {x: -50, y: 0.8, z: 102.5}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 4}
+    _size: {x: 14, y: 0.6, z: 3.5}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.ascent.c
     _pose:
-      _position: {x: 56, y: 3.6, z: 16}
+      _position: {x: -53, y: 1, z: 108}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 8, y: 0.6, z: 6}
+    _size: {x: 14, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.lens.restore
     _pose:
-      _position: {x: 68, y: 4, z: 9}
+      _position: {x: -58, y: 1.2, z: 117}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 12, y: 0.6, z: 10}
+    _size: {x: 20, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.lens.a
     _pose:
-      _position: {x: 72, y: 4.2, z: 21}
+      _position: {x: -58, y: 1.2, z: 126}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 7, y: 0.6, z: 8}
+    _size: {x: 10, y: 0.6, z: 3}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.lens.b
     _pose:
-      _position: {x: 76, y: 4.4, z: 30}
+      _position: {x: -58, y: 1.2, z: 131}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 4}
+    _size: {x: 11, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.lens.c
     _pose:
-      _position: {x: 75, y: 4.6, z: 37.5}
+      _position: {x: -58, y: 1.2, z: 137}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 8, y: 0.6, z: 6}
+    _size: {x: 12, y: 0.6, z: 4}
     _visualRole: 0
     _editorLabel: 0
     _label:
   - _stableId: m05.patch.base
     _pose:
-      _position: {x: 70, y: 5, z: 49.5}
+      _position: {x: -58, y: 1.2, z: 146}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 12, y: 0.6, z: 12}
+    _size: {x: 14, y: 0.6, z: 10}
     _visualRole: 0
     _editorLabel: 0
     _label:
@@ -250,18 +235,18 @@ MonoBehaviour:
   _crumblingBlocks:
   - _stableId: m05.arc.04
     _pose:
-      _position: {x: 2.5, y: 1.6, z: 72}
+      _position: {x: -30, y: 0.2, z: 64}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 3, y: 0.6, z: 5}
+    _size: {x: 12, y: 0.6, z: 3}
     _activationDelay: 0.03
     _fallDelay: 1.8
     _resetTime: 4
     _shakeAmount: 0.015
   - _stableId: m05.arc.05
     _pose:
-      _position: {x: 9.5, y: 1.6, z: 70}
+      _position: {x: -34, y: 0.2, z: 70}
       _eulerAngles: {x: 0, y: 0, z: 0}
-    _size: {x: 5, y: 0.6, z: 6}
+    _size: {x: 12, y: 0.6, z: 4}
     _activationDelay: 0.03
     _fallDelay: 1.8
     _resetTime: 4

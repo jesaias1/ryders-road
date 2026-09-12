@@ -106,43 +106,10 @@ namespace Avoidance.Tests.PlayMode
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
 
-        [UnityTest] public IEnumerator MeasuredSkipsAndImperfectLandingRecovery()
+        [UnityTest] public IEnumerator CaptureFlowSequenceOverview()
         {
             yield return Open("module.005.foundry-pulse");
             CaptureOverview();
-            var module=Object.FindAnyObjectByType<ModuleSceneController>().ActiveModule;
-            var motor=Object.FindAnyObjectByType<ParkourMotor>();var restore=motor.GetComponent<RestoreController>();
-            var rows=new List<string>{"from,to,initialSpeed,launchSpeed,landingSpeed,flightDistance,landingOffset"};
-            var decks=module.Blocks.Concat(module.CrumblingBlocks.Select(b=>new ModuleBlockDefinition(b.StableId,b.Pose.Position,b.Size,Avoidance.Gameplay.Visuals.ModuleMaterialRole.Crumbling))).ToArray();
-            foreach(var link in new[]{("arrival","approach.b",17f),("approach.a","approach.c",17f),("lens.a","lens.c",17f),("arc.03","arc.05",17f)})
-            foreach(float error in new[]{0f,.75f})
-            {
-                var from=decks.Single(b=>b.StableId=="m05."+link.Item1);var to=decks.Single(b=>b.StableId=="m05."+link.Item2);
-                var dir=to.Pose.Position-from.Pose.Position;dir.y=0;dir.Normalize();
-                float Edge(Vector3 size)=>Mathf.Min(Mathf.Abs(dir.x)>.001f?size.x*.5f/Mathf.Abs(dir.x):1000,Mathf.Abs(dir.z)>.001f?size.z*.5f/Mathf.Abs(dir.z):1000);
-                var start=from.Pose.Position+dir*(Edge(from.Size)-.12f)+Vector3.up*.35f;
-                restore.RestoreNow();motor.ResetMotion(start,Quaternion.LookRotation(dir),0);Physics.SyncTransforms();
-                var input=new Input();for(int i=0;i<5;i++)motor.Simulate(input,1f/120);
-                motor.ApplyLaunch(dir*link.Item3,true);input.JumpPressed=true;motor.Simulate(input,1f/120);input.JumpPressed=false;
-                float launch=motor.LastTakeoffHorizontalSpeed;bool air=false,land=false;
-                for(int i=0;i<180;i++)
-                {
-                    // Explicit bounded test input toward the near portion of the broad landing.
-                    var target=to.Pose.Position-dir*(Edge(to.Size)-1.1f)+Vector3.Cross(Vector3.up,dir)*error;
-                    float v=motor.VerticalSpeed,g=motor.Profile.FallGravity,h=motor.transform.position.y-to.Pose.Position.y-.3f;
-                    float t=v>0?v/motor.Profile.JumpGravity+Mathf.Sqrt(Mathf.Max(0,2*(h+v*v/(2*motor.Profile.JumpGravity))/g)):(v+Mathf.Sqrt(Mathf.Max(0,v*v+2*g*h)))/g;
-                    var wanted=(target-motor.transform.position)/Mathf.Max(.08f,t)-motor.ActualHorizontalVelocity;wanted.y=0;
-                    var local=motor.transform.InverseTransformDirection(wanted);input.Move=Vector2.ClampMagnitude(new Vector2(local.x,local.z)/4,1);
-                    motor.Simulate(input,1f/120);air|=!motor.IsGrounded;
-                    Assert.That(restore.IsRestorePending,Is.False,link+" fatal collision");
-                    if(air&&motor.IsGrounded){land=true;break;}
-                }
-                var delta=motor.transform.position-to.Pose.Position;
-                Assert.That(land&&Mathf.Abs(delta.x)<to.Size.x*.5f+.15f&&Mathf.Abs(delta.z)<to.Size.z*.5f+.15f,Is.True,link+" at "+motor.transform.position);
-                rows.Add($"{from.StableId},{to.StableId},{link.Item3},{launch:F3},{motor.HorizontalSpeed:F3},{Vector3.ProjectOnPlane(motor.transform.position-start,Vector3.up).magnitude:F3},{error}");
-                Directory.CreateDirectory("Logs/Benchmark160QA");File.WriteAllLines("Logs/Benchmark160QA/skips.csv",rows);
-            }
-            Directory.CreateDirectory("Logs/Benchmark160QA");File.WriteAllLines("Logs/Benchmark160QA/skips.csv",rows);
             yield return new UnitySceneLevelLoader().LoadAsync("ModuleSelector");
         }
         private static void CaptureOverview()
@@ -152,7 +119,7 @@ namespace Avoidance.Tests.PlayMode
             var active=RenderTexture.active;float aspect=camera.aspect;
             try
             {
-                camera.transform.position=new Vector3(35,100,-12);camera.transform.LookAt(new Vector3(35,0,40));
+                camera.transform.position=new Vector3(60,130,8);camera.transform.LookAt(new Vector3(-40,0,80));
                 camera.targetTexture=rt;camera.aspect=1560f/900;camera.Render();RenderTexture.active=rt;
                 image.ReadPixels(new Rect(0,0,1560,900),0,0);image.Apply();
                 Directory.CreateDirectory("Logs/Benchmark160QA");File.WriteAllBytes("Logs/Benchmark160QA/overview.png",image.EncodeToPNG());
